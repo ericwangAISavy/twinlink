@@ -1,0 +1,249 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Role {
+  CANDIDATE
+  EMPLOYEE
+}
+
+enum JobStatus {
+  DRAFT
+  PUBLISHED
+  CLOSED
+}
+
+enum ApplicationStatus {
+  SUBMITTED
+  REVIEWING
+  INTERVIEW
+  OFFER
+  REJECTED
+  WITHDRAWN
+}
+
+enum FileKind {
+  RESUME
+  PORTFOLIO
+  COMPANY
+  OTHER
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  emailVerified DateTime?
+  passwordHash  String?
+  name          String?
+  image         String?
+  role          Role      @default(CANDIDATE)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts         Account[]
+  sessions         Session[]
+  employeeProfile  EmployeeProfile?
+  candidateProfile CandidateProfile?
+  postedJobs       JobPosting[]      @relation("PostedBy")
+  applications     Application[]
+  savedJobs        SavedJob[]
+  sentMessages     Message[]         @relation("SentMessages")
+  notifications    Notification[]
+  uploadedFiles    FileObject[]
+  createdInvites   EmployeeInvite[]  @relation("InviteCreator")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model EmployeeProfile {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String?
+  bio       String?  @db.Text
+  phone     String?
+  linkedIn  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CandidateProfile {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  headline     String?
+  bio          String?  @db.Text
+  location     String?
+  phone        String?
+  linkedIn     String?
+  website      String?
+  skills       String[]
+  portfolioUrl String?
+  resumeFileId String?
+  resumeFile   FileObject? @relation("CandidateResume", fields: [resumeFileId], references: [id])
+  experiences  CandidateExperience[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model CandidateExperience {
+  id          String    @id @default(cuid())
+  profileId   String
+  profile     CandidateProfile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  title       String
+  company     String
+  startDate   DateTime
+  endDate     DateTime?
+  current     Boolean   @default(false)
+  description String?   @db.Text
+  createdAt   DateTime  @default(now())
+}
+
+model CompanyProfile {
+  id           String   @id @default("singleton")
+  name         String
+  tagline      String?
+  intro        String?  @db.Text
+  mission      String?  @db.Text
+  vision       String?  @db.Text
+  values       Json?
+  capabilities Json?
+  partnership  String?  @db.Text
+  benefits     Json?
+  about        String?  @db.Text
+  website      String?
+  email        String?
+  phone        String?
+  address      String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model JobPosting {
+  id             String    @id @default(cuid())
+  slug           String    @unique
+  title          String
+  location       String?
+  employmentType String?
+  description    String    @db.Text
+  requirements   String?   @db.Text
+  status         JobStatus @default(DRAFT)
+  postedById     String
+  postedBy       User      @relation("PostedBy", fields: [postedById], references: [id])
+  publishedAt    DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  applications   Application[]
+  savedBy        SavedJob[]
+}
+
+model Application {
+  id              String            @id @default(cuid())
+  jobId           String
+  job             JobPosting        @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  candidateUserId String
+  candidate       User              @relation(fields: [candidateUserId], references: [id], onDelete: Cascade)
+  status          ApplicationStatus @default(SUBMITTED)
+  coverLetter     String?           @db.Text
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  messages        Message[]
+
+  @@unique([jobId, candidateUserId])
+}
+
+model FileObject {
+  id           String   @id @default(cuid())
+  uploaderId   String
+  uploader     User     @relation(fields: [uploaderId], references: [id])
+  url          String
+  pathname     String
+  filename     String
+  contentType  String
+  size         Int
+  kind         FileKind @default(OTHER)
+  createdAt    DateTime @default(now())
+  usedAsResume CandidateProfile[] @relation("CandidateResume")
+}
+
+model SavedJob {
+  id        String     @id @default(cuid())
+  userId    String
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  jobId     String
+  job       JobPosting @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  createdAt DateTime   @default(now())
+
+  @@unique([userId, jobId])
+}
+
+model Message {
+  id            String      @id @default(cuid())
+  applicationId String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  senderId      String
+  sender        User        @relation("SentMessages", fields: [senderId], references: [id])
+  body          String      @db.Text
+  createdAt     DateTime    @default(now())
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  body      String
+  href      String?
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model EmployeeInvite {
+  id          String    @id @default(cuid())
+  email       String
+  token       String    @unique
+  createdById String
+  createdBy   User      @relation("InviteCreator", fields: [createdById], references: [id])
+  expiresAt   DateTime
+  usedAt      DateTime?
+  createdAt   DateTime  @default(now())
+}
