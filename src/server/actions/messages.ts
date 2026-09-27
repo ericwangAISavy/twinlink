@@ -2,7 +2,8 @@
 
 import { revalidatePath } from "next/cache";
 import { fail, ok, type ActionResult } from "@/lib/action-result";
-import { prisma } from "@/lib/db";
+import { firstRecord } from "@/lib/supabase/mappers";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { messageSchema } from "@/lib/validations";
 import { requireUser } from "@/server/authorization";
 
@@ -24,38 +25,40 @@ export async function sendApplicationMessage(formData: FormData): Promise<Action
     return fail(parsed.error.issues[0]?.message ?? "Message is required");
   }
 
-  const application = await prisma.application.findUnique({
-    where: { id: parsed.data.applicationId },
-    include: { job: true },
-  });
+  const supabase = await createServerSupabaseClient();
+  const { data: application } = await supabase
+    .from("applications")
+    .select("id, candidate_id, jobs(title, created_by)")
+    .eq("id", parsed.data.applicationId)
+    .maybeSingle();
   if (!application) return fail("Thread not found.");
 
-  const isCandidate = user.role === "CANDIDATE" && application.candidateUserId === user.id;
+  const isCandidate = user.role === "CANDIDATE" && application.candidate_id === user.id;
   const isEmployee = user.role === "EMPLOYEE";
   if (!isCandidate && !isEmployee) {
     return fail("You cannot message this application.");
   }
 
-  await prisma.message.create({
-    data: {
-      applicationId: application.id,
-      senderId: user.id,
-      body: parsed.data.body,
-    },
+  const { error } = await supabase.from("messages").insert({
+    application_id: application.id,
+    sender_id: user.id,
+    body: parsed.data.body,
   });
+  if (error) return fail(error.message);
 
-  const recipientId = isCandidate ? application.job.postedById : application.candidateUserId;
-  await prisma.notification.create({
-    data: {
-      userId: recipientId,
+  const job = firstRecord(application.jobs);
+  const recipientId = isCandidate ? (job?.created_by as string | undefined) : application.candidate_id;
+  if (recipientId) {
+    await supabase.from("notifications").insert({
+      user_id: recipientId,
       title: "New message",
-      body: `${user.name ?? "Someone"} sent a message about ${application.job.title}.`,
+      body: `${user.name ?? "Someone"} sent a message about ${String(job?.title ?? "an application")}.`,
       href:
         user.role === "EMPLOYEE"
           ? `/dashboard/candidate/messages/${application.id}`
           : `/dashboard/employee/messages/${application.id}`,
-    },
-  });
+    });
+  }
 
   revalidatePath(`/dashboard/employee/messages/${application.id}`);
   revalidatePath(`/dashboard/candidate/messages/${application.id}`);
@@ -66,10 +69,8 @@ export async function sendApplicationMessage(formData: FormData): Promise<Action
 
 export async function markNotificationsRead(): Promise<ActionResult> {
   const user = await requireUser();
-  await prisma.notification.updateMany({
-    where: { userId: user.id, read: false },
-    data: { read: true },
-  });
+  const supabase = await createServerSupabaseClient();
+  await supabase.from("notifications").update({ read: true }).eq("user_id", user.id).eq("read", false);
   revalidatePath("/dashboard");
   return ok();
 }

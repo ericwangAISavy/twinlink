@@ -4,6 +4,7 @@ import { APPLICATION_STATUSES, EMPLOYMENT_TYPES, JOB_STATUSES } from "@/lib/cons
 export const loginSchema = z.object({
   email: z.string().email("Enter a valid email"),
   password: z.string().min(8, "Password must be at least 8 characters"),
+  portal: z.enum(["candidate", "employee"]).optional(),
 });
 
 export const registerSchema = z

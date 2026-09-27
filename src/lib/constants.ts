@@ -1,4 +1,4 @@
-import type { ApplicationStatus, JobStatus, Role } from "@prisma/client";
+import type { ApplicationStatus, JobStatus, Role } from "@/lib/types";
 
 export const APP_NAME = "TwinLink";
 

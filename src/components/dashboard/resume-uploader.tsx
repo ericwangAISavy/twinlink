@@ -11,7 +11,7 @@ export function ResumeUploader({ configured }: { configured: boolean }) {
   if (!configured) {
     return (
       <p className="rounded-md border border-dashed border-border bg-muted/40 p-4 text-sm text-muted-foreground">
-        Resume upload is unavailable until a Vercel Blob token is configured (`BLOB_READ_WRITE_TOKEN`).
+        Resume upload is unavailable until Supabase Storage is configured.
         You can still complete your profile and apply.
       </p>
     );

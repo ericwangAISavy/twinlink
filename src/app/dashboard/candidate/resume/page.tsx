@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/dashboard/page-header";
 import { ResumeUploader } from "@/components/dashboard/resume-uploader";
 import { Card, CardContent } from "@/components/ui/card";
+import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { requireRole } from "@/server/authorization";
 import { getCandidateProfile } from "@/server/queries/profiles";
 
@@ -8,13 +9,13 @@ export default async function ResumePage() {
   const user = await requireRole("CANDIDATE");
   const record = await getCandidateProfile(user.id);
   const resume = record?.candidateProfile?.resumeFile;
-  const configured = Boolean(process.env.BLOB_READ_WRITE_TOKEN);
+  const configured = isSupabaseConfigured();
 
   return (
     <>
       <PageHeader
         title="Resume"
-        description="Upload a PDF or Word resume. Files are stored on Vercel Blob when a token is configured."
+        description="Upload a PDF or Word resume. Files are stored privately in Supabase Storage."
       />
       <Card>
         <CardContent className="space-y-4 pt-6">

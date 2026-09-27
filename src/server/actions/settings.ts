@@ -1,10 +1,9 @@
 "use server";
 
-import { compare, hash } from "bcryptjs";
-import { randomBytes } from "crypto";
 import { revalidatePath } from "next/cache";
 import { fail, ok, type ActionResult } from "@/lib/action-result";
-import { prisma } from "@/lib/db";
+import { createEmployeeInviteLink } from "@/server/actions/auth";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { inviteSchema, passwordSchema } from "@/lib/validations";
 import { requireRole, requireUser } from "@/server/authorization";
 
@@ -19,17 +18,15 @@ export async function changePassword(formData: FormData): Promise<ActionResult> 
     return fail(parsed.error.issues[0]?.message ?? "Invalid password");
   }
 
-  const record = await prisma.user.findUnique({ where: { id: user.id } });
-  if (!record?.passwordHash) return fail("Password login is not available for this account.");
-
-  const valid = await compare(parsed.data.currentPassword, record.passwordHash);
-  if (!valid) return fail("Current password is incorrect.");
-
-  await prisma.user.update({
-    where: { id: user.id },
-    data: { passwordHash: await hash(parsed.data.newPassword, 12) },
+  const supabase = await createServerSupabaseClient();
+  const { error: verifyError } = await supabase.auth.signInWithPassword({
+    email: user.email,
+    password: parsed.data.currentPassword,
   });
+  if (verifyError) return fail("Current password is incorrect.");
 
+  const { error } = await supabase.auth.updateUser({ password: parsed.data.newPassword });
+  if (error) return fail(error.message);
   return ok("Password updated.");
 }
 
@@ -40,17 +37,11 @@ export async function createEmployeeInvite(formData: FormData): Promise<ActionRe
     return fail(parsed.error.issues[0]?.message ?? "Enter a valid email");
   }
 
-  const token = randomBytes(24).toString("hex");
-  const invite = await prisma.employeeInvite.create({
-    data: {
-      email: parsed.data.email.toLowerCase(),
-      token,
-      createdById: user.id,
-      expiresAt: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000),
-    },
-  });
-
-  revalidatePath("/dashboard/employee/settings");
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
-  return ok(`${base}/register?invite=${invite.token}`);
+  try {
+    const url = await createEmployeeInviteLink(parsed.data.email, user.id);
+    revalidatePath("/dashboard/employee/settings");
+    return ok(url);
+  } catch {
+    return fail("Unable to create invite.");
+  }
 }

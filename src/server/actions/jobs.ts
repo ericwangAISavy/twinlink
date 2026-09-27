@@ -3,7 +3,8 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { fail, ok, type ActionResult } from "@/lib/action-result";
-import { prisma } from "@/lib/db";
+import { toDbJobStatus } from "@/lib/supabase/mappers";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { uniqueSlug } from "@/lib/utils";
 import { jobSchema } from "@/lib/validations";
 import { requireRole } from "@/server/authorization";
@@ -27,53 +28,45 @@ export async function upsertJob(formData: FormData): Promise<ActionResult> {
     return fail(parsed.error.issues[0]?.message ?? "Invalid job");
   }
 
-  const publishedAt = parsed.data.status === "PUBLISHED" ? new Date() : null;
+  const supabase = await createServerSupabaseClient();
+  const payload = {
+    title: parsed.data.title,
+    location: emptyToNull(parsed.data.location),
+    employment_type: emptyToNull(parsed.data.employmentType),
+    description: parsed.data.description,
+    requirements: emptyToNull(parsed.data.requirements),
+    status: toDbJobStatus(parsed.data.status),
+  };
 
   if (id) {
-    const existing = await prisma.jobPosting.findUnique({ where: { id } });
-    if (!existing) return fail("Job not found.");
-    await prisma.jobPosting.update({
-      where: { id },
-      data: {
-        title: parsed.data.title,
-        location: emptyToNull(parsed.data.location),
-        employmentType: emptyToNull(parsed.data.employmentType),
-        description: parsed.data.description,
-        requirements: emptyToNull(parsed.data.requirements),
-        status: parsed.data.status,
-        publishedAt:
-          parsed.data.status === "PUBLISHED"
-            ? existing.publishedAt ?? publishedAt
-            : existing.publishedAt,
-      },
-    });
+    const { error } = await supabase.from("jobs").update(payload).eq("id", id);
+    if (error) return fail(error.message);
     revalidatePath("/careers");
     revalidatePath("/dashboard/employee/jobs");
     redirect(`/dashboard/employee/jobs/${id}`);
   }
 
-  const created = await prisma.jobPosting.create({
-    data: {
+  const { data, error } = await supabase
+    .from("jobs")
+    .insert({
+      ...payload,
       slug: uniqueSlug(parsed.data.title),
-      title: parsed.data.title,
-      location: emptyToNull(parsed.data.location),
-      employmentType: emptyToNull(parsed.data.employmentType),
-      description: parsed.data.description,
-      requirements: emptyToNull(parsed.data.requirements),
-      status: parsed.data.status,
-      publishedAt,
-      postedById: user.id,
-    },
-  });
+      created_by: user.id,
+    })
+    .select("id")
+    .single();
+  if (error || !data) return fail(error?.message ?? "Unable to create job.");
 
   revalidatePath("/careers");
   revalidatePath("/dashboard/employee/jobs");
-  redirect(`/dashboard/employee/jobs/${created.id}`);
+  redirect(`/dashboard/employee/jobs/${data.id}`);
 }
 
 export async function deleteJob(jobId: string): Promise<ActionResult> {
   await requireRole("EMPLOYEE");
-  await prisma.jobPosting.delete({ where: { id: jobId } });
+  const supabase = await createServerSupabaseClient();
+  const { error } = await supabase.from("jobs").delete().eq("id", jobId);
+  if (error) return fail(error.message);
   revalidatePath("/careers");
   revalidatePath("/dashboard/employee/jobs");
   return ok("Job deleted.");
@@ -90,10 +83,8 @@ export async function upsertJobAction(
 }
 
 export async function deleteJobAction(jobId: string) {
-  await requireRole("EMPLOYEE");
-  await prisma.jobPosting.delete({ where: { id: jobId } });
-  revalidatePath("/dashboard/employee/jobs");
-  revalidatePath("/careers");
+  const result = await deleteJob(jobId);
+  if (!result.ok) return result;
   redirect("/dashboard/employee/jobs");
 }
 
@@ -101,16 +92,21 @@ export const toggleSaveJobAction = toggleSavedJob;
 
 export async function toggleSavedJob(jobId: string): Promise<ActionResult> {
   const user = await requireRole("CANDIDATE");
-  const existing = await prisma.savedJob.findUnique({
-    where: { userId_jobId: { userId: user.id, jobId } },
-  });
+  const supabase = await createServerSupabaseClient();
+  const { data: existing } = await supabase
+    .from("saved_jobs")
+    .select("job_id")
+    .eq("candidate_id", user.id)
+    .eq("job_id", jobId)
+    .maybeSingle();
   if (existing) {
-    await prisma.savedJob.delete({ where: { id: existing.id } });
+    await supabase.from("saved_jobs").delete().eq("candidate_id", user.id).eq("job_id", jobId);
     revalidatePath("/dashboard/candidate/saved");
     revalidatePath("/careers");
     return ok("Removed from saved jobs.");
   }
-  await prisma.savedJob.create({ data: { userId: user.id, jobId } });
+  const { error } = await supabase.from("saved_jobs").insert({ candidate_id: user.id, job_id: jobId });
+  if (error) return fail(error.message);
   revalidatePath("/dashboard/candidate/saved");
   revalidatePath("/careers");
   return ok("Job saved.");

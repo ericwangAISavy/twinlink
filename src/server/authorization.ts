@@ -1,19 +1,43 @@
 import "server-only";
 
-import type { Role } from "@prisma/client";
 import { redirect } from "next/navigation";
-import { auth } from "@/lib/auth";
+import { isSupabaseConfigured } from "@/lib/supabase/env";
+import { toAppRole } from "@/lib/supabase/mappers";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
+import type { AppUser, Role } from "@/lib/types";
 
-export async function getCurrentUser() {
-  const session = await auth();
-  return session?.user ?? null;
+export async function getCurrentUser(): Promise<AppUser | null> {
+  if (!isSupabaseConfigured()) return null;
+
+  const supabase = await createServerSupabaseClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return null;
+
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("id, email, full_name, role, avatar_url")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  return {
+    id: user.id,
+    email: profile?.email ?? user.email ?? "",
+    name: profile?.full_name ?? user.user_metadata?.full_name ?? null,
+    role: toAppRole(profile?.role),
+    image: profile?.avatar_url ?? null,
+  };
+}
+
+export async function auth() {
+  const user = await getCurrentUser();
+  return user ? { user } : null;
 }
 
 export async function requireUser() {
   const user = await getCurrentUser();
-  if (!user?.id) {
-    redirect("/login");
-  }
+  if (!user?.id) redirect("/login");
   return user;
 }
 

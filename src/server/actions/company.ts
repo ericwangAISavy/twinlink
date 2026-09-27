@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { fail, ok, type ActionResult } from "@/lib/action-result";
-import { prisma } from "@/lib/db";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { companyProfileSchema } from "@/lib/validations";
 import { requireRole } from "@/server/authorization";
 
@@ -54,42 +54,26 @@ export async function updateCompanyProfile(formData: FormData): Promise<ActionRe
     return fail("Values, capabilities, and benefits must be valid JSON arrays.");
   }
 
-  await prisma.companyProfile.upsert({
-    where: { id: "singleton" },
-    update: {
-      name: parsed.data.name,
-      tagline: parsed.data.tagline || null,
-      intro: parsed.data.intro || null,
-      mission: parsed.data.mission || null,
-      vision: parsed.data.vision || null,
-      partnership: parsed.data.partnership || null,
-      about: parsed.data.about || null,
-      website: parsed.data.website || null,
-      email: parsed.data.email || null,
-      phone: parsed.data.phone || null,
-      address: parsed.data.address || null,
-      values,
-      capabilities,
-      benefits,
-    },
-    create: {
-      id: "singleton",
-      name: parsed.data.name,
-      tagline: parsed.data.tagline || null,
-      intro: parsed.data.intro || null,
-      mission: parsed.data.mission || null,
-      vision: parsed.data.vision || null,
-      partnership: parsed.data.partnership || null,
-      about: parsed.data.about || null,
-      website: parsed.data.website || null,
-      email: parsed.data.email || null,
-      phone: parsed.data.phone || null,
-      address: parsed.data.address || null,
-      values,
-      capabilities,
-      benefits,
-    },
-  });
+  const supabase = await createServerSupabaseClient();
+  const payload = {
+    id: "singleton",
+    name: parsed.data.name,
+    tagline: parsed.data.tagline || null,
+    intro: parsed.data.intro || null,
+    mission: parsed.data.mission || null,
+    vision: parsed.data.vision || null,
+    partnership: parsed.data.partnership || null,
+    about: parsed.data.about || null,
+    website: parsed.data.website || null,
+    email: parsed.data.email || null,
+    phone: parsed.data.phone || null,
+    address: parsed.data.address || null,
+    values,
+    capabilities,
+    benefits,
+  };
+  const { error } = await supabase.from("company_profiles").upsert(payload);
+  if (error) return fail(error.message);
 
   revalidatePath("/");
   revalidatePath("/about");

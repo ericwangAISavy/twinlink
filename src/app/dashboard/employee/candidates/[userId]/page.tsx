@@ -66,7 +66,7 @@ export default async function CandidateReviewPage({
             <CardTitle>Experience</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            {profile?.experiences.map((experience) => (
+            {profile?.experiences?.map((experience) => (
               <div key={experience.id}>
                 <p className="font-medium">
                   {experience.title} · {experience.company}
@@ -77,7 +77,7 @@ export default async function CandidateReviewPage({
                 <p className="mt-1 text-sm text-muted-foreground">{experience.description}</p>
               </div>
             ))}
-            {profile?.experiences.length === 0 ? <p className="text-muted-foreground">No experience listed.</p> : null}
+            {profile?.experiences?.length === 0 ? <p className="text-muted-foreground">No experience listed.</p> : null}
           </CardContent>
         </Card>
       </div>

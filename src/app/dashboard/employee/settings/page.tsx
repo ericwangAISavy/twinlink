@@ -6,15 +6,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { createEmployeeInvite } from "@/server/actions/settings";
 import { requireRole } from "@/server/authorization";
-import { prisma } from "@/lib/db";
+import { getEmployeeInvites } from "@/server/queries/messages";
 
 export default async function EmployeeSettingsPage() {
   const user = await requireRole("EMPLOYEE");
-  const invites = await prisma.employeeInvite.findMany({
-    where: { createdById: user.id },
-    orderBy: { createdAt: "desc" },
-    take: 10,
-  });
+  const invites = await getEmployeeInvites(user.id);
 
   return (
     <>

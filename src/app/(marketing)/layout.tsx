@@ -6,7 +6,7 @@ export default async function MarketingLayout({ children }: { children: React.Re
   const company = await getCompanyProfile();
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="marketing-theme flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">{children}</main>
       <SiteFooter company={company} />

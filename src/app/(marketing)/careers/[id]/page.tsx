@@ -6,7 +6,7 @@ import { SaveJobButton } from "@/components/careers/save-job-button";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { auth } from "@/lib/auth";
+import { getCurrentUser } from "@/server/authorization";
 import { APPLICATION_STATUS_LABELS } from "@/lib/constants";
 import { formatDate } from "@/lib/utils";
 import { getCandidateApplication } from "@/server/queries/applications";
@@ -30,15 +30,10 @@ export default async function JobDetailPage({ params }: Props) {
   const job = await getJobBySlugOrId(id);
   if (!job || job.status !== "PUBLISHED") notFound();
 
-  const session = await auth();
+  const user = await getCurrentUser();
   const application =
-    session?.user?.role === "CANDIDATE"
-      ? await getCandidateApplication(job.id, session.user.id)
-      : null;
-  const saved =
-    session?.user?.role === "CANDIDATE"
-      ? (await getSavedJobIds(session.user.id)).has(job.id)
-      : false;
+    user?.role === "CANDIDATE" ? await getCandidateApplication(job.id, user.id) : null;
+  const saved = user?.role === "CANDIDATE" ? (await getSavedJobIds(user.id)).has(job.id) : false;
 
   return (
     <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 lg:grid-cols-[1.4fr_0.8fr]">
@@ -67,7 +62,7 @@ export default async function JobDetailPage({ params }: Props) {
             <CardTitle>Apply</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            {!session?.user ? (
+            {!user ? (
               <>
                 <p className="text-sm text-muted-foreground">
                   Create a candidate account to apply. Employee accounts are invite-only.
@@ -81,7 +76,7 @@ export default async function JobDetailPage({ params }: Props) {
                   </Button>
                 </div>
               </>
-            ) : session.user.role === "EMPLOYEE" ? (
+            ) : user.role === "EMPLOYEE" ? (
               <p className="text-sm text-muted-foreground">Employees review applications from the dashboard.</p>
             ) : application ? (
               <p className="text-sm">
@@ -91,7 +86,7 @@ export default async function JobDetailPage({ params }: Props) {
             ) : (
               <ApplyForm jobId={job.id} />
             )}
-            {session?.user?.role === "CANDIDATE" ? <SaveJobButton jobId={job.id} saved={saved} /> : null}
+            {user?.role === "CANDIDATE" ? <SaveJobButton jobId={job.id} saved={saved} /> : null}
           </CardContent>
         </Card>
       </aside>

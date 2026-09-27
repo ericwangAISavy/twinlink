@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
+import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
 import { Providers } from "@/components/providers";
 import "./globals.css";
 
@@ -8,8 +8,9 @@ const sans = Source_Sans_3({
   variable: "--font-sans",
 });
 
-const serif = Source_Serif_4({
+const serif = Cormorant_Garamond({
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
   variable: "--font-serif",
 });
 

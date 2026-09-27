@@ -14,14 +14,16 @@ export default async function SavedJobsPage() {
         <p className="text-muted-foreground">You have not saved any roles yet.</p>
       ) : (
         <div className="grid gap-4 md:grid-cols-2">
-          {saved.map((item) => (
+          {saved
+            .filter((item) => item.job)
+            .map((item) => (
             <JobCard
               key={item.id}
-              slug={item.job.slug}
-              title={item.job.title}
-              location={item.job.location}
-              employmentType={item.job.employmentType}
-              description={item.job.description}
+              slug={item.job!.slug}
+              title={item.job!.title}
+              location={item.job!.location}
+              employmentType={item.job!.employmentType}
+              description={item.job!.description}
               publishedAt={null}
             />
           ))}

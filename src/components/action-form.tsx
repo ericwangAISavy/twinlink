@@ -4,17 +4,20 @@ import { useState, useTransition, type ReactNode } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import type { ActionResult } from "@/lib/action-result";
+import { cn } from "@/lib/utils";
 
 export function ActionForm({
   action,
   children,
   submitLabel = "Save",
+  submitClassName,
   className,
   onSuccess,
 }: {
   action: (formData: FormData) => Promise<ActionResult>;
   children: ReactNode;
   submitLabel?: string;
+  submitClassName?: string;
   className?: string;
   onSuccess?: (message?: string) => void;
 }) {
@@ -57,7 +60,7 @@ export function ActionForm({
           {error}
         </p>
       ) : null}
-      <Button type="submit" className="mt-4" disabled={pending}>
+      <Button type="submit" className={cn("mt-4", submitClassName)} disabled={pending}>
         {pending ? "Saving…" : submitLabel}
       </Button>
     </form>

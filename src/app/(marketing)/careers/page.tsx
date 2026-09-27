@@ -12,7 +12,7 @@ export default async function CareersPage() {
   const jobs = await getPublishedJobs();
 
   return (
-    <Section eyebrow="Careers" title="Open roles">
+    <Section eyebrow="Careers" title="Open roles" className="border-t border-[#c4a574]/20">
       {jobs.length === 0 ? (
         <p className="text-muted-foreground">
           There are no published roles right now. Create a candidate account so we can reach you when we open a search.

@@ -2,7 +2,8 @@
 
 import { revalidatePath } from "next/cache";
 import { fail, ok, type ActionResult } from "@/lib/action-result";
-import { prisma } from "@/lib/db";
+import { firstRecord, toDbApplicationStatus } from "@/lib/supabase/mappers";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { applicationStatusSchema, applySchema } from "@/lib/validations";
 import { requireRole } from "@/server/authorization";
 
@@ -16,31 +17,40 @@ export async function applyToJob(formData: FormData): Promise<ActionResult> {
     return fail(parsed.error.issues[0]?.message ?? "Unable to apply");
   }
 
-  const job = await prisma.jobPosting.findUnique({ where: { id: parsed.data.jobId } });
-  if (!job || job.status !== "PUBLISHED") {
+  const supabase = await createServerSupabaseClient();
+  const { data: job } = await supabase.from("jobs").select("*").eq("id", parsed.data.jobId).maybeSingle();
+  if (!job || job.status !== "published") {
     return fail("This role is not open for applications.");
   }
 
-  try {
-    const application = await prisma.application.create({
-      data: {
-        jobId: job.id,
-        candidateUserId: user.id,
-        coverLetter: parsed.data.coverLetter || null,
-      },
-    });
+  const { data: candidateProfile } = await supabase
+    .from("candidate_profiles")
+    .select("resume_url")
+    .eq("user_id", user.id)
+    .maybeSingle();
 
-    await prisma.notification.create({
-      data: {
-        userId: job.postedById,
-        title: "New application",
-        body: `${user.name ?? user.email} applied to ${job.title}.`,
-        href: `/dashboard/employee/applicants/${application.id}`,
-      },
-    });
-  } catch {
+  const { data: application, error } = await supabase
+    .from("applications")
+    .insert({
+      job_id: job.id,
+      candidate_id: user.id,
+      cover_letter: parsed.data.coverLetter || null,
+      resume_url: candidateProfile?.resume_url ?? null,
+      status: "submitted",
+    })
+    .select("id")
+    .single();
+
+  if (error || !application) {
     return fail("You have already applied to this role.");
   }
+
+  await supabase.from("notifications").insert({
+    user_id: job.created_by,
+    title: "New application",
+    body: `${user.name ?? user.email} applied to ${job.title}.`,
+    href: `/dashboard/employee/applicants/${application.id}`,
+  });
 
   revalidatePath(`/careers/${job.slug}`);
   revalidatePath("/dashboard/candidate/applications");
@@ -57,19 +67,21 @@ export async function updateApplicationStatus(formData: FormData): Promise<Actio
     return fail(parsed.error.issues[0]?.message ?? "Invalid status");
   }
 
-  const application = await prisma.application.update({
-    where: { id: parsed.data.applicationId },
-    data: { status: parsed.data.status },
-    include: { job: { select: { title: true, slug: true } } },
-  });
+  const supabase = await createServerSupabaseClient();
+  const { data: application, error } = await supabase
+    .from("applications")
+    .update({ status: toDbApplicationStatus(parsed.data.status) })
+    .eq("id", parsed.data.applicationId)
+    .select("id, candidate_id, jobs(title)")
+    .single();
+  if (error || !application) return fail(error?.message ?? "Unable to update status.");
 
-  await prisma.notification.create({
-    data: {
-      userId: application.candidateUserId,
-      title: "Application update",
-      body: `Your application for ${application.job.title} is now ${parsed.data.status.toLowerCase()}.`,
-      href: `/dashboard/candidate/applications/${application.id}`,
-    },
+  const job = firstRecord(application.jobs);
+  await supabase.from("notifications").insert({
+    user_id: application.candidate_id,
+    title: "Application update",
+    body: `Your application for ${String(job?.title ?? "a role")} was updated.`,
+    href: `/dashboard/candidate/applications/${application.id}`,
   });
 
   revalidatePath("/dashboard/employee/applicants");
@@ -100,16 +112,13 @@ export async function withdrawApplicationAction(applicationId: string) {
 
 export async function withdrawApplication(applicationId: string): Promise<ActionResult> {
   const user = await requireRole("CANDIDATE");
-  const application = await prisma.application.findUnique({
-    where: { id: applicationId },
-  });
-  if (!application || application.candidateUserId !== user.id) {
+  const supabase = await createServerSupabaseClient();
+  const { data: application } = await supabase.from("applications").select("*").eq("id", applicationId).maybeSingle();
+  if (!application || application.candidate_id !== user.id) {
     return fail("Application not found.");
   }
-  await prisma.application.update({
-    where: { id: applicationId },
-    data: { status: "WITHDRAWN" },
-  });
+  const { error } = await supabase.from("applications").update({ status: "withdrawn" }).eq("id", applicationId);
+  if (error) return fail(error.message);
   revalidatePath("/dashboard/candidate/applications");
   return ok("Application withdrawn.");
 }

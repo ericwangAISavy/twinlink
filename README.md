@@ -1,50 +1,39 @@
 # TwinLink
 
-Professional technology consulting website and talent portal. Public marketing pages are powered by a singleton company profile. Candidates self-register; employees are invite-only (plus a seeded admin).
+Professional technology consulting website and talent portal. Candidates self-register; employees are invitation-only.
 
 ## Stack
 
-- Next.js 15 App Router, React 19, TypeScript (strict)
-- Tailwind CSS v4 and shadcn-style UI
-- Prisma + PostgreSQL (Neon recommended)
-- Auth.js v5 (Credentials + JWT) and `@auth/prisma-adapter`
-- Vercel Blob for resume uploads
+- Next.js 15 App Router, React 19, TypeScript
+- Tailwind CSS v4
+- Supabase (Postgres, Auth, Row Level Security, Storage)
 - Deploy target: Vercel
 
 ## Local setup
 
-1. **Create a Postgres database** (Neon is the intended host). SQLite is not supported.
+1. Create a Supabase project. Do not use a local PostgreSQL server.
 
-2. Copy environment files:
+2. In the Supabase SQL editor, run `supabase/migrations/0001_init.sql`.
+
+3. Copy environment files:
 
    ```bash
    copy .env.example .env.local
    ```
 
-3. Fill in `.env.local`:
+4. Fill in `.env.local` from **Supabase → Project Settings → API**:
 
    | Variable | Purpose |
    | --- | --- |
-   | `DATABASE_URL` | Pooled Postgres URL |
-   | `DIRECT_URL` | Direct (unpooled) URL for migrations |
-   | `AUTH_SECRET` | `openssl rand -base64 32` |
-   | `AUTH_URL` | `http://localhost:3000` locally |
-   | `NEXT_PUBLIC_APP_URL` | Same as the public site URL |
-   | `BLOB_READ_WRITE_TOKEN` | Optional. Resume upload degrades in the UI if empty |
-   | `SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD` | First employee account |
+   | `NEXT_PUBLIC_SUPABASE_URL` | Project URL |
+   | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Publishable/anon key |
+   | `NEXT_PUBLIC_APP_URL` | `http://localhost:3000` locally |
+   | `SUPABASE_SERVICE_ROLE_KEY` | Optional, server-only bootstrap. Never expose in the browser. |
 
-4. Install and generate the Prisma client:
+5. Install and run:
 
    ```bash
    npm install
-   npx prisma generate
-   npx prisma db push
-   npm run db:seed
-   ```
-
-5. Run the app:
-
-   ```bash
    npm run dev
    ```
 
@@ -52,18 +41,30 @@ Professional technology consulting website and talent portal. Public marketing p
 
 ### First accounts
 
-- **Admin employee:** `SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD` after seed.
-- **Candidate:** `/register` (always creates a `CANDIDATE`).
-- **Additional employees:** Dashboard → Settings → generate invite → `/register?invite=TOKEN` with the invited email.
+- **Candidate:** `/register` always creates a candidate. The browser cannot assign the employee role.
+- **First employee:** sign up as a candidate, then in the SQL editor:
+
+  ```sql
+  update public.profiles
+  set role = 'employee'
+  where email = 'you@example.com';
+
+  insert into public.employee_profiles (user_id)
+  select id from public.profiles where email = 'you@example.com'
+  on conflict (user_id) do nothing;
+
+  delete from public.candidate_profiles
+  where user_id = (select id from public.profiles where email = 'you@example.com');
+  ```
+
+  Additional employees: Dashboard → Settings → generate invite → `/register?invite=TOKEN` with the invited email.
 
 ## Vercel deploy
 
-1. Push the repo and import it in Vercel.
-2. Add the same environment variables. Use the Neon pooled URL for `DATABASE_URL` and the direct URL for `DIRECT_URL`.
-3. Create a Vercel Blob store and set `BLOB_READ_WRITE_TOKEN`.
-4. Set `AUTH_URL` and `NEXT_PUBLIC_APP_URL` to the production domain.
-5. Build command is `prisma generate && next build` (already in `package.json`).
-6. Run `prisma db push` or `prisma migrate deploy` against production once, then `npm run db:seed` from a trusted machine.
+1. Import the repo in Vercel.
+2. Set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, and `NEXT_PUBLIC_APP_URL` (production domain). Add `SUPABASE_SERVICE_ROLE_KEY` only if you need server-side bootstrap.
+3. Build command is `next build`.
+4. Apply `supabase/migrations/0001_init.sql` to the same Supabase project used in production.
 
 ## Product map
 
@@ -73,16 +74,3 @@ Professional technology consulting website and talent portal. Public marketing p
 | Auth | `/login` `/register` |
 | Employee | `/dashboard/employee/*` — profile, company, jobs, applicants, messages, settings |
 | Candidate | `/dashboard/candidate/*` — profile, resume, applications, saved jobs, messages, settings |
-
-Messages are threaded per application. A candidate may apply to a job once (`@@unique([jobId, candidateUserId])`).
-
-## Useful scripts
-
-```bash
-npm run dev
-npm run build
-npm run lint
-npm run db:push
-npm run db:seed
-npm run db:studio
-```

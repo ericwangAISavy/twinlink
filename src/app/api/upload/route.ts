@@ -1,19 +1,15 @@
-import { put } from "@vercel/blob";
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/db";
-import { auth } from "@/lib/auth";
+import { isSupabaseConfigured } from "@/lib/supabase/env";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getCurrentUser } from "@/server/authorization";
 
 export async function POST(request: Request) {
-  const session = await auth();
-  if (!session?.user?.id || session.user.role !== "CANDIDATE") {
+  const user = await getCurrentUser();
+  if (!user?.id || user.role !== "CANDIDATE") {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-
-  if (!process.env.BLOB_READ_WRITE_TOKEN) {
-    return NextResponse.json(
-      { error: "Resume storage is not configured. Add BLOB_READ_WRITE_TOKEN." },
-      { status: 503 },
-    );
+  if (!isSupabaseConfigured()) {
+    return NextResponse.json({ error: "Storage is not configured." }, { status: 503 });
   }
 
   const formData = await request.formData();
@@ -30,37 +26,25 @@ export async function POST(request: Request) {
   if (!allowed.includes(file.type) && !file.name.match(/\.(pdf|doc|docx)$/i)) {
     return NextResponse.json({ error: "Upload a PDF or Word document." }, { status: 400 });
   }
-
   if (file.size > 8 * 1024 * 1024) {
     return NextResponse.json({ error: "File must be under 8MB." }, { status: 400 });
   }
 
-  try {
-    const blob = await put(`resumes/${session.user.id}/${file.name}`, file, {
-      access: "public",
-      token: process.env.BLOB_READ_WRITE_TOKEN,
-    });
-
-    const fileObject = await prisma.fileObject.create({
-      data: {
-        uploaderId: session.user.id,
-        url: blob.url,
-        pathname: blob.pathname,
-        filename: file.name,
-        contentType: file.type || "application/octet-stream",
-        size: file.size,
-        kind: "RESUME",
-      },
-    });
-
-    await prisma.candidateProfile.upsert({
-      where: { userId: session.user.id },
-      update: { resumeFileId: fileObject.id },
-      create: { userId: session.user.id, resumeFileId: fileObject.id },
-    });
-
-    return NextResponse.json({ ok: true, url: blob.url });
-  } catch {
-    return NextResponse.json({ error: "Upload failed. Try again later." }, { status: 500 });
+  const supabase = await createServerSupabaseClient();
+  const path = `${user.id}/${Date.now()}-${file.name.replace(/[^\w.\-]+/g, "_")}`;
+  const buffer = Buffer.from(await file.arrayBuffer());
+  const { error: uploadError } = await supabase.storage.from("resumes").upload(path, buffer, {
+    contentType: file.type || "application/octet-stream",
+    upsert: true,
+  });
+  if (uploadError) {
+    return NextResponse.json({ error: uploadError.message }, { status: 500 });
   }
+
+  await supabase.from("candidate_profiles").upsert({
+    user_id: user.id,
+    resume_url: path,
+  });
+
+  return NextResponse.json({ ok: true, path });
 }
