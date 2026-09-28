@@ -1,18 +1,32 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
-import { toAppRole } from "@/lib/supabase/mappers";
+import { destinationAfterLogin, homePath, toAppRole } from "@/lib/roles";
+
+function loginRedirect(request: NextRequest, pathname: string, extra?: Record<string, string>) {
+  const login = request.nextUrl.clone();
+  login.pathname = "/login";
+  login.search = "";
+  login.searchParams.set("callbackUrl", pathname);
+  if (extra) {
+    for (const [key, value] of Object.entries(extra)) {
+      login.searchParams.set(key, value);
+    }
+  }
+  return NextResponse.redirect(login);
+}
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
   const { pathname } = request.nextUrl;
 
+  if (pathname.startsWith("/auth/sign-out")) {
+    return response;
+  }
+
   if (!isSupabaseConfigured()) {
-    if (pathname.startsWith("/dashboard")) {
-      const login = request.nextUrl.clone();
-      login.pathname = "/login";
-      login.searchParams.set("callbackUrl", pathname);
-      return NextResponse.redirect(login);
+    if (pathname.startsWith("/dashboard") || pathname.startsWith("/admin")) {
+      return loginRedirect(request, pathname);
     }
     return response;
   }
@@ -40,36 +54,51 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (pathname.startsWith("/dashboard")) {
-    if (!user) {
-      const login = request.nextUrl.clone();
-      login.pathname = "/login";
-      login.searchParams.set("callbackUrl", pathname);
-      return NextResponse.redirect(login);
-    }
-
+  async function trustedRole() {
+    if (!user) return null;
     const { data: profile } = await supabase.from("profiles").select("role").eq("id", user.id).maybeSingle();
-    const role = toAppRole(profile?.role);
-
-    if (pathname.startsWith("/dashboard/employee") && role !== "EMPLOYEE") {
-      return NextResponse.redirect(new URL("/dashboard/candidate", request.url));
-    }
-    if (pathname.startsWith("/dashboard/candidate") && role !== "CANDIDATE") {
-      return NextResponse.redirect(new URL("/dashboard/employee", request.url));
-    }
-    if (pathname === "/dashboard") {
-      return NextResponse.redirect(
-        new URL(role === "EMPLOYEE" ? "/dashboard/employee" : "/dashboard/candidate", request.url),
-      );
-    }
+    return toAppRole(profile?.role);
   }
 
-  if ((pathname === "/login" || pathname === "/register") && user) {
-    const { data: profile } = await supabase.from("profiles").select("role").eq("id", user.id).maybeSingle();
-    const role = toAppRole(profile?.role);
-    return NextResponse.redirect(
-      new URL(role === "EMPLOYEE" ? "/dashboard/employee" : "/dashboard/candidate", request.url),
-    );
+  const needsAuth = pathname.startsWith("/dashboard") || pathname.startsWith("/admin");
+
+  if (needsAuth && !user) {
+    return loginRedirect(request, pathname);
+  }
+
+  if (user && (needsAuth || pathname === "/login" || pathname === "/register")) {
+    const role = await trustedRole();
+    if (!role) {
+      const signOut = request.nextUrl.clone();
+      signOut.pathname = "/auth/sign-out";
+      signOut.search = "";
+      signOut.searchParams.set("reason", "account");
+      return NextResponse.redirect(signOut);
+    }
+
+    if (pathname.startsWith("/admin") && role !== "ADMIN") {
+      return NextResponse.redirect(new URL(homePath(role), request.url));
+    }
+
+    if (pathname.startsWith("/dashboard")) {
+      if (role === "ADMIN") {
+        return NextResponse.redirect(new URL("/admin", request.url));
+      }
+      if (pathname.startsWith("/dashboard/employee") && role !== "EMPLOYEE") {
+        return NextResponse.redirect(new URL(homePath(role), request.url));
+      }
+      if (pathname.startsWith("/dashboard/candidate") && role !== "CANDIDATE") {
+        return NextResponse.redirect(new URL(homePath(role), request.url));
+      }
+      if (pathname === "/dashboard") {
+        return NextResponse.redirect(new URL(homePath(role), request.url));
+      }
+    }
+
+    if (pathname === "/login" || pathname === "/register") {
+      const callbackUrl = request.nextUrl.searchParams.get("callbackUrl");
+      return NextResponse.redirect(new URL(destinationAfterLogin(role, callbackUrl), request.url));
+    }
   }
 
   return response;

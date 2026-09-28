@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { formatDate } from "@/lib/utils";
+import { formatDate, formatRelativeTime } from "@/lib/utils";
 
 export function JobCard({
   slug,
@@ -32,7 +32,9 @@ export function JobCard({
         </CardHeader>
         <CardContent>
           <p className="line-clamp-3 text-sm text-muted-foreground">{description}</p>
-          <p className="mt-4 text-xs text-muted-foreground">Posted {formatDate(publishedAt)}</p>
+          <p className="mt-4 text-xs text-muted-foreground" title={publishedAt ? formatDate(publishedAt) : undefined}>
+            Posted {formatRelativeTime(publishedAt)}
+          </p>
         </CardContent>
       </Card>
     </Link>

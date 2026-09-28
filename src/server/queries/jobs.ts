@@ -10,6 +10,7 @@ export type MappedJob = {
   slug: string;
   title: string;
   location: string | null;
+  department: string | null;
   employmentType: string | null;
   description: string;
   requirements: string | null;
@@ -30,6 +31,7 @@ function mapJob(row: Record<string, unknown>, applicationCount = 0): MappedJob {
     slug: String(row.slug),
     title: String(row.title),
     location: (row.location as string | null) ?? null,
+    department: (row.department as string | null) ?? null,
     employmentType: (row.employment_type as string | null) ?? null,
     description: String(row.description ?? ""),
     requirements: (row.requirements as string | null) ?? null,

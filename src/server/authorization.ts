@@ -1,12 +1,41 @@
 import "server-only";
 
+import { cache } from "react";
 import { redirect } from "next/navigation";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
-import { toAppRole } from "@/lib/supabase/mappers";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import type { AppUser, Role } from "@/lib/types";
+import {
+  homePath,
+  parseUserRole,
+  toAppRole,
+  type Role,
+  type UserRole,
+} from "@/lib/roles";
+import type { AppUser } from "@/lib/types";
 
-export async function getCurrentUser(): Promise<AppUser | null> {
+export type TrustedProfile = {
+  id: string;
+  email: string;
+  fullName: string | null;
+  avatarUrl: string | null;
+  role: UserRole;
+};
+
+export type CurrentAuth = {
+  user: AppUser;
+  profile: TrustedProfile;
+  role: Role;
+};
+
+type ProfileRow = {
+  id: string;
+  email: string | null;
+  full_name: string | null;
+  role: string | null;
+  avatar_url: string | null;
+};
+
+export const getCurrentProfile = cache(async (): Promise<CurrentAuth | null> => {
   if (!isSupabaseConfigured()) return null;
 
   const supabase = await createServerSupabaseClient();
@@ -19,15 +48,36 @@ export async function getCurrentUser(): Promise<AppUser | null> {
     .from("profiles")
     .select("id, email, full_name, role, avatar_url")
     .eq("id", user.id)
-    .maybeSingle();
+    .maybeSingle<ProfileRow>();
+
+  const userRole = parseUserRole(profile?.role);
+  const role = toAppRole(userRole);
+  if (!profile || !userRole || !role) return null;
+
+  const appUser: AppUser = {
+    id: user.id,
+    email: profile.email ?? user.email ?? "",
+    name: profile.full_name ?? user.user_metadata?.full_name ?? null,
+    role,
+    image: profile.avatar_url ?? null,
+  };
 
   return {
-    id: user.id,
-    email: profile?.email ?? user.email ?? "",
-    name: profile?.full_name ?? user.user_metadata?.full_name ?? null,
-    role: toAppRole(profile?.role),
-    image: profile?.avatar_url ?? null,
+    user: appUser,
+    profile: {
+      id: profile.id,
+      email: appUser.email,
+      fullName: appUser.name,
+      avatarUrl: appUser.image ?? null,
+      role: userRole,
+    },
+    role,
   };
+});
+
+export async function getCurrentUser(): Promise<AppUser | null> {
+  const auth = await getCurrentProfile();
+  return auth?.user ?? null;
 }
 
 export async function auth() {
@@ -35,18 +85,35 @@ export async function auth() {
   return user ? { user } : null;
 }
 
+export async function requireAuth() {
+  const auth = await getCurrentProfile();
+  if (!auth) redirect("/login");
+  return auth;
+}
+
 export async function requireUser() {
-  const user = await getCurrentUser();
-  if (!user?.id) redirect("/login");
-  return user;
+  const auth = await requireAuth();
+  return auth.user;
 }
 
 export async function requireRole(role: Role) {
   const user = await requireUser();
   if (user.role !== role) {
-    redirect(user.role === "EMPLOYEE" ? "/dashboard/employee" : "/dashboard/candidate");
+    redirect(homePath(user.role));
   }
   return user;
+}
+
+export async function requireStaff() {
+  const user = await requireUser();
+  if (user.role !== "EMPLOYEE" && user.role !== "ADMIN") {
+    redirect(homePath(user.role));
+  }
+  return user;
+}
+
+export async function requireAdmin() {
+  return requireRole("ADMIN");
 }
 
 export async function requireEmployee() {

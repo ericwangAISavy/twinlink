@@ -3,7 +3,7 @@ import { APPLICATION_STATUSES, EMPLOYMENT_TYPES, JOB_STATUSES } from "@/lib/cons
 
 export const loginSchema = z.object({
   email: z.string().email("Enter a valid email"),
-  password: z.string().min(8, "Password must be at least 8 characters"),
+  password: z.string().min(1, "Enter your password"),
   portal: z.enum(["candidate", "employee"]).optional(),
 });
 
@@ -49,6 +49,24 @@ export const experienceSchema = z.object({
   description: z.string().max(2000).optional().or(z.literal("")),
 });
 
+export const adminJobSchema = z.object({
+  title: z.string().min(3).max(140),
+  slug: z.string().max(160).optional().or(z.literal("")),
+  department: z.string().max(120).optional().or(z.literal("")),
+  location: z.string().max(120).optional().or(z.literal("")),
+  workplaceType: z.string().max(80).optional().or(z.literal("")),
+  employmentType: z.enum(EMPLOYMENT_TYPES).optional().or(z.literal("")),
+  description: z.string().min(20, "Add a fuller description"),
+  responsibilities: z.string().max(8000).optional().or(z.literal("")),
+  requirements: z.string().max(8000).optional().or(z.literal("")),
+  preferredQualifications: z.string().max(8000).optional().or(z.literal("")),
+  salaryMin: z.string().optional().or(z.literal("")),
+  salaryMax: z.string().optional().or(z.literal("")),
+  currency: z.string().max(8).optional().or(z.literal("")),
+  applicationDeadline: z.string().optional().or(z.literal("")),
+  status: z.enum(JOB_STATUSES),
+});
+
 export const jobSchema = z.object({
   title: z.string().min(3).max(140),
   location: z.string().max(120).optional().or(z.literal("")),
@@ -92,6 +110,10 @@ export const messageSchema = z.object({
 
 export const inviteSchema = z.object({
   email: z.string().email("Enter a valid email"),
+  name: z.string().max(80).optional().or(z.literal("")),
+  jobTitle: z.string().max(120).optional().or(z.literal("")),
+  department: z.string().max(120).optional().or(z.literal("")),
+  role: z.enum(["employee", "admin"]).optional(),
 });
 
 export const passwordSchema = z

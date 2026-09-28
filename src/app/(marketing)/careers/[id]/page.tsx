@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getCurrentUser } from "@/server/authorization";
 import { APPLICATION_STATUS_LABELS } from "@/lib/constants";
-import { formatDate } from "@/lib/utils";
+import { formatDate, formatRelativeTime } from "@/lib/utils";
 import { getCandidateApplication } from "@/server/queries/applications";
 import { getJobBySlugOrId } from "@/server/queries/jobs";
 import { getSavedJobIds } from "@/server/queries/applications";
@@ -43,7 +43,9 @@ export default async function JobDetailPage({ params }: Props) {
         <div className="mt-4 flex flex-wrap gap-2">
           {job.employmentType ? <Badge variant="teal">{job.employmentType}</Badge> : null}
           {job.location ? <Badge variant="outline">{job.location}</Badge> : null}
-          <Badge variant="secondary">Posted {formatDate(job.publishedAt)}</Badge>
+          <Badge variant="secondary" title={job.publishedAt ? formatDate(job.publishedAt) : undefined}>
+            Posted {formatRelativeTime(job.publishedAt)}
+          </Badge>
         </div>
         <div className="prose prose-neutral mt-8 max-w-none whitespace-pre-wrap text-muted-foreground">
           {job.description}

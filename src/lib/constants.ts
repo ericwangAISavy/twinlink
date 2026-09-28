@@ -5,19 +5,24 @@ export const APP_NAME = "TwinLink";
 export const ROLES = {
   CANDIDATE: "CANDIDATE",
   EMPLOYEE: "EMPLOYEE",
+  ADMIN: "ADMIN",
 } as const satisfies Record<Role, Role>;
 
 export const JOB_STATUSES = [
   "DRAFT",
   "PUBLISHED",
+  "PAUSED",
   "CLOSED",
+  "ARCHIVED",
 ] as const satisfies readonly JobStatus[];
 
 export const APPLICATION_STATUSES = [
   "SUBMITTED",
   "REVIEWING",
+  "SHORTLISTED",
   "INTERVIEW",
   "OFFER",
+  "HIRED",
   "REJECTED",
   "WITHDRAWN",
 ] as const satisfies readonly ApplicationStatus[];
@@ -32,14 +37,18 @@ export const EMPLOYMENT_TYPES = [
 export const JOB_STATUS_LABELS: Record<JobStatus, string> = {
   DRAFT: "Draft",
   PUBLISHED: "Published",
+  PAUSED: "Paused",
   CLOSED: "Closed",
+  ARCHIVED: "Archived",
 };
 
 export const APPLICATION_STATUS_LABELS: Record<ApplicationStatus, string> = {
   SUBMITTED: "Submitted",
   REVIEWING: "Reviewing",
+  SHORTLISTED: "Shortlisted",
   INTERVIEW: "Interview",
   OFFER: "Offer",
+  HIRED: "Hired",
   REJECTED: "Rejected",
   WITHDRAWN: "Withdrawn",
 };

@@ -1,10 +1,15 @@
-export type Role = "CANDIDATE" | "EMPLOYEE";
-export type JobStatus = "DRAFT" | "PUBLISHED" | "CLOSED";
+import type { Role } from "@/lib/roles";
+
+export type { Role, UserRole } from "@/lib/roles";
+export { homePath } from "@/lib/roles";
+export type JobStatus = "DRAFT" | "PUBLISHED" | "PAUSED" | "CLOSED" | "ARCHIVED";
 export type ApplicationStatus =
   | "SUBMITTED"
   | "REVIEWING"
+  | "SHORTLISTED"
   | "INTERVIEW"
   | "OFFER"
+  | "HIRED"
   | "REJECTED"
   | "WITHDRAWN";
 
@@ -25,3 +30,4 @@ export type ExperienceItem = {
   current: boolean;
   description: string | null;
 };
+

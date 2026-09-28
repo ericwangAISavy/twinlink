@@ -111,6 +111,7 @@ export async function getApplicationForUser(
     status: toAppApplicationStatus(String(data.status)),
     coverLetter: (data.cover_letter as string | null) ?? null,
     createdAt: String(data.created_at),
+    assignedToId: (data.assigned_to as string | null) ?? null,
     candidateUserId: String(data.candidate_id),
     job: job
       ? {
@@ -145,7 +146,7 @@ export async function getApplicationForUser(
         sender: {
           id: String(message.sender_id),
           name: sender?.full_name ?? null,
-          role: toAppRole(sender?.role as string | undefined),
+          role: toAppRole(sender?.role) ?? "CANDIDATE",
         },
       };
     }),
@@ -198,6 +199,7 @@ export async function listApplications(filters?: { status?: ApplicationStatus; j
           ? { headline: (cp.title as string | null) ?? null, location: (cp.location as string | null) ?? null }
           : null,
       },
+      assignedToId: (row.assigned_to as string | null) ?? null,
       _count: { messages: (countRow as { count?: number } | null)?.count ?? 0 },
     };
   });

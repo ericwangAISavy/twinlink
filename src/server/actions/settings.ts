@@ -5,7 +5,7 @@ import { fail, ok, type ActionResult } from "@/lib/action-result";
 import { createEmployeeInviteLink } from "@/server/actions/auth";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { inviteSchema, passwordSchema } from "@/lib/validations";
-import { requireRole, requireUser } from "@/server/authorization";
+import { requireStaff, requireUser } from "@/server/authorization";
 
 export async function changePassword(formData: FormData): Promise<ActionResult> {
   const user = await requireUser();
@@ -31,15 +31,27 @@ export async function changePassword(formData: FormData): Promise<ActionResult> 
 }
 
 export async function createEmployeeInvite(formData: FormData): Promise<ActionResult> {
-  const user = await requireRole("EMPLOYEE");
-  const parsed = inviteSchema.safeParse({ email: formData.get("email") });
+  const user = await requireStaff();
+  const parsed = inviteSchema.safeParse({
+    email: formData.get("email"),
+    name: formData.get("name") ?? "",
+    jobTitle: formData.get("jobTitle") ?? "",
+    department: formData.get("department") ?? "",
+    role: formData.get("role") || "employee",
+  });
   if (!parsed.success) {
     return fail(parsed.error.issues[0]?.message ?? "Enter a valid email");
   }
 
   try {
-    const url = await createEmployeeInviteLink(parsed.data.email, user.id);
+    const url = await createEmployeeInviteLink(parsed.data.email, user.id, {
+      name: parsed.data.name,
+      jobTitle: parsed.data.jobTitle,
+      department: parsed.data.department,
+      role: user.role === "ADMIN" && parsed.data.role === "admin" ? "admin" : "employee",
+    });
     revalidatePath("/dashboard/employee/settings");
+    revalidatePath("/admin/invitations");
     return ok(url);
   } catch {
     return fail("Unable to create invite.");

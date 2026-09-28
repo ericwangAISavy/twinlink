@@ -3,6 +3,7 @@
 import { useTransition } from "react";
 import { Bookmark } from "lucide-react";
 import { toast } from "sonner";
+import { Spinner } from "@/components/loading-spinner";
 import { Button } from "@/components/ui/button";
 import { toggleSavedJob } from "@/server/actions/jobs";
 
@@ -22,8 +23,8 @@ export function SaveJobButton({ jobId, saved }: { jobId: string; saved: boolean 
         });
       }}
     >
-      <Bookmark className={saved ? "fill-current" : ""} />
-      {saved ? "Saved" : "Save role"}
+      {pending ? <Spinner className="text-current" /> : <Bookmark className={saved ? "fill-current" : ""} />}
+      {pending ? "Saving…" : saved ? "Saved" : "Save role"}
     </Button>
   );
 }

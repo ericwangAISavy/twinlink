@@ -9,15 +9,34 @@ import { PortalToggle, type PortalRole } from "@/components/auth/portal-toggle";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Field } from "@/components/form-field";
+import { Spinner } from "@/components/loading-spinner";
+import { ACCOUNT_SETUP_ERROR, authErrorMessage, destinationAfterLogin, toAppRole } from "@/lib/roles";
 import { loginSchema } from "@/lib/validations";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-import { toAppRole } from "@/lib/supabase/mappers";
+import { confirmEmailAfterValidPassword, resolveLoginDestination } from "@/server/actions/auth";
+
+const LOGIN_ERRORS: Record<string, string> = {
+  account: ACCOUNT_SETUP_ERROR,
+  auth: "Sign-in could not be completed. Try again.",
+};
+
+function isNextRedirect(error: unknown) {
+  return (
+    typeof error === "object" &&
+    error !== null &&
+    "digest" in error &&
+    String((error as { digest?: string }).digest).startsWith("NEXT_REDIRECT")
+  );
+}
 
 export function LoginForm() {
   const router = useRouter();
   const params = useSearchParams();
   const [pending, startTransition] = useTransition();
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(() => {
+    const code = params.get("error");
+    return code ? (LOGIN_ERRORS[code] ?? null) : null;
+  });
   const [role, setRole] = useState<PortalRole>("candidate");
   const [showPassword, setShowPassword] = useState(false);
   const registered = params.get("registered") === "1";
@@ -40,30 +59,71 @@ export function LoginForm() {
           }
           try {
             const supabase = createBrowserSupabaseClient();
-            const { data, error: signError } = await supabase.auth.signInWithPassword({
+            let { data, error: signError } = await supabase.auth.signInWithPassword({
               email: parsed.data.email,
               password: parsed.data.password,
             });
+            const unconfirmed =
+              signError?.code === "email_not_confirmed" ||
+              /email not confirmed/i.test(signError?.message ?? "");
+            if (unconfirmed) {
+              const confirmed = await confirmEmailAfterValidPassword(
+                parsed.data.email,
+                parsed.data.password,
+              );
+              if (!confirmed.ok) {
+                setError(confirmed.error);
+                return;
+              }
+              ({ data, error: signError } = await supabase.auth.signInWithPassword({
+                email: parsed.data.email,
+                password: parsed.data.password,
+              }));
+            }
             if (signError || !data.user) {
-              setError(signError?.message ?? "Invalid email or password.");
+              setError(authErrorMessage(signError));
               return;
             }
-            const { data: profile } = await supabase
+
+            const { data: profile, error: profileError } = await supabase
               .from("profiles")
               .select("role")
               .eq("id", data.user.id)
               .maybeSingle();
+
+            if (profileError) {
+              const missingTable =
+                profileError.code === "PGRST205" || /schema cache|does not exist/i.test(profileError.message);
+              setError(
+                missingTable
+                  ? "The Twinlink database is not set up yet. Run the SQL migrations in Supabase, then try again."
+                  : profileError.message,
+              );
+              return;
+            }
+
             const appRole = toAppRole(profile?.role);
-            const home = appRole === "EMPLOYEE" ? "/dashboard/employee" : "/dashboard/candidate";
-            const safeCallback =
-              callbackUrl &&
-              callbackUrl.startsWith("/") &&
-              !callbackUrl.startsWith("//") &&
-              !callbackUrl.startsWith("/dashboard/");
-            router.push(safeCallback ? callbackUrl : home);
+            if (!appRole) {
+              setError(ACCOUNT_SETUP_ERROR);
+              return;
+            }
+
+            let path = destinationAfterLogin(appRole, callbackUrl);
+            try {
+              const destination = await resolveLoginDestination(callbackUrl);
+              if (destination.ok && destination.message) {
+                path = destination.message;
+              }
+            } catch {
+              // Session cookies can lag the server action. Client role from profiles is enough to route;
+              // middleware still enforces the database role.
+            }
+
+            router.push(path);
             router.refresh();
-          } catch {
-            setError("Unable to sign in.");
+          } catch (error) {
+            if (isNextRedirect(error)) throw error;
+            setError(error instanceof Error ? authErrorMessage(error) : "Unable to sign in.");
           }
         });
       }}
@@ -94,7 +154,6 @@ export function LoginForm() {
           autoComplete="current-password"
           placeholder="Enter your password"
           required
-          minLength={8}
           trailing={
             <button
               type="button"
@@ -123,8 +182,9 @@ export function LoginForm() {
         </p>
       ) : null}
       <Button type="submit" variant="teal" size="lg" className="w-full rounded-full" disabled={pending}>
+        {pending ? <Spinner className="text-current" /> : null}
         {pending ? "Signing in…" : "Sign in"}
-        <ArrowRight />
+        {pending ? null : <ArrowRight />}
       </Button>
       <div className="flex items-center gap-3 text-xs tracking-[0.2em] text-white/35 uppercase">
         <span className="h-px flex-1 bg-white/15" />

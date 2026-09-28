@@ -1,9 +1,9 @@
 "use client";
 
-import { signOutAction } from "@/server/actions/auth";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { Spinner } from "@/components/loading-spinner";
+import { cn } from "@/lib/utils";
 
 export function SignOutButton({
   className,
@@ -12,24 +12,21 @@ export function SignOutButton({
   className?: string;
   variant?: "outline" | "ghost" | "teal" | "default";
 }) {
-  const router = useRouter();
+  const [pending, setPending] = useState(false);
+
   return (
     <Button
       type="button"
       variant={variant}
       size="sm"
-      className={className}
-      onClick={async () => {
-        try {
-          const supabase = createBrowserSupabaseClient();
-          await supabase.auth.signOut();
-        } catch {
-          await signOutAction();
-        }
-        router.push("/");
-        router.refresh();
+      className={cn("whitespace-nowrap", className)}
+      disabled={pending}
+      onClick={() => {
+        setPending(true);
+        window.location.assign("/auth/sign-out");
       }}
     >
+      {pending ? <Spinner className="text-current" /> : null}
       Sign out
     </Button>
   );

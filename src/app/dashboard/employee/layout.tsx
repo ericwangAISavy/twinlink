@@ -19,7 +19,7 @@ export default async function EmployeeLayout({ children }: { children: React.Rea
         </Link>
         <p className="mt-1 text-xs text-white/50">Employee</p>
         <div className="mt-8">
-          <DashboardNav role={user.role} unread={unread} />
+          <DashboardNav role="EMPLOYEE" unread={unread} />
         </div>
         <div className="mt-8">
           <SignOutButton />

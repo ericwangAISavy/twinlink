@@ -2,6 +2,7 @@
 
 import { useState, useTransition, type ReactNode } from "react";
 import { toast } from "sonner";
+import { Spinner } from "@/components/loading-spinner";
 import { Button } from "@/components/ui/button";
 import type { ActionResult } from "@/lib/action-result";
 import { cn } from "@/lib/utils";
@@ -11,6 +12,7 @@ export function ActionForm({
   children,
   submitLabel = "Save",
   submitClassName,
+  hideSubmit = false,
   className,
   onSuccess,
 }: {
@@ -18,6 +20,7 @@ export function ActionForm({
   children: ReactNode;
   submitLabel?: string;
   submitClassName?: string;
+  hideSubmit?: boolean;
   className?: string;
   onSuccess?: (message?: string) => void;
 }) {
@@ -54,15 +57,20 @@ export function ActionForm({
         });
       }}
     >
-      {children}
+      <fieldset disabled={pending} className="min-w-0 border-0 p-0">
+        {children}
+      </fieldset>
       {error ? (
         <p className="mt-3 text-sm text-destructive" role="alert">
           {error}
         </p>
       ) : null}
-      <Button type="submit" className={cn("mt-4", submitClassName)} disabled={pending}>
-        {pending ? "Saving…" : submitLabel}
-      </Button>
+      {hideSubmit ? null : (
+        <Button type="submit" className={cn("mt-4", submitClassName)} disabled={pending}>
+          {pending ? <Spinner className="text-current" /> : null}
+          {pending ? "Saving…" : submitLabel}
+        </Button>
+      )}
     </form>
   );
 }

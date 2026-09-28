@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { fail, ok, type ActionResult } from "@/lib/action-result";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { companyProfileSchema } from "@/lib/validations";
-import { requireRole } from "@/server/authorization";
+import { requireStaff } from "@/server/authorization";
 
 function parseJsonCards(raw: string | undefined) {
   if (!raw) return [];
@@ -26,7 +26,7 @@ export async function updateCompanyAction(
 }
 
 export async function updateCompanyProfile(formData: FormData): Promise<ActionResult> {
-  await requireRole("EMPLOYEE");
+  await requireStaff();
   const parsed = companyProfileSchema.safeParse({
     name: formData.get("name"),
     tagline: formData.get("tagline") ?? "",
@@ -78,5 +78,6 @@ export async function updateCompanyProfile(formData: FormData): Promise<ActionRe
   revalidatePath("/");
   revalidatePath("/about");
   revalidatePath("/dashboard/employee/company");
+  revalidatePath("/admin/settings");
   return ok("Company profile saved.");
 }

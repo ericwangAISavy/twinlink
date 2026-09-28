@@ -34,8 +34,8 @@ export async function sendApplicationMessage(formData: FormData): Promise<Action
   if (!application) return fail("Thread not found.");
 
   const isCandidate = user.role === "CANDIDATE" && application.candidate_id === user.id;
-  const isEmployee = user.role === "EMPLOYEE";
-  if (!isCandidate && !isEmployee) {
+  const isStaff = user.role === "EMPLOYEE" || user.role === "ADMIN";
+  if (!isCandidate && !isStaff) {
     return fail("You cannot message this application.");
   }
 
@@ -54,7 +54,7 @@ export async function sendApplicationMessage(formData: FormData): Promise<Action
       title: "New message",
       body: `${user.name ?? "Someone"} sent a message about ${String(job?.title ?? "an application")}.`,
       href:
-        user.role === "EMPLOYEE"
+        isStaff
           ? `/dashboard/candidate/messages/${application.id}`
           : `/dashboard/employee/messages/${application.id}`,
     });

@@ -1,31 +1,34 @@
-import type { ApplicationStatus, ExperienceItem, JobStatus, Role } from "@/lib/types";
+import { toAppRole, toDbRole } from "@/lib/roles";
+import type { ApplicationStatus, ExperienceItem, JobStatus } from "@/lib/types";
 
-export function toAppRole(value: string | null | undefined): Role {
-  return value === "employee" ? "EMPLOYEE" : "CANDIDATE";
-}
-
-export function toDbRole(value: Role) {
-  return value === "EMPLOYEE" ? "employee" : "candidate";
-}
+export { toAppRole, toDbRole };
 
 export function toAppJobStatus(value: string | null | undefined): JobStatus {
   if (value === "published") return "PUBLISHED";
+  if (value === "paused") return "PAUSED";
   if (value === "closed") return "CLOSED";
+  if (value === "archived") return "ARCHIVED";
   return "DRAFT";
 }
 
 export function toDbJobStatus(value: string) {
   const normalized = value.toLowerCase();
   if (normalized === "published") return "published";
+  if (normalized === "paused") return "paused";
   if (normalized === "closed") return "closed";
+  if (normalized === "archived") return "archived";
   return "draft";
 }
 
 const APPLICATION_STATUS_FROM_DB: Record<string, ApplicationStatus> = {
   submitted: "SUBMITTED",
   under_review: "REVIEWING",
+  reviewing: "REVIEWING",
+  shortlisted: "SHORTLISTED",
   interview: "INTERVIEW",
   accepted: "OFFER",
+  offer: "OFFER",
+  hired: "HIRED",
   rejected: "REJECTED",
   withdrawn: "WITHDRAWN",
 };
@@ -33,8 +36,10 @@ const APPLICATION_STATUS_FROM_DB: Record<string, ApplicationStatus> = {
 const APPLICATION_STATUS_TO_DB: Record<ApplicationStatus, string> = {
   SUBMITTED: "submitted",
   REVIEWING: "under_review",
+  SHORTLISTED: "shortlisted",
   INTERVIEW: "interview",
-  OFFER: "accepted",
+  OFFER: "offer",
+  HIRED: "hired",
   REJECTED: "rejected",
   WITHDRAWN: "withdrawn",
 };

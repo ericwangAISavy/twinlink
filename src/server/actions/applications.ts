@@ -5,7 +5,7 @@ import { fail, ok, type ActionResult } from "@/lib/action-result";
 import { firstRecord, toDbApplicationStatus } from "@/lib/supabase/mappers";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { applicationStatusSchema, applySchema } from "@/lib/validations";
-import { requireRole } from "@/server/authorization";
+import { requireRole, requireStaff } from "@/server/authorization";
 
 export async function applyToJob(formData: FormData): Promise<ActionResult> {
   const user = await requireRole("CANDIDATE");
@@ -52,13 +52,22 @@ export async function applyToJob(formData: FormData): Promise<ActionResult> {
     href: `/dashboard/employee/applicants/${application.id}`,
   });
 
+  const { logActivity } = await import("@/server/queries/admin");
+  await logActivity({
+    actorId: user.id,
+    action: "Candidate applied",
+    entityType: "application",
+    entityId: application.id,
+  });
+
   revalidatePath(`/careers/${job.slug}`);
   revalidatePath("/dashboard/candidate/applications");
+  revalidatePath("/admin/applications");
   return ok("Application submitted.");
 }
 
 export async function updateApplicationStatus(formData: FormData): Promise<ActionResult> {
-  await requireRole("EMPLOYEE");
+  await requireStaff();
   const parsed = applicationStatusSchema.safeParse({
     applicationId: formData.get("applicationId"),
     status: formData.get("status"),

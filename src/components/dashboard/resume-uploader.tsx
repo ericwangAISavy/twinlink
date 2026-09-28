@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
+import { Spinner } from "@/components/loading-spinner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -49,6 +50,7 @@ export function ResumeUploader({ configured }: { configured: boolean }) {
       </label>
       <Input id="file" name="file" type="file" accept=".pdf,.doc,.docx,application/pdf" required />
       <Button type="submit" disabled={busy}>
+        {busy ? <Spinner className="text-current" /> : null}
         {busy ? "Uploading…" : "Upload resume"}
       </Button>
     </form>
