@@ -1,3 +1,4 @@
+import { ALL_HIRING_STAGES, HIRING_STAGE_LABELS } from "@/lib/hiring-stages";
 import type { ApplicationStatus, JobStatus, Role } from "@/lib/types";
 
 export const APP_NAME = "TwinLink";
@@ -16,16 +17,7 @@ export const JOB_STATUSES = [
   "ARCHIVED",
 ] as const satisfies readonly JobStatus[];
 
-export const APPLICATION_STATUSES = [
-  "SUBMITTED",
-  "REVIEWING",
-  "SHORTLISTED",
-  "INTERVIEW",
-  "OFFER",
-  "HIRED",
-  "REJECTED",
-  "WITHDRAWN",
-] as const satisfies readonly ApplicationStatus[];
+export const APPLICATION_STATUSES = ALL_HIRING_STAGES satisfies readonly ApplicationStatus[];
 
 export const EMPLOYMENT_TYPES = [
   "Full-time",
@@ -42,16 +34,7 @@ export const JOB_STATUS_LABELS: Record<JobStatus, string> = {
   ARCHIVED: "Archived",
 };
 
-export const APPLICATION_STATUS_LABELS: Record<ApplicationStatus, string> = {
-  SUBMITTED: "Submitted",
-  REVIEWING: "Reviewing",
-  SHORTLISTED: "Shortlisted",
-  INTERVIEW: "Interview",
-  OFFER: "Offer",
-  HIRED: "Hired",
-  REJECTED: "Rejected",
-  WITHDRAWN: "Withdrawn",
-};
+export const APPLICATION_STATUS_LABELS: Record<ApplicationStatus, string> = HIRING_STAGE_LABELS;
 
 export const DEFAULT_COMPANY = {
   id: "singleton",

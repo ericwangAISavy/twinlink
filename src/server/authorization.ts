@@ -19,6 +19,7 @@ export type TrustedProfile = {
   fullName: string | null;
   avatarUrl: string | null;
   role: UserRole;
+  accessStatus: "pending" | "approved";
 };
 
 export type CurrentAuth = {
@@ -33,6 +34,7 @@ type ProfileRow = {
   full_name: string | null;
   role: string | null;
   avatar_url: string | null;
+  access_status?: string | null;
 };
 
 export const getCurrentProfile = cache(async (): Promise<CurrentAuth | null> => {
@@ -44,11 +46,19 @@ export const getCurrentProfile = cache(async (): Promise<CurrentAuth | null> => 
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  const { data: profile } = await supabase
+  let profileResult = await supabase
     .from("profiles")
-    .select("id, email, full_name, role, avatar_url")
+    .select("id, email, full_name, role, avatar_url, access_status")
     .eq("id", user.id)
     .maybeSingle<ProfileRow>();
+  if (profileResult.error && /access_status/i.test(profileResult.error.message)) {
+    profileResult = await supabase
+      .from("profiles")
+      .select("id, email, full_name, role, avatar_url")
+      .eq("id", user.id)
+      .maybeSingle<ProfileRow>();
+  }
+  const profile = profileResult.data;
 
   const userRole = parseUserRole(profile?.role);
   const role = toAppRole(userRole);
@@ -70,6 +80,7 @@ export const getCurrentProfile = cache(async (): Promise<CurrentAuth | null> => 
       fullName: appUser.name,
       avatarUrl: appUser.image ?? null,
       role: userRole,
+      accessStatus: profile.access_status === "pending" ? "pending" : "approved",
     },
     role,
   };
@@ -88,6 +99,9 @@ export async function auth() {
 export async function requireAuth() {
   const auth = await getCurrentProfile();
   if (!auth) redirect("/login");
+  if (auth.role === "CANDIDATE" && auth.profile.accessStatus === "pending") {
+    redirect("/auth/sign-out?reason=approval");
+  }
   return auth;
 }
 

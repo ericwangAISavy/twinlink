@@ -1,28 +1,25 @@
 import { Bookmark, Briefcase, ClipboardList, Inbox } from "lucide-react";
-import { CareerResourcesCard } from "@/components/dashboard/candidate/career-resources-card";
 import { DashboardStatCard } from "@/components/dashboard/candidate/dashboard-stat-card";
 import { DashboardWelcomeCard } from "@/components/dashboard/candidate/dashboard-welcome-card";
-import { JobAlertsCard } from "@/components/dashboard/candidate/job-alerts-card";
-import { MessagesCard } from "@/components/dashboard/candidate/messages-card";
 import { ProfileCompletionCard } from "@/components/dashboard/candidate/profile-completion-card";
 import { RecentApplicationsCard } from "@/components/dashboard/candidate/recent-applications-card";
 import { RecommendedJobsCard } from "@/components/dashboard/candidate/recommended-jobs-card";
 import { getProfileCompletion } from "@/lib/candidate-profile";
+import { isActiveStage } from "@/lib/hiring-stages";
 import { requireRole } from "@/server/authorization";
 import { getCandidateApplications, getSavedJobs } from "@/server/queries/applications";
 import { getPublishedJobs } from "@/server/queries/jobs";
-import { getMessageThreads, getUnreadNotifications } from "@/server/queries/messages";
+import { getUnreadNotifications } from "@/server/queries/messages";
 import { getCandidateProfile } from "@/server/queries/profiles";
 
 export default async function CandidateOverviewPage() {
   const user = await requireRole("CANDIDATE");
-  const [applications, notifications, profileRecord, saved, jobs, threads] = await Promise.all([
+  const [applications, notifications, profileRecord, saved, jobs] = await Promise.all([
     getCandidateApplications(user.id),
     getUnreadNotifications(user.id),
     getCandidateProfile(user.id),
     getSavedJobs(user.id),
     getPublishedJobs(),
-    getMessageThreads(user.id, "CANDIDATE"),
   ]);
 
   const profile = profileRecord?.candidateProfile;
@@ -44,28 +41,16 @@ export default async function CandidateOverviewPage() {
       id: job.id,
       slug: job.slug,
       title: job.title,
+      department: job.department,
       location: job.location,
       employmentType: job.employmentType,
+      publishedAt: job.publishedAt,
       saved: savedIds.has(job.id),
     }));
 
   const unread = notifications.filter((item) => !item.read);
-  const activeCount = applications.filter((item) => !["REJECTED", "WITHDRAWN"].includes(item.status)).length;
-  const messagePreviews = unread.slice(0, 4).map((item) => ({
-    id: item.id,
-    title: item.title,
-    body: item.body,
-    href: item.href ?? "/dashboard/candidate/messages",
-  }));
-  const threadFallback =
-    messagePreviews.length === 0
-      ? threads.slice(0, 3).map((thread) => ({
-          id: thread.id,
-          title: thread.job.title || "Application conversation",
-          body: thread.messages[0]?.body ?? "",
-          href: `/dashboard/candidate/messages/${thread.id}`,
-        }))
-      : messagePreviews;
+  const activeApplications = applications.filter((item) => isActiveStage(item.status));
+  const activeCount = activeApplications.length;
 
   return (
     <div className="space-y-6">
@@ -98,18 +83,12 @@ export default async function CandidateOverviewPage() {
         />
       </section>
 
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.6fr)_minmax(280px,0.9fr)]">
-        <div className="space-y-6">
-          <RecentApplicationsCard items={applications.slice(0, 6)} />
-          <RecommendedJobsCard items={recommended} />
-        </div>
-        <div className="space-y-6">
-          <ProfileCompletionCard percent={completion.percent} items={completion.items} />
-          <MessagesCard items={threadFallback} />
-          <JobAlertsCard />
-          <CareerResourcesCard />
-        </div>
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.45fr)_minmax(280px,0.75fr)]">
+        <RecentApplicationsCard items={activeApplications.slice(0, 4)} />
+        <ProfileCompletionCard percent={completion.percent} items={completion.items} />
       </div>
+
+      <RecommendedJobsCard items={recommended} />
     </div>
   );
 }

@@ -6,20 +6,16 @@ import { AdminStatusBadge } from "@/components/admin/admin-status-badge";
 import { AdminTable } from "@/components/admin/admin-table";
 import { AdminTrendChart } from "@/components/admin/admin-trend-chart";
 import { Button } from "@/components/ui/button";
+import { HIRING_STAGES } from "@/lib/hiring-stages";
 import { APPLICATION_STATUS_LABELS } from "@/lib/constants";
-import type { ApplicationStatus } from "@/lib/types";
 import { formatDate, formatDateTime } from "@/lib/utils";
 import { requireAdmin } from "@/server/authorization";
 import { getAdminOverview } from "@/server/queries/admin";
 
-const PIPELINE_ORDER: { status: ApplicationStatus; color: string }[] = [
-  { status: "SUBMITTED", color: "#c4a574" },
-  { status: "REVIEWING", color: "#d8c09a" },
-  { status: "SHORTLISTED", color: "#ead9b8" },
-  { status: "INTERVIEW", color: "#c5bdd8" },
-  { status: "OFFER", color: "#b7c9b0" },
-  { status: "HIRED", color: "#8fbfb0" },
-];
+const PIPELINE_ORDER = HIRING_STAGES.map((status, index) => ({
+  status,
+  color: `rgba(196, 165, 116, ${0.28 + index * 0.09})`,
+}));
 
 function greeting(name: string | null) {
   const hour = new Date().getHours();

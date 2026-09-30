@@ -69,7 +69,7 @@ export function CandidateTopbar({
           </span>
         </Button>
 
-        <p className="hidden text-sm text-muted-foreground sm:block">{title}</p>
+        <p className="hidden text-base font-medium text-[#1c1916] sm:block">{title}</p>
 
         <form action="/dashboard/candidate/jobs" method="get" className="relative ml-auto hidden min-w-0 flex-1 max-w-md md:block">
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
@@ -96,7 +96,7 @@ export function CandidateTopbar({
             <DropdownMenuTrigger asChild>
               <button
                 type="button"
-                className="flex items-center gap-2 rounded-full py-1 pl-1 pr-2 text-left hover:bg-[#f4efe6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="flex cursor-pointer items-center gap-2 rounded-full py-1 pl-1 pr-2 text-left transition-colors hover:bg-[#eadfcd] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent data-[state=open]:bg-[#eadfcd]"
               >
                 <Avatar className="size-9">
                   {image ? <AvatarImage src={image} alt="" /> : null}

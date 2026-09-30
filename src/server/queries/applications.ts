@@ -3,6 +3,7 @@ import "server-only";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { filenameFromPath, firstRecord, parseExperiences, toAppApplicationStatus, toAppJobStatus, toAppRole } from "@/lib/supabase/mappers";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import type { CandidateBoardApplication } from "@/lib/candidate-applications";
 import type { ApplicationStatus } from "@/lib/types";
 import { getSavedJobIds as getSavedFromJobs, getSavedJobs as getSavedJobsFromJobs } from "@/server/queries/jobs";
 
@@ -32,10 +33,114 @@ export async function getCandidateApplication(jobId: string, candidateUserId: st
     id: data.id as string,
     jobId: data.job_id as string,
     candidateUserId: data.candidate_id as string,
-    status: toAppApplicationStatus(data.status as string),
+    status: toAppApplicationStatus(String(data.current_stage ?? data.status)),
     coverLetter: data.cover_letter as string | null,
     createdAt: data.created_at as string,
   };
+}
+
+export type { CandidateBoardApplication } from "@/lib/candidate-applications";
+
+export async function getCandidateApplicationBoard(candidateUserId: string): Promise<CandidateBoardApplication[]> {
+  if (!isSupabaseConfigured()) return [];
+  const supabase = await createServerSupabaseClient();
+  const { data } = await supabase
+    .from("applications")
+    .select("*, jobs(id, slug, title, location, department, employment_type, workplace_type)")
+    .eq("candidate_id", candidateUserId)
+    .order("created_at", { ascending: false });
+  const rows = data ?? [];
+  if (rows.length === 0) return [];
+
+  const ids = rows.map((row) => String(row.id));
+  const [{ data: history }, { data: messages }] = await Promise.all([
+    supabase
+      .from("application_stage_history")
+      .select("id, application_id, from_stage, to_stage, candidate_visible_label, candidate_visible_message, changed_at")
+      .in("application_id", ids)
+      .order("changed_at", { ascending: true }),
+    supabase
+      .from("messages")
+      .select("id, application_id, body, created_at, sender_id")
+      .in("application_id", ids)
+      .order("created_at", { ascending: true }),
+  ]);
+
+  const senderIds = [...new Set((messages ?? []).map((item) => String(item.sender_id)))];
+  const { data: senders } = senderIds.length
+    ? await supabase.from("profiles").select("id, full_name").in("id", senderIds)
+    : { data: [] };
+  const senderMap = new Map((senders ?? []).map((item) => [item.id, item.full_name as string | null]));
+
+  const interviewPairs = await Promise.all(
+    ids.map(async (id) => {
+      const { data: interviews } = await supabase.rpc("list_my_interviews", { target_application_id: id });
+      return [id, (interviews ?? []) as Array<Record<string, unknown>>] as const;
+    }),
+  );
+  const interviewMap = new Map(interviewPairs);
+
+  const resumeCache = new Map<string, { url: string; filename: string } | null>();
+  async function resumeFor(path: string | null) {
+    const key = path ?? "";
+    if (resumeCache.has(key)) return resumeCache.get(key) ?? null;
+    const signed = await signResume(path);
+    resumeCache.set(key, signed);
+    return signed;
+  }
+
+  return Promise.all(
+    rows.map(async (row) => {
+      const id = String(row.id);
+      const job = firstRecord(row.jobs);
+      return {
+        id,
+        status: toAppApplicationStatus(String(row.current_stage ?? row.status)),
+        createdAt: String(row.created_at),
+        updatedAt: String(row.updated_at),
+        coverLetter: (row.cover_letter as string | null) ?? null,
+        resume: await resumeFor((row.resume_url as string | null) ?? null),
+        job: {
+          id: String(job?.id ?? ""),
+          slug: String(job?.slug ?? ""),
+          title: String(job?.title ?? "Role"),
+          location: (job?.location as string | null) ?? null,
+          department: (job?.department as string | null) ?? null,
+          employmentType: (job?.employment_type as string | null) ?? null,
+          workplaceType: (job?.workplace_type as string | null) ?? null,
+        },
+        history: (history ?? [])
+          .filter((item) => String(item.application_id) === id)
+          .map((item) => ({
+            id: String(item.id),
+            fromStage: (item.from_stage as string | null) ?? null,
+            toStage: String(item.to_stage),
+            label: String(item.candidate_visible_label),
+            message: (item.candidate_visible_message as string | null) ?? null,
+            changedAt: String(item.changed_at),
+          })),
+        interviews: (interviewMap.get(id) ?? []).map((item) => ({
+          id: String(item.id),
+          interviewType: String(item.interview_type ?? "video"),
+          scheduledAt: String(item.scheduled_at),
+          scheduledEnd: (item.scheduled_end as string | null) ?? null,
+          timezone: (item.timezone as string | null) ?? null,
+          meetingLocation: (item.meeting_location as string | null) ?? null,
+          meetingUrl: (item.meeting_url as string | null) ?? null,
+          instructions: (item.candidate_instructions as string | null) ?? null,
+          status: String(item.status ?? "scheduled"),
+        })),
+        messages: (messages ?? [])
+          .filter((item) => String(item.application_id) === id)
+          .map((item) => ({
+            id: String(item.id),
+            body: String(item.body),
+            createdAt: String(item.created_at),
+            senderName: senderMap.get(String(item.sender_id)) ?? null,
+          })),
+      };
+    }),
+  );
 }
 
 export async function getCandidateApplications(candidateUserId: string) {
@@ -43,7 +148,7 @@ export async function getCandidateApplications(candidateUserId: string) {
   const supabase = await createServerSupabaseClient();
   const { data } = await supabase
     .from("applications")
-    .select("*, jobs(id, slug, title, location, employment_type, status), messages(count)")
+    .select("*, jobs(id, slug, title, location, department, employment_type, workplace_type, status), messages(count)")
     .eq("candidate_id", candidateUserId)
     .order("updated_at", { ascending: false });
 
@@ -52,7 +157,7 @@ export async function getCandidateApplications(candidateUserId: string) {
     const countRow = Array.isArray(row.messages) ? row.messages[0] : row.messages;
     return {
       id: String(row.id),
-      status: toAppApplicationStatus(String(row.status)),
+      status: toAppApplicationStatus(String(row.current_stage ?? row.status)),
       createdAt: String(row.created_at),
       updatedAt: String(row.updated_at),
       job: {
@@ -60,7 +165,9 @@ export async function getCandidateApplications(candidateUserId: string) {
         slug: String(job?.slug ?? ""),
         title: String(job?.title ?? ""),
         location: (job?.location as string | null) ?? null,
+        department: (job?.department as string | null) ?? null,
         employmentType: (job?.employment_type as string | null) ?? null,
+        workplaceType: (job?.workplace_type as string | null) ?? null,
         status: toAppJobStatus(String(job?.status ?? "draft")),
       },
       _count: { messages: (countRow as { count?: number } | null)?.count ?? 0 },
@@ -105,12 +212,38 @@ export async function getApplicationForUser(
     : { data: [] };
   const senderMap = new Map((senders ?? []).map((item) => [item.id, item]));
   const resumeFile = await signResume((candidateProfile?.resume_url as string | null) ?? (data.resume_url as string | null));
+  const { data: history } = await supabase
+    .from("application_stage_history")
+    .select("id, from_stage, to_stage, candidate_visible_label, candidate_visible_message, changed_at")
+    .eq("application_id", applicationId)
+    .order("changed_at", { ascending: true });
+  const interviewSelect =
+    "id, interview_type, scheduled_at, scheduled_end, timezone, meeting_location, meeting_url, candidate_instructions, status";
+  const interviewQuery =
+    role === "CANDIDATE"
+      ? await supabase.rpc("list_my_interviews", { target_application_id: applicationId })
+      : await supabase
+          .from("interviews")
+          .select(interviewSelect)
+          .eq("application_id", applicationId)
+          .order("scheduled_at", { ascending: true });
+  const fallbackInterviews =
+    interviewQuery.error && role !== "CANDIDATE"
+      ? await supabase
+          .from("interviews")
+          .select("id, interview_type, scheduled_at, meeting_url, status")
+          .eq("application_id", applicationId)
+          .order("scheduled_at", { ascending: true })
+      : null;
+  const interviewRows = ((fallbackInterviews?.data ?? interviewQuery.data ?? []) as Array<Record<string, unknown>>);
 
   return {
     id: String(data.id),
-    status: toAppApplicationStatus(String(data.status)),
+    status: toAppApplicationStatus(String(data.current_stage ?? data.status)),
     coverLetter: (data.cover_letter as string | null) ?? null,
     createdAt: String(data.created_at),
+    updatedAt: String(data.updated_at),
+    resumeUrl: resumeFile,
     assignedToId: (data.assigned_to as string | null) ?? null,
     candidateUserId: String(data.candidate_id),
     job: job
@@ -119,11 +252,23 @@ export async function getApplicationForUser(
           slug: String(job.slug),
           title: String(job.title),
           location: (job.location as string | null) ?? null,
+          department: (job.department as string | null) ?? null,
           employmentType: (job.employment_type as string | null) ?? null,
+          workplaceType: (job.workplace_type as string | null) ?? null,
           description: String(job.description ?? ""),
           postedById: String(job.created_by),
         }
-      : { id: "", slug: "", title: "", location: null, employmentType: null, description: "", postedById: "" },
+      : {
+          id: "",
+          slug: "",
+          title: "",
+          location: null,
+          department: null,
+          employmentType: null,
+          workplaceType: null,
+          description: "",
+          postedById: "",
+        },
     candidate: {
       id: String(data.candidate_id),
       name: profile?.full_name ?? null,
@@ -132,6 +277,7 @@ export async function getApplicationForUser(
         ? {
             headline: (candidateProfile.title as string | null) ?? null,
             location: (candidateProfile.location as string | null) ?? null,
+            skills: (candidateProfile.skills as string[] | null) ?? [],
             resumeFile,
             experiences: parseExperiences(candidateProfile.experience),
           }
@@ -150,6 +296,25 @@ export async function getApplicationForUser(
         },
       };
     }),
+    history: (history ?? []).map((item) => ({
+      id: String(item.id),
+      fromStage: (item.from_stage as string | null) ?? null,
+      toStage: String(item.to_stage),
+      label: String(item.candidate_visible_label),
+      message: (item.candidate_visible_message as string | null) ?? null,
+      changedAt: String(item.changed_at),
+    })),
+    interviews: interviewRows.map((row) => ({
+      id: String(row.id),
+      interviewType: String(row.interview_type ?? "video"),
+      scheduledAt: String(row.scheduled_at),
+      scheduledEnd: (row.scheduled_end as string | null) ?? null,
+      timezone: (row.timezone as string | null) ?? null,
+      meetingLocation: (row.meeting_location as string | null) ?? null,
+      meetingUrl: (row.meeting_url as string | null) ?? null,
+      instructions: (row.candidate_instructions as string | null) ?? null,
+      status: String(row.status ?? "scheduled"),
+    })),
   };
 }
 
@@ -184,8 +349,9 @@ export async function listApplications(filters?: { status?: ApplicationStatus; j
     const countRow = Array.isArray(row.messages) ? row.messages[0] : row.messages;
     return {
       id: String(row.id),
-      status: toAppApplicationStatus(String(row.status)),
+      status: toAppApplicationStatus(String(row.current_stage ?? row.status)),
       createdAt: String(row.created_at),
+      updatedAt: String(row.updated_at),
       job: {
         id: String(job?.id ?? ""),
         title: String(job?.title ?? ""),

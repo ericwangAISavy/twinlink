@@ -1,5 +1,6 @@
 import "server-only";
 
+import { ALL_HIRING_STAGES } from "@/lib/hiring-stages";
 import { toAppApplicationStatus, toAppJobStatus } from "@/lib/supabase/mappers";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
@@ -210,16 +211,7 @@ function emptyOverview() {
 }
 
 function emptyPipeline(): Record<ApplicationStatus, number> {
-  return {
-    SUBMITTED: 0,
-    REVIEWING: 0,
-    SHORTLISTED: 0,
-    INTERVIEW: 0,
-    OFFER: 0,
-    HIRED: 0,
-    REJECTED: 0,
-    WITHDRAWN: 0,
-  };
+  return Object.fromEntries(ALL_HIRING_STAGES.map((stage) => [stage, 0])) as Record<ApplicationStatus, number>;
 }
 
 export type AdminActivity = {
@@ -286,9 +278,14 @@ export async function getAdminCandidates(query?: string) {
     .from("candidate_profiles")
     .select("user_id, title, location, skills, resume_url");
   const ids = (profiles ?? []).map((item) => String(item.user_id));
-  const { data: users } = ids.length
-    ? await supabase.from("profiles").select("id, email, full_name, created_at, updated_at").in("id", ids)
-    : { data: [] };
+  const usersQuery = ids.length
+    ? await supabase.from("profiles").select("id, email, full_name, created_at, updated_at, access_status").in("id", ids)
+    : { data: [], error: null };
+  const users = usersQuery.error
+    ? (
+        await supabase.from("profiles").select("id, email, full_name, created_at, updated_at").in("id", ids)
+      ).data
+    : usersQuery.data;
   const { data: apps } = ids.length
     ? await supabase.from("applications").select("id, candidate_id, status").in("candidate_id", ids)
     : { data: [] };
@@ -305,8 +302,10 @@ export async function getAdminCandidates(query?: string) {
       skills: (profile.skills as string[]) ?? [],
       applications: related.length,
       updatedAt: String(user?.updated_at ?? user?.created_at ?? ""),
+      accessStatus: user && "access_status" in user && user.access_status === "pending" ? "pending" : "approved",
     };
   });
+  rows.sort((a, b) => Number(a.accessStatus === "approved") - Number(b.accessStatus === "approved"));
   const q = query?.trim().toLowerCase();
   if (!q) return rows;
   return rows.filter(

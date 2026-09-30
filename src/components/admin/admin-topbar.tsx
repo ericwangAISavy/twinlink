@@ -51,7 +51,7 @@ export function AdminTopbar({
             <DropdownMenuTrigger asChild>
               <button
                 type="button"
-                className="flex items-center gap-2 rounded-full py-1 pr-2 pl-1 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c4a574]"
+                className="flex cursor-pointer items-center gap-2 rounded-full py-1 pr-2 pl-1 transition-colors hover:bg-[#eadfcd] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c4a574] data-[state=open]:bg-[#eadfcd]"
               >
                 <Avatar className="size-8">
                   {image ? <AvatarImage src={image} alt="" /> : null}

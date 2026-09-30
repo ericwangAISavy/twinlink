@@ -7,6 +7,12 @@ async function signOutAndRedirect(request: NextRequest) {
   if (request.nextUrl.searchParams.get("reason") === "account") {
     login.searchParams.set("error", "account");
   }
+  if (request.nextUrl.searchParams.get("registered") === "1") {
+    login.searchParams.set("registered", "1");
+  }
+  if (request.nextUrl.searchParams.get("reason") === "approval") {
+    login.searchParams.set("error", "approval");
+  }
 
   const response = NextResponse.redirect(login, { status: 303 });
 

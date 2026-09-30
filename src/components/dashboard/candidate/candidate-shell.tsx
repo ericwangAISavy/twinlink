@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { CandidateSidebar } from "@/components/dashboard/candidate/candidate-sidebar";
 import { CandidateTopbar } from "@/components/dashboard/candidate/candidate-topbar";
+import { MainPanelLoading } from "@/components/loading-spinner";
 
 export function CandidateShell({
   user,
@@ -13,7 +15,13 @@ export function CandidateShell({
   unread: number;
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [navigating, setNavigating] = useState(false);
+
+  useEffect(() => {
+    setNavigating(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (!open) return;
@@ -26,8 +34,8 @@ export function CandidateShell({
 
   return (
     <div className="min-h-screen bg-[#f3eee6] text-[#1c1916]">
-      <aside className="fixed inset-y-0 left-0 z-40 hidden w-[272px] border-r border-[#eadfcd] bg-white px-5 py-6 lg:block">
-        <CandidateSidebar unread={unread} />
+      <aside className="fixed inset-y-0 left-0 z-40 hidden w-[248px] border-r border-[#2a241e] bg-[#161310] px-4 py-6 text-[#f4efe6] lg:block">
+        <CandidateSidebar unread={unread} onPending={() => setNavigating(true)} />
       </aside>
 
       {open ? (
@@ -38,13 +46,17 @@ export function CandidateShell({
             aria-label="Close navigation"
             onClick={() => setOpen(false)}
           />
-          <aside className="absolute inset-y-0 left-0 w-[min(88vw,272px)] border-r border-[#eadfcd] bg-white px-5 py-6 shadow-xl">
-            <CandidateSidebar unread={unread} onNavigate={() => setOpen(false)} />
+          <aside className="absolute inset-y-0 left-0 w-[min(88vw,248px)] border-r border-[#2a241e] bg-[#161310] px-4 py-6 text-[#f4efe6] shadow-xl">
+            <CandidateSidebar
+              unread={unread}
+              onNavigate={() => setOpen(false)}
+              onPending={() => setNavigating(true)}
+            />
           </aside>
         </div>
       ) : null}
 
-      <div className="lg:pl-[272px]">
+      <div className="lg:pl-[248px]">
         <CandidateTopbar
           name={user.name}
           email={user.email}
@@ -52,7 +64,9 @@ export function CandidateShell({
           unread={unread}
           onMenuClick={() => setOpen(true)}
         />
-        <main className="px-4 py-6 sm:px-6 lg:px-8 lg:py-8">{children}</main>
+        <main className="px-4 py-6 sm:px-6 lg:px-8 lg:py-8" aria-busy={navigating}>
+          {navigating ? <MainPanelLoading /> : children}
+        </main>
       </div>
     </div>
   );

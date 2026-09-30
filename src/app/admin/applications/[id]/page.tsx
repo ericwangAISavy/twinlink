@@ -5,7 +5,7 @@ import { AdminInterviewForm } from "@/components/admin/admin-interview-form";
 import { AdminNoteForm } from "@/components/admin/admin-note-form";
 import { AdminPageHeader } from "@/components/admin/admin-page-header";
 import { AdminStatusBadge } from "@/components/admin/admin-status-badge";
-import { AdminStatusForm } from "@/components/admin/admin-status-form";
+import { AdminStageForm } from "@/components/admin/admin-stage-form";
 import { MessageForm } from "@/components/dashboard/message-form";
 import { formatDate, formatDateTime } from "@/lib/utils";
 import { getAdminEmployees, getApplicationInternals } from "@/server/queries/admin";
@@ -41,6 +41,18 @@ export default async function AdminApplicationDetailPage({ params }: { params: P
               <div>
                 <dt className="text-muted-foreground">Location</dt>
                 <dd>{profile?.location ?? "—"}</dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground">Skills</dt>
+                <dd>{profile?.skills?.length ? profile.skills.join(", ") : "—"}</dd>
+              </div>
+              <div className="sm:col-span-2">
+                <dt className="text-muted-foreground">Experience</dt>
+                <dd>
+                  {profile?.experiences?.length
+                    ? profile.experiences.map((item) => `${item.title} · ${item.company}`).join("; ")
+                    : "—"}
+                </dd>
               </div>
               <div>
                 <dt className="text-muted-foreground">Resume</dt>
@@ -86,8 +98,8 @@ export default async function AdminApplicationDetailPage({ params }: { params: P
         </section>
         <aside className="space-y-6">
           <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
-            <h2 className="font-serif text-xl">Change status</h2>
-            <AdminStatusForm applicationId={application.id} status={application.status} />
+            <h2 className="font-serif text-xl">Hiring stage</h2>
+            <AdminStageForm applicationId={application.id} stage={application.status} />
           </div>
           <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
             <h2 className="font-serif text-xl">Assignment</h2>
@@ -113,15 +125,14 @@ export default async function AdminApplicationDetailPage({ params }: { params: P
             </div>
           </div>
           <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
-            <h2 className="font-serif text-xl">Status history</h2>
+            <h2 className="font-serif text-xl">Stage history</h2>
             <ul className="mt-3 space-y-2 text-sm">
-              {internals.events.length === 0 ? <li className="text-muted-foreground">No status changes yet.</li> : null}
-              {internals.events.map((event) => (
+              {application.history.length === 0 ? <li className="text-muted-foreground">No stage changes yet.</li> : null}
+              {application.history.map((event) => (
                 <li key={event.id}>
-                  {event.fromStatus ?? "—"} → {event.toStatus ?? "—"}
-                  <span className="block text-xs text-muted-foreground">
-                    {event.actor} · {formatDateTime(event.createdAt)}
-                  </span>
+                  {event.fromStage ?? "—"} → {event.toStage}
+                  <span className="block text-xs text-muted-foreground">{event.label} · {formatDateTime(event.changedAt)}</span>
+                  {event.message ? <span className="block text-xs text-muted-foreground">{event.message}</span> : null}
                 </li>
               ))}
             </ul>

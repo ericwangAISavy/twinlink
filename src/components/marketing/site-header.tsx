@@ -2,15 +2,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getCurrentUser } from "@/server/authorization";
 import { Button } from "@/components/ui/button";
+import { SiteNav } from "@/components/marketing/site-nav";
 import { TwinlinkMark } from "@/components/marketing/twinlink-mark";
-
-const NAV = [
-  { href: "/about", label: "About" },
-  { href: "/#solutions", label: "Solutions" },
-  { href: "/#people", label: "Engineering Network" },
-  { href: "/careers", label: "Careers" },
-  { href: "/#insights", label: "Insights" },
-] as const;
 
 export async function SiteHeader() {
   const user = await getCurrentUser();
@@ -22,13 +15,7 @@ export async function SiteHeader() {
           <TwinlinkMark className="size-7" />
           <span className="font-serif text-2xl tracking-wide">Twinlink</span>
         </Link>
-        <nav className="hidden items-center gap-7 text-sm text-white/75 lg:flex" aria-label="Primary">
-          {NAV.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-[#e8d5a3]">
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <SiteNav />
         <div className="flex items-center gap-2">
           {user ? (
             <Button asChild size="sm" variant="teal" className="rounded-full">
