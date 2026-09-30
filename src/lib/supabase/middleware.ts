@@ -64,7 +64,7 @@ export async function updateSession(request: NextRequest) {
       .select("access_status")
       .eq("id", user.id)
       .maybeSingle();
-    if (!error && access?.access_status === "pending") return "PENDING" as const;
+    if (error || access?.access_status !== "approved") return "PENDING" as const;
     return role;
   }
 

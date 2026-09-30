@@ -80,7 +80,7 @@ export const getCurrentProfile = cache(async (): Promise<CurrentAuth | null> => 
       fullName: appUser.name,
       avatarUrl: appUser.image ?? null,
       role: userRole,
-      accessStatus: profile.access_status === "pending" ? "pending" : "approved",
+      accessStatus: profile.access_status === "approved" ? "approved" : "pending",
     },
     role,
   };

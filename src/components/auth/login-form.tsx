@@ -86,28 +86,19 @@ export function LoginForm() {
               return;
             }
 
-            let { data: profile, error: profileError } = await supabase
+            const { data: profile, error: profileError } = await supabase
               .from("profiles")
               .select("role, access_status")
               .eq("id", data.user.id)
               .maybeSingle();
 
-            if (profileError && /access_status/i.test(profileError.message)) {
-              ({ data: profile, error: profileError } = await supabase
-                .from("profiles")
-                .select("role")
-                .eq("id", data.user.id)
-                .maybeSingle());
-            }
-
             if (profileError) {
-              const missingTable =
-                profileError.code === "PGRST205" || /schema cache|does not exist/i.test(profileError.message);
-              setError(
-                missingTable
-                  ? "The Twinlink database is not set up yet. Run the SQL migrations in Supabase, then try again."
-                  : profileError.message,
-              );
+              await supabase.auth.signOut();
+              const missingAccess =
+                /access_status/i.test(profileError.message) ||
+                profileError.code === "42703" ||
+                profileError.code === "PGRST204";
+              setError(missingAccess ? ACCESS_PENDING_ERROR : profileError.message);
               return;
             }
 
@@ -117,7 +108,7 @@ export function LoginForm() {
               return;
             }
 
-            if (appRole === "CANDIDATE" && profile?.access_status === "pending") {
+            if (appRole === "CANDIDATE" && profile?.access_status !== "approved") {
               await supabase.auth.signOut();
               setError(ACCESS_PENDING_ERROR);
               return;

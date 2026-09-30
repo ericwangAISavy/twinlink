@@ -279,11 +279,11 @@ export async function getAdminCandidates(query?: string) {
     .select("user_id, title, location, skills, resume_url");
   const ids = (profiles ?? []).map((item) => String(item.user_id));
   const usersQuery = ids.length
-    ? await supabase.from("profiles").select("id, email, full_name, created_at, updated_at, access_status").in("id", ids)
+    ? await supabase.from("profiles").select("id, email, full_name, role, created_at, updated_at, access_status").in("id", ids)
     : { data: [], error: null };
   const users = usersQuery.error
     ? (
-        await supabase.from("profiles").select("id, email, full_name, created_at, updated_at").in("id", ids)
+        await supabase.from("profiles").select("id, email, full_name, role, created_at, updated_at").in("id", ids)
       ).data
     : usersQuery.data;
   const { data: apps } = ids.length
@@ -293,6 +293,7 @@ export async function getAdminCandidates(query?: string) {
   const rows = (profiles ?? []).map((profile) => {
     const user = userMap.get(String(profile.user_id));
     const related = (apps ?? []).filter((item) => item.candidate_id === profile.user_id);
+    if (user && "role" in user && user.role && user.role !== "candidate") return null;
     return {
       id: String(profile.user_id),
       name: user?.full_name ?? null,
@@ -302,9 +303,9 @@ export async function getAdminCandidates(query?: string) {
       skills: (profile.skills as string[]) ?? [],
       applications: related.length,
       updatedAt: String(user?.updated_at ?? user?.created_at ?? ""),
-      accessStatus: user && "access_status" in user && user.access_status === "pending" ? "pending" : "approved",
+      accessStatus: user && "access_status" in user && user.access_status === "approved" ? "approved" as const : "pending" as const,
     };
-  });
+  }).filter((row): row is NonNullable<typeof row> => row !== null);
   rows.sort((a, b) => Number(a.accessStatus === "approved") - Number(b.accessStatus === "approved"));
   const q = query?.trim().toLowerCase();
   if (!q) return rows;

@@ -303,21 +303,50 @@ export async function adminInvitePerson(formData: FormData): Promise<ActionResul
   return createEmployeeInvite(inviteData);
 }
 
-export async function approveCandidateAccess(userId: string): Promise<ActionResult> {
+export async function setCandidateAccess(userId: string, status: "pending" | "approved"): Promise<ActionResult> {
   const user = await requireAdmin();
-  if (!userId) return fail("Choose a candidate to approve.");
+  if (!userId) return fail("Choose a candidate.");
+  if (status !== "pending" && status !== "approved") return fail("Choose pending or approved.");
   const supabase = await createServerSupabaseClient();
-  const { error } = await supabase.rpc("approve_candidate_access", { target_id: userId });
+  const { error } = await supabase.rpc("set_candidate_access", { target_id: userId, next_status: status });
   if (error) {
-    if (/approve_candidate_access|schema cache|does not exist/i.test(error.message)) {
-      return fail("Approval needs the latest database update. Apply supabase/migrations/0008_candidate_access.sql, then try again.");
+    if (/set_candidate_access|approve_candidate_access|schema cache|does not exist/i.test(error.message)) {
+      return fail("Access changes need the latest database update. Apply supabase/migrations/0008_candidate_access.sql, then try again.");
     }
     return fail(error.message);
   }
-  await logActivity({ actorId: user.id, action: "Approved candidate access", entityType: "user", entityId: userId });
+  const approved = status === "approved";
+  await logActivity({
+    actorId: user.id,
+    action: approved ? "Approved candidate access" : "Revoked candidate access",
+    entityType: "user",
+    entityId: userId,
+  });
   revalidatePath("/admin/candidates");
   revalidatePath(`/admin/candidates/${userId}`);
-  return ok("Access approved. This candidate can sign in now.");
+  return ok(approved ? "Access approved. This candidate can sign in now." : "Access revoked. This candidate cannot sign in.");
+}
+
+export async function approveCandidateAccess(userId: string): Promise<ActionResult> {
+  return setCandidateAccess(userId, "approved");
+}
+
+export async function deleteCandidate(userId: string): Promise<ActionResult> {
+  const user = await requireAdmin();
+  if (!userId) return fail("Choose a candidate to remove.");
+  if (userId === user.id) return fail("You cannot remove your own account here.");
+  const supabase = await createServerSupabaseClient();
+  const { error } = await supabase.rpc("admin_delete_candidate", { target_id: userId });
+  if (error) {
+    if (/admin_delete_candidate|schema cache|does not exist/i.test(error.message)) {
+      return fail("Removing a candidate needs the latest database update. Apply supabase/migrations/0008_candidate_access.sql, then try again.");
+    }
+    return fail(error.message);
+  }
+  await logActivity({ actorId: user.id, action: "Removed candidate account", entityType: "user", entityId: userId });
+  revalidatePath("/admin/candidates");
+  revalidatePath(`/admin/candidates/${userId}`);
+  return ok("Candidate removed.");
 }
 
 export async function adminSetUserRole(formData: FormData): Promise<ActionResult> {

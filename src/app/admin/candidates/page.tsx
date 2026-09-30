@@ -3,7 +3,7 @@ import { AdminEmptyState } from "@/components/admin/admin-empty-state";
 import { AdminFilterBar } from "@/components/admin/admin-filter-bar";
 import { AdminPageHeader } from "@/components/admin/admin-page-header";
 import { AdminTable } from "@/components/admin/admin-table";
-import { ApproveCandidateButton } from "@/components/admin/approve-candidate-button";
+import { CandidateAccessControls } from "@/components/admin/candidate-access-controls";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { formatDate } from "@/lib/utils";
@@ -39,14 +39,11 @@ export default async function AdminCandidatesPage({
                 <p className="text-xs text-muted-foreground">{candidate.email}</p>
               </td>
               <td className="px-4 py-3">
-                {candidate.accessStatus === "pending" ? (
-                  <div className="flex flex-col items-start gap-2">
-                    <span className="text-sm text-[#8a4b2f]">Pending approval</span>
-                    <ApproveCandidateButton userId={candidate.id} />
-                  </div>
-                ) : (
-                  <span className="text-sm text-muted-foreground">Approved</span>
-                )}
+                <CandidateAccessControls
+                  userId={candidate.id}
+                  accessStatus={candidate.accessStatus}
+                  name={candidate.name ?? candidate.email}
+                />
               </td>
               <td className="px-4 py-3 text-muted-foreground">{candidate.headline ?? "—"}</td>
               <td className="px-4 py-3 text-muted-foreground">{candidate.location ?? "—"}</td>

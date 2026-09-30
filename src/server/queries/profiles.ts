@@ -58,7 +58,7 @@ export async function getCandidateProfile(userId: string) {
     id: profile.id as string,
     name: (profile.full_name as string | null) ?? null,
     email: profile.email as string,
-    accessStatus: profile.access_status === "pending" ? "pending" : "approved",
+    accessStatus: profile.access_status === "approved" ? "approved" : "pending",
     candidateProfile: candidateProfile
       ? {
           headline: (candidateProfile.title as string | null) ?? null,
