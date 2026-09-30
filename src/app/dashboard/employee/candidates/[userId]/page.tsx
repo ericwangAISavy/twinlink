@@ -18,13 +18,21 @@ export default async function CandidateReviewPage({
   const candidate = await getCandidateForReview(userId);
   if (!candidate) notFound();
   const profile = candidate.candidateProfile;
+  const isPrivate = profile?.visibility === "private";
 
   return (
     <>
       <PageHeader
         title={candidate.name ?? candidate.email}
-        description={profile?.headline ?? "Candidate profile"}
+        description={isPrivate ? "This candidate kept their profile private." : profile?.headline ?? "Candidate profile"}
       />
+      {isPrivate ? (
+        <Card className="mb-6">
+          <CardContent className="pt-6 text-sm text-muted-foreground">
+            Bio, skills, experience, and links are hidden until the candidate makes the profile visible to recruiters.
+          </CardContent>
+        </Card>
+      ) : (
       <div className="grid gap-6 lg:grid-cols-2">
         <Card>
           <CardHeader>
@@ -81,6 +89,7 @@ export default async function CandidateReviewPage({
           </CardContent>
         </Card>
       </div>
+      )}
       <Card className="mt-6">
         <CardHeader>
           <CardTitle>Applications</CardTitle>

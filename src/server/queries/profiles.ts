@@ -1,7 +1,8 @@
 import "server-only";
 
 import { isSupabaseConfigured } from "@/lib/supabase/env";
-import { filenameFromPath, firstRecord, parseExperiences, toAppApplicationStatus } from "@/lib/supabase/mappers";
+import { filenameFromPath, firstRecord, parseEducation, parseExperiences, toAppApplicationStatus } from "@/lib/supabase/mappers";
+import type { CandidateProfileForm, ProfileVisibility } from "@/lib/types";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 async function signResume(path: string | null | undefined) {
@@ -48,11 +49,16 @@ export async function getCandidateProfile(userId: string) {
     .select("*")
     .eq("user_id", userId)
     .maybeSingle();
-  const resumeFile = await signResume(candidateProfile?.resume_url as string | null);
+  const resumePath = (candidateProfile?.resume_url as string | null) ?? null;
+  const resumeFile = await signResume(resumePath);
+  const uploadedAt = resumeUploadedAt(resumePath);
+  const visibility = candidateProfile?.profile_visibility === "private" ? "private" : "recruiters";
+  const draft = parseProfileDraft(candidateProfile?.profile_draft);
   return {
     id: profile.id as string,
     name: (profile.full_name as string | null) ?? null,
     email: profile.email as string,
+    accessStatus: profile.access_status === "pending" ? "pending" : "approved",
     candidateProfile: candidateProfile
       ? {
           headline: (candidateProfile.title as string | null) ?? null,
@@ -60,13 +66,45 @@ export async function getCandidateProfile(userId: string) {
           location: (candidateProfile.location as string | null) ?? null,
           phone: (candidateProfile.phone as string | null) ?? null,
           linkedIn: (candidateProfile.linkedin_url as string | null) ?? null,
+          github: (candidateProfile.github_url as string | null) ?? null,
           website: (candidateProfile.website as string | null) ?? null,
           portfolioUrl: (candidateProfile.portfolio_url as string | null) ?? null,
           skills: (candidateProfile.skills as string[] | null) ?? [],
           experiences: parseExperiences(candidateProfile.experience),
-          resumeFile,
+          education: parseEducation(candidateProfile.education),
+          visibility: visibility as ProfileVisibility,
+          resumeFile: resumeFile ? { ...resumeFile, uploadedAt } : null,
+          draft,
         }
       : null,
+  };
+}
+
+function resumeUploadedAt(path: string | null) {
+  const file = path?.split("/").pop() ?? "";
+  const match = file.match(/^(\d{10,})-/);
+  if (!match) return null;
+  const date = new Date(Number(match[1]));
+  return Number.isNaN(date.getTime()) ? null : date.toISOString();
+}
+
+function parseProfileDraft(value: unknown): CandidateProfileForm | null {
+  if (!value || typeof value !== "object") return null;
+  const row = value as Record<string, unknown>;
+  if (typeof row.name !== "string") return null;
+  return {
+    name: row.name,
+    headline: typeof row.headline === "string" ? row.headline : "",
+    location: typeof row.location === "string" ? row.location : "",
+    phone: typeof row.phone === "string" ? row.phone : "",
+    bio: typeof row.bio === "string" ? row.bio : "",
+    skills: Array.isArray(row.skills) ? row.skills.filter((item): item is string => typeof item === "string") : [],
+    experiences: parseExperiences(row.experiences),
+    education: parseEducation(row.education),
+    linkedIn: typeof row.linkedIn === "string" ? row.linkedIn : "",
+    github: typeof row.github === "string" ? row.github : "",
+    portfolioUrl: typeof row.portfolioUrl === "string" ? row.portfolioUrl : "",
+    visibility: row.visibility === "private" ? "private" : "recruiters",
   };
 }
 

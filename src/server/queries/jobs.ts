@@ -12,6 +12,7 @@ export type MappedJob = {
   location: string | null;
   department: string | null;
   employmentType: string | null;
+  workplaceType: string | null;
   description: string;
   requirements: string | null;
   status: JobStatus;
@@ -33,6 +34,7 @@ function mapJob(row: Record<string, unknown>, applicationCount = 0): MappedJob {
     location: (row.location as string | null) ?? null,
     department: (row.department as string | null) ?? null,
     employmentType: (row.employment_type as string | null) ?? null,
+    workplaceType: (row.workplace_type as string | null) ?? null,
     description: String(row.description ?? ""),
     requirements: (row.requirements as string | null) ?? null,
     status,

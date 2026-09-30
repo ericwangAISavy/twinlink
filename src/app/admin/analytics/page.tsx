@@ -1,18 +1,11 @@
 import { AdminEmptyState } from "@/components/admin/admin-empty-state";
 import { AdminPageHeader } from "@/components/admin/admin-page-header";
 import { AdminStatCard } from "@/components/admin/admin-stat-card";
+import { HIRING_STAGES } from "@/lib/hiring-stages";
 import { APPLICATION_STATUS_LABELS } from "@/lib/constants";
-import type { ApplicationStatus } from "@/lib/types";
 import { getAdminAnalytics } from "@/server/queries/admin";
 
-const PIPELINE_ORDER: ApplicationStatus[] = [
-  "SUBMITTED",
-  "REVIEWING",
-  "SHORTLISTED",
-  "INTERVIEW",
-  "OFFER",
-  "HIRED",
-];
+const PIPELINE_ORDER = HIRING_STAGES;
 
 export default async function AdminAnalyticsPage() {
   const data = await getAdminAnalytics();
@@ -25,8 +18,8 @@ export default async function AdminAnalyticsPage() {
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <AdminStatCard label="Applications" value={data.applications} />
         <AdminStatCard label="Interviews" value={data.interviews} />
-        <AdminStatCard label="Offers" value={data.pipeline.OFFER} />
-        <AdminStatCard label="Hires" value={data.pipeline.HIRED} />
+        <AdminStatCard label="Offers" value={data.pipeline.offer} />
+        <AdminStatCard label="Hires" value={data.pipeline.hired} />
       </section>
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
         <section className="rounded-2xl border border-[#eadfcd] bg-white p-6">

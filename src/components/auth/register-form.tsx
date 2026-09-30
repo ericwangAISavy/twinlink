@@ -3,7 +3,6 @@
 import { useState, useTransition } from "react";
 import { ArrowRight, Lock, Mail, User } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { AuthInput } from "@/components/auth/auth-input";
 import { PortalToggle, type PortalRole } from "@/components/auth/portal-toggle";
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,6 @@ import { registerSchema } from "@/lib/validations";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
 export function RegisterForm({ invite }: { invite?: string }) {
-  const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [role, setRole] = useState<PortalRole>(invite ? "employee" : "candidate");
@@ -78,13 +76,17 @@ export function RegisterForm({ invite }: { invite?: string }) {
                 }
 
                 if (parsed.data.invite && data.session) {
-                  await supabase.rpc("accept_employee_invite", {
+                  const { error: inviteError } = await supabase.rpc("accept_employee_invite", {
                     invite_token: parsed.data.invite,
                   });
+                  if (inviteError) {
+                    await supabase.auth.signOut();
+                    setError(inviteError.message);
+                    return;
+                  }
                 }
 
-                router.push("/login?registered=1");
-                router.refresh();
+                window.location.assign("/auth/sign-out?registered=1");
               } catch (caught) {
                 setError(caught instanceof Error ? authErrorMessage(caught) : "Unable to create your account.");
               }

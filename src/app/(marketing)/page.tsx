@@ -113,12 +113,12 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[10px] lg:grid-cols-2">
           <div className="relative min-h-[280px] lg:min-h-[420px]">
             <Image
-              src="/images/our-people-hologram-smile.jpg"
-              alt="Twinlink specialist looking toward the next opportunity"
+              src="/images/our-people-handshake.jpg"
+              alt="Twinlink consultants meeting outside a modern office"
               fill
               quality={95}
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-[32%_center]"
+              className="object-cover object-center"
             />
           </div>
           <div className="flex flex-col justify-center bg-[#14120e] px-8 py-12 md:px-14">

@@ -52,6 +52,9 @@ export function destinationAfterLogin(role: Role, callbackUrl?: string | null) {
 
 export const ACCOUNT_SETUP_ERROR =
   "This account is not configured for Twinlink access. Contact an administrator.";
+
+export const ACCESS_PENDING_ERROR =
+  "Your access is waiting for administrator approval. You can sign in after a Twinlink administrator approves your account.";
 export const UNKNOWN_ROLE_ERROR = "This account does not have a valid Twinlink role.";
 
 export function authErrorMessage(error: { message?: string; code?: string } | null | undefined) {

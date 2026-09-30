@@ -3,10 +3,10 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { fail, ok, type ActionResult } from "@/lib/action-result";
-import { toDbApplicationStatus, toDbJobStatus } from "@/lib/supabase/mappers";
+import { toDbJobStatus } from "@/lib/supabase/mappers";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { uniqueSlug } from "@/lib/utils";
-import { adminJobSchema, applicationStatusSchema, inviteSchema, messageSchema } from "@/lib/validations";
+import { adminJobSchema, inviteSchema, messageSchema } from "@/lib/validations";
 import { createEmployeeInvite } from "@/server/actions/settings";
 import { requireAdmin } from "@/server/authorization";
 import { logActivity } from "@/server/queries/admin";
@@ -98,49 +98,50 @@ export async function adminSetJobStatus(jobId: string, status: string): Promise<
   await logActivity({ actorId: user.id, action: `Set job status to ${status.toLowerCase()}`, entityType: "job", entityId: jobId });
   revalidatePath("/admin/jobs");
   revalidatePath("/careers");
+  revalidatePath("/dashboard/candidate/jobs");
   return ok("Job updated.");
 }
 
-export async function adminUpdateApplicationStatus(formData: FormData): Promise<ActionResult> {
+export async function adminCloseJob(formData: FormData): Promise<ActionResult> {
   const user = await requireAdmin();
-  const parsed = applicationStatusSchema.safeParse({
-    applicationId: formData.get("applicationId"),
-    status: formData.get("status"),
-  });
-  if (!parsed.success) return fail(parsed.error.issues[0]?.message ?? "Invalid status");
+  const jobId = String(formData.get("jobId") ?? "");
+  const closeApplications = formData.get("closeApplications") === "yes";
+  if (!jobId) return fail("Job is required.");
   const supabase = await createServerSupabaseClient();
-  const { data: current } = await supabase
-    .from("applications")
-    .select("id, status, candidate_id")
-    .eq("id", parsed.data.applicationId)
-    .maybeSingle();
-  if (!current) return fail("Application not found.");
-  const { error } = await supabase
-    .from("applications")
-    .update({ status: toDbApplicationStatus(parsed.data.status) })
-    .eq("id", parsed.data.applicationId);
+  const { error } = await supabase.from("jobs").update({ status: "closed" }).eq("id", jobId);
   if (error) return fail(error.message);
-  await supabase.from("application_events").insert({
-    application_id: parsed.data.applicationId,
-    actor_id: user.id,
-    from_status: current.status,
-    to_status: toDbApplicationStatus(parsed.data.status),
-  });
-  await supabase.from("notifications").insert({
-    user_id: current.candidate_id,
-    title: "Application update",
-    body: "Your application status was updated.",
-    href: `/dashboard/candidate/applications/${parsed.data.applicationId}`,
-  });
-  await logActivity({
-    actorId: user.id,
-    action: "Changed application status",
-    entityType: "application",
-    entityId: parsed.data.applicationId,
-  });
+  await logActivity({ actorId: user.id, action: "job_closed", entityType: "job", entityId: jobId });
+
+  if (closeApplications) {
+    const { data: applications } = await supabase
+      .from("applications")
+      .select("id, current_stage, status")
+      .eq("job_id", jobId);
+    for (const application of applications ?? []) {
+      const stage = String(application.current_stage ?? application.status ?? "");
+      if (["rejected", "withdrawn", "hired", "position_closed"].includes(stage)) continue;
+      const { error: stageError } = await supabase.rpc("set_application_stage", {
+        target_application_id: application.id,
+        next_stage: "position_closed",
+        candidate_message: "This role has been closed. Your application history is still available.",
+        notify_candidate: true,
+      });
+      if (stageError) return fail(stageError.message);
+    }
+  }
+
+  revalidatePath("/admin/jobs");
+  revalidatePath(`/admin/jobs/${jobId}`);
+  revalidatePath("/careers");
+  revalidatePath("/dashboard/candidate/jobs");
   revalidatePath("/admin/applications");
-  revalidatePath(`/admin/applications/${parsed.data.applicationId}`);
-  return ok("Status updated.");
+  revalidatePath("/dashboard/candidate/applications");
+  return ok(closeApplications ? "Role closed and active applications updated." : "Role closed. Existing applications were kept.");
+}
+
+export async function adminUpdateApplicationStatus(formData: FormData): Promise<ActionResult> {
+  const { updateApplicationStatus } = await import("@/server/actions/applications");
+  return updateApplicationStatus(formData);
 }
 
 export async function adminAssignApplication(formData: FormData): Promise<ActionResult> {
@@ -196,37 +197,58 @@ export async function adminSendMessage(formData: FormData): Promise<ActionResult
 export async function adminScheduleInterview(formData: FormData): Promise<ActionResult> {
   const user = await requireAdmin();
   const applicationId = String(formData.get("applicationId") ?? "");
+  const interviewId = String(formData.get("interviewId") ?? "");
   const scheduledAt = String(formData.get("scheduledAt") ?? "");
+  const scheduledEnd = String(formData.get("scheduledEnd") ?? "");
   const interviewType = String(formData.get("interviewType") ?? "video");
   const meetingUrl = String(formData.get("meetingUrl") ?? "");
+  const meetingLocation = String(formData.get("meetingLocation") ?? "");
+  const timezone = String(formData.get("timezone") ?? "");
+  const instructions = String(formData.get("candidateInstructions") ?? "");
+  const notes = String(formData.get("internalNotes") ?? "");
+  const interviewerId = String(formData.get("interviewerId") ?? "").trim();
   if (!applicationId || !scheduledAt) return fail("Application and time are required.");
   const supabase = await createServerSupabaseClient();
-  const { error } = await supabase.from("interviews").insert({
+  const payload = {
     application_id: applicationId,
-    interviewer_id: user.id,
+    interviewer_id: interviewerId || user.id,
     scheduled_at: new Date(scheduledAt).toISOString(),
+    scheduled_end: scheduledEnd ? new Date(scheduledEnd).toISOString() : null,
+    timezone: timezone || null,
     interview_type: interviewType,
     meeting_url: meetingUrl || null,
+    meeting_location: meetingLocation || null,
+    candidate_instructions: instructions || null,
+    notes: notes || null,
     status: "scheduled",
-  });
+  };
+  const { error } = interviewId
+    ? await supabase.from("interviews").update(payload).eq("id", interviewId)
+    : await supabase.from("interviews").insert(payload);
   if (error) return fail(error.message);
   const { data: application } = await supabase
     .from("applications")
     .select("candidate_id")
     .eq("id", applicationId)
     .maybeSingle();
-  if (application?.candidate_id) {
+  if (application?.candidate_id && formData.get("notifyCandidate") !== "no") {
     await supabase.from("notifications").insert({
       user_id: application.candidate_id,
-      title: "Interview scheduled",
-      body: "Twinlink scheduled an interview for your application.",
+      title: interviewId ? "Interview rescheduled" : "Interview scheduled",
+      body: instructions || "Twinlink updated the interview for your application.",
       href: `/dashboard/candidate/applications/${applicationId}`,
     });
   }
-  await logActivity({ actorId: user.id, action: "Scheduled interview", entityType: "interview", entityId: applicationId });
+  await logActivity({
+    actorId: user.id,
+    action: interviewId ? "interview_rescheduled" : "interview_scheduled",
+    entityType: "interview",
+    entityId: applicationId,
+  });
   revalidatePath("/admin/interviews");
   revalidatePath(`/admin/applications/${applicationId}`);
-  return ok("Interview scheduled.");
+  revalidatePath(`/dashboard/candidate/applications/${applicationId}`);
+  return ok(interviewId ? "Interview rescheduled." : "Interview scheduled.");
 }
 
 export async function adminSetInterviewStatus(interviewId: string, status: string): Promise<ActionResult> {
@@ -237,14 +259,28 @@ export async function adminSetInterviewStatus(interviewId: string, status: strin
   if (!interview) return fail("Interview not found.");
   const { error } = await supabase.from("interviews").update({ status }).eq("id", interviewId);
   if (error) return fail(error.message);
+  const { data: application } = await supabase
+    .from("applications")
+    .select("candidate_id")
+    .eq("id", interview.application_id)
+    .maybeSingle();
+  if (application?.candidate_id && (status === "cancelled" || status === "scheduled")) {
+    await supabase.from("notifications").insert({
+      user_id: application.candidate_id,
+      title: status === "cancelled" ? "Interview cancelled" : "Interview update",
+      body: status === "cancelled" ? "An interview on your application was cancelled." : "An interview on your application was updated.",
+      href: `/dashboard/candidate/applications/${String(interview.application_id)}`,
+    });
+  }
   await logActivity({
     actorId: user.id,
-    action: `Set interview status to ${status}`,
+    action: status === "cancelled" ? "interview_cancelled" : "interview_completed",
     entityType: "interview",
     entityId: String(interview.id),
   });
   revalidatePath("/admin/interviews");
   revalidatePath(`/admin/applications/${String(interview.application_id)}`);
+  revalidatePath(`/dashboard/candidate/applications/${String(interview.application_id)}`);
   return ok("Interview updated.");
 }
 
@@ -265,6 +301,23 @@ export async function adminInvitePerson(formData: FormData): Promise<ActionResul
   inviteData.set("department", parsed.data.department ?? "");
   inviteData.set("role", parsed.data.role === "admin" && user.role === "ADMIN" ? "admin" : "employee");
   return createEmployeeInvite(inviteData);
+}
+
+export async function approveCandidateAccess(userId: string): Promise<ActionResult> {
+  const user = await requireAdmin();
+  if (!userId) return fail("Choose a candidate to approve.");
+  const supabase = await createServerSupabaseClient();
+  const { error } = await supabase.rpc("approve_candidate_access", { target_id: userId });
+  if (error) {
+    if (/approve_candidate_access|schema cache|does not exist/i.test(error.message)) {
+      return fail("Approval needs the latest database update. Apply supabase/migrations/0008_candidate_access.sql, then try again.");
+    }
+    return fail(error.message);
+  }
+  await logActivity({ actorId: user.id, action: "Approved candidate access", entityType: "user", entityId: userId });
+  revalidatePath("/admin/candidates");
+  revalidatePath(`/admin/candidates/${userId}`);
+  return ok("Access approved. This candidate can sign in now.");
 }
 
 export async function adminSetUserRole(formData: FormData): Promise<ActionResult> {

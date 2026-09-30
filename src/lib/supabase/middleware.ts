@@ -57,7 +57,15 @@ export async function updateSession(request: NextRequest) {
   async function trustedRole() {
     if (!user) return null;
     const { data: profile } = await supabase.from("profiles").select("role").eq("id", user.id).maybeSingle();
-    return toAppRole(profile?.role);
+    const role = toAppRole(profile?.role);
+    if (role !== "CANDIDATE") return role;
+    const { data: access, error } = await supabase
+      .from("profiles")
+      .select("access_status")
+      .eq("id", user.id)
+      .maybeSingle();
+    if (!error && access?.access_status === "pending") return "PENDING" as const;
+    return role;
   }
 
   const needsAuth = pathname.startsWith("/dashboard") || pathname.startsWith("/admin");
@@ -68,6 +76,13 @@ export async function updateSession(request: NextRequest) {
 
   if (user && (needsAuth || pathname === "/login" || pathname === "/register")) {
     const role = await trustedRole();
+    if (role === "PENDING") {
+      const signOut = request.nextUrl.clone();
+      signOut.pathname = "/auth/sign-out";
+      signOut.search = "";
+      signOut.searchParams.set("reason", "approval");
+      return NextResponse.redirect(signOut);
+    }
     if (!role) {
       const signOut = request.nextUrl.clone();
       signOut.pathname = "/auth/sign-out";

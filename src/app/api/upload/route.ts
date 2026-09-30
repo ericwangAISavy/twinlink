@@ -26,8 +26,8 @@ export async function POST(request: Request) {
   if (!allowed.includes(file.type) && !file.name.match(/\.(pdf|doc|docx)$/i)) {
     return NextResponse.json({ error: "Upload a PDF or Word document." }, { status: 400 });
   }
-  if (file.size > 8 * 1024 * 1024) {
-    return NextResponse.json({ error: "File must be under 8MB." }, { status: 400 });
+  if (file.size > 5 * 1024 * 1024) {
+    return NextResponse.json({ error: "File must be under 5MB." }, { status: 400 });
   }
 
   const supabase = await createServerSupabaseClient();
@@ -46,5 +46,13 @@ export async function POST(request: Request) {
     resume_url: path,
   });
 
-  return NextResponse.json({ ok: true, path });
+  const { data: signed } = await supabase.storage.from("resumes").createSignedUrl(path, 60 * 60);
+  return NextResponse.json({
+    ok: true,
+    path,
+    url: signed?.signedUrl ?? null,
+    filename: file.name,
+    uploadedAt: new Date().toISOString(),
+    size: file.size,
+  });
 }

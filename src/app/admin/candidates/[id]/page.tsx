@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ApproveCandidateButton } from "@/components/admin/approve-candidate-button";
 import { AdminEmptyState } from "@/components/admin/admin-empty-state";
 import { AdminNoteForm } from "@/components/admin/admin-note-form";
 import { AdminPageHeader } from "@/components/admin/admin-page-header";
@@ -97,6 +98,19 @@ export default async function AdminCandidateDetailPage({ params }: { params: Pro
           </div>
         </section>
         <aside className="space-y-6">
+          <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
+            <h2 className="font-serif text-xl">Access</h2>
+            {candidate.accessStatus === "pending" ? (
+              <div className="mt-3 space-y-3">
+                <p className="text-sm text-muted-foreground">
+                  This candidate cannot sign in until you approve their access.
+                </p>
+                <ApproveCandidateButton userId={candidate.id} />
+              </div>
+            ) : (
+              <p className="mt-3 text-sm text-muted-foreground">Approved. This candidate can sign in.</p>
+            )}
+          </div>
           <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
             <h2 className="font-serif text-xl">Applications</h2>
             {candidate.applications.length === 0 ? (

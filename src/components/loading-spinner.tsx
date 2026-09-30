@@ -40,3 +40,16 @@ export function PageSpinner({ className }: { className?: string }) {
     </div>
   );
 }
+
+export function MainPanelLoading() {
+  return (
+    <div role="status" aria-live="polite" aria-busy="true" className="min-h-[50vh]">
+      <div className="grid min-h-[46vh] place-items-center">
+        <div className="flex flex-col items-center gap-3 text-[#6f655b]">
+          <Spinner className="size-9" />
+          <p className="text-sm">Loading</p>
+        </div>
+      </div>
+    </div>
+  );
+}

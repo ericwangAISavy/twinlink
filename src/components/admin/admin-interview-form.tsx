@@ -20,8 +20,23 @@ export function AdminInterviewForm({ applicationId }: { applicationId: string })
             <option value="onsite">On-site</option>
           </select>
         </Field>
+        <Field htmlFor="scheduledEnd" label="End time">
+          <Input id="scheduledEnd" name="scheduledEnd" type="datetime-local" />
+        </Field>
+        <Field htmlFor="timezone" label="Timezone">
+          <Input id="timezone" name="timezone" placeholder="America/Los_Angeles" />
+        </Field>
+        <Field htmlFor="meetingLocation" label="Location">
+          <Input id="meetingLocation" name="meetingLocation" placeholder="Office, room, or city" />
+        </Field>
         <Field htmlFor="meetingUrl" label="Meeting URL">
           <Input id="meetingUrl" name="meetingUrl" placeholder="https://" />
+        </Field>
+        <Field htmlFor="candidateInstructions" label="Instructions for the candidate">
+          <Input id="candidateInstructions" name="candidateInstructions" placeholder="What the candidate should know" />
+        </Field>
+        <Field htmlFor="internalNotes" label="Internal notes">
+          <Input id="internalNotes" name="internalNotes" placeholder="Visible only to staff" />
         </Field>
       </div>
     </ActionForm>

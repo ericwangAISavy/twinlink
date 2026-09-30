@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { AdminSidebar } from "@/components/admin/admin-sidebar";
 import { AdminTopbar } from "@/components/admin/admin-topbar";
+import { MainPanelLoading } from "@/components/loading-spinner";
 
 export function AdminShell({
   user,
@@ -13,7 +15,13 @@ export function AdminShell({
   unread?: number;
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [navigating, setNavigating] = useState(false);
+
+  useEffect(() => {
+    setNavigating(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (!open) return;
@@ -27,13 +35,13 @@ export function AdminShell({
   return (
     <div className="min-h-screen bg-[#f4efe6] text-[#1c1916]">
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-[248px] bg-[#161310] px-4 py-6 lg:block">
-        <AdminSidebar unread={unread} />
+        <AdminSidebar unread={unread} onPending={() => setNavigating(true)} />
       </aside>
       {open ? (
         <div className="fixed inset-0 z-50 lg:hidden">
           <button type="button" className="absolute inset-0 bg-black/40" aria-label="Close navigation" onClick={() => setOpen(false)} />
           <aside className="absolute inset-y-0 left-0 w-[min(88vw,248px)] bg-[#161310] px-4 py-6 shadow-xl">
-            <AdminSidebar unread={unread} onNavigate={() => setOpen(false)} />
+            <AdminSidebar unread={unread} onNavigate={() => setOpen(false)} onPending={() => setNavigating(true)} />
           </aside>
         </div>
       ) : null}
@@ -45,7 +53,9 @@ export function AdminShell({
           unread={unread}
           onMenuClick={() => setOpen(true)}
         />
-        <main className="px-4 py-6 sm:px-6 lg:px-8">{children}</main>
+        <main className="px-4 py-6 sm:px-6 lg:px-8" aria-busy={navigating}>
+          {navigating ? <MainPanelLoading /> : children}
+        </main>
       </div>
     </div>
   );

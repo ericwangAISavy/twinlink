@@ -10,13 +10,14 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Field } from "@/components/form-field";
 import { Spinner } from "@/components/loading-spinner";
-import { ACCOUNT_SETUP_ERROR, authErrorMessage, destinationAfterLogin, toAppRole } from "@/lib/roles";
+import { ACCESS_PENDING_ERROR, ACCOUNT_SETUP_ERROR, authErrorMessage, destinationAfterLogin, toAppRole } from "@/lib/roles";
 import { loginSchema } from "@/lib/validations";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { confirmEmailAfterValidPassword, resolveLoginDestination } from "@/server/actions/auth";
 
 const LOGIN_ERRORS: Record<string, string> = {
   account: ACCOUNT_SETUP_ERROR,
+  approval: ACCESS_PENDING_ERROR,
   auth: "Sign-in could not be completed. Try again.",
 };
 
@@ -85,11 +86,19 @@ export function LoginForm() {
               return;
             }
 
-            const { data: profile, error: profileError } = await supabase
+            let { data: profile, error: profileError } = await supabase
               .from("profiles")
-              .select("role")
+              .select("role, access_status")
               .eq("id", data.user.id)
               .maybeSingle();
+
+            if (profileError && /access_status/i.test(profileError.message)) {
+              ({ data: profile, error: profileError } = await supabase
+                .from("profiles")
+                .select("role")
+                .eq("id", data.user.id)
+                .maybeSingle());
+            }
 
             if (profileError) {
               const missingTable =
@@ -105,6 +114,12 @@ export function LoginForm() {
             const appRole = toAppRole(profile?.role);
             if (!appRole) {
               setError(ACCOUNT_SETUP_ERROR);
+              return;
+            }
+
+            if (appRole === "CANDIDATE" && profile?.access_status === "pending") {
+              await supabase.auth.signOut();
+              setError(ACCESS_PENDING_ERROR);
               return;
             }
 
@@ -131,7 +146,7 @@ export function LoginForm() {
       <PortalToggle value={role} onChange={setRole} />
       {registered ? (
         <p className="rounded-full bg-[#c4a574]/15 px-4 py-2 text-sm text-[#e8d5a3]">
-          Account created. Sign in to continue.
+          Account created. An administrator needs to approve your access before you can sign in.
         </p>
       ) : null}
       <Field htmlFor="email" label="Email" className="[&_label]:text-white/80">
@@ -177,7 +192,7 @@ export function LoginForm() {
         <span className="text-[#c4a574]/90">Forgot password?</span>
       </div>
       {error ? (
-        <p className="text-sm text-red-300" role="alert">
+        <p className="rounded-xl border border-red-400/50 bg-red-950/50 px-4 py-3 text-sm text-red-200" role="alert">
           {error}
         </p>
       ) : null}

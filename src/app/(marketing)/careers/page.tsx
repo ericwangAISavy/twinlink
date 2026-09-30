@@ -1,29 +1,24 @@
 import type { Metadata } from "next";
-import { JobCard } from "@/components/careers/job-card";
-import { Section } from "@/components/marketing/section";
+import { OpenRolesBoard, type OpenRole } from "@/components/careers/open-roles-board";
 import { getPublishedJobs } from "@/server/queries/jobs";
 
 export const metadata: Metadata = {
   title: "Careers",
-  description: "Open roles at TwinLink for engineers, architects, and engagement leads.",
+  description: "Open roles at TwinLink. Join the team building the next generation of AI infrastructure.",
 };
 
 export default async function CareersPage() {
   const jobs = await getPublishedJobs();
+  const roles: OpenRole[] = jobs.map((job) => ({
+    id: job.id,
+    slug: job.slug,
+    title: job.title,
+    department: job.department,
+    location: job.location,
+    employmentType: job.employmentType,
+    workplaceType: job.workplaceType,
+    publishedAt: job.publishedAt,
+  }));
 
-  return (
-    <Section eyebrow="Careers" title="Open roles" className="border-t border-[#c4a574]/20">
-      {jobs.length === 0 ? (
-        <p className="text-muted-foreground">
-          There are no published roles right now. Create a candidate account so we can reach you when we open a search.
-        </p>
-      ) : (
-        <div className="grid gap-4 md:grid-cols-2">
-          {jobs.map((job) => (
-            <JobCard key={job.id} {...job} />
-          ))}
-        </div>
-      )}
-    </Section>
-  );
+  return <OpenRolesBoard roles={roles} />;
 }

@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Spinner } from "@/components/loading-spinner";
 import {
   Activity,
   BarChart3,
@@ -68,8 +70,23 @@ const GROUPS = [
   },
 ] as const;
 
-export function AdminSidebar({ onNavigate, unread = 0 }: { onNavigate?: () => void; unread?: number }) {
+export function AdminSidebar({
+  onNavigate,
+  onPending,
+  unread = 0,
+}: {
+  onNavigate?: () => void;
+  onPending?: () => void;
+  unread?: number;
+}) {
   const pathname = usePathname();
+  const [pendingHref, setPendingHref] = useState<string | null>(null);
+
+  useEffect(() => {
+    setPendingHref(null);
+  }, [pathname]);
+
+  const currentPath = pendingHref ?? pathname;
 
   return (
     <div className="flex h-full flex-col text-[#f4efe6]">
@@ -96,13 +113,22 @@ export function AdminSidebar({ onNavigate, unread = 0 }: { onNavigate?: () => vo
             <div className="space-y-0.5">
               {group.items.map((item) => {
                 const Icon = item.icon;
-                const active = item.href === "/admin" ? pathname === "/admin" : pathname.startsWith(item.href);
+                const active = item.href === "/admin" ? currentPath === "/admin" : currentPath === item.href || currentPath.startsWith(`${item.href}/`);
+                const pending = pendingHref === item.href;
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
-                    onClick={onNavigate}
+                    prefetch
+                    onClick={() => {
+                      if (!active) {
+                        setPendingHref(item.href);
+                        onPending?.();
+                      }
+                      onNavigate?.();
+                    }}
                     aria-current={active ? "page" : undefined}
+                    aria-busy={pending}
                     className={cn(
                       "flex items-center gap-3 rounded-xl px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c4a574]",
                       active
@@ -112,6 +138,7 @@ export function AdminSidebar({ onNavigate, unread = 0 }: { onNavigate?: () => vo
                   >
                     <Icon className="size-4 shrink-0" aria-hidden />
                     <span className="flex-1">{item.label}</span>
+                    {pending ? <Spinner className="size-3.5 text-[#1c1916]" /> : null}
                     {item.href === "/admin/notifications" && unread > 0 ? (
                       <span className="rounded-full bg-[#c4a574] px-1.5 py-0.5 text-[10px] font-medium text-[#1c1916]">
                         {unread}

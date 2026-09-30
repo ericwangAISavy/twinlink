@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 
 const SLIDES = [
   {
-    src: "/images/how-we-help-teams.jpg",
-    alt: "Twinlink team meeting at sunset in a city office",
-    position: "object-[68%_center]",
+    src: "/images/hero-team-office.jpg",
+    alt: "Twinlink team reviewing work on a large display",
+    position: "object-[32%_center]",
   },
   {
     src: "/images/how-we-help-architecture.jpg",
