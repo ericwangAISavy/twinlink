@@ -1,3 +1,5 @@
+import { resources } from "@/lib/resources";
+import { withResourceImage } from "@/lib/resource-images";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Box, Cloud, Cpu, Network } from "lucide-react";
@@ -20,6 +22,7 @@ const STATS = [
 ] as const;
 
 export default function HomePage() {
+  const featuredStudy = withResourceImage(resources[0]);
   return (
     <>
       <HeroSlider>
@@ -162,11 +165,11 @@ export default function HomePage() {
               Case study
             </Reveal>
             <Reveal as="h2" className="reveal-title reveal-rule mt-3 font-serif text-4xl leading-tight md:text-[2.7rem]" delay={80}>
-              Building a global platform for a connected future.
+              Engineering trust into autonomous systems.
             </Reveal>
             <Reveal as="p" className="reveal-copy mt-5 max-w-md leading-relaxed text-white/65" delay={160}>
-              Explore an illustrative approach to designing a secure, scalable platform
-              that connects teams and customers across markets.
+              Explore a detailed fictional mobility engagement: scenario-based evaluation,
+              disciplined release gates, and a clearer path from observations to decisions.
             </Reveal>
             <Reveal className="reveal-copy mt-8" delay={220}>
               <Button
@@ -174,7 +177,7 @@ export default function HomePage() {
                 variant="outline"
                 className="rounded-full border-[#c4a574]/40 bg-transparent text-[#e8d5a3] hover:bg-[#c4a574]/10"
               >
-                <Link href="/case-studies/a-platform-built-to-grow">
+                <Link href="/case-studies/safer-autonomous-mobility">
                   Read case study <ArrowRight />
                 </Link>
               </Button>
@@ -182,8 +185,8 @@ export default function HomePage() {
           </div>
           <div className="relative min-h-[260px] overflow-hidden rounded-[12px] lg:min-h-[300px]">
             <Image
-              src="/images/case-study-waterfront.jpg"
-              alt="City skyline at dusk along the waterfront"
+              src={featuredStudy.image}
+              alt={featuredStudy.imageAlt || ""}
               fill
               quality={75}
               sizes="(min-width: 1024px) 50vw, 100vw"
@@ -191,11 +194,11 @@ export default function HomePage() {
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent p-6 md:p-7">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#e8d5a3]">
-                Enterprise solution
+                Illustrative engagement
               </p>
-              <h3 className="mt-2 font-serif text-2xl">Global Enterprise Platform</h3>
+              <h3 className="mt-2 font-serif text-2xl">Autonomous Mobility Engineering</h3>
               <p className="mt-2 text-sm text-white/70">
-                Scalable Infrastructure · AI-powered Insights · Global Deployment
+                Scenario Evaluation · Traceable Evidence · Supervised Pilots
               </p>
             </div>
           </div>

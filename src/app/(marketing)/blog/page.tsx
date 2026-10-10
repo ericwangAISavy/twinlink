@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { resources } from "@/lib/resources";
+import { withResourceImage } from "@/lib/resource-images";
 import {
   ResourceHero,
   ResourceLinks,
@@ -9,7 +10,7 @@ import { ResourceList } from "@/components/resources/resource-list";
 export const metadata: Metadata = {
   title: "The Twinlink Journal",
   description:
-    "Practical perspectives on building reliable products, working across borders, and turning emerging technology into lasting value.",
+    "Practical guides to industrial AI, secure agents, knowledge search, and the business decisions behind dependable technology. Written for people building and operating real systems.",
 };
 export default function Page() {
   return (
@@ -18,12 +19,16 @@ export default function Page() {
         eyebrow={"The Twinlink Journal"}
         title={"Good thinking. Better engineering."}
         description={
-          "Practical perspectives on building reliable products, working across borders, and turning emerging technology into lasting value."
+          "Practical guides to industrial AI, secure agents, knowledge search, and the business decisions behind dependable technology. Written for people building and operating real systems."
         }
         image={"/images/how-we-help-architecture.jpg"}
       />
       <ResourceLinks />
-      <ResourceList items={resources.filter((r) => r.kind === "blog")} />
+      <ResourceList
+        items={resources
+          .filter((r) => r.kind === "blog")
+          .map(withResourceImage)}
+      />
       <div className="px-4">
         <ResourceCta />
       </div>

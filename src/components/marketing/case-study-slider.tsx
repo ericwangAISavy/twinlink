@@ -4,25 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { resources, resourceHref } from "@/lib/resources";
 
-const STUDIES = [
-  {
-    eyebrow: "AI & automation",
-    title: "Enterprise AI Platform",
-    body: "Built a scalable AI platform with dedicated engineering teams, from architecture to deployment.",
-    href: "/about",
-    src: "/images/case-study-skyline.jpg",
-    alt: "City skyline at dusk along the river",
-  },
-  {
-    eyebrow: "Cloud & delivery",
-    title: "Modernization at scale",
-    body: "Re-platformed a core product onto a secure cloud foundation while the business kept shipping.",
-    href: "/about",
-    src: "/images/how-we-help-architecture.jpg",
-    alt: "Glass tower catching sunset light",
-  },
-] as const;
+const STUDIES = resources
+  .filter((item) => item.kind === "case-studies")
+  .slice(0, 3)
+  .map((item) => ({
+    eyebrow: item.label,
+    title: item.title,
+    body: item.summary,
+    href: resourceHref(item),
+    src: item.fallbackImage || item.image,
+    alt: "Twinlink engineering editorial illustration",
+  }));
 
 export function CaseStudySlider() {
   const [index, setIndex] = useState(0);
@@ -41,10 +35,17 @@ export function CaseStudySlider() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
         <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#e8d5a3]">{study.eyebrow}</p>
-          <h3 className="mt-2 font-serif text-2xl md:text-3xl">{study.title}</h3>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#e8d5a3]">
+            {study.eyebrow}
+          </p>
+          <h3 className="mt-2 font-serif text-2xl md:text-3xl">
+            {study.title}
+          </h3>
           <p className="mt-2 max-w-lg text-sm text-white/80">{study.body}</p>
-          <Link href={study.href} className="mt-4 inline-flex text-sm text-[#e8d5a3] hover:underline">
+          <Link
+            href={study.href}
+            className="mt-4 inline-flex text-sm text-[#e8d5a3] hover:underline"
+          >
             Read case study
           </Link>
         </div>
@@ -54,7 +55,9 @@ export function CaseStudySlider() {
           type="button"
           aria-label="Previous case study"
           className="grid h-9 w-9 place-items-center rounded-full border border-white/30 bg-black/40 text-white hover:bg-black/60"
-          onClick={() => setIndex((value) => (value === 0 ? STUDIES.length - 1 : value - 1))}
+          onClick={() =>
+            setIndex((value) => (value === 0 ? STUDIES.length - 1 : value - 1))
+          }
         >
           <ChevronLeft className="size-4" />
         </button>
@@ -62,7 +65,9 @@ export function CaseStudySlider() {
           type="button"
           aria-label="Next case study"
           className="grid h-9 w-9 place-items-center rounded-full border border-white/30 bg-black/40 text-white hover:bg-black/60"
-          onClick={() => setIndex((value) => (value === STUDIES.length - 1 ? 0 : value + 1))}
+          onClick={() =>
+            setIndex((value) => (value === STUDIES.length - 1 ? 0 : value + 1))
+          }
         >
           <ChevronRight className="size-4" />
         </button>

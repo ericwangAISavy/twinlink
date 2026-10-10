@@ -1,4 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
+import {
+  withResourceImage,
+  resolveEditorialImage,
+} from "@/lib/resource-images";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import {
   chinaDate,
@@ -16,6 +21,7 @@ export function ResourceDetail({
   item: Resource;
   email: string;
 }) {
+  item = withResourceImage(item);
   const related = resources
     .filter((r) => r.kind === item.kind && r.slug !== item.slug)
     .slice(0, 2);
@@ -28,6 +34,36 @@ export function ResourceDetail({
         image={item.image}
       />
       <ResourceLinks />
+      <div className="mx-auto max-w-6xl px-4 pt-10">
+        <p className="text-sm text-white/60">
+          {item.author || "Twinlink Engineering"} · {item.readMinutes} min read
+        </p>
+        {item.notice && (
+          <p className="mt-5 rounded-xl border border-[#c4a574]/30 bg-[#c4a574]/5 p-5 text-sm leading-relaxed text-[#e8d5a3]">
+            {item.notice}
+          </p>
+        )}
+        {item.metrics && (
+          <section
+            aria-label="Illustrative scenario outcomes"
+            className="mt-7 grid gap-4 sm:grid-cols-3"
+          >
+            {item.metrics.map((metric) => (
+              <div
+                key={metric.label}
+                className="rounded-xl border border-white/10 bg-[#151310] p-6"
+              >
+                <p className="font-serif text-4xl text-[#e8d5a3]">
+                  {metric.value}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-white/65">
+                  {metric.label}
+                </p>
+              </div>
+            ))}
+          </section>
+        )}
+      </div>
       <div className="mx-auto max-w-6xl px-4 py-12">
         <Link
           href={`/${item.kind}`}
@@ -37,7 +73,21 @@ export function ResourceDetail({
           Back to {item.kind.replace("-", " ")}
         </Link>
         <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_280px]">
-          <article className="max-w-3xl">
+          <article className="min-w-0 max-w-3xl">
+            <figure className="mb-12 overflow-hidden rounded-xl border border-white/10 bg-[#090a10]">
+              <div className="relative aspect-video">
+                <Image
+                  src={item.image}
+                  alt={item.imageAlt || ""}
+                  fill
+                  sizes="(min-width:1024px) 800px, 100vw"
+                  className="object-contain"
+                />
+              </div>
+              <figcaption className="border-t border-white/10 px-5 py-3 text-xs leading-relaxed text-white/60">
+                {item.imageAlt}
+              </figcaption>
+            </figure>
             {item.sections.map((s, i) => (
               <section
                 key={s.title}
@@ -45,25 +95,113 @@ export function ResourceDetail({
                 className="mb-10 scroll-mt-24"
               >
                 <p className="text-xs tracking-widest text-[#c4a574]">
-                  0{i + 1}
+                  {String(i + 1).padStart(2, "0")}
                 </p>
                 <h2 className="mt-3 font-serif text-3xl text-white md:text-4xl">
                   {s.title}
                 </h2>
                 <p className="mt-5 text-lg leading-8 text-white/75">{s.body}</p>
+                {s.paragraphs?.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="mt-5 text-lg leading-8 text-white/75"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+                {s.bullets && (
+                  <ul className="mt-6 space-y-3 border-l-2 border-[#c4a574]/50 pl-6 text-base leading-7 text-white/75">
+                    {s.bullets.map((bullet) => (
+                      <li key={bullet} className="list-disc ml-4">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {s.table && (
+                  <div
+                    className="mt-7 max-w-full overflow-x-auto rounded-xl border border-white/15"
+                    role="region"
+                    aria-label={`${s.title} comparison table`}
+                    tabIndex={0}
+                  >
+                    <table className="w-full min-w-[520px] text-left text-sm">
+                      <caption className="sr-only">{s.title}</caption>
+                      <thead className="bg-[#c4a574]/10 text-[#e8d5a3]">
+                        <tr>
+                          {s.table.columns.map((column) => (
+                            <th
+                              key={column}
+                              scope="col"
+                              className="p-4 font-medium"
+                            >
+                              {column}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {s.table.rows.map((row, index) => (
+                          <tr
+                            key={index}
+                            className="border-t border-white/10 text-white/75"
+                          >
+                            {row.map((value, cell) =>
+                              cell === 0 ? (
+                                <th
+                                  key={cell}
+                                  scope="row"
+                                  className="p-4 font-medium"
+                                >
+                                  {value}
+                                </th>
+                              ) : (
+                                <td key={cell} className="p-4 leading-relaxed">
+                                  {value}
+                                </td>
+                              ),
+                            )}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </section>
             ))}
+            {item.supportingImages?.map((source) => {
+              const resolved = resolveEditorialImage(source);
+              return (
+                <figure
+                  key={source.image}
+                  className="my-12 overflow-hidden rounded-xl border border-white/10"
+                >
+                  <div className="relative aspect-video bg-[#090a10]">
+                    <Image
+                      src={resolved.image}
+                      alt={resolved.imageAlt}
+                      fill
+                      sizes="(min-width:1024px) 800px, 100vw"
+                      className="object-contain"
+                    />
+                  </div>
+                  <figcaption className="px-5 py-3 text-xs text-white/60">
+                    {resolved.imageAlt}
+                  </figcaption>
+                </figure>
+              );
+            })}
             {item.kind === "events" && (
               <section
                 id="interest"
                 className="mt-12 rounded-xl border border-white/10 bg-[#151310] p-6"
               >
                 <h2 className="font-serif text-3xl text-white">
-                  Help shape the conversation.
+                  Interested in this program?
                 </h2>
                 <p className="mb-7 mt-3 text-sm text-white/65">
-                  Express interest by email. This does not reserve a place or
-                  confirm an event.
+                  Tell us which topic would help your team. Dates are to be
+                  announced; an interest email does not reserve a place.
                 </p>
                 <ContactForm
                   email={email}
@@ -77,7 +215,7 @@ export function ResourceDetail({
               <p className="text-xs uppercase tracking-[.2em] text-[#c4a574]">
                 {item.kind === "events" ? "Event notes" : "In this story"}
               </p>
-              {item.date && (
+              {item.date && item.end && (
                 <>
                   <p className="mt-5 text-lg text-white">
                     {chinaDate(item.date)}
@@ -89,6 +227,12 @@ export function ResourceDetail({
                   <p className="mt-4 text-xs text-[#e8d5a3]">{item.label}</p>
                   <EventCalendar event={item} />
                 </>
+              )}
+              {!item.date && item.kind === "events" && (
+                <p className="mt-5 text-sm leading-relaxed text-white/65">
+                  Proposed program · dates to be announced. Explore the guide
+                  and email your interest.
+                </p>
               )}
               <nav
                 aria-label="On this page"
@@ -103,6 +247,28 @@ export function ResourceDetail({
                     {s.title}
                   </a>
                 ))}
+                {item.supportingImages?.map((source) => {
+                  const resolved = resolveEditorialImage(source);
+                  return (
+                    <figure
+                      key={source.image}
+                      className="my-12 overflow-hidden rounded-xl border border-white/10"
+                    >
+                      <div className="relative aspect-video bg-[#090a10]">
+                        <Image
+                          src={resolved.image}
+                          alt={resolved.imageAlt}
+                          fill
+                          sizes="(min-width:1024px) 800px, 100vw"
+                          className="object-contain"
+                        />
+                      </div>
+                      <figcaption className="px-5 py-3 text-xs text-white/60">
+                        {resolved.imageAlt}
+                      </figcaption>
+                    </figure>
+                  );
+                })}
                 {item.kind === "events" && (
                   <a href="#interest" className="text-[#e8d5a3]">
                     Express interest ↓

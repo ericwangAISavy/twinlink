@@ -7,6 +7,18 @@ import { chinaDate, resourceHref, type Resource } from "@/lib/resources";
 export function ResourceList({ items }: { items: Resource[] }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
+  const singular =
+    items[0]?.kind === "events"
+      ? "program"
+      : items[0]?.kind === "case-studies"
+        ? "case study"
+        : "article";
+  const plural =
+    items[0]?.kind === "events"
+      ? "programs"
+      : items[0]?.kind === "case-studies"
+        ? "case studies"
+        : "articles";
   const categories = ["All", ...new Set(items.map((i) => i.category))];
   const filtered = items.filter(
     (i) =>
@@ -49,7 +61,7 @@ export function ResourceList({ items }: { items: Resource[] }) {
         className="my-6 text-xs uppercase tracking-widest text-white/50"
         role="status"
       >
-        {filtered.length} {filtered.length === 1 ? "story" : "stories"}
+        {filtered.length} {filtered.length === 1 ? singular : plural}
       </p>
       <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
         {filtered.map((item) => (
@@ -61,7 +73,7 @@ export function ResourceList({ items }: { items: Resource[] }) {
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={item.image}
-                  alt=""
+                  alt={item.imageAlt || ""}
                   fill
                   sizes="(min-width:1024px) 360px, (min-width:768px) 50vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -83,7 +95,10 @@ export function ResourceList({ items }: { items: Resource[] }) {
                   </p>
                 )}
                 <div className="mt-6 flex items-center justify-between gap-3 border-t border-white/10 pt-4 text-xs text-white/60">
-                  <span>{item.label}</span>
+                  <span>
+                    {item.label}
+                    {item.readMinutes ? ` · ${item.readMinutes} min read` : ""}
+                  </span>
                   <ArrowUpRight size={18} className="text-[#e8d5a3]" />
                 </div>
               </div>
@@ -94,7 +109,7 @@ export function ResourceList({ items }: { items: Resource[] }) {
       {filtered.length === 0 && (
         <div className="rounded-xl border border-white/10 p-12 text-center">
           <h2 className="font-serif text-3xl text-white">
-            No matching stories
+            No matching resources
           </h2>
           <p className="mt-3 text-white/60">
             Try a different topic or search term.
