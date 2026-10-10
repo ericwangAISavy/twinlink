@@ -165,8 +165,8 @@ export default function HomePage() {
               Building a global platform for a connected future.
             </Reveal>
             <Reveal as="p" className="reveal-copy mt-5 max-w-md leading-relaxed text-white/65" delay={160}>
-              See how we partnered with a leading enterprise to design and build a secure, scalable platform
-              that connects millions of users across markets.
+              Explore an illustrative approach to designing a secure, scalable platform
+              that connects teams and customers across markets.
             </Reveal>
             <Reveal className="reveal-copy mt-8" delay={220}>
               <Button
@@ -174,7 +174,7 @@ export default function HomePage() {
                 variant="outline"
                 className="rounded-full border-[#c4a574]/40 bg-transparent text-[#e8d5a3] hover:bg-[#c4a574]/10"
               >
-                <Link href="/about">
+                <Link href="/case-studies/a-platform-built-to-grow">
                   Read case study <ArrowRight />
                 </Link>
               </Button>

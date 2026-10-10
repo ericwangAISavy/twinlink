@@ -13,23 +13,43 @@ export function SiteFooter({ company }: { company: CompanyContent }) {
             Twinlink
           </p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/55">
-            Engineering expertise, global talent, and innovative solutions for turn ambitious ideas into
-            meaningful impact.
+            Engineering expertise, global talent, and innovative solutions that
+            turn ambitious ideas into meaningful impact.
           </p>
           <div className="mt-5 flex items-center gap-4 text-white/55">
-            <Link href="https://www.linkedin.com" aria-label="LinkedIn" className="hover:text-[#e8d5a3]">
+            <button
+              type="button"
+              disabled
+              aria-label="LinkedIn unavailable"
+              title="LinkedIn unavailable"
+              className="cursor-not-allowed opacity-40"
+            >
               <Linkedin className="size-4" />
-            </Link>
-            <Link href="https://www.youtube.com" aria-label="YouTube" className="hover:text-[#e8d5a3]">
+            </button>
+            <button
+              type="button"
+              disabled
+              aria-label="YouTube unavailable"
+              title="YouTube unavailable"
+              className="cursor-not-allowed opacity-40"
+            >
               <Youtube className="size-4" />
-            </Link>
-            <Link href="https://www.instagram.com" aria-label="Instagram" className="hover:text-[#e8d5a3]">
+            </button>
+            <button
+              type="button"
+              disabled
+              aria-label="Instagram unavailable"
+              title="Instagram unavailable"
+              className="cursor-not-allowed opacity-40"
+            >
               <Instagram className="size-4" />
-            </Link>
+            </button>
           </div>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Explore</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+            Explore
+          </p>
           <div className="mt-4 flex flex-col gap-2 text-sm text-white/70">
             <Link href="/about" className="hover:text-[#e8d5a3]">
               About
@@ -49,28 +69,37 @@ export function SiteFooter({ company }: { company: CompanyContent }) {
           </div>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Resources</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+            Resources
+          </p>
           <div className="mt-4 flex flex-col gap-2 text-sm text-white/70">
-            <Link href="/#insights" className="hover:text-[#e8d5a3]">
+            <Link href="/case-studies" className="hover:text-[#e8d5a3]">
               Case Studies
             </Link>
-            <Link href="/about" className="hover:text-[#e8d5a3]">
+            <Link href="/blog" className="hover:text-[#e8d5a3]">
               Blog
             </Link>
-            <Link href="/about" className="hover:text-[#e8d5a3]">
+            <Link href="/events" className="hover:text-[#e8d5a3]">
               Events
             </Link>
-            <Link href="/about" className="hover:text-[#e8d5a3]">
+            <Link href="/contact" className="hover:text-[#e8d5a3]">
               Contact
             </Link>
           </div>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Get in touch</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+            Get in touch
+          </p>
           <div className="mt-4 space-y-2 text-sm text-white/70">
-            <p>{company.email ?? "hello@twinlink.com"}</p>
-            <p>San Francisco, CA</p>
-            <p>United States</p>
+            <a
+              href={`mailto:${company.email || "hello@twinlink.com"}`}
+              className="hover:text-[#e8d5a3]"
+            >
+              {company.email || "hello@twinlink.com"}
+            </a>
+            <p>Headquartered in China</p>
+            <p>China Standard Time · UTC+8</p>
           </div>
         </div>
       </div>
