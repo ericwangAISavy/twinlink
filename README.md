@@ -13,7 +13,7 @@ Professional technology consulting website and talent portal. Candidates self-re
 
 1. Create a Supabase project. Do not use a local PostgreSQL server.
 
-2. In the Supabase SQL editor, run `supabase/migrations/0001_init.sql`, then `0002_admin.sql`, then `0003_admin_auth.sql`.
+2. In the Supabase SQL editor, run the files in `supabase/migrations` in numerical order, through `0013_editorial_publishing.sql`. For an existing project, apply only migrations not yet installed.
 
 3. Copy environment files:
 
@@ -40,6 +40,8 @@ Professional technology consulting website and talent portal. Candidates self-re
    Open [http://localhost:3000](http://localhost:3000).
 
 ## First accounts
+
+Admins can manage case studies, blog posts, and events under **Articles & Events**. See [the publishing guide](docs/editorial-publishing.md) for activation and the draft, preview, publish, and archive workflow.
 
 - **Candidate:** `/register` always creates a candidate. The browser cannot assign the employee or admin role.
 - **First employee:** sign up as a candidate, then in the SQL editor:
@@ -90,7 +92,7 @@ Professional technology consulting website and talent portal. Candidates self-re
 1. Import the repo in Vercel.
 2. Set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, and `NEXT_PUBLIC_APP_URL` (production domain). Add `SUPABASE_SERVICE_ROLE_KEY` only if you need server-side bootstrap.
 3. Build command is `next build`.
-4. Apply `supabase/migrations/0001_init.sql`, `0002_admin.sql`, and `0003_admin_auth.sql` to the same Supabase project used in production.
+4. Apply all files in `supabase/migrations` in numerical order to the same Supabase project used in production.
 
 ## Product map
 

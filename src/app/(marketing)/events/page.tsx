@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { resources } from "@/lib/resources";
+import { getPublishedResources } from "@/server/queries/editorial";
 import { withResourceImage } from "@/lib/resource-images";
 import {
   ResourceHero,
@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   description:
     "Practical program guides for industrial AI, secure agents, technical communication, and AI investment. Explore the material and express interest in a future session.",
 };
-export default function Page() {
+export default async function Page() {
+  const resources = await getPublishedResources();
   return (
     <>
       <ResourceHero

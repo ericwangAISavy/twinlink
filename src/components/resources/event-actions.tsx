@@ -13,16 +13,15 @@ export function EventCalendar({ event }: { event: Resource }) {
     const lines = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//Twinlink//Proposed Events//EN",
+      "PRODID:-//Twinlink//Events//EN",
       "BEGIN:VEVENT",
       `UID:${event.slug}@twinlink.com`,
       `DTSTAMP:${stamp(new Date().toISOString())}`,
       `DTSTART:${stamp(event.date!)}`,
       `DTEND:${stamp(event.end!)}`,
-      `SUMMARY:${escape("[Proposed] " + event.title)}`,
-      `DESCRIPTION:${escape("Tentative event concept. Not a confirmed booking. " + event.summary)}`,
-      `LOCATION:${escape(event.location!)}`,
-      "STATUS:TENTATIVE",
+      `SUMMARY:${escape(event.title)}`,
+      `DESCRIPTION:${escape(event.summary + " Calendar entry only; this does not register attendance.")}`,
+      `LOCATION:${escape(event.location || "To be announced")}`,
       "END:VEVENT",
       "END:VCALENDAR",
     ];
@@ -61,7 +60,7 @@ export function EventCalendar({ event }: { event: Resource }) {
       onClick={download}
       className="mt-5 rounded-full border border-[#c4a574]/50 px-5 py-3 text-sm text-[#e8d5a3] hover:bg-white/5"
     >
-      Download tentative calendar entry
+      Download calendar entry
     </button>
   );
 }

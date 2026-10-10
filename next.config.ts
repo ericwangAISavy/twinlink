@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
     ],
   },
   experimental: {
+    serverActions: { bodySizeLimit: "6mb" },
     optimizePackageImports: ["lucide-react"],
     staleTimes: {
       dynamic: 30,

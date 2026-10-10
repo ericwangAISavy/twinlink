@@ -31,7 +31,11 @@ const GROUPS = [
     label: "Recruiting",
     items: [
       { href: "/admin/jobs", label: "Jobs", icon: Briefcase },
-      { href: "/admin/applications", label: "Applications", icon: ClipboardList },
+      {
+        href: "/admin/applications",
+        label: "Applications",
+        icon: ClipboardList,
+      },
       { href: "/admin/candidates", label: "Candidates", icon: Users },
     ],
   },
@@ -44,7 +48,9 @@ const GROUPS = [
   },
   {
     label: "Communication",
-    items: [{ href: "/admin/notifications", label: "Notifications", icon: Bell }],
+    items: [
+      { href: "/admin/notifications", label: "Notifications", icon: Bell },
+    ],
   },
   {
     label: "Operations",
@@ -52,6 +58,7 @@ const GROUPS = [
       { href: "/admin/analytics", label: "Analytics", icon: BarChart3 },
       { href: "/admin/activity", label: "Activity", icon: Activity },
       { href: "/admin/content", label: "Website Content", icon: FileText },
+      { href: "/admin/publishing", label: "Articles & Events", icon: FileText },
       { href: "/admin/resources", label: "Resources", icon: FolderOpen },
     ],
   },
@@ -96,7 +103,10 @@ export function AdminSidebar({
         Admin console
       </p>
 
-      <nav className="mt-8 flex-1 space-y-5 overflow-y-auto pr-1" aria-label="Admin">
+      <nav
+        className="mt-8 flex-1 space-y-5 overflow-y-auto pr-1"
+        aria-label="Admin"
+      >
         {GROUPS.map((group) => (
           <div key={group.label ?? "overview"}>
             {group.label ? (
@@ -107,7 +117,11 @@ export function AdminSidebar({
             <div className="space-y-0.5">
               {group.items.map((item) => {
                 const Icon = item.icon;
-                const active = item.href === "/admin" ? currentPath === "/admin" : currentPath === item.href || currentPath.startsWith(`${item.href}/`);
+                const active =
+                  item.href === "/admin"
+                    ? currentPath === "/admin"
+                    : currentPath === item.href ||
+                      currentPath.startsWith(`${item.href}/`);
                 const pending = pendingHref === item.href;
                 return (
                   <Link
@@ -132,7 +146,9 @@ export function AdminSidebar({
                   >
                     <Icon className="size-4 shrink-0" aria-hidden />
                     <span className="flex-1">{item.label}</span>
-                    {pending ? <Spinner className="size-3.5 text-[#1c1916]" /> : null}
+                    {pending ? (
+                      <Spinner className="size-3.5 text-[#1c1916]" />
+                    ) : null}
                     {item.href === "/admin/notifications" && unread > 0 ? (
                       <span className="rounded-full bg-[#c4a574] px-1.5 py-0.5 text-[10px] font-medium text-[#1c1916]">
                         {unread}

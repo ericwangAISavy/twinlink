@@ -19,6 +19,7 @@ export type Resource = {
   notice?: string;
   author?: string;
   readMinutes?: number;
+  featured?: boolean;
   takeaways?: string[];
   metrics?: { value: string; label: string }[];
   supportingImages?: {

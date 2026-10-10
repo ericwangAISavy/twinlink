@@ -6,9 +6,9 @@ import type { Resource } from "@/lib/resources";
 // The original chat attachments are resolved when their files become available.
 // Until then, use retained local photography rather than broken image URLs.
 export function withResourceImage(item: Resource): Resource {
-  const present = existsSync(
-    join(process.cwd(), "public", item.image.replace(/^\/+/, "")),
-  );
+  const present =
+    item.image.startsWith("https://") ||
+    existsSync(join(process.cwd(), "public", item.image.replace(/^\/+/, "")));
   return present || !item.fallbackImage
     ? item
     : {
@@ -22,9 +22,9 @@ export function resolveEditorialImage(image: {
   fallbackImage: string;
   imageAlt: string;
 }) {
-  const present = existsSync(
-    join(process.cwd(), "public", image.image.replace(/^\/+/, "")),
-  );
+  const present =
+    image.image.startsWith("https://") ||
+    existsSync(join(process.cwd(), "public", image.image.replace(/^\/+/, "")));
   return {
     image: present ? image.image : image.fallbackImage,
     imageAlt: present

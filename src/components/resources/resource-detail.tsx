@@ -5,16 +5,12 @@ import {
   resolveEditorialImage,
 } from "@/lib/resource-images";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import {
-  chinaDate,
-  resources,
-  resourceHref,
-  type Resource,
-} from "@/lib/resources";
+import { chinaDate, resourceHref, type Resource } from "@/lib/resources";
+import { getPublishedResources } from "@/server/queries/editorial";
 import { ResourceHero, ResourceLinks, ResourceCta } from "./resource-shell";
 import { EventCalendar } from "./event-actions";
 import { ContactForm } from "./contact-form";
-export function ResourceDetail({
+export async function ResourceDetail({
   item,
   email,
 }: {
@@ -22,6 +18,7 @@ export function ResourceDetail({
   email: string;
 }) {
   item = withResourceImage(item);
+  const resources = await getPublishedResources();
   const related = resources
     .filter((r) => r.kind === item.kind && r.slug !== item.slug)
     .slice(0, 2);

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { resources } from "@/lib/resources";
+import { getPublishedResources } from "@/server/queries/editorial";
 import { withResourceImage } from "@/lib/resource-images";
 import {
   ResourceHero,
@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   description:
     "Explore eight detailed engagement scenarios across autonomous systems, industrial AI, knowledge platforms, and business operations. Each case explains the design decisions and modeled outcomes.",
 };
-export default function Page() {
+export default async function Page() {
+  const resources = await getPublishedResources();
   return (
     <>
       <ResourceHero
