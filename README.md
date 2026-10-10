@@ -41,6 +41,8 @@ Professional technology consulting website and talent portal. Candidates self-re
 
 ## First accounts
 
+Sign-in and registration also support **Continue with Google**. Follow [the Google setup guide](docs/google-sign-in.md) to enable the Supabase provider and configure Google's OAuth client.
+
 Admins can manage case studies, blog posts, and events under **Articles & Events**. See [the publishing guide](docs/editorial-publishing.md) for activation and the draft, preview, publish, and archive workflow.
 
 - **Candidate:** `/register` always creates a candidate. The browser cannot assign the employee or admin role.

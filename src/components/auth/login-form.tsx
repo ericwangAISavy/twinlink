@@ -5,6 +5,7 @@ import { ArrowRight, Eye, EyeOff, Lock, Mail } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AuthInput } from "@/components/auth/auth-input";
+import { GoogleSignIn } from "@/components/auth/google-sign-in";
 import { PortalToggle, type PortalRole } from "@/components/auth/portal-toggle";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -19,6 +20,8 @@ const LOGIN_ERRORS: Record<string, string> = {
   account: ACCOUNT_SETUP_ERROR,
   approval: ACCESS_PENDING_ERROR,
   auth: "Sign-in could not be completed. Try again.",
+  google: "Google sign-in was cancelled or could not be completed. Please try again.",
+  invite: "The invitation could not be accepted. Use the invited Google account and the original invitation link.",
 };
 
 function isNextRedirect(error: unknown) {
@@ -197,6 +200,7 @@ export function LoginForm() {
         or
         <span className="h-px flex-1 bg-white/15" />
       </div>
+      <GoogleSignIn next={callbackUrl} disabled={pending} />
       {role === "employee" ? (
         <p className="text-center text-sm text-white/55">
           Employees join by invite. Use this form with your employee email.
