@@ -21,12 +21,18 @@ export function SiteHeader({ user }: { user: AppUser | null }) {
             </Button>
           ) : (
             <>
-              <Button asChild size="sm" variant="ghost" className="text-white hover:bg-white/10 hover:text-[#e8d5a3]">
+              <Button
+                asChild
+                size="sm"
+                variant="ghost"
+                className="text-white hover:bg-white/10 hover:text-[#e8d5a3]"
+              >
                 <Link href="/login">Sign in</Link>
               </Button>
               <Button asChild size="sm" variant="teal" className="rounded-full">
                 <Link href="/register">
-                  Join as a candidate <ArrowRight />
+                  Join<span className="hidden sm:inline"> as a candidate</span>{" "}
+                  <ArrowRight />
                 </Link>
               </Button>
             </>
