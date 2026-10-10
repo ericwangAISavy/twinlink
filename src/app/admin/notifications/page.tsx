@@ -13,7 +13,7 @@ export default async function AdminNotificationsPage() {
     <>
       <AdminPageHeader title="Notifications" description="Operational alerts for your admin account." />
       {notifications.length === 0 ? (
-        <AdminEmptyState title="No notifications yet." description="You will see application, interview, and message alerts here." />
+        <AdminEmptyState title="No notifications yet." description="You will see application alerts here." />
       ) : (
         <ul className="space-y-3">
           {notifications.map((item) => (

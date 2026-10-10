@@ -44,7 +44,7 @@ export default function AboutPage() {
             alt="TwinLink team working at a desk against a sunset skyline"
             fill
             priority
-            quality={95}
+            quality={80}
             sizes="(min-width: 1152px) 1152px, 100vw"
             className="object-cover object-[68%_center]"
           />
@@ -88,7 +88,7 @@ export default function AboutPage() {
               src="/images/about-mission-summit.jpg"
               alt="A person standing on a mountain summit above the clouds at sunset"
               fill
-              quality={95}
+              quality={75}
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover object-[center_58%]"
             />
@@ -103,7 +103,7 @@ export default function AboutPage() {
               src="/images/about-vision-ai.jpg"
               alt="Hands typing on a laptop with an AI interface over the screen"
               fill
-              quality={95}
+              quality={75}
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover object-center"
             />
@@ -180,7 +180,7 @@ export default function AboutPage() {
               src="/images/about-culture-office.jpg"
               alt="TwinLink teammates reviewing work together at a desk"
               fill
-              quality={95}
+              quality={75}
               sizes="(min-width: 1024px) 55vw, 100vw"
               className="object-cover object-[center_22%]"
             />

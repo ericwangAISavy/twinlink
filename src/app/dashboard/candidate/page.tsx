@@ -5,18 +5,18 @@ import { ProfileCompletionCard } from "@/components/dashboard/candidate/profile-
 import { RecentApplicationsCard } from "@/components/dashboard/candidate/recent-applications-card";
 import { RecommendedJobsCard } from "@/components/dashboard/candidate/recommended-jobs-card";
 import { getProfileCompletion } from "@/lib/candidate-profile";
-import { isActiveStage } from "@/lib/hiring-stages";
+import { isActiveApplicationStatus } from "@/lib/constants";
 import { requireRole } from "@/server/authorization";
 import { getCandidateApplications, getSavedJobs } from "@/server/queries/applications";
 import { getPublishedJobs } from "@/server/queries/jobs";
-import { getUnreadNotifications } from "@/server/queries/messages";
+import { getUnreadNotificationCount } from "@/server/queries/messages";
 import { getCandidateProfile } from "@/server/queries/profiles";
 
 export default async function CandidateOverviewPage() {
   const user = await requireRole("CANDIDATE");
-  const [applications, notifications, profileRecord, saved, jobs] = await Promise.all([
+  const [applications, unreadCount, profileRecord, saved, jobs] = await Promise.all([
     getCandidateApplications(user.id),
-    getUnreadNotifications(user.id),
+    getUnreadNotificationCount(user.id),
     getCandidateProfile(user.id),
     getSavedJobs(user.id),
     getPublishedJobs(),
@@ -48,8 +48,7 @@ export default async function CandidateOverviewPage() {
       saved: savedIds.has(job.id),
     }));
 
-  const unread = notifications.filter((item) => !item.read);
-  const activeApplications = applications.filter((item) => isActiveStage(item.status));
+  const activeApplications = applications.filter((item) => isActiveApplicationStatus(item.status));
   const activeCount = activeApplications.length;
 
   return (
@@ -66,13 +65,13 @@ export default async function CandidateOverviewPage() {
         <DashboardStatCard
           label="Active"
           value={activeCount}
-          hint="Not rejected or withdrawn"
+          hint="Not rejected, withdrawn, or accepted"
           icon={Briefcase}
         />
         <DashboardStatCard
           label="Unread alerts"
-          value={unread.length}
-          hint={unread.length === 0 ? "No unread messages" : "From Twinlink"}
+          value={unreadCount}
+          hint={unreadCount === 0 ? "No unread alerts" : "From Twinlink"}
           icon={Inbox}
         />
         <DashboardStatCard

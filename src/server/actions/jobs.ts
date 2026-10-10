@@ -1,11 +1,12 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { fail, ok, type ActionResult } from "@/lib/action-result";
 import { toDbJobStatus } from "@/lib/supabase/mappers";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { uniqueSlug } from "@/lib/utils";
+import { CACHE_TAGS } from "@/lib/cache-tags";
 import { jobSchema } from "@/lib/validations";
 import { requireRole } from "@/server/authorization";
 
@@ -43,6 +44,7 @@ export async function upsertJob(formData: FormData): Promise<ActionResult> {
     if (error) return fail(error.message);
     revalidatePath("/careers");
     revalidatePath("/dashboard/employee/jobs");
+    revalidateTag(CACHE_TAGS.publishedJobs);
     redirect(`/dashboard/employee/jobs/${id}`);
   }
 
@@ -59,6 +61,7 @@ export async function upsertJob(formData: FormData): Promise<ActionResult> {
 
   revalidatePath("/careers");
   revalidatePath("/dashboard/employee/jobs");
+  revalidateTag(CACHE_TAGS.publishedJobs);
   redirect(`/dashboard/employee/jobs/${data.id}`);
 }
 
@@ -69,6 +72,7 @@ export async function deleteJob(jobId: string): Promise<ActionResult> {
   if (error) return fail(error.message);
   revalidatePath("/careers");
   revalidatePath("/dashboard/employee/jobs");
+  revalidateTag(CACHE_TAGS.publishedJobs);
   return ok("Job deleted.");
 }
 

@@ -23,7 +23,6 @@ const TITLES: Record<string, string> = {
   "/dashboard/candidate/jobs": "Browse roles",
   "/dashboard/candidate/applications": "Applications",
   "/dashboard/candidate/saved": "Saved jobs",
-  "/dashboard/candidate/messages": "Messages",
   "/dashboard/candidate/settings": "Settings",
 };
 
@@ -84,7 +83,7 @@ export function CandidateTopbar({
 
         <div className="ml-auto flex items-center gap-2 md:ml-0">
           <Button asChild variant="ghost" size="icon" className="relative rounded-full">
-            <Link href="/dashboard/candidate/messages" aria-label={unread ? `${unread} unread alerts` : "Messages"}>
+            <Link href="/dashboard/candidate" aria-label={unread ? `${unread} unread alerts` : "Dashboard"}>
               <Bell className="size-4" />
               {unread > 0 ? (
                 <span className="absolute right-1.5 top-1.5 size-2 rounded-full bg-accent" />

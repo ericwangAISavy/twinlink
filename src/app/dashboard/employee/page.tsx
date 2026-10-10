@@ -18,7 +18,7 @@ export default async function EmployeeOverviewPage() {
     <>
       <PageHeader
         title="Employee overview"
-        description="Jobs, applicants, and conversations across TwinLink."
+        description="Jobs, applicants, and company operations across TwinLink."
       />
       <div className="grid gap-4 md:grid-cols-3">
         <Card>

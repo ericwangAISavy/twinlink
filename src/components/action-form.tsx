@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition, type ReactNode } from "react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Spinner } from "@/components/loading-spinner";
 import { Button } from "@/components/ui/button";
@@ -12,18 +13,23 @@ export function ActionForm({
   children,
   submitLabel = "Save",
   submitClassName,
+  submitVariant,
   hideSubmit = false,
   className,
+  resetOnSuccess = false,
   onSuccess,
 }: {
   action: (formData: FormData) => Promise<ActionResult>;
   children: ReactNode;
   submitLabel?: string;
   submitClassName?: string;
+  submitVariant?: "default" | "teal" | "outline" | "ghost" | "secondary" | "destructive" | "link";
   hideSubmit?: boolean;
   className?: string;
+  resetOnSuccess?: boolean;
   onSuccess?: (message?: string) => void;
 }) {
+  const router = useRouter();
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
 
@@ -32,7 +38,8 @@ export function ActionForm({
       className={className}
       onSubmit={(event) => {
         event.preventDefault();
-        const formData = new FormData(event.currentTarget);
+        const form = event.currentTarget;
+        const formData = new FormData(form);
         startTransition(async () => {
           setError(null);
           try {
@@ -43,6 +50,8 @@ export function ActionForm({
               return;
             }
             toast.success(result.message ?? "Saved");
+            if (resetOnSuccess) form.reset();
+            router.refresh();
             onSuccess?.(result.message);
           } catch (error) {
             const digest =
@@ -66,7 +75,7 @@ export function ActionForm({
         </p>
       ) : null}
       {hideSubmit ? null : (
-        <Button type="submit" className={cn("mt-4", submitClassName)} disabled={pending}>
+        <Button type="submit" variant={submitVariant} className={cn("mt-4", submitClassName)} disabled={pending}>
           {pending ? <Spinner className="text-current" /> : null}
           {pending ? "Saving…" : submitLabel}
         </Button>

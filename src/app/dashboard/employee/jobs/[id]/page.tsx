@@ -14,9 +14,8 @@ export default async function EmployeeJobDetailPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  await requireRole("EMPLOYEE");
   const { id } = await params;
-  const job = await getJobForEmployee(id);
+  const [, job] = await Promise.all([requireRole("EMPLOYEE"), getJobForEmployee(id)]);
   if (!job) notFound();
   const applicants = await listApplications({ jobId: job.id });
 

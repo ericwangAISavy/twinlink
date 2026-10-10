@@ -27,13 +27,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function JobDetailPage({ params }: Props) {
   const { id } = await params;
-  const job = await getJobBySlugOrId(id);
+  const [job, user] = await Promise.all([getJobBySlugOrId(id), getCurrentUser()]);
   if (!job || job.status !== "PUBLISHED") notFound();
 
-  const user = await getCurrentUser();
-  const application =
-    user?.role === "CANDIDATE" ? await getCandidateApplication(job.id, user.id) : null;
-  const saved = user?.role === "CANDIDATE" ? (await getSavedJobIds(user.id)).has(job.id) : false;
+  const [application, savedIds] = user?.role === "CANDIDATE"
+    ? await Promise.all([getCandidateApplication(job.id, user.id), getSavedJobIds(user.id)])
+    : [null, new Set<string>()];
+  const saved = savedIds.has(job.id);
 
   return (
     <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 lg:grid-cols-[1.4fr_0.8fr]">
@@ -78,8 +78,8 @@ export default async function JobDetailPage({ params }: Props) {
                   </Button>
                 </div>
               </>
-            ) : user.role === "EMPLOYEE" ? (
-              <p className="text-sm text-muted-foreground">Employees review applications from the dashboard.</p>
+            ) : user.role === "EMPLOYEE" || user.role === "ADMIN" ? (
+              <p className="text-sm text-muted-foreground">Staff review applications from the dashboard.</p>
             ) : application ? (
               <p className="text-sm">
                 You applied on {formatDate(application.createdAt)}. Status:{" "}

@@ -6,24 +6,26 @@ import "./globals.css";
 const sans = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
 });
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-serif",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
   title: {
-    default: "TwinLink — Technology consulting",
-    template: "%s · TwinLink",
+    default: "twinlink",
+    template: "%s · twinlink",
   },
   description:
     "TwinLink is a professional technology consulting firm that connects strategy to delivery—architecture, product engineering, and operating models built to last.",
   openGraph: {
-    title: "TwinLink — Technology consulting",
+    title: "twinlink",
     description:
       "Senior practitioners who design, build, and scale software that stands up in production.",
     type: "website",

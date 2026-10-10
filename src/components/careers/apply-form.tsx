@@ -16,6 +16,9 @@ export function ApplyForm({ jobId }: { jobId: string }) {
           placeholder="Share why this role is a fit."
         />
       </Field>
+      <p className="mt-2 text-xs text-muted-foreground">
+        Twinlink attaches the resume currently on your profile. You can update it from your candidate Resume page before applying.
+      </p>
     </ActionForm>
   );
 }

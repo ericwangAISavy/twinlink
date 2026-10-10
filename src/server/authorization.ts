@@ -1,9 +1,11 @@
 import "server-only";
 
 import { cache } from "react";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { hasSupabaseAuthCookie } from "@/lib/supabase/session-cookie";
 import {
   homePath,
   parseUserRole,
@@ -39,6 +41,8 @@ type ProfileRow = {
 
 export const getCurrentProfile = cache(async (): Promise<CurrentAuth | null> => {
   if (!isSupabaseConfigured()) return null;
+  const cookieStore = await cookies();
+  if (!hasSupabaseAuthCookie(cookieStore.getAll())) return null;
 
   const supabase = await createServerSupabaseClient();
   const {
@@ -80,7 +84,7 @@ export const getCurrentProfile = cache(async (): Promise<CurrentAuth | null> => 
       fullName: appUser.name,
       avatarUrl: appUser.image ?? null,
       role: userRole,
-      accessStatus: profile.access_status === "pending" ? "pending" : "approved",
+      accessStatus: profile.access_status === "approved" ? "approved" : "pending",
     },
     role,
   };

@@ -1,7 +1,11 @@
 import "server-only";
 
+import { cache } from "react";
+import { unstable_cache } from "next/cache";
+import { CACHE_TAGS } from "@/lib/cache-tags";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { filenameFromPath, firstRecord, toAppJobStatus } from "@/lib/supabase/mappers";
+import { createPublicSupabaseClient } from "@/lib/supabase/public";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import type { JobStatus } from "@/lib/types";
 
@@ -50,21 +54,30 @@ function mapJob(row: Record<string, unknown>, applicationCount = 0): MappedJob {
   };
 }
 
-export async function getPublishedJobs() {
-  if (!isSupabaseConfigured()) return [];
-  const supabase = await createServerSupabaseClient();
-  const { data, error } = await supabase
-    .from("jobs")
-    .select("*")
-    .eq("status", "published")
-    .order("created_at", { ascending: false });
-  if (error || !data) return [];
-  return data.map((row) => mapJob(row));
-}
+const JOB_LIST_SELECT =
+  "id, slug, title, location, department, employment_type, workplace_type, description, requirements, status, created_at, updated_at, created_by";
 
-export async function getJobBySlugOrId(slugOrId: string) {
+const loadPublishedJobs = unstable_cache(
+  async () => {
+    if (!isSupabaseConfigured()) return [];
+    const supabase = createPublicSupabaseClient();
+    const { data, error } = await supabase
+      .from("jobs")
+      .select(JOB_LIST_SELECT)
+      .eq("status", "published")
+      .order("created_at", { ascending: false });
+    if (error || !data) return [];
+    return data.map((row) => mapJob(row));
+  },
+  ["published-jobs"],
+  { revalidate: 60, tags: [CACHE_TAGS.publishedJobs] },
+);
+
+export const getPublishedJobs = cache(loadPublishedJobs);
+
+export const getJobBySlugOrId = cache(async (slugOrId: string) => {
   if (!isSupabaseConfigured()) return null;
-  const supabase = await createServerSupabaseClient();
+  const supabase = createPublicSupabaseClient();
   const bySlug = await supabase
     .from("jobs")
     .select("*, profiles:created_by(full_name, email)")
@@ -81,7 +94,7 @@ export async function getJobBySlugOrId(slugOrId: string) {
       ).data;
   if (!row) return null;
   return mapJob(row);
-}
+});
 
 export async function getEmployeeJobs() {
   if (!isSupabaseConfigured()) return [];
@@ -123,12 +136,12 @@ export async function getPublishedJobBySlug(slug: string) {
   return job?.status === "PUBLISHED" ? job : null;
 }
 
-export async function getSavedJobIds(userId: string) {
+export const getSavedJobIds = cache(async (userId: string) => {
   if (!isSupabaseConfigured()) return new Set<string>();
   const supabase = await createServerSupabaseClient();
   const { data } = await supabase.from("saved_jobs").select("job_id").eq("candidate_id", userId);
   return new Set((data ?? []).map((row) => String(row.job_id)));
-}
+});
 
 export async function getSavedJobs(userId: string) {
   if (!isSupabaseConfigured()) return [];

@@ -13,13 +13,11 @@ import {
   ClipboardList,
   FileText,
   FolderOpen,
-  Inbox,
   LayoutDashboard,
   Settings,
   Shield,
   UserPlus,
   Users,
-  Video,
 } from "lucide-react";
 import { TwinlinkMark } from "@/components/marketing/twinlink-mark";
 import { cn } from "@/lib/utils";
@@ -35,7 +33,6 @@ const GROUPS = [
       { href: "/admin/jobs", label: "Jobs", icon: Briefcase },
       { href: "/admin/applications", label: "Applications", icon: ClipboardList },
       { href: "/admin/candidates", label: "Candidates", icon: Users },
-      { href: "/admin/interviews", label: "Interviews", icon: Video },
     ],
   },
   {
@@ -47,10 +44,7 @@ const GROUPS = [
   },
   {
     label: "Communication",
-    items: [
-      { href: "/admin/messages", label: "Messages", icon: Inbox },
-      { href: "/admin/notifications", label: "Notifications", icon: Bell },
-    ],
+    items: [{ href: "/admin/notifications", label: "Notifications", icon: Bell }],
   },
   {
     label: "Operations",

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bell, Briefcase, Building2, Home, Inbox, Settings, UserRound, Bookmark, FileText } from "lucide-react";
+import { Bell, Briefcase, Building2, Home, Settings, UserRound, Bookmark, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const employeeLinks = [
@@ -11,7 +11,6 @@ const employeeLinks = [
   { href: "/dashboard/employee/company", label: "Company", icon: Building2 },
   { href: "/dashboard/employee/jobs", label: "Jobs", icon: Briefcase },
   { href: "/dashboard/employee/applicants", label: "Applicants", icon: FileText },
-  { href: "/dashboard/employee/messages", label: "Messages", icon: Inbox },
   { href: "/dashboard/employee/settings", label: "Settings", icon: Settings },
 ];
 
@@ -22,7 +21,6 @@ const candidateLinks = [
   { href: "/dashboard/candidate/jobs", label: "Browse roles", icon: Briefcase },
   { href: "/dashboard/candidate/applications", label: "Applications", icon: FileText },
   { href: "/dashboard/candidate/saved", label: "Saved jobs", icon: Bookmark },
-  { href: "/dashboard/candidate/messages", label: "Messages", icon: Inbox },
   { href: "/dashboard/candidate/settings", label: "Settings", icon: Settings },
 ];
 

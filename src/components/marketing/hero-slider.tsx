@@ -73,7 +73,7 @@ export function HeroSlider({ children }: { children: ReactNode }) {
                 alt={slide.alt}
                 fill
                 priority={slideIndex === 0}
-                quality={95}
+                quality={slideIndex === 0 ? 80 : 70}
                 sizes="100vw"
                 className={cn("hero-slide-image object-cover", slide.position)}
               />

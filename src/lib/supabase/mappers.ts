@@ -1,4 +1,4 @@
-import { parseHiringStage } from "@/lib/hiring-stages";
+import { parseApplicationStatus } from "@/lib/constants";
 import { toAppRole, toDbRole } from "@/lib/roles";
 import type { ApplicationStatus, EducationItem, ExperienceItem, JobStatus } from "@/lib/types";
 
@@ -22,11 +22,11 @@ export function toDbJobStatus(value: string) {
 }
 
 export function toAppApplicationStatus(value: string | null | undefined): ApplicationStatus {
-  return parseHiringStage(value);
+  return parseApplicationStatus(value);
 }
 
 export function toDbApplicationStatus(value: string) {
-  return parseHiringStage(value);
+  return parseApplicationStatus(value);
 }
 
 export function parseExperiences(value: unknown): ExperienceItem[] {

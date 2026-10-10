@@ -3,12 +3,11 @@ import { DashboardNav } from "@/components/dashboard/nav";
 import { SignOutButton } from "@/components/dashboard/sign-out-button";
 import { TwinlinkMark } from "@/components/marketing/twinlink-mark";
 import { requireRole } from "@/server/authorization";
-import { getUnreadNotifications } from "@/server/queries/messages";
+import { getUnreadNotificationCount } from "@/server/queries/messages";
 
 export default async function EmployeeLayout({ children }: { children: React.ReactNode }) {
   const user = await requireRole("EMPLOYEE");
-  const notifications = await getUnreadNotifications(user.id);
-  const unread = notifications.filter((item) => !item.read).length;
+  const unread = await getUnreadNotificationCount(user.id);
 
   return (
     <div className="min-h-screen bg-background lg:grid lg:grid-cols-[260px_1fr]">

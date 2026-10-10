@@ -1,7 +1,8 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { fail, ok, type ActionResult } from "@/lib/action-result";
+import { CACHE_TAGS } from "@/lib/cache-tags";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { companyProfileSchema } from "@/lib/validations";
 import { requireStaff } from "@/server/authorization";
@@ -79,5 +80,6 @@ export async function updateCompanyProfile(formData: FormData): Promise<ActionRe
   revalidatePath("/about");
   revalidatePath("/dashboard/employee/company");
   revalidatePath("/admin/settings");
+  revalidateTag(CACHE_TAGS.company);
   return ok("Company profile saved.");
 }

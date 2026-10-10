@@ -1,6 +1,3 @@
-import { requireUser } from "@/server/authorization";
-
-export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
-  await requireUser();
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return children;
 }

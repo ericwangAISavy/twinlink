@@ -1,5 +1,6 @@
 import "server-only";
 
+import { cache } from "react";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { filenameFromPath, firstRecord, parseEducation, parseExperiences, toAppApplicationStatus } from "@/lib/supabase/mappers";
 import type { CandidateProfileForm, ProfileVisibility } from "@/lib/types";
@@ -13,16 +14,14 @@ async function signResume(path: string | null | undefined) {
   return data?.signedUrl ? { url: data.signedUrl, filename: filenameFromPath(path) } : { url: path, filename: filenameFromPath(path) };
 }
 
-export async function getEmployeeProfile(userId: string) {
+export const getEmployeeProfile = cache(async (userId: string) => {
   if (!isSupabaseConfigured()) return null;
   const supabase = await createServerSupabaseClient();
-  const { data: profile } = await supabase.from("profiles").select("*").eq("id", userId).maybeSingle();
+  const [{ data: profile }, { data: employeeProfile }] = await Promise.all([
+    supabase.from("profiles").select("*").eq("id", userId).maybeSingle(),
+    supabase.from("employee_profiles").select("*").eq("user_id", userId).maybeSingle(),
+  ]);
   if (!profile) return null;
-  const { data: employeeProfile } = await supabase
-    .from("employee_profiles")
-    .select("*")
-    .eq("user_id", userId)
-    .maybeSingle();
   return {
     id: profile.id as string,
     name: (profile.full_name as string | null) ?? null,
@@ -37,18 +36,16 @@ export async function getEmployeeProfile(userId: string) {
         }
       : null,
   };
-}
+});
 
-export async function getCandidateProfile(userId: string) {
+export const getCandidateProfile = cache(async (userId: string) => {
   if (!isSupabaseConfigured()) return null;
   const supabase = await createServerSupabaseClient();
-  const { data: profile } = await supabase.from("profiles").select("*").eq("id", userId).maybeSingle();
+  const [{ data: profile }, { data: candidateProfile }] = await Promise.all([
+    supabase.from("profiles").select("*").eq("id", userId).maybeSingle(),
+    supabase.from("candidate_profiles").select("*").eq("user_id", userId).maybeSingle(),
+  ]);
   if (!profile) return null;
-  const { data: candidateProfile } = await supabase
-    .from("candidate_profiles")
-    .select("*")
-    .eq("user_id", userId)
-    .maybeSingle();
   const resumePath = (candidateProfile?.resume_url as string | null) ?? null;
   const resumeFile = await signResume(resumePath);
   const uploadedAt = resumeUploadedAt(resumePath);
@@ -58,7 +55,7 @@ export async function getCandidateProfile(userId: string) {
     id: profile.id as string,
     name: (profile.full_name as string | null) ?? null,
     email: profile.email as string,
-    accessStatus: profile.access_status === "pending" ? "pending" : "approved",
+    accessStatus: profile.access_status === "approved" ? "approved" : "pending",
     candidateProfile: candidateProfile
       ? {
           headline: (candidateProfile.title as string | null) ?? null,
@@ -78,7 +75,7 @@ export async function getCandidateProfile(userId: string) {
         }
       : null,
   };
-}
+});
 
 function resumeUploadedAt(path: string | null) {
   const file = path?.split("/").pop() ?? "";
