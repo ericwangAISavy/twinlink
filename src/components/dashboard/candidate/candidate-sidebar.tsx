@@ -8,7 +8,6 @@ import {
   Briefcase,
   ClipboardList,
   FileText,
-  Inbox,
   LayoutDashboard,
   Settings,
   UserRound,
@@ -24,16 +23,14 @@ const LINKS = [
   { href: "/dashboard/candidate/jobs", label: "Browse roles", icon: Briefcase },
   { href: "/dashboard/candidate/applications", label: "Applications", icon: ClipboardList },
   { href: "/dashboard/candidate/saved", label: "Saved jobs", icon: Bookmark },
-  { href: "/dashboard/candidate/messages", label: "Messages", icon: Inbox },
   { href: "/dashboard/candidate/settings", label: "Settings", icon: Settings },
 ] as const;
 
 export function CandidateSidebar({
-  unread,
   onNavigate,
   onPending,
 }: {
-  unread: number;
+  unread?: number;
   onNavigate?: () => void;
   onPending?: () => void;
 }) {
@@ -85,11 +82,6 @@ export function CandidateSidebar({
             >
               <Icon className="size-4 shrink-0" aria-hidden />
               <span className="flex-1">{link.label}</span>
-              {link.href === "/dashboard/candidate/messages" && unread > 0 ? (
-                <span className="rounded-full bg-accent px-1.5 py-0.5 text-[10px] font-medium text-accent-foreground">
-                  {unread}
-                </span>
-              ) : null}
             </Link>
           );
         })}

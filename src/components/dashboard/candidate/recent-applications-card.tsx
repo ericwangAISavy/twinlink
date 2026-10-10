@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FileText } from "lucide-react";
 import { SectionHeader } from "@/components/dashboard/candidate/section-header";
 import { Button } from "@/components/ui/button";
-import { getHiringStageLabel, getHiringStageOrder, HIRING_STAGES } from "@/lib/hiring-stages";
+import { APPLICATION_STATUS_LABELS } from "@/lib/constants";
 import type { ApplicationStatus } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
 
@@ -35,9 +35,7 @@ export function RecentApplicationsCard({ items }: { items: RecentApplicationItem
             <FileText className="size-4" aria-hidden />
           </span>
           <p className="mt-4 font-medium text-[#1c1916]">No applications yet</p>
-          <p className="mt-1 max-w-md text-sm text-muted-foreground">
-            When you apply to a Twinlink role, it will appear here with status and date.
-          </p>
+          <p className="mt-1 max-w-md text-sm text-muted-foreground">When you apply to a Twinlink role, it will appear here with status and date.</p>
           <Button asChild variant="teal" className="mt-5 rounded-full">
             <Link href="/dashboard/candidate/jobs">Browse careers</Link>
           </Button>
@@ -47,28 +45,15 @@ export function RecentApplicationsCard({ items }: { items: RecentApplicationItem
           {items.map((item) => (
             <li key={item.id}>
               <Link
-                href={`/dashboard/candidate/applications/${item.id}`}
+                href={`/dashboard/candidate/applications?id=${item.id}`}
                 className="flex flex-wrap items-center justify-between gap-3 py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
                 <div className="min-w-0 flex-1">
                   <p className="truncate font-medium text-[#1c1916]">{item.job.title}</p>
                   <p className="mt-0.5 text-xs text-muted-foreground">
-                    {getHiringStageLabel(item.status)}
+                    {APPLICATION_STATUS_LABELS[item.status]}
                     {` · Updated ${formatDate(item.updatedAt ?? item.createdAt)}`}
                   </p>
-                  <div className="mt-2 flex gap-1" aria-hidden>
-                    {HIRING_STAGES.map((step, index) => (
-                      <span
-                        key={step}
-                        className={
-                          index <= Math.max(getHiringStageOrder(item.status), 0)
-                            ? "h-1 flex-1 rounded-full bg-[#c4a574]"
-                            : "h-1 flex-1 rounded-full bg-[#eadfcd]"
-                        }
-                      />
-                    ))}
-                  </div>
-                  <p className="sr-only">{getHiringStageLabel(item.status)}</p>
                 </div>
               </Link>
             </li>

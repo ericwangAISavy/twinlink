@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { toast } from "sonner";
 import { Spinner } from "@/components/loading-spinner";
@@ -14,6 +15,7 @@ export function ConfirmAction({
   message: string;
   action: () => Promise<ActionResult>;
 }) {
+  const router = useRouter();
   const [pending, startTransition] = useTransition();
   return (
     <button
@@ -24,8 +26,10 @@ export function ConfirmAction({
         if (!window.confirm(message)) return;
         startTransition(async () => {
           const result = await action();
-          if (result.ok) toast.success(result.message ?? "Updated");
-          else toast.error(result.error);
+          if (result.ok) {
+            toast.success(result.message ?? "Updated");
+            router.refresh();
+          } else toast.error(result.error);
         });
       }}
     >

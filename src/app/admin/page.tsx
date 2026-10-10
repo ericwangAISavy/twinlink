@@ -1,18 +1,17 @@
 import Link from "next/link";
-import { Briefcase, CalendarDays, ChevronRight, FileText, UserPlus, Users } from "lucide-react";
+import { Briefcase, ChevronRight, FileText, UserPlus, Users } from "lucide-react";
 import { AdminEmptyState } from "@/components/admin/admin-empty-state";
 import { AdminStatCard } from "@/components/admin/admin-stat-card";
 import { AdminStatusBadge } from "@/components/admin/admin-status-badge";
 import { AdminTable } from "@/components/admin/admin-table";
 import { AdminTrendChart } from "@/components/admin/admin-trend-chart";
 import { Button } from "@/components/ui/button";
-import { HIRING_STAGES } from "@/lib/hiring-stages";
-import { APPLICATION_STATUS_LABELS } from "@/lib/constants";
-import { formatDate, formatDateTime } from "@/lib/utils";
+import { APPLICATION_STATUSES, APPLICATION_STATUS_LABELS } from "@/lib/constants";
+import { formatDate } from "@/lib/utils";
 import { requireAdmin } from "@/server/authorization";
 import { getAdminOverview } from "@/server/queries/admin";
 
-const PIPELINE_ORDER = HIRING_STAGES.map((status, index) => ({
+const STATUS_ORDER = APPLICATION_STATUSES.map((status, index) => ({
   status,
   color: `rgba(196, 165, 116, ${0.28 + index * 0.09})`,
 }));
@@ -33,9 +32,8 @@ function relativeTime(value: string) {
 }
 
 export default async function AdminOverviewPage() {
-  const user = await requireAdmin();
-  const data = await getAdminOverview();
-  const maxPipeline = Math.max(1, ...PIPELINE_ORDER.map((item) => data.pipeline[item.status]));
+  const [user, data] = await Promise.all([requireAdmin(), getAdminOverview()]);
+  const maxStatus = Math.max(1, ...STATUS_ORDER.map((item) => data.pipeline[item.status]));
   const today = new Intl.DateTimeFormat("en-US", {
     weekday: "long",
     month: "short",
@@ -71,28 +69,28 @@ export default async function AdminOverviewPage() {
             icon={FileText}
           />
           <AdminStatCard
-            label="Interviews"
-            value={data.interviews}
-            hint={data.interviews === 0 ? "No interviews scheduled" : "Scheduled"}
-            icon={CalendarDays}
+            label="Under review"
+            value={data.pipeline.under_review}
+            hint={data.pipeline.under_review === 0 ? "None in review" : "Currently in review"}
+            icon={FileText}
           />
         </section>
 
         <div className="grid gap-6 lg:grid-cols-2">
           <section className="rounded-2xl border border-[#eadfcd] bg-white p-6 shadow-[0_8px_24px_rgba(28,25,22,0.04)]">
             <div className="flex items-center justify-between">
-              <h2 className="font-serif text-xl">Hiring Pipeline</h2>
+              <h2 className="font-serif text-xl">Applications by status</h2>
               <span className="text-xs text-muted-foreground">Live applications</span>
             </div>
             <div className="mt-6 flex h-40 items-end gap-3">
-              {PIPELINE_ORDER.map((item) => (
+              {STATUS_ORDER.map((item) => (
                 <div key={item.status} className="flex min-w-0 flex-1 flex-col items-center gap-2">
                   <p className="text-sm font-medium tabular-nums">{data.pipeline[item.status]}</p>
                   <div className="flex h-28 w-full items-end rounded-md bg-[#f7f1e8]">
                     <div
                       className="w-full rounded-md"
                       style={{
-                        height: `${Math.max(data.pipeline[item.status] ? 8 : 0, (data.pipeline[item.status] / maxPipeline) * 100)}%`,
+                        height: `${Math.max(data.pipeline[item.status] ? 8 : 0, (data.pipeline[item.status] / maxStatus) * 100)}%`,
                         background: item.color,
                       }}
                     />
@@ -232,35 +230,15 @@ export default async function AdminOverviewPage() {
           </section>
 
           <section className="rounded-2xl border border-[#eadfcd] bg-white p-6 shadow-[0_8px_24px_rgba(28,25,22,0.04)]">
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="font-serif text-xl">Upcoming Interviews</h2>
-              <Link href="/admin/interviews" className="text-sm text-[#c4a574] hover:underline">
-                View all
-              </Link>
-            </div>
-            {data.upcomingInterviews.length === 0 ? (
-              <AdminEmptyState
-                className="border-0 px-0 py-6"
-                title="No interviews scheduled."
-                description="Scheduled interviews will appear here."
-              />
-            ) : (
-              <ul className="space-y-3 text-sm">
-                {data.upcomingInterviews.map((item) => (
-                  <li key={item.id} className="flex items-center justify-between gap-3 border-b border-[#eadfcd] pb-3 last:border-0">
-                    <div>
-                      <p className="font-medium">{item.candidateName}</p>
-                      <p className="text-xs text-muted-foreground">
-                        {item.jobTitle} · {formatDateTime(item.scheduledAt)}
-                      </p>
-                    </div>
-                    <Link href={`/admin/applications/${item.applicationId}`} className="text-[#c4a574] hover:underline">
-                      Open
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <h2 className="font-serif text-xl">Status counts</h2>
+            <ul className="mt-4 space-y-3 text-sm">
+              {STATUS_ORDER.map((item) => (
+                <li key={item.status} className="flex items-center justify-between">
+                  <span>{APPLICATION_STATUS_LABELS[item.status]}</span>
+                  <span className="tabular-nums text-muted-foreground">{data.pipeline[item.status]}</span>
+                </li>
+              ))}
+            </ul>
           </section>
         </div>
       </div>

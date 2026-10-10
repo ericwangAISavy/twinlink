@@ -20,8 +20,8 @@ export function DashboardWelcomeCard({
         alt=""
         fill
         priority
-        quality={95}
-        sizes="100vw"
+        quality={80}
+        sizes="(min-width: 1024px) 1400px, 100vw"
         className="object-cover object-center"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#14110e]/72 via-[#14110e]/28 to-transparent" />

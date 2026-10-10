@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MessageForm } from "@/components/dashboard/message-form";
 import { PageHeader } from "@/components/dashboard/page-header";
-import { StatusForm } from "@/components/dashboard/status-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { APPLICATION_STATUS_LABELS } from "@/lib/constants";
 import { formatDate } from "@/lib/utils";
 import { requireRole } from "@/server/authorization";
 import { getApplicationForUser } from "@/server/queries/applications";
@@ -42,27 +41,14 @@ export default async function ApplicantDetailPage({
           <CardHeader>
             <CardTitle>Status</CardTitle>
           </CardHeader>
-          <CardContent>
-            <StatusForm applicationId={application.id} status={application.status} />
+          <CardContent className="space-y-3 text-sm">
+            <p>
+              Current status: <strong>{APPLICATION_STATUS_LABELS[application.status]}</strong>
+            </p>
+            <p className="text-muted-foreground">Application status is managed by a Twinlink administrator.</p>
           </CardContent>
         </Card>
       </div>
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>Messages</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {application.messages.map((message) => (
-            <div key={message.id} className="rounded-md bg-muted/50 p-3">
-              <p className="text-xs text-muted-foreground">
-                {message.sender.name ?? "User"} · {formatDate(message.createdAt)}
-              </p>
-              <p className="mt-1 text-sm whitespace-pre-wrap">{message.body}</p>
-            </div>
-          ))}
-          <MessageForm applicationId={application.id} />
-        </CardContent>
-      </Card>
     </>
   );
 }

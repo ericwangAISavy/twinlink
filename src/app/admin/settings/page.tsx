@@ -49,7 +49,7 @@ export default async function AdminSettingsPage() {
         </section>
         <section className="rounded-2xl border border-[#eadfcd] bg-white p-6">
           <h2 className="font-serif text-xl">Recruiting</h2>
-          <p className="mt-2 text-sm text-muted-foreground">Job statuses, pipelines, and invitations are managed from their own admin pages.</p>
+          <p className="mt-2 text-sm text-muted-foreground">Job statuses and invitations are managed from their own admin pages.</p>
         </section>
         <section className="rounded-2xl border border-[#eadfcd] bg-white p-6">
           <h2 className="font-serif text-xl">Notifications</h2>

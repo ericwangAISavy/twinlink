@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { getHiringStageLabel, isTerminalStage, parseHiringStage } from "@/lib/hiring-stages";
+import { APPLICATION_STATUS_LABELS, isTerminalApplicationStatus, parseApplicationStatus } from "@/lib/constants";
 import { JOB_STATUS_LABELS } from "@/lib/constants";
 import type { JobStatus } from "@/lib/types";
 
@@ -17,14 +17,9 @@ export function AdminStatusBadge({
     return <Badge variant={variant}>{JOB_STATUS_LABELS[value] ?? status}</Badge>;
   }
   if (kind === "application") {
-    const value = parseHiringStage(status);
-    const variant =
-      value === "hired" || value === "offer"
-        ? "teal"
-        : isTerminalStage(value)
-          ? "muted"
-          : "outline";
-    return <Badge variant={variant}>{getHiringStageLabel(value)}</Badge>;
+    const value = parseApplicationStatus(status);
+    const variant = value === "accepted" ? "teal" : isTerminalApplicationStatus(value) ? "muted" : "outline";
+    return <Badge variant={variant}>{APPLICATION_STATUS_LABELS[value]}</Badge>;
   }
   return <Badge variant="secondary">{status}</Badge>;
 }

@@ -103,11 +103,6 @@ export const applicationStatusSchema = z.object({
   status: z.enum(APPLICATION_STATUSES),
 });
 
-export const messageSchema = z.object({
-  applicationId: z.string().min(1),
-  body: z.string().min(1, "Message cannot be empty").max(4000),
-});
-
 export const inviteSchema = z.object({
   email: z.string().email("Enter a valid email"),
   name: z.string().max(80).optional().or(z.literal("")),

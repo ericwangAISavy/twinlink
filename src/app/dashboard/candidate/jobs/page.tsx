@@ -9,10 +9,8 @@ export default async function CandidateJobsPage({
 }: {
   searchParams: Promise<{ q?: string }>;
 }) {
-  await requireCandidate();
-  const { q } = await searchParams;
+  const [, { q }, jobs] = await Promise.all([requireCandidate(), searchParams, getPublishedJobs()]);
   const query = q?.trim().toLowerCase() ?? "";
-  const jobs = await getPublishedJobs();
   const visible = query
     ? jobs.filter(
         (job) =>

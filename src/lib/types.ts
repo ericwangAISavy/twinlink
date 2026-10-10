@@ -1,11 +1,16 @@
-import type { HiringStage } from "@/lib/hiring-stages";
 import type { Role } from "@/lib/roles";
 
 export type { Role, UserRole } from "@/lib/roles";
 export { homePath } from "@/lib/roles";
 
 export type JobStatus = "DRAFT" | "PUBLISHED" | "PAUSED" | "CLOSED" | "ARCHIVED";
-export type ApplicationStatus = HiringStage;
+export type ApplicationStatus =
+  | "submitted"
+  | "under_review"
+  | "interview"
+  | "accepted"
+  | "rejected"
+  | "withdrawn";
 
 export type AppUser = {
   id: string;

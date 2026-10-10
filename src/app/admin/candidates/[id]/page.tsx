@@ -5,16 +5,13 @@ import { AdminEmptyState } from "@/components/admin/admin-empty-state";
 import { AdminNoteForm } from "@/components/admin/admin-note-form";
 import { AdminPageHeader } from "@/components/admin/admin-page-header";
 import { AdminStatusBadge } from "@/components/admin/admin-status-badge";
-import { MessageForm } from "@/components/dashboard/message-form";
 import { getCandidateForReview } from "@/server/queries/profiles";
-import { getMessageThreads } from "@/server/queries/messages";
 
 export default async function AdminCandidateDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const candidate = await getCandidateForReview(id);
   if (!candidate) notFound();
   const profile = candidate.candidateProfile;
-  const threads = await getMessageThreads(id, "CANDIDATE");
   const latestApplication = candidate.applications[0];
 
   return (
@@ -127,23 +124,6 @@ export default async function AdminCandidateDetailPage({ params }: { params: Pro
                 ))}
               </ul>
             )}
-          </div>
-          <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
-            <h2 className="font-serif text-xl">Messages</h2>
-            {threads.length === 0 ? (
-              <p className="mt-3 text-sm text-muted-foreground">No messages yet.</p>
-            ) : (
-              <ul className="mt-3 space-y-2 text-sm">
-                {threads.map((thread) => (
-                  <li key={thread.id}>
-                    <Link className="hover:underline" href={`/admin/messages?thread=${thread.id}`}>
-                      {thread.job.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-            {latestApplication ? <div className="mt-4"><MessageForm applicationId={latestApplication.id} /></div> : null}
           </div>
           <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
             <h2 className="font-serif text-xl">Internal note</h2>

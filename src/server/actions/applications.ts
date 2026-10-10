@@ -1,12 +1,22 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import { fail, ok, type ActionResult } from "@/lib/action-result";
-import { getCandidateVisibleStage, isTerminalStage, parseHiringStage, transitionNeedsConfirmation } from "@/lib/hiring-stages";
+import { candidateApplicationHref } from "@/lib/candidate-inbox";
+import {
+  APPLICATION_STATUS_MESSAGES,
+  isTerminalApplicationStatus,
+  parseApplicationStatus,
+} from "@/lib/constants";
 import { toDbApplicationStatus } from "@/lib/supabase/mappers";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { applicationStatusSchema, applySchema } from "@/lib/validations";
 import { requireAdmin, requireRole } from "@/server/authorization";
+
+function staffHref(role: string | null | undefined, applicationId: string) {
+  return role === "admin" ? `/admin/applications/${applicationId}` : `/dashboard/employee/applicants/${applicationId}`;
+}
 
 export async function applyToJob(formData: FormData): Promise<ActionResult> {
   const user = await requireRole("CANDIDATE");
@@ -20,8 +30,21 @@ export async function applyToJob(formData: FormData): Promise<ActionResult> {
 
   const supabase = await createServerSupabaseClient();
   const { data: job } = await supabase.from("jobs").select("*").eq("id", parsed.data.jobId).maybeSingle();
-  if (!job || job.status !== "published") {
+  if (!job || String(job.status) !== "published") {
     return fail("This role is not open for applications.");
+  }
+  if (job.application_deadline && new Date(String(job.application_deadline)).getTime() < Date.now()) {
+    return fail("The application deadline for this role has passed.");
+  }
+
+  const { data: existing } = await supabase
+    .from("applications")
+    .select("id")
+    .eq("job_id", job.id)
+    .eq("candidate_id", user.id)
+    .maybeSingle();
+  if (existing) {
+    return fail("You have already applied to this role.");
   }
 
   const { data: candidateProfile } = await supabase
@@ -37,29 +60,42 @@ export async function applyToJob(formData: FormData): Promise<ActionResult> {
       candidate_id: user.id,
       cover_letter: parsed.data.coverLetter || null,
       resume_url: candidateProfile?.resume_url ?? null,
-      status: "applied",
-      current_stage: "applied",
+      status: "submitted",
     })
     .select("id")
     .single();
 
   if (error || !application) {
-    return fail("You have already applied to this role.");
+    if (error && /duplicate|unique/i.test(error.message)) {
+      return fail("You have already applied to this role.");
+    }
+    return fail(error?.message ?? "Unable to submit this application.");
+  }
+
+  const { data: staff } = await supabase.from("profiles").select("id, role").in("role", ["admin", "employee"]);
+  const recipients = new Map<string, string>();
+  for (const row of staff ?? []) {
+    if (row.role === "admin" || row.id === job.created_by) {
+      recipients.set(String(row.id), String(row.role));
+    }
+  }
+  if (job.created_by && !recipients.has(String(job.created_by))) {
+    recipients.set(String(job.created_by), "employee");
   }
 
   await supabase.from("notifications").insert([
     {
       user_id: user.id,
       title: "Application received",
-      body: getCandidateVisibleStage("applied").message,
-      href: `/dashboard/candidate/applications/${application.id}`,
+      body: APPLICATION_STATUS_MESSAGES.submitted,
+      href: candidateApplicationHref(String(application.id)),
     },
-    {
-      user_id: job.created_by,
+    ...[...recipients.entries()].map(([userId, role]) => ({
+      user_id: userId,
       title: "New application",
       body: `${user.name ?? user.email} applied to ${job.title}.`,
-      href: `/admin/applications/${application.id}`,
-    },
+      href: staffHref(role, String(application.id)),
+    })),
   ]);
 
   const { logActivity } = await import("@/server/queries/admin");
@@ -71,13 +107,18 @@ export async function applyToJob(formData: FormData): Promise<ActionResult> {
   });
 
   revalidatePath(`/careers/${job.slug}`);
+  revalidatePath("/dashboard/candidate");
+  revalidatePath("/dashboard/candidate/jobs");
+  revalidatePath(`/dashboard/candidate/jobs/${job.id}`);
   revalidatePath("/dashboard/candidate/applications");
+  revalidatePath("/admin");
   revalidatePath("/admin/applications");
-  return ok("Application submitted.");
+  revalidatePath("/admin/candidates");
+  redirect(`/dashboard/candidate/applications?id=${application.id}`);
 }
 
 export async function updateApplicationStatus(formData: FormData): Promise<ActionResult> {
-  await requireAdmin();
+  const user = await requireAdmin();
   const parsed = applicationStatusSchema.safeParse({
     applicationId: formData.get("applicationId"),
     status: formData.get("status"),
@@ -87,35 +128,50 @@ export async function updateApplicationStatus(formData: FormData): Promise<Actio
   }
 
   const supabase = await createServerSupabaseClient();
-  const nextStage = toDbApplicationStatus(parsed.data.status);
+  const nextStatus = toDbApplicationStatus(parsed.data.status);
   const { data: current } = await supabase
     .from("applications")
-    .select("current_stage, status")
+    .select("status, candidate_id, job_id")
     .eq("id", parsed.data.applicationId)
     .maybeSingle();
   if (!current) return fail("Application not found.");
-  const fromStage = parseHiringStage(String(current.current_stage ?? current.status));
-  if (transitionNeedsConfirmation(fromStage, parseHiringStage(nextStage)) && formData.get("confirm") !== "yes") {
-    return fail("Confirm this stage change before it is saved.");
-  }
+  const fromStatus = parseApplicationStatus(String(current.status));
+  if (fromStatus === nextStatus) return ok("This application already has that status.");
 
-  const message = String(formData.get("candidateMessage") ?? "").trim();
-  const { error } = await supabase.rpc("set_application_stage", {
-    target_application_id: parsed.data.applicationId,
-    next_stage: nextStage,
-    candidate_message: message || getCandidateVisibleStage(parseHiringStage(nextStage)).message,
-    notify_candidate: formData.get("notifyCandidate") !== "no",
-  });
+  const { error } = await supabase
+    .from("applications")
+    .update({ status: nextStatus })
+    .eq("id", parsed.data.applicationId);
   if (error) return fail(error.message);
+
+  await supabase.from("application_events").insert({
+    application_id: parsed.data.applicationId,
+    actor_id: user.id,
+    from_status: fromStatus,
+    to_status: nextStatus,
+  });
+
+  const message =
+    String(formData.get("candidateMessage") ?? "").trim() || APPLICATION_STATUS_MESSAGES[nextStatus];
+  const notify = formData.get("notifyCandidate") !== "no";
+  if (notify && current.candidate_id) {
+    await supabase.from("notifications").insert({
+      user_id: current.candidate_id,
+      title: "Application update",
+      body: message,
+      href: candidateApplicationHref(parsed.data.applicationId),
+    });
+  }
 
   revalidatePath("/dashboard/employee/applicants");
   revalidatePath(`/dashboard/employee/applicants/${parsed.data.applicationId}`);
+  revalidatePath("/admin");
   revalidatePath("/admin/applications");
   revalidatePath(`/admin/applications/${parsed.data.applicationId}`);
   revalidatePath("/dashboard/candidate");
   revalidatePath("/dashboard/candidate/applications");
   revalidatePath(`/dashboard/candidate/applications/${parsed.data.applicationId}`);
-  return ok("Hiring stage updated.");
+  return ok("Application status updated.");
 }
 
 export async function applyToJobAction(
@@ -145,23 +201,27 @@ export async function withdrawApplication(applicationId: string): Promise<Action
   if (!application || application.candidate_id !== user.id) {
     return fail("Application not found.");
   }
-  if (isTerminalStage(parseHiringStage(String(application.current_stage ?? application.status)))) {
+  const status = parseApplicationStatus(String(application.status));
+  if (!status || isTerminalApplicationStatus(status)) {
     return fail("This application is already closed.");
   }
   const { error } = await supabase
     .from("applications")
-    .update({ status: "withdrawn", current_stage: "withdrawn" })
+    .update({ status: "withdrawn" })
     .eq("id", applicationId)
     .eq("candidate_id", user.id);
   if (error) return fail(error.message);
 
   const { data: job } = await supabase.from("jobs").select("created_by, title").eq("id", application.job_id).maybeSingle();
+  const { data: creator } = job?.created_by
+    ? await supabase.from("profiles").select("id, role").eq("id", job.created_by).maybeSingle()
+    : { data: null };
   if (job?.created_by) {
     await supabase.from("notifications").insert({
       user_id: job.created_by,
       title: "Application withdrawn",
       body: `${user.name ?? user.email} withdrew from ${job.title ?? "a role"}.`,
-      href: `/admin/applications/${applicationId}`,
+      href: staffHref(creator?.role, applicationId),
     });
   }
   const { logActivity } = await import("@/server/queries/admin");

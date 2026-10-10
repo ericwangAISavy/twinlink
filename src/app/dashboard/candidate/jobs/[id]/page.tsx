@@ -20,8 +20,11 @@ export default async function CandidateJobDetailPage({
   const job = await getPublishedJobById(id);
   if (!job) notFound();
 
-  const application = await getCandidateApplication(job.id, user.id);
-  const saved = (await getSavedJobIds(user.id)).has(job.id);
+  const [application, savedIds] = await Promise.all([
+    getCandidateApplication(job.id, user.id),
+    getSavedJobIds(user.id),
+  ]);
+  const saved = savedIds.has(job.id);
 
   return (
     <>

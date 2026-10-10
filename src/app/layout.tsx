@@ -6,12 +6,14 @@ import "./globals.css";
 const sans = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
 });
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-serif",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

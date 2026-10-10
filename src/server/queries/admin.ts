@@ -1,13 +1,14 @@
 import "server-only";
 
-import { ALL_HIRING_STAGES } from "@/lib/hiring-stages";
+import { cache } from "react";
+import { APPLICATION_STATUSES } from "@/lib/constants";
 import { toAppApplicationStatus, toAppJobStatus } from "@/lib/supabase/mappers";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import type { ApplicationStatus } from "@/lib/types";
 import { listApplications } from "@/server/queries/applications";
 
-export async function getAdminOverview() {
+export const getAdminOverview = cache(async () => {
   if (!isSupabaseConfigured()) {
     return emptyOverview();
   }
@@ -21,18 +22,15 @@ export async function getAdminOverview() {
     { count: openJobs },
     { count: activeCandidates },
     { count: applications },
-    { count: interviews },
     { data: appRows },
     { data: activity },
     { data: recentJobRows },
     { data: latestAppRows },
-    { data: upcomingRows },
   ] = await Promise.all([
     supabase.from("jobs").select("id", { count: "exact", head: true }).eq("status", "published"),
     supabase.from("candidate_profiles").select("user_id", { count: "exact", head: true }),
     supabase.from("applications").select("id", { count: "exact", head: true }),
-    supabase.from("interviews").select("id", { count: "exact", head: true }).eq("status", "scheduled"),
-    supabase.from("applications").select("status, created_at, job_id"),
+    supabase.from("applications").select("status, created_at, jobs(title, location)"),
     supabase
       .from("activity_logs")
       .select("id, action, entity_type, created_at, actor_id")
@@ -48,13 +46,6 @@ export async function getAdminOverview() {
       .select("id, status, created_at, candidate_id, jobs(title)")
       .order("created_at", { ascending: false })
       .limit(6),
-    supabase
-      .from("interviews")
-      .select("id, scheduled_at, interview_type, application_id, status")
-      .eq("status", "scheduled")
-      .gte("scheduled_at", now.toISOString())
-      .order("scheduled_at", { ascending: true })
-      .limit(5),
   ]);
 
   const pipeline = emptyPipeline();
@@ -78,22 +69,19 @@ export async function getAdminOverview() {
 
   const actorIds = [...new Set((activity ?? []).map((item) => item.actor_id).filter(Boolean))] as string[];
   const latestCandidateIds = [...new Set((latestAppRows ?? []).map((item) => String(item.candidate_id)))];
-  const upcomingAppIds = [...new Set((upcomingRows ?? []).map((item) => String(item.application_id)))];
-  const { data: upcomingApps } = upcomingAppIds.length
-    ? await supabase.from("applications").select("id, candidate_id, jobs(title)").in("id", upcomingAppIds)
-    : { data: [] };
-  const upcomingCandidateIds = [...new Set((upcomingApps ?? []).map((item) => String(item.candidate_id)))];
-  const profileIds = [...new Set([...actorIds, ...latestCandidateIds, ...upcomingCandidateIds])];
+  const profileIds = [...new Set([...actorIds, ...latestCandidateIds])];
   const { data: actors } = profileIds.length
     ? await supabase.from("profiles").select("id, full_name, email").in("id", profileIds)
     : { data: [] };
   const actorMap = new Map((actors ?? []).map((item) => [item.id, item]));
-  const { data: jobMeta } = await supabase.from("jobs").select("id, location, status");
   const locationCounts = new Map<string, number>();
-  const jobLocation = new Map((jobMeta ?? []).map((job) => [String(job.id), (job.location as string | null) ?? ""]));
+  const jobCounts = new Map<string, number>();
   for (const row of appRows ?? []) {
-    const location = jobLocation.get(String(row.job_id))?.trim() || "Unspecified";
+    const job = Array.isArray(row.jobs) ? row.jobs[0] : row.jobs;
+    const location = ((job as { location?: string | null } | null)?.location ?? "").trim() || "Unspecified";
     locationCounts.set(location, (locationCounts.get(location) ?? 0) + 1);
+    const title = (job as { title?: string } | null)?.title ?? "Unknown";
+    jobCounts.set(title, (jobCounts.get(title) ?? 0) + 1);
   }
 
   const months = Array.from({ length: 6 }, (_, index) => {
@@ -112,13 +100,10 @@ export async function getAdminOverview() {
     if (bucket) bucket.count += 1;
   }
 
-  const upcomingAppMap = new Map((upcomingApps ?? []).map((item) => [String(item.id), item]));
-
   return {
     openJobs: openJobs ?? 0,
     activeCandidates: activeCandidates ?? 0,
     applications: applications ?? 0,
-    interviews: interviews ?? 0,
     pipeline,
     trend: days,
     monthlyTrend: months,
@@ -149,19 +134,9 @@ export async function getAdminOverview() {
       .map(([label, count]) => ({ label, count }))
       .sort((a, b) => b.count - a.count)
       .slice(0, 5),
-    upcomingInterviews: (upcomingRows ?? []).map((row) => {
-      const application = upcomingAppMap.get(String(row.application_id));
-      const job = application ? (Array.isArray(application.jobs) ? application.jobs[0] : application.jobs) : null;
-      const person = application ? actorMap.get(String(application.candidate_id)) : null;
-      return {
-        id: String(row.id),
-        applicationId: String(row.application_id),
-        scheduledAt: String(row.scheduled_at),
-        interviewType: String(row.interview_type ?? "video"),
-        candidateName: person?.full_name ?? person?.email ?? "Candidate",
-        jobTitle: (job as { title?: string } | null)?.title ?? "Unknown role",
-      };
-    }),
+    byJob: [...jobCounts.entries()]
+      .map(([title, count]) => ({ title, count }))
+      .sort((a, b) => b.count - a.count),
     activity: (activity ?? []).map((item) => ({
       id: String(item.id),
       action: String(item.action),
@@ -170,14 +145,13 @@ export async function getAdminOverview() {
       actor: actorMap.get(String(item.actor_id))?.full_name ?? actorMap.get(String(item.actor_id))?.email ?? "System",
     })),
   };
-}
+});
 
 function emptyOverview() {
   return {
     openJobs: 0,
     activeCandidates: 0,
     applications: 0,
-    interviews: 0,
     pipeline: emptyPipeline(),
     trend: [] as { key: string; label: string; count: number }[],
     monthlyTrend: [] as { key: string; label: string; count: number }[],
@@ -198,20 +172,13 @@ function emptyOverview() {
       jobTitle: string;
     }[],
     locations: [] as { label: string; count: number }[],
-    upcomingInterviews: [] as {
-      id: string;
-      applicationId: string;
-      scheduledAt: string;
-      interviewType: string;
-      candidateName: string;
-      jobTitle: string;
-    }[],
+    byJob: [] as { title: string; count: number }[],
     activity: [] as AdminActivity[],
   };
 }
 
 function emptyPipeline(): Record<ApplicationStatus, number> {
-  return Object.fromEntries(ALL_HIRING_STAGES.map((stage) => [stage, 0])) as Record<ApplicationStatus, number>;
+  return Object.fromEntries(APPLICATION_STATUSES.map((status) => [status, 0])) as Record<ApplicationStatus, number>;
 }
 
 export type AdminActivity = {
@@ -278,17 +245,20 @@ export async function getAdminCandidates(query?: string) {
     .from("candidate_profiles")
     .select("user_id, title, location, skills, resume_url");
   const ids = (profiles ?? []).map((item) => String(item.user_id));
-  const usersQuery = ids.length
-    ? await supabase.from("profiles").select("id, email, full_name, role, created_at, updated_at, access_status").in("id", ids)
-    : { data: [], error: null };
+  const [usersQuery, appsResult] = await Promise.all([
+    ids.length
+      ? supabase.from("profiles").select("id, email, full_name, role, created_at, updated_at, access_status").in("id", ids)
+      : Promise.resolve({ data: [] as Record<string, unknown>[], error: null }),
+    ids.length
+      ? supabase.from("applications").select("id, candidate_id, status").in("candidate_id", ids)
+      : Promise.resolve({ data: [] }),
+  ]);
   const users = usersQuery.error
     ? (
         await supabase.from("profiles").select("id, email, full_name, role, created_at, updated_at").in("id", ids)
       ).data
     : usersQuery.data;
-  const { data: apps } = ids.length
-    ? await supabase.from("applications").select("id, candidate_id, status").in("candidate_id", ids)
-    : { data: [] };
+  const apps = appsResult.data;
   const userMap = new Map((users ?? []).map((item) => [item.id, item]));
   const rows = (profiles ?? []).map((profile) => {
     const user = userMap.get(String(profile.user_id));
@@ -368,47 +338,6 @@ export async function getAdminInvites() {
   }));
 }
 
-export async function getAdminInterviews() {
-  if (!isSupabaseConfigured()) return [];
-  const supabase = await createServerSupabaseClient();
-  const { data } = await supabase.from("interviews").select("*").order("scheduled_at", { ascending: false });
-  const rows = data ?? [];
-  const applicationIds = [...new Set(rows.map((row) => String(row.application_id)))];
-  const interviewerIds = [...new Set(rows.map((row) => row.interviewer_id).filter(Boolean))] as string[];
-  const { data: applications } = applicationIds.length
-    ? await supabase.from("applications").select("id, candidate_id, jobs(title)").in("id", applicationIds)
-    : { data: [] };
-  const candidateIds = [...new Set((applications ?? []).map((item) => String(item.candidate_id)))];
-  const { data: candidates } = candidateIds.length
-    ? await supabase.from("profiles").select("id, full_name, email").in("id", candidateIds)
-    : { data: [] };
-  const { data: interviewers } = interviewerIds.length
-    ? await supabase.from("profiles").select("id, full_name, email").in("id", interviewerIds)
-    : { data: [] };
-  const appMap = new Map((applications ?? []).map((item) => [String(item.id), item]));
-  const candidateMap = new Map((candidates ?? []).map((item) => [item.id, item]));
-  const interviewerMap = new Map((interviewers ?? []).map((item) => [item.id, item]));
-  return rows.map((row) => {
-    const application = appMap.get(String(row.application_id));
-    const job = application ? (Array.isArray(application.jobs) ? application.jobs[0] : application.jobs) : null;
-    const candidate = application ? candidateMap.get(String(application.candidate_id)) : null;
-    const interviewer = row.interviewer_id ? interviewerMap.get(String(row.interviewer_id)) : null;
-    return {
-      id: String(row.id),
-      applicationId: String(row.application_id),
-      scheduledAt: String(row.scheduled_at),
-      interviewType: String(row.interview_type ?? "video"),
-      meetingUrl: (row.meeting_url as string | null) ?? null,
-      status: String(row.status ?? "scheduled"),
-      notes: (row.notes as string | null) ?? null,
-      outcome: (row.outcome as string | null) ?? null,
-      jobTitle: (job as { title?: string } | null)?.title ?? "Unknown role",
-      candidateName: candidate?.full_name ?? candidate?.email ?? "Candidate",
-      interviewerName: interviewer?.full_name ?? interviewer?.email ?? "Unassigned",
-    };
-  });
-}
-
 export async function getAdminActivity(limit = 50) {
   if (!isSupabaseConfigured()) return [];
   const supabase = await createServerSupabaseClient();
@@ -431,13 +360,12 @@ export async function getAdminActivity(limit = 50) {
 
 export async function getApplicationInternals(applicationId: string) {
   if (!isSupabaseConfigured()) {
-    return { notes: [] as AdminNote[], events: [] as AdminEvent[], interviews: [] as { id: string; scheduledAt: string; status: string; interviewType: string; meetingUrl: string | null }[] };
+    return { notes: [] as AdminNote[], events: [] as AdminEvent[] };
   }
   const supabase = await createServerSupabaseClient();
-  const [{ data: notes }, { data: events }, { data: interviews }] = await Promise.all([
+  const [{ data: notes }, { data: events }] = await Promise.all([
     supabase.from("application_notes").select("*").eq("application_id", applicationId).order("created_at", { ascending: false }),
     supabase.from("application_events").select("*").eq("application_id", applicationId).order("created_at", { ascending: false }),
-    supabase.from("interviews").select("*").eq("application_id", applicationId).order("scheduled_at", { ascending: false }),
   ]);
   const authorIds = [
     ...new Set([
@@ -465,13 +393,6 @@ export async function getApplicationInternals(applicationId: string) {
         ? authorMap.get(String(event.actor_id))?.full_name ?? authorMap.get(String(event.actor_id))?.email ?? "Admin"
         : "System",
     })),
-    interviews: (interviews ?? []).map((row) => ({
-      id: String(row.id),
-      scheduledAt: String(row.scheduled_at),
-      status: String(row.status),
-      interviewType: String(row.interview_type ?? "video"),
-      meetingUrl: (row.meeting_url as string | null) ?? null,
-    })),
   };
 }
 
@@ -479,8 +400,23 @@ export type AdminNote = { id: string; body: string; createdAt: string; author: s
 export type AdminEvent = { id: string; fromStatus: string | null; toStatus: string | null; createdAt: string; actor: string };
 
 export async function getAdminEmployee(id: string) {
-  const employees = await getAdminEmployees();
-  return employees.find((item) => item.id === id) ?? null;
+  if (!isSupabaseConfigured()) return null;
+  const supabase = await createServerSupabaseClient();
+  const [{ data: profile }, { data: employee }] = await Promise.all([
+    supabase.from("profiles").select("id, email, full_name, role, created_at").eq("id", id).maybeSingle(),
+    supabase.from("employee_profiles").select("user_id, job_title, department, status").eq("user_id", id).maybeSingle(),
+  ]);
+  if (!profile || (profile.role !== "employee" && profile.role !== "admin")) return null;
+  return {
+    id: String(profile.id),
+    name: profile.full_name,
+    email: profile.email,
+    role: profile.role,
+    jobTitle: employee?.job_title ?? null,
+    department: employee?.department ?? null,
+    status: employee?.status ?? "active",
+    createdAt: String(profile.created_at),
+  };
 }
 
 export async function getAdminContent() {
@@ -494,13 +430,11 @@ export async function getAdminContent() {
     { key: "case_studies", title: "Case studies", body: "" },
     { key: "resources_intro", title: "Resources", body: "" },
   ];
-  const { error } = await supabase.from("company_content").upsert(defaults, { onConflict: "key", ignoreDuplicates: true });
-  if (error) {
-    const { data } = await supabase.from("company_content").select("*").order("key");
-    return data ?? [];
-  }
   const { data } = await supabase.from("company_content").select("*").order("key");
-  return data ?? [];
+  if ((data ?? []).length > 0) return data ?? [];
+  await supabase.from("company_content").upsert(defaults, { onConflict: "key", ignoreDuplicates: true });
+  const { data: seeded } = await supabase.from("company_content").select("*").order("key");
+  return seeded ?? [];
 }
 
 export async function searchAdmin(query: string) {
@@ -554,19 +488,5 @@ export async function getAdminResources() {
 
 export async function getAdminAnalytics() {
   const overview = await getAdminOverview();
-  if (!isSupabaseConfigured()) {
-    return { ...overview, byJob: [] as { title: string; count: number }[] };
-  }
-  const supabase = await createServerSupabaseClient();
-  const { data } = await supabase.from("applications").select("job_id, jobs(title)");
-  const counts = new Map<string, number>();
-  for (const row of data ?? []) {
-    const job = Array.isArray(row.jobs) ? row.jobs[0] : row.jobs;
-    const title = (job as { title?: string } | null)?.title ?? "Unknown";
-    counts.set(title, (counts.get(title) ?? 0) + 1);
-  }
-  return {
-    ...overview,
-    byJob: [...counts.entries()].map(([title, count]) => ({ title, count })),
-  };
+  return { ...overview, byJob: overview.byJob };
 }

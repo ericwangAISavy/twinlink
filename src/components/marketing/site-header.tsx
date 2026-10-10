@@ -1,13 +1,11 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { getCurrentUser } from "@/server/authorization";
 import { Button } from "@/components/ui/button";
 import { SiteNav } from "@/components/marketing/site-nav";
 import { TwinlinkMark } from "@/components/marketing/twinlink-mark";
+import type { AppUser } from "@/lib/types";
 
-export async function SiteHeader() {
-  const user = await getCurrentUser();
-
+export function SiteHeader({ user }: { user: AppUser | null }) {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0c0b0a]/55 text-white backdrop-blur-md">
       <div className="mx-auto flex h-[4.25rem] w-full max-w-6xl items-center justify-between gap-4 px-4">

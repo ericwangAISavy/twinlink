@@ -1,11 +1,10 @@
 import { CandidateShell } from "@/components/dashboard/candidate/candidate-shell";
 import { requireRole } from "@/server/authorization";
-import { getUnreadNotifications } from "@/server/queries/messages";
+import { getUnreadNotificationCount } from "@/server/queries/messages";
 
 export default async function CandidateLayout({ children }: { children: React.ReactNode }) {
   const user = await requireRole("CANDIDATE");
-  const notifications = await getUnreadNotifications(user.id);
-  const unread = notifications.filter((item) => !item.read).length;
+  const unread = await getUnreadNotificationCount(user.id);
 
   return (
     <CandidateShell

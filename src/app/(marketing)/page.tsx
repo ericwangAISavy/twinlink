@@ -100,7 +100,7 @@ export default function HomePage() {
                 src="/images/how-we-help-globe.jpg"
                 alt="Global network of people, technology, innovation, and impact"
                 fill
-                quality={95}
+                quality={75}
                 sizes="(min-width: 768px) 60vw, 100vw"
                 className="object-cover object-center"
               />
@@ -116,7 +116,7 @@ export default function HomePage() {
               src="/images/our-people-handshake.jpg"
               alt="Twinlink consultants meeting outside a modern office"
               fill
-              quality={95}
+              quality={75}
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover object-center"
             />
@@ -185,7 +185,7 @@ export default function HomePage() {
               src="/images/case-study-waterfront.jpg"
               alt="City skyline at dusk along the waterfront"
               fill
-              quality={95}
+              quality={75}
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover object-center"
             />
@@ -208,7 +208,7 @@ export default function HomePage() {
             src="/images/twinlink-lobby.jpg"
             alt="Twinlink lobby with the team walking through the headquarters"
             fill
-            quality={95}
+            quality={75}
             sizes="100vw"
             className="object-cover object-[center_45%]"
           />

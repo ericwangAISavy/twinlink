@@ -1,53 +1,18 @@
 import "server-only";
 
+import { cache } from "react";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
-import { firstRecord } from "@/lib/supabase/mappers";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
-export async function getMessageThreads(userId: string, role: "CANDIDATE" | "EMPLOYEE") {
-  if (!isSupabaseConfigured()) return [];
-  const supabase = await createServerSupabaseClient();
-  let query = supabase.from("applications").select("id, updated_at, candidate_id, jobs(title, slug)").order("updated_at", { ascending: false });
-  if (role === "CANDIDATE") query = query.eq("candidate_id", userId);
-  const { data } = await query;
-  const rows = data ?? [];
-  const results = [];
-  for (const row of rows) {
-    const { data: last } = await supabase
-      .from("messages")
-      .select("body, created_at, sender_id")
-      .eq("application_id", row.id)
-      .order("created_at", { ascending: false })
-      .limit(1)
-      .maybeSingle();
-    if (!last) continue;
-    const { data: candidate } = await supabase
-      .from("profiles")
-      .select("full_name, email")
-      .eq("id", row.candidate_id)
-      .maybeSingle();
-    const { data: sender } = await supabase.from("profiles").select("full_name").eq("id", last.sender_id).maybeSingle();
-    const job = firstRecord(row.jobs);
-    results.push({
-      id: String(row.id),
-      updatedAt: String(row.updated_at),
-      job: { title: String(job?.title ?? ""), slug: String(job?.slug ?? "") },
-      candidate: { name: candidate?.full_name ?? null, email: candidate?.email ?? null },
-      messages: [{ sender: { name: sender?.full_name ?? null }, body: last.body }],
-    });
-  }
-  return results;
-}
-
-export async function getUnreadNotifications(userId: string) {
+export const getNotifications = cache(async (userId: string, limit = 50) => {
   if (!isSupabaseConfigured()) return [];
   const supabase = await createServerSupabaseClient();
   const { data } = await supabase
     .from("notifications")
-    .select("*")
+    .select("id, title, body, href, read, created_at")
     .eq("user_id", userId)
     .order("created_at", { ascending: false })
-    .limit(20);
+    .limit(limit);
   return (data ?? []).map((item) => ({
     id: String(item.id),
     title: String(item.title),
@@ -56,7 +21,22 @@ export async function getUnreadNotifications(userId: string) {
     read: Boolean(item.read),
     createdAt: String(item.created_at),
   }));
-}
+});
+
+export const getUnreadNotifications = cache(async (userId: string) => {
+  return getNotifications(userId, 20);
+});
+
+export const getUnreadNotificationCount = cache(async (userId: string) => {
+  if (!isSupabaseConfigured()) return 0;
+  const supabase = await createServerSupabaseClient();
+  const { count } = await supabase
+    .from("notifications")
+    .select("id", { count: "exact", head: true })
+    .eq("user_id", userId)
+    .eq("read", false);
+  return count ?? 0;
+});
 
 export async function getEmployeeInvites(userId: string) {
   if (!isSupabaseConfigured()) return [];

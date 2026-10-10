@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AdminAssignForm } from "@/components/admin/admin-assign-form";
-import { AdminInterviewForm } from "@/components/admin/admin-interview-form";
 import { AdminNoteForm } from "@/components/admin/admin-note-form";
 import { AdminPageHeader } from "@/components/admin/admin-page-header";
+import { AdminRejectForm } from "@/components/admin/admin-reject-form";
 import { AdminStatusBadge } from "@/components/admin/admin-status-badge";
-import { AdminStageForm } from "@/components/admin/admin-stage-form";
-import { MessageForm } from "@/components/dashboard/message-form";
+import { AdminStatusForm } from "@/components/admin/admin-status-form";
+import { APPLICATION_STATUS_LABELS, isTerminalApplicationStatus } from "@/lib/constants";
 import { formatDate, formatDateTime } from "@/lib/utils";
 import { getAdminEmployees, getApplicationInternals } from "@/server/queries/admin";
 import { getApplicationForEmployee } from "@/server/queries/applications";
@@ -17,6 +17,8 @@ export default async function AdminApplicationDetailPage({ params }: { params: P
   if (!application) notFound();
   const [internals, employees] = await Promise.all([getApplicationInternals(id), getAdminEmployees()]);
   const profile = application.candidate.candidateProfile;
+  const candidateName = application.candidate.name ?? application.candidate.email ?? "there";
+  const closed = isTerminalApplicationStatus(application.status);
 
   return (
     <>
@@ -25,6 +27,7 @@ export default async function AdminApplicationDetailPage({ params }: { params: P
         description={`${application.job.title} · applied ${formatDate(application.createdAt)}`}
         actions={<AdminStatusBadge kind="application" status={application.status} />}
       />
+
       <div className="grid gap-6 lg:grid-cols-3">
         <section className="space-y-6 lg:col-span-2">
           <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
@@ -77,30 +80,27 @@ export default async function AdminApplicationDetailPage({ params }: { params: P
             <h2 className="font-serif text-xl">Cover letter</h2>
             <p className="mt-3 whitespace-pre-wrap text-sm text-muted-foreground">{application.coverLetter || "No cover letter provided."}</p>
           </div>
-          <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
-            <h2 className="font-serif text-xl">Messages</h2>
-            <div className="mt-4 space-y-3">
-              {application.messages.length === 0 ? (
-                <p className="text-sm text-muted-foreground">No messages yet.</p>
-              ) : (
-                application.messages.map((message) => (
-                  <div key={message.id} className="rounded-xl bg-[#faf7f1] p-3">
-                    <p className="text-xs text-muted-foreground">
-                      {message.sender.name ?? "User"} · {formatDateTime(message.createdAt)}
-                    </p>
-                    <p className="mt-1 whitespace-pre-wrap text-sm">{message.body}</p>
-                  </div>
-                ))
-              )}
-              <MessageForm applicationId={application.id} />
-            </div>
-          </div>
         </section>
         <aside className="space-y-6">
           <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
-            <h2 className="font-serif text-xl">Hiring stage</h2>
-            <AdminStageForm applicationId={application.id} stage={application.status} />
+            <h2 className="font-serif text-xl">Status</h2>
+            <p className="mt-2 text-sm text-muted-foreground">Current: {APPLICATION_STATUS_LABELS[application.status]}</p>
+            <div className="mt-4">
+              <AdminStatusForm applicationId={application.id} status={application.status} />
+            </div>
           </div>
+          {!closed || application.status !== "rejected" ? (
+            <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
+              <h2 className="font-serif text-xl">Reject</h2>
+              <div className="mt-4">
+                <AdminRejectForm
+                  applicationId={application.id}
+                  candidateName={candidateName.split(" ")[0] ?? candidateName}
+                  jobTitle={application.job.title}
+                />
+              </div>
+            </div>
+          ) : null}
           <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
             <h2 className="font-serif text-xl">Assignment</h2>
             <AdminAssignForm
@@ -122,33 +122,6 @@ export default async function AdminApplicationDetailPage({ params }: { params: P
                 </div>
               ))}
               <AdminNoteForm applicationId={application.id} candidateId={application.candidate.id} />
-            </div>
-          </div>
-          <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
-            <h2 className="font-serif text-xl">Stage history</h2>
-            <ul className="mt-3 space-y-2 text-sm">
-              {application.history.length === 0 ? <li className="text-muted-foreground">No stage changes yet.</li> : null}
-              {application.history.map((event) => (
-                <li key={event.id}>
-                  {event.fromStage ?? "—"} → {event.toStage}
-                  <span className="block text-xs text-muted-foreground">{event.label} · {formatDateTime(event.changedAt)}</span>
-                  {event.message ? <span className="block text-xs text-muted-foreground">{event.message}</span> : null}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-[#eadfcd] bg-white p-6">
-            <h2 className="font-serif text-xl">Interviews</h2>
-            <ul className="mt-3 space-y-2 text-sm">
-              {internals.interviews.length === 0 ? <li className="text-muted-foreground">No interviews scheduled.</li> : null}
-              {internals.interviews.map((interview) => (
-                <li key={interview.id}>
-                  {formatDateTime(interview.scheduledAt)} · {interview.interviewType} · {interview.status}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-4">
-              <AdminInterviewForm applicationId={application.id} />
             </div>
           </div>
         </aside>

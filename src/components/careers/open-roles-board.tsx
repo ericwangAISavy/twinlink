@@ -321,7 +321,7 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
             alt=""
             fill
             priority
-            quality={95}
+            quality={80}
             sizes="50vw"
             className="object-cover object-[62%_28%]"
           />

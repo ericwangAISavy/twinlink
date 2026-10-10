@@ -1,6 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
+import { hasSupabaseAuthCookie } from "@/lib/supabase/session-cookie";
 import { destinationAfterLogin, homePath, toAppRole } from "@/lib/roles";
 
 function loginRedirect(request: NextRequest, pathname: string, extra?: Record<string, string>) {
@@ -24,10 +25,18 @@ export async function updateSession(request: NextRequest) {
     return response;
   }
 
+  const needsAuth = pathname.startsWith("/dashboard") || pathname.startsWith("/admin");
+  const authPage = pathname === "/login" || pathname === "/register";
+  const hasSession = hasSupabaseAuthCookie(request.cookies.getAll());
+
   if (!isSupabaseConfigured()) {
-    if (pathname.startsWith("/dashboard") || pathname.startsWith("/admin")) {
+    if (needsAuth) {
       return loginRedirect(request, pathname);
     }
+    return response;
+  }
+
+  if (!needsAuth && !hasSession) {
     return response;
   }
 
@@ -54,29 +63,21 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  async function trustedRole() {
-    if (!user) return null;
-    const { data: profile } = await supabase.from("profiles").select("role").eq("id", user.id).maybeSingle();
-    const role = toAppRole(profile?.role);
-    if (role !== "CANDIDATE") return role;
-    const { data: access, error } = await supabase
-      .from("profiles")
-      .select("access_status")
-      .eq("id", user.id)
-      .maybeSingle();
-    if (error || access?.access_status !== "approved") return "PENDING" as const;
-    return role;
-  }
-
-  const needsAuth = pathname.startsWith("/dashboard") || pathname.startsWith("/admin");
-
   if (needsAuth && !user) {
     return loginRedirect(request, pathname);
   }
 
-  if (user && (needsAuth || pathname === "/login" || pathname === "/register")) {
-    const role = await trustedRole();
-    if (role === "PENDING") {
+  if (user && (needsAuth || authPage)) {
+    const { data: profile, error } = await supabase
+      .from("profiles")
+      .select("role, access_status")
+      .eq("id", user.id)
+      .maybeSingle();
+    const role = toAppRole(profile?.role);
+    const accessBlocked =
+      role === "CANDIDATE" && (error || profile?.access_status !== "approved");
+
+    if (accessBlocked) {
       const signOut = request.nextUrl.clone();
       signOut.pathname = "/auth/sign-out";
       signOut.search = "";
@@ -110,7 +111,7 @@ export async function updateSession(request: NextRequest) {
       }
     }
 
-    if (pathname === "/login" || pathname === "/register") {
+    if (authPage) {
       const callbackUrl = request.nextUrl.searchParams.get("callbackUrl");
       return NextResponse.redirect(new URL(destinationAfterLogin(role, callbackUrl), request.url));
     }
