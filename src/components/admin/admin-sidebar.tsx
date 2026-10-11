@@ -36,6 +36,7 @@ const GROUPS = [
         label: "Applications",
         icon: ClipboardList,
       },
+      { href: "/admin/guest-applications", label: "Guest Applications", icon: ClipboardList },
       { href: "/admin/candidates", label: "Candidates", icon: Users },
     ],
   },

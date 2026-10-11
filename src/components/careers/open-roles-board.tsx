@@ -58,7 +58,7 @@ const LOCATION_GROUPS = [
 ] as const;
 const CHINA_FOCUS = "China";
 const EXPERIENCE = ["Junior", "Mid-level", "Senior", "Staff", "Lead"] as const;
-const PAGE_SIZE = 6;
+const PAGE_SIZES = [6, 12, 24, 48];
 
 function departmentOf(role: OpenRole) {
   const value = (role.department ?? "").toLowerCase();
@@ -69,7 +69,12 @@ function departmentOf(role: OpenRole) {
   if (value.includes("design")) return "Design";
   if (value.includes("market") || value.includes("gtm")) return "Go-to-Market";
   if (value.includes("operation")) return "Operations";
-  if (value.includes("people") || value.includes("recruit") || value.includes("talent")) return "People";
+  if (
+    value.includes("people") ||
+    value.includes("recruit") ||
+    value.includes("talent")
+  )
+    return "People";
   const match = DEPARTMENTS.find((item) => item.toLowerCase() === value);
   return match ?? (role.department?.trim() || "Other");
 }
@@ -77,7 +82,8 @@ function departmentOf(role: OpenRole) {
 function workTypeOf(role: OpenRole) {
   const value = (role.employmentType ?? "").toLowerCase();
   if (value.includes("part")) return "Part-time";
-  if (value.includes("contract") || value.includes("freelance")) return "Contract";
+  if (value.includes("contract") || value.includes("freelance"))
+    return "Contract";
   if (value.includes("full")) return "Full-time";
   return role.employmentType?.trim() || "Full-time";
 }
@@ -96,9 +102,57 @@ function workplaceOf(role: OpenRole) {
 }
 
 const US_STATES = new Set([
-  "al", "ak", "az", "ar", "ca", "co", "ct", "de", "fl", "ga", "hi", "id", "il", "in", "ia", "ks", "ky", "la", "me",
-  "md", "ma", "mi", "mn", "ms", "mo", "mt", "ne", "nv", "nh", "nj", "nm", "ny", "nc", "nd", "oh", "ok", "or", "pa",
-  "ri", "sc", "sd", "tn", "tx", "ut", "vt", "va", "wa", "wv", "wi", "wy", "dc",
+  "al",
+  "ak",
+  "az",
+  "ar",
+  "ca",
+  "co",
+  "ct",
+  "de",
+  "fl",
+  "ga",
+  "hi",
+  "id",
+  "il",
+  "in",
+  "ia",
+  "ks",
+  "ky",
+  "la",
+  "me",
+  "md",
+  "ma",
+  "mi",
+  "mn",
+  "ms",
+  "mo",
+  "mt",
+  "ne",
+  "nv",
+  "nh",
+  "nj",
+  "nm",
+  "ny",
+  "nc",
+  "nd",
+  "oh",
+  "ok",
+  "or",
+  "pa",
+  "ri",
+  "sc",
+  "sd",
+  "tn",
+  "tx",
+  "ut",
+  "vt",
+  "va",
+  "wa",
+  "wv",
+  "wi",
+  "wy",
+  "dc",
 ]);
 
 function includesAny(value: string, needles: string[]) {
@@ -112,7 +166,17 @@ function hasToken(value: string, token: string) {
 function locationGroup(role: OpenRole) {
   const value = (role.location ?? "").toLowerCase();
   if (!value) return "Other";
-  if (includesAny(value, ["remote", "anywhere", "worldwide", "global", "flexible", "distributed"])) return "Remote";
+  if (
+    includesAny(value, [
+      "remote",
+      "anywhere",
+      "worldwide",
+      "global",
+      "flexible",
+      "distributed",
+    ])
+  )
+    return "Remote";
   if (
     includesAny(value, [
       "china",
@@ -140,13 +204,25 @@ function locationGroup(role: OpenRole) {
   if (includesAny(value, ["hong kong", "香港"])) return "Hong Kong";
   if (
     value.includes("canada") ||
-    includesAny(value, ["toronto", "vancouver", "montreal", "ottawa", "calgary"]) ||
+    includesAny(value, [
+      "toronto",
+      "vancouver",
+      "montreal",
+      "ottawa",
+      "calgary",
+    ]) ||
     /,\s*(bc|on|qc|ab|mb|sk|ns)\b/.test(value)
   ) {
     return "Canada";
   }
   if (
-    includesAny(value, ["united kingdom", "england", "scotland", "wales", "london"]) ||
+    includesAny(value, [
+      "united kingdom",
+      "england",
+      "scotland",
+      "wales",
+      "london",
+    ]) ||
     hasToken(value, "uk")
   ) {
     return "United Kingdom";
@@ -175,9 +251,25 @@ function locationGroup(role: OpenRole) {
   }
   if (value.includes("singapore")) return "Singapore";
   if (includesAny(value, ["japan", "tokyo", "osaka"])) return "Japan";
-  if (includesAny(value, ["india", "bangalore", "bengaluru", "mumbai", "hyderabad", "delhi"])) return "India";
-  if (includesAny(value, ["australia", "sydney", "melbourne"])) return "Australia";
-  if (value.includes("united states") || value.includes("usa") || value.includes("u.s.")) return "United States";
+  if (
+    includesAny(value, [
+      "india",
+      "bangalore",
+      "bengaluru",
+      "mumbai",
+      "hyderabad",
+      "delhi",
+    ])
+  )
+    return "India";
+  if (includesAny(value, ["australia", "sydney", "melbourne"]))
+    return "Australia";
+  if (
+    value.includes("united states") ||
+    value.includes("usa") ||
+    value.includes("u.s.")
+  )
+    return "United States";
   const state = value.match(/,\s*([a-z]{2})\b/);
   if (state && US_STATES.has(state[1])) return "United States";
   return role.location?.trim() || "Other";
@@ -203,12 +295,15 @@ function iconFor(department: string) {
 }
 
 function toggleValue(current: string[], value: string) {
-  return current.includes(value) ? current.filter((item) => item !== value) : [...current, value];
+  return current.includes(value)
+    ? current.filter((item) => item !== value)
+    : [...current, value];
 }
 
 export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
   const [query, setQuery] = useState("");
   const [department, setDepartment] = useState("all");
+  const [pageSize, setPageSize] = useState(6);
   const [locations, setLocations] = useState<string[]>([]);
   const [team, setTeam] = useState("all");
   const [workTypes, setWorkTypes] = useState<string[]>([]);
@@ -218,7 +313,9 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
 
   const featuredId = useMemo(() => {
     const ranked = [...roles].sort(
-      (a, b) => new Date(b.publishedAt ?? 0).getTime() - new Date(a.publishedAt ?? 0).getTime(),
+      (a, b) =>
+        new Date(b.publishedAt ?? 0).getTime() -
+        new Date(a.publishedAt ?? 0).getTime(),
     );
     return ranked[0]?.id ?? null;
   }, [roles]);
@@ -226,43 +323,77 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
   const departments = useMemo(() => {
     const extra = roles
       .map(departmentOf)
-      .filter((item) => !DEPARTMENTS.includes(item as (typeof DEPARTMENTS)[number]));
+      .filter(
+        (item) => !DEPARTMENTS.includes(item as (typeof DEPARTMENTS)[number]),
+      );
     return [...DEPARTMENTS, ...new Set(extra)];
   }, [roles]);
 
   const locationOptions = useMemo(() => {
     const extra = roles
       .map(locationGroup)
-      .filter((item) => !LOCATION_GROUPS.includes(item as (typeof LOCATION_GROUPS)[number]) && item !== "Other");
+      .filter(
+        (item) =>
+          !LOCATION_GROUPS.includes(item as (typeof LOCATION_GROUPS)[number]) &&
+          item !== "Other",
+      );
     return [...LOCATION_GROUPS, ...new Set(extra)];
   }, [roles]);
 
   const teamOptions = useMemo(() => {
-    return [...new Set(roles.map(workplaceOf).filter((item): item is string => Boolean(item)))];
+    return [
+      ...new Set(
+        roles.map(workplaceOf).filter((item): item is string => Boolean(item)),
+      ),
+    ];
   }, [roles]);
 
   const workTypeOptions = useMemo(() => {
     const extra = roles
       .map(workTypeOf)
-      .filter((item) => !WORK_TYPES.includes(item as (typeof WORK_TYPES)[number]));
+      .filter(
+        (item) => !WORK_TYPES.includes(item as (typeof WORK_TYPES)[number]),
+      );
     return [...WORK_TYPES, ...new Set(extra)];
   }, [roles]);
 
-  function baseMatch(role: OpenRole, skip?: "department" | "location" | "work") {
-    const haystack = `${role.title} ${role.department ?? ""} ${role.location ?? ""}`.toLowerCase();
-    if (query.trim() && !haystack.includes(query.trim().toLowerCase())) return false;
+  function baseMatch(
+    role: OpenRole,
+    skip?: "department" | "location" | "work",
+  ) {
+    const haystack =
+      `${role.title} ${role.department ?? ""} ${role.location ?? ""}`.toLowerCase();
+    if (query.trim() && !haystack.includes(query.trim().toLowerCase()))
+      return false;
     if (team !== "all" && workplaceOf(role) !== team) return false;
     if (experience !== "all" && experienceOf(role) !== experience) return false;
-    if (skip !== "department" && department !== "all" && departmentOf(role) !== department) return false;
-    if (skip !== "location" && locations.length > 0 && !locations.includes(locationGroup(role))) return false;
-    if (skip !== "work" && workTypes.length > 0 && !workTypes.includes(workTypeOf(role))) return false;
+    if (
+      skip !== "department" &&
+      department !== "all" &&
+      departmentOf(role) !== department
+    )
+      return false;
+    if (
+      skip !== "location" &&
+      locations.length > 0 &&
+      !locations.includes(locationGroup(role))
+    )
+      return false;
+    if (
+      skip !== "work" &&
+      workTypes.length > 0 &&
+      !workTypes.includes(workTypeOf(role))
+    )
+      return false;
     return true;
   }
 
   const filtered = useMemo(() => {
     const list = roles.filter((role) => baseMatch(role));
     list.sort((a, b) => {
-      const delta = new Date(a.publishedAt ?? 0).getTime() - new Date(b.publishedAt ?? 0).getTime();
+      const delta =
+        new Date(a.publishedAt ?? 0).getTime() -
+        new Date(b.publishedAt ?? 0).getTime();
       return sort === "newest" ? -delta : delta;
     });
     return list;
@@ -299,10 +430,10 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roles, query, department, workTypes, team, experience]);
 
-  const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
   const currentPage = Math.min(page, pageCount);
-  const start = (currentPage - 1) * PAGE_SIZE;
-  const visible = filtered.slice(start, start + PAGE_SIZE);
+  const start = (currentPage - 1) * pageSize;
+  const visible = filtered.slice(start, start + pageSize);
   const allCount = roles.filter((role) => baseMatch(role, "department")).length;
 
   function setDepartmentFilter(value: string) {
@@ -329,11 +460,16 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
         </div>
         <div className="relative mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[minmax(0,1fr)_280px]">
           <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#c4a574]">Careers</p>
-            <h1 className="mt-3 font-serif text-5xl text-white md:text-6xl">Open roles</h1>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#c4a574]">
+              Careers
+            </p>
+            <h1 className="mt-3 font-serif text-5xl text-white md:text-6xl">
+              Open roles
+            </h1>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/65">
-              Join Twinlink and help build the next generation of AI infrastructure. Work with world-class people on
-              ambitious problems that matter.
+              Join Twinlink and help build the next generation of AI
+              infrastructure. Work with world-class people on ambitious problems
+              that matter.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild variant="teal" className="rounded-full">
@@ -352,9 +488,16 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
           </div>
           <div className="relative lg:text-right">
             <div className="relative mb-4 h-28 overflow-hidden rounded-2xl lg:hidden">
-              <Image src="/images/careers-earth.jpg" alt="" fill className="object-cover object-[center_30%]" />
+              <Image
+                src="/images/careers-earth.jpg"
+                alt=""
+                fill
+                className="object-cover object-[center_30%]"
+              />
             </div>
-            <p className="font-serif text-6xl leading-none text-[#e8d5a3] md:text-7xl">{roles.length}</p>
+            <p className="font-serif text-6xl leading-none text-[#e8d5a3] md:text-7xl">
+              {roles.length}
+            </p>
             <div className="mt-2 flex items-end justify-between gap-4 lg:justify-end">
               <p className="text-[#e8d5a3]">open roles</p>
               <p className="max-w-[11rem] text-[10px] uppercase leading-relaxed tracking-[0.16em] text-white/45">
@@ -385,7 +528,10 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
               label="Department"
               value={department}
               onChange={setDepartmentFilter}
-              options={[{ value: "all", label: "Department" }, ...departments.map((item) => ({ value: item, label: item }))]}
+              options={[
+                { value: "all", label: "Department" },
+                ...departments.map((item) => ({ value: item, label: item })),
+              ]}
             />
             <FilterSelect
               label="Location"
@@ -421,7 +567,13 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
                 setWorkTypes(value === "all" ? [] : [value]);
                 setPage(1);
               }}
-              options={[{ value: "all", label: "Work type" }, ...workTypeOptions.map((item) => ({ value: item, label: item }))]}
+              options={[
+                { value: "all", label: "Work type" },
+                ...workTypeOptions.map((item) => ({
+                  value: item,
+                  label: item,
+                })),
+              ]}
             />
             <FilterSelect
               label="Experience level"
@@ -506,10 +658,39 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
             </aside>
 
             <div>
-              <p className="mb-3 text-sm text-white/45">{filtered.length} roles</p>
+              <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+                <p className="text-sm text-white/45">{filtered.length} roles</p>
+                <div
+                  role="group"
+                  aria-label="Jobs per page"
+                  className="flex flex-wrap items-center gap-2"
+                >
+                  <span className="text-xs text-white/50">Jobs per page</span>
+                  {PAGE_SIZES.map((size) => (
+                    <button
+                      key={size}
+                      type="button"
+                      aria-pressed={pageSize === size}
+                      onClick={() => {
+                        setPageSize(size);
+                        setPage(1);
+                      }}
+                      className={cn(
+                        "rounded-full border px-3 py-1 text-xs",
+                        pageSize === size
+                          ? "border-[#c4a574] bg-[#c4a574] text-[#1c1916]"
+                          : "border-white/15 text-white/70 hover:bg-white/10",
+                      )}
+                    >
+                      {size}
+                    </button>
+                  ))}
+                </div>
+              </div>
               {visible.length === 0 ? (
                 <div className="rounded-2xl border border-white/10 bg-[#171512] px-6 py-12 text-sm text-white/55">
-                  No open roles match these filters. Clear a filter or check back when a new search is published.
+                  No open roles match these filters. Clear a filter or check
+                  back when a new search is published.
                 </div>
               ) : (
                 <ul className="overflow-hidden rounded-2xl border border-white/10">
@@ -517,7 +698,10 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
                     const Icon = iconFor(departmentOf(role));
                     const workplace = workplaceOf(role);
                     return (
-                      <li key={role.id} className="border-b border-white/10 bg-[#141210] last:border-b-0">
+                      <li
+                        key={role.id}
+                        className="border-b border-white/10 bg-[#141210] last:border-b-0"
+                      >
                         <div className="grid items-center gap-4 px-4 py-4 sm:grid-cols-[minmax(0,1.4fr)_minmax(0,0.9fr)_minmax(0,0.9fr)_auto] sm:px-5">
                           <div className="flex min-w-0 items-start gap-3">
                             <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-[#c4a574]/30 bg-[#1c1916] text-[#e8d5a3]">
@@ -525,19 +709,26 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
                             </span>
                             <div className="min-w-0">
                               <div className="flex flex-wrap items-center gap-2">
-                                <p className="font-medium text-white">{role.title}</p>
+                                <p className="font-medium text-white">
+                                  {role.title}
+                                </p>
                                 {role.id === featuredId ? (
                                   <span className="rounded-full bg-[#c4a574]/20 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-[#e8d5a3]">
                                     Featured
                                   </span>
                                 ) : null}
                               </div>
-                              <p className="mt-0.5 text-xs text-white/45">{departmentOf(role)}</p>
+                              <p className="mt-0.5 text-xs text-white/45">
+                                {departmentOf(role)}
+                              </p>
                             </div>
                           </div>
                           <p className="text-sm text-white/70">
                             <span className="inline-flex items-center gap-1.5">
-                              <MapPin className="size-3.5 text-white/35" aria-hidden />
+                              <MapPin
+                                className="size-3.5 text-white/35"
+                                aria-hidden
+                              />
                               {role.location ?? "Location open"}
                             </span>
                             {locationGroup(role) === CHINA_FOCUS ? (
@@ -545,17 +736,28 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
                                 China focus
                               </span>
                             ) : null}
-                            {workplace ? <span className="mt-1 block text-xs text-white/40">{workplace}</span> : null}
+                            {workplace ? (
+                              <span className="mt-1 block text-xs text-white/40">
+                                {workplace}
+                              </span>
+                            ) : null}
                           </p>
                           <p className="text-sm text-white/70">
                             <span className="inline-flex items-center gap-1.5">
-                              <Briefcase className="size-3.5 text-white/35" aria-hidden />
+                              <Briefcase
+                                className="size-3.5 text-white/35"
+                                aria-hidden
+                              />
                               {workTypeOf(role)}
                             </span>
-                            <span className="mt-1 block text-xs text-white/40">{departmentOf(role)}</span>
+                            <span className="mt-1 block text-xs text-white/40">
+                              {departmentOf(role)}
+                            </span>
                           </p>
                           <div className="flex items-center justify-between gap-4 sm:justify-end">
-                            <p className="text-xs text-white/40">{formatRelativeTime(role.publishedAt)}</p>
+                            <p className="text-xs text-white/40">
+                              {formatRelativeTime(role.publishedAt)}
+                            </p>
                             <Link
                               href={`/careers/${role.slug}`}
                               className="inline-flex items-center gap-1 text-sm text-[#e8d5a3] hover:underline"
@@ -581,7 +783,10 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
                   </PageButton>
                   {pages.map((item, index) =>
                     item === "gap" ? (
-                      <span key={`gap-${index}`} className="px-1 text-sm text-white/35">
+                      <span
+                        key={`gap-${index}`}
+                        className="px-1 text-sm text-white/35"
+                      >
                         …
                       </span>
                     ) : (
@@ -612,7 +817,7 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
                 <p className="text-xs text-white/40">
                   {filtered.length === 0
                     ? "Showing 0 roles"
-                    : `Showing ${start + 1}–${Math.min(start + PAGE_SIZE, filtered.length)} of ${filtered.length} roles`}
+                    : `Showing ${start + 1}–${Math.min(start + pageSize, filtered.length)} of ${filtered.length} roles`}
                 </p>
               </div>
             </div>
@@ -672,7 +877,9 @@ function CountRow({
         onClick={onClick}
         className={cn(
           "flex w-full items-center justify-between rounded-lg px-3 py-2 text-left",
-          active ? "border-l-2 border-[#c4a574] bg-white/5 text-white" : "text-white/65 hover:bg-white/5",
+          active
+            ? "border-l-2 border-[#c4a574] bg-white/5 text-white"
+            : "text-white/65 hover:bg-white/5",
         )}
       >
         <span>{label}</span>
@@ -682,11 +889,19 @@ function CountRow({
   );
 }
 
-function FilterGroup({ title, children }: { title: string; children: React.ReactNode }) {
+function FilterGroup({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
     <div>
-      <p className="px-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/35">{title}</p>
-      <div className="mt-2 space-y-1">{children}</div>
+      <p className="px-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/35">
+        {title}
+      </p>
+      <div className="mt-2 flex flex-wrap gap-2">{children}</div>
     </div>
   );
 }
@@ -705,19 +920,19 @@ function CheckRow({
   accent?: boolean;
 }) {
   return (
-    <label
+    <button
+      type="button"
+      aria-pressed={checked}
+      onClick={onChange}
       className={cn(
-        "flex cursor-pointer items-center justify-between rounded-lg px-3 py-1.5 text-sm hover:bg-white/5",
+        "inline-flex items-center justify-between gap-2 rounded-full border px-3 py-1.5 text-xs hover:bg-white/5",
+        checked
+          ? "border-[#c4a574] bg-[#c4a574]/20 text-[#e8d5a3]"
+          : "border-white/15",
         accent ? "bg-[#c4a574]/10 text-[#e8d5a3]" : "text-white/70",
       )}
     >
       <span className="flex items-center gap-2">
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={onChange}
-          className="size-3.5 accent-[#c4a574]"
-        />
         {label}
         {accent ? (
           <span className="rounded-full bg-[#c4a574]/25 px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wide text-[#e8d5a3]">
@@ -725,8 +940,15 @@ function CheckRow({
           </span>
         ) : null}
       </span>
-      <span className={cn("text-xs", accent ? "text-[#e8d5a3]/70" : "text-white/35")}>{count}</span>
-    </label>
+      <span
+        className={cn(
+          "text-xs",
+          accent ? "text-[#e8d5a3]/70" : "text-white/35",
+        )}
+      >
+        {count}
+      </span>
+    </button>
   );
 }
 

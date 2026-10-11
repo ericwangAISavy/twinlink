@@ -36,6 +36,7 @@ export default async function AdminApplicationsPage({
   return (
     <>
       <AdminPageHeader title="Applications" description="Review submitted applications and update status manually." />
+      <Link href="/admin/guest-applications" className="mb-6 inline-block rounded-full border border-[#d9c6a4] px-5 py-3 text-sm">Review applications submitted without an account →</Link>
       <AdminFilterBar>
         <Input name="q" defaultValue={q} placeholder="Candidate, email, or job" className="max-w-xs" />
         <select name="status" defaultValue={status ?? ""} className="h-10 rounded-md border border-input bg-card px-3 text-sm">
