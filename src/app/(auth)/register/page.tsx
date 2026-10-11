@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 export default async function RegisterPage({
   searchParams,
 }: {
-  searchParams: Promise<{ invite?: string; callbackUrl?: string }>;
+  searchParams: Promise<{ invite?: string }>;
 }) {
-  const { invite, callbackUrl } = await searchParams;
+  const { invite } = await searchParams;
 
   return (
     <>
@@ -29,7 +29,7 @@ export default async function RegisterPage({
           ? "Employee accounts are invitation only. Complete registration with the invited email."
           : "Create your candidate account. Employee accounts are invitation only."}
       </p>
-      <RegisterForm invite={invite} callbackUrl={callbackUrl} />
+      <RegisterForm invite={invite} />
     </>
   );
 }
