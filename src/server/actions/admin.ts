@@ -342,3 +342,15 @@ export async function adminSaveCompanySettings(formData: FormData): Promise<Acti
   const { updateCompanyProfile } = await import("@/server/actions/company");
   return updateCompanyProfile(formData);
 }
+
+export async function adminSaveStatistics(formData: FormData): Promise<ActionResult> {
+  await requireAdmin();
+  const values = Array.from({ length: 4 }, (_, index) => String(formData.get(`stat-${index}`) ?? "").trim());
+  if (!values.every(value => /^\d{1,9}(?:\.\d{1,2})?\+?$/.test(value))) return fail("Enter valid numbers, optionally followed by +.");
+  const supabase = await createServerSupabaseClient();
+  const { error } = await supabase.from("company_content").upsert({ key: "company_statistics", title: "Company statistics", body: JSON.stringify(values) }, { onConflict: "key" });
+  if (error) return fail("Homepage numbers could not be saved. Please try again.");
+  revalidatePath("/");
+  revalidatePath("/admin/content");
+  return ok("Homepage numbers saved.");
+}

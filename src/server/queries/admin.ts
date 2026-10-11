@@ -430,8 +430,6 @@ export async function getAdminContent() {
     { key: "case_studies", title: "Case studies", body: "" },
     { key: "resources_intro", title: "Resources", body: "" },
   ];
-  const { data } = await supabase.from("company_content").select("*").order("key");
-  if ((data ?? []).length > 0) return data ?? [];
   await supabase.from("company_content").upsert(defaults, { onConflict: "key", ignoreDuplicates: true });
   const { data: seeded } = await supabase.from("company_content").select("*").order("key");
   return seeded ?? [];

@@ -1,4 +1,5 @@
 import "server-only";
+import { DEFAULT_STATISTICS, parseStatistics } from "@/lib/company-statistics";
 
 import { cache } from "react";
 import { unstable_cache } from "next/cache";
@@ -41,3 +42,10 @@ const loadCompanyProfile = unstable_cache(
 );
 
 export const getCompanyProfile = cache(loadCompanyProfile);
+
+export const getCompanyStatistics = cache(async () => {
+  if (!isSupabaseConfigured()) return DEFAULT_STATISTICS;
+  const client = createPublicSupabaseClient();
+  const { data } = await client.from("company_content").select("body").eq("key", "company_statistics").maybeSingle();
+  return parseStatistics(data?.body);
+});

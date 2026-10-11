@@ -1,3 +1,4 @@
+import { AdminStatisticsForm } from "@/components/admin/admin-statistics-form";
 import Link from "next/link";
 import { AdminContentForm } from "@/components/admin/admin-content-form";
 import { AdminEmptyState } from "@/components/admin/admin-empty-state";
@@ -31,14 +32,20 @@ export default async function AdminContentPage() {
               key={String(item.id)}
               className="rounded-2xl border border-[#eadfcd] bg-white p-6"
             >
-              <AdminContentForm
-                item={{
-                  id: String(item.id),
-                  key: String(item.key),
-                  title: String(item.title),
-                  body: (item.body as string | null) ?? null,
-                }}
-              />
+              {item.key === "company_statistics" ? (
+                <AdminStatisticsForm
+                  body={(item.body as string | null) ?? null}
+                />
+              ) : (
+                <AdminContentForm
+                  item={{
+                    id: String(item.id),
+                    key: String(item.key),
+                    title: String(item.title),
+                    body: (item.body as string | null) ?? null,
+                  }}
+                />
+              )}
             </section>
           ))}
         </div>

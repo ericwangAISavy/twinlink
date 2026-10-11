@@ -1,3 +1,4 @@
+import { getCompanyStatistics } from "@/server/queries/company";
 import { getPublishedResources } from "@/server/queries/editorial";
 import { withResourceImage } from "@/lib/resource-images";
 import Image from "next/image";
@@ -30,15 +31,11 @@ const SOLUTIONS = [
   },
 ] as const;
 
-const STATS = [
-  { value: "50+", label: "Engineering Specialists" },
-  { value: "30+", label: "Projects Delivered" },
-  { value: "15+", label: "Partner Companies" },
-  { value: "5+", label: "Years of Experience" },
-] as const;
-
 export default async function HomePage() {
-  const publications = await getPublishedResources();
+  const [publications, statistics] = await Promise.all([
+    getPublishedResources(),
+    getCompanyStatistics(),
+  ]);
   const firstCase =
     publications.find(
       (item) => item.kind === "case-studies" && item.featured,
@@ -208,7 +205,7 @@ export default async function HomePage() {
 
       <section className="px-4 py-10 md:py-16">
         <div className="mx-auto grid max-w-6xl gap-10 py-8 sm:grid-cols-2 lg:grid-cols-4">
-          {STATS.map((stat, index) => (
+          {statistics.map((stat, index) => (
             <Reveal
               key={stat.label}
               className="reveal-copy text-center"
