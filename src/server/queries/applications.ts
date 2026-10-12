@@ -143,6 +143,10 @@ export async function getApplicationForUser(
     createdAt: String(data.created_at),
     updatedAt: String(data.updated_at),
     resumeUrl: resumeFile,
+    contactEmail: String(data.contact_email ?? ""),
+    contactPhone: String(data.contact_phone ?? ""),
+    contactAddress: String(data.contact_address ?? ""),
+    socialUrl: String(data.social_url ?? ""),
     assignedToId: (data.assigned_to as string | null) ?? null,
     candidateUserId: String(data.candidate_id),
     job: job

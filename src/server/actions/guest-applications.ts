@@ -1,6 +1,7 @@
 "use server";
 
 import { z } from "zod";
+import { applicationContactSchema, httpsLink } from "@/lib/application-contact";
 import { revalidatePath } from "next/cache";
 import { fail, ok } from "@/lib/action-result";
 import { createPublicSupabaseClient } from "@/lib/supabase/public";
@@ -11,22 +12,8 @@ import { APPLICATION_STATUSES } from "@/lib/constants";
 const schema = z.object({
   jobId: z.uuid(),
   name: z.string().trim().min(2, "Enter your full name.").max(150),
-  email: z.email().trim().toLowerCase().max(254),
-  phone: z.string().trim().max(80),
-  resume: z
-    .string()
-    .trim()
-    .max(2048)
-    .refine((value) => {
-      if (!value) return true;
-      try {
-        const url = new URL(value);
-        return url.protocol === "https:" && !url.username && !url.password;
-      } catch {
-        return false;
-      }
-    }, "Use an HTTPS link for your resume or portfolio.")
-    .transform((value) => (value ? new URL(value).toString() : "")),
+  ...applicationContactSchema.shape,
+  resume: httpsLink,
   cover: z.string().trim().max(10000),
 });
 
@@ -37,6 +24,8 @@ export async function submitGuestApplication(data: FormData) {
     name: data.get("name"),
     email: String(data.get("email") || "").trim(),
     phone: data.get("phone") || "",
+    address: data.get("address") || "",
+    social: data.get("social") || "",
     resume: data.get("resume") || "",
     cover: data.get("cover") || "",
   });
@@ -52,6 +41,8 @@ export async function submitGuestApplication(data: FormData) {
       p_name: input.name,
       p_email: input.email,
       p_phone: input.phone,
+      p_address: input.address,
+      p_social_url: input.social,
       p_resume_url: input.resume,
       p_cover_letter: input.cover,
     });

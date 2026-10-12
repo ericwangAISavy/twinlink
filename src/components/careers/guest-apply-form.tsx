@@ -1,4 +1,5 @@
 "use client";
+import { ApplicationContactFields } from "@/components/careers/application-contact-fields";
 import { useState } from "react";
 import { ActionForm } from "@/components/action-form";
 import { Field } from "@/components/form-field";
@@ -46,25 +47,7 @@ export function GuestApplyForm({ jobId }: { jobId: string }) {
             maxLength={150}
           />
         </Field>
-        <Field htmlFor="guest-email" label="Email">
-          <Input
-            id="guest-email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            maxLength={254}
-          />
-        </Field>
-        <Field htmlFor="guest-phone" label="Phone (optional)">
-          <Input
-            id="guest-phone"
-            name="phone"
-            type="tel"
-            autoComplete="tel"
-            maxLength={80}
-          />
-        </Field>
+        <ApplicationContactFields prefix="guest" />
         <Field
           htmlFor="guest-resume"
           label="Resume or portfolio link (optional)"

@@ -11,6 +11,8 @@ export type GuestApplication = {
   name: string;
   email: string;
   phone: string;
+  address: string;
+  social: string;
   resume: string;
   cover: string;
   status: ApplicationStatus;
@@ -46,6 +48,8 @@ function mapGuestApplication(row: Record<string, unknown>): GuestApplication {
     name: String(row.full_name),
     email: String(row.email),
     phone: String(row.phone),
+    address: String(row.address ?? ""),
+    social: String(row.social_url ?? ""),
     resume: String(row.resume_url),
     cover: String(row.cover_letter),
     status: row.status as ApplicationStatus,

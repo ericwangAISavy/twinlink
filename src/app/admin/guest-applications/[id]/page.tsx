@@ -36,7 +36,28 @@ export default async function GuestDetail({
               {entry.email}
             </a>
           </p>
-          {entry.phone && <p>Phone: {entry.phone}</p>}
+          <p>Phone: {entry.phone || "Not provided (earlier application)"}</p>
+          <div>
+            <h3 className="text-sm font-medium">Address</h3>
+            <p className="mt-2 whitespace-pre-wrap break-words">
+              {entry.address || "Not provided (earlier application)"}
+            </p>
+          </div>
+          {entry.social && (
+            <p>
+              <a
+                href={entry.social}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                Open professional social profile ↗
+              </a>
+              <span className="mt-1 block break-all text-xs text-muted-foreground">
+                {entry.social}
+              </span>
+            </p>
+          )}
           {entry.resume && (
             <p>
               <a

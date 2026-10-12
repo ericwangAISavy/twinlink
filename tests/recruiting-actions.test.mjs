@@ -19,9 +19,11 @@ function load(path, dependencies = {}) {
     (name) =>
       name in dependencies
         ? dependencies[name]
-        : name.startsWith("@/")
-          ? {}
-          : nodeRequire(name),
+        : name === "@/lib/application-contact"
+          ? load("src/lib/application-contact.ts")
+          : name.startsWith("@/")
+            ? {}
+            : nodeRequire(name),
     testModule,
     testModule.exports,
   );
@@ -87,7 +89,9 @@ function application() {
     jobId: "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
     name: "Test Person",
     email: "Person@Example.com",
-    phone: "",
+    phone: "+86 138 0000 0000",
+    address: "88 Innovation Road, Hangzhou, China",
+    social: "https://example.com/profile",
     resume: "HTTPS://example.com/resume",
     cover: "An introduction",
   }))
@@ -106,6 +110,9 @@ test("invalid fields and bot honeypots never write an application", async () => 
     ["resume", "javascript:alert(1)"],
     ["email", "not-an-email"],
     ["name", "x"],
+    ["phone", ""],
+    ["address", ""],
+    ["social", "javascript:alert(1)"],
   ]) {
     const f = fixture();
     const data = application();

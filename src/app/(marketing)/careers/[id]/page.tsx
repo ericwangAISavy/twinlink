@@ -101,7 +101,7 @@ export default async function JobDetailPage({ params }: Props) {
                 <strong>{APPLICATION_STATUS_LABELS[application.status]}</strong>
               </p>
             ) : (
-              <ApplyForm jobId={job.id} />
+              <ApplyForm jobId={job.id} email={user?.email} />
             )}
             {approvedCandidate ? (
               <SaveJobButton jobId={job.id} saved={saved} />

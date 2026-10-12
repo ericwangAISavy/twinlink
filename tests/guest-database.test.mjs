@@ -5,12 +5,21 @@ import assert from "node:assert/strict";
 test("guest submission and review enforce database privacy, deadlines and duplicate limits", async () => {
   const db = new PGlite();
   await db.exec(
-    `create role anon;create role authenticated;create table profiles(id uuid primary key,role text);insert into profiles values('11111111-1111-4111-8111-111111111111','admin');create function is_admin() returns boolean language sql stable as $$select current_setting('fixture.admin',true)='yes'$$;create table jobs(id uuid primary key,title text,status text,application_deadline date);create table notifications(id uuid default gen_random_uuid(),user_id uuid,title text,body text,href text);grant usage on schema public to anon,authenticated;insert into jobs select ('aaaaaaaa-aaaa-4aaa-8aaa-'||lpad(n::text,12,'0'))::uuid,'Job '||n,'published',current_date+1 from generate_series(1,7)n;insert into jobs values('bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb','Closed','closed',null),('cccccccc-cccc-4ccc-8ccc-cccccccccccc','Expired','published',current_date-1);`,
+    `create role anon;create role authenticated;create table applications(id uuid default gen_random_uuid());create table profiles(id uuid primary key,role text);insert into profiles values('11111111-1111-4111-8111-111111111111','admin');create function is_admin() returns boolean language sql stable as $$select current_setting('fixture.admin',true)='yes'$$;create table jobs(id uuid primary key,title text,status text,application_deadline date);create table notifications(id uuid default gen_random_uuid(),user_id uuid,title text,body text,href text);grant usage on schema public to anon,authenticated;insert into jobs select ('aaaaaaaa-aaaa-4aaa-8aaa-'||lpad(n::text,12,'0'))::uuid,'Job '||n,'published',current_date+1 from generate_series(1,7)n;insert into jobs values('bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb','Closed','closed',null),('cccccccc-cccc-4ccc-8ccc-cccccccccccc','Expired','published',current_date-1);`,
   );
   await db.exec(
     fs.readFileSync(
       new URL(
         "../supabase/migrations/0014_guest_applications.sql",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
+  );
+  await db.exec(
+    fs.readFileSync(
+      new URL(
+        "../supabase/migrations/0015_application_contact_fields.sql",
         import.meta.url,
       ),
       "utf8",
@@ -33,12 +42,14 @@ test("guest submission and review enforce database privacy, deadlines and duplic
   }
   const submit = (id, email = "guest@example.com") =>
     as("anon", () =>
-      db.query("select submit_guest_application($1,$2,$3,$4,$5,$6)", [
+      db.query("select submit_guest_application($1,$2,$3,$4,$5,$6,$7,$8)", [
         id,
         "Guest Person",
         email,
         "555-0100",
+        "88 Innovation Road, Hangzhou, China",
         "https://example.com/resume",
+        "https://example.com/profile",
         "A thoughtful cover letter.",
       ]),
     );
@@ -130,7 +141,9 @@ test("guest submission and review enforce database privacy, deadlines and duplic
   assert.equal(updated.rows.length, 5);
   console.log("PASS admin review allowed and non-admin changes denied");
   const original = (
-    await db.query("select id,updated_at::text as updated_at from guest_applications limit 1")
+    await db.query(
+      "select id,updated_at::text as updated_at from guest_applications limit 1",
+    )
   ).rows[0];
   const firstReview = await as(
     "authenticated",
@@ -154,12 +167,14 @@ test("guest submission and review enforce database privacy, deadlines and duplic
   assert.equal(stale.rows.length, 0);
   await assert.rejects(
     as("anon", () =>
-      db.query("select submit_guest_application($1,$2,$3,$4,$5,$6)", [
+      db.query("select submit_guest_application($1,$2,$3,$4,$5,$6,$7,$8)", [
         id(7),
         "Guest Person",
         "another@example.com",
-        "",
+        "555-0100",
+        "88 Innovation Road, Hangzhou, China",
         "https://user:password@example.com/resume",
+        "",
         "",
       ]),
     ),
@@ -183,5 +198,39 @@ test("guest submission and review enforce database privacy, deadlines and duplic
     5,
   );
   console.log("PASS migration rerun retains applications");
+  await assert.rejects(
+    db.query("insert into applications default values"),
+    /valid email/,
+  );
+  await db.query(
+    "insert into applications(contact_email,contact_phone,contact_address) values('candidate@example.com','+86 138 0000 0000','88 Innovation Road, Hangzhou, China')",
+  );
+  await assert.rejects(
+    as("anon", () =>
+      db.query("select submit_guest_application($1,$2,$3,$4,$5,$6,$7,$8)", [
+        id(7),
+        "New Guest",
+        "new@example.com",
+        "",
+        "Address",
+        "",
+        "",
+        "",
+      ]),
+    ),
+    /Invalid/,
+  );
+  await db.exec(
+    fs.readFileSync(
+      new URL(
+        "../supabase/migrations/0015_application_contact_fields.sql",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
+  );
+  console.log(
+    "PASS required guest and candidate contact fields; contact migration preserves submissions",
+  );
   await db.close();
 });

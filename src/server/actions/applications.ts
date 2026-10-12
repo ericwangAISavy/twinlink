@@ -1,5 +1,6 @@
 "use server";
 
+import { applicationContactSchema } from "@/lib/application-contact";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { fail, ok, type ActionResult } from "@/lib/action-result";
@@ -15,25 +16,38 @@ import { applicationStatusSchema, applySchema } from "@/lib/validations";
 import { requireAdmin, requireRole } from "@/server/authorization";
 
 function staffHref(role: string | null | undefined, applicationId: string) {
-  return role === "admin" ? `/admin/applications/${applicationId}` : `/dashboard/employee/applicants/${applicationId}`;
+  return role === "admin"
+    ? `/admin/applications/${applicationId}`
+    : `/dashboard/employee/applicants/${applicationId}`;
 }
 
 export async function applyToJob(formData: FormData): Promise<ActionResult> {
   const user = await requireRole("CANDIDATE");
-  const parsed = applySchema.safeParse({
+  const parsed = applySchema.extend(applicationContactSchema.shape).safeParse({
     jobId: formData.get("jobId"),
     coverLetter: formData.get("coverLetter") ?? "",
+    email: formData.get("email"),
+    phone: formData.get("phone"),
+    address: formData.get("address"),
+    social: formData.get("social") || "",
   });
   if (!parsed.success) {
     return fail(parsed.error.issues[0]?.message ?? "Unable to apply");
   }
 
   const supabase = await createServerSupabaseClient();
-  const { data: job } = await supabase.from("jobs").select("*").eq("id", parsed.data.jobId).maybeSingle();
+  const { data: job } = await supabase
+    .from("jobs")
+    .select("*")
+    .eq("id", parsed.data.jobId)
+    .maybeSingle();
   if (!job || String(job.status) !== "published") {
     return fail("This role is not open for applications.");
   }
-  if (job.application_deadline && new Date(String(job.application_deadline)).getTime() < Date.now()) {
+  if (
+    job.application_deadline &&
+    new Date(String(job.application_deadline)).getTime() < Date.now()
+  ) {
     return fail("The application deadline for this role has passed.");
   }
 
@@ -59,6 +73,10 @@ export async function applyToJob(formData: FormData): Promise<ActionResult> {
       job_id: job.id,
       candidate_id: user.id,
       cover_letter: parsed.data.coverLetter || null,
+      contact_email: parsed.data.email,
+      contact_phone: parsed.data.phone,
+      contact_address: parsed.data.address,
+      social_url: parsed.data.social,
       resume_url: candidateProfile?.resume_url ?? null,
       status: "submitted",
     })
@@ -72,7 +90,10 @@ export async function applyToJob(formData: FormData): Promise<ActionResult> {
     return fail(error?.message ?? "Unable to submit this application.");
   }
 
-  const { data: staff } = await supabase.from("profiles").select("id, role").in("role", ["admin", "employee"]);
+  const { data: staff } = await supabase
+    .from("profiles")
+    .select("id, role")
+    .in("role", ["admin", "employee"]);
   const recipients = new Map<string, string>();
   for (const row of staff ?? []) {
     if (row.role === "admin" || row.id === job.created_by) {
@@ -117,7 +138,9 @@ export async function applyToJob(formData: FormData): Promise<ActionResult> {
   redirect(`/dashboard/candidate/applications?id=${application.id}`);
 }
 
-export async function updateApplicationStatus(formData: FormData): Promise<ActionResult> {
+export async function updateApplicationStatus(
+  formData: FormData,
+): Promise<ActionResult> {
   const user = await requireAdmin();
   const parsed = applicationStatusSchema.safeParse({
     applicationId: formData.get("applicationId"),
@@ -136,7 +159,8 @@ export async function updateApplicationStatus(formData: FormData): Promise<Actio
     .maybeSingle();
   if (!current) return fail("Application not found.");
   const fromStatus = parseApplicationStatus(String(current.status));
-  if (fromStatus === nextStatus) return ok("This application already has that status.");
+  if (fromStatus === nextStatus)
+    return ok("This application already has that status.");
 
   const { error } = await supabase
     .from("applications")
@@ -152,7 +176,8 @@ export async function updateApplicationStatus(formData: FormData): Promise<Actio
   });
 
   const message =
-    String(formData.get("candidateMessage") ?? "").trim() || APPLICATION_STATUS_MESSAGES[nextStatus];
+    String(formData.get("candidateMessage") ?? "").trim() ||
+    APPLICATION_STATUS_MESSAGES[nextStatus];
   const notify = formData.get("notifyCandidate") !== "no";
   if (notify && current.candidate_id) {
     await supabase.from("notifications").insert({
@@ -170,7 +195,9 @@ export async function updateApplicationStatus(formData: FormData): Promise<Actio
   revalidatePath(`/admin/applications/${parsed.data.applicationId}`);
   revalidatePath("/dashboard/candidate");
   revalidatePath("/dashboard/candidate/applications");
-  revalidatePath(`/dashboard/candidate/applications/${parsed.data.applicationId}`);
+  revalidatePath(
+    `/dashboard/candidate/applications/${parsed.data.applicationId}`,
+  );
   return ok("Application status updated.");
 }
 
@@ -194,10 +221,16 @@ export async function withdrawApplicationAction(applicationId: string) {
   return withdrawApplication(applicationId);
 }
 
-export async function withdrawApplication(applicationId: string): Promise<ActionResult> {
+export async function withdrawApplication(
+  applicationId: string,
+): Promise<ActionResult> {
   const user = await requireRole("CANDIDATE");
   const supabase = await createServerSupabaseClient();
-  const { data: application } = await supabase.from("applications").select("*").eq("id", applicationId).maybeSingle();
+  const { data: application } = await supabase
+    .from("applications")
+    .select("*")
+    .eq("id", applicationId)
+    .maybeSingle();
   if (!application || application.candidate_id !== user.id) {
     return fail("Application not found.");
   }
@@ -212,9 +245,17 @@ export async function withdrawApplication(applicationId: string): Promise<Action
     .eq("candidate_id", user.id);
   if (error) return fail(error.message);
 
-  const { data: job } = await supabase.from("jobs").select("created_by, title").eq("id", application.job_id).maybeSingle();
+  const { data: job } = await supabase
+    .from("jobs")
+    .select("created_by, title")
+    .eq("id", application.job_id)
+    .maybeSingle();
   const { data: creator } = job?.created_by
-    ? await supabase.from("profiles").select("id, role").eq("id", job.created_by).maybeSingle()
+    ? await supabase
+        .from("profiles")
+        .select("id, role")
+        .eq("id", job.created_by)
+        .maybeSingle()
     : { data: null };
   if (job?.created_by) {
     await supabase.from("notifications").insert({
