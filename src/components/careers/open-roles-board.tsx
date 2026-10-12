@@ -606,23 +606,23 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
 
           <div className="mt-6 grid gap-6 lg:grid-cols-[220px_minmax(0,1fr)]">
             <aside className="space-y-6">
-              <ul className="space-y-1 text-sm">
-                <CountRow
+              <FilterGroup title="Role">
+                <CheckRow
                   label="All roles"
                   count={allCount}
-                  active={department === "all"}
-                  onClick={() => setDepartmentFilter("all")}
+                  checked={department === "all"}
+                  onChange={() => setDepartmentFilter("all")}
                 />
                 {departments.map((item) => (
-                  <CountRow
+                  <CheckRow
                     key={item}
                     label={item}
                     count={departmentCounts.get(item) ?? 0}
-                    active={department === item}
-                    onClick={() => setDepartmentFilter(item)}
+                    checked={department === item}
+                    onChange={() => setDepartmentFilter(department === item ? "all" : item)}
                   />
                 ))}
-              </ul>
+              </FilterGroup>
               <FilterGroup title="Work type">
                 {workTypeOptions.map((item) => (
                   <CheckRow
@@ -856,36 +856,6 @@ function FilterSelect({
         ))}
       </select>
     </label>
-  );
-}
-
-function CountRow({
-  label,
-  count,
-  active,
-  onClick,
-}: {
-  label: string;
-  count: number;
-  active: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <li>
-      <button
-        type="button"
-        onClick={onClick}
-        className={cn(
-          "flex w-full items-center justify-between rounded-lg px-3 py-2 text-left",
-          active
-            ? "border-l-2 border-[#c4a574] bg-white/5 text-white"
-            : "text-white/65 hover:bg-white/5",
-        )}
-      >
-        <span>{label}</span>
-        <span className="text-xs text-white/40">{count}</span>
-      </button>
-    </li>
   );
 }
 
