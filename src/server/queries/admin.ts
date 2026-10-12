@@ -1,4 +1,5 @@
 import "server-only";
+import { siteOrigin } from "@/lib/site-url";
 
 import { cache } from "react";
 import { APPLICATION_STATUSES } from "@/lib/constants";
@@ -323,7 +324,7 @@ export async function getAdminInvites() {
   if (!isSupabaseConfigured()) return [];
   const supabase = await createServerSupabaseClient();
   const { data } = await supabase.from("employee_invites").select("*").order("created_at", { ascending: false });
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+  const base = siteOrigin();
   return (data ?? []).map((invite) => ({
     id: String(invite.id),
     email: String(invite.email),

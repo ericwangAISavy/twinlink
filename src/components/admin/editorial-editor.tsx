@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowDown, ArrowUp, Eye, ImagePlus, Plus, Trash2 } from "lucide-react";
 import {
+  EDITORIAL_IMAGE_MAX_BYTES,
   editorialKinds,
   editorialLabels,
   editorialStatuses,
@@ -157,6 +158,10 @@ export function EditorialEditor({ entry }: { entry?: EditorialEntry }) {
   }
   async function upload(file?: File, figureIndex?: number) {
     if (!file) return;
+    if (file.size > EDITORIAL_IMAGE_MAX_BYTES) {
+      setError("Choose an image up to 4 MB.");
+      return;
+    }
     setUploading(true);
     setError("");
     try {
@@ -375,7 +380,7 @@ export function EditorialEditor({ entry }: { entry?: EditorialEntry }) {
             </Field>
             <label className="flex flex-wrap items-center gap-3 rounded-lg border border-dashed border-[#d9c6a4] p-4 text-sm">
               <ImagePlus size={20} />
-              <span>Upload JPEG, PNG or WebP · up to 5 MB</span>
+              <span>Upload JPEG, PNG or WebP · up to 4 MB</span>
               <input
                 type="file"
                 accept="image/jpeg,image/png,image/webp"

@@ -4,7 +4,8 @@ export type UserRole = (typeof USER_ROLES)[number];
 export type Role = "CANDIDATE" | "EMPLOYEE" | "ADMIN";
 
 export function parseUserRole(value: unknown): UserRole | null {
-  if (value === "candidate" || value === "employee" || value === "admin") return value;
+  if (value === "candidate" || value === "employee" || value === "admin")
+    return value;
   if (value === "CANDIDATE") return "candidate";
   if (value === "EMPLOYEE") return "employee";
   if (value === "ADMIN") return "admin";
@@ -31,8 +32,25 @@ export function homePath(role: Role) {
   return "/dashboard/candidate";
 }
 
-export function isSafeInternalPath(path: string | null | undefined): path is string {
-  return Boolean(path && path.startsWith("/") && !path.startsWith("//") && !path.includes("\\"));
+export function isSafeInternalPath(
+  path: string | null | undefined,
+): path is string {
+  if (
+    !path ||
+    !path.startsWith("/") ||
+    path.startsWith("//") ||
+    path.includes("\\") ||
+    /[\u0000-\u0020\u007f]/.test(path)
+  )
+    return false;
+  try {
+    return (
+      new URL(path, "https://twinlink.invalid").origin ===
+      "https://twinlink.invalid"
+    );
+  } catch {
+    return false;
+  }
 }
 
 export function roleCanAccessPath(role: Role, pathname: string) {
@@ -44,10 +62,12 @@ export function roleCanAccessPath(role: Role, pathname: string) {
 
 export function destinationAfterLogin(role: Role, callbackUrl?: string | null) {
   const home = homePath(role);
-  if (!isSafeInternalPath(callbackUrl) || !roleCanAccessPath(role, callbackUrl)) {
+  if (!isSafeInternalPath(callbackUrl)) return home;
+  const target = new URL(callbackUrl, "https://twinlink.invalid");
+  if (!roleCanAccessPath(role, target.pathname)) {
     return home;
   }
-  return callbackUrl;
+  return `${target.pathname}${target.search}${target.hash}`;
 }
 
 export const ACCOUNT_SETUP_ERROR =
@@ -55,15 +75,21 @@ export const ACCOUNT_SETUP_ERROR =
 
 export const ACCESS_PENDING_ERROR =
   "Your access is waiting for administrator approval. You can sign in after a Twinlink administrator approves your account.";
-export const UNKNOWN_ROLE_ERROR = "This account does not have a valid Twinlink role.";
+export const UNKNOWN_ROLE_ERROR =
+  "This account does not have a valid Twinlink role.";
 
-export function authErrorMessage(error: { message?: string; code?: string } | null | undefined) {
+export function authErrorMessage(
+  error: { message?: string; code?: string } | null | undefined,
+) {
   const message = error?.message ?? "";
   const code = error?.code ?? "";
   if (code === "email_not_confirmed" || /email not confirmed/i.test(message)) {
     return "Confirm your email before signing in. Check your inbox for the Twinlink link.";
   }
-  if (/invalid login credentials/i.test(message) || code === "invalid_credentials") {
+  if (
+    /invalid login credentials/i.test(message) ||
+    code === "invalid_credentials"
+  ) {
     return "Invalid email or password.";
   }
   if (
@@ -73,7 +99,10 @@ export function authErrorMessage(error: { message?: string; code?: string } | nu
   ) {
     return "Unable to reach Twinlink authentication. Try again in a moment.";
   }
-  if (/user already registered/i.test(message) || code === "user_already_exists") {
+  if (
+    /user already registered/i.test(message) ||
+    code === "user_already_exists"
+  ) {
     return "An account with this email already exists. Sign in instead.";
   }
   if (/rate limit/i.test(message) || code === "over_email_send_rate_limit") {

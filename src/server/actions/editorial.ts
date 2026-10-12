@@ -2,6 +2,7 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import { z } from "zod";
 import {
+  EDITORIAL_IMAGE_MAX_BYTES,
   editorialResourceSchema,
   editorialPublicationSchema,
   editorialStatuses,
@@ -135,8 +136,12 @@ export async function uploadEditorialImage(
 ): Promise<{ ok: true; url: string } | { ok: false; error: string }> {
   await requireAdmin();
   const file = formData.get("file");
-  if (!(file instanceof File) || !file.size || file.size > 5 * 1024 * 1024)
-    return { ok: false, error: "Choose a JPEG, PNG or WebP image up to 5 MB." };
+  if (
+    !(file instanceof File) ||
+    !file.size ||
+    file.size > EDITORIAL_IMAGE_MAX_BYTES
+  )
+    return { ok: false, error: "Choose a JPEG, PNG or WebP image up to 4 MB." };
   const bytes = new Uint8Array(await file.arrayBuffer());
   const png =
     bytes.length > 8 &&

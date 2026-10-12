@@ -1,3 +1,4 @@
+import { requestOrigin } from "@/lib/site-url";
 import { NextResponse } from "next/server";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
@@ -5,21 +6,8 @@ import { destinationAfterLogin } from "@/lib/roles";
 import { getCurrentProfile } from "@/server/authorization";
 
 export async function GET(request: Request) {
-  const requestUrl = new URL(request.url);
-  const { searchParams } = requestUrl;
-  const host =
-    request.headers.get("x-forwarded-host") || request.headers.get("host");
-  const forwardedProtocol = request.headers.get("x-forwarded-proto");
-  const protocol =
-    forwardedProtocol === "https"
-      ? "https:"
-      : forwardedProtocol === "http"
-        ? "http:"
-        : requestUrl.protocol;
-  const origin =
-    host && /^[a-zA-Z0-9.-]+(?::\d+)?$/.test(host)
-      ? `${protocol}//${host}`
-      : requestUrl.origin;
+  const { searchParams } = new URL(request.url);
+  const origin = requestOrigin(request);
   const code = searchParams.get("code");
   const next = searchParams.get("next");
 

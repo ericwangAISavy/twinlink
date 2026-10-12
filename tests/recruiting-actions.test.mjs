@@ -19,11 +19,13 @@ function load(path, dependencies = {}) {
     (name) =>
       name in dependencies
         ? dependencies[name]
-        : name === "@/lib/application-contact"
-          ? load("src/lib/application-contact.ts")
-          : name.startsWith("@/")
-            ? {}
-            : nodeRequire(name),
+        : name === "@/lib/site-url"
+          ? load("src/lib/site-url.ts")
+          : name === "@/lib/application-contact"
+            ? load("src/lib/application-contact.ts")
+            : name.startsWith("@/")
+              ? {}
+              : nodeRequire(name),
     testModule,
     testModule.exports,
   );

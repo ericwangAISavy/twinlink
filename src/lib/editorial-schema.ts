@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+export const EDITORIAL_IMAGE_MAX_BYTES = 4 * 1024 * 1024;
+
 export const editorialKinds = ["case-studies", "blog", "events"] as const;
 export const editorialStatuses = ["draft", "published", "archived"] as const;
 export const editorialLabels = {

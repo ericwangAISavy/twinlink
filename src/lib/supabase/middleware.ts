@@ -4,7 +4,11 @@ import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { hasSupabaseAuthCookie } from "@/lib/supabase/session-cookie";
 import { destinationAfterLogin, homePath, toAppRole } from "@/lib/roles";
 
-function loginRedirect(request: NextRequest, pathname: string, extra?: Record<string, string>) {
+function loginRedirect(
+  request: NextRequest,
+  pathname: string,
+  extra?: Record<string, string>,
+) {
   const login = request.nextUrl.clone();
   login.pathname = "/login";
   login.search = "";
@@ -19,19 +23,24 @@ function loginRedirect(request: NextRequest, pathname: string, extra?: Record<st
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
+  function withSessionCookies(result: NextResponse) {
+    for (const cookie of response.cookies.getAll()) result.cookies.set(cookie);
+    return result;
+  }
   const { pathname } = request.nextUrl;
 
   if (pathname.startsWith("/auth/sign-out")) {
     return response;
   }
 
-  const needsAuth = pathname.startsWith("/dashboard") || pathname.startsWith("/admin");
+  const needsAuth =
+    pathname.startsWith("/dashboard") || pathname.startsWith("/admin");
   const authPage = pathname === "/login" || pathname === "/register";
   const hasSession = hasSupabaseAuthCookie(request.cookies.getAll());
 
   if (!isSupabaseConfigured()) {
     if (needsAuth) {
-      return loginRedirect(request, pathname);
+      return withSessionCookies(loginRedirect(request, pathname));
     }
     return response;
   }
@@ -42,14 +51,17 @@ export async function updateSession(request: NextRequest) {
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
         getAll() {
           return request.cookies.getAll();
         },
         setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
+          cookiesToSet.forEach(({ name, value }) =>
+            request.cookies.set(name, value),
+          );
           response = NextResponse.next({ request });
           cookiesToSet.forEach(({ name, value, options }) => {
             response.cookies.set(name, value, options);
@@ -64,7 +76,7 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   if (needsAuth && !user) {
-    return loginRedirect(request, pathname);
+    return withSessionCookies(loginRedirect(request, pathname));
   }
 
   if (user && (needsAuth || authPage)) {
@@ -82,38 +94,52 @@ export async function updateSession(request: NextRequest) {
       signOut.pathname = "/auth/sign-out";
       signOut.search = "";
       signOut.searchParams.set("reason", "approval");
-      return NextResponse.redirect(signOut);
+      return withSessionCookies(NextResponse.redirect(signOut));
     }
     if (!role) {
       const signOut = request.nextUrl.clone();
       signOut.pathname = "/auth/sign-out";
       signOut.search = "";
       signOut.searchParams.set("reason", "account");
-      return NextResponse.redirect(signOut);
+      return withSessionCookies(NextResponse.redirect(signOut));
     }
 
     if (pathname.startsWith("/admin") && role !== "ADMIN") {
-      return NextResponse.redirect(new URL(homePath(role), request.url));
+      return withSessionCookies(
+        NextResponse.redirect(new URL(homePath(role), request.url)),
+      );
     }
 
     if (pathname.startsWith("/dashboard")) {
       if (role === "ADMIN") {
-        return NextResponse.redirect(new URL("/admin", request.url));
+        return withSessionCookies(
+          NextResponse.redirect(new URL("/admin", request.url)),
+        );
       }
       if (pathname.startsWith("/dashboard/employee") && role !== "EMPLOYEE") {
-        return NextResponse.redirect(new URL(homePath(role), request.url));
+        return withSessionCookies(
+          NextResponse.redirect(new URL(homePath(role), request.url)),
+        );
       }
       if (pathname.startsWith("/dashboard/candidate") && role !== "CANDIDATE") {
-        return NextResponse.redirect(new URL(homePath(role), request.url));
+        return withSessionCookies(
+          NextResponse.redirect(new URL(homePath(role), request.url)),
+        );
       }
       if (pathname === "/dashboard") {
-        return NextResponse.redirect(new URL(homePath(role), request.url));
+        return withSessionCookies(
+          NextResponse.redirect(new URL(homePath(role), request.url)),
+        );
       }
     }
 
     if (authPage) {
       const callbackUrl = request.nextUrl.searchParams.get("callbackUrl");
-      return NextResponse.redirect(new URL(destinationAfterLogin(role, callbackUrl), request.url));
+      return withSessionCookies(
+        NextResponse.redirect(
+          new URL(destinationAfterLogin(role, callbackUrl), request.url),
+        ),
+      );
     }
   }
 

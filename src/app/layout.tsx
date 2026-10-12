@@ -1,23 +1,28 @@
+import { siteOrigin } from "@/lib/site-url";
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import localFont from "next/font/local";
 import { Providers } from "@/components/providers";
 import "./globals.css";
 
-const sans = Source_Sans_3({
-  subsets: ["latin"],
+const sans = localFont({
+  src: "./fonts/source-sans-3-latin.woff2",
+  weight: "200 900",
+  style: "normal",
   variable: "--font-sans",
   display: "swap",
 });
 
-const serif = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+const serif = localFont({
+  src: "./fonts/cormorant-garamond-latin.woff2",
+  weight: "500 700",
+  style: "normal",
+  adjustFontFallback: "Times New Roman",
   variable: "--font-serif",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(siteOrigin()),
   title: {
     default: "twinlink",
     template: "%s · twinlink",
@@ -32,10 +37,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${sans.variable} ${serif.variable} min-h-screen bg-background font-sans antialiased`}>
+      <body
+        className={`${sans.variable} ${serif.variable} min-h-screen bg-background font-sans antialiased`}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>

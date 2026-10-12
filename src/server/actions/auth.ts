@@ -1,4 +1,5 @@
 "use server";
+import { siteOrigin } from "@/lib/site-url";
 
 import { randomBytes } from "crypto";
 import { redirect } from "next/navigation";
@@ -29,7 +30,7 @@ export async function createAccount(formData: FormData): Promise<ActionResult> {
 
   const email = parsed.data.email.toLowerCase();
   const supabase = await createServerSupabaseClient();
-  const origin = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+  const origin = siteOrigin();
 
   const { data, error } = await supabase.auth.signUp({
     email,
@@ -176,7 +177,7 @@ export async function createEmployeeInviteLink(
     });
     if (fallback.error) throw fallback.error;
   }
-  const base = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+  const base = siteOrigin();
   return `${base}/register?invite=${token}`;
 }
 

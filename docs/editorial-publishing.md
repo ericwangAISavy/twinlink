@@ -13,7 +13,7 @@ No service role key is needed by the editor. It uses the administrator's authent
 1. Open **Articles & Events** and choose **New publication**, or search and edit an existing entry.
 2. Select case study, blog post, or event. Set its title and URL slug, then save an incomplete draft if needed.
 3. Edit the summary, category, author, disclosure, cover image, and article sections. Blank lines separate paragraphs. Sections support checklists and comparison tables and can be reordered. Outcome panels and additional figures are optional.
-4. Upload JPEG, PNG, or WebP images up to 5 MB, or reuse a local `/images/` path or an uploaded editorial image URL. Uploads are public assets even when the article is a private draft.
+4. Upload JPEG, PNG, or WebP images up to 4 MB, or reuse a local `/images/` path or an uploaded editorial image URL. Uploads are public assets even when the article is a private draft.
 5. For events, optionally set both start and end times in China Standard Time (UTC+8) and the venue. Leave dates empty for an unconfirmed event. For cases, optionally feature the entry on the homepage; if multiple are featured, the newest is selected.
 6. Save and open **Preview saved entry** to review the actual public layout privately. This preview shows the last saved version, not unsaved changes.
 7. Choose **published** and **Save & publish**. Required metadata and section content are checked before publishing. Public listings, detail pages, related articles, and the featured homepage case update after saving.

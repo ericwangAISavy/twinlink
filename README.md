@@ -94,9 +94,11 @@ Admins can manage case studies, blog posts, and events under **Articles & Events
 ## Vercel deploy
 
 1. Import the repo in Vercel.
-2. Set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, and `NEXT_PUBLIC_APP_URL` (production domain). Add `SUPABASE_SERVICE_ROLE_KEY` only if you need server-side bootstrap.
-3. Build command is `next build`.
+2. Set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, and `NEXT_PUBLIC_APP_URL` (production domain). Add server-only `SUPABASE_SERVICE_ROLE_KEY` and `VISITOR_TRACKING_ENABLED=true` for visitor capture.
+3. Use Node 22.x, `npm ci` for installation, and `next build` for the build. Fonts are bundled locally; Google Fonts access is not needed.
 4. Apply all files in `supabase/migrations` in numerical order to the same Supabase project used in production.
+
+See [Vercel deployment details and verification](docs/vercel-deployment.md). Local `.env.local` settings must also be configured in Vercel; the file stays out of source control.
 
 ## Product map
 

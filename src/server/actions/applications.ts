@@ -1,6 +1,7 @@
 "use server";
 
 import { applicationContactSchema } from "@/lib/application-contact";
+import { applicationDeadlinePassed } from "@/lib/application-deadline";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { fail, ok, type ActionResult } from "@/lib/action-result";
@@ -45,8 +46,9 @@ export async function applyToJob(formData: FormData): Promise<ActionResult> {
     return fail("This role is not open for applications.");
   }
   if (
-    job.application_deadline &&
-    new Date(String(job.application_deadline)).getTime() < Date.now()
+    applicationDeadlinePassed(
+      job.application_deadline ? String(job.application_deadline) : null,
+    )
   ) {
     return fail("The application deadline for this role has passed.");
   }
