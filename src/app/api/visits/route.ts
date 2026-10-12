@@ -1,3 +1,5 @@
+import { after } from "next/server";
+import { enrichVisitorConnection } from "@/server/visitor-connection";
 import { NextResponse } from "next/server";
 import { createAdminSupabaseClient } from "@/lib/supabase/admin";
 import { isPublicVisitPath, visitorMetadata } from "@/lib/visitor-metadata";
@@ -47,7 +49,7 @@ export async function POST(request: Request) {
     if (!isPublicVisitPath(body.page)) return empty();
     const meta = visitorMetadata(request.headers, process.env.VERCEL === "1");
     const client = createAdminSupabaseClient();
-    await client.rpc("record_site_visit", {
+    const recorded = await client.rpc("record_site_visit", {
       p_page: body.page,
       p_ip: meta.ip,
       p_country: meta.country,
@@ -56,6 +58,12 @@ export async function POST(request: Request) {
       p_agent: meta.agent,
       p_source: meta.source,
     });
+    if (!recorded.error && meta.ip && process.env.VPN_DETECTION_ENABLED === "true") {
+      const ip = meta.ip;
+      after(async () => {
+        try { await enrichVisitorConnection(ip); } catch { /* Optional reputation check. */ }
+      });
+    }
   } catch {
     /* Monitoring must not affect the website or expose visitor data. */
   }

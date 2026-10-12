@@ -59,7 +59,8 @@ test("capture endpoint ignores browser IP data, cross-origin requests and privac
     });
     const calls = [];
     const route = load("src/app/api/visits/route.ts", {
-      "next/server": { NextResponse: Response },
+      "next/server": { NextResponse: Response, after: () => {} },
+      "@/server/visitor-connection": { enrichVisitorConnection: async () => {} },
       "@/lib/visitor-metadata": metadata,
       "@/lib/supabase/admin": {
         createAdminSupabaseClient: () => ({
@@ -196,4 +197,34 @@ test("visitor records are admin-only; service writes deduplicate and expire old 
   } finally {
     await db.close();
   }
+});
+
+test("connection provider rejects incomplete, mismatched and error responses", () => {
+  const { parseConnectionSignals } = load("src/lib/vpn-detection.ts");
+  const fixture = { ip: "203.0.113.42", is_vpn: true, is_proxy: false, is_tor: false, is_datacenter: true };
+  assert.deepEqual(parseConnectionSignals(fixture, fixture.ip), { vpn: true, proxy: false, tor: false, datacenter: true });
+  assert.equal(parseConnectionSignals({ ...fixture, is_vpn: undefined }, fixture.ip), null);
+  assert.equal(parseConnectionSignals(fixture, "203.0.113.43"), null);
+  assert.equal(parseConnectionSignals({ ...fixture, error: "quota" }, fixture.ip), null);
+});
+test("connection cache claims once per day and remains private", async () => {
+  const db = new PGlite();
+  try {
+    await db.exec("create role anon;create role authenticated;create role service_role bypassrls;grant usage on schema public to anon,authenticated,service_role;create function is_admin() returns boolean language sql stable as $$select current_setting('fixture.admin',true)='yes'$$;");
+    await db.exec(readFileSync(new URL("../supabase/migrations/0017_visitor_connection_detection.sql", import.meta.url), "utf8"));
+    await db.exec("set role service_role");
+    const claim = async () => (await db.query("select claim_visitor_connection_check('203.0.113.42') claimed")).rows[0].claimed;
+    assert.equal(await claim(), true);
+    assert.equal(await claim(), false);
+    await db.exec("update visitor_connections set attempted_at = now() - interval '25 hours', vpn=true, checked_at=now()");
+    assert.equal(await claim(), true);
+    assert.equal((await db.query("select vpn from visitor_connections")).rows[0].vpn, null);
+    await db.exec("reset role;set role anon");
+    await assert.rejects(db.query("select * from visitor_connections"));
+    await assert.rejects(db.query("select claim_visitor_connection_check('203.0.113.42')"));
+    await db.exec("reset role;set role authenticated");
+    assert.equal((await db.query("select * from visitor_connections")).rows.length, 0);
+    await db.query("select set_config('fixture.admin','yes',false)");
+    assert.equal((await db.query("select * from visitor_connections")).rows.length, 1);
+  } finally { await db.close(); }
 });

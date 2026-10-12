@@ -65,6 +65,11 @@ export default async function VisitorsPage({
           visitor is still online.
         </p>
       )}
+      <p className="mb-4 text-sm text-muted-foreground">
+        {data.detectionConfigured ? "IP reputation checks are configured (ipapi.is)." : "VPN checks are disabled. Set VPN_DETECTION_ENABLED=true and the server-only IPAPI_IS_API_KEY after applying migration 0017."}
+        {" "}Signals are estimates, refreshed on incoming visits at most once per IP per day. Unknown means no successful recent check; no VPN signal does not guarantee a direct connection.
+      </p>
+      {data.detectionError && <p role="alert" className="mb-4 text-sm">{data.detectionError}</p>}
       <VisitorRefresh />
       <form className="mb-6 flex flex-wrap gap-3">
         <input
@@ -107,6 +112,7 @@ export default async function VisitorsPage({
             "Visit time (UTC+8)",
             "IP address",
             "Approximate location",
+            "Connection signals",
             "Page",
             "Browser",
           ]}
@@ -133,6 +139,13 @@ export default async function VisitorsPage({
                     ? "Hosting platform estimate"
                     : "Location unavailable"}
                 </p>
+              </td>
+              <td className="px-4 py-3 text-sm">
+                {!row.connection?.checked_at || Date.now() - new Date(row.connection.checked_at).getTime() > 86400000 ? "Unknown" : <>
+                  <p className={row.connection.vpn ? "font-medium text-amber-800" : "text-muted-foreground"}>{row.connection.vpn ? "Possible VPN" : "No VPN signal detected"}</p>
+                  <p className="text-xs">{[row.connection.proxy && "Proxy", row.connection.tor && "Tor", row.connection.datacenter && "Data center"].filter(Boolean).join(" · ")}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">Checked {time(row.connection.checked_at)}</p>
+                </>}
               </td>
               <td className="max-w-xs break-all px-4 py-3 text-sm">
                 {row.page}

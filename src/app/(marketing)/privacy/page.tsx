@@ -35,6 +35,10 @@ export default async function PrivacyPage() {
           Privacy Control, and the preference below disable future monitoring.
         </p>
       </section>
+      <section className="mt-8 space-y-3">
+        <h2 className="font-serif text-2xl">Connection reputation</h2>
+        <p>When connection checks are enabled, we send the visitor IP address to ipapi.is to estimate whether it belongs to a VPN, proxy, Tor exit node, or data center. These estimates may be inaccurate and do not identify a person. Results are private to administrators, refreshed at most once per IP per day, and removed after 90 days of inactivity when checks run. Monitoring preferences above also disable these checks. We do not use these signals to block applications.</p>
+      </section>
       <PrivacyPreference />
       <p className="mt-8">
         For questions about your information or a deletion request, contact{" "}
