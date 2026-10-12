@@ -1,3 +1,5 @@
+import { VisitorDailyChart } from "@/components/admin/visitor-daily-chart";
+import { dailyVisitorStatus } from "@/lib/visitor-daily-status";
 import { AdminPageHeader } from "@/components/admin/admin-page-header";
 import { AdminTable } from "@/components/admin/admin-table";
 import { VisitorRefresh } from "@/components/admin/visitor-refresh";
@@ -14,10 +16,16 @@ export default async function VisitorsPage({
     : 7;
   const data = await getVisitorOverview(days);
   const q = (params.q || "").trim().toLowerCase();
-  const rows = data.rows.filter((row) =>
-    `${row.ip} ${row.country} ${row.region} ${row.city} ${row.page}`
-      .toLowerCase()
-      .includes(q),
+  const byIp = new Map<string, typeof data.rows>();
+  for (const row of data.rows) {
+    // An unavailable IP cannot establish that two visits share a connection.
+    const key = row.ip || `unknown-${row.id}`;
+    const visits = byIp.get(key) || [];
+    visits.push(row);
+    byIp.set(key, visits);
+  }
+  const groups = [...byIp.entries()].filter(([, visits]) =>
+    visits.some(row => `${row.ip} ${row.country} ${row.region} ${row.city} ${row.page}`.toLowerCase().includes(q)),
   );
   const countries = new Set(data.rows.map((row) => row.country).filter(Boolean))
     .size;
@@ -31,7 +39,7 @@ export default async function VisitorsPage({
     <>
       <AdminPageHeader
         title="Website visitors"
-        description="Monitor recorded public-page visits, IP addresses, and approximate locations. Times use China Standard Time (UTC+8)."
+        description="Visits grouped by IP address, with expandable logs, approximate locations, and connection signals. Times use China Standard Time (UTC+8)."
       />
       <div className="mb-6 grid gap-4 sm:grid-cols-3">
         {[
@@ -51,6 +59,7 @@ export default async function VisitorsPage({
           </div>
         ))}
       </div>
+      {!data.error && <VisitorDailyChart data={dailyVisitorStatus(data.rows, days)} />}
       {!data.configured && (
         <p className="mb-6 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm">
           Capture is not configured. Set VISITOR_TRACKING_ENABLED=true and a
@@ -102,70 +111,62 @@ export default async function VisitorsPage({
         >
           {data.error}
         </p>
-      ) : rows.length === 0 ? (
+      ) : groups.length === 0 ? (
         <p className="rounded-xl border bg-white p-6">
           No matching visits recorded in this period.
         </p>
       ) : (
-        <AdminTable
-          headers={[
-            "Visit time (UTC+8)",
-            "IP address",
-            "Approximate location",
-            "Connection signals",
-            "Page",
-            "Browser",
-          ]}
-        >
-          {rows.map((row) => (
-            <tr key={row.id}>
-              <td className="px-4 py-3 text-sm">
-                {time(row.createdAt)}
-                <p className="mt-1 text-xs text-muted-foreground">
-                  {Date.now() - new Date(row.createdAt).getTime() < 15 * 60000
-                    ? "Seen within 15 minutes"
-                    : "Earlier visit"}
-                </p>
-              </td>
-              <td className="px-4 py-3 font-mono text-xs">
-                {row.ip || "Unknown"}
-              </td>
-              <td className="px-4 py-3 text-sm">
-                {[row.city, row.region, row.country]
-                  .filter(Boolean)
-                  .join(", ") || "Unknown"}
-                <p className="text-xs text-muted-foreground">
-                  {row.source === "vercel"
-                    ? "Hosting platform estimate"
-                    : "Location unavailable"}
-                </p>
-              </td>
-              <td className="px-4 py-3 text-sm">
-                {!row.connection?.checked_at || Date.now() - new Date(row.connection.checked_at).getTime() > 86400000 ? "Unknown" : <>
-                  <p className={row.connection.vpn ? "font-medium text-amber-800" : "text-muted-foreground"}>{row.connection.vpn ? "Possible VPN" : "No VPN signal detected"}</p>
-                  <p className="text-xs">{[row.connection.proxy && "Proxy", row.connection.tor && "Tor", row.connection.datacenter && "Data center"].filter(Boolean).join(" · ")}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">Checked {time(row.connection.checked_at)}</p>
-                </>}
-              </td>
-              <td className="max-w-xs break-all px-4 py-3 text-sm">
-                {row.page}
-              </td>
-              <td className="max-w-xs px-4 py-3">
-                <details>
-                  <summary className="cursor-pointer text-sm">
-                    Browser details
-                  </summary>
-                  <p className="mt-2 break-all text-xs text-muted-foreground">
-                    {row.agent || "Unknown"}
+        <div className="space-y-3">
+          {groups.map(([key, visits]) => {
+            const latest = visits[0];
+            const connection = latest.connection;
+            const checked = connection?.checked_at && Date.now() - new Date(connection.checked_at).getTime() <= 86400000;
+            return (
+              <details key={key} className="group rounded-2xl border border-[#eadfcd] bg-white">
+                <summary className="cursor-pointer rounded-2xl px-4 py-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9c7941]">
+                  <span className="ml-2 inline-flex flex-wrap items-center gap-x-6 gap-y-2 align-middle">
+                    <span className="break-all font-mono text-sm font-semibold">{latest.ip || "Unknown IP"}</span>
+                    <span className="rounded-full bg-[#f4eee3] px-3 py-1 text-xs">{visits.length} {visits.length === 1 ? "visit" : "visits"}</span>
+                    <span className="text-sm">{[latest.city, latest.region, latest.country].filter(Boolean).join(", ") || "Location unknown"}</span>
+                    <span className={checked && connection.vpn ? "text-sm font-medium text-amber-800" : "text-sm text-muted-foreground"}>
+                      {checked ? connection.vpn ? "Possible VPN" : "No VPN signal detected" : "Connection unknown"}
+                      {checked && [connection.proxy && "Proxy", connection.tor && "Tor", connection.datacenter && "Data center"].filter(Boolean).map(signal => ` · ${signal}`).join("")}
+                    </span>
+                    <span className="text-xs text-muted-foreground">Last visit {time(latest.createdAt)}</span>
+                  </span>
+                </summary>
+                <div className="space-y-3 border-t border-[#eadfcd] bg-[#faf7f2] p-4">
+                  <p className="text-xs text-muted-foreground">
+                    Newest visits first · times in UTC+8. {checked ? `Connection checked ${time(connection.checked_at)}.` : "No recent successful connection check."}
                   </p>
-                </details>
-              </td>
-            </tr>
-          ))}
-        </AdminTable>
+                  <AdminTable headers={["Visit time (UTC+8)", "Page", "Approximate location", "Browser"]}>
+                    {visits.map(row => (
+                      <tr key={row.id}>
+                        <td className="px-4 py-3 text-sm">{time(row.createdAt)}</td>
+                        <td className="max-w-xs break-all px-4 py-3 text-sm">{row.page}</td>
+                        <td className="px-4 py-3 text-sm">
+                          {[row.city, row.region, row.country].filter(Boolean).join(", ") || "Unknown"}
+                          <p className="text-xs text-muted-foreground">{row.source === "vercel" ? "Hosting platform estimate" : "Location unavailable"}</p>
+                        </td>
+                        <td className="max-w-xs px-4 py-3">
+                          <details>
+                            <summary className="cursor-pointer text-sm">Browser details</summary>
+                            <p className="mt-2 break-all text-xs text-muted-foreground">{row.agent || "Unknown"}</p>
+                          </details>
+                        </td>
+                      </tr>
+                    ))}
+                  </AdminTable>
+                </div>
+              </details>
+            );
+          })}
+        </div>
       )}
       <p className="mt-4 text-xs text-muted-foreground">
-        Showing matches within the latest 500 records for the selected period.
+        Click an IP address to expand its visit logs. Search matches IP groups and
+        shows all loaded logs in each matching group. Logs come from the latest
+        500 records for the selected period; unavailable IPs remain separate.
         IP addresses may be shared, proxied or changed; a record does not
         identify a person. Records are retained for up to 90 days, with cleanup
         on incoming visits.

@@ -228,3 +228,26 @@ test("connection cache claims once per day and remains private", async () => {
     assert.equal((await db.query("select * from visitor_connections")).rows.length, 1);
   } finally { await db.close(); }
 });
+
+test("daily visitor chart separates proxy/datacenter traffic and counts each IP once per UTC+8 day", () => {
+  const { visitorStatus, dailyVisitorStatus } = load("src/lib/visitor-daily-status.ts");
+  const now = Date.parse("2026-10-12T04:00:00Z");
+  const pure = { checked_at: new Date(now).toISOString(), vpn: false, proxy: false, tor: false, datacenter: false };
+  assert.equal(visitorStatus(pure, now), "pure");
+  for (const signal of ["vpn", "proxy", "tor", "datacenter"]) assert.equal(visitorStatus({ ...pure, [signal]: true }, now), "nonPure");
+  assert.equal(visitorStatus({ ...pure, proxy: null }, now), "unknown");
+  assert.equal(visitorStatus({ ...pure, checked_at: new Date(now - 86400001).toISOString() }, now), "unknown");
+  const row = (id, ip, createdAt, connection = pure) => ({ id, ip, createdAt, connection });
+  const daily = dailyVisitorStatus([
+    row("1", "1.1.1.1", "2026-10-11T17:00:00Z"),
+    row("2", "1.1.1.1", "2026-10-12T01:00:00Z"),
+    row("3", "2.2.2.2", "2026-10-12T01:00:00Z", { ...pure, datacenter: true }),
+    row("4", "", "2026-10-12T01:00:00Z"),
+    row("5", "1.1.1.1", "2026-10-11T15:59:00Z"),
+  ], 3, now);
+  assert.deepEqual(daily, [
+    { date: "2026-10-10", pure: 0, nonPure: 0, unknown: 0 },
+    { date: "2026-10-11", pure: 1, nonPure: 0, unknown: 0 },
+    { date: "2026-10-12", pure: 1, nonPure: 1, unknown: 1 },
+  ]);
+});
