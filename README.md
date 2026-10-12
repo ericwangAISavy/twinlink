@@ -13,7 +13,7 @@ Professional technology consulting website and talent portal. Applicants can app
 
 1. Create a Supabase project. Do not use a local PostgreSQL server.
 
-2. In the Supabase SQL editor, run the files in `supabase/migrations` in numerical order, through `0014_guest_applications.sql`. For an existing project, apply only migrations not yet installed.
+2. In the Supabase SQL editor, run the files in `supabase/migrations` in numerical order, through `0016_visitor_monitoring.sql`. For an existing project, apply only migrations not yet installed.
 
 3. Copy environment files:
 
@@ -40,6 +40,8 @@ Professional technology consulting website and talent portal. Applicants can app
    Open [http://localhost:3000](http://localhost:3000).
 
 ## First accounts
+
+See [visitor monitoring setup](docs/visitor-monitoring.md) for the private admin visitor dashboard and required application contact fields.
 
 Visitors can apply without signing in. See [guest applications](docs/guest-applications.md) for activation and the admin review workflow.
 

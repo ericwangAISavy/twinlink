@@ -107,14 +107,14 @@ export function SiteFooter({ company }: { company: CompanyContent }) {
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Twinlink. All rights reserved.</p>
           <div className="flex gap-5">
-            <Link href="/about" className="hover:text-[#e8d5a3]">
+            <Link href="/privacy" className="hover:text-[#e8d5a3]">
               Privacy Policy
             </Link>
             <Link href="/about" className="hover:text-[#e8d5a3]">
               Terms of Service
             </Link>
-            <Link href="/about" className="hover:text-[#e8d5a3]">
-              Cookie Settings
+            <Link href="/privacy#preferences" className="hover:text-[#e8d5a3]">
+              Privacy Settings
             </Link>
           </div>
         </div>

@@ -56,6 +56,7 @@ const GROUPS = [
   {
     label: "Operations",
     items: [
+      { href: "/admin/visitors", label: "Website Visitors", icon: BarChart3 },
       { href: "/admin/analytics", label: "Analytics", icon: BarChart3 },
       { href: "/admin/activity", label: "Activity", icon: Activity },
       { href: "/admin/content", label: "Website Content", icon: FileText },
