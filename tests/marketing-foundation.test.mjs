@@ -19,13 +19,14 @@ const { SiteNav } = component('src/components/marketing/site-nav.tsx', {
   'next/link': { __esModule: true, default: ({ href, children, ...rest }) => React.createElement('a', { href, ...rest }, children) },
   'next/navigation': { usePathname: () => '/' },
   './reference-icon': { ReferenceIcon },
+  './service-links': component('src/components/marketing/service-links.ts', {}),
 });
-test('public navigation keeps anonymous entry points without linking unfinished services', () => {
+test('public navigation keeps anonymous entry points with implemented service destinations', () => {
   const html = renderToStaticMarkup(React.createElement(SiteNav, { signedIn: false }));
   assert.match(html, /href="\/login"/);
   assert.match(html, /href="\/register"/);
   assert.doesNotMatch(html, /href="\/dashboard"/);
-  assert.doesNotMatch(html, /href="\/services\//);
+  assert.match(html, /href="\/services\/digital-strategy-transformation"/);
   for (const path of ['/careers', '/contact', '/privacy', '/about#culture', '/case-studies', '/blog', '/events', '/#insights']) {
     assert.ok(html.includes(`href="${path}"`), `Missing destination ${path}`);
   }

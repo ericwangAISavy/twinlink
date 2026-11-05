@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SERVICE_LINKS } from "./service-links";
 import type { CompanyContent } from "@/lib/constants";
 import { ReferenceIcon } from "./reference-icon";
 
@@ -7,8 +8,8 @@ const LINKS = [
   ["Careers", "/careers"], ["Contact us", "/contact"], ["Privacy policy", "/privacy"],
 ];
 const TECH = [
-  ["Product Engineering", "/#solutions"], ["Cloud & Infrastructure", "/#how-we-help"],
-  ["AI & Automation", "/#solutions"], ["Our solutions", "/#solutions"],
+  ...SERVICE_LINKS.map(item => [item.label, `/services/${item.slug}`]),
+  ["ERP Software", "/services/erp"], ["Our solutions", "/#solutions"],
 ];
 const PEOPLE = [
   ["Engineering Network", "/#people"], ["Open roles", "/careers"], ["Talent enquiry", "/contact"],

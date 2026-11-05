@@ -1,0 +1,78 @@
+{
+  "results": [
+    {
+      "width": 390,
+      "height": 480,
+      "bannerBottom": 240,
+      "titleTop": 197,
+      "titleBottom": 293,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 568,
+      "bannerBottom": 284,
+      "titleTop": 197,
+      "titleBottom": 293,
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "bannerBottom": 333.5,
+      "titleTop": 197,
+      "titleBottom": 293,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "bannerBottom": 585,
+      "titleTop": 214,
+      "titleBottom": 262,
+      "overflow": false
+    },
+    {
+      "width": 992,
+      "height": 900,
+      "bannerBottom": 585,
+      "titleTop": 214,
+      "titleBottom": 262,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "bannerBottom": 585,
+      "titleTop": 220,
+      "titleBottom": 256,
+      "overflow": false
+    },
+    {
+      "searchPadding": 12
+    }
+  ],
+  "failures": [
+    "Title must clear header and wave at 390x480",
+    "Title must clear header and wave at 390x568",
+    "Search text must clear the existing search icon"
+  ]
+}
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   'Title must clear header and wave at 390x480',
++   'Title must clear header and wave at 390x568',
++   'Search text must clear the existing search icon'
++ ]
+- []
+
+    at /workspace/twinlink/docs/checkpoint-6/scripts/geometry-check.cjs:3:1615 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}

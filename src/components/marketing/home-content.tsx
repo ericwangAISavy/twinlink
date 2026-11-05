@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SERVICE_LINKS } from "./service-links";
 import Link from "next/link";
 import { Reveal } from "./reveal";
 
@@ -29,8 +30,8 @@ export function HomeHeading({ children, large = false }: { children: React.React
 export function HomeTopicGrid({ kind }: { kind: "tech" | "hr" }) {
   const topics = kind === "tech" ? TECH_TOPICS : HR_TOPICS;
   return <div className="home-topic-grid" data-topic-grid={kind}>
-    {topics.map(topic => <article key={topic.image} className="home-topic-card">
-      <Link href="/contact" className="home-topic-link" aria-label={`Discuss ${topic.lines.join(" ")}`}>
+    {topics.map((topic, index) => <article key={topic.image} className="home-topic-card">
+      <Link href={kind === "tech" ? `/services/${SERVICE_LINKS[index].slug}` : "/contact"} className="home-topic-link" aria-label={`Discuss ${topic.lines.join(" ")}`}>
         <div className="home-topic-photo">
           <Image src={`/images/reference/home/${kind}-services/${topic.image}`} alt="" width={270} height={300}
             sizes="(min-width: 1400px) 306px, (min-width: 992px) 25vw, (min-width: 768px) 33vw, (min-width: 576px) 50vw, 100vw" />

@@ -1,0 +1,28 @@
+T02 desktop passed
+T04 desktop passed
+T05 desktop passed
+T06 desktop passed
+T07 desktop passed
+T08 desktop passed
+T03 desktop passed
+T09 desktop passed
+T11 desktop passed
+T12 desktop passed
+AssertionError [ERR_ASSERTION]: T10 page exceptions
++ actual - expected
+
++ [
++   'Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.'
++ ]
+- []
+
+    at /workspace/twinlink/docs/checkpoint-6/scripts/browser-check.cjs:21:9
+    at async Promise.all (index 0)
+    at async /workspace/twinlink/docs/checkpoint-6/scripts/browser-check.cjs:10:12 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
