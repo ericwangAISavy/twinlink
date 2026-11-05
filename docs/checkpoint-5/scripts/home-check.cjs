@@ -1,0 +1,32 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- Standalone homepage browser verification. */
+const { chromium } = require('playwright');const assert=require('node:assert/strict');const fs=require('fs');const path=require('path');const out=path.resolve(__dirname,'../evidence');fs.mkdirSync(out,{recursive:true});
+(async()=>{const b=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox']});const errors=[];try{const p=await b.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'});p.on('pageerror',e=>errors.push(e.message));p.setDefaultTimeout(20000);p.setDefaultNavigationTimeout(120000);await p.goto('http://127.0.0.1:3000',{waitUntil:'networkidle'});assert.equal(await p.getByRole('heading',{name:'About TwinLink',exact:true}).count(),1,'Homepage must contain the reference-style About section');assert.equal(await p.locator('[data-topic-grid="tech"] .home-topic-card').count(),8);assert.equal(await p.locator('[data-topic-grid="hr"] .home-topic-card').count(),8);
+const results={viewports:[],interactions:[]};
+results.desktopGeometry=await p.locator(".home-about, #solutions, #people").evaluateAll(es=>es.map(e=>({id:e.id,height:e.getBoundingClientRect().height})));
+await p.getByRole('button',{name:'Show slide 2',exact:true}).click();assert.equal(await p.getByRole('heading',{name:'Our Solutions',exact:true}).count(),1);await p.getByRole('button',{name:'Show slide 3',exact:true}).click();assert.equal(await p.getByRole('heading',{name:'Our Service',exact:true}).count(),1);results.interactions.push('Dot controls change both photograph and caption');
+for(const [width,height,columns]of [[1440,900,4],[992,900,4],[768,900,3],[576,900,2],[390,844,1],[375,667,1]]){
+ await p.setViewportSize({width,height});await p.emulateMedia({reducedMotion:width===375?'no-preference':'reduce'});await p.goto('http://127.0.0.1:3000',{waitUntil:'networkidle'});
+ for(const selector of ['#how-we-help','#solutions','#people','.home-values','.home-careers','#insights']){await p.locator(selector).scrollIntoViewIfNeeded();await p.waitForTimeout(100);}
+ await p.locator('#solutions').scrollIntoViewIfNeeded();await p.waitForTimeout(width===375?1200:250);
+ assert.equal(await p.locator('#solutions > .foundation-container').evaluate(e=>getComputedStyle(e).opacity),'1',`Long service grid must remain visible at ${width}x${height}`);
+ const m=await p.evaluate(()=>({width:innerWidth,height:innerHeight,overflow:document.documentElement.scrollWidth>innerWidth,gridColumns:getComputedStyle(document.querySelector('.home-topic-grid')).gridTemplateColumns.split(' ').length,aboutColumns:getComputedStyle(document.querySelector('.home-about-grid')).gridTemplateColumns.split(' ').length}));assert.equal(m.overflow,false);assert.equal(m.gridColumns,columns);results.viewports.push(m);
+ if(width===1440||width===390){
+  // Trigger all reveals and image decoding before accepting full-page evidence.
+  const total=await p.locator('body').evaluate(e=>e.scrollHeight);for(let y=0;y<total;y+=500){await p.evaluate(y=>scrollTo(0,y),y);await p.waitForTimeout(60)}
+  await p.evaluate(async()=>{await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})))});
+  await p.evaluate(()=>scrollTo(0,0));await p.getByRole('button',{name:width===1440?'Show slide 2':'Show slide 3',exact:true}).click();
+  assert.ok(await p.locator(".home-reference img").evaluateAll(es=>es.every(i=>i.complete&&i.naturalWidth>0)),"Every homepage photograph must decode");
+  const mode=width===1440?'desktop':'mobile';await p.screenshot({path:path.join(out,mode+'-home.png')});await p.screenshot({path:path.join(out,mode+'-full.png'),fullPage:true});
+  for(const [selector,name]of [['#how-we-help','about'],['#solutions','tech'],['#people','hr'],['.home-values','values'],['.home-careers','careers'],['#insights','insights']]){await p.locator(selector).screenshot({path:path.join(out,mode+'-'+name+'.png')});}
+ }
+}
+await p.setViewportSize({width:1440,height:900});await p.locator('[data-topic-grid="tech"] .home-topic-link').first().hover();await p.waitForTimeout(350);assert.equal(await p.locator('.home-topic-label').first().evaluate(e=>getComputedStyle(e).backgroundColor),'rgb(0, 96, 170)');await p.locator('[data-topic-grid="tech"] .home-topic-card').first().screenshot({path:path.join(out,'card-hover.png')});
+await p.getByRole('link',{name:'Discuss Digital Strategy & Transformation',exact:true}).click();await p.waitForURL('**/contact');assert.ok(await p.getByRole('button',{name:'Prepare email'}).count());results.interactions.push('Card hover and enquiry navigation');
+await p.goto('http://127.0.0.1:3000',{waitUntil:'networkidle'});await p.getByRole('link',{name:'Job Search',exact:true}).click();await p.waitForURL('**/careers');results.interactions.push('Job Search reaches existing careers board');
+await p.goto('http://127.0.0.1:3000',{waitUntil:'networkidle'});await p.setViewportSize({width:390,height:844});
+const toggle=p.locator('.foundation-menu-toggle');await toggle.click();
+const dialog=p.getByRole('dialog',{name:'Site navigation'});assert.equal(await dialog.isVisible(),true);assert.equal(await p.evaluate(()=>document.body.style.overflow),'hidden');assert.equal(await p.locator('#marketing-content').evaluate(e=>e.inert),true);
+await p.screenshot({path:path.join(out,'mobile-menu.png')});await dialog.getByRole('link',{name:'Join',exact:true}).focus();await p.keyboard.press('Tab');assert.equal(await p.evaluate(()=>document.activeElement.getAttribute('aria-label')),'Close navigation');await p.keyboard.press('Escape');assert.equal(await toggle.evaluate(e=>document.activeElement===e),true);assert.equal(await p.evaluate(()=>document.body.style.overflow),'');results.interactions.push('Mobile menu focus loop, Escape, focus return, inert background and scroll lock');
+const broken=await p.locator('.home-reference a').evaluateAll(es=>es.map(e=>e.getAttribute('href')).filter(h=>h==='#'||h?.startsWith('/services/')));assert.deepEqual(broken,[]);
+const images=await p.locator('.home-reference img').evaluateAll(es=>es.map(e=>({src:e.getAttribute('src'),loaded:e.complete&&e.naturalWidth>0})));results.pageErrors=errors;assert.deepEqual(errors,[]);results.interactions.push('No placeholder or unfinished service links');results.images=images;fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify(results,null,2));console.log(JSON.stringify(results,null,2));
+}finally{await b.close()}})().catch(e=>{console.error(e);process.exitCode=1});

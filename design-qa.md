@@ -1,50 +1,34 @@
-# Checkpoint 4 design QA
+# Checkpoint 5 homepage design QA
 
 final result: passed
 
-Scope: shared public foundation only, against the approved Trinity captures and checkpoint 3's TwinLink-preservation constraints. This is not acceptance of page-specific bodies or unimplemented service pages.
+Scope: homepage body within the approved checkpoint 4 foundation, compared with Trinity’s captured homepage. TwinLink identity, copy, live data and available application destinations are required adaptations. Checkpoint 6 is not included.
 
-## Comparison inputs
+## Paired evidence
 
-- Source: `docs/checkpoint-2/evidence/home-desktop.png`, `mobile-menu.png`, `home-touch-mobile.png`, `contact-desktop.png`; footer region from `docs/checkpoint-1/evidence/01-home-desktop-full.png`.
-- Implementation: production Chromium captures in `docs/checkpoint-4/evidence/`: `desktop-home.png`, `mobile-home.png`, `mobile-menu.png`, `desktop-contact.png`, `mobile-contact.png`, `desktop-footer.png`.
-- Full-view paired inputs: `compare-desktop-context.jpg`, `compare-mobile-context.jpg`, `compare-contact.jpg`. Focused paired inputs: `compare-header.jpg`, `compare-mobile-menu.jpg`, `compare-footer.jpg`. `compare-auth.jpg` compares pre-change TwinLink sign-in with current TwinLink, not with Trinity.
-- Desktop: 1440 × 900 CSS/pixels; mobile: 390 × 844 CSS/pixels; deviceScaleFactor 1. Comparisons retain native resolution with a 28px label strip, no density scaling. Footer regions retain 1440px width; source is 731px tall and TwinLink is 506px tall because their content differs. Gray padding is comparison canvas, not UI.
-- States: anonymous public navigation, closed/expanded menus, first/selected carousel photographs, Contact title panel, footer and original sign-in. TwinLink copy, identity, available routes, and data are intentional differences. Source mobile context has slide 3; the implementation's preserved photo collection differs. Use that pair for geometry, not subject identity.
+Source: checkpoint 1 `01-home-desktop-full.png` and `01-home-mobile-full.png`; checkpoint 2 original CSS, measurements and assets. Implementation: production `docs/checkpoint-5/evidence/desktop-full.png` (1440×900 viewport) and `mobile-full.png` (390×844), device scale 1. Desktop uses the source skyline slide; mobile uses the source night-city slide, reduced motion enabled to settle reveals. Full overview pairs put source on the left and implementation on the right at equal reduced scale; native-resolution About and Tech pairs provide detail. Gray canvas beneath the shorter page is not UI. `scripts/compare.cjs` reproduces those pairs.
 
-## Findings and comparison history
+Opened paired desktop/mobile full sequences and focused About/Tech regions. Checked section order, photo crops, container margins, labels, heading rules, grid gutters and phone stacking. Standalone section captures supplement full captures; their fixed header can obscure the first heading after an automatic scroll, so full captures determine section placement.
 
-1. Baseline test RED: original header was 69px/dark. Implemented 70px white header and reference container rhythm. Header geometry and browser checks passed afterward.
-2. Independent code review found P2 action contrast (2.51:1), loss of footer Insights, and hover exit cancelling keyboard carousel pause. Reproduced all three in `review-red.txt`; fixed with darker action green, restored links, and separate focus/hover pause states. `review-green.txt` records 4.88:1 text contrast, retained destination and unchanged selected slide while keyboard focus remains inside.
-3. Visual pass found P2 title panel offset: fixed-header space was counted twice, placing its bottom at 655px instead of 585px at the desktop target. Applied −70px overlap; `geometry-green.txt` records panel y=0/height=585. Extra mobile top padding keeps longer TwinLink copy clear of the fixed header.
-4. Visual pass found P2 mobile caption drift: 30px inset / 330px width instead of 55px / 280px. Removed the custom narrower inset override; geometry check and recaptured mobile view match the reference dimensions. Longer preserved copy creates a taller caption, an intentional content difference.
-5. Pixel check found P2 inactive indicators disappearing over retained bright photography (about 1.02:1). Added a small dark backing to the indicator/pause controls, preserving dot size and interaction, rather than replacing TwinLink's photography. `controls-red.txt` preserves the failing measurement; final pixel results and captures verify the fix.
+## Fidelity and findings
 
-No new backend, authentication, route or form behavior was introduced. Independent review found no change to private-route styling or data/auth handling. Page-specific dark surfaces remain intentionally contained for later checkpoints.
+- Original section photography/icons and unbranded banners are locally copied, hash verified; body Open Sans and heading Roboto remain locally bundled. About uses the source 25px heading, 15px/22.5px justified copy, 24px gutter and 60px vertical padding.
+- Tech/HR grids use the source pale blue, 270:300 image ratio, overlapping white labels, 40px cog, 24px gutters and 30px card spacing. Four/three/two/one columns follow the approved 992/768/576 breakpoints. Hover/focus changes labels blue and zooms/rotates photos.
+- Values and What We Do use original icons/400×200 imagery, source spacing, three/two/one column stacking, green headings and staggered zoom reveals. Copy/links honestly reflect existing TwinLink capabilities.
+- Carousel keeps 5s autoplay, 500ms image fade, 1s caption reveal and separate manual/focus/hover pauses. Reduced motion suppresses automatic and decorative motion; the additional pause control/contrast backing from checkpoint 4 is retained.
+- P2 found and reproduced: the tall service-grid wrapper never met the default 18% observer threshold on a 375×667 phone, leaving content invisible. Homepage grids now request threshold zero; all other Reveal users keep their original default. Red/green evidence and normal-motion browser regression confirm visible content.
+- TwinLink’s first hero image deliberately replaces source artwork containing Trinity’s wordmark. Different paragraph lengths, honest careers/resources labels, TwinLink footer and live statistics/featured case add content differences. These are documented adaptations, not hidden unfinished source sections.
 
-## Required fidelity surfaces
+## Verification and isolation
 
-- **Fonts/typography:** locally bundled Open Sans for body and Roboto for headings/navigation. Chromium confirms custom Roboto rendered. Source screenshot text used a blocked-font fallback, so local intended-font metrics are not a pixel-identical fallback recreation. Header uses 13px/600 desktop; mobile links 15px; footer headings 15px/500 and body 14px. Sign-in typography/color/background match baseline.
-- **Spacing/layout:** header 70px; grid 576/768/992/1200/1400; overlay insets 55/15px; footer 60/30px vertical padding with four/two/one columns; hero caption 20px padding and 5px top rule; final mobile inset 55px. Blue title panel uses the original wave and fixed-header overlap. Header contains extra required Resources/account links; footer height follows TwinLink contact content.
-- **Colors/tokens:** shared white header, `#157cbf` blue, `#00008b` footer, `#111` copyright. Action/active-navigation green is intentionally darkened to `#13832a` for readable small text. Page body colors are not globally replaced. Indicators gain contrast backing over existing imagery.
-- **Image quality/assets:** preserved TwinLink mark and existing photography; captured footer map and exact extracted wave; captured MIT Bootstrap Icons font. No generated approximation of the reference decorations, copied Trinity wordmark, or fabricated business/social details. Provenance/hashes/licenses are in `preservation-results.json`.
-- **Copy/content:** retains actual company data, published resources/statistics, page children, account controls, contact-draft meaning and resource navigation. Tech menu uses current solution anchors until service pages exist. No Trinity office details or placeholder links are introduced.
+Production browser checks cover widths 1440, 992, 768, 576, 390 and 375; correct grid columns, no document overflow or page exceptions, decoded homepage images, slide/caption controls, hover/enquiry link, careers navigation, mobile menu focus loop/return, inert background and scroll lock. Normal-motion keyboard focus keeps autoplay paused after pointer exit. Source/data tests cover both parallel queries, featured-case selection/fallback, empty publications, errors and working destinations.
 
-## Interaction and isolation evidence
+Build, TypeScript, ESLint and all six test files passed. Preservation check confirms 224 protected files byte-identical, all 68 existing route files retained, all new homepage CSS selectors scoped, and 26 original assets hash matched. No auth/server/API/admin/dashboard/global style changes. Private authenticated views were not entered with real accounts. Independent source review found no blocking issues.
 
-Production browser run at widths 390/768/991/992/1440: no horizontal document overflow, no page exceptions. Exercises desktop hover/Escape, mobile focus loop/return, inert background, scroll locking/restoration, culture anchor, viewport cleanup, contact draft without sending, back-to-top, slide dots and reduced-motion autoplay suppression. The independent motion check covers keyboard pause after pointer exit. SSR tests cover anonymous/signed-in account destinations.
+- [x] Paired source/render desktop and mobile evidence inspected.
+- [x] All reference homepage sections recreated with documented identity/data adaptations.
+- [x] Short-phone animation defect reproduced and fixed.
+- [x] Data/navigation, responsive, motion and isolation checks passed.
+- [x] No actionable P0/P1/P2 findings remain within checkpoint 5.
 
-`preservation-results.json`: 224 protected source files byte-identical; all 68 existing route files retained; new CSS rules scoped to `.trinity-foundation`. Root globals/fonts and auth/admin/dashboard/server/API/lib/UI source unchanged. Authenticated private screens were not entered with real accounts; their isolation is established by source/style checks and unchanged sign-in rendering, not by a claim of a full authenticated browser audit.
-
-## Implementation checklist
-
-- [x] Reference and implementation opened together in combined full/context and focused comparisons.
-- [x] Reference header/mobile/footer geometry and intended typography implemented.
-- [x] P2 review findings reproduced and fixed.
-- [x] P2 geometry findings reproduced, fixed and recaptured.
-- [x] Final contrast backing recaptured and pixel-verified (6.32:1, 6.26:1, 3.57:1).
-- [x] Build/type/lint/test and preservation checks run.
-
-Follow-up polish: none deferred within the shared-foundation scope. Full page bodies, service destinations/content and production asset-rights decisions remain the separately gated work documented in checkpoints 2/3, not hidden QA failures of this checkpoint.
-
-Final acceptance: no actionable P0/P1/P2 findings remain within the shared-foundation scope. The final production captures and paired inputs were inspected after geometry and contrast fixes.
+Checkpoint 4’s prior QA report is preserved at `docs/checkpoint-5/foundation-qa-baseline.md`.

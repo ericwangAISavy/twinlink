@@ -1,0 +1,76 @@
+/* Homepage-only source recreation. No changes to shared/private surfaces. */
+@font-face { font-family: "Home Boxicons"; src: url('/fonts/boxicons-home.woff2') format('woff2'); font-display: block; }
+.trinity-foundation .home-reference { background: #fff; color: #4d4643; --background:#fff; --foreground:#4d4643; --card:#fff; --card-foreground:#4d4643; --muted-foreground:#5c5855; --border:#e6e6e6; }
+.trinity-foundation .home-reference a:not(.foundation-button) { color: #157cbf; }
+.trinity-foundation .home-reference .home-section { padding: 60px 0; }
+.trinity-foundation .home-reference .home-heading { position:relative; margin:0 0 20px; padding-bottom:20px; font-size:22px; line-height:1.2; font-weight:400; text-transform:uppercase; text-align:center; color:#4d4643; }
+.trinity-foundation .home-reference .home-heading::after { content:""; position:absolute; width:50px; height:3px; background:#157cbf; bottom:0; left:calc(50% - 25px); }
+.trinity-foundation .home-reference .home-heading-large { font-size:25px; line-height:20px; }
+.trinity-foundation .home-reference .home-about-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:center; }
+.trinity-foundation .home-reference .home-about-photo { width:100%; height:auto; border-radius:10px; }
+.trinity-foundation .home-reference .home-about-copy p { margin:0 0 16px; text-align:justify; font-size:15px; line-height:1.5; }
+.trinity-foundation .home-reference .home-about-links { display:flex; flex-wrap:wrap; gap:8px 20px; font-size:13px; }
+.trinity-foundation .home-reference .home-about-links a:hover { text-decoration:underline; }
+.trinity-foundation .home-reference .home-topics { background:#f6f9ff; }
+.trinity-foundation .home-reference .home-hr { padding:0 0 60px; }
+.trinity-foundation .home-reference .home-topic-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0 24px; }
+.trinity-foundation .home-reference .home-topic-card { position:relative; padding-top:30px; margin-bottom:30px; min-width:0; }
+.trinity-foundation .home-reference .home-topic-link { display:block; position:relative; }
+.trinity-foundation .home-reference .home-topic-photo { overflow:hidden; border-radius:10px; }
+.trinity-foundation .home-reference .home-topic-photo img { width:100%; height:auto; transition:transform .3s ease-in-out; }
+.trinity-foundation .home-reference .home-topic-label { position:absolute; top:-30px; left:30px; right:0; z-index:1; display:flex; align-items:center; gap:12px; min-height:82px; padding:22px 12px 22px 70px; border-radius:5px 5px 0 5px; background:#fff; box-shadow:0 3px 7px rgb(0 0 0 / 10%); transition:background-color .3s,color .3s; color:#000; }
+.trinity-foundation .home-reference .home-topic-label h3 { margin:0; font-size:16px; line-height:1.2; font-weight:400; }
+.trinity-foundation .home-reference .home-cog { position:absolute; left:20px; top:50%; transform:translateY(-50%); flex-shrink:0; font:normal 40px/1 "Home Boxicons"; -webkit-font-smoothing:antialiased; }
+.trinity-foundation .home-reference .home-cog::before { content:"\ea6e"; }
+.trinity-foundation .home-reference .home-topic-link:is(:hover,:focus-visible) img { transform:scale(1.04) rotate(1deg); }
+.trinity-foundation .home-reference .home-topic-link:is(:hover,:focus-visible) .home-topic-label { color:#fff; background:#0060aa; }
+.trinity-foundation .home-reference .home-three-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.trinity-foundation .home-reference .home-values { padding:0 0 60px; background:#fff; }
+.trinity-foundation .home-reference .home-value { padding:60px 20px 70px; text-align:center; transition:background .3s,box-shadow .3s; }
+.trinity-foundation .home-reference .home-value:hover { background:#0684dd3b; box-shadow:0 0 35px rgb(0 0 0 / 8%); }
+.trinity-foundation .home-reference .home-value-icon { width:100px; height:100px; margin:0 auto; display:grid; place-items:center; }
+.trinity-foundation .home-reference :is(.home-value,.home-career-card) h3 { margin:10px 0 15px; font-size:20px; line-height:1.2; font-weight:400; text-transform:uppercase; }
+.trinity-foundation .home-reference :is(.home-value,.home-career-card) h3 a { color:#527d24; }
+.trinity-foundation .home-reference :is(.home-value,.home-career-card) h3 a:hover { text-decoration:underline; }
+.trinity-foundation .home-reference .home-value p { margin:0; font-size:14px; line-height:24px; }
+.trinity-foundation .home-reference .home-careers { background:#f7f7f7; padding:60px 0; }
+.trinity-foundation .home-reference .home-career-card { min-width:0; text-align:center; padding-bottom:70px; background:#fff; }
+.trinity-foundation .home-reference .home-career-image { display:block; position:relative; overflow:hidden; }
+.trinity-foundation .home-reference .home-career-image img { width:auto; max-width:100%; height:auto; margin:auto; border-radius:4px 4px 0 0; }
+.trinity-foundation .home-reference .home-career-image::before { content:""; position:absolute; z-index:1; top:50%; left:50%; width:0; height:0; opacity:0; border-radius:50%; background:rgb(255 255 255 / 20%); transform:translate(-50%,-50%); pointer-events:none; }
+.trinity-foundation .home-reference .home-career-image:hover::before { animation:home-image-circle .75s; }
+.trinity-foundation .home-reference .home-career-card p { padding:0 20px; margin:0; text-align:justify; font-size:15px; line-height:1.5; }
+.trinity-foundation .home-reference .home-career-card .home-career-links { margin-top:14px; font-size:13px; }
+.trinity-foundation .home-reference .home-stat-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; text-align:center; }
+.trinity-foundation .home-reference .home-stat p { margin:0; font-size:14px; }
+.trinity-foundation .home-reference .home-stat .home-stat-value { color:#157cbf; font:400 48px/1.2 var(--font-reference-heading),sans-serif; margin-bottom:10px; }
+.trinity-foundation .home-reference .home-insights { background:#f6f9ff; }
+.trinity-foundation .home-reference .home-featured { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:center; gap:40px; margin-top:30px; }
+.trinity-foundation .home-reference .home-featured h3 { font-size:28px; font-weight:400; line-height:1.25; margin:12px 0 20px; }
+.trinity-foundation .home-reference .home-featured p { font-size:15px; line-height:1.5; margin-bottom:20px; }
+.trinity-foundation .home-reference .home-featured-kind { color:#157cbf; text-transform:uppercase; font-size:13px; }
+.trinity-foundation .home-reference .home-featured img { width:100%; height:auto; border-radius:10px; }
+.trinity-foundation .home-reference .home-empty-insights { text-align:center; font-size:15px; margin-top:30px; }
+.trinity-foundation .home-reference .foundation-hero { min-height:0; }
+.trinity-foundation .home-reference .foundation-hero-caption :is(h1,h2) { font:700 28px/1.2 var(--font-reference-heading),sans-serif; color:#fff; margin:0 0 20px; }
+.trinity-foundation .home-reference .foundation-hero-caption p { font-size:16px; margin:0 0 16px; line-height:24px; }
+.trinity-foundation .home-reference .home-zoom:not(.is-inview) { transform:scale(.6); }
+@keyframes home-image-circle { 0%,40% { opacity:1; } 100% { width:200%; height:200%; opacity:0; } }
+@media (max-width:991px) {
+ .trinity-foundation .home-reference .home-about-grid { grid-template-columns:1fr; }
+ .trinity-foundation .home-reference .home-about-copy { padding-top:0; }
+ .trinity-foundation .home-reference .home-topic-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .trinity-foundation .home-reference .home-three-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .trinity-foundation .home-reference .home-featured { grid-template-columns:1fr; }
+}
+@media (max-width:992px) {
+ .trinity-foundation .home-reference .foundation-hero-caption :is(h1,h2) { font-size:22px; margin-bottom:15px; }
+ .trinity-foundation .home-reference .foundation-hero-caption p { font-size:15px; line-height:22.5px; }
+}
+@media (max-width:767px) {
+ .trinity-foundation .home-reference .home-topic-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .trinity-foundation .home-reference .home-three-grid { grid-template-columns:1fr; }
+ .trinity-foundation .home-reference .home-stat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:575px) { .trinity-foundation .home-reference .home-topic-grid { grid-template-columns:1fr; } }
+@media (prefers-reduced-motion:reduce) { .trinity-foundation .home-reference .home-zoom:not(.is-inview) { transform:none; } }
