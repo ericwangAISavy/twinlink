@@ -1,0 +1,1787 @@
+[
+  {
+    "route": "/",
+    "width": 375,
+    "container": [
+      {
+        "width": "375px",
+        "max": "none"
+      },
+      {
+        "width": "375px",
+        "max": "none"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "hero": 630,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 375
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 375
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 375
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 375
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 375
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 375
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 375
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 375
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 375
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 375
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 375
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 375
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "container": [
+      {
+        "width": "390px",
+        "max": "none"
+      },
+      {
+        "width": "390px",
+        "max": "none"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "hero": 630,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 390
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 390
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 390
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 390
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 390
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 390
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 390
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 390
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 390
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 390
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 390
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 390
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 575,
+    "container": [
+      {
+        "width": "575px",
+        "max": "none"
+      },
+      {
+        "width": "575px",
+        "max": "none"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 575
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 575
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 575
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 575
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 575
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 575
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 575
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 575
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 575
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 575
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 575
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 575
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 576,
+    "container": [
+      {
+        "width": "540px",
+        "max": "540px"
+      },
+      {
+        "width": "540px",
+        "max": "540px"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 540
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 540
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 767,
+    "container": [
+      {
+        "width": "540px",
+        "max": "540px"
+      },
+      {
+        "width": "540px",
+        "max": "540px"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 540
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 540
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 270
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "container": [
+      {
+        "width": "720px",
+        "max": "720px"
+      },
+      {
+        "width": "720px",
+        "max": "720px"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 720
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 720
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 991,
+    "container": [
+      {
+        "width": "720px",
+        "max": "720px"
+      },
+      {
+        "width": "720px",
+        "max": "720px"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 720
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 720
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 992,
+    "container": [
+      {
+        "width": "960px",
+        "max": "960px"
+      },
+      {
+        "width": "960px",
+        "max": "960px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 480
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 480
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 1023,
+    "container": [
+      {
+        "width": "960px",
+        "max": "960px"
+      },
+      {
+        "width": "960px",
+        "max": "960px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 480
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 480
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 1024,
+    "container": [
+      {
+        "width": "960px",
+        "max": "960px"
+      },
+      {
+        "width": "960px",
+        "max": "960px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 480
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 480
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 1199,
+    "container": [
+      {
+        "width": "960px",
+        "max": "960px"
+      },
+      {
+        "width": "960px",
+        "max": "960px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 480
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 480
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 240
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 1200,
+    "container": [
+      {
+        "width": "1140px",
+        "max": "1140px"
+      },
+      {
+        "width": "1140px",
+        "max": "1140px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 570
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 570
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 1399,
+    "container": [
+      {
+        "width": "1140px",
+        "max": "1140px"
+      },
+      {
+        "width": "1140px",
+        "max": "1140px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 570
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 570
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 285
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 1400,
+    "container": [
+      {
+        "width": "1320px",
+        "max": "1320px"
+      },
+      {
+        "width": "1320px",
+        "max": "1320px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 660
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 660
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "container": [
+      {
+        "width": "1320px",
+        "max": "1320px"
+      },
+      {
+        "width": "1320px",
+        "max": "1320px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "hero": 567,
+    "columns": [
+      {
+        "class": "col-lg-6",
+        "width": 660
+      },
+      {
+        "class": "col-lg-6 pt-4 pt-lg-0",
+        "width": 660
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      },
+      {
+        "class": "col-md-4 col-sm-6 col-lg-3",
+        "width": 330
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 375,
+    "container": [
+      {
+        "width": "375px",
+        "max": "none"
+      },
+      {
+        "width": "375px",
+        "max": "none"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 375
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 375
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 375
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 375
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 375
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 375
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 375
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 375
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 390,
+    "container": [
+      {
+        "width": "390px",
+        "max": "none"
+      },
+      {
+        "width": "390px",
+        "max": "none"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 390
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 390
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 390
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 390
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 390
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 390
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 390
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 390
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 575,
+    "container": [
+      {
+        "width": "575px",
+        "max": "none"
+      },
+      {
+        "width": "575px",
+        "max": "none"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 575
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 575
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 575
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 575
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 575
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 575
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 575
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 575
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 576,
+    "container": [
+      {
+        "width": "540px",
+        "max": "540px"
+      },
+      {
+        "width": "540px",
+        "max": "540px"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 540
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 540
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 540
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 540
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 540
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 540
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 540
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 540
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 767,
+    "container": [
+      {
+        "width": "540px",
+        "max": "540px"
+      },
+      {
+        "width": "540px",
+        "max": "540px"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 540
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 540
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 540
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 540
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 540
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 540
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 540
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 540
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 768,
+    "container": [
+      {
+        "width": "720px",
+        "max": "720px"
+      },
+      {
+        "width": "720px",
+        "max": "720px"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 720
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 420
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 720
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 720
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 360
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 360
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 360
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 360
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 991,
+    "container": [
+      {
+        "width": "720px",
+        "max": "720px"
+      },
+      {
+        "width": "720px",
+        "max": "720px"
+      }
+    ],
+    "mobileToggle": "block",
+    "nav": "none",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 720
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 420
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 720
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 720
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 360
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 360
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 360
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 360
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 992,
+    "container": [
+      {
+        "width": "960px",
+        "max": "960px"
+      },
+      {
+        "width": "960px",
+        "max": "960px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 960
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 560
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 720
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 240
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 1023,
+    "container": [
+      {
+        "width": "960px",
+        "max": "960px"
+      },
+      {
+        "width": "960px",
+        "max": "960px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 960
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 560
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 720
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 240
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 1024,
+    "container": [
+      {
+        "width": "960px",
+        "max": "960px"
+      },
+      {
+        "width": "960px",
+        "max": "960px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 960
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 560
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 720
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 240
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 1199,
+    "container": [
+      {
+        "width": "960px",
+        "max": "960px"
+      },
+      {
+        "width": "960px",
+        "max": "960px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 960
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 560
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 720
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 240
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 240
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 1200,
+    "container": [
+      {
+        "width": "1140px",
+        "max": "1140px"
+      },
+      {
+        "width": "1140px",
+        "max": "1140px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 1140
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 665
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 855
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 285
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 285
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 285
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 285
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 285
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 1399,
+    "container": [
+      {
+        "width": "1140px",
+        "max": "1140px"
+      },
+      {
+        "width": "1140px",
+        "max": "1140px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 1140
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 665
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 855
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 285
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 285
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 285
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 285
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 285
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 1400,
+    "container": [
+      {
+        "width": "1320px",
+        "max": "1320px"
+      },
+      {
+        "width": "1320px",
+        "max": "1320px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 1320
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 770
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 990
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 330
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 330
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 330
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 330
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 330
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/managed-application",
+    "width": 1440,
+    "container": [
+      {
+        "width": "1320px",
+        "max": "1320px"
+      },
+      {
+        "width": "1320px",
+        "max": "1320px"
+      }
+    ],
+    "mobileToggle": "none",
+    "nav": "flex",
+    "columns": [
+      {
+        "class": "col-12",
+        "width": 1320
+      },
+      {
+        "class": "col-md-7 text-center hero-text",
+        "width": 770
+      },
+      {
+        "class": "col-lg-9 pt-4 pt-lg-0 mb-5 aos-init aos-animate",
+        "width": 990
+      },
+      {
+        "class": "col-lg-3 aos-init aos-animate",
+        "width": 330
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 330
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 330
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-links",
+        "width": 330
+      },
+      {
+        "class": "col-lg-3 col-md-6 footer-contact",
+        "width": 330
+      }
+    ],
+    "overflow": false
+  }
+]

@@ -1,0 +1,2292 @@
+[
+  {
+    "url": "https://www.trinityconsulting.asia/images/logo/trinity-logo.png",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/logo/trinity-logo.png",
+    "bytes": 9699,
+    "sha256": "7cb1b1754244812d576e9aeb0c405bb3c3b55cf8814772cb34e459d4c87d2f2d",
+    "dimensions": {
+      "width": 300,
+      "height": 100,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/aos/aos.css",
+    "kinds": [
+      "stylesheet"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/css",
+    "status": "saved",
+    "localPath": "assets/originals/css/aos/aos.css",
+    "bytes": 26053,
+    "sha256": "1aa8845fd06e475aefe733d4e55b36a92fcd487975049c8172341827ac9cc03e",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/bootstrap-icons/bootstrap-icons.css",
+    "kinds": [
+      "stylesheet"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/css",
+    "status": "saved",
+    "localPath": "assets/originals/css/bootstrap-icons/bootstrap-icons.css",
+    "bytes": 88585,
+    "sha256": "f0cf9bd878febf2ff6279b59f696031deb8f0f9f4ab1a1199f55d78f7c558638",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/style.css?v=3.13",
+    "kinds": [
+      "stylesheet"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/css",
+    "status": "saved",
+    "localPath": "assets/originals/css/style.css",
+    "bytes": 39280,
+    "sha256": "f5e01567fe51f58bf479ebe42f59c4cc0e8a4e45b589fe27c9208dc5a9f41bf4",
+    "reuse": "Site-specific source for inspection only; do not import into application. No site-code license stated."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/glightbox/css/glightbox.min.css",
+    "kinds": [
+      "stylesheet"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/css",
+    "status": "saved",
+    "localPath": "assets/originals/css/glightbox/css/glightbox.min.css",
+    "bytes": 13749,
+    "sha256": "6d3f62d4d17969f9c70e9438cf671004725019e868123f2ebc295a006f8d5d2d",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/remixicon/remixicon.css",
+    "kinds": [
+      "stylesheet"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/css",
+    "status": "saved",
+    "localPath": "assets/originals/css/remixicon/remixicon.css",
+    "bytes": 110438,
+    "sha256": "13e29a29baade86f4e7a88d8e076d6a6f3ac8950757b50a0f8bbea1c33658d5c",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/swiper/swiper-bundle.min.css",
+    "kinds": [
+      "stylesheet"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/css",
+    "status": "saved",
+    "localPath": "assets/originals/css/swiper/swiper-bundle.min.css",
+    "bytes": 16466,
+    "sha256": "4359643e1b6350bffd6e16d543603ea7b393855957e792ac7f9178a81ed0b14d",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/custom-style.css?v=1.3.13",
+    "kinds": [
+      "stylesheet"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/css",
+    "status": "saved",
+    "localPath": "assets/originals/css/custom-style.css",
+    "bytes": 8544,
+    "sha256": "9745e6e4743dbef314bd20f72cda1f62d975855bea347181a91c4f944ef80312",
+    "reuse": "Site-specific source for inspection only; do not import into application. No site-code license stated."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/boxicons/css/boxicons.min.css",
+    "kinds": [
+      "stylesheet"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/css",
+    "status": "saved",
+    "localPath": "assets/originals/css/boxicons/css/boxicons.min.css",
+    "bytes": 66571,
+    "sha256": "b29cd63064611eeb851354145a1c984fe883d87971b53105206ad1d5da3de824",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/about-hrs.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/",
+      "/about"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/about-hrs.jpg",
+    "bytes": 126946,
+    "sha256": "54ef30a15b77ebea40ac6da973ae2f7091fe3dfab651d90d331572e57a0a387f",
+    "dimensions": {
+      "width": 1279,
+      "height": 853,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/animate.css/animate.min.css",
+    "kinds": [
+      "stylesheet"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/css",
+    "status": "saved",
+    "localPath": "assets/originals/css/animate.css/animate.min.css",
+    "bytes": 71750,
+    "sha256": "5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/bootstrap/css/bootstrap.min.css",
+    "kinds": [
+      "stylesheet"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/css",
+    "status": "saved",
+    "localPath": "assets/originals/css/bootstrap/css/bootstrap.min.css",
+    "bytes": 195498,
+    "sha256": "2933c96348a4eae7cbbf8f280ca0981586a9b5c097ef952b996cad7d28f2fad0",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/tech-services/digital-transformation.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/tech-services/digital-transformation.jpg",
+    "bytes": 20917,
+    "sha256": "3422910aa66a5783d6fbbde17c13d3667d37f4336311743cbadb89a97032a83c",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/tech-services/managed-application.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/tech-services/managed-application.jpg",
+    "bytes": 68945,
+    "sha256": "80d4901e2169cfddbb9a57feb22d7d6063e677a69bb25275617b26343146c052",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/tech-services/cloud-services.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/tech-services/cloud-services.jpg",
+    "bytes": 101580,
+    "sha256": "952b532a0ca3b6efa60bd2dc4699c494b9ed4f1e75f9731fe9ec8dd1f68804c4",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/banner-images/trinity-banner-1.jpg",
+    "kinds": [
+      "image",
+      "background"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/banner-images/trinity-banner-1.jpg",
+    "bytes": 86462,
+    "sha256": "ee0d96f61f626b9043fce31c54f98e286136d25b8c503dfc800b761207190ddd",
+    "dimensions": {
+      "width": 1980,
+      "height": 500,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/glightbox/js/glightbox.min.js",
+    "kinds": [
+      "script"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/javascript",
+    "status": "saved",
+    "localPath": "assets/originals/css/glightbox/js/glightbox.min.js",
+    "bytes": 55880,
+    "sha256": "03dfe1fbce92a9f17fcd1a1501213bd820d050ab085c338419ab06a3631c9459",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/aos/aos.js",
+    "kinds": [
+      "script"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/javascript",
+    "status": "saved",
+    "localPath": "assets/originals/css/aos/aos.js",
+    "bytes": 14690,
+    "sha256": "a5005b2e414770fd5ccb40bc221a12771966d02b5c1f9c89da48bd8e3811d377",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/isotope-layout/isotope.pkgd.min.js",
+    "kinds": [
+      "script"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/javascript",
+    "status": "saved",
+    "localPath": "assets/originals/css/isotope-layout/isotope.pkgd.min.js",
+    "bytes": 35445,
+    "sha256": "081ae9baaacc857c1c2cb51de6dbd0e1eb811c2761ef01a50df373f2f6eefe22",
+    "reuse": "GPLv3/commercial dual license in source header. Do not integrate without choosing a compatible license; replace if unnecessary."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/bootstrap/js/bootstrap.bundle.min.js",
+    "kinds": [
+      "script"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/javascript",
+    "status": "saved",
+    "localPath": "assets/originals/css/bootstrap/js/bootstrap.bundle.min.js",
+    "bytes": 80457,
+    "sha256": "a85b2fe307777c8eb47f06a1eec399fcbddfe83d252fd202d3e1358051fcf27d",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/waypoints/noframework.waypoints.js",
+    "kinds": [
+      "script"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/javascript",
+    "status": "saved",
+    "localPath": "assets/originals/css/waypoints/noframework.waypoints.js",
+    "bytes": 21112,
+    "sha256": "c8f4833e03df3d72f1fc0717b502538300c6f51d316d180d023ff47e2ceee39e",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/swiper/swiper-bundle.min.js",
+    "kinds": [
+      "script"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/javascript",
+    "status": "saved",
+    "localPath": "assets/originals/css/swiper/swiper-bundle.min.js",
+    "bytes": 143281,
+    "sha256": "cc52733b73530cdb8ff7665895e0b1be88f67f1dcf738ec1ca3ec404f2723f97",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/js/main.js",
+    "kinds": [
+      "script"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "text/javascript",
+    "status": "saved",
+    "localPath": "assets/originals/js/main.js",
+    "bytes": 4343,
+    "sha256": "2333c01f22c560a58e827073e2b455e9406aa9783b808b200bde7027f77d6c7f",
+    "reuse": "Site-specific source for inspection only; do not import into application. No site-code license stated."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/bootstrap-icons/fonts/bootstrap-icons.woff2?8d200481aa7f02a2d63a331fc782cfaf",
+    "kinds": [
+      "font"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "font/woff2",
+    "status": "saved",
+    "localPath": "assets/originals/css/bootstrap-icons/fonts/bootstrap-icons.woff2",
+    "bytes": 112440,
+    "sha256": "c69bf1ccae5f13b5aa4345dcfeb209a8148ad0bfa1e0678b93792aae0429c764",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/tech-services/enterpraise-services.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/tech-services/enterpraise-services.jpg",
+    "bytes": 39642,
+    "sha256": "b38e2405525443181eb932eab344fdf4508a60b7c79308350659178b7841724a",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/tech-services/sap-services.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/tech-services/sap-services.jpg",
+    "bytes": 98834,
+    "sha256": "253e9367bc00725988e067266739589b93e0c9658fbac6ea6c78b8ceeb0d33d1",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/tech-services/infra.png",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/tech-services/infra.png",
+    "bytes": 131009,
+    "sha256": "f21bcbda603d57954647b83a133e91d7c5dd297e9daef44efb869afa0188d777",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/tech-services/cyber-security.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/tech-services/cyber-security.jpg",
+    "bytes": 12225,
+    "sha256": "d5dcf96792177847c0d0f97e4354118bfc30e7564e3f665fa13c6b8bdf68ca0c",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hr-services/recuriment-services.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hr-services/recuriment-services.jpg",
+    "bytes": 13933,
+    "sha256": "eaaf32acdd630b179f982222286153f3826995580c00c003a3c91ac9c7ae80fd",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hr-services/executive-recuriment.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hr-services/executive-recuriment.jpg",
+    "bytes": 62273,
+    "sha256": "a2294e4dbc6cc8f459d47e9cff3640b09c4a45de52d5264281272d395de81748",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/tech-services/big-data.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/tech-services/big-data.jpg",
+    "bytes": 99292,
+    "sha256": "bd11cbae03a3e16c21d724109effe4e3b682396b245fb806494ed86b8398cfca",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hr-services/staffing-services.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hr-services/staffing-services.jpg",
+    "bytes": 65016,
+    "sha256": "d24208e2997fd68f4736ca9bdeb0e065eab865a0c5a34bfa127795b1e22139f5",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hr-services/retained-search.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hr-services/retained-search.jpg",
+    "bytes": 20564,
+    "sha256": "48af1700e7a7516c266dd4ff7c2a8a69af6d8cba7d4df35b4d6265f74ab6def5",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hr-services/rpo.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hr-services/rpo.jpg",
+    "bytes": 75709,
+    "sha256": "3bcbe5d83fd2dfcaebb43e454e6d88bc99890df3c9c11fee632f902ff2654408",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hr-services/managed-staff.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hr-services/managed-staff.jpg",
+    "bytes": 69592,
+    "sha256": "74b0d9acd7b2f9b9173b8b6c49480dfa11e1746b292858656023cf8a3880c696",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hr-services/HR-Consultancy.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hr-services/HR-Consultancy.jpg",
+    "bytes": 57585,
+    "sha256": "2b717b05a3a38564878e3d7a4867e5497420d172581f4b694689ee699163b6e2",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hr-services/pay-roll.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hr-services/pay-roll.jpg",
+    "bytes": 94670,
+    "sha256": "e5e4e4b5a186ca7e63ea09a0054e3662cac7a32599d5698ec43a19d2965d2b0a",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/icons/deal.png",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/icons/deal.png",
+    "bytes": 2961,
+    "sha256": "2573bbe1f88067359fc9e5cba506e1878f78bdd6e98d87bb766eb2d07fcffbc0",
+    "dimensions": {
+      "width": 64,
+      "height": 64,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/icons/24-7.png",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/icons/24-7.png",
+    "bytes": 2057,
+    "sha256": "a35e0689d5bf7d9846e5b7149dee1a50f18b63f01c0837d27931ca410151d27b",
+    "dimensions": {
+      "width": 64,
+      "height": 64,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hrs-values/job-tips.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hrs-values/job-tips.jpg",
+    "bytes": 25807,
+    "sha256": "c3eea9ac2f17fabbde5b3fb41a98082b0f4328812fc30b8a32958aa64bcc3330",
+    "dimensions": {
+      "width": 400,
+      "height": 200,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/icons/distributed.png",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/icons/distributed.png",
+    "bytes": 1880,
+    "sha256": "a58ca7d8c3b27e991755d3cb0606246146862659e4cb688874f0c900b94a828d",
+    "dimensions": {
+      "width": 64,
+      "height": 64,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hrs-values/job-search.jpeg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hrs-values/job-search.jpeg",
+    "bytes": 13245,
+    "sha256": "720ffbad9576cdd193c4a39b5850764d477b674e8571f211ade85171f240fac1",
+    "dimensions": {
+      "width": 400,
+      "height": 200,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hrs-values/register-cv.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hrs-values/register-cv.jpg",
+    "bytes": 11816,
+    "sha256": "e2d98d645f5ee7b1ca060c89bfe2ff2f76a6baa9676931d1144d157103c261c3",
+    "dimensions": {
+      "width": 400,
+      "height": 200,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/footer-map.png",
+    "kinds": [
+      "image",
+      "background"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/footer-map.png",
+    "bytes": 12463,
+    "sha256": "ec23c44a51b2c92f2ec3e2cd8fab091e68ad1522f4f9dd1cfefd2f04623676b3",
+    "dimensions": {
+      "width": 259,
+      "height": 176,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/boxicons/fonts/boxicons.woff2",
+    "kinds": [
+      "font"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/life-at-trinity",
+      "/carrer",
+      "/privacy-policy",
+      "/contact",
+      "/digitalstrategy&transformation",
+      "/managed-application",
+      "/cloud-services-solutions-singapore",
+      "/enterprise-services",
+      "/sap-services",
+      "/it-software-solutions",
+      "/cyber-security",
+      "/big-data-&-Analytics",
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "font/woff2",
+    "status": "saved",
+    "localPath": "assets/originals/css/boxicons/fonts/boxicons.woff2",
+    "bytes": 115388,
+    "sha256": "dab4eb1c17eef51499352bddfcd12dd99e1b86d9549f5051614867bcff004ca1",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/banner-images/trinity-home-banner-2.jpg",
+    "kinds": [
+      "background"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/banner-images/trinity-home-banner-2.jpg",
+    "bytes": 87945,
+    "sha256": "4377cce15de0e227ab44d3511cf84adf9512ec158a6fd58a988acada6ed51545",
+    "dimensions": {
+      "width": 1980,
+      "height": 500,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/banner-images/who-we-are-banner.jpg",
+    "kinds": [
+      "background"
+    ],
+    "usedBy": [
+      "/"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/banner-images/who-we-are-banner.jpg",
+    "bytes": 141075,
+    "sha256": "7c3ddb721c5230d58cfff931ccfbccd5357f8439d64077e39507b9ac1c7a4288",
+    "dimensions": {
+      "width": 1980,
+      "height": 500,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hrs-values/our-mission.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/about"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hrs-values/our-mission.jpg",
+    "bytes": 19788,
+    "sha256": "32ec1f14e19cd97192f50bf98aa4b6b6425a8941de5c3787590d642c692a1c82",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hrs-values/our-vision.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/about"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hrs-values/our-vision.jpg",
+    "bytes": 59848,
+    "sha256": "22f70f8c879d5ec9bf72aac86dcfa2dd5f1f10b5b74a853d3fb0899e702c3d4e",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/hrs-values/our-goal.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/about"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/hrs-values/our-goal.jpg",
+    "bytes": 17945,
+    "sha256": "515af645b2d94f2bb2f5659863ffac08a3f4faebd515174f99fadcfad99ce06f",
+    "dimensions": {
+      "width": 270,
+      "height": 300,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/banner-images/about-us-new.jpg",
+    "kinds": [
+      "image",
+      "background"
+    ],
+    "usedBy": [
+      "/about"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/banner-images/about-us-new.jpg",
+    "bytes": 125265,
+    "sha256": "64a952fc2cccb2ee4e0b547189ae630901faf064b742384e8175b1abb3d1bd7f",
+    "dimensions": {
+      "width": 1980,
+      "height": 500,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/work-life-balance.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/life-at-trinity"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/work-life-balance.jpg",
+    "bytes": 218196,
+    "sha256": "4d9ec25730eb5926a54face44771bb7ead1fb4eff715c6a27d193742dd13b1d3",
+    "dimensions": {
+      "width": 1280,
+      "height": 800,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/banner-images/life-at-trinity-1.jpg",
+    "kinds": [
+      "image",
+      "background"
+    ],
+    "usedBy": [
+      "/life-at-trinity"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/banner-images/life-at-trinity-1.jpg",
+    "bytes": 95836,
+    "sha256": "2cd74746f414a6a34ad6bdd284522af0ae620d2b30e760d843e9ac1520365dad",
+    "dimensions": {
+      "width": 1980,
+      "height": 500,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/banner-images/careers.jpg",
+    "kinds": [
+      "image",
+      "background"
+    ],
+    "usedBy": [
+      "/carrer"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/banner-images/careers.jpg",
+    "bytes": 88894,
+    "sha256": "44c4b187cb4b3420f443acc78ec4518ded1c64810f2871897653ea4efcd11ed7",
+    "dimensions": {
+      "width": 1980,
+      "height": 500,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/banner-images/privacy-policy.jpg",
+    "kinds": [
+      "image",
+      "background"
+    ],
+    "usedBy": [
+      "/privacy-policy"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/banner-images/privacy-policy.jpg",
+    "bytes": 215491,
+    "sha256": "49fa8ea252ac2fedc22015c051135cb5d4fd711a802ec3c087821bb6c390a821",
+    "dimensions": {
+      "width": 2400,
+      "height": 1600,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/digitalstrategy&transformation-1.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/digitalstrategy&transformation"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/digitalstrategy&transformation-1.jpg",
+    "bytes": 113814,
+    "sha256": "9215923785cb7e71b1547b4a7e5aea62ff0ae86ed26a8a7a3d294f43fe23374c",
+    "dimensions": {
+      "width": 1977,
+      "height": 1200,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/managed-application.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/managed-application"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/managed-application.jpg",
+    "bytes": 57971,
+    "sha256": "375b771ef945b0c794630a0758ffd46586474ef3a1457157807c050754378484",
+    "dimensions": {
+      "width": 1200,
+      "height": 720,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/cloud-computing.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/cloud-services-solutions-singapore"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/cloud-computing.jpg",
+    "bytes": 116376,
+    "sha256": "abfddf8c458d8654cb10a519a168124c9c1a6e688c9a87390e280db9f342d284",
+    "dimensions": {
+      "width": 1200,
+      "height": 800,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/enterprise-services.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/enterprise-services"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/enterprise-services.jpg",
+    "bytes": 184776,
+    "sha256": "5b0c38845c861496cb9192543eb5f6af9b295a080fa8cd8209a13393a30a8e98",
+    "dimensions": {
+      "width": 1200,
+      "height": 800,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/sap-services.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/sap-services"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/sap-services.jpg",
+    "bytes": 157550,
+    "sha256": "e4856d25c1ebb2473d096422248edd1fbb8ef5bdca2c9cb813febdd3578ea590",
+    "dimensions": {
+      "width": 1200,
+      "height": 720,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/software-development.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/it-software-solutions"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/software-development.jpg",
+    "bytes": 76896,
+    "sha256": "78798f092be29bcffe2bf7beb26aed6f009d3b899e2a53768cb10f3e3cae8ec0",
+    "dimensions": {
+      "width": 1280,
+      "height": 500,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/cyber-security.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/cyber-security"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/cyber-security.jpg",
+    "bytes": 92423,
+    "sha256": "7eccbcc0a314b325feccea4d5d5bc42f1881ff393c75c0707f4ffaa421695db2",
+    "dimensions": {
+      "width": 1200,
+      "height": 720,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/big-data.jpg",
+    "kinds": [
+      "image"
+    ],
+    "usedBy": [
+      "/big-data-&-Analytics"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/big-data.jpg",
+    "bytes": 120543,
+    "sha256": "1cb773e910b757ab49f8883bcc6e43b4e0c253d0c38b7616cc681e46319fba4f",
+    "dimensions": {
+      "width": 1200,
+      "height": 720,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/banner-images/erp-banner.jpg",
+    "kinds": [
+      "image",
+      "background"
+    ],
+    "usedBy": [
+      "/erp"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "status": "saved",
+    "localPath": "assets/originals/images/banner-images/erp-banner.jpg",
+    "bytes": 414308,
+    "sha256": "6499064320c1fe073edbbf95a6bd626ddaac144739d6f98433935f11944424e8",
+    "dimensions": {
+      "width": 1920,
+      "height": 1080,
+      "format": "JPEG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/bootstrap-icons/fonts/bootstrap-icons.woff?8d200481aa7f02a2d63a331fc782cfaf",
+    "kinds": [
+      "css-dependency"
+    ],
+    "usedBy": [
+      "CSS /css/bootstrap-icons/bootstrap-icons.css"
+    ],
+    "httpStatus": 200,
+    "contentType": "font/woff",
+    "status": "saved",
+    "localPath": "assets/originals/css/bootstrap-icons/fonts/bootstrap-icons.woff",
+    "bytes": 150592,
+    "sha256": "13977b4a8d61d533db87feb04007efb034c3bd29e34a6f3dba26a34eedec3b13",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/remixicon/remixicon.eot?t=1590207869815",
+    "kinds": [
+      "css-dependency"
+    ],
+    "usedBy": [
+      "CSS /css/remixicon/remixicon.css"
+    ],
+    "httpStatus": 200,
+    "contentType": "application/vnd.ms-fontobject",
+    "status": "saved",
+    "localPath": "assets/originals/css/remixicon/remixicon.eot",
+    "bytes": 403228,
+    "sha256": "64bb3a0f6de8a97b592226ab38d722b29382cde4cb15cc0ec5cedb112aac55ad",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/remixicon/remixicon.eot?t=1590207869815#iefix",
+    "kinds": [
+      "css-dependency"
+    ],
+    "usedBy": [
+      "CSS /css/remixicon/remixicon.css"
+    ],
+    "httpStatus": 200,
+    "contentType": "application/vnd.ms-fontobject",
+    "status": "saved",
+    "localPath": "assets/originals/css/remixicon/remixicon.eot",
+    "bytes": 403228,
+    "sha256": "64bb3a0f6de8a97b592226ab38d722b29382cde4cb15cc0ec5cedb112aac55ad",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/remixicon/remixicon.woff2?t=1590207869815",
+    "kinds": [
+      "css-dependency"
+    ],
+    "usedBy": [
+      "CSS /css/remixicon/remixicon.css"
+    ],
+    "httpStatus": 200,
+    "contentType": "font/woff2",
+    "status": "saved",
+    "localPath": "assets/originals/css/remixicon/remixicon.woff2",
+    "bytes": 125268,
+    "sha256": "e61f0d10c8cac8cd0ecb36790d6cce883380c0b185ff3c9bf849ed336ba8285c",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/remixicon/remixicon.woff?t=1590207869815",
+    "kinds": [
+      "css-dependency"
+    ],
+    "usedBy": [
+      "CSS /css/remixicon/remixicon.css"
+    ],
+    "httpStatus": 200,
+    "contentType": "font/woff",
+    "status": "saved",
+    "localPath": "assets/originals/css/remixicon/remixicon.woff",
+    "bytes": 172876,
+    "sha256": "c2dacfbc1fcacde14753676b64d78bd6673aefea477924f8db1e0c767dcece9c",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/remixicon/remixicon.ttf?t=1590207869815",
+    "kinds": [
+      "css-dependency"
+    ],
+    "usedBy": [
+      "CSS /css/remixicon/remixicon.css"
+    ],
+    "httpStatus": 200,
+    "contentType": "font/ttf",
+    "status": "saved",
+    "localPath": "assets/originals/css/remixicon/remixicon.ttf",
+    "bytes": 403056,
+    "sha256": "0ac8bc3ccea26ed47e96844ef26675969c669714d723c081101e51799d501520",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/remixicon/remixicon.svg?t=1590207869815#remixicon",
+    "kinds": [
+      "css-dependency"
+    ],
+    "usedBy": [
+      "CSS /css/remixicon/remixicon.css"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/svg+xml",
+    "status": "saved",
+    "localPath": "assets/originals/css/remixicon/remixicon.svg",
+    "bytes": 1195522,
+    "sha256": "a10268fe8984137751f143461d1c00dc303b53d27cd857f8f2245ca314684e13",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/boxicons/fonts/boxicons.eot",
+    "kinds": [
+      "css-dependency"
+    ],
+    "usedBy": [
+      "CSS /css/boxicons/css/boxicons.min.css"
+    ],
+    "httpStatus": 200,
+    "contentType": "application/vnd.ms-fontobject",
+    "status": "saved",
+    "localPath": "assets/originals/css/boxicons/fonts/boxicons.eot",
+    "bytes": 396413,
+    "sha256": "6c64652441a2384fe90e0cf0dfadb56f6e3a20dd97a7964b16540e146620c49f",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/boxicons/fonts/boxicons.woff",
+    "kinds": [
+      "css-dependency"
+    ],
+    "usedBy": [
+      "CSS /css/boxicons/css/boxicons.min.css"
+    ],
+    "httpStatus": 200,
+    "contentType": "font/woff",
+    "status": "saved",
+    "localPath": "assets/originals/css/boxicons/fonts/boxicons.woff",
+    "bytes": 313912,
+    "sha256": "048f19b0202b0fde879eb5da8380180a86e441047b21d96c4c95fa77f5686f4a",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/boxicons/fonts/boxicons.ttf",
+    "kinds": [
+      "css-dependency"
+    ],
+    "usedBy": [
+      "CSS /css/boxicons/css/boxicons.min.css"
+    ],
+    "httpStatus": 200,
+    "contentType": "font/ttf",
+    "status": "saved",
+    "localPath": "assets/originals/css/boxicons/fonts/boxicons.ttf",
+    "bytes": 313836,
+    "sha256": "344e5f5b56dcf894e0d94c165a0862e45824693e9f6694c5f8914a9023894a25",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/css/boxicons/fonts/boxicons.svg?#boxicons",
+    "kinds": [
+      "css-dependency"
+    ],
+    "usedBy": [
+      "CSS /css/boxicons/css/boxicons.min.css"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/svg+xml",
+    "status": "saved",
+    "localPath": "assets/originals/css/boxicons/fonts/boxicons.svg",
+    "bytes": 1216389,
+    "sha256": "f0e29b19d27589d31a61d3e6fc24e21eb1ff4e549992b0a2fc0f3f9088fa8712",
+    "reuse": "Vendor reference; preserve notices. Check licenses/ and licensing notes before reuse; loaded does not imply used."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/apple-icon-57x57.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/apple-icon-57x57.png",
+    "bytes": 5048,
+    "sha256": "9bcfcdc7836c0a2af57eaef0e3191659427151b59981a7055569780c220bc380",
+    "dimensions": {
+      "width": 57,
+      "height": 57,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/apple-icon-60x60.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/apple-icon-60x60.png",
+    "bytes": 5444,
+    "sha256": "846ea37f4a947b815fb7a5e56c4cc8562f01da1b810474b40641e799dec87de3",
+    "dimensions": {
+      "width": 60,
+      "height": 60,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/apple-icon-72x72.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/apple-icon-72x72.png",
+    "bytes": 6621,
+    "sha256": "928b98ea736a446c543ffe3554fe4db8937abd81cc27aad260a02d115fe619d2",
+    "dimensions": {
+      "width": 72,
+      "height": 72,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/apple-icon-76x76.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/apple-icon-76x76.png",
+    "bytes": 7043,
+    "sha256": "56c03068df2d07cb4c501c39287f15ee00026b0d79f8a615847f7a79b7a118e3",
+    "dimensions": {
+      "width": 76,
+      "height": 76,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/apple-icon-114x114.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/apple-icon-114x114.png",
+    "bytes": 10980,
+    "sha256": "578c7e27e74fca7036e27390df44b956aed5ec601654a83ba0d84639eb749fb6",
+    "dimensions": {
+      "width": 114,
+      "height": 114,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/apple-icon-120x120.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/apple-icon-120x120.png",
+    "bytes": 11683,
+    "sha256": "76971f93e3be584b0f1e4df6c0bfdb978243f1da3e5fb146f3390b63efaa248b",
+    "dimensions": {
+      "width": 120,
+      "height": 120,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/apple-icon-144x144.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/apple-icon-144x144.png",
+    "bytes": 15624,
+    "sha256": "36e764b11746d2a9a2a21b121a4dad51bf2221c7787c1690d3ae68c8d11ce9d4",
+    "dimensions": {
+      "width": 144,
+      "height": 144,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/apple-icon-152x152.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/apple-icon-152x152.png",
+    "bytes": 16884,
+    "sha256": "94a288846f77ab81f69a03f9a53aecf241dfff4756ee771713910211eacb3f12",
+    "dimensions": {
+      "width": 152,
+      "height": 152,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/apple-icon-180x180.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/apple-icon-180x180.png",
+    "bytes": 21779,
+    "sha256": "929547e2362dede1b9ad78b3eb6fbd8cb432f199f5bf09d6f7ae58338031a9d8",
+    "dimensions": {
+      "width": 180,
+      "height": 180,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/android-icon-192x192.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/android-icon-192x192.png",
+    "bytes": 21546,
+    "sha256": "37b981c17423b890367868f8ea51f92459bc0c18474f2cc0fc675311792ecef6",
+    "dimensions": {
+      "width": 192,
+      "height": 192,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/favicon-32x32.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/favicon-32x32.png",
+    "bytes": 2591,
+    "sha256": "d89db99432a0b8821f9cbd431b39f7137ec7675da1d73c1ce49274c4a315dff5",
+    "dimensions": {
+      "width": 32,
+      "height": 32,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/favicon-96x96.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/favicon-96x96.png",
+    "bytes": 9117,
+    "sha256": "98a08fc70dd97b70b33d1724335775ffeac4264e57a20725abceb1f1526f48d3",
+    "dimensions": {
+      "width": 96,
+      "height": 96,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/favicon-16x16.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "image/png",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/favicon-16x16.png",
+    "bytes": 1397,
+    "sha256": "df314f7bba57b57aba8ebc12fa195aa369ba4c97bc51bdfc11c47ca62db5022d",
+    "dimensions": {
+      "width": 16,
+      "height": 16,
+      "format": "PNG"
+    },
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/images/favicon/manifest.json",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 200,
+    "contentType": "application/json",
+    "status": "saved",
+    "localPath": "assets/originals/images/favicon/manifest.json",
+    "bytes": 720,
+    "sha256": "27eca3e8297eb7ff340deb3849b210185a459b3845456aa4d0036f6d966b3518",
+    "reuse": "Reference copy only; site branding/photography/icon-image license not stated. Obtain permission or replace for TwinLink."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/ms-icon-144x144.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 404,
+    "contentType": "text/html",
+    "status": "inaccessible"
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/android-icon-36x36.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 404,
+    "contentType": "text/html",
+    "status": "inaccessible"
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/android-icon-48x48.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 404,
+    "contentType": "text/html",
+    "status": "inaccessible"
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/android-icon-72x72.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 404,
+    "contentType": "text/html",
+    "status": "inaccessible"
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/android-icon-96x96.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 404,
+    "contentType": "text/html",
+    "status": "inaccessible"
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/android-icon-144x144.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 404,
+    "contentType": "text/html",
+    "status": "inaccessible"
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/android-icon-192x192.png",
+    "kinds": [
+      "site-metadata"
+    ],
+    "usedBy": [
+      "homepage head"
+    ],
+    "httpStatus": 404,
+    "contentType": "text/html",
+    "status": "inaccessible"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/twbs/bootstrap/v5.2.1/LICENSE",
+    "kinds": [
+      "upstream-license"
+    ],
+    "usedBy": [
+      "bootstrap"
+    ],
+    "httpStatus": 200,
+    "localPath": "assets/licenses/bootstrap.txt",
+    "bytes": 1131,
+    "sha256": "53d2513c8df48a817d70537cc906b8e9c7bf2513328ff66847894773e615b37e",
+    "status": "saved",
+    "reuse": "Upstream license evidence; retain with any permitted redistribution. Unversioned license sources do not establish the bundled version."
+  },
+  {
+    "url": "https://raw.githubusercontent.com/animate-css/animate.css/v4.1.1/LICENSE",
+    "kinds": [
+      "upstream-license"
+    ],
+    "usedBy": [
+      "animate-css"
+    ],
+    "httpStatus": 200,
+    "localPath": "assets/licenses/animate-css.txt",
+    "bytes": 1078,
+    "sha256": "aa4b4f6ba47ac6a4b3443615b5a18576d4d28ad8b3da8b4cb8cb2bd28fdd54b2",
+    "status": "saved",
+    "reuse": "Upstream license evidence; retain with any permitted redistribution. Unversioned license sources do not establish the bundled version."
+  },
+  {
+    "url": "https://raw.githubusercontent.com/twbs/icons/main/LICENSE",
+    "kinds": [
+      "upstream-license"
+    ],
+    "usedBy": [
+      "bootstrap-icons"
+    ],
+    "httpStatus": 200,
+    "localPath": "assets/licenses/bootstrap-icons.txt",
+    "bytes": 1093,
+    "sha256": "0fb3e11bd57e896c5a512afd64864d28a37de45d19835016c87ca1ad19ead969",
+    "status": "saved",
+    "reuse": "Upstream license evidence; retain with any permitted redistribution. Unversioned license sources do not establish the bundled version."
+  },
+  {
+    "url": "https://raw.githubusercontent.com/atisawd/boxicons/master/LICENSE",
+    "kinds": [
+      "upstream-license"
+    ],
+    "usedBy": [
+      "boxicons"
+    ],
+    "httpStatus": 200,
+    "localPath": "assets/licenses/boxicons.txt",
+    "bytes": 1086,
+    "sha256": "9da87f12e0cc2ddd3cd689ac4946a0508fc09b8d882e1430eb5ec16762b057a5",
+    "status": "saved",
+    "reuse": "Upstream license evidence; retain with any permitted redistribution. Unversioned license sources do not establish the bundled version."
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Remix-Design/RemixIcon/v2.5.0/License",
+    "kinds": [
+      "upstream-license"
+    ],
+    "usedBy": [
+      "remixicon"
+    ],
+    "httpStatus": 200,
+    "localPath": "assets/licenses/remixicon.txt",
+    "bytes": 11357,
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "status": "saved",
+    "reuse": "Upstream license evidence; retain with any permitted redistribution. Unversioned license sources do not establish the bundled version."
+  },
+  {
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "kinds": [
+      "external-dependency"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/big-data-&-Analytics",
+      "/carrer",
+      "/cloud-services-solutions-singapore",
+      "/contact",
+      "/cyber-security",
+      "/digitalstrategy&transformation",
+      "/enterprise-services",
+      "/erp",
+      "/it-software-solutions",
+      "/life-at-trinity",
+      "/managed-application",
+      "/privacy-policy",
+      "/sap-services"
+    ],
+    "status": "blocked-by-environment",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED",
+    "reuse": "Not downloaded. See replacement register."
+  },
+  {
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "kinds": [
+      "external-dependency"
+    ],
+    "usedBy": [
+      "/",
+      "/about",
+      "/big-data-&-Analytics",
+      "/carrer",
+      "/cloud-services-solutions-singapore",
+      "/contact",
+      "/cyber-security",
+      "/digitalstrategy&transformation",
+      "/enterprise-services",
+      "/erp",
+      "/it-software-solutions",
+      "/life-at-trinity",
+      "/managed-application",
+      "/privacy-policy",
+      "/sap-services"
+    ],
+    "status": "blocked-by-environment",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED",
+    "reuse": "Not downloaded. See replacement register."
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d125336.25794774006!2d76.9194932!3d10.9816256!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8596176e49d2b%3A0xef92d69fc1376aa9!2sTRINITY%20CONSULTING%20SERVICES%20%5BConsultTrinity%20Services%20Pvt%20Ltd%5D!5e0!3m2!1sen!2sin!4v1679657261429!5m2!1sen!2sin",
+    "kinds": [
+      "external-dependency"
+    ],
+    "usedBy": [
+      "/contact"
+    ],
+    "status": "blocked-by-environment",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED",
+    "reuse": "Not downloaded. See replacement register."
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.830697799665!2d103.84185481388356!3d1.2748688990701509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da196bb3f7a9cb%3A0xab3670f238e2527c!2sTRINITY%20CONSULTING%20SERVICES!5e0!3m2!1sen!2sin!4v1677273982691!5m2!1sen!2sin",
+    "kinds": [
+      "external-dependency"
+    ],
+    "usedBy": [
+      "/contact"
+    ],
+    "status": "blocked-by-environment",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED",
+    "reuse": "Not downloaded. See replacement register."
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1943.484223655355!2d80.2098633!3d13.0376804!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267d32806952b%3A0x48a38a29626ccbf4!2s%5BCONSULTTRINITY%20SERVICES%20Pvt%20Ltd%5D%20-%20TRINITY%20CONSULTING%20SERVICES!5e0!3m2!1sen!2sin!4v1679657172135!5m2!1sen!2sin",
+    "kinds": [
+      "external-dependency"
+    ],
+    "usedBy": [
+      "/contact"
+    ],
+    "status": "blocked-by-environment",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED",
+    "reuse": "Not downloaded. See replacement register."
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.717029968821!2d101.6781044!3d3.1887178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc495215a04817%3A0x3f73c92ab222d9c3!2sTRINITY%20SERVICES%20%26%20CONSULTING%20SDN.%20BHD.!5e0!3m2!1sen!2sin!4v1717054072286!5m2!1sen!2sin",
+    "kinds": [
+      "external-dependency"
+    ],
+    "usedBy": [
+      "/contact"
+    ],
+    "status": "blocked-by-environment",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED",
+    "reuse": "Not downloaded. See replacement register."
+  },
+  {
+    "url": "https://www.trinityconsulting.asia/managed-application#inline-wave",
+    "kinds": [
+      "inline-svg-extraction"
+    ],
+    "usedBy": [
+      "/contact",
+      "technology detail pages"
+    ],
+    "status": "saved",
+    "localPath": "assets/extracted/service-wave.svg",
+    "bytes": 671,
+    "sha256": "4da5c739747f374113ff2ef15bf815394d7e3860308594232b4f4d343c703afe",
+    "reuse": "Exact SVG markup extracted from live DOM, not an original HTTP file. Site license not stated; use as reference or replace."
+  }
+]

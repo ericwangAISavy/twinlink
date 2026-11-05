@@ -1,0 +1,59 @@
+{
+  "kind": "reference-only; not imported by TwinLink",
+  "color": {
+    "brandBlue": "#157cbf",
+    "activeDotBlue": "#157dbf",
+    "text": "#4d4643",
+    "navText": "#111111",
+    "footer": "#00008b",
+    "copyright": "#111111",
+    "paleBlue": "#f6f9ff",
+    "white": "#ffffff",
+    "buttonGreen": "#1bbd36",
+    "accentGreen": "#79b935",
+    "error": "#ff0000",
+    "caption": "rgba(4,4,4,0.7)"
+  },
+  "font": {
+    "body": "Open Sans, sans-serif",
+    "headings": "Roboto, sans-serif",
+    "nav": "Roboto, sans-serif",
+    "loadedButNotCore": "Poppins, sans-serif",
+    "observedHeadingFallback": "Liberation Sans"
+  },
+  "spacingPx": {
+    "sectionY": 60,
+    "gutter": 24,
+    "columnPadding": 12,
+    "heroCaption": 20,
+    "sectionRuleWidth": 50,
+    "sectionRuleHeight": 3,
+    "headerHeight": 70,
+    "backToTopSize": 40
+  },
+  "breakpointsPx": {
+    "sm": 576,
+    "md": 768,
+    "lg": 992,
+    "xl": 1200,
+    "xxl": 1400,
+    "desktopCaptionWidthStart": 1024
+  },
+  "motionMs": {
+    "carouselIntervalDeclared": 5000,
+    "carouselFadeDeclared": 500,
+    "caption": 1000,
+    "aos": 1000,
+    "hoverDefault": 300,
+    "backToTop": 400,
+    "header": 500,
+    "circleHover": 750
+  },
+  "sources": [
+    "evidence/visual-measurements.json",
+    "evidence/responsive-boundaries.json",
+    "evidence/runtime-checks.json",
+    "assets/originals/css/style.css",
+    "assets/originals/css/custom-style.css"
+  ]
+}

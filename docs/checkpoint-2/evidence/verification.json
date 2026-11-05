@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "savedAssetHashes": "pass",
+    "JSONParsing": "pass",
+    "imageDecoding": "pass",
+    "extractedSVG": "pass",
+    "relativeReportLinks": "pass",
+    "routeCoverage": "pass",
+    "breakpointProbes": "pass",
+    "settledMobileMenu": "pass",
+    "applicationDiff": "none"
+  },
+  "pageRecords": 30,
+  "distinctRoutes": 15,
+  "responsiveProbes": 30,
+  "assetEntries": 108,
+  "savedAssetEntries": 95,
+  "uniqueSavedAssetFiles": 94,
+  "assetStatuses": {
+    "saved": 95,
+    "inaccessible": 7,
+    "blocked-by-environment": 6
+  },
+  "rasterFilesDecoded": 79,
+  "screenshotFiles": 20,
+  "baseline": "37349d6f9bd6cc870869a872917d0b48ece5c859"
+}
