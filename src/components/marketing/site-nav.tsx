@@ -2,204 +2,165 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  ArrowUpRight,
-  BookOpen,
-  CalendarDays,
-  ChevronDown,
-  FileText,
-  Menu,
-} from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
+import { useEffect, useRef, useState } from "react";
+import { ReferenceIcon } from "./reference-icon";
 
-const NAV = [
-  { href: "/about", label: "About" },
-  { href: "/#solutions", label: "Solutions" },
-  { href: "/#people", label: "Engineering Network" },
-  { href: "/careers", label: "Careers" },
-] as const;
-
-const RESOURCES = [
-  {
-    href: "/case-studies",
-    label: "Case Studies",
-    description: "Explore our approach to complex challenges.",
-    icon: FileText,
-  },
-  {
-    href: "/blog",
-    label: "Blog",
-    description: "Perspectives on engineering and delivery.",
-    icon: BookOpen,
-  },
-  {
-    href: "/events",
-    label: "Events",
-    description: "Conversations that connect our community.",
-    icon: CalendarDays,
-  },
-] as const;
-
-const itemStyle =
-  "rounded-lg px-3 py-3 text-white/80 hover:bg-white/5 focus:bg-white/5 focus:text-[#e8d5a3]";
-const panelStyle = "border-white/15 bg-[#151310] p-2 text-white shadow-2xl";
+type Item = { label: string; href: string };
+const GROUPS: { label: string; items: Item[] }[] = [
+  { label: "About us", items: [
+    { label: "About TwinLink", href: "/about" },
+    { label: "Life at TwinLink", href: "/about#culture" },
+    { label: "Careers", href: "/careers" },
+    { label: "Privacy policy", href: "/privacy" },
+  ] },
+  // Keep destinations on existing pages until the service-detail checkpoint.
+  { label: "Tech services", items: [
+    { label: "Our solutions", href: "/#solutions" },
+    { label: "Product Engineering", href: "/#solutions" },
+    { label: "Cloud & Infrastructure", href: "/#how-we-help" },
+    { label: "AI & Automation", href: "/#solutions" },
+  ] },
+  { label: "HR services", items: [
+    { label: "Engineering Network", href: "/#people" },
+    { label: "Careers", href: "/careers" },
+    { label: "Talent enquiry", href: "/contact" },
+  ] },
+  { label: "Resources", items: [
+    { label: "Case studies", href: "/case-studies" },
+    { label: "Blog", href: "/blog" },
+    { label: "Events", href: "/events" },
+    { label: "Featured Insights", href: "/#insights" },
+  ] },
+];
 
 export function SiteNav({ signedIn = false }: { signedIn?: boolean }) {
   const pathname = usePathname();
-  const active = (href: string) =>
-    !href.includes("#") &&
-    (pathname === href || pathname.startsWith(`${href}/`));
-  const resourcesActive = RESOURCES.some((item) => active(item.href));
-  const linkStyle = (href: string) =>
-    cn(
-      "rounded-sm py-2 transition-colors hover:text-[#e8d5a3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e8d5a3]",
-      active(href) &&
-        "text-[#e8d5a3] underline decoration-[#e8d5a3] underline-offset-8",
-    );
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const nav = useRef<HTMLElement>(null);
+  const toggle = useRef<HTMLButtonElement>(null);
+  const closeButton = useRef<HTMLButtonElement>(null);
+  const previousPath = useRef(pathname);
+
+  const close = (restoreFocus = false) => {
+    setMobileOpen(false);
+    setOpenGroup(null);
+    if (restoreFocus) toggle.current?.focus();
+  };
+
+  useEffect(() => {
+    if (previousPath.current !== pathname) {
+      setMobileOpen(false);
+      setOpenGroup(null);
+      previousPath.current = pathname;
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 992px)");
+    const resize = () => { setMobileOpen(false); setOpenGroup(null); };
+    media.addEventListener("change", resize);
+    return () => media.removeEventListener("change", resize);
+  }, []);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const oldOverflow = document.body.style.overflow;
+    const content = document.getElementById("marketing-content");
+    const footer = document.getElementById("site-footer");
+    const brand = document.querySelector<HTMLElement>(".foundation-brand");
+    const backgrounds = [content, footer, brand].filter((el): el is HTMLElement => Boolean(el));
+    const oldInert = backgrounds.map(el => el.inert);
+    backgrounds.forEach(el => { el.inert = true; });
+    document.body.style.overflow = "hidden";
+    closeButton.current?.focus();
+    return () => {
+      document.body.style.overflow = oldOverflow;
+      backgrounds.forEach((el, i) => { el.inert = oldInert[i]; });
+    };
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    const handle = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        if (mobileOpen) {
+          setMobileOpen(false); setOpenGroup(null); toggle.current?.focus();
+        } else if (openGroup) {
+          const trigger = nav.current?.querySelector<HTMLButtonElement>(`[data-group="${openGroup}"]`);
+          setOpenGroup(null); trigger?.focus();
+        }
+      }
+      if (mobileOpen && event.key === "Tab") {
+        const items = [...(nav.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])') ?? [])]
+          .filter(el => el.getClientRects().length > 0);
+        const first = items[0], last = items.at(-1);
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+      }
+    };
+    const outside = (event: PointerEvent) => {
+      if (!mobileOpen && nav.current && !nav.current.contains(event.target as Node)) setOpenGroup(null);
+    };
+    document.addEventListener("keydown", handle);
+    document.addEventListener("pointerdown", outside);
+    return () => { document.removeEventListener("keydown", handle); document.removeEventListener("pointerdown", outside); };
+  }, [mobileOpen, openGroup]);
+
+  const active = (href: string) => !href.includes("#") && (pathname === href || (href !== "/" && pathname.startsWith(`${href}/`)));
+  const navLink = (item: Item, extra = "") => (
+    <Link key={`${item.label}-${item.href}`} href={item.href} className={extra}
+      aria-current={active(item.href) ? "page" : undefined} onClick={() => close()}>
+      {item.label}
+    </Link>
+  );
 
   return (
-    <div className="order-3 xl:order-none">
-      <nav
-        className="hidden items-center gap-5 text-sm text-white/75 xl:flex"
-        aria-label="Primary"
-      >
-        {NAV.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            aria-current={active(item.href) ? "page" : undefined}
-            className={linkStyle(item.href)}
-          >
-            {item.label}
-          </Link>
-        ))}
-        <DropdownMenu>
-          <DropdownMenuTrigger
-            className={cn(
-              "flex items-center gap-1.5 rounded-sm py-2 outline-none transition-colors hover:text-[#e8d5a3] focus-visible:ring-2 focus-visible:ring-[#e8d5a3] data-[state=open]:text-[#e8d5a3] [&[data-state=open]>svg]:rotate-180",
-              resourcesActive && "text-[#e8d5a3] underline underline-offset-8",
-            )}
-          >
-            Resources <ChevronDown size={14} className="transition-transform" />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent
-            align="start"
-            sideOffset={18}
-            className={cn(panelStyle, "w-80 rounded-xl")}
-          >
-            <DropdownMenuLabel className="px-3 pb-3 pt-2 text-[10px] uppercase tracking-[.25em] text-[#c4a574]">
-              Ideas, experience & community
-            </DropdownMenuLabel>
-            {RESOURCES.map((item) => (
-              <DropdownMenuItem key={item.href} asChild className={itemStyle}>
-                <Link
-                  href={item.href}
-                  aria-current={active(item.href) ? "page" : undefined}
-                  className="gap-3"
-                >
-                  <item.icon className="size-5 shrink-0 text-[#c4a574]" />
-                  <span>
-                    <span
-                      className={cn(
-                        "block font-medium",
-                        active(item.href) && "text-[#e8d5a3]",
-                      )}
-                    >
-                      {item.label}
-                    </span>
-                    <span className="mt-1 block text-xs leading-relaxed text-white/55">
-                      {item.description}
-                    </span>
-                  </span>
-                </Link>
-              </DropdownMenuItem>
-            ))}
-            <DropdownMenuSeparator className="mx-2 my-2 bg-white/10" />
-            <DropdownMenuItem asChild className={itemStyle}>
-              <Link href="/#insights" className="justify-between">
-                Featured Insights <ArrowUpRight size={15} />
-              </Link>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <Link
-          href="/contact"
-          className={linkStyle("/contact")}
-          aria-current={active("/contact") ? "page" : undefined}
-        >
-          Contact
-        </Link>
+    <>
+      <button ref={toggle} type="button" className="foundation-menu-toggle" aria-label="Open navigation"
+        aria-expanded={mobileOpen} aria-controls="primary-navigation" onClick={() => setMobileOpen(true)}>
+        <ReferenceIcon name="list" />
+      </button>
+      <nav ref={nav} id="primary-navigation" className={`foundation-nav${mobileOpen ? " is-mobile-open" : ""}`}
+        role={mobileOpen ? "dialog" : undefined} aria-modal={mobileOpen || undefined}
+        aria-label={mobileOpen ? "Site navigation" : "Primary"}
+        onClick={e => { if (e.target === e.currentTarget && mobileOpen) close(true); }}>
+        <button ref={closeButton} className="foundation-menu-close" type="button" aria-label="Close navigation" onClick={() => close(true)}>
+          <ReferenceIcon name="x" />
+        </button>
+        <ul className="foundation-nav-list">
+          <li>{navLink({ label: "Home", href: "/" })}</li>
+          {GROUPS.map((group, index) => {
+            const expanded = openGroup === String(index);
+            return (
+              <li key={group.label} className={`foundation-nav-group${expanded ? " is-expanded" : ""}`}
+                onMouseEnter={() => { if (window.matchMedia("(min-width: 992px)").matches) setOpenGroup(String(index)); }}
+                onMouseLeave={() => { if (window.matchMedia("(min-width: 992px)").matches) setOpenGroup(null); }}
+                onBlur={event => { if (!mobileOpen && !event.currentTarget.contains(event.relatedTarget)) setOpenGroup(null); }}>
+                <button type="button" data-group={index} aria-expanded={expanded} aria-controls={`nav-group-${index}`}
+                  onClick={() => setOpenGroup(expanded ? null : String(index))}
+                  onKeyDown={event => {
+                    if (event.key === "ArrowDown") {
+                      event.preventDefault(); setOpenGroup(String(index));
+                      requestAnimationFrame(() => document.querySelector<HTMLAnchorElement>(`#nav-group-${index} a`)?.focus());
+                    }
+                  }}>
+                  {group.label}<ReferenceIcon name="chevron-down" />
+                </button>
+                <ul id={`nav-group-${index}`} className="foundation-submenu" inert={!expanded}>
+                  {group.items.map(item => <li key={item.label}>{navLink(item)}</li>)}
+                </ul>
+              </li>
+            );
+          })}
+          <li>{navLink({ label: "Contact us", href: "/contact" })}</li>
+          <li className="foundation-account">
+            {signedIn ? navLink({ label: "Dashboard", href: "/dashboard" }, "foundation-button foundation-button-small") : <>
+              {navLink({ label: "Sign in", href: "/login" })}
+              {navLink({ label: "Join", href: "/register" }, "foundation-button foundation-button-small")}
+            </>}
+          </li>
+        </ul>
       </nav>
-      <nav aria-label="Mobile primary" className="xl:hidden">
-        <DropdownMenu>
-          <DropdownMenuTrigger
-            aria-label="Open navigation"
-            className="flex size-10 items-center justify-center rounded-full border border-white/20 text-[#e8d5a3] outline-none hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-[#e8d5a3]"
-          >
-            <Menu size={20} />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent
-            align="end"
-            sideOffset={16}
-            className={cn(
-              panelStyle,
-              "max-h-[calc(100dvh-6rem)] w-[calc(100vw-2rem)] max-w-sm overflow-y-auto rounded-xl",
-            )}
-          >
-            <DropdownMenuLabel className="px-3 py-2 text-[10px] uppercase tracking-[.25em] text-[#c4a574]">
-              Explore Twinlink
-            </DropdownMenuLabel>
-            {NAV.map((item) => (
-              <DropdownMenuItem key={item.href} asChild className={itemStyle}>
-                <Link
-                  href={item.href}
-                  aria-current={active(item.href) ? "page" : undefined}
-                  className={cn(active(item.href) && "text-[#e8d5a3]")}
-                >
-                  {item.label}
-                </Link>
-              </DropdownMenuItem>
-            ))}
-            <DropdownMenuSeparator className="mx-2 my-2 bg-white/10" />
-            <DropdownMenuLabel className="px-3 py-2 text-[10px] uppercase tracking-[.25em] text-[#c4a574]">
-              Resources
-            </DropdownMenuLabel>
-            {[
-              ...RESOURCES,
-              { href: "/#insights", label: "Featured Insights" },
-              { href: "/contact", label: "Contact" },
-            ].map((item) => (
-              <DropdownMenuItem key={item.href} asChild className={itemStyle}>
-                <Link
-                  href={item.href}
-                  aria-current={active(item.href) ? "page" : undefined}
-                  className={cn(active(item.href) && "text-[#e8d5a3]")}
-                >
-                  {item.label}
-                </Link>
-              </DropdownMenuItem>
-            ))}
-            <DropdownMenuSeparator className="mx-2 my-2 bg-white/10" />
-            {signedIn ? (
-              <DropdownMenuItem asChild className={itemStyle}>
-                <Link href="/dashboard">Dashboard</Link>
-              </DropdownMenuItem>
-            ) : (
-              <DropdownMenuItem asChild className={itemStyle}>
-                <Link href="/login">Sign in</Link>
-              </DropdownMenuItem>
-            )}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </nav>
-    </div>
+    </>
   );
 }

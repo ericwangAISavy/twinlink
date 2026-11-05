@@ -1,0 +1,192 @@
+[
+  {
+    "route": "/",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/about",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/about",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/life-at-trinity",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/life-at-trinity",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/carrer",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/carrer",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/privacy-policy",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/privacy-policy",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/contact",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/contact",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/contact",
+    "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d125336.25794774006!2d76.9194932!3d10.9816256!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8596176e49d2b%3A0xef92d69fc1376aa9!2sTRINITY%20CONSULTING%20SERVICES%20%5BConsultTrinity%20Services%20Pvt%20Ltd%5D!5e0!3m2!1sen!2sin!4v1679657261429!5m2!1sen!2sin",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/contact",
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.830697799665!2d103.84185481388356!3d1.2748688990701509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da196bb3f7a9cb%3A0xab3670f238e2527c!2sTRINITY%20CONSULTING%20SERVICES!5e0!3m2!1sen!2sin!4v1677273982691!5m2!1sen!2sin",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/contact",
+    "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1943.484223655355!2d80.2098633!3d13.0376804!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267d32806952b%3A0x48a38a29626ccbf4!2s%5BCONSULTTRINITY%20SERVICES%20Pvt%20Ltd%5D%20-%20TRINITY%20CONSULTING%20SERVICES!5e0!3m2!1sen!2sin!4v1679657172135!5m2!1sen!2sin",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/contact",
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.717029968821!2d101.6781044!3d3.1887178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc495215a04817%3A0x3f73c92ab222d9c3!2sTRINITY%20SERVICES%20%26%20CONSULTING%20SDN.%20BHD.!5e0!3m2!1sen!2sin!4v1717054072286!5m2!1sen!2sin",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/digitalstrategy&transformation",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/digitalstrategy&transformation",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/managed-application",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/managed-application",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/cloud-services-solutions-singapore",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/cloud-services-solutions-singapore",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/enterprise-services",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/enterprise-services",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/sap-services",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/sap-services",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/it-software-solutions",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/it-software-solutions",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/cyber-security",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/cyber-security",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/big-data-&-Analytics",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/big-data-&-Analytics",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/erp",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/erp",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/managed-application",
+    "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  },
+  {
+    "route": "/managed-application",
+    "url": "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+    "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+  }
+]

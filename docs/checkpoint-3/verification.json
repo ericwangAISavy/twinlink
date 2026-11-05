@@ -1,0 +1,19 @@
+{
+  "baseline": "c8caaa4fb3371523df3ca607941311b81c82b227",
+  "referencePagesMapped": 15,
+  "referenceAliasesMapped": 6,
+  "existingRoutePatterns": 68,
+  "existingMarketingPatterns": 12,
+  "proposedServiceDestinations": 9,
+  "sourceFilesVerified": 52,
+  "checks": {
+    "referenceInventoryCoverage": "pass",
+    "existingRouteCoverage": "pass",
+    "existingTargetsAndAnchors": "pass",
+    "plannedRoutesRemainUnimplemented": "pass",
+    "sourceHashesAndLineAnchors": "pass",
+    "documentLinks": "pass",
+    "documentationOnlyDiff": "pass"
+  },
+  "limitations": "Static source/document verification only; no live database or role-based browser tests."
+}

@@ -1,0 +1,43 @@
+{
+  "baseline": "a3fa8dbf16ebf0e6a2f49e22b767cf44cc17543e",
+  "protectedFilesUnchanged": 224,
+  "existingRouteFilesRetained": 68,
+  "foundationSelectorsScoped": true,
+  "assets": [
+    {
+      "file": "src/components/marketing/fonts/open-sans-latin.woff2",
+      "source": "https://registry.npmjs.org/@fontsource-variable/open-sans/-/open-sans-5.3.0.tgz",
+      "license": "src/components/marketing/fonts/OPEN-SANS-LICENSE.txt",
+      "bytes": 48320,
+      "sha256": "d8e4fe0452aa2076429a9bb5d8757d00a994dd95986cf950e9a1a371b9a072a0"
+    },
+    {
+      "file": "src/components/marketing/fonts/roboto-latin.woff2",
+      "source": "https://registry.npmjs.org/@fontsource-variable/roboto/-/roboto-5.3.0.tgz",
+      "license": "src/components/marketing/fonts/ROBOTO-LICENSE.txt",
+      "bytes": 43136,
+      "sha256": "1404ca348bd75ef836f4dd8b6f2cc719458642d1237c368296b2fc652dca47dc"
+    },
+    {
+      "file": "public/fonts/bootstrap-icons.woff2",
+      "source": "docs/checkpoint-2/assets/originals/css/bootstrap-icons/fonts/bootstrap-icons.woff2",
+      "license": "public/fonts/BOOTSTRAP-ICONS-LICENSE.txt",
+      "bytes": 112440,
+      "sha256": "c69bf1ccae5f13b5aa4345dcfeb209a8148ad0bfa1e0678b93792aae0429c764"
+    },
+    {
+      "file": "public/images/reference/footer-map.png",
+      "source": "docs/checkpoint-2/assets/originals/images/footer-map.png",
+      "note": "Captured reference decoration; retained source provenance. No deployment performed.",
+      "bytes": 12463,
+      "sha256": "ec23c44a51b2c92f2ec3e2cd8fab091e68ad1522f4f9dd1cfefd2f04623676b3"
+    },
+    {
+      "file": "public/images/reference/service-wave.svg",
+      "source": "docs/checkpoint-2/assets/extracted/service-wave.svg",
+      "note": "Exact previously extracted reference wave. No deployment performed.",
+      "bytes": 671,
+      "sha256": "4da5c739747f374113ff2ef15bf815394d7e3860308594232b4f4d343c703afe"
+    }
+  ]
+}

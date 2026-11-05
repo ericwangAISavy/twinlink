@@ -1,0 +1,32 @@
+{
+  "baseline": "a3fa8dbf16ebf0e6a2f49e22b767cf44cc17543e",
+  "productionBuild": "passed",
+  "typescript": "passed in production build and standalone check",
+  "eslint": "passed",
+  "nodeTestFiles": 5,
+  "nodeTestFilesPassing": 5,
+  "browserViewports": [
+    390,
+    768,
+    991,
+    992,
+    1440
+  ],
+  "browserPageErrors": [],
+  "geometry": "passed",
+  "actionTextContrast": 4.875056112636104,
+  "indicatorContrast": [
+    6.32053299861269,
+    6.255792124134565,
+    3.5697819049208754
+  ],
+  "protectedFilesUnchanged": 224,
+  "routeFilesRetained": 68,
+  "independentReview": "3 findings reproduced and fixed; no deferred findings",
+  "designQA": "passed for shared-foundation scope",
+  "limits": [
+    "No real authenticated dashboard/admin browser session",
+    "Page-specific body rebuilds deferred to later checkpoints",
+    "No deployment or merge to main"
+  ]
+}

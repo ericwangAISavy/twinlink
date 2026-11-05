@@ -1,0 +1,73 @@
+{
+  "header": {
+    "height": 70,
+    "bg": "rgb(255, 255, 255)"
+  },
+  "authStyles": {
+    "font": "\"serif\", \"serif Fallback\", ui-serif, Georgia, serif",
+    "color": "rgb(255, 255, 255)",
+    "background": "rgb(244, 239, 230)"
+  },
+  "viewports": [
+    {
+      "width": 390,
+      "overflow": false,
+      "toggle": "grid",
+      "nav": "none",
+      "headerHeight": 70,
+      "gridColumns": "366px"
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "toggle": "grid",
+      "nav": "none",
+      "headerHeight": 70,
+      "gridColumns": "336px 336px"
+    },
+    {
+      "width": 991,
+      "overflow": false,
+      "toggle": "grid",
+      "nav": "none",
+      "headerHeight": 70,
+      "gridColumns": "336px 336px"
+    },
+    {
+      "width": 992,
+      "overflow": false,
+      "toggle": "none",
+      "nav": "block",
+      "headerHeight": 70,
+      "gridColumns": "216px 216px 216px 216px"
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "toggle": "none",
+      "nav": "block",
+      "headerHeight": 70,
+      "gridColumns": "306px 306px 306px 306px"
+    }
+  ],
+  "interactions": [
+    "Desktop hover and Escape dismissal",
+    "Mobile dialog, focus loop, Escape, focus restore and scroll lock",
+    "Culture anchor navigation closes menu and restores scroll",
+    "Viewport switch closes mobile overlay",
+    "Contact form prepares a draft without delivery",
+    "Back to top",
+    "Carousel dots and reduced-motion autoplay suppression"
+  ],
+  "renderedFont": {
+    "fonts": [
+      {
+        "familyName": "Roboto",
+        "postScriptName": "Roboto-Regular",
+        "isCustomFont": true,
+        "glyphCount": 8
+      }
+    ]
+  },
+  "pageErrors": []
+}

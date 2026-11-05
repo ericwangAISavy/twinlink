@@ -1,0 +1,90 @@
+{
+  "fonts": [
+    {
+      "selector": "body",
+      "fonts": []
+    },
+    {
+      "selector": "#hero h2",
+      "fonts": [
+        {
+          "familyName": "Liberation Sans",
+          "postScriptName": "LiberationSans-Bold",
+          "isCustomFont": false,
+          "glyphCount": 21
+        }
+      ]
+    },
+    {
+      "selector": ".navbar a",
+      "fonts": []
+    }
+  ],
+  "runtime": {
+    "screenWidth": 390,
+    "viewportWidth": 390,
+    "heroHeight": 590.796875,
+    "deviceQuery": true,
+    "bodyAOS": {
+      "duration": "1000",
+      "easing": "ease-in-out",
+      "delay": "0"
+    },
+    "slides": [
+      {
+        "type": "slide.bs.carousel",
+        "time": 8463.399999999907,
+        "from": 0,
+        "to": 1
+      },
+      {
+        "type": "slid.bs.carousel",
+        "time": 8972.09999999986,
+        "from": 0,
+        "to": 1
+      },
+      {
+        "type": "slide.bs.carousel",
+        "time": 13467,
+        "from": 1,
+        "to": 2
+      },
+      {
+        "type": "slid.bs.carousel",
+        "time": 13974,
+        "from": 1,
+        "to": 2
+      }
+    ],
+    "media": [],
+    "wave": []
+  },
+  "mobileToggle": "<i class=\"bi bi-list mobile-nav-toggle\"></i>",
+  "menu": {
+    "style": "",
+    "background": "rgba(0, 0, 0, 0.9)",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844,
+      "top": 0,
+      "right": 390,
+      "bottom": 844,
+      "left": 0
+    },
+    "listStyle": {
+      "top": "55px",
+      "left": "15px",
+      "right": "15px",
+      "bottom": "15px"
+    }
+  },
+  "reduced": {
+    "carousel": "opacity",
+    "caption": "0.001s both fadeInUp"
+  },
+  "wave": [
+    "<div class=\"wave\">\n      <svg width=\"1920px\" height=\"265px\" viewBox=\"0 0 1920 265\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n         <g id=\"Page-1\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\n            <g id=\"Apple-TV\" transform=\"translate(0.000000, -402.000000)\" fill=\"#FFFFFF\">\n               <path d=\"M0,439.134243 C175.04074,464.89273 327.944386,477.771974 458.710937,477.771974 C654.860765,477.771974 870.645295,442.632362 1205.9828,410.192501 C1429.54114,388.565926 1667.54687,411.092417 1920,477.771974 L1920,667 L1017.15166,667 L0,667 L0,439.134243 Z\" id=\"Path\"></path>\n            </g>\n         </g>\n      </svg>\n   </div>"
+  ]
+}

@@ -1,0 +1,427 @@
+[
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 39,
+    "declaration": "transition: all 0.4s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 61,
+    "declaration": "@media screen and (max-width: 768px) {"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 72,
+    "declaration": "transition: all 0.5s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 112,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 124,
+    "declaration": "@media (max-width: 768px) {"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 165,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 194,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 239,
+    "declaration": "@media (max-width: 1366px) {"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 258,
+    "declaration": "transition: 0.5s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 265,
+    "declaration": "@media (max-width: 991px) {"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 283,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 303,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 416,
+    "declaration": "transition: 0.5s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 420,
+    "declaration": "-webkit-animation-delay: 0.8s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 421,
+    "declaration": "animation-delay: 0.8s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 446,
+    "declaration": "transition: 0.5s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 466,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 490,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 498,
+    "declaration": "@media (min-width: 1024px) {"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 509,
+    "declaration": "@media (max-width: 992px) {"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 524,
+    "declaration": "@media (max-height: 500px) {"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 612,
+    "declaration": "@media (max-width: 991px) {"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 637,
+    "declaration": "transition: all ease-in-out 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 645,
+    "declaration": "transition: all ease-in-out 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 659,
+    "declaration": "transition: ease-in-out 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 665,
+    "declaration": "transition: 0.5s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 676,
+    "declaration": "transition: 0.5s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 689,
+    "declaration": "transition: ease-in-out 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 794,
+    "declaration": "transition: all 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 819,
+    "declaration": "transition: all ease-in-out 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 862,
+    "declaration": "transition: all ease-in-out 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 870,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 974,
+    "declaration": "transition: all 0.3s ease-in-out;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1047,
+    "declaration": "transition: ease-in-out 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1056,
+    "declaration": "transition: color 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1138,
+    "declaration": "transition: 0.9s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1151,
+    "declaration": "transition: ease-in-out 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1170,
+    "declaration": "transition: ease-in-out 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1257,
+    "declaration": "transition: none;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1262,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1349,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1364,
+    "declaration": "@media (max-width: 1200px) {"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1455,
+    "declaration": "transition: all 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1527,
+    "declaration": "-webkit-animation: animate-loading 1s linear infinite;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1528,
+    "declaration": "animation: animate-loading 1s linear infinite;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1557,
+    "declaration": "transition: 0.4s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1575,
+    "declaration": "@keyframes animate-loading {"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1613,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1665,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1722,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1831,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1923,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 1989,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 2013,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 2043,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 2078,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 2168,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 2217,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/style.css",
+    "line": 2244,
+    "declaration": "transition: 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 25,
+    "declaration": "transition: all ease-in-out 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 31,
+    "declaration": "transition: ease-in-out 0.3s;"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 52,
+    "declaration": "transition: 0.4s;"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 176,
+    "declaration": "@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 194,
+    "declaration": "@media only screen and (min-width: 321px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 199,
+    "declaration": "@media only screen and (max-width: 320px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 204,
+    "declaration": "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 209,
+    "declaration": "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 214,
+    "declaration": "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 220,
+    "declaration": "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 224,
+    "declaration": "@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 228,
+    "declaration": "@media only screen and (min-width: 1224px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 233,
+    "declaration": "@media only screen and (min-width: 1824px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 238,
+    "declaration": "@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 242,
+    "declaration": "@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 261,
+    "declaration": "-webkit-animation: circle 0.75s;"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 262,
+    "declaration": "animation: circle 0.75s;"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 277,
+    "declaration": "@keyframes circle {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 310,
+    "declaration": "@media screen and (max-width: 992px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 336,
+    "declaration": "@media screen and (max-width: 992px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 349,
+    "declaration": "@media screen and (max-width: 992px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 357,
+    "declaration": "@media screen and (max-width: 992px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 372,
+    "declaration": "@media screen and (max-width: 992px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 388,
+    "declaration": "@media screen and (max-width: 992px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 402,
+    "declaration": "@media screen and (max-width: 992px) {"
+  },
+  {
+    "file": "assets/originals/css/custom-style.css",
+    "line": 414,
+    "declaration": "@media screen and (max-width: 992px) {"
+  }
+]

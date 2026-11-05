@@ -1,0 +1,1000 @@
+[
+  {
+    "file": "src/app/(marketing)/about/page.tsx",
+    "sha256": "c45a13dc35c5a3e98e07ab75db8cde14bf64a94e537a06ddfe1ac047bacdec28",
+    "anchors": [
+      {
+        "line": 9,
+        "text": "export const metadata: Metadata = {"
+      },
+      {
+        "line": 127,
+        "text": "<section id=\"values\" className=\"px-4 py-6 md:py-10\">"
+      },
+      {
+        "line": 153,
+        "text": "<section id=\"culture\" className=\"px-4 py-16 md:py-20\">"
+      }
+    ]
+  },
+  {
+    "file": "src/app/(marketing)/blog/[slug]/page.tsx",
+    "sha256": "c3fa6f7f15f7f8cab65f653b23e7f5520dfa34bb8f69315b20f39e51de1f52fe",
+    "anchors": [
+      {
+        "line": 3,
+        "text": "import { getPublishedResources } from \"@/server/queries/editorial\";"
+      },
+      {
+        "line": 7,
+        "text": "export async function generateMetadata({ params }: Props): Promise<Metadata> {"
+      },
+      {
+        "line": 9,
+        "text": "const resources = await getPublishedResources();"
+      },
+      {
+        "line": 15,
+        "text": "const resources = await getPublishedResources();"
+      }
+    ]
+  },
+  {
+    "file": "src/app/(marketing)/blog/page.tsx",
+    "sha256": "1ab55f67377e37f977ed292a4368fedae75b8f37a06b1103d8d9218eec6649a1",
+    "anchors": [
+      {
+        "line": 2,
+        "text": "import { getPublishedResources } from \"@/server/queries/editorial\";"
+      },
+      {
+        "line": 10,
+        "text": "export const metadata: Metadata = {"
+      },
+      {
+        "line": 16,
+        "text": "const resources = await getPublishedResources();"
+      }
+    ]
+  },
+  {
+    "file": "src/app/(marketing)/careers/[id]/page.tsx",
+    "sha256": "804ef4059edeb3ce614d37f245e763cad34a5ab4bd02380a18acc079aff6d78c",
+    "anchors": [
+      {
+        "line": 17,
+        "text": "export async function generateMetadata({ params }: Props): Promise<Metadata> {"
+      }
+    ]
+  },
+  {
+    "file": "src/app/(marketing)/careers/page.tsx",
+    "sha256": "721e228bd9969f53e3edd898ebad9c4c098fd5e7419899bbd5dd4c81a429ae11",
+    "anchors": [
+      {
+        "line": 3,
+        "text": "import { getPublishedJobs } from \"@/server/queries/jobs\";"
+      },
+      {
+        "line": 5,
+        "text": "export const metadata: Metadata = {"
+      },
+      {
+        "line": 11,
+        "text": "const jobs = await getPublishedJobs();"
+      }
+    ]
+  },
+  {
+    "file": "src/app/(marketing)/case-studies/[slug]/page.tsx",
+    "sha256": "861898b15fa16214737d9ef5e8f0d2ee4041bfe0f8e98c316e9f288c3dc3153b",
+    "anchors": [
+      {
+        "line": 3,
+        "text": "import { getPublishedResources } from \"@/server/queries/editorial\";"
+      },
+      {
+        "line": 7,
+        "text": "export async function generateMetadata({ params }: Props): Promise<Metadata> {"
+      },
+      {
+        "line": 9,
+        "text": "const resources = await getPublishedResources();"
+      },
+      {
+        "line": 17,
+        "text": "const resources = await getPublishedResources();"
+      }
+    ]
+  },
+  {
+    "file": "src/app/(marketing)/case-studies/page.tsx",
+    "sha256": "57117d16bc3a37d484a0fb67098058db7fe6db72b1b85cf43a6b6a5511de8b8d",
+    "anchors": [
+      {
+        "line": 2,
+        "text": "import { getPublishedResources } from \"@/server/queries/editorial\";"
+      },
+      {
+        "line": 10,
+        "text": "export const metadata: Metadata = {"
+      },
+      {
+        "line": 16,
+        "text": "const resources = await getPublishedResources();"
+      }
+    ]
+  },
+  {
+    "file": "src/app/(marketing)/contact/page.tsx",
+    "sha256": "f5b77cb02bd155813ee16f588a7d8c8c1b53ae9d997ea72b375f557320a93060",
+    "anchors": [
+      {
+        "line": 9,
+        "text": "export const metadata: Metadata = {"
+      }
+    ]
+  },
+  {
+    "file": "src/app/(marketing)/events/[slug]/page.tsx",
+    "sha256": "5a6c381d52963d19e317a29be90cba9d835ff1f181fafdd6b37247aa1df572e9",
+    "anchors": [
+      {
+        "line": 3,
+        "text": "import { getPublishedResources } from \"@/server/queries/editorial\";"
+      },
+      {
+        "line": 7,
+        "text": "export async function generateMetadata({ params }: Props): Promise<Metadata> {"
+      },
+      {
+        "line": 9,
+        "text": "const resources = await getPublishedResources();"
+      },
+      {
+        "line": 15,
+        "text": "const resources = await getPublishedResources();"
+      }
+    ]
+  },
+  {
+    "file": "src/app/(marketing)/events/page.tsx",
+    "sha256": "7247e70601203dd6be07c8c0404a1bb9a2c7e0fbe0ecf4f58b2d566369b9d7c2",
+    "anchors": [
+      {
+        "line": 2,
+        "text": "import { getPublishedResources } from \"@/server/queries/editorial\";"
+      },
+      {
+        "line": 10,
+        "text": "export const metadata: Metadata = {"
+      },
+      {
+        "line": 16,
+        "text": "const resources = await getPublishedResources();"
+      }
+    ]
+  },
+  {
+    "file": "src/app/(marketing)/layout.tsx",
+    "sha256": "ebc6a507a084350facb6bbc602a5b2b1a2715b4ed2da9899c0fd9804bfe9d108",
+    "anchors": []
+  },
+  {
+    "file": "src/app/(marketing)/page.tsx",
+    "sha256": "c37fd84de40170e544da815e804234a77579dfa2c293bdadff3f8443ac166092",
+    "anchors": [
+      {
+        "line": 2,
+        "text": "import { getPublishedResources } from \"@/server/queries/editorial\";"
+      },
+      {
+        "line": 36,
+        "text": "getPublishedResources(),"
+      },
+      {
+        "line": 88,
+        "text": "<section id=\"solutions\" className=\"border-y border-white/10 bg-[#12110f]\">"
+      },
+      {
+        "line": 159,
+        "text": "<section id=\"people\" className=\"px-4 pb-6 md:pb-10\">"
+      },
+      {
+        "line": 224,
+        "text": "<section id=\"insights\" className=\"px-4 pb-16 md:pb-24\">"
+      }
+    ]
+  },
+  {
+    "file": "src/app/(marketing)/privacy/page.tsx",
+    "sha256": "335bbe3d29fa695de67ae73abbb92fe57035dede10dec87170c1e4485dccf6e1",
+    "anchors": [
+      {
+        "line": 4,
+        "text": "export const metadata: Metadata = { title: \"Privacy and visitor information\" };"
+      }
+    ]
+  },
+  {
+    "file": "src/app/api/upload/route.ts",
+    "sha256": "5c25472afb6ac8824e4ac36900bc9aa42bf4394bf65e46b0bdfbec8f39b83784",
+    "anchors": [
+      {
+        "line": 6,
+        "text": "export async function POST(request: Request) {"
+      }
+    ]
+  },
+  {
+    "file": "src/app/api/visits/route.ts",
+    "sha256": "1d0080182d3dccadedc56efb906cba5c23a5c9acbb7568d88625dde5141ab8d5",
+    "anchors": [
+      {
+        "line": 5,
+        "text": "import { isPublicVisitPath, visitorMetadata } from \"@/lib/visitor-metadata\";"
+      },
+      {
+        "line": 7,
+        "text": "export async function POST(request: Request) {"
+      },
+      {
+        "line": 49,
+        "text": "if (!isPublicVisitPath(body.page)) return empty();"
+      }
+    ]
+  },
+  {
+    "file": "src/app/auth/callback/route.ts",
+    "sha256": "9717c5cfa12647fa9728b0afaa7b520b20e95d695d2e1e6d461592c671b4580c",
+    "anchors": [
+      {
+        "line": 8,
+        "text": "export async function GET(request: Request) {"
+      }
+    ]
+  },
+  {
+    "file": "src/app/auth/sign-out/route.ts",
+    "sha256": "ad3aedf787932de4a5644b9ae9fe154030bc57ab14571e0836fc74e51108e1d0",
+    "anchors": [
+      {
+        "line": 50,
+        "text": "export async function GET(request: NextRequest) {"
+      },
+      {
+        "line": 54,
+        "text": "export async function POST(request: NextRequest) {"
+      }
+    ]
+  },
+  {
+    "file": "src/app/layout.tsx",
+    "sha256": "bfc88180b9f5ce143c2b2fb788be4b7632f85e693ac41c21d7f09d8f81123dc8",
+    "anchors": [
+      {
+        "line": 24,
+        "text": "export const metadata: Metadata = {"
+      }
+    ]
+  },
+  {
+    "file": "src/components/action-form.tsx",
+    "sha256": "7704b3837f0200b1b7af09f56bab1aeb1a7f3071fba138a83f2f6c18057d1d0e",
+    "anchors": [
+      {
+        "line": 11,
+        "text": "export function ActionForm({"
+      }
+    ]
+  },
+  {
+    "file": "src/components/auth/login-form.tsx",
+    "sha256": "c55542ae13ff6119616de249ae13ab4dcd98d2b5008820cb1619fcbfd98e7e0d",
+    "anchors": [
+      {
+        "line": 33,
+        "text": "export function LoginForm() {"
+      }
+    ]
+  },
+  {
+    "file": "src/components/auth/register-form.tsx",
+    "sha256": "ccfb07f312e2395532c1b0772d9d1f30267aa30aef4eb24deecc32e2de9e7367",
+    "anchors": [
+      {
+        "line": 16,
+        "text": "export function RegisterForm({ invite }: { invite?: string }) {"
+      }
+    ]
+  },
+  {
+    "file": "src/components/careers/apply-form.tsx",
+    "sha256": "62ce78f7674970f5071cede8dd7baa922cf5460edd3aef0e345c2e6be01f8dfa",
+    "anchors": [
+      {
+        "line": 9,
+        "text": "export function ApplyForm({ jobId, email }: { jobId: string; email?: string }) {"
+      }
+    ]
+  },
+  {
+    "file": "src/components/careers/guest-apply-form.tsx",
+    "sha256": "ab4c905ac2cd9ab5d24dd237140009d0aca75a078034f9d32eeca32923dd5d59",
+    "anchors": [
+      {
+        "line": 10,
+        "text": "export function GuestApplyForm({ jobId }: { jobId: string }) {"
+      }
+    ]
+  },
+  {
+    "file": "src/components/careers/open-roles-board.tsx",
+    "sha256": "3c0f62a99d7d93b6bbdfe8f00e0bfa29f1482b78320243388648aab6ed369ef3",
+    "anchors": [
+      {
+        "line": 303,
+        "text": "export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {"
+      }
+    ]
+  },
+  {
+    "file": "src/components/careers/save-job-button.tsx",
+    "sha256": "89ee97092fabaf67c2e99ff5a0c4484d378c08d29264efba9c404884c021f7b2",
+    "anchors": [
+      {
+        "line": 10,
+        "text": "export function SaveJobButton({ jobId, saved }: { jobId: string; saved: boolean }) {"
+      }
+    ]
+  },
+  {
+    "file": "src/components/marketing/privacy-preference.tsx",
+    "sha256": "abec761265b61592e5939222aeda07d982f2930bc0e37f2acae925b4a128e9d3",
+    "anchors": [
+      {
+        "line": 4,
+        "text": "export function PrivacyPreference() {"
+      },
+      {
+        "line": 14,
+        "text": "id=\"preferences\""
+      }
+    ]
+  },
+  {
+    "file": "src/components/marketing/site-footer.tsx",
+    "sha256": "a4ad30b4341a97e8b2e625d1ca6bf862f60fa8e4fc03a6513387ec1789a6f6e6",
+    "anchors": [
+      {
+        "line": 6,
+        "text": "export function SiteFooter({ company }: { company: CompanyContent }) {"
+      }
+    ]
+  },
+  {
+    "file": "src/components/marketing/site-header.tsx",
+    "sha256": "217d0566afcb9368f89fb4eeed68733ab270036be921f50340ac2e2b214ea268",
+    "anchors": [
+      {
+        "line": 8,
+        "text": "export function SiteHeader({ user }: { user: AppUser | null }) {"
+      }
+    ]
+  },
+  {
+    "file": "src/components/marketing/site-nav.tsx",
+    "sha256": "c6f4ae95ba19be609bf2965774043eed9769a1ecd7914f8f11dfdb6b537edb07",
+    "anchors": [
+      {
+        "line": 55,
+        "text": "export function SiteNav({ signedIn = false }: { signedIn?: boolean }) {"
+      }
+    ]
+  },
+  {
+    "file": "src/components/marketing/visitor-tracker.tsx",
+    "sha256": "ed9225b33cf16033457104881ec44624017f1a2706a8283d433f0da277b1000d",
+    "anchors": [
+      {
+        "line": 5,
+        "text": "export function VisitorTracker() {"
+      }
+    ]
+  },
+  {
+    "file": "src/components/resources/contact-form.tsx",
+    "sha256": "2963f5cf2609b3a79486d25c7055dcd301d3b664c2126287311a10f45be7c70c",
+    "anchors": [
+      {
+        "line": 3,
+        "text": "export function ContactForm({"
+      }
+    ]
+  },
+  {
+    "file": "src/components/resources/event-actions.tsx",
+    "sha256": "d57420205e25054bd28090fc0750289b9ad494c6cfd8f67771f15bd892ffab2c",
+    "anchors": [
+      {
+        "line": 3,
+        "text": "export function EventCalendar({ event }: { event: Resource }) {"
+      }
+    ]
+  },
+  {
+    "file": "src/components/resources/resource-detail.tsx",
+    "sha256": "5a0ce3ea3342dcccbdaa347ea9dc371090fe805344ba25be8c026f85fb5b8775",
+    "anchors": [
+      {
+        "line": 9,
+        "text": "import { getPublishedResources } from \"@/server/queries/editorial\";"
+      },
+      {
+        "line": 13,
+        "text": "export async function ResourceDetail({"
+      },
+      {
+        "line": 21,
+        "text": "const resources = await getPublishedResources();"
+      }
+    ]
+  },
+  {
+    "file": "src/components/resources/resource-list.tsx",
+    "sha256": "a4807b700d0eeb7cf4af82e123bb79681afc50c5515f1a7b9684827574b1adca",
+    "anchors": [
+      {
+        "line": 7,
+        "text": "export function ResourceList({ items }: { items: Resource[] }) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/application-contact.ts",
+    "sha256": "7bd662495793dd60549707272fabe8463d334d7fa9c6870c83e4bf3ecaaa567a",
+    "anchors": [
+      {
+        "line": 3,
+        "text": "export const httpsLink = z"
+      },
+      {
+        "line": 17,
+        "text": "export const applicationContactSchema = z.object({"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/candidate-inbox.ts",
+    "sha256": "93c251293e2548e8e1cd167d0deae888bfd6a06c0843c42cacdccfc1715e42a2",
+    "anchors": [
+      {
+        "line": 1,
+        "text": "export function candidateApplicationHref(applicationId: string) {"
+      },
+      {
+        "line": 5,
+        "text": "export function candidateInboxHref(href: string | null | undefined) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/roles.ts",
+    "sha256": "3b1b8a0c0ccbb7b54d8dc4967bfecf8f3b842578b07732a1bef9d240d90e732d",
+    "anchors": [
+      {
+        "line": 1,
+        "text": "export const USER_ROLES = [\"candidate\", \"employee\", \"admin\"] as const;"
+      },
+      {
+        "line": 6,
+        "text": "export function parseUserRole(value: unknown): UserRole | null {"
+      },
+      {
+        "line": 15,
+        "text": "export function toAppRole(value: unknown): Role | null {"
+      },
+      {
+        "line": 23,
+        "text": "export function toDbRole(value: Role): UserRole {"
+      },
+      {
+        "line": 29,
+        "text": "export function homePath(role: Role) {"
+      },
+      {
+        "line": 35,
+        "text": "export function isSafeInternalPath("
+      },
+      {
+        "line": 56,
+        "text": "export function roleCanAccessPath(role: Role, pathname: string) {"
+      },
+      {
+        "line": 63,
+        "text": "export function destinationAfterLogin(role: Role, callbackUrl?: string | null) {"
+      },
+      {
+        "line": 73,
+        "text": "export const ACCOUNT_SETUP_ERROR ="
+      },
+      {
+        "line": 76,
+        "text": "export const ACCESS_PENDING_ERROR ="
+      },
+      {
+        "line": 78,
+        "text": "export const UNKNOWN_ROLE_ERROR ="
+      },
+      {
+        "line": 81,
+        "text": "export function authErrorMessage("
+      }
+    ]
+  },
+  {
+    "file": "src/lib/supabase/middleware.ts",
+    "sha256": "f5e3b6ba848340b0763a80d8631fb3435bacebc9c61e76b55e0ab4870b781056",
+    "anchors": [
+      {
+        "line": 24,
+        "text": "export async function updateSession(request: NextRequest) {"
+      }
+    ]
+  },
+  {
+    "file": "src/lib/visitor-metadata.ts",
+    "sha256": "b72e883b8687356b2b057633a20971795cfb95ba51874d70219f631e1a5826b0",
+    "anchors": [
+      {
+        "line": 3,
+        "text": "export function visitorMetadata(headers: Headers, vercel: boolean) {"
+      },
+      {
+        "line": 34,
+        "text": "export function isPublicVisitPath(path: unknown): path is string {"
+      }
+    ]
+  },
+  {
+    "file": "src/middleware.ts",
+    "sha256": "f097293866cd0a22368a2bcf204506c60fa1bc949a862ca62e751f128c4192b0",
+    "anchors": [
+      {
+        "line": 4,
+        "text": "export async function middleware(request: NextRequest) {"
+      },
+      {
+        "line": 9,
+        "text": "export const config = {"
+      }
+    ]
+  },
+  {
+    "file": "src/server/actions/applications.ts",
+    "sha256": "1af2c821792483f5831599d58a1354505134c7130c43934529efc9efea88811d",
+    "anchors": [
+      {
+        "line": 17,
+        "text": "import { requireAdmin, requireRole } from \"@/server/authorization\";"
+      },
+      {
+        "line": 25,
+        "text": "export async function applyToJob(formData: FormData): Promise<ActionResult> {"
+      },
+      {
+        "line": 26,
+        "text": "const user = await requireRole(\"CANDIDATE\");"
+      },
+      {
+        "line": 143,
+        "text": "export async function updateApplicationStatus("
+      },
+      {
+        "line": 146,
+        "text": "const user = await requireAdmin();"
+      },
+      {
+        "line": 206,
+        "text": "export async function applyToJobAction("
+      },
+      {
+        "line": 214,
+        "text": "export async function updateApplicationStatusAction("
+      },
+      {
+        "line": 222,
+        "text": "export async function withdrawApplicationAction(applicationId: string) {"
+      },
+      {
+        "line": 226,
+        "text": "export async function withdrawApplication("
+      },
+      {
+        "line": 229,
+        "text": "const user = await requireRole(\"CANDIDATE\");"
+      }
+    ]
+  },
+  {
+    "file": "src/server/actions/auth.ts",
+    "sha256": "9813d71e189c46cba2e9a9c1525e9ce9263ab37fdae82b4b88f67d4f4f7684a0",
+    "anchors": [
+      {
+        "line": 14,
+        "text": "export async function createAccount(formData: FormData): Promise<ActionResult> {"
+      },
+      {
+        "line": 85,
+        "text": "export async function confirmEmailAfterValidPassword(email: string, password: string): Promise<ActionResult> {"
+      },
+      {
+        "line": 124,
+        "text": "export async function registerAction(formData: FormData): Promise<ActionResult> {"
+      },
+      {
+        "line": 128,
+        "text": "export async function signOutAction() {"
+      },
+      {
+        "line": 140,
+        "text": "export async function changePasswordAction("
+      },
+      {
+        "line": 152,
+        "text": "export async function createEmployeeInviteLink("
+      },
+      {
+        "line": 184,
+        "text": "export async function resolveLoginDestination(callbackUrl?: string | null) {"
+      },
+      {
+        "line": 220,
+        "text": "export async function requireEmployeeForInvite() {"
+      }
+    ]
+  },
+  {
+    "file": "src/server/actions/company.ts",
+    "sha256": "a2fa5ad8540c206979019979add6d63e6ccdc98bd2112b67fad81b3bc7f21d3e",
+    "anchors": [
+      {
+        "line": 21,
+        "text": "export async function updateCompanyAction("
+      },
+      {
+        "line": 29,
+        "text": "export async function updateCompanyProfile(formData: FormData): Promise<ActionResult> {"
+      }
+    ]
+  },
+  {
+    "file": "src/server/actions/editorial.ts",
+    "sha256": "120cea97631a261e50f936441bc130e45d481a8f5d7520c685ea6056be47d0ab",
+    "anchors": [
+      {
+        "line": 11,
+        "text": "import { requireAdmin } from \"@/server/authorization\";"
+      },
+      {
+        "line": 21,
+        "text": "export async function saveEditorialEntry("
+      },
+      {
+        "line": 24,
+        "text": "const user = await requireAdmin();"
+      },
+      {
+        "line": 134,
+        "text": "export async function uploadEditorialImage("
+      },
+      {
+        "line": 137,
+        "text": "await requireAdmin();"
+      }
+    ]
+  },
+  {
+    "file": "src/server/actions/guest-applications.ts",
+    "sha256": "a55ce743a14a3ab1055eec9d2e259e11cc20a17c773d0706aa7cdca715b950fa",
+    "anchors": [
+      {
+        "line": 9,
+        "text": "import { requireAdmin } from \"@/server/authorization\";"
+      },
+      {
+        "line": 12,
+        "text": "const schema = z.object({"
+      },
+      {
+        "line": 20,
+        "text": "export async function submitGuestApplication(data: FormData) {"
+      },
+      {
+        "line": 69,
+        "text": "export async function reviewGuestApplication(data: FormData) {"
+      },
+      {
+        "line": 70,
+        "text": "await requireAdmin();"
+      }
+    ]
+  },
+  {
+    "file": "src/server/actions/jobs.ts",
+    "sha256": "74447ba960c993d0b908faae1f328df085be5278829c0efc2780e13f18333635",
+    "anchors": [
+      {
+        "line": 11,
+        "text": "import { requireRole } from \"@/server/authorization\";"
+      },
+      {
+        "line": 17,
+        "text": "export async function upsertJob(formData: FormData): Promise<ActionResult> {"
+      },
+      {
+        "line": 18,
+        "text": "const user = await requireRole(\"EMPLOYEE\");"
+      },
+      {
+        "line": 68,
+        "text": "export async function deleteJob(jobId: string): Promise<ActionResult> {"
+      },
+      {
+        "line": 69,
+        "text": "await requireRole(\"EMPLOYEE\");"
+      },
+      {
+        "line": 79,
+        "text": "export async function upsertJobAction("
+      },
+      {
+        "line": 89,
+        "text": "export async function deleteJobAction(jobId: string) {"
+      },
+      {
+        "line": 95,
+        "text": "export const toggleSaveJobAction = toggleSavedJob;"
+      },
+      {
+        "line": 97,
+        "text": "export async function toggleSavedJob(jobId: string): Promise<ActionResult> {"
+      },
+      {
+        "line": 98,
+        "text": "const user = await requireRole(\"CANDIDATE\");"
+      }
+    ]
+  },
+  {
+    "file": "src/server/authorization.ts",
+    "sha256": "043b803cececfddafcb875de37480020049d532a28a4e93c0daa3c4c5007296d",
+    "anchors": [
+      {
+        "line": 42,
+        "text": "export const getCurrentProfile = cache(async (): Promise<CurrentAuth | null> => {"
+      },
+      {
+        "line": 93,
+        "text": "export async function getCurrentUser(): Promise<AppUser | null> {"
+      },
+      {
+        "line": 98,
+        "text": "export async function auth() {"
+      },
+      {
+        "line": 103,
+        "text": "export async function requireAuth() {"
+      },
+      {
+        "line": 112,
+        "text": "export async function requireUser() {"
+      },
+      {
+        "line": 117,
+        "text": "export async function requireRole(role: Role) {"
+      },
+      {
+        "line": 125,
+        "text": "export async function requireStaff() {"
+      },
+      {
+        "line": 133,
+        "text": "export async function requireAdmin() {"
+      },
+      {
+        "line": 134,
+        "text": "return requireRole(\"ADMIN\");"
+      },
+      {
+        "line": 137,
+        "text": "export async function requireEmployee() {"
+      },
+      {
+        "line": 138,
+        "text": "return requireRole(\"EMPLOYEE\");"
+      },
+      {
+        "line": 141,
+        "text": "export async function requireCandidate() {"
+      },
+      {
+        "line": 142,
+        "text": "return requireRole(\"CANDIDATE\");"
+      }
+    ]
+  },
+  {
+    "file": "src/server/queries/applications.ts",
+    "sha256": "5398b152b3ba4f1ba2ad305c8173f80fced7d469f754e9f11f0f623d9fbf25ec",
+    "anchors": [
+      {
+        "line": 10,
+        "text": "export const getSavedJobIds = getSavedFromJobs;"
+      },
+      {
+        "line": 11,
+        "text": "export const getSavedJobs = getSavedJobsFromJobs;"
+      },
+      {
+        "line": 22,
+        "text": "export async function getCandidateApplication(jobId: string, candidateUserId: string) {"
+      },
+      {
+        "line": 44,
+        "text": "export async function getCandidateApplicationBoard(candidateUserId: string): Promise<CandidateBoardApplication[]> {"
+      },
+      {
+        "line": 88,
+        "text": "export async function getCandidateApplications(candidateUserId: string) {"
+      },
+      {
+        "line": 118,
+        "text": "export async function getApplicationForUser("
+      },
+      {
+        "line": 192,
+        "text": "export async function listApplications(filters?: { status?: ApplicationStatus; jobId?: string }) {"
+      },
+      {
+        "line": 240,
+        "text": "export const getExistingApplication = getCandidateApplication;"
+      },
+      {
+        "line": 241,
+        "text": "export const getAllApplications = listApplications;"
+      },
+      {
+        "line": 243,
+        "text": "export async function getApplicationForCandidate(applicationId: string, userId: string) {"
+      },
+      {
+        "line": 247,
+        "text": "export async function getApplicationForEmployee(applicationId: string) {"
+      },
+      {
+        "line": 251,
+        "text": "export async function getJobApplications(jobId: string) {"
+      }
+    ]
+  },
+  {
+    "file": "src/server/queries/company.ts",
+    "sha256": "d41a68e840f9c71a32a1531b4300360d7b0b3f5af0056dffc701744dbd1bb1d1",
+    "anchors": [
+      {
+        "line": 12,
+        "text": "const loadCompanyProfile = unstable_cache("
+      },
+      {
+        "line": 44,
+        "text": "export const getCompanyProfile = cache(loadCompanyProfile);"
+      },
+      {
+        "line": 46,
+        "text": "export const getCompanyStatistics = cache(async () => {"
+      }
+    ]
+  },
+  {
+    "file": "src/server/queries/editorial.ts",
+    "sha256": "baab093375d88fc39d1dcecf742adbe7d07ce8eefba9baf348e6ac547fe13bbe",
+    "anchors": [
+      {
+        "line": 14,
+        "text": "import { requireAdmin } from \"@/server/authorization\";"
+      },
+      {
+        "line": 16,
+        "text": "export const EDITORIAL_TAG = \"editorial-publications\";"
+      },
+      {
+        "line": 17,
+        "text": "export const EDITORIAL_SETUP_MESSAGE ="
+      },
+      {
+        "line": 19,
+        "text": "export function isEditorialTableMissing(error: {"
+      },
+      {
+        "line": 33,
+        "text": "const loadPublished = unstable_cache("
+      },
+      {
+        "line": 54,
+        "text": "export const getPublishedResources = cache(loadPublished);"
+      },
+      {
+        "line": 55,
+        "text": "export async function getAdminEditorialEntries(): Promise<{"
+      },
+      {
+        "line": 60,
+        "text": "await requireAdmin();"
+      },
+      {
+        "line": 94,
+        "text": "export async function getAdminEditorialEntry("
+      },
+      {
+        "line": 97,
+        "text": "await requireAdmin();"
+      }
+    ]
+  },
+  {
+    "file": "src/server/queries/jobs.ts",
+    "sha256": "cfa698db4af7505665661579fc9438259a7c661f8acf68ec95e4cab25edd4d9e",
+    "anchors": [
+      {
+        "line": 64,
+        "text": "const loadPublishedJobs = unstable_cache("
+      },
+      {
+        "line": 80,
+        "text": "export const getPublishedJobs = cache(loadPublishedJobs);"
+      },
+      {
+        "line": 82,
+        "text": "export const getJobBySlugOrId = cache(async (slugOrId: string) => {"
+      },
+      {
+        "line": 103,
+        "text": "export async function getEmployeeJobs() {"
+      },
+      {
+        "line": 117,
+        "text": "export async function getJobForEmployee(id: string) {"
+      },
+      {
+        "line": 131,
+        "text": "export const getEmployeeJob = getJobForEmployee;"
+      },
+      {
+        "line": 133,
+        "text": "export async function getPublishedJobById(id: string) {"
+      },
+      {
+        "line": 138,
+        "text": "export async function getPublishedJobBySlug(slug: string) {"
+      },
+      {
+        "line": 143,
+        "text": "export const getSavedJobIds = cache(async (userId: string) => {"
+      },
+      {
+        "line": 150,
+        "text": "export async function getSavedJobs(userId: string) {"
+      },
+      {
+        "line": 165,
+        "text": "export function resumeDisplay(path: string | null) {"
+      }
+    ]
+  },
+  {
+    "file": "supabase/migrations/0015_application_contact_fields.sql",
+    "sha256": "b85e313f823125a3fbcf26dee219c256d2b02a56a26d3bbd81ff694637f6390f",
+    "anchors": []
+  }
+]
