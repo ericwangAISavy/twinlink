@@ -1,0 +1,178 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "gridColumns": 4,
+      "aboutColumns": 2
+    },
+    {
+      "width": 992,
+      "height": 900,
+      "overflow": false,
+      "gridColumns": 4,
+      "aboutColumns": 2
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "overflow": false,
+      "gridColumns": 3,
+      "aboutColumns": 1
+    },
+    {
+      "width": 576,
+      "height": 900,
+      "overflow": false,
+      "gridColumns": 2,
+      "aboutColumns": 1
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "gridColumns": 1,
+      "aboutColumns": 1
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "overflow": false,
+      "gridColumns": 1,
+      "aboutColumns": 1
+    }
+  ],
+  "interactions": [
+    "Dot controls change both photograph and caption",
+    "Card hover and enquiry navigation",
+    "Job Search reaches existing careers board",
+    "Mobile menu focus loop, Escape, focus return, inert background and scroll lock",
+    "No placeholder or unfinished service links"
+  ],
+  "desktopGeometry": [
+    {
+      "id": "how-we-help",
+      "height": 544
+    },
+    {
+      "id": "solutions",
+      "height": 986.390625
+    },
+    {
+      "id": "people",
+      "height": 926.390625
+    }
+  ],
+  "pageErrors": [],
+  "images": [
+    {
+      "src": "/_next/image?url=%2Fimages%2Fhero-team-office.jpg&w=3840&q=80",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fbanner-images%2Ftrinity-home-banner-2.jpg&w=3840&q=70",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fbanner-images%2Fwho-we-are-banner.jpg&w=3840&q=70",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fabout-hrs.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Ftech-services%2Fdigital-transformation.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Ftech-services%2Fmanaged-application.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Ftech-services%2Fcloud-services.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Ftech-services%2Fenterpraise-services.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Ftech-services%2Fsap-services.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Ftech-services%2Finfra.png&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Ftech-services%2Fcyber-security.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Ftech-services%2Fbig-data.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fhr-services%2Frecuriment-services.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fhr-services%2Fexecutive-recuriment.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fhr-services%2Fretained-search.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fhr-services%2Fstaffing-services.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fhr-services%2Frpo.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fhr-services%2Fmanaged-staff.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fhr-services%2FHR-Consultancy.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fhr-services%2Fpay-roll.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Ficons%2Fdeal.png&w=128&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Ficons%2Fdistributed.png&w=128&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Ficons%2F24-7.png&w=128&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fhrs-values%2Fjob-search.jpeg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fhrs-values%2Fjob-tips.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Freference%2Fhome%2Fhrs-values%2Fregister-cv.jpg&w=3840&q=75",
+      "loaded": true
+    },
+    {
+      "src": "/_next/image?url=%2Fimages%2Fhow-we-help-globe.jpg&w=3840&q=75",
+      "loaded": true
+    }
+  ]
+}

@@ -9,12 +9,14 @@ export function Reveal({
   delay = 0,
   as: Tag = "div",
   once = true,
+  threshold = 0.18,
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
   as?: ElementType;
   once?: boolean;
+  threshold?: number;
 }) {
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
@@ -32,12 +34,12 @@ export function Reveal({
           setVisible(false);
         }
       },
-      { threshold: 0.18, rootMargin: "0px 0px -10% 0px" },
+      { threshold, rootMargin: "0px 0px -10% 0px" },
     );
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, [once]);
+  }, [once, threshold]);
 
   return (
     <Tag

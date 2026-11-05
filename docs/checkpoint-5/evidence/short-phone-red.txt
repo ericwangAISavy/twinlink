@@ -1,0 +1,13 @@
+{"viewport":"375x667","opacity":"0"}
+AssertionError [ERR_ASSERTION]: Tall service section must reveal on a short phone
+
+'0' !== '1'
+
+    at /workspace/twinlink/docs/checkpoint-5/scripts/short-viewport.cjs:3:531 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '0',
+  expected: '1',
+  operator: 'strictEqual',
+  diff: 'simple'
+}

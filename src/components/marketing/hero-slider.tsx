@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Pause, Play } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const SLIDES = [
+const DEFAULT_SLIDES = [
   {
     src: "/images/hero-team-office.jpg",
     alt: "Twinlink team reviewing work on a large display",
@@ -25,7 +25,13 @@ const SLIDES = [
 
 const INTERVAL_MS = 5000;
 
-export function HeroSlider({ children }: { children: ReactNode }) {
+export function HeroSlider({ children, slides, captions }: {
+  children?: ReactNode;
+  slides?: readonly { src: string; alt: string; position?: string }[];
+  captions?: readonly ReactNode[];
+}) {
+  const SLIDES = slides?.length ? slides : DEFAULT_SLIDES;
+  const slideCount = SLIDES.length;
   const [index, setIndex] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(true);
   const [manualPause, setManualPause] = useState(false);
@@ -36,9 +42,8 @@ export function HeroSlider({ children }: { children: ReactNode }) {
 
   const goTo = useCallback((nextIndex: number, dir: "next" | "prev") => {
     setDirection(dir);
-    setIndex((nextIndex + SLIDES.length) % SLIDES.length);
-  }, []);
-
+    setIndex((nextIndex + slideCount) % slideCount);
+  }, [slideCount]);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -52,10 +57,10 @@ export function HeroSlider({ children }: { children: ReactNode }) {
     if (paused || manualPause || reducedMotion) return;
     const timer = window.setInterval(() => {
       setDirection("next");
-      setIndex((current) => (current + 1) % SLIDES.length);
+      setIndex((current) => (current + 1) % slideCount);
     }, INTERVAL_MS);
     return () => window.clearInterval(timer);
-  }, [paused, manualPause, reducedMotion, index]);
+  }, [paused, manualPause, reducedMotion, index, slideCount]);
 
   return (
     <section
@@ -94,7 +99,7 @@ export function HeroSlider({ children }: { children: ReactNode }) {
       </div>
 
       <div className="foundation-hero-caption-area">
-        <div className="foundation-hero-caption" key={index}>{children}</div>
+        <div className="foundation-hero-caption" key={index}>{captions?.[index] ?? children}</div>
       </div>
       <div className="foundation-hero-controls">
         <div className="foundation-hero-dots" aria-label="Choose photograph">

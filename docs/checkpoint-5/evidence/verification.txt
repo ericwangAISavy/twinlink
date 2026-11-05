@@ -1,0 +1,14 @@
+Checkpoint 5, 2026-11-05 UTC; Node 22.23.4, Next.js 15.5.26, Chromium.
+
+node --test tests/*.test.mjs: exit 0; 6 test files, 6 passed, 0 failed.
+node node_modules/typescript/bin/tsc --noEmit: exit 0.
+node node_modules/eslint/bin/eslint.js .: exit 0.
+node node_modules/next/dist/bin/next build: exit 0; production build and route generation complete.
+node docs/checkpoint-5/scripts/home-check.cjs (production): exit 0; six viewport layouts, image decoding and all interaction assertions passed.
+node docs/checkpoint-5/scripts/motion-check.cjs (production): exit 0; keyboard focus maintained carousel pause; shared action contrast 4.875:1.
+node docs/checkpoint-5/scripts/short-viewport.cjs (production): exit 0; 375x667 service grid opacity 1.
+node docs/checkpoint-5/scripts/preservation-check.cjs: exit 0; 224 protected files, 68 routes, 26 originals verified.
+git diff --check: exit 0.
+
+Detailed output: tests.txt, build.txt, browser-results.json, motion-results.json, preservation-results.json, short-phone-red.txt / short-phone-green.txt.
+Independent source review: no blocking findings. No production data writes or deployment.

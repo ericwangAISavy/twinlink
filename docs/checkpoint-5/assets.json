@@ -1,0 +1,132 @@
+[
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/about-hrs.jpg",
+    "file": "public/images/reference/home/about-hrs.jpg",
+    "sha256": "54ef30a15b77ebea40ac6da973ae2f7091fe3dfab651d90d331572e57a0a387f"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/banner-images/trinity-home-banner-2.jpg",
+    "file": "public/images/reference/home/banner-images/trinity-home-banner-2.jpg",
+    "sha256": "4377cce15de0e227ab44d3511cf84adf9512ec158a6fd58a988acada6ed51545"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/banner-images/who-we-are-banner.jpg",
+    "file": "public/images/reference/home/banner-images/who-we-are-banner.jpg",
+    "sha256": "7c3ddb721c5230d58cfff931ccfbccd5357f8439d64077e39507b9ac1c7a4288"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/tech-services/digital-transformation.jpg",
+    "file": "public/images/reference/home/tech-services/digital-transformation.jpg",
+    "sha256": "3422910aa66a5783d6fbbde17c13d3667d37f4336311743cbadb89a97032a83c"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/tech-services/sap-services.jpg",
+    "file": "public/images/reference/home/tech-services/sap-services.jpg",
+    "sha256": "253e9367bc00725988e067266739589b93e0c9658fbac6ea6c78b8ceeb0d33d1"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/tech-services/infra.png",
+    "file": "public/images/reference/home/tech-services/infra.png",
+    "sha256": "f21bcbda603d57954647b83a133e91d7c5dd297e9daef44efb869afa0188d777"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/tech-services/enterpraise-services.jpg",
+    "file": "public/images/reference/home/tech-services/enterpraise-services.jpg",
+    "sha256": "b38e2405525443181eb932eab344fdf4508a60b7c79308350659178b7841724a"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/tech-services/big-data.jpg",
+    "file": "public/images/reference/home/tech-services/big-data.jpg",
+    "sha256": "bd11cbae03a3e16c21d724109effe4e3b682396b245fb806494ed86b8398cfca"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/tech-services/managed-application.jpg",
+    "file": "public/images/reference/home/tech-services/managed-application.jpg",
+    "sha256": "80d4901e2169cfddbb9a57feb22d7d6063e677a69bb25275617b26343146c052"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/tech-services/cloud-services.jpg",
+    "file": "public/images/reference/home/tech-services/cloud-services.jpg",
+    "sha256": "952b532a0ca3b6efa60bd2dc4699c494b9ed4f1e75f9731fe9ec8dd1f68804c4"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/tech-services/cyber-security.jpg",
+    "file": "public/images/reference/home/tech-services/cyber-security.jpg",
+    "sha256": "d5dcf96792177847c0d0f97e4354118bfc30e7564e3f665fa13c6b8bdf68ca0c"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hr-services/pay-roll.jpg",
+    "file": "public/images/reference/home/hr-services/pay-roll.jpg",
+    "sha256": "e5e4e4b5a186ca7e63ea09a0054e3662cac7a32599d5698ec43a19d2965d2b0a"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hr-services/HR-Consultancy.jpg",
+    "file": "public/images/reference/home/hr-services/HR-Consultancy.jpg",
+    "sha256": "2b717b05a3a38564878e3d7a4867e5497420d172581f4b694689ee699163b6e2"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hr-services/executive-recuriment.jpg",
+    "file": "public/images/reference/home/hr-services/executive-recuriment.jpg",
+    "sha256": "a2294e4dbc6cc8f459d47e9cff3640b09c4a45de52d5264281272d395de81748"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hr-services/rpo.jpg",
+    "file": "public/images/reference/home/hr-services/rpo.jpg",
+    "sha256": "3bcbe5d83fd2dfcaebb43e454e6d88bc99890df3c9c11fee632f902ff2654408"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hr-services/staffing-services.jpg",
+    "file": "public/images/reference/home/hr-services/staffing-services.jpg",
+    "sha256": "d24208e2997fd68f4736ca9bdeb0e065eab865a0c5a34bfa127795b1e22139f5"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hr-services/managed-staff.jpg",
+    "file": "public/images/reference/home/hr-services/managed-staff.jpg",
+    "sha256": "74b0d9acd7b2f9b9173b8b6c49480dfa11e1746b292858656023cf8a3880c696"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hr-services/recuriment-services.jpg",
+    "file": "public/images/reference/home/hr-services/recuriment-services.jpg",
+    "sha256": "eaaf32acdd630b179f982222286153f3826995580c00c003a3c91ac9c7ae80fd"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hr-services/retained-search.jpg",
+    "file": "public/images/reference/home/hr-services/retained-search.jpg",
+    "sha256": "48af1700e7a7516c266dd4ff7c2a8a69af6d8cba7d4df35b4d6265f74ab6def5"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/icons/distributed.png",
+    "file": "public/images/reference/home/icons/distributed.png",
+    "sha256": "a58ca7d8c3b27e991755d3cb0606246146862659e4cb688874f0c900b94a828d"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/icons/deal.png",
+    "file": "public/images/reference/home/icons/deal.png",
+    "sha256": "2573bbe1f88067359fc9e5cba506e1878f78bdd6e98d87bb766eb2d07fcffbc0"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/icons/24-7.png",
+    "file": "public/images/reference/home/icons/24-7.png",
+    "sha256": "a35e0689d5bf7d9846e5b7149dee1a50f18b63f01c0837d27931ca410151d27b"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hrs-values/job-search.jpeg",
+    "file": "public/images/reference/home/hrs-values/job-search.jpeg",
+    "sha256": "720ffbad9576cdd193c4a39b5850764d477b674e8571f211ade85171f240fac1"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hrs-values/job-tips.jpg",
+    "file": "public/images/reference/home/hrs-values/job-tips.jpg",
+    "sha256": "c3eea9ac2f17fabbde5b3fb41a98082b0f4328812fc30b8a32958aa64bcc3330"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hrs-values/register-cv.jpg",
+    "file": "public/images/reference/home/hrs-values/register-cv.jpg",
+    "sha256": "e2d98d645f5ee7b1ca060c89bfe2ff2f76a6baa9676931d1144d157103c261c3"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/css/boxicons/fonts/boxicons.woff2",
+    "file": "public/fonts/boxicons-home.woff2",
+    "sha256": "dab4eb1c17eef51499352bddfcd12dd99e1b86d9549f5051614867bcff004ca1"
+  }
+]
