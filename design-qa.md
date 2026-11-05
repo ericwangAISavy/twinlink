@@ -1,8 +1,8 @@
 # Checkpoint 6 subpage design QA
 
-final result: blocked
+final result: passed
 
-Scope: all fourteen inventoried subpages mapped to TwinLink. User requested a concrete resumable commit before final acceptance. Implementation and an all-28-state production browser pass are present, but repeated hydration verification and final refreshed comparison/QA acceptance remain unfinished. Resume from `docs/checkpoint-6/HANDOFF.md`. Checkpoint 7 has not started.
+Scope: all fourteen inventoried subpages mapped to TwinLink. Final production verification and refreshed visual QA completed on 2026-11-05 after resuming the specified handoff commit. Awaiting user approval before checkpoint 7; no deployment or merge.
 
 ## Comparison inputs and normalization
 
@@ -20,9 +20,13 @@ All eight contact sheets (four desktop/four mobile groups) were opened as paired
 2. **P2 — Short-phone title clipping.** Review reproduced long service titles beyond the blue panel at 390×480/568. Added a 350px minimum on short phones and centered the heading there; ordinary 390×844 geometry remains source-like. `geometry-red.txt` and `geometry-green.txt` record bounds and zero final failures at six widths/heights.
 3. **P2 — Careers search icon overlap.** Scoped input padding overrode the board’s 40px left inset. Restored the inset specifically for the existing search field. Red/green computed padding is 12px → 40px; active filter foregrounds also remain readable on blue.
 4. **P2 — Detail-image sequencing.** DOM comparison confirmed Managed Application and Cloud images follow two paragraphs, unlike the other technology pages. Template data now preserves those positions. The original source files are used with responsive natural image proportions.
-5. **P2 — Careers banner heading placement.** Focused comparison found the source’s “Apply here” heading was below the banner. Added an optional banner caption with the source 32px weight/underline and top offset `height − 168.4px`; the board introduction now says “Open roles”. Affected-page position checks passed at 398.59px desktop and 422.39px mobile; final refreshed visual acceptance is pending.
+5. **P2 — Careers banner heading placement.** Focused comparison found the source’s “Apply here” heading was below the banner. Added an optional banner caption with the source 32px weight/underline and top offset `height − 168.4px`; the board introduction now says “Open roles”. Affected-page position checks passed at 398.59px desktop and 422.39px mobile; final refreshed desktop/mobile comparisons confirm the caption alignment.
 
-Unknown service handling was also strengthened from a streamed not-found response to an explicit static allowlist with HTTP 404. Initial capture runs reported intermittent React 418 during transitions; isolated repeated direct visits did not reproduce it. The final harness waits for the main container React fiber before exercising navigation, waits for destination content/title after client navigation, and records error-time URLs/stacks. One complete fourteen-entry/two-viewport production run passed; repeat validation was interrupted for the requested workspace handoff. No application hydration suppression or client-only rendering workaround was introduced.
+Unknown service handling uses an explicit static allowlist with HTTP 404. The prior main-fiber readiness guard did not resolve intermittent React 418: it recurred on SAP/Contact/Enterprise in resumed production runs. Browser-only diagnostics found an expected `main` with a null hydration cursor despite the expected DOM. A main-container Suspense experiment failed and was reverted. The final header wraps only the stateful SiteNav in Suspense, isolating its hydration from sibling content. MarketingLayout and VisitorTracker remain unchanged; no error suppression, client-only rendering or package upgrade was added.
+
+Three complete sequential production browser passes then passed all 28 states each with zero page exceptions. A separate early-header check passed 28 states without waiting for main hydration, including BackToTop state updates. This is the tested scheduling-boundary correction; the exact upstream React root cause is not proven. Red logs (`hydration-recurrence.txt`, `hydration-main-diagnostic.txt`, `hydration-main-boundary-red.txt`) and final per-run results are retained. Disposable compiled React diagnostics were removed by a clean rebuild before the accepted runs.
+
+The image harness previously stalled on a lazy offscreen About image. It now requests eager loading in the capture browser and uses a bounded, URL-specific decode failure; all rendered-image assertions remain enabled. Final images, pairs, sheets, focused crops and dimensions were regenerated from the accepted production captures using the committed scripts.
 
 ## Required fidelity surfaces
 
@@ -36,7 +40,7 @@ Unknown service handling was also strengthened from a streamed not-found respons
 
 The production pass checks all 28 page/viewport states, decoded rendered images, no horizontal overflow, desktop keyboard/mobile menu hydration and closure, FAQ expansion, careers search, persistent privacy preference, contact email draft and related service navigation. Extra checks cover existing filters, sorting, page size, selected-state toggling, required-field validation and draft encoding. No email or application is submitted. Geometry tests exercise normal-motion reveal visibility on short phones and tablet/desktop boundaries.
 
-All seven test files, TypeScript, ESLint and production build passed. Source preservation establishes 249 existing files byte-identical, all 68 existing route files retained, fully scoped new styles and original asset hashes. Backend/auth/permissions/API/admin/dashboard, job detail/application components and editorial pages remain unchanged. No real private account was used; authenticated isolation is established by source checks and the existing account-state tests.
+All seven test files, TypeScript, ESLint and production build passed. Source preservation establishes 248 existing files byte-identical, plus an exact baseline-to-header transformation assertion limiting its change to the navigation Suspense wrapper, all 68 existing route files retained, fully scoped new styles and original asset hashes. Backend/auth/permissions/API/admin/dashboard, job detail/application components and editorial pages remain unchanged. No real private account was used; authenticated isolation is established by source checks and the existing account-state tests.
 
 ## Follow-up polish
 
@@ -48,6 +52,32 @@ Service row outlines and directional reveals were aligned in the final pass. Sou
 - [x] Paired desktop/mobile composition and focused typography/assets/forms inspected.
 - [x] Review and geometry findings reproduced and corrected.
 - [x] Complete production browser pass and original logic/isolation checks passed.
-- [ ] Final Careers caption captured and compared after correction.
+- [x] Final Careers caption captured and compared after correction.
+- [x] Three sequential complete production passes and the early-header hydration regression passed.
+- [x] Every final desktop/mobile inventory pair and focused About/service/Privacy/Contact/Careers region reviewed.
+- [x] All 31 tests, lint, TypeScript, production build, geometry, interactions and preservation passed.
+
+No authenticated live-account flows were executed; private logic remains protected by source preservation and existing tests. Asset rights remain permission-or-replacement before production use. Checkpoint 7 requires user approval.
 
 Checkpoint 5 QA is archived at `docs/checkpoint-6/homepage-qa-baseline.md`.
+
+## Final capture review
+
+After the three production interaction passes and 28-state early-header regression, two further complete 28-state browser passes ran serially with software rendering (`capture-final-pass-1.txt`, `capture-final-pass-2.txt` and matching JSON). These passed with no page exceptions. This corrected a full-page Chromium compositor artifact (repeated header tiles in a mobile Infrastructure capture); the isolated live DOM had exactly one header/main and a fresh capture rendered correctly. Final native images, dimensions, all pairs and contact sheets were regenerated after the second serial pass. No application CSS or DOM was changed for capture. Both original failed hydration evidence and the accepted final logs remain distinct.
+
+| Entries | Final desktop/mobile visual review |
+| --- | --- |
+| T02 About | Skyline, photograph, three image cards, additional retained values/FAQ and integrated culture section; no clipping. |
+| T03 Life section | Complete banner/image/copy/CTA; integrated crop intentionally omits standalone header/footer. Source mobile viewport defect remains documented. |
+| T04 Careers | Apply here caption aligns in desktop/mobile focused pairs; original working board and every filter retained below. |
+| T05 Privacy | Banner, blue title strip, gray reading surface and legible retained notice/preference control; shorter legal content is intentional. |
+| T06 Contact | Wave, shadowed cards, labeled white fields, contrast and preserved email-draft action; no copied foreign offices/maps. |
+| T07 Digital strategy | Wave, wrapped heading, justified article, exact image and outlined related-service rows. |
+| T08 Managed application | Photograph follows two introductory paragraphs; desktop sidebar/mobile stack intact. |
+| T09 Cloud services | Two paragraphs precede image; planning topics remain readable without clipping. |
+| T10 Enterprise | Original image proportions, three-paragraph composition and responsive sidebar. |
+| T11 SAP | Exact illustration, readable planning topics and explicit capability caveat. |
+| T12 Infrastructure | Correct native full-page image and footer after compositor recapture; no repeated content in final pair. |
+| T13 Cybersecurity | Exact image and risk topics; responsive TwinLink viewport retained despite source's missing viewport meta. |
+| T14 Big data | Exact photograph, planning topics, sidebar and phone stacking. |
+| T15 ERP | Exact photo banner, readable text-only article, category links and capability caveat. |

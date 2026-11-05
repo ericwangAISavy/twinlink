@@ -1,3 +1,5 @@
+> Completion update (2026-11-05): the handoff below is retained as historical context. Checkpoint 6 has since completed three sequential production browser passes, an early-header regression, refreshed visual review and all final checks. The original main-fiber readiness guard was insufficient; the final header-only Suspense boundary and lazy-image capture correction are documented in README.md and root design-qa.md. MarketingLayout and VisitorTracker remain unchanged. Await user approval before checkpoint 7.
+
 # Resume checkpoint 6 in another Codex workspace
 
 ## Status and user instruction

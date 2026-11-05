@@ -1,5 +1,14 @@
 [
   {
+    "id": "T02",
+    "route": "/about",
+    "mode": "desktop",
+    "overflow": false,
+    "heroHeight": 567,
+    "serviceColumns": null,
+    "errors": []
+  },
+  {
     "id": "T03",
     "route": "/about#culture",
     "mode": "desktop",
@@ -36,17 +45,17 @@
     "errors": []
   },
   {
-    "id": "T02",
-    "route": "/about",
+    "id": "T07",
+    "route": "/services/digital-strategy-transformation",
     "mode": "desktop",
     "overflow": false,
-    "heroHeight": 567,
-    "serviceColumns": null,
+    "heroHeight": 585,
+    "serviceColumns": 4,
     "errors": []
   },
   {
-    "id": "T07",
-    "route": "/services/digital-strategy-transformation",
+    "id": "T08",
+    "route": "/services/managed-application",
     "mode": "desktop",
     "overflow": false,
     "heroHeight": 585,
@@ -72,15 +81,6 @@
     "errors": []
   },
   {
-    "id": "T08",
-    "route": "/services/managed-application",
-    "mode": "desktop",
-    "overflow": false,
-    "heroHeight": 585,
-    "serviceColumns": 4,
-    "errors": []
-  },
-  {
     "id": "T11",
     "route": "/services/sap-services",
     "mode": "desktop",
@@ -90,8 +90,8 @@
     "errors": []
   },
   {
-    "id": "T13",
-    "route": "/services/cybersecurity-risk",
+    "id": "T12",
+    "route": "/services/infrastructure-services",
     "mode": "desktop",
     "overflow": false,
     "heroHeight": 585,
@@ -99,8 +99,8 @@
     "errors": []
   },
   {
-    "id": "T12",
-    "route": "/services/infrastructure-services",
+    "id": "T13",
+    "route": "/services/cybersecurity-risk",
     "mode": "desktop",
     "overflow": false,
     "heroHeight": 585,
@@ -135,6 +135,15 @@
     "errors": []
   },
   {
+    "id": "T03",
+    "route": "/about#culture",
+    "mode": "mobile",
+    "overflow": false,
+    "heroHeight": 590.796875,
+    "serviceColumns": null,
+    "errors": []
+  },
+  {
     "id": "T04",
     "route": "/careers",
     "mode": "mobile",
@@ -180,17 +189,17 @@
     "errors": []
   },
   {
-    "id": "T03",
-    "route": "/about#culture",
+    "id": "T09",
+    "route": "/services/cloud-services",
     "mode": "mobile",
     "overflow": false,
-    "heroHeight": 590.796875,
-    "serviceColumns": null,
+    "heroHeight": 422,
+    "serviceColumns": 1,
     "errors": []
   },
   {
-    "id": "T09",
-    "route": "/services/cloud-services",
+    "id": "T10",
+    "route": "/services/enterprise-services",
     "mode": "mobile",
     "overflow": false,
     "heroHeight": 422,
@@ -218,15 +227,6 @@
   {
     "id": "T13",
     "route": "/services/cybersecurity-risk",
-    "mode": "mobile",
-    "overflow": false,
-    "heroHeight": 422,
-    "serviceColumns": 1,
-    "errors": []
-  },
-  {
-    "id": "T10",
-    "route": "/services/enterprise-services",
     "mode": "mobile",
     "overflow": false,
     "heroHeight": 422,

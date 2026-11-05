@@ -1,6 +1,7 @@
 {
   "baseline": "c0c19d5fb9d9fce0f4f59dcb4fde43e2af566968",
-  "protectedFilesUnchanged": 249,
+  "protectedFilesUnchanged": 248,
+  "headerOnlyNavigationHydrationBoundary": true,
   "existingRoutesRetained": 68,
   "newServiceRoutes": 9,
   "subpageSelectorsScoped": true,

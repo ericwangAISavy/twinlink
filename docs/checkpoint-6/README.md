@@ -1,6 +1,6 @@
-# Checkpoint 6 — Inventoried subpages (resumable work in progress)
+# Checkpoint 6 — Inventoried subpages
 
-**Status: implementation committed for workspace handoff; final verification/QA acceptance remains unfinished. Read [HANDOFF.md](HANDOFF.md) first. Do not begin checkpoint 7.**
+**Status: checkpoint 6 implementation and final production/browser/visual verification complete; awaiting user approval before checkpoint 7.**
 
 Implements all fourteen subpage inventory entries using checkpoint 3’s canonical TwinLink map. Homepage work remains checkpoint 5; its Tech cards now reach the implemented destinations. Checkpoint 7 has not started.
 
@@ -41,10 +41,43 @@ Desktop and mobile captures are `evidence/T02-desktop.png` through `T15-mobile.p
 
 `tests/subpages.test.mjs` checks allowlisted lookup including prototype/path-like input, original image existence, actual service-page rendering/metadata/not-found behavior, and careers/contact query wiring/empty/failure cases. Existing tests retain account-state and homepage query coverage. Functional ContactForm, PrivacyPreference, AboutFaq and OpenRolesBoard implementations are byte-identical; only their scoped presentation changes.
 
-`preservation-results.json` records 249 pre-existing source files byte-identical to checkpoint 5, all 68 existing route files retained, scoped subpage selectors and seventeen original image hashes. Root globals, auth, permissions, APIs, server queries/actions, dashboard/admin, job details/application forms and editorial pages are unchanged. No authenticated private account or production submission was exercised; isolation is established by source checks and existing tests.
+`preservation-results.json` records 248 pre-existing source files byte-identical to checkpoint 5, all 68 existing route files retained, scoped subpage selectors and seventeen original image hashes. The header differs only by an explicit Suspense boundary around SiteNav, checked against an exact transformation of the baseline header. MarketingLayout, VisitorTracker, root globals, auth, permissions, APIs, server queries/actions, dashboard/admin, job details/application forms and editorial pages are unchanged. No authenticated private account or production submission was exercised; isolation is established by source checks and existing tests.
 
 Build, TypeScript, ESLint, complete tests and browser verification outputs are included in `evidence/`. Run browser scripts with `PREVIEW_URL=http://127.0.0.1:3000` and a local production server. Paired evidence is reproducible with `node docs/checkpoint-6/scripts/compare.cjs`. The root `design-qa.md` records visual findings, fixes and final acceptance; checkpoint 5’s report is archived in this directory.
 
 ## Assets
 
 Seventeen exact originals are copied from checkpoint 2 and listed with SHA-256 hashes in `assets.json`. Other imagery/fonts/icons/wave come from checkpoints 4/5. No hotlinks, generated substitutes or Trinity wordmark are introduced. Captured photography retains checkpoint 2’s permission-or-replacement status; this commit does not establish ownership or license and does not deploy it. No new inaccessible asset was needed. External reference maps and unrelated office details are replaced by TwinLink’s actual contact information.
+
+## Final verification (2026-11-05)
+
+Resumed from `56af68ebdfdbbf67f5bd17923d2d077594f882e4`. Three sequential clean-production browser passes completed all 28 page/viewport states each, with zero page exceptions and unknown-service HTTP 404. Per-run logs and JSON are `evidence/browser-final-pass-{1,2,3}.txt` and `browser-final-results-{1,2,3}.json`. The build was restarted before acceptance; no disposable React diagnostics are in the final build or source.
+
+Error 418 did recur after the original main-fiber readiness guard. Browser-only React diagnostics confirmed an expected `main` host with no hydration cursor despite the correct main DOM. A boundary around main did not fix it and was reverted. The final change isolates the interactive SiteNav in a Suspense boundary in SiteHeader; its server HTML, signed-in input, nav handlers and links are retained. In addition to the three complete passes, `scripts/hydration-check.cjs` exercises each entry's header as soon as the header fiber is available, without waiting for main hydration, and then updates BackToTop. All 28 states passed. This establishes the observed regression result, not a proof of an upstream React scheduling defect or every possible browser timing. Earlier red evidence is retained separately.
+
+The capture harness also now requests eager image loading before decoding and fails with a URL-specific timeout. This resolves a diagnosed mobile About capture stall caused by an offscreen lazy image; it does not change application loading behavior or weaken the image assertions.
+
+Final `npm test`: 31 passed, zero failed/skipped across seven files. Run in the normal process/network execution context: the restricted command sandbox's child test runner only summarized seven file processes, so the final retained run verifies all 31 individual tests. ESLint, TypeScript, production build, geometry, caption, interactions and preservation checks all passed; see the `*-final.txt` files and associated JSON. No real Supabase account, production write, email sending or application submission was exercised.
+
+All 28 paired images and eight contact sheets were regenerated after the final captures. `scripts/focus-compare.cjs` regenerates focused About, Privacy, Contact, service and desktop/mobile Careers pairs plus image dimensions. Final visual review covers every inventory entry in both modes; expected content/height and viewport adaptations above remain intentional. Assets retain the existing permission-or-replacement limitation before production use. No deployment, merge or checkpoint 7 work was performed.
+
+## Final capture review
+
+After the three production interaction passes and 28-state early-header regression, two further complete 28-state browser passes ran serially with software rendering (`capture-final-pass-1.txt`, `capture-final-pass-2.txt` and matching JSON). These passed with no page exceptions. This corrected a full-page Chromium compositor artifact (repeated header tiles in a mobile Infrastructure capture); the isolated live DOM had exactly one header/main and a fresh capture rendered correctly. Final native images, dimensions, all pairs and contact sheets were regenerated after the second serial pass. No application CSS or DOM was changed for capture. Both original failed hydration evidence and the accepted final logs remain distinct.
+
+| Entries | Final desktop/mobile visual review |
+| --- | --- |
+| T02 About | Skyline, photograph, three image cards, additional retained values/FAQ and integrated culture section; no clipping. |
+| T03 Life section | Complete banner/image/copy/CTA; integrated crop intentionally omits standalone header/footer. Source mobile viewport defect remains documented. |
+| T04 Careers | Apply here caption aligns in desktop/mobile focused pairs; original working board and every filter retained below. |
+| T05 Privacy | Banner, blue title strip, gray reading surface and legible retained notice/preference control; shorter legal content is intentional. |
+| T06 Contact | Wave, shadowed cards, labeled white fields, contrast and preserved email-draft action; no copied foreign offices/maps. |
+| T07 Digital strategy | Wave, wrapped heading, justified article, exact image and outlined related-service rows. |
+| T08 Managed application | Photograph follows two introductory paragraphs; desktop sidebar/mobile stack intact. |
+| T09 Cloud services | Two paragraphs precede image; planning topics remain readable without clipping. |
+| T10 Enterprise | Original image proportions, three-paragraph composition and responsive sidebar. |
+| T11 SAP | Exact illustration, readable planning topics and explicit capability caveat. |
+| T12 Infrastructure | Correct native full-page image and footer after compositor recapture; no repeated content in final pair. |
+| T13 Cybersecurity | Exact image and risk topics; responsive TwinLink viewport retained despite source's missing viewport meta. |
+| T14 Big data | Exact photograph, planning topics, sidebar and phone stacking. |
+| T15 ERP | Exact photo banner, readable text-only article, category links and capability caveat. |

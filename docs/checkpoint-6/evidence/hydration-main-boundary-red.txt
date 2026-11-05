@@ -1,0 +1,51 @@
+T02 desktop passed
+T04 desktop passed
+T03 desktop passed
+T05 desktop passed
+T07 desktop passed
+T08 desktop passed
+T09 desktop passed
+T10 desktop passed
+T06 desktop passed
+T11 desktop passed
+T13 desktop passed
+T14 desktop passed
+T12 desktop passed
+T15 desktop passed
+T02 mobile passed
+T04 mobile passed
+T05 mobile passed
+T03 mobile passed
+T06 mobile passed
+T08 mobile passed
+T07 mobile passed
+T09 mobile passed
+T11 mobile passed
+T12 mobile passed
+T13 mobile passed
+T14 mobile passed
+AssertionError [ERR_ASSERTION]: T10 page exceptions
++ actual - expected
+
++ [
++   'http://127.0.0.1:3000/services/enterprise-services: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n' +
++     '    at rD (http://127.0.0.1:3000/_next/static/chunks/4bd1b696-f785427dddbba9fb.js:1:35057)\n' +
++     '    at oq (http://127.0.0.1:3000/_next/static/chunks/4bd1b696-f785427dddbba9fb.js:1:84561)\n' +
++     '    at iw (http://127.0.0.1:3000/_next/static/chunks/4bd1b696-f785427dddbba9fb.js:1:114956)\n' +
++     '    at http://127.0.0.1:3000/_next/static/chunks/4bd1b696-f785427dddbba9fb.js:1:110317\n' +
++     '    at iu (http://127.0.0.1:3000/_next/static/chunks/4bd1b696-f785427dddbba9fb.js:1:110826)\n' +
++     '    at iX (http://127.0.0.1:3000/_next/static/chunks/4bd1b696-f785427dddbba9fb.js:1:132929)\n' +
++     '    at MessagePort.w (http://127.0.0.1:3000/_next/static/chunks/1255-4526149c43bd8cfc.js:1:114729)'
++ ]
+- []
+
+    at /workspace/twinlink/docs/checkpoint-6/scripts/browser-check.cjs:29:9
+    at async Promise.all (index 0)
+    at async /workspace/twinlink/docs/checkpoint-6/scripts/browser-check.cjs:10:12 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
