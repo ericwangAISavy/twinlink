@@ -1,0 +1,173 @@
+[
+  {
+    "step": "PHP alias",
+    "route": "/carrer.php",
+    "url": "https://www.trinityconsulting.asia/carrer.php",
+    "status": 200,
+    "headings": [
+      "APPLY HERE"
+    ]
+  },
+  {
+    "step": "PHP alias",
+    "route": "/cloud-services-solutions-singapore.php",
+    "url": "https://www.trinityconsulting.asia/cloud-services-solutions-singapore.php",
+    "status": 200,
+    "headings": [
+      "Cloud Services Solutions",
+      "Cloud Services Solutions",
+      "Other Services"
+    ]
+  },
+  {
+    "step": "PHP alias",
+    "route": "/cyber-security.php",
+    "url": "https://www.trinityconsulting.asia/cyber-security.php",
+    "status": 200,
+    "headings": [
+      "Cyber security & Risk",
+      "Cyber security & Risk",
+      "Other Services"
+    ]
+  },
+  {
+    "step": "PHP alias",
+    "route": "/big-data-&-Analytics.php",
+    "url": "https://www.trinityconsulting.asia/big-data-&-Analytics.php",
+    "status": 200,
+    "headings": [
+      "Big Data & Analytics",
+      "Big Data & Analytics",
+      "Other Services"
+    ]
+  },
+  {
+    "step": "PHP alias",
+    "route": "/sap-services.php",
+    "url": "https://www.trinityconsulting.asia/sap-services.php",
+    "status": 200,
+    "headings": [
+      "SAP Services",
+      "SAP Services",
+      "Other Services"
+    ]
+  },
+  {
+    "step": "PHP alias",
+    "route": "/it-software-solutions.php",
+    "url": "https://www.trinityconsulting.asia/it-software-solutions.php",
+    "status": 200,
+    "headings": [
+      "Infrastructure Services",
+      "Infrastructure Services",
+      "Other Services"
+    ]
+  },
+  {
+    "step": "Field accessibility /contact",
+    "fields": [
+      {
+        "id": "contact_name",
+        "type": "text",
+        "required": false,
+        "accept": "",
+        "labels": [],
+        "aria": null
+      },
+      {
+        "id": "contact_email",
+        "type": "text",
+        "required": false,
+        "accept": "",
+        "labels": [],
+        "aria": null
+      },
+      {
+        "id": "subject_name",
+        "type": "text",
+        "required": false,
+        "accept": "",
+        "labels": [],
+        "aria": null
+      },
+      {
+        "id": "contact_message",
+        "type": "textarea",
+        "required": false,
+        "labels": [],
+        "aria": null
+      }
+    ]
+  },
+  {
+    "step": "Empty submission /contact",
+    "errors": [
+      "$ is not defined",
+      "$ is not defined"
+    ],
+    "text": "HOME\nABOUT US\nTECH SERVICES\nHR SERVICES\nCONTACT US\nCONTACT US\nSINGAPORE\n\nTRINITY CONSULTING SERVICES PTE LTD.\n171 Tras Street, #03 - 173\nUnion Building\nSingapore – 079025\n\ninfo@trinityconsulting.asia\n\n\n+65 6222 5333\n\nMALAYSIA\n\nTRINITY SERVICES & CONSULTING SDN. BHD.\n568-9-20 9th Floor Kompleks Mutiara\n3,1/2 Mile Jalan Ipoh,\nKuala Lumpur 51200, W.P. Malaysia\n\ninfo@trinityconsulting.asia\n\n+60 0362576176\n\nINDIA\n\nCONSULTTRINITY SERVICES PRIVATE LIMITED\n6/21 Dr. Natesan Salai,Ashok Nagar,\nChennai – 600083\n\ninfo@trinityconsulting.asia\n\n+91 92525 52000\n+91 98409 25251\n\nINDIA\n\nCONSULTTRINITY SERVICES PRIVATE LIMITED\n22 Nehru Avenue, Maniakarampalayam,\nGanapathy, Coimbatore – 641006\n\ninfo@trinityconsulting.asia\n\n+91 92525 52000\n\nYOUR FEEDBACK\nSend Message\nLINKS\nHome\nAbout us\nCareers\nContact Us\nPrivacy Policy\nTECH SERVICES\nDigital Strategy & Transformation\nManaged Application\nCloud Services Solutions\nEnterprise Services\nSAP Services\nInfrastructure Services\nCybersecurity & Risk\nBig Data & Analytics\nHR SERVICES\nRecruitment Services\nExecutive Recruitment\nRetained Search\nStaffing Services\nRPO Services\nManaged Staffing Services\nHR Consultancy\nPayroll Outsourcing\nCONTACT US\nSINGAPORE\n\nTRINITY CONSULTING SERVICES PTE LTD\n171 Tras Street, # 03 – 173\nUnion Building\nSingapore – 079025\n\n+65 6222 5333\ninfo@trinityconsulting.asia\n\n\n\nINDIA\n\nCONSULTTRINITY SERVICES PRIVATE LIMITED\n6/21 Dr. Natesan Salai,\nAshok Nagar,\nChennai – 600083\n\n\n+91 92525 52000\ninfo@trinityconsulting.asia\n\n\n\n\n\n   \n© Copyright Trinity . All Rights Reserved"
+  },
+  {
+    "step": "Field accessibility /carrer",
+    "fields": [
+      {
+        "id": "contact_name",
+        "type": "text",
+        "required": false,
+        "accept": "",
+        "labels": [],
+        "aria": null
+      },
+      {
+        "id": "contact_email",
+        "type": "email",
+        "required": false,
+        "accept": "",
+        "labels": [],
+        "aria": null
+      },
+      {
+        "id": "contact_number",
+        "type": "text",
+        "required": false,
+        "accept": "",
+        "labels": [],
+        "aria": null
+      },
+      {
+        "id": "file_attach",
+        "type": "file",
+        "required": false,
+        "accept": "",
+        "labels": [],
+        "aria": null
+      },
+      {
+        "id": "contact_message",
+        "type": "textarea",
+        "required": false,
+        "labels": [],
+        "aria": null
+      },
+      {
+        "id": "submit_btn",
+        "type": "submit",
+        "required": false,
+        "accept": "",
+        "labels": [],
+        "aria": null
+      }
+    ]
+  },
+  {
+    "step": "Empty submission /carrer",
+    "errors": [
+      "$ is not defined"
+    ],
+    "text": "HOME\nABOUT US\nTECH SERVICES\nHR SERVICES\nCONTACT US\nAPPLY HERE\nFull Name:\n\n\nEmail Address:\n\n\nContact Number:\n\n\nUpload Your CV\n\n\nMessage:\n\n\n\n\nLINKS\nHome\nAbout us\nCareers\nContact Us\nPrivacy Policy\nTECH SERVICES\nDigital Strategy & Transformation\nManaged Application\nCloud Services Solutions\nEnterprise Services\nSAP Services\nInfrastructure Services\nCybersecurity & Risk\nBig Data & Analytics\nHR SERVICES\nRecruitment Services\nExecutive Recruitment\nRetained Search\nStaffing Services\nRPO Services\nManaged Staffing Services\nHR Consultancy\nPayroll Outsourcing\nCONTACT US\nSINGAPORE\n\nTRINITY CONSULTING SERVICES PTE LTD\n171 Tras Street, # 03 – 173\nUnion Building\nSingapore – 079025\n\n+65 6222 5333\ninfo@trinityconsulting.asia\n\n\n\nINDIA\n\nCONSULTTRINITY SERVICES PRIVATE LIMITED\n6/21 Dr. Natesan Salai,\nAshok Nagar,\nChennai – 600083\n\n\n+91 92525 52000\ninfo@trinityconsulting.asia\n\n\n\n\n\n   \n© Copyright Trinity . All Rights Reserved"
+  },
+  {
+    "step": "Back to top settled",
+    "scrollY": 0
+  }
+]

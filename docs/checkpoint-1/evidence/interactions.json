@@ -1,0 +1,133 @@
+[
+  {
+    "step": "Mobile menu open",
+    "nav": "HOME\nABOUT US\nTECH SERVICES\nHR SERVICES\nCONTACT US"
+  },
+  {
+    "step": "Mobile About expanded",
+    "nav": "HOME\nABOUT US\nAbout Us\nLife @ Trinity\nCareers\nPrivacy Policy\nTECH SERVICES\nHR SERVICES\nCONTACT US"
+  },
+  {
+    "step": "Mobile Careers navigation",
+    "url": "https://www.trinityconsulting.asia/carrer"
+  },
+  {
+    "step": "Third carousel dot",
+    "text": "Our Service\n\nTaking ownership of our customers’ needs and being accountable for delivering friendly and professional service."
+  },
+  {
+    "step": "HR Recruitment placeholder",
+    "url": "https://www.trinityconsulting.asia/#",
+    "nav": "HOME\nABOUT US\nTECH SERVICES\nHR SERVICES\nRecruitment Services\nExecutive Recruitment\nRetained Search\nStaffing Services\nRPO Services\nManaged Staffing Services\nHR Consultancy\nPayroll Outsourcing\nCONTACT US"
+  },
+  {
+    "step": "Controls /contact",
+    "controls": [
+      {
+        "tag": "IFRAME",
+        "html": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.830697799665!2d103.84185481388356!3d1.2748688990701509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da196bb3f7a9cb%3A0xab3670f238e2527c!2sTRINITY%20CONSULTING%20SERVICES!5e0!3m2!1sen!2sin!4v1677273982691!5m2!1sen!2sin\" width=\"100%\" height=\"250\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+      },
+      {
+        "tag": "IFRAME",
+        "html": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.717029968821!2d101.6781044!3d3.1887178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc495215a04817%3A0x3f73c92ab222d9c3!2sTRINITY%20SERVICES%20%26%20CONSULTING%20SDN.%20BHD.!5e0!3m2!1sen!2sin!4v1717054072286!5m2!1sen!2sin\" width=\"100%\" height=\"250\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\">\n</iframe>"
+      },
+      {
+        "tag": "IFRAME",
+        "html": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1943.484223655355!2d80.2098633!3d13.0376804!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267d32806952b%3A0x48a38a29626ccbf4!2s%5BCONSULTTRINITY%20SERVICES%20Pvt%20Ltd%5D%20-%20TRINITY%20CONSULTING%20SERVICES!5e0!3m2!1sen!2sin!4v1679657172135!5m2!1sen!2sin\" width=\"100%\" height=\"250\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+      },
+      {
+        "tag": "IFRAME",
+        "html": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d125336.25794774006!2d76.9194932!3d10.9816256!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8596176e49d2b%3A0xef92d69fc1376aa9!2sTRINITY%20CONSULTING%20SERVICES%20%5BConsultTrinity%20Services%20Pvt%20Ltd%5D!5e0!3m2!1sen!2sin!4v1679657261429!5m2!1sen!2sin\" width=\"100%\" height=\"250\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+      },
+      {
+        "tag": "INPUT",
+        "html": "<input type=\"text\" name=\"contact_name\" class=\"form-control\" id=\"contact_name\" placeholder=\"Your Name\">"
+      },
+      {
+        "tag": "INPUT",
+        "html": "<input type=\"contact_email\" class=\"form-control\" name=\"email\" id=\"contact_email\" placeholder=\"Your Email\">"
+      },
+      {
+        "tag": "INPUT",
+        "html": "<input type=\"text\" class=\"form-control\" name=\"subject_name\" id=\"subject_name\" placeholder=\"Subject\">"
+      },
+      {
+        "tag": "TEXTAREA",
+        "html": "<textarea class=\"form-control\" name=\"contact_message\" id=\"contact_message\" rows=\"5\" placeholder=\"Explain little more about You\"></textarea>"
+      },
+      {
+        "tag": "BUTTON",
+        "html": "<button type=\"submit\" onclick=\"sendnow_btn();\">Send Message</button>"
+      }
+    ],
+    "scripts": [
+      "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+      "\n   function sendnow_btn(){\n   \n   \n   \n   \n    var full_name = $(\"#contact_name\").val();\n    var full_email = $(\"#contact_email\").val();\n    var full_contact = $(\"#subject_name\").val();\n    var full_message = $(\"#contact_message\").val();\n   \n   \n    \n    $(\"#error_contact_name\").html(\"\");\n    $(\"#error_contact_email\").html(\"\");\n    $(\"#error_subject_name\").html(\"\");\n    $(\"#error_contact_message\").html(\"\");\n   \n    if(full_name == \"\" || full_name == null ){\n       $(\"#error_contact_name\").html(\"Please Enter Name\");\n       $(\"#contact_name\").focus();\n       return false;\n   }\n   \n   else if( !/(.+)@(.+){2,}\\.(.+){2,}/.test(full_email) ){\n   $(\"#error_contact_email\").html(\"Please Enter valid Email\");\n   $(\"#contact_email\").focus();\n   return false;\n   }\n   else if(full_email == \"\" || full_email == null ){\n       $(\"#error_contact_email\").html(\"Please Enter Email\");\n       $(\"#contact_email\").focus();\n       return false;\n   }\n   else if(full_contact == \"\" || full_contact == null ){\n   $(\"#error_subject_name\").html(\"Please Enter Subject\");\n   $(\"#subject_name\").focus();\n   return false;\n   }\n   // else if(full_message == \"\" || full_message == null ){\n   // $(\"#error_contact_message\").html(\"Please Enter Message\");\n   // $(\"#contact_message\").focus();\n   // return false;\n   // }\n   \n   else{\n       $.ajax({\n                   type: 'POST',\n                   url: 'send-email.php',\n                   data: \"full_name=\" + full_name + \"&full_email=\" + full_email + \"&full_contact=\" + full_contact + \"&full_message=\" + full_message,\n   \n                   success: function(data) {\n                       $(\".success-message\").html('Your message has been successfully delivered. Our representative will be in touch with you soon.');\n             \n                       $(\"#contact_name\").val(\"\");\n                       $(\"#contact_email\").val(\"\");\n                       $(\"#subject_name\").val(\"\");\n                       $(\"#contact_message\").val(\"\");\n                       $(\".success-message\").fadeOut(5000);\n                       \n                   }\n               });\n   \n   }\n   }     \n",
+      "https://www.trinityconsulting.asia/css/aos/aos.js",
+      "https://www.trinityconsulting.asia/css/bootstrap/js/bootstrap.bundle.min.js",
+      "https://www.trinityconsulting.asia/css/glightbox/js/glightbox.min.js",
+      "https://www.trinityconsulting.asia/css/isotope-layout/isotope.pkgd.min.js",
+      "https://www.trinityconsulting.asia/css/swiper/swiper-bundle.min.js",
+      "https://www.trinityconsulting.asia/css/waypoints/noframework.waypoints.js",
+      "https://www.trinityconsulting.asia/js/main.js"
+    ]
+  },
+  {
+    "step": "Controls /carrer",
+    "controls": [
+      {
+        "tag": "INPUT",
+        "html": "<input type=\"text\" class=\"form-control\" name=\"contact_name\" id=\"contact_name\" placeholder=\"Full Name\">"
+      },
+      {
+        "tag": "INPUT",
+        "html": "<input type=\"email\" class=\"form-control\" name=\"contact_email\" id=\"contact_email\" placeholder=\"Email\">"
+      },
+      {
+        "tag": "INPUT",
+        "html": "<input type=\"text\" class=\"form-control\" name=\"contact_number\" id=\"contact_number\" placeholder=\"Phone Number\">"
+      },
+      {
+        "tag": "INPUT",
+        "html": "<input type=\"file\" name=\"file_attach\" class=\"form-control-file\" id=\"file_attach\">"
+      },
+      {
+        "tag": "TEXTAREA",
+        "html": "<textarea class=\"form-control\" name=\"contact_message\" id=\"contact_message\" placeholder=\"Message\" rows=\"3\"></textarea>"
+      },
+      {
+        "tag": "INPUT",
+        "html": "<input type=\"submit\" class=\"submit-join\" id=\"submit_btn\" value=\"SEND\">"
+      }
+    ],
+    "scripts": [
+      "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+      "\n$(\"#submit_btn\").click(function() {  \n        var proceed = true;\n        //simple validation at client's end\n        //loop through each field and we simply change border color to red for invalid fields       \n      //   $(\"#contact_form input[required=true], #contact_form textarea[required=true]\").each(function(){\n      //       $(this).css('border-color',''); \n      //       if(!$.trim($(this).val())){ \n      //           $(this).css('border-color','red'); \n      //           proceed = false; \n      //       }\n          \n      //       var email_reg = /^([\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4})?$/; \n      //       if($(this).attr(\"type\")==\"email\" && !email_reg.test($.trim($(this).val()))){\n      //           $(this).css('border-color','red'); \n      //           proceed = false;           \n      //       }   \n      //   });\n\n var full_name = $(\"#contact_name\").val();\n var full_email = $(\"#contact_email\").val();\n var full_contact = $(\"#contact_number\").val();\n//  var full_address = $(\"#contact_address\").val();\n//  var full_position = $(\"#contact_position\").val();\n var full_file = $(\"#file_attach\").val();\n \n \n $(\"#error_contact_name\").html(\"\");\n $(\"#error_contact_email\").html(\"\");\n $(\"#error_contact_number\").html(\"\");\n//  $(\"#error_contact_address\").html(\"\");\n//  $(\"#error_contact_position\").html(\"\");\n $(\"#error_contact_file\").html(\"\");\nif(full_name == \"\" || full_name == null ){\n    $(\"#error_contact_name\").html(\"Please Enter Name\");\n    $(\"#contact_name\").focus();\n    return false;\n}\n\nelse if( !/(.+)@(.+){2,}\\.(.+){2,}/.test(full_email) ){\n$(\"#error_contact_email\").html(\"Please Enter valid Email\");\n$(\"#contact_email\").focus();\nreturn false;\n}\nelse if(full_email == \"\" || full_email == null ){\n    $(\"#error_contact_email\").html(\"Please Enter Email\");\n    $(\"#contact_email\").focus();\n    return false;\n}\nelse if(full_contact == \"\" || full_contact == null ){\n$(\"#error_contact_number\").html(\"Please Enter Contact Number\");\n$(\"#contact_number\").focus();\nreturn false;\n}\n// else if(full_address == \"\" || full_address == null ){\n// $(\"#error_contact_address\").html(\"Please Enter Your Address\");\n// $(\"#contact_address\").focus();\n// return false;\n// }\n\n// else if(full_position == \"\" || full_position == null ){\n// $(\"#error_contact_position\").html(\"Please Select Position Type\");\n// $(\"#contact_position\").focus();\n// return false;\n// }\nelse if(full_file == \"\" || full_file == null ){\n$(\"#error_contact_file\").html(\"Please Upload File\");\n$(\"#contact_position\").focus();\nreturn false;\n}\n\n\n\n       \n        if(proceed) //everything looks good! proceed...\n        {\n           //data to be sent to server         \n            var m_data = new FormData();    \n            m_data.append( 'user_name', $('input[name=contact_name]').val());\n            m_data.append( 'user_email', $('input[name=contact_email]').val());\n            m_data.append( 'phone_number', $('input[name=contact_number]').val());\n      \n        \n            \n            m_data.append( 'file_attach', $('input[name=file_attach]')[0].files[0]);\n            m_data.append( 'contact_message', $('textarea[name=contact_message]').val());\n             \n            //instead of $.post() we are using $.ajax()\n            //that's because $.ajax() has more options and flexibly.\n            $.ajax({\n              url: 'apply-job-email.php',\n              data: m_data,\n              processData: false,\n              contentType: false,\n              type: 'POST',\n              dataType:'json',\n              success: function(response){\n               $(\".success-message\").html('Your message has been successfully delivered. Our representative will be in touch with you soon.');\n                    $(\"#contact_name\").val(\"\");\n                    $(\"#contact_email\").val(\"\");\n                    $(\"#contact_number\").val(\"\");\n                    $(\"#file_attach\").val(\"\");\n                    $(\"#contact_message\").val(\"\");\n                    $(\".success-message\").fadeOut(5000);\n                \n              }\n            });         \n        }\n    });\n    \n\n\n",
+      "https://www.trinityconsulting.asia/css/aos/aos.js",
+      "https://www.trinityconsulting.asia/css/bootstrap/js/bootstrap.bundle.min.js",
+      "https://www.trinityconsulting.asia/css/glightbox/js/glightbox.min.js",
+      "https://www.trinityconsulting.asia/css/isotope-layout/isotope.pkgd.min.js",
+      "https://www.trinityconsulting.asia/css/swiper/swiper-bundle.min.js",
+      "https://www.trinityconsulting.asia/css/waypoints/noframework.waypoints.js",
+      "https://www.trinityconsulting.asia/js/main.js"
+    ]
+  },
+  {
+    "step": "Controls /about",
+    "controls": [],
+    "scripts": [
+      "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+      "https://www.trinityconsulting.asia/css/aos/aos.js",
+      "https://www.trinityconsulting.asia/css/bootstrap/js/bootstrap.bundle.min.js",
+      "https://www.trinityconsulting.asia/css/glightbox/js/glightbox.min.js",
+      "https://www.trinityconsulting.asia/css/isotope-layout/isotope.pkgd.min.js",
+      "https://www.trinityconsulting.asia/css/swiper/swiper-bundle.min.js",
+      "https://www.trinityconsulting.asia/css/waypoints/noframework.waypoints.js",
+      "https://www.trinityconsulting.asia/js/main.js"
+    ]
+  },
+  {
+    "step": "Back to top",
+    "scrollY": 1460
+  }
+]
