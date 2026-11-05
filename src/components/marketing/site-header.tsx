@@ -1,43 +1,17 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { SiteNav } from "@/components/marketing/site-nav";
 import { TwinlinkMark } from "@/components/marketing/twinlink-mark";
 import type { AppUser } from "@/lib/types";
 
 export function SiteHeader({ user }: { user: AppUser | null }) {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0c0b0a]/55 text-white backdrop-blur-md">
-      <div className="mx-auto flex h-[4.25rem] w-full max-w-6xl items-center justify-between gap-3 px-4">
-        <Link href="/" className="flex items-center gap-2 text-[#e8d5a3]">
-          <TwinlinkMark className="size-7" />
-          <span className="font-serif text-2xl tracking-wide">Twinlink</span>
+    <header className="foundation-header">
+      <div className="foundation-container foundation-header-inner">
+        <Link href="/" className="foundation-brand" aria-label="TwinLink home">
+          <TwinlinkMark className="foundation-mark" />
+          <span>TWINLINK</span>
         </Link>
         <SiteNav signedIn={Boolean(user)} />
-        <div className="ml-auto flex items-center gap-2 xl:ml-0">
-          {user ? (
-            <Button asChild size="sm" variant="teal" className="rounded-full">
-              <Link href="/dashboard">Dashboard</Link>
-            </Button>
-          ) : (
-            <>
-              <Button
-                asChild
-                size="sm"
-                variant="ghost"
-                className="hidden text-white hover:bg-white/10 hover:text-[#e8d5a3] sm:inline-flex"
-              >
-                <Link href="/login">Sign in</Link>
-              </Button>
-              <Button asChild size="sm" variant="teal" className="rounded-full">
-                <Link href="/register">
-                  Join<span className="hidden sm:inline"> as a candidate</span>{" "}
-                  <ArrowRight className="hidden sm:block" />
-                </Link>
-              </Button>
-            </>
-          )}
-        </div>
       </div>
     </header>
   );

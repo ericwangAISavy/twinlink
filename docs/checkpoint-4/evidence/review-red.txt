@@ -1,0 +1,23 @@
+{
+  "colors": {
+    "bg": "rgb(27, 189, 54)",
+    "fg": "rgb(255, 255, 255)"
+  },
+  "contrast": 2.506292853922132,
+  "before": 0,
+  "after": 1,
+  "failures": [
+    "Action contrast is 2.51:1",
+    "Footer must retain Insights destination",
+    "Keyboard focus must keep slideshow paused after pointer exits\n\n1 !== 0\n"
+  ]
+}
+Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   'Action contrast is 2.51:1',
++   'Footer must retain Insights destination',
++   'Keyboard focus must keep slideshow paused after pointer exits\n\n1 !== 0\n'
++ ]
+- []

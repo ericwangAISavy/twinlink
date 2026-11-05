@@ -1,0 +1,12 @@
+AssertionError [ERR_ASSERTION]: Reference header must be 70px
+
+69 !== 70
+
+    at /workspace/twinlink/docs/checkpoint-4/scripts/browser-check.cjs:22:12 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 69,
+  expected: 70,
+  operator: 'strictEqual',
+  diff: 'simple'
+}

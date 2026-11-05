@@ -1,11 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 export function ResourceHero({
   eyebrow,
   title,
   description,
-  image,
 }: {
   eyebrow: string;
   title: string;
@@ -13,34 +11,20 @@ export function ResourceHero({
   image: string;
 }) {
   return (
-    <section className="relative isolate overflow-hidden border-b border-white/10">
-      <Image
-        src={image}
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="-z-20 object-cover"
-      />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0c0b0a] via-[#0c0b0a]/90 to-[#0c0b0a]/45" />
-      <div className="mx-auto max-w-6xl px-4 py-20 md:py-28">
-        <p className="text-xs uppercase tracking-[.3em] text-[#e8d5a3]">
-          {eyebrow}
-        </p>
-        <h1 className="mt-6 max-w-3xl font-serif text-5xl leading-tight text-white md:text-7xl">
-          {title}
-        </h1>
-        <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
-          {description}
-        </p>
+    <section className="foundation-resource-hero">
+      <div className="foundation-container">
+        <p className="foundation-resource-eyebrow">{eyebrow}</p>
+        <h1>{title}</h1>
+        <p className="foundation-resource-description">{description}</p>
       </div>
+      <div className="foundation-wave" aria-hidden="true" />
     </section>
   );
 }
 export function ResourceLinks() {
   return (
-    <nav aria-label="Resources" className="border-b border-white/10">
-      <div className="mx-auto flex max-w-6xl flex-wrap gap-x-8 gap-y-3 px-4 py-5 text-sm text-[#e8d5a3]">
+    <nav aria-label="Resources" className="foundation-resource-links">
+      <div className="foundation-container flex flex-wrap gap-x-8 gap-y-3 py-5 text-sm">
         {[
           ["case-studies", "Case studies"],
           ["blog", "Blog"],

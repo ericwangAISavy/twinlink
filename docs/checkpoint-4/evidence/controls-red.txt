@@ -1,0 +1,8 @@
+{
+  "ratios": [
+    1.075894077731958,
+    1.016210464142108,
+    2.91957123809402
+  ]
+}
+All carousel indicators need 3:1 contrast against the retained photograph/backdrop

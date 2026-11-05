@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Pause, Play } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const SLIDES = [
@@ -23,38 +23,48 @@ const SLIDES = [
   },
 ] as const;
 
-const INTERVAL_MS = 7000;
+const INTERVAL_MS = 5000;
 
 export function HeroSlider({ children }: { children: ReactNode }) {
   const [index, setIndex] = useState(0);
+  const [reducedMotion, setReducedMotion] = useState(true);
+  const [manualPause, setManualPause] = useState(false);
   const [direction, setDirection] = useState<"next" | "prev">("next");
-  const [paused, setPaused] = useState(false);
+  const [hoverPaused, setHoverPaused] = useState(false);
+  const [focusPaused, setFocusPaused] = useState(false);
+  const paused = hoverPaused || focusPaused;
 
   const goTo = useCallback((nextIndex: number, dir: "next" | "prev") => {
     setDirection(dir);
     setIndex((nextIndex + SLIDES.length) % SLIDES.length);
   }, []);
 
-  const step = useCallback((dir: "next" | "prev") => {
-    setDirection(dir);
-    setIndex((current) => (current + (dir === "next" ? 1 : -1) + SLIDES.length) % SLIDES.length);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReducedMotion(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
   }, []);
 
   useEffect(() => {
-    if (paused) return;
+    if (paused || manualPause || reducedMotion) return;
     const timer = window.setInterval(() => {
       setDirection("next");
       setIndex((current) => (current + 1) % SLIDES.length);
     }, INTERVAL_MS);
     return () => window.clearInterval(timer);
-  }, [paused, index]);
+  }, [paused, manualPause, reducedMotion, index]);
 
   return (
     <section
-      className="relative -mt-[4.25rem] overflow-hidden text-white"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      className="foundation-hero"
+      onMouseEnter={() => setHoverPaused(true)}
+      onMouseLeave={() => setHoverPaused(false)}
       aria-roledescription="carousel"
+      onFocusCapture={() => setFocusPaused(true)}
+      onBlurCapture={e => { if (!e.currentTarget.contains(e.relatedTarget)) setFocusPaused(false); }}
       aria-label="Featured photography"
     >
       <div className="absolute inset-0">
@@ -80,54 +90,25 @@ export function HeroSlider({ children }: { children: ReactNode }) {
             </div>
           );
         })}
-        <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-black/88 via-black/50 to-black/20" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-40 bg-gradient-to-t from-[#11100e] to-transparent" />
+
       </div>
 
-      <div className="relative z-[2] mx-auto flex min-h-[86vh] max-w-6xl items-center px-4 pb-28 pt-32 md:min-h-[92vh] md:pb-36 md:pt-36">
-        {children}
+      <div className="foundation-hero-caption-area">
+        <div className="foundation-hero-caption" key={index}>{children}</div>
       </div>
-
-      <button
-        type="button"
-        aria-label="Previous slide"
-        onClick={() => step("prev")}
-        className="absolute top-1/2 left-3 z-[3] hidden size-12 -translate-y-1/2 place-items-center rounded-full border border-[#c4a574]/70 bg-black/20 text-[#e8d5a3] backdrop-blur-sm transition hover:bg-[#c4a574]/15 md:grid lg:left-6"
-      >
-        <ChevronLeft className="size-5" />
-      </button>
-      <button
-        type="button"
-        aria-label="Next slide"
-        onClick={() => step("next")}
-        className="absolute top-1/2 right-3 z-[3] hidden size-12 -translate-y-1/2 place-items-center rounded-full border border-[#c4a574]/70 bg-black/20 text-[#e8d5a3] backdrop-blur-sm transition hover:bg-[#c4a574]/15 md:grid lg:right-6"
-      >
-        <ChevronRight className="size-5" />
-      </button>
-
-      <div className="absolute bottom-8 left-0 z-[3] w-full md:bottom-10">
-        <div className="mx-auto flex max-w-6xl items-center gap-2 px-4">
+      <div className="foundation-hero-controls">
+        <div className="foundation-hero-dots" aria-label="Choose photograph">
           {SLIDES.map((slide, slideIndex) => (
-            <button
-              key={slide.src}
-              type="button"
-              aria-label={`Show slide ${slideIndex + 1}`}
+            <button key={slide.src} type="button" aria-label={`Show slide ${slideIndex + 1}`}
               aria-current={slideIndex === index ? true : undefined}
               onClick={() => goTo(slideIndex, slideIndex > index ? "next" : "prev")}
-              className={cn(
-                "h-[3px] overflow-hidden rounded-full transition-all duration-500",
-                slideIndex === index ? "w-11 bg-white/20" : "w-4 bg-white/30 hover:bg-white/50",
-              )}
-            >
-              {slideIndex === index ? (
-                <span
-                  key={`${index}-${paused}`}
-                  className={cn("hero-slide-progress block h-full bg-[#c4a574]", paused && "hero-slide-progress-paused")}
-                />
-              ) : null}
-            </button>
+              className={cn("foundation-hero-dot", slideIndex === index && "is-active")} />
           ))}
         </div>
+        <button type="button" className="foundation-hero-pause" disabled={reducedMotion} aria-label={reducedMotion ? "Automatic slideshow disabled for reduced motion" : manualPause ? "Play slideshow" : "Pause slideshow"}
+          aria-pressed={manualPause} onClick={() => setManualPause(value => !value)}>
+          {manualPause ? <Play size={14} /> : <Pause size={14} />}
+        </button>
       </div>
     </section>
   );

@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "x": 0,
+    "y": 70,
+    "width": 1440,
+    "height": 585
+  },
+  "caption": {
+    "x": 30,
+    "y": 240.515625,
+    "width": 330,
+    "height": 290.28125
+  },
+  "failures": [
+    "Shared blue panel must account for fixed header overlap\n\n655 !== 585\n",
+    "Expected values to be strictly equal:\n\n30 !== 55\n"
+  ]
+}
+Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   'Shared blue panel must account for fixed header overlap\n\n655 !== 585\n',
++   'Expected values to be strictly equal:\n\n30 !== 55\n'
++ ]
+- []

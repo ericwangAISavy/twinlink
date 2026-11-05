@@ -14,6 +14,7 @@ const eslintConfig = [
   {
     ignores: [
       "node_modules/**",
+      "docs/checkpoint-2/assets/originals/**",
       ".next/**",
       "out/**",
       "build/**",
