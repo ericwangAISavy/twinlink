@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
+import { PageSpinner } from "@/components/loading-spinner";
 import { LoginForm } from "@/components/auth/login-form";
 import { TwinlinkMark } from "@/components/marketing/twinlink-mark";
 
@@ -22,7 +23,7 @@ export default function LoginPage() {
         <br />
         Candidates and employees use the same portal.
       </p>
-      <Suspense fallback={<p className="mt-6 text-sm text-white/50">Loading…</p>}>
+      <Suspense fallback={<PageSpinner className="min-h-[12rem]" />}>
         <LoginForm />
       </Suspense>
     </>

@@ -1,0 +1,280 @@
+{
+  "guarded": [
+    {
+      "route": "/admin/activity",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/analytics",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/applications/00000000-0000-4000-8000-000000000000",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/applications",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/candidates/00000000-0000-4000-8000-000000000000",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/candidates",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/content",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/employees/00000000-0000-4000-8000-000000000000",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/employees",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/guest-applications/00000000-0000-4000-8000-000000000000",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/guest-applications",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/invitations",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/jobs/00000000-0000-4000-8000-000000000000",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/jobs/new",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/jobs",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/notifications",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/publishing/00000000-0000-4000-8000-000000000000",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/publishing/00000000-0000-4000-8000-000000000000/preview",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/publishing/new",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/publishing",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/resources",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/search",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/settings",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/users",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/admin/visitors",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/candidate/applications/00000000-0000-4000-8000-000000000000",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/candidate/applications",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/candidate/browse-roles",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/candidate/jobs/00000000-0000-4000-8000-000000000000",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/candidate/jobs",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/candidate",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/candidate/profile",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/candidate/resume",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/candidate/saved",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/candidate/settings",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee/applicants/00000000-0000-4000-8000-000000000000",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee/applicants",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee/applications/00000000-0000-4000-8000-000000000000",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee/candidates/00000000-0000-4000-8000-000000000000",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee/company",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee/jobs/00000000-0000-4000-8000-000000000000/applicants",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee/jobs/00000000-0000-4000-8000-000000000000/edit",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee/jobs/00000000-0000-4000-8000-000000000000",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee/jobs/new",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee/jobs",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee/profile",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard/employee/settings",
+      "redirect": "/login",
+      "passed": true
+    },
+    {
+      "route": "/dashboard",
+      "redirect": "/login",
+      "passed": true
+    }
+  ],
+  "missing": [
+    {
+      "route": "/not-a-twinlink-page",
+      "status": 404,
+      "heading": "Page not found",
+      "passed": true
+    },
+    {
+      "route": "/services/not-a-service",
+      "status": 404,
+      "heading": "Page not found",
+      "passed": true
+    },
+    {
+      "route": "/careers/not-a-role",
+      "status": 200,
+      "heading": "Role not found",
+      "passed": true
+    },
+    {
+      "route": "/blog/not-an-article",
+      "status": 200,
+      "heading": "Page not found",
+      "passed": true
+    }
+  ]
+}

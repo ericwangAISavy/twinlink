@@ -1,0 +1,422 @@
+[
+  {
+    "round": 1,
+    "id": "T01",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T02",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T03",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T04",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T05",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T06",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T07",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T08",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T09",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T10",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T11",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T12",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T13",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T14",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T15",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T01",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T02",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T03",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T04",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T05",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T06",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T07",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T08",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T09",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T10",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T11",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T12",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T13",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T14",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 1,
+    "id": "T15",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T01",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T02",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T03",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T04",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T05",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T06",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T07",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T08",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T09",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T10",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T11",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T12",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T13",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T14",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T15",
+    "mode": "desktop",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T01",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T02",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T03",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T04",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T05",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T06",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T07",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T08",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T09",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T10",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T11",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T12",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T13",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T14",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  },
+  {
+    "round": 2,
+    "id": "T15",
+    "mode": "mobile",
+    "earlyHeaderInteraction": true,
+    "errors": []
+  }
+]

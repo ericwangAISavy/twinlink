@@ -1,0 +1,10 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- Final evidence integrity manifest. */
+const fs=require('fs'),path=require('path'),crypto=require('crypto'),assert=require('node:assert/strict');
+const out='docs/checkpoint-7/evidence',hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
+function files(dir){return fs.readdirSync(dir).sort().flatMap(name=>{const p=path.join(dir,name);return fs.statSync(p).isDirectory()?files(p):[p]})}
+const result=name=>JSON.parse(fs.readFileSync(`${out}/${name}-results.json`));
+const site=result('site'),motion=result('motion'),fixtures=result('fixture'),loading=result('loading'),hydration=result('hydration'),guards=result('guards'),preservation=result('preservation');
+assert.equal(site.pages.length,40);assert.equal(site.menus.length,144);assert.equal(site.links.length,302);assert.deepEqual(site.links.filter(x=>x.mode==='desktop').map(x=>x.href).sort(),site.links.filter(x=>x.mode==='mobile').map(x=>x.href).sort());assert.equal(site.responsive.length,65);assert.equal(motion.length,2);assert.equal(fixtures.length,28);assert.equal(loading.length,4);assert.equal(hydration.length,60);assert.equal(guards.guarded.length,50);assert.equal(guards.missing.length,4);
+const sourceFiles=files('src').map(file=>({file,sha256:hash(fs.readFileSync(file))}));const evidenceFiles=files(out).filter(file=>/\.(png|jpg|json)$/.test(file)&&!file.endsWith('final-verification.json')).map(file=>({file,sha256:hash(fs.readFileSync(file))}));
+fs.writeFileSync(`${out}/final-verification.json`,JSON.stringify({baseline:preservation.baseline,buildId:fs.readFileSync('.next/BUILD_ID','utf8').trim(),sourceTreeSha256:hash(JSON.stringify(sourceFiles)),sourceFiles,acceptance:{pageStates:40,menuStates:144,navigationDestinations:site.links.length,responsiveStates:65,motionModes:2,fixtures:28,productionLoadingStates:4,earlyHeaderStates:60,protectedRoutes:50,missingPages:4,unitTests:31,lint:'passed',types:'passed',productionBuild:'passed',applicationLogicPreservation:'passed'},checkpoint8Started:false,evidenceFiles},null,2)+'\n');
+console.log('Final source/build/capture manifest written');

@@ -1,0 +1,86 @@
+T01 desktop page/menu/sticky passed
+T02 desktop page/menu/sticky passed
+T03 desktop page/menu/sticky passed
+T04 desktop page/menu/sticky passed
+T05 desktop page/menu/sticky passed
+T06 desktop page/menu/sticky passed
+T07 desktop page/menu/sticky passed
+T08 desktop page/menu/sticky passed
+T09 desktop page/menu/sticky passed
+T10 desktop page/menu/sticky passed
+T11 desktop page/menu/sticky passed
+T12 desktop page/menu/sticky passed
+T13 desktop page/menu/sticky passed
+T14 desktop page/menu/sticky passed
+T15 desktop page/menu/sticky passed
+X0 desktop page/menu/sticky passed
+X1 desktop page/menu/sticky passed
+X2 desktop page/menu/sticky passed
+X3 desktop page/menu/sticky passed
+X4 desktop page/menu/sticky passed
+AssertionError [ERR_ASSERTION]: /services/erp linked errors
++ actual - expected
+
++ [
++   {
++     message: "Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n" +
++       '\n' +
++       "- A server/client branch `if (typeof window !== 'undefined')`.\n" +
++       "- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n" +
++       "- Date formatting in a user's locale which doesn't match the server.\n" +
++       '- External changing data without sending a snapshot of it along with the HTML.\n' +
++       '- Invalid HTML tag nesting.\n' +
++       '\n' +
++       'It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n' +
++       '\n' +
++       'https://react.dev/link/hydration-mismatch\n' +
++       '\n' +
++       '  ...\n' +
++       '    <ScrollAndFocusHandler segmentPath={[...]}>\n' +
++       '      <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>\n' +
++       '        <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>\n' +
++       '          <LoadingBoundary loading={[...]}>\n' +
++       '            <Suspense fallback={<Fragment>}>\n' +
++       '              <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>\n' +
++       '                <HTTPAccessFallbackErrorBoundary pathname="/services/erp" notFound={<SegmentViewNode>} ...>\n' +
++       '                  <RedirectBoundary>\n' +
++       '                    <RedirectErrorBoundary router={{...}}>\n' +
++       '                      <InnerLayoutRouter url="/services/erp" tree={[...]} cacheNode={{lazyData:null, ...}} ...>\n' +
++       '                        <SegmentViewNode type="layout" pagePath="(marketing...">\n' +
++       '                          <SegmentTrieNode>\n' +
++       '                          <link>\n' +
++       '                          <script>\n' +
++       '                          <script>\n' +
++       '                          <MarketingLayout>\n' +
++       '                            <div className="opensans_1...">\n' +
++       '                              <a>\n' +
++       '                              <header>\n' +
++       '                              <VisitorTracker>\n' +
++       '+                             <main id="marketing-content" className="foundation-content" tabIndex={-1}>\n' +
++       '-                             <Suspense>\n' +
++       '                              ...\n' +
++       '                      ...\n' +
++       '        ...\n' +
++       '\n' +
++       '    at throwOnHydrationMismatch (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:2892:56)\n' +
++       '    at beginWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:6178:918)\n' +
++       '    at replayBeginWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:8321:156)\n' +
++       '    at runWithFiberInDEV (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:886:74)\n' +
++       '    at replaySuspendedUnitOfWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:8303:20)\n' +
++       '    at renderRootConcurrent (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:8235:141)\n' +
++       '    at performWorkOnRoot (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:7908:176)\n' +
++       '    at performWorkOnRootViaSchedulerTask (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:8882:9)\n' +
++       '    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_5150ccfd._.js:2601:64)',
++     url: 'http://127.0.0.1:3000/services/erp'
++   }
++ ]
+- []
+
+    at /workspace/twinlink/docs/checkpoint-7/scripts/site-check.cjs:28:726 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}

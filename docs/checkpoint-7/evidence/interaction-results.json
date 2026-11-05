@@ -1,0 +1,7 @@
+{
+  "checks": [
+    "Careers department/location/work-type/experience/sort, team default, page size and filter toggling",
+    "Contact required validation, organization/topic fields and encoded email draft; no sending",
+    "Eight distinct working Tech targets; HR enquiries preserved"
+  ]
+}

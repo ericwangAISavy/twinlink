@@ -5,7 +5,7 @@
   src: url("/fonts/bootstrap-icons.woff2") format("woff2");
   font-display: block;
 }
-.trinity-foundation {
+.marketing-theme.trinity-foundation {
   --font-sans: var(--font-reference-body);
   --font-serif: var(--font-reference-heading);
   --background: #fff;
@@ -61,12 +61,13 @@
 .trinity-foundation .foundation-button { display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 4px; background: #13832a; color: #fff; padding: 10px 24px; font: 400 16px/1.5 var(--font-reference-body), sans-serif; text-decoration: none; cursor: pointer; transition: background-color .4s; }
 .trinity-foundation .foundation-button:hover { background: #106e23; color: #fff; }
 .trinity-foundation .foundation-account > .foundation-button-small { padding: 8px 14px; color: #fff; font-size: 13px; text-transform: none; }
+.trinity-foundation .foundation-nav .foundation-account > a.foundation-button { color:#fff; padding:8px 14px; text-transform:none; }
 .trinity-foundation .foundation-menu-toggle, .trinity-foundation .foundation-menu-close { display: none; border: 0; background: transparent; cursor: pointer; padding: 0; font-size: 28px; line-height: 1; color: #111; }
 .trinity-foundation .foundation-skip { position: fixed; top: 8px; left: 12px; z-index: 1100; padding: 10px 16px; background: #fff; color: #157cbf; transform: translateY(-200%); }
 .trinity-foundation .foundation-skip:focus { transform: none; }
 /* Existing page bodies retain their content-specific surfaces until their
    individual checkpoints. Fonts/buttons/motion can inherit the foundation. */
-.trinity-foundation .foundation-content { flex: 1; padding-top: 70px; background: #11100e; color: #f4efe6; --background: #11100e; --foreground: #f4efe6; --card: #1a1815; --card-foreground: #f4efe6; --muted: #24211c; --muted-foreground: #b7ae9f; --secondary: #1f1c18; --secondary-foreground: #f4efe6; --border: #3a342c; --input: #3a342c; }
+.trinity-foundation .foundation-content { flex: 1; padding-top: 70px; background: #fff; color: #4d4643; --background: #fff; --foreground: #4d4643; --card: #fff; --card-foreground: #4d4643; --muted: #f7f7f7; --muted-foreground: #625c59; --secondary: #f6f9ff; --secondary-foreground: #4d4643; --border: #e6e6e6; --input: #ced4da; }
 .trinity-foundation .foundation-content :is(a,button).bg-accent,
 .trinity-foundation .foundation-content :is(a,button).bg-primary { border-radius: 4px; background: #13832a; color: #fff; box-shadow: none; transition: background-color .4s; }
 .trinity-foundation .foundation-content :is(a,button).bg-accent:hover,

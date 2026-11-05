@@ -1,0 +1,422 @@
+[
+  {
+    "id": "T01",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      4765
+    ],
+    "renderPixels": [
+      1440,
+      5464
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T01",
+    "mode": "mobile",
+    "sourcePixels": [
+      390,
+      13567
+    ],
+    "renderPixels": [
+      390,
+      14563
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T02",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      2428
+    ],
+    "renderPixels": [
+      1440,
+      4233
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T02",
+    "mode": "mobile",
+    "sourcePixels": [
+      390,
+      4703
+    ],
+    "renderPixels": [
+      390,
+      7700
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T03",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      1815
+    ],
+    "renderPixels": [
+      1440,
+      1024
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": true
+  },
+  {
+    "id": "T03",
+    "mode": "mobile",
+    "sourcePixels": [
+      980,
+      3481
+    ],
+    "renderPixels": [
+      390,
+      1223
+    ],
+    "sourceViewportIssue": true,
+    "integratedSection": true
+  },
+  {
+    "id": "T04",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      2080
+    ],
+    "renderPixels": [
+      1440,
+      2410
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T04",
+    "mode": "mobile",
+    "sourcePixels": [
+      390,
+      3052
+    ],
+    "renderPixels": [
+      390,
+      3837
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T05",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      5492
+    ],
+    "renderPixels": [
+      1440,
+      2108
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T05",
+    "mode": "mobile",
+    "sourcePixels": [
+      390,
+      11862
+    ],
+    "renderPixels": [
+      390,
+      3707
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T06",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      2890
+    ],
+    "renderPixels": [
+      1440,
+      2081
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T06",
+    "mode": "mobile",
+    "sourcePixels": [
+      980,
+      4767
+    ],
+    "renderPixels": [
+      390,
+      3758
+    ],
+    "sourceViewportIssue": true,
+    "integratedSection": false
+  },
+  {
+    "id": "T07",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      2527
+    ],
+    "renderPixels": [
+      1440,
+      2486
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T07",
+    "mode": "mobile",
+    "sourcePixels": [
+      390,
+      3578
+    ],
+    "renderPixels": [
+      390,
+      3766
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T08",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      2510
+    ],
+    "renderPixels": [
+      1440,
+      2380
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T08",
+    "mode": "mobile",
+    "sourcePixels": [
+      390,
+      3636
+    ],
+    "renderPixels": [
+      390,
+      3666
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T09",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      2790
+    ],
+    "renderPixels": [
+      1440,
+      2682
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T09",
+    "mode": "mobile",
+    "sourcePixels": [
+      390,
+      3985
+    ],
+    "renderPixels": [
+      390,
+      4041
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T10",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      2469
+    ],
+    "renderPixels": [
+      1440,
+      2383
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T10",
+    "mode": "mobile",
+    "sourcePixels": [
+      390,
+      3419
+    ],
+    "renderPixels": [
+      390,
+      3495
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T11",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      2587
+    ],
+    "renderPixels": [
+      1440,
+      2479
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T11",
+    "mode": "mobile",
+    "sourcePixels": [
+      390,
+      3735
+    ],
+    "renderPixels": [
+      390,
+      3816
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T12",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      2074
+    ],
+    "renderPixels": [
+      1440,
+      2033
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T12",
+    "mode": "mobile",
+    "sourcePixels": [
+      390,
+      3077
+    ],
+    "renderPixels": [
+      390,
+      3265
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T13",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      2589
+    ],
+    "renderPixels": [
+      1440,
+      2434
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T13",
+    "mode": "mobile",
+    "sourcePixels": [
+      980,
+      3558
+    ],
+    "renderPixels": [
+      390,
+      3743
+    ],
+    "sourceViewportIssue": true,
+    "integratedSection": false
+  },
+  {
+    "id": "T14",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      2544
+    ],
+    "renderPixels": [
+      1440,
+      2457
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T14",
+    "mode": "mobile",
+    "sourcePixels": [
+      390,
+      3624
+    ],
+    "renderPixels": [
+      390,
+      3743
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T15",
+    "mode": "desktop",
+    "sourcePixels": [
+      1440,
+      1853
+    ],
+    "renderPixels": [
+      1440,
+      1835
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  },
+  {
+    "id": "T15",
+    "mode": "mobile",
+    "sourcePixels": [
+      390,
+      3458
+    ],
+    "renderPixels": [
+      390,
+      3714
+    ],
+    "sourceViewportIssue": false,
+    "integratedSection": false
+  }
+]

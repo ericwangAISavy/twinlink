@@ -23,7 +23,7 @@ export async function ResourceDetail({
     .filter((r) => r.kind === item.kind && r.slug !== item.slug)
     .slice(0, 2);
   return (
-    <>
+    <div className="foundation-editorial-detail">
       <ResourceHero
         eyebrow={`${item.category} · ${item.label}`}
         title={item.title}
@@ -305,6 +305,6 @@ export async function ResourceDetail({
       <div className="px-4">
         <ResourceCta />
       </div>
-    </>
+    </div>
   );
 }

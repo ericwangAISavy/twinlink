@@ -1,0 +1,138 @@
+{
+  "referenceLiveAccess": "Proxy HTTP 403; prior captures/CSS/assets used",
+  "referencePhotographyRights": "Existing permission-or-replacement status; no deployment",
+  "missingEditorialOriginals": [
+    {
+      "resource": "safer-autonomous-mobility",
+      "requested": "/images/editorial/autonomous-mobility.jpg",
+      "fallback": "/images/how-we-help-globe.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "factory-quality-at-the-edge",
+      "requested": "/images/editorial/industrial-ai-operator.jpg",
+      "fallback": "/images/how-we-help-delivery.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "maintenance-knowledge-search",
+      "requested": "/images/editorial/semantic-search.jpg",
+      "fallback": "/images/how-we-help-architecture.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "controlled-ai-service-desk",
+      "requested": "/images/editorial/ai-operations-agent.jpg",
+      "fallback": "/images/our-people-hologram.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "reliable-demand-planning",
+      "requested": "/images/editorial/data-intelligence.jpg",
+      "fallback": "/images/about-vision-ai.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "modernizing-production-without-stopping-it",
+      "requested": "/images/editorial/industrial-modernization.jpg",
+      "fallback": "/images/how-we-help-delivery.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "vision-guided-cobot-pilot",
+      "requested": "/images/editorial/collaborative-robot.jpg",
+      "fallback": "/images/our-people-hologram.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "cross-border-product-operating-model",
+      "requested": "/images/editorial/engineering-team.jpg",
+      "fallback": "/images/about-culture-office.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "generative-ai-versus-predictive-ai",
+      "requested": "/images/editorial/generative-versus-traditional-ai.jpg",
+      "fallback": "/images/about-vision-ai.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "just-in-time-trust-for-ai-agents",
+      "requested": "/images/editorial/just-in-time-trust.jpg",
+      "fallback": "/images/how-we-help-architecture.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "semantic-search-before-another-chatbot",
+      "requested": "/images/editorial/semantic-search.jpg",
+      "fallback": "/images/how-we-help-architecture.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "industrial-ai-beyond-the-demo",
+      "requested": "/images/editorial/industrial-modernization.jpg",
+      "fallback": "/images/how-we-help-delivery.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "buying-ai-tools-on-total-cost",
+      "requested": "/images/editorial/ai-image-tools.jpg",
+      "fallback": "/images/our-people-hologram.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "ai-detectors-and-editorial-quality",
+      "requested": "/images/editorial/ai-content-detection.jpg",
+      "fallback": "/images/about-culture-office.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "the-engineering-skills-ai-does-not-replace",
+      "requested": "/images/editorial/generative-ai-learning.jpg",
+      "fallback": "/images/about-vision-ai.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "the-engineering-skills-ai-does-not-replace",
+      "requested": "/images/editorial/collaborative-software-engineering.jpg",
+      "fallback": "/images/hero-team-office.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "operating-model-for-ai-investment",
+      "requested": "/images/editorial/ai-business-strategy.jpg",
+      "fallback": "/images/how-we-help-architecture.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "operating-model-for-ai-investment",
+      "requested": "/images/editorial/enterprise-ai-network.jpg",
+      "fallback": "/images/about-vision-ai.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "industrial-ai-practice-lab",
+      "requested": "/images/editorial/industrial-ai-operator.jpg",
+      "fallback": "/images/how-we-help-delivery.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "secure-agents-design-roundtable",
+      "requested": "/images/editorial/just-in-time-trust.jpg",
+      "fallback": "/images/how-we-help-architecture.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "technical-communication-studio",
+      "requested": "/images/editorial/confident-speaking.jpg",
+      "fallback": "/images/our-people-handshake.jpg",
+      "fallbackAvailable": true
+    },
+    {
+      "resource": "ai-business-value-clinic",
+      "requested": "/images/editorial/ai-business-strategy.jpg",
+      "fallback": "/images/how-we-help-architecture.jpg",
+      "fallbackAvailable": true
+    }
+  ]
+}

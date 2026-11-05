@@ -1,0 +1,23 @@
+{
+  baseline: '87831994a5aae6215f9b568c24a7e7840771289f',
+  byteIdenticalSourceFiles: 246,
+  presentationOnlyExactTransforms: [
+    'src/components/marketing/site-nav.tsx',
+    'src/app/(marketing)/layout.tsx',
+    'src/app/(auth)/login/page.tsx',
+    'src/app/(marketing)/careers/[id]/page.tsx',
+    'src/components/resources/resource-list.tsx',
+    'src/components/resources/resource-shell.tsx',
+    'src/components/resources/resource-detail.tsx',
+    'src/app/globals.css',
+    'src/app/loading.tsx',
+    'src/components/marketing/foundation.css',
+    'src/app/not-found.tsx',
+    'src/app/(marketing)/careers/[id]/not-found.tsx',
+    'src/app/(marketing)/error.tsx'
+  ],
+  viewOnlyReplacements: [ 'src/app/(auth)/layout.tsx', 'src/components/loading-spinner.tsx' ],
+  existingRoutesRetained: 68,
+  queriesActionsAuthPermissionsFormsPrivateRoutesUnchanged: true,
+  dependencyAndMigrationFilesUnchanged: true
+}
