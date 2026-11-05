@@ -39,12 +39,22 @@ export function SiteNav({ signedIn = false }: { signedIn?: boolean }) {
   const toggle = useRef<HTMLButtonElement>(null);
   const closeButton = useRef<HTMLButtonElement>(null);
   const previousPath = useRef(pathname);
+  const keyboardGroup = useRef<string | null>(null);
 
   const close = (restoreFocus = false) => {
+    keyboardGroup.current = null;
     setMobileOpen(false);
     setOpenGroup(null);
     if (restoreFocus) toggle.current?.focus();
   };
+
+  useEffect(() => {
+    if (openGroup === null) return;
+    if (keyboardGroup.current === openGroup) {
+      keyboardGroup.current = null;
+      nav.current?.querySelector<HTMLAnchorElement>(`#nav-group-${openGroup} a`)?.focus();
+    }
+  }, [openGroup]);
 
   useEffect(() => {
     if (previousPath.current !== pathname) {
@@ -81,6 +91,7 @@ export function SiteNav({ signedIn = false }: { signedIn?: boolean }) {
   useEffect(() => {
     const handle = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
+        keyboardGroup.current = null;
         if (mobileOpen) {
           setMobileOpen(false); setOpenGroup(null); toggle.current?.focus();
         } else if (openGroup) {
@@ -131,15 +142,16 @@ export function SiteNav({ signedIn = false }: { signedIn?: boolean }) {
             const expanded = openGroup === String(index);
             return (
               <li key={group.label} className={`foundation-nav-group${expanded ? " is-expanded" : ""}`}
-                onMouseEnter={() => { if (window.matchMedia("(min-width: 992px)").matches) setOpenGroup(String(index)); }}
-                onMouseLeave={() => { if (window.matchMedia("(min-width: 992px)").matches) setOpenGroup(null); }}
+                onMouseEnter={() => { if (window.matchMedia("(min-width: 992px)").matches) { keyboardGroup.current = null; setOpenGroup(String(index)); } }}
+                onMouseLeave={() => { if (window.matchMedia("(min-width: 992px)").matches) setOpenGroup(current => current === String(index) ? null : current); }}
                 onBlur={event => { if (!mobileOpen && !event.currentTarget.contains(event.relatedTarget)) setOpenGroup(null); }}>
                 <button type="button" data-group={index} aria-expanded={expanded} aria-controls={`nav-group-${index}`}
                   onClick={() => setOpenGroup(expanded ? null : String(index))}
                   onKeyDown={event => {
                     if (event.key === "ArrowDown") {
-                      event.preventDefault(); setOpenGroup(String(index));
-                      requestAnimationFrame(() => document.querySelector<HTMLAnchorElement>(`#nav-group-${index} a`)?.focus());
+                      event.preventDefault();
+                      if (expanded) nav.current?.querySelector<HTMLAnchorElement>(`#nav-group-${index} a`)?.focus();
+                      else { keyboardGroup.current = String(index); setOpenGroup(String(index)); }
                     }
                   }}>
                   {group.label}<ReferenceIcon name="chevron-down" />

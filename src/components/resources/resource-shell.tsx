@@ -45,7 +45,7 @@ export function ResourceLinks() {
 }
 export function ResourceCta() {
   return (
-    <section className="mx-auto mb-16 mt-12 flex max-w-6xl flex-col justify-between gap-6 rounded-2xl border border-[#c4a574]/25 bg-[#c4a574]/5 px-8 py-10 sm:flex-row sm:items-center">
+    <section className="foundation-editorial-cta mx-auto mb-16 mt-12 flex max-w-6xl flex-col justify-between gap-6 rounded-2xl border border-[#c4a574]/25 bg-[#c4a574]/5 px-8 py-10 sm:flex-row sm:items-center">
       <div>
         <p className="text-xs uppercase tracking-[.25em] text-[#c4a574]">
           Let’s build what comes next

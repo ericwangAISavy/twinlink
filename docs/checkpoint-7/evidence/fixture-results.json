@@ -1,0 +1,170 @@
+[
+  {
+    "name": "root-loading",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "marketing-loading",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "auth-loading",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "error",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "loading",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "panel-loading",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "button-loading",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "resources",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "job-guest",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "job-approved",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "job-applied",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "event",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "case-study",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "article",
+    "mode": "desktop",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "root-loading",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "marketing-loading",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "auth-loading",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "error",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "loading",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "panel-loading",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "button-loading",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "resources",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "job-guest",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "job-approved",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "job-applied",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "event",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "case-study",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "article",
+    "mode": "mobile",
+    "passed": true,
+    "errors": []
+  }
+]

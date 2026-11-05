@@ -1,0 +1,34 @@
+[
+  {
+    "mode": "desktop",
+    "motion": "reduce",
+    "actualNextLoadingBoundary": true,
+    "delayedNavigationRequests": 1,
+    "resolvedToOriginalRegistrationForm": true,
+    "errors": []
+  },
+  {
+    "mode": "desktop",
+    "motion": "no-preference",
+    "actualNextLoadingBoundary": true,
+    "delayedNavigationRequests": 1,
+    "resolvedToOriginalRegistrationForm": true,
+    "errors": []
+  },
+  {
+    "mode": "mobile",
+    "motion": "reduce",
+    "actualNextLoadingBoundary": true,
+    "delayedNavigationRequests": 1,
+    "resolvedToOriginalRegistrationForm": true,
+    "errors": []
+  },
+  {
+    "mode": "mobile",
+    "motion": "no-preference",
+    "actualNextLoadingBoundary": true,
+    "delayedNavigationRequests": 1,
+    "resolvedToOriginalRegistrationForm": true,
+    "errors": []
+  }
+]

@@ -1,0 +1,40 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- Isolated QA server, never an application route. */
+const fs=require('fs'),path=require('path'),http=require('http');
+const root=path.resolve(__dirname,'../../..');
+const esbuild=require('/workspace/.twinlink-qa-tools/node_modules/esbuild');
+const buildDir=path.join(root,'node_modules/.cache/checkpoint-7');fs.mkdirSync(buildDir,{recursive:true});
+const present=[];function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())walk(p);else present.push(p)}}walk(path.join(root,'public'));
+const mock=`import React from 'react';
+export const Link=({href,prefetch,children,...p})=>React.createElement('a',{...p,href},children);
+export const Image=({fill,priority,quality,sizes,src,alt,width,height,...p})=>React.createElement('img',{...p,src,alt,width:fill?undefined:width,height:fill?undefined:height,style:{...p.style,...(fill?{position:'absolute',inset:0,width:'100%',height:'100%'}:{})}});
+export const useRouter=()=>({push:()=>{},refresh:()=>{}});export const usePathname=()=>'/fixture';export const notFound=()=>{throw Error('notFound')};
+export const existsSync=p=>${JSON.stringify(present)}.includes(p);export const join=(...p)=>p.join('/');
+export const getCurrentProfile=async()=>globalThis.__qaRole==='guest'?null:{user:{id:'qa-candidate',role:'CANDIDATE',email:'qa@example.com'},profile:{accessStatus:'approved'}};
+export const getCandidateApplication=async()=>globalThis.__qaRole==='applied'?{createdAt:'2026-11-01',status:'SUBMITTED'}:null;
+export const getSavedJobIds=async()=>new Set();
+export const getJobBySlugOrId=async()=>({id:'qa-job',status:'PUBLISHED',title:'Senior platform engineer',slug:'qa-platform',description:'Build dependable software and practical engineering systems.',responsibilities:'Design and review services.\\nSupport the delivery team.',requirements:'Experience building and operating software.',preferredQualifications:'Distributed systems experience.',employmentType:'Full-time',location:'Remote',publishedAt:'2026-11-01'});
+export const getPublishedResources=async()=>[];
+export const submitGuestApplication=async()=>{throw Error('QA fixture: writes prohibited')};export const applyToJob=submitGuestApplication;export const toggleSavedJob=submitGuestApplication;
+`;
+const entry=`import React from 'react';import {PageSpinner,MainPanelLoading,Spinner}from '${root}/src/components/loading-spinner';
+import RootLoading from '${root}/src/app/loading';import MarketingLoading from '${root}/src/app/(marketing)/loading';import AuthLoading from '${root}/src/app/(auth)/loading';import MarketingError from '${root}/src/app/(marketing)/error';
+import {ResourceList}from '${root}/src/components/resources/resource-list';import {ResourceDetail}from '${root}/src/components/resources/resource-detail';
+import Job from '${root}/src/app/(marketing)/careers/[id]/page';import {resources}from '${root}/src/lib/resources';import {withResourceImage}from '${root}/src/lib/resource-images';import {SiteHeader}from '${root}/src/components/marketing/site-header';import {SiteFooter}from '${root}/src/components/marketing/site-footer';
+export async function fixture(name,theme){globalThis.__qaRole=name.split('-')[1]||'guest';let content;
+if(name==='root-loading')return <RootLoading/>;else if(name==='marketing-loading')content=<MarketingLoading/>;else if(name==='auth-loading')content=<AuthLoading/>;else if(name==='error')content=<MarketingError error={new Error('QA-only error')} reset={()=>{globalThis.__qaRetry=(globalThis.__qaRetry||0)+1}}/>;else if(name==='loading')content=<PageSpinner/>;else if(name==='panel-loading')content=<MainPanelLoading/>;else if(name==='button-loading')content=<button className="foundation-button"><Spinner/> Saving</button>;
+else if(name==='resources')content=<ResourceList items={resources.map(withResourceImage)}/>;
+else if(name.startsWith('job-'))content=await Job({params:Promise.resolve({id:'qa-platform'})});
+else {let item=resources.find(r=>r.kind===(name==='event'?'events':name==='case-study'?'case-studies':'blog'));if(name==='event')item={...item,date:'2027-01-20T01:00:00.000Z',end:'2027-01-20T03:00:00.000Z',location:'Online QA example'};content=await ResourceDetail({item,email:'qa@example.com'})}
+return <div className={theme}><SiteHeader user={null}/><main id="marketing-content" className="foundation-content" tabIndex={-1}>{content}</main><SiteFooter company={{email:'qa@example.com',address:'QA example',phone:''}}/></div>}
+`;
+const plugin={name:'qa-only-adapters',setup(b){b.onResolve({filter:/^(next\/(link|image|navigation)|server-only|node:(fs|path)|@\/server\/)/},a=>({path:a.path,namespace:'qa'}));b.onLoad({filter:/.*/,namespace:'qa'},a=>({contents:a.path==='next/link'?mock+'\nexport default Link;':a.path==='next/image'?mock+'\nexport default Image;':mock,loader:'jsx',resolveDir:root}));b.onResolve({filter:/^@\//},a=>({path:require.resolve(path.join(root,'src',a.path.slice(2)))}));}};
+// Resolve TS/TSX @ aliases without changing the production tsconfig.
+plugin.setup=(original=>b=>{b.onResolve({filter:/^@\//},a=>{if(a.path.startsWith('@/server/'))return null;const base=path.join(root,'src',a.path.slice(2));for(const suffix of ['.tsx','.ts','.js','/index.ts'])if(fs.existsSync(base+suffix))return{path:base+suffix};return null});original(b)})(plugin.setup);
+(async()=>{
+await esbuild.build({stdin:{contents:entry,loader:'tsx',resolveDir:root},bundle:true,platform:'node',packages:'external',format:'cjs',outfile:path.join(buildDir,'server.cjs'),plugins:[plugin],jsx:'automatic'});
+await esbuild.build({stdin:{contents:entry+`\nimport {hydrateRoot}from 'react-dom/client';(async()=>{const q=new URLSearchParams(location.search);hydrateRoot(document.getElementById('fixture'),await fixture(q.get('name')||'loading',document.getElementById('fixture').dataset.theme));window.__qaHydrated=true})()`,loader:'tsx',resolveDir:root},bundle:true,platform:'browser',format:'iife',outfile:path.join(buildDir,'client.js'),plugins:[plugin],jsx:'automatic',define:{'process.env.NODE_ENV':'"production"'},banner:{js:`var process={cwd:()=>${JSON.stringify(root)}};`}});
+const {fixture}=require(path.join(buildDir,'server.cjs'));const {renderToString}=require('react-dom/server');
+const server=http.createServer(async(req,res)=>{try{const u=new URL(req.url,'http://127.0.0.1:3003');if(u.pathname==='/client.css'){res.setHeader('Content-Type','text/css');return res.end(fs.readFileSync(path.join(buildDir,'client.css')))}if(u.pathname==='/client.js'){res.setHeader('Content-Type','text/javascript');return res.end(fs.readFileSync(path.join(buildDir,'client.js')))}
+if(u.pathname!=='/'){const response=await fetch('http://127.0.0.1:3000'+req.url);res.writeHead(response.status,{'content-type':response.headers.get('content-type')||'application/octet-stream'});return res.end(Buffer.from(await response.arrayBuffer()))}
+const live=await(await fetch('http://127.0.0.1:3000/blog')).text();const styles=[...live.matchAll(/<link[^>]+rel="stylesheet"[^>]*>/g)].map(x=>x[0]).join('');const theme=(live.match(/class="([^"]*trinity-foundation[^"]*)"/)||[])[1];if(!theme)throw Error('Cannot read production theme classes');const bodyClass=(live.match(/<body[^>]*class="([^"]*)"/)||[])[1]||'';const name=u.searchParams.get('name')||'loading';const html=renderToString(await fixture(name,theme));res.setHeader('Content-Type','text/html; charset=utf-8');res.end('<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/icon.svg">'+styles+'<link rel="stylesheet" href="/client.css"></head><body class="'+bodyClass+'"><div id="fixture" data-theme="'+theme+'">'+html+'</div><script src="/client.js"></script></body></html>');}catch(e){res.statusCode=500;res.end(String(e.stack))}});server.listen(3003,'127.0.0.1',()=>console.log('QA-only fixtures on port 3003; production routes unchanged'));
+})().catch(e=>{console.error(e);process.exitCode=1});

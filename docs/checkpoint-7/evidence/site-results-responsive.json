@@ -1,0 +1,402 @@
+{
+  "pages": [],
+  "menus": [],
+  "links": [],
+  "responsive": [
+    {
+      "route": "/",
+      "width": 320,
+      "height": 568,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 320,
+      "height": 568,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 320,
+      "height": 568,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 320,
+      "height": 568,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 320,
+      "height": 568,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/about",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/about#culture",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/careers",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/privacy",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/contact",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/managed-application",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/cloud-services",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/enterprise-services",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/sap-services",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/infrastructure-services",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/cybersecurity-risk",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/big-data-analytics",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/erp",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "height": 480,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 390,
+      "height": 480,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 390,
+      "height": 480,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 390,
+      "height": 480,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 390,
+      "height": 480,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 576,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 576,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 576,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 576,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 576,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/about",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/about#culture",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/careers",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/privacy",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/contact",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/managed-application",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/cloud-services",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/enterprise-services",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/sap-services",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/infrastructure-services",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/cybersecurity-risk",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/big-data-analytics",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/erp",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 991,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 991,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 991,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 991,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 991,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 992,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 992,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 992,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 992,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 992,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 1200,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 1200,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 1200,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 1200,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 1200,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 1440,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 1440,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 1440,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 1440,
+      "height": 900,
+      "passed": true
+    }
+  ],
+  "motion": [
+    "Reduced motion stops carousel, transitions and root smooth scrolling",
+    "Normal carousel advances at 5s; keyboard focus, hover and manual pause freeze it",
+    "Normal card hover and directional service reveal settle correctly"
+  ]
+}

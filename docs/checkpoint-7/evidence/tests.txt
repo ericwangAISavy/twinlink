@@ -1,0 +1,208 @@
+
+> twinlink@0.1.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: font files are bundled and layout has no Google Fonts dependency
+ok 1 - font files are bundled and layout has no Google Fonts dependency
+  ---
+  duration_ms: 6.567027
+  type: 'test'
+  ...
+# Subtest: production URLs fall back to Vercel instead of localhost
+ok 2 - production URLs fall back to Vercel instead of localhost
+  ---
+  duration_ms: 0.47841
+  type: 'test'
+  ...
+# Subtest: callback destinations reject control characters and normalize protected paths
+ok 3 - callback destinations reject control characters and normalize protected paths
+  ---
+  duration_ms: 3.541852
+  type: 'test'
+  ...
+# Subtest: sign-out redirects to the public host and clears session cookies
+ok 4 - sign-out redirects to the public host and clears session cookies
+  ---
+  duration_ms: 307.279304
+  type: 'test'
+  ...
+# Subtest: middleware preserves refreshed session cookies on dashboard redirects
+ok 5 - middleware preserves refreshed session cookies on dashboard redirects
+  ---
+  duration_ms: 92.732324
+  type: 'test'
+  ...
+# Subtest: employee invitation already accepted by signup trigger is not redeemed twice
+ok 6 - employee invitation already accepted by signup trigger is not redeemed twice
+  ---
+  duration_ms: 27.41146
+  type: 'test'
+  ...
+# Subtest: candidate applications remain open throughout a date-only deadline
+ok 7 - candidate applications remain open throughout a date-only deadline
+  ---
+  duration_ms: 6.375248
+  type: 'test'
+  ...
+# Subtest: editorial uploads reject files that exceed the Vercel-safe limit
+ok 8 - editorial uploads reject files that exceed the Vercel-safe limit
+  ---
+  duration_ms: 350.728828
+  type: 'test'
+  ...
+# PASS anonymous submission, private persistence, admin notification and duplicate replay
+# PASS applicant data inaccessible to anonymous and non-admin accounts; direct inserts denied
+# PASS closed, expired and invalid-email applications rejected
+# PASS five-role daily limit, enforced in database
+# PASS admin review allowed and non-admin changes denied
+# PASS stale database review rejected and credential-bearing resume links blocked
+# PASS migration rerun retains applications
+# PASS required guest and candidate contact fields; contact migration preserves submissions
+# Subtest: guest submission and review enforce database privacy, deadlines and duplicate limits
+ok 9 - guest submission and review enforce database privacy, deadlines and duplicate limits
+  ---
+  duration_ms: 4377.397191
+  type: 'test'
+  ...
+# Subtest: homepage renders the published featured case and current statistics with working destinations
+ok 10 - homepage renders the published featured case and current statistics with working destinations
+  ---
+  duration_ms: 83.210093
+  type: 'test'
+  ...
+# Subtest: empty publications retain the Insights anchor without inventing a case study
+ok 11 - empty publications retain the Insights anchor without inventing a case study
+  ---
+  duration_ms: 95.322524
+  type: 'test'
+  ...
+# Subtest: unfeatured first case remains fallback and query errors reach the existing boundary
+ok 12 - unfeatured first case remains fallback and query errors reach the existing boundary
+  ---
+  duration_ms: 193.231542
+  type: 'test'
+  ...
+# Subtest: each reference category image resolves to a local file
+ok 13 - each reference category image resolves to a local file
+  ---
+  duration_ms: 0.811622
+  type: 'test'
+  ...
+# Subtest: public navigation keeps anonymous entry points with implemented service destinations
+ok 14 - public navigation keeps anonymous entry points with implemented service destinations
+  ---
+  duration_ms: 39.924378
+  type: 'test'
+  ...
+# Subtest: signed-in public navigation offers the role-router entry instead of public signup
+ok 15 - signed-in public navigation offers the role-router entry instead of public signup
+  ---
+  duration_ms: 4.543971
+  type: 'test'
+  ...
+# Subtest: guest submission needs no account and normalizes email and resume links
+ok 16 - guest submission needs no account and normalizes email and resume links
+  ---
+  duration_ms: 318.988382
+  type: 'test'
+  ...
+# Subtest: invalid fields and bot honeypots never write an application
+ok 17 - invalid fields and bot honeypots never write an application
+  ---
+  duration_ms: 435.007595
+  type: 'test'
+  ...
+# Subtest: review changes require admin access and compare the saved update timestamp
+ok 18 - review changes require admin access and compare the saved update timestamp
+  ---
+  duration_ms: 91.271505
+  type: 'test'
+  ...
+# Subtest: homepage statistics preserve valid edited values and fall back on malformed data
+ok 19 - homepage statistics preserve valid edited values and fall back on malformed data
+  ---
+  duration_ms: 9.985574
+  type: 'test'
+  ...
+# Subtest: email callback uses the public host and signs out candidates pending approval
+ok 20 - email callback uses the public host and signs out candidates pending approval
+  ---
+  duration_ms: 30.868525
+  type: 'test'
+  ...
+# Subtest: pending candidates can apply as guests without accessing profile applications
+ok 21 - pending candidates can apply as guests without accessing profile applications
+  ---
+  duration_ms: 178.505872
+  type: 'test'
+  ...
+# Subtest: all nine mapped services have distinct source imagery and safe allowlisted lookup
+ok 22 - all nine mapped services have distinct source imagery and safe allowlisted lookup
+  ---
+  duration_ms: 112.160024
+  type: 'test'
+  ...
+# Subtest: careers passes every published role field into the existing board and keeps empty results authoritative
+ok 23 - careers passes every published role field into the existing board and keeps empty results authoritative
+  ---
+  duration_ms: 63.095955
+  type: 'test'
+  ...
+# Subtest: contact preserves current company email, fallback and query failure behavior
+ok 24 - contact preserves current company email, fallback and query failure behavior
+  ---
+  duration_ms: 54.89667
+  type: 'test'
+  ...
+# Subtest: service page renders canonical content and related links while rejecting unknown slugs
+ok 25 - service page renders canonical content and related links while rejecting unknown slugs
+  ---
+  duration_ms: 100.921183
+  type: 'test'
+  ...
+# Subtest: visitor metadata trusts Vercel headers only and validates IP addresses
+ok 26 - visitor metadata trusts Vercel headers only and validates IP addresses
+  ---
+  duration_ms: 27.041045
+  type: 'test'
+  ...
+# Subtest: capture endpoint ignores browser IP data, cross-origin requests and privacy opt-outs
+ok 27 - capture endpoint ignores browser IP data, cross-origin requests and privacy opt-outs
+  ---
+  duration_ms: 29.747467
+  type: 'test'
+  ...
+# Subtest: visitor records are admin-only; service writes deduplicate and expire old records
+ok 28 - visitor records are admin-only; service writes deduplicate and expire old records
+  ---
+  duration_ms: 2542.675294
+  type: 'test'
+  ...
+# Subtest: connection provider rejects incomplete, mismatched and error responses
+ok 29 - connection provider rejects incomplete, mismatched and error responses
+  ---
+  duration_ms: 19.150653
+  type: 'test'
+  ...
+# Subtest: connection cache claims once per day and remains private
+ok 30 - connection cache claims once per day and remains private
+  ---
+  duration_ms: 1117.662172
+  type: 'test'
+  ...
+# Subtest: daily visitor chart separates proxy/datacenter traffic and counts each IP once per UTC+8 day
+ok 31 - daily visitor chart separates proxy/datacenter traffic and counts each IP once per UTC+8 day
+  ---
+  duration_ms: 15.289193
+  type: 'test'
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9521.191881

@@ -45,7 +45,7 @@ export default async function JobDetailPage({ params }: Props) {
   const saved = savedIds.has(job.id);
 
   return (
-    <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 lg:grid-cols-[1.4fr_0.8fr]">
+    <div className="foundation-job-detail mx-auto grid max-w-6xl gap-8 px-4 py-16 lg:grid-cols-[1.4fr_0.8fr]">
       <article>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
           Careers

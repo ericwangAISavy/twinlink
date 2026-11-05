@@ -1,0 +1,3321 @@
+{
+  "pages": [
+    {
+      "id": "T01",
+      "route": "/",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "route": "/about",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "route": "/about#culture",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "route": "/careers",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "route": "/privacy",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "route": "/contact",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "route": "/services/digital-strategy-transformation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "route": "/services/managed-application",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T09",
+      "route": "/services/cloud-services",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T10",
+      "route": "/services/enterprise-services",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T11",
+      "route": "/services/sap-services",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T12",
+      "route": "/services/infrastructure-services",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T13",
+      "route": "/services/cybersecurity-risk",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T14",
+      "route": "/services/big-data-analytics",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T15",
+      "route": "/services/erp",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "X0",
+      "route": "/case-studies",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "X1",
+      "route": "/blog",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "X2",
+      "route": "/events",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "X3",
+      "route": "/login",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "X4",
+      "route": "/register",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "id": "T01",
+      "route": "/",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "route": "/about",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "route": "/about#culture",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "route": "/careers",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "route": "/privacy",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "route": "/contact",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "route": "/services/digital-strategy-transformation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "route": "/services/managed-application",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T09",
+      "route": "/services/cloud-services",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T10",
+      "route": "/services/enterprise-services",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T11",
+      "route": "/services/sap-services",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T12",
+      "route": "/services/infrastructure-services",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T13",
+      "route": "/services/cybersecurity-risk",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T14",
+      "route": "/services/big-data-analytics",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "T15",
+      "route": "/services/erp",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "X0",
+      "route": "/case-studies",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "X1",
+      "route": "/blog",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "X2",
+      "route": "/events",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "X3",
+      "route": "/login",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "id": "X4",
+      "route": "/register",
+      "mode": "mobile",
+      "passed": true
+    }
+  ],
+  "menus": [
+    {
+      "id": "T01",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T01",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T01",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T01",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T09",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T09",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T09",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T09",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T10",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T10",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T10",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T10",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T11",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T11",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T11",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T11",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T12",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T12",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T12",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T12",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T13",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T13",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T13",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T13",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T14",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T14",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T14",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T14",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T15",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T15",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T15",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T15",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "X0",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "X0",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "X0",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "X0",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "X1",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "X1",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "X1",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "X1",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "X2",
+      "mode": "desktop",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "X2",
+      "mode": "desktop",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "X2",
+      "mode": "desktop",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "X2",
+      "mode": "desktop",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T01",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T01",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T01",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T01",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T02",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T03",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T04",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T05",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T06",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T07",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T08",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T09",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T09",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T09",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T09",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T10",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T10",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T10",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T10",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T11",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T11",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T11",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T11",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T12",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T12",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T12",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T12",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T13",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T13",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T13",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T13",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T14",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T14",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T14",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T14",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "T15",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "T15",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "T15",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "T15",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "X0",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "X0",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "X0",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "X0",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "X1",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "X1",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "X1",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "X1",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    },
+    {
+      "id": "X2",
+      "mode": "mobile",
+      "group": 0,
+      "passed": true
+    },
+    {
+      "id": "X2",
+      "mode": "mobile",
+      "group": 1,
+      "passed": true
+    },
+    {
+      "id": "X2",
+      "mode": "mobile",
+      "group": 2,
+      "passed": true
+    },
+    {
+      "id": "X2",
+      "mode": "mobile",
+      "group": 3,
+      "passed": true
+    }
+  ],
+  "links": [
+    {
+      "href": "/about",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/about#culture",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/careers",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/privacy",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/services/digital-strategy-transformation",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/services/managed-application",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/services/cloud-services",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/services/enterprise-services",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/services/sap-services",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/services/infrastructure-services",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/services/cybersecurity-risk",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/services/big-data-analytics",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/#solutions",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/#people",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/contact",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/#insights",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/about#values",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/register",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/safer-autonomous-mobility",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/services/erp",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/privacy#preferences",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/login",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/about#mission",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/about#vision",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/factory-quality-at-the-edge",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/maintenance-knowledge-search",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/controlled-ai-service-desk",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/reliable-demand-planning",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/modernizing-production-without-stopping-it",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/vision-guided-cobot-pilot",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/cross-border-product-operating-model",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/generative-ai-versus-predictive-ai",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/just-in-time-trust-for-ai-agents",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/semantic-search-before-another-chatbot",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/industrial-ai-beyond-the-demo",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/buying-ai-tools-on-total-cost",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/ai-detectors-and-editorial-quality",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/the-engineering-skills-ai-does-not-replace",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/operating-model-for-ai-investment",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic",
+      "family": "public navigation",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/safer-autonomous-mobility#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/safer-autonomous-mobility#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/safer-autonomous-mobility#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/safer-autonomous-mobility#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/safer-autonomous-mobility#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/factory-quality-at-the-edge#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/factory-quality-at-the-edge#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/factory-quality-at-the-edge#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/factory-quality-at-the-edge#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/factory-quality-at-the-edge#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/maintenance-knowledge-search#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/maintenance-knowledge-search#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/maintenance-knowledge-search#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/maintenance-knowledge-search#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/maintenance-knowledge-search#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/controlled-ai-service-desk#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/controlled-ai-service-desk#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/controlled-ai-service-desk#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/controlled-ai-service-desk#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/controlled-ai-service-desk#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/reliable-demand-planning#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/reliable-demand-planning#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/reliable-demand-planning#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/reliable-demand-planning#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/reliable-demand-planning#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/modernizing-production-without-stopping-it#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/modernizing-production-without-stopping-it#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/modernizing-production-without-stopping-it#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/modernizing-production-without-stopping-it#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/modernizing-production-without-stopping-it#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/vision-guided-cobot-pilot#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/vision-guided-cobot-pilot#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/vision-guided-cobot-pilot#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/vision-guided-cobot-pilot#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/vision-guided-cobot-pilot#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/cross-border-product-operating-model#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/cross-border-product-operating-model#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/cross-border-product-operating-model#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/cross-border-product-operating-model#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/cross-border-product-operating-model#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/generative-ai-versus-predictive-ai#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/generative-ai-versus-predictive-ai#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/generative-ai-versus-predictive-ai#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/generative-ai-versus-predictive-ai#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/generative-ai-versus-predictive-ai#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/just-in-time-trust-for-ai-agents#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/just-in-time-trust-for-ai-agents#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/just-in-time-trust-for-ai-agents#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/just-in-time-trust-for-ai-agents#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/just-in-time-trust-for-ai-agents#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/semantic-search-before-another-chatbot#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/semantic-search-before-another-chatbot#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/semantic-search-before-another-chatbot#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/semantic-search-before-another-chatbot#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/semantic-search-before-another-chatbot#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/industrial-ai-beyond-the-demo#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/industrial-ai-beyond-the-demo#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/industrial-ai-beyond-the-demo#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/industrial-ai-beyond-the-demo#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/industrial-ai-beyond-the-demo#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/buying-ai-tools-on-total-cost#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/buying-ai-tools-on-total-cost#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/buying-ai-tools-on-total-cost#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/buying-ai-tools-on-total-cost#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/buying-ai-tools-on-total-cost#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/ai-detectors-and-editorial-quality#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/ai-detectors-and-editorial-quality#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/ai-detectors-and-editorial-quality#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/ai-detectors-and-editorial-quality#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/ai-detectors-and-editorial-quality#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/the-engineering-skills-ai-does-not-replace#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/the-engineering-skills-ai-does-not-replace#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/the-engineering-skills-ai-does-not-replace#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/the-engineering-skills-ai-does-not-replace#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/the-engineering-skills-ai-does-not-replace#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/operating-model-for-ai-investment#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/operating-model-for-ai-investment#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/operating-model-for-ai-investment#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/operating-model-for-ai-investment#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/blog/operating-model-for-ai-investment#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab#interest",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable#interest",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio#interest",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic#section-0",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic#section-1",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic#section-2",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic#section-3",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic#section-4",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic#interest",
+      "family": "discovered detail/body",
+      "mode": "desktop",
+      "passed": true
+    },
+    {
+      "href": "/about",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/about#culture",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/careers",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/privacy",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/services/digital-strategy-transformation",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/services/managed-application",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/services/cloud-services",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/services/enterprise-services",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/services/sap-services",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/services/infrastructure-services",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/services/cybersecurity-risk",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/services/big-data-analytics",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/#solutions",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/#people",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/contact",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/#insights",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/about#values",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/register",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/safer-autonomous-mobility",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/services/erp",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/privacy#preferences",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/login",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/about#mission",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/about#vision",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/factory-quality-at-the-edge",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/maintenance-knowledge-search",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/controlled-ai-service-desk",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/reliable-demand-planning",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/modernizing-production-without-stopping-it",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/vision-guided-cobot-pilot",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/cross-border-product-operating-model",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/generative-ai-versus-predictive-ai",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/just-in-time-trust-for-ai-agents",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/semantic-search-before-another-chatbot",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/industrial-ai-beyond-the-demo",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/buying-ai-tools-on-total-cost",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/ai-detectors-and-editorial-quality",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/the-engineering-skills-ai-does-not-replace",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/operating-model-for-ai-investment",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic",
+      "family": "public navigation",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/safer-autonomous-mobility#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/safer-autonomous-mobility#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/safer-autonomous-mobility#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/safer-autonomous-mobility#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/safer-autonomous-mobility#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/factory-quality-at-the-edge#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/factory-quality-at-the-edge#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/factory-quality-at-the-edge#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/factory-quality-at-the-edge#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/factory-quality-at-the-edge#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/maintenance-knowledge-search#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/maintenance-knowledge-search#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/maintenance-knowledge-search#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/maintenance-knowledge-search#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/maintenance-knowledge-search#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/controlled-ai-service-desk#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/controlled-ai-service-desk#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/controlled-ai-service-desk#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/controlled-ai-service-desk#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/controlled-ai-service-desk#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/reliable-demand-planning#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/reliable-demand-planning#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/reliable-demand-planning#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/reliable-demand-planning#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/reliable-demand-planning#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/modernizing-production-without-stopping-it#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/modernizing-production-without-stopping-it#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/modernizing-production-without-stopping-it#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/modernizing-production-without-stopping-it#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/modernizing-production-without-stopping-it#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/vision-guided-cobot-pilot#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/vision-guided-cobot-pilot#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/vision-guided-cobot-pilot#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/vision-guided-cobot-pilot#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/vision-guided-cobot-pilot#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/cross-border-product-operating-model#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/cross-border-product-operating-model#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/cross-border-product-operating-model#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/cross-border-product-operating-model#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/case-studies/cross-border-product-operating-model#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/generative-ai-versus-predictive-ai#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/generative-ai-versus-predictive-ai#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/generative-ai-versus-predictive-ai#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/generative-ai-versus-predictive-ai#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/generative-ai-versus-predictive-ai#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/just-in-time-trust-for-ai-agents#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/just-in-time-trust-for-ai-agents#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/just-in-time-trust-for-ai-agents#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/just-in-time-trust-for-ai-agents#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/just-in-time-trust-for-ai-agents#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/semantic-search-before-another-chatbot#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/semantic-search-before-another-chatbot#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/semantic-search-before-another-chatbot#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/semantic-search-before-another-chatbot#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/semantic-search-before-another-chatbot#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/industrial-ai-beyond-the-demo#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/industrial-ai-beyond-the-demo#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/industrial-ai-beyond-the-demo#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/industrial-ai-beyond-the-demo#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/industrial-ai-beyond-the-demo#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/buying-ai-tools-on-total-cost#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/buying-ai-tools-on-total-cost#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/buying-ai-tools-on-total-cost#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/buying-ai-tools-on-total-cost#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/buying-ai-tools-on-total-cost#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/ai-detectors-and-editorial-quality#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/ai-detectors-and-editorial-quality#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/ai-detectors-and-editorial-quality#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/ai-detectors-and-editorial-quality#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/ai-detectors-and-editorial-quality#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/the-engineering-skills-ai-does-not-replace#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/the-engineering-skills-ai-does-not-replace#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/the-engineering-skills-ai-does-not-replace#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/the-engineering-skills-ai-does-not-replace#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/the-engineering-skills-ai-does-not-replace#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/operating-model-for-ai-investment#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/operating-model-for-ai-investment#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/operating-model-for-ai-investment#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/operating-model-for-ai-investment#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/blog/operating-model-for-ai-investment#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/industrial-ai-practice-lab#interest",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/secure-agents-design-roundtable#interest",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/technical-communication-studio#interest",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic#section-0",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic#section-1",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic#section-2",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic#section-3",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic#section-4",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    },
+    {
+      "href": "/events/ai-business-value-clinic#interest",
+      "family": "discovered detail/body",
+      "mode": "mobile",
+      "passed": true
+    }
+  ],
+  "responsive": [
+    {
+      "route": "/",
+      "width": 320,
+      "height": 568,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 320,
+      "height": 568,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 320,
+      "height": 568,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 320,
+      "height": 568,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 320,
+      "height": 568,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/about",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/about#culture",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/careers",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/privacy",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/contact",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/managed-application",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/cloud-services",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/enterprise-services",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/sap-services",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/infrastructure-services",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/cybersecurity-risk",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/big-data-analytics",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/services/erp",
+      "width": 375,
+      "height": 667,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "height": 480,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 390,
+      "height": 480,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 390,
+      "height": 480,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 390,
+      "height": 480,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 390,
+      "height": 480,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 576,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 576,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 576,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 576,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 576,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/about",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/about#culture",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/careers",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/privacy",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/contact",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/managed-application",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/cloud-services",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/enterprise-services",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/sap-services",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/infrastructure-services",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/cybersecurity-risk",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/big-data-analytics",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/erp",
+      "width": 768,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 991,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 991,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 991,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 991,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 991,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 992,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 992,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 992,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 992,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 992,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 1200,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 1200,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 1200,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 1200,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 1200,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/services/digital-strategy-transformation",
+      "width": 1440,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/blog",
+      "width": 1440,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/login",
+      "width": 1440,
+      "height": 900,
+      "passed": true
+    },
+    {
+      "route": "/register",
+      "width": 1440,
+      "height": 900,
+      "passed": true
+    }
+  ],
+  "motion": [
+    "Reduced motion stops carousel, transitions and root smooth scrolling",
+    "Normal carousel advances at 5s; keyboard focus, hover and manual pause freeze it",
+    "Normal card hover and directional service reveal settle correctly"
+  ]
+}

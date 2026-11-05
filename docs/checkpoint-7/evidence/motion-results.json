@@ -1,0 +1,54 @@
+[
+  {
+    "motion": "no-preference",
+    "menuMotion": {
+      "name": "foundation-menu-in",
+      "duration": "0.3s"
+    },
+    "timings": {
+      "header": "0.5s",
+      "dropdown": "0.3s, 0.3s, 0.3s",
+      "backTop": "0.4s, 0.4s, 0.4s",
+      "heroFade": "0.5s",
+      "caption": "1s"
+    },
+    "topicHovers": 16,
+    "circleHovers": 3,
+    "aboutCardHovers": 3,
+    "resourceScale": "1.05",
+    "sticky": {
+      "position": "sticky",
+      "top": 96,
+      "maxHeight": "780px",
+      "overflow": "auto"
+    },
+    "sidebarAndFooterHover": true,
+    "errors": []
+  },
+  {
+    "motion": "reduce",
+    "menuMotion": {
+      "name": "none",
+      "duration": "0s"
+    },
+    "timings": {
+      "header": "0s",
+      "dropdown": "0s",
+      "backTop": "0s",
+      "heroFade": "0s",
+      "caption": "0s"
+    },
+    "topicHovers": 16,
+    "circleHovers": 3,
+    "aboutCardHovers": 3,
+    "resourceScale": "none",
+    "sticky": {
+      "position": "sticky",
+      "top": 96,
+      "maxHeight": "780px",
+      "overflow": "auto"
+    },
+    "sidebarAndFooterHover": true,
+    "errors": []
+  }
+]

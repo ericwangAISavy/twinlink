@@ -1,0 +1,66 @@
+T01 desktop page/menu/sticky passed
+T02 desktop page/menu/sticky passed
+T03 desktop page/menu/sticky passed
+T04 desktop page/menu/sticky passed
+T05 desktop page/menu/sticky passed
+T06 desktop page/menu/sticky passed
+T07 desktop page/menu/sticky passed
+T08 desktop page/menu/sticky passed
+T09 desktop page/menu/sticky passed
+T10 desktop page/menu/sticky passed
+T11 desktop page/menu/sticky passed
+T12 desktop page/menu/sticky passed
+T13 desktop page/menu/sticky passed
+T14 desktop page/menu/sticky passed
+T15 desktop page/menu/sticky passed
+X0 desktop page/menu/sticky passed
+X1 desktop page/menu/sticky passed
+X2 desktop page/menu/sticky passed
+X3 desktop page/menu/sticky passed
+X4 desktop page/menu/sticky passed
+T01 mobile page/menu/sticky passed
+T02 mobile page/menu/sticky passed
+T03 mobile page/menu/sticky passed
+T04 mobile page/menu/sticky passed
+T05 mobile page/menu/sticky passed
+T06 mobile page/menu/sticky passed
+T07 mobile page/menu/sticky passed
+T08 mobile page/menu/sticky passed
+T09 mobile page/menu/sticky passed
+T10 mobile page/menu/sticky passed
+T11 mobile page/menu/sticky passed
+T12 mobile page/menu/sticky passed
+T13 mobile page/menu/sticky passed
+T14 mobile page/menu/sticky passed
+T15 mobile page/menu/sticky passed
+X0 mobile page/menu/sticky passed
+X1 mobile page/menu/sticky passed
+X2 mobile page/menu/sticky passed
+X3 mobile page/menu/sticky passed
+X4 mobile page/menu/sticky passed
+AssertionError [ERR_ASSERTION]: /services/cloud-services linked errors
++ actual - expected
+
++ [
++   {
++     message: 'Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n' +
++       '    at rD (http://127.0.0.1:3000/_next/static/chunks/4bd1b696-f785427dddbba9fb.js:1:35057)\n' +
++       '    at oq (http://127.0.0.1:3000/_next/static/chunks/4bd1b696-f785427dddbba9fb.js:1:84561)\n' +
++       '    at iw (http://127.0.0.1:3000/_next/static/chunks/4bd1b696-f785427dddbba9fb.js:1:114956)\n' +
++       '    at http://127.0.0.1:3000/_next/static/chunks/4bd1b696-f785427dddbba9fb.js:1:110317\n' +
++       '    at iu (http://127.0.0.1:3000/_next/static/chunks/4bd1b696-f785427dddbba9fb.js:1:110826)\n' +
++       '    at iX (http://127.0.0.1:3000/_next/static/chunks/4bd1b696-f785427dddbba9fb.js:1:132929)\n' +
++       '    at MessagePort.w (http://127.0.0.1:3000/_next/static/chunks/1255-4526149c43bd8cfc.js:1:114729)',
++     url: 'http://127.0.0.1:3000/services/cloud-services'
++   }
++ ]
+- []
+
+    at /workspace/twinlink/docs/checkpoint-7/scripts/site-check.cjs:28:1154 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [Array],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}

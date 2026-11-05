@@ -1,6 +1,8 @@
 import localFont from "next/font/local";
+import { Fragment } from "react";
 import { BackToTop } from "@/components/marketing/back-to-top";
 import "@/components/marketing/foundation.css";
+import "@/components/marketing/public-surfaces.css";
 import { VisitorTracker } from "@/components/marketing/visitor-tracker";
 import { SiteFooter } from "@/components/marketing/site-footer";
 import { SiteHeader } from "@/components/marketing/site-header";
@@ -25,7 +27,7 @@ export default async function MarketingLayout({
       <a href="#marketing-content" className="foundation-skip">Skip to content</a>
       <SiteHeader user={user} />
       <VisitorTracker />
-      <main id="marketing-content" className="foundation-content" tabIndex={-1}>{children}</main>
+      <main id="marketing-content" className="foundation-content" tabIndex={-1}><Fragment key="marketing-route">{children}</Fragment></main>
       <SiteFooter company={company} />
       <BackToTop />
     </div>

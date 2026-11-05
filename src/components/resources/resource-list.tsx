@@ -28,7 +28,7 @@ export function ResourceList({ items }: { items: Resource[] }) {
         .includes(query.toLowerCase()),
   );
   return (
-    <section className="mx-auto max-w-6xl px-4 py-12">
+    <section className="foundation-editorial-list mx-auto max-w-6xl px-4 py-12">
       <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
         <div
           className="flex flex-wrap gap-2"

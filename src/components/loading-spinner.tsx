@@ -1,12 +1,14 @@
 import { cn } from "@/lib/utils";
+import { TwinlinkMark } from "@/components/marketing/twinlink-mark";
+import "./loading-spinner.css";
 
-/** Twin-arc spinner — two opposing champagne strokes, echoing the Twinlink mark. */
+/** Twin-arc spinner; button callers can continue to inherit their text color. */
 export function Spinner({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
-      className={cn("size-4 shrink-0 animate-spin text-[#c4a574]", className)}
+      className={cn("twinlink-spinner size-4 shrink-0 animate-spin text-current", className)}
       aria-hidden
     >
       <circle cx="12" cy="12" r="8.25" stroke="currentColor" strokeOpacity="0.18" strokeWidth="1.75" />
@@ -34,22 +36,20 @@ export function PageSpinner({ className }: { className?: string }) {
       aria-label="Loading"
       aria-live="polite"
       aria-busy="true"
-      className={cn("grid min-h-[50vh] place-items-center", className)}
+      className={cn("twinlink-page-loading grid min-h-[50vh] place-items-center", className)}
     >
-      <Spinner className="size-9" />
+      <div className="twinlink-loading-content">
+        <div className="twinlink-loading-brand" aria-hidden="true">
+          <TwinlinkMark className="size-8" />
+          <span>TWINLINK</span>
+        </div>
+        <Spinner className="size-8 text-[#157cbf]" />
+        <p>Loading</p>
+      </div>
     </div>
   );
 }
 
 export function MainPanelLoading() {
-  return (
-    <div role="status" aria-live="polite" aria-busy="true" className="min-h-[50vh]">
-      <div className="grid min-h-[46vh] place-items-center">
-        <div className="flex flex-col items-center gap-3 text-[#6f655b]">
-          <Spinner className="size-9" />
-          <p className="text-sm">Loading</p>
-        </div>
-      </div>
-    </div>
-  );
+  return <PageSpinner />;
 }
