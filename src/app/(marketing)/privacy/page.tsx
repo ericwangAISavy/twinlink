@@ -1,3 +1,4 @@
+import { PhotoBanner, SubPage } from "@/components/marketing/subpage-shell";
 import type { Metadata } from "next";
 import { PrivacyPreference } from "@/components/marketing/privacy-preference";
 import { getCompanyProfile } from "@/server/queries/company";
@@ -5,10 +6,13 @@ export const metadata: Metadata = { title: "Privacy and visitor information" };
 export default async function PrivacyPage() {
   const company = await getCompanyProfile();
   return (
-    <article className="mx-auto max-w-3xl px-5 py-16 text-white/80">
-      <h1 className="font-serif text-4xl text-[#e8d5a3]">
+    <SubPage className="sub-privacy">
+      <PhotoBanner title="Privacy and visitor information" image="/images/reference/subpages/banner-images/privacy-policy.jpg" />
+      <div className="sub-privacy-title"><div className="foundation-container"><h2>Privacy Policy</h2></div></div>
+      <article className="foundation-container sub-privacy-body">
+      <h2 className="sr-only">
         Privacy and visitor information
-      </h1>
+      </h2>
       <section className="mt-8 space-y-3">
         <h2 className="font-serif text-2xl">Job applications</h2>
         <p>
@@ -39,7 +43,7 @@ export default async function PrivacyPage() {
         <h2 className="font-serif text-2xl">Connection reputation</h2>
         <p>When connection checks are enabled, we send the visitor IP address to ipapi.is to estimate whether it belongs to a VPN, proxy, Tor exit node, or data center. These estimates may be inaccurate and do not identify a person. Results are private to administrators, refreshed at most once per IP per day, and removed after 90 days of inactivity when checks run. Monitoring preferences above also disable these checks. We do not use these signals to block applications.</p>
       </section>
-      <PrivacyPreference />
+      <div className="sub-functional"><PrivacyPreference /></div>
       <p className="mt-8">
         For questions about your information or a deletion request, contact{" "}
         <a
@@ -50,6 +54,6 @@ export default async function PrivacyPage() {
         </a>
         .
       </p>
-    </article>
+    </article></SubPage>
   );
 }

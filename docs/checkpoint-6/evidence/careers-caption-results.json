@@ -1,0 +1,20 @@
+[
+  {
+    "mode": "desktop",
+    "caption": "Apply here",
+    "top": 398.59375,
+    "fontSize": "32px",
+    "bannerHeight": 567,
+    "finalTop": 398.59375,
+    "errors": []
+  },
+  {
+    "mode": "mobile",
+    "caption": "Apply here",
+    "top": 418.390625,
+    "fontSize": "32px",
+    "bannerHeight": 590.796875,
+    "finalTop": 422.390625,
+    "errors": []
+  }
+]

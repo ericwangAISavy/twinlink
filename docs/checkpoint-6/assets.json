@@ -1,0 +1,87 @@
+[
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/banner-images/about-us-new.jpg",
+    "file": "public/images/reference/subpages/banner-images/about-us-new.jpg",
+    "sha256": "64a952fc2cccb2ee4e0b547189ae630901faf064b742384e8175b1abb3d1bd7f"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/banner-images/life-at-trinity-1.jpg",
+    "file": "public/images/reference/subpages/banner-images/life-at-trinity-1.jpg",
+    "sha256": "2cd74746f414a6a34ad6bdd284522af0ae620d2b30e760d843e9ac1520365dad"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/banner-images/careers.jpg",
+    "file": "public/images/reference/subpages/banner-images/careers.jpg",
+    "sha256": "44c4b187cb4b3420f443acc78ec4518ded1c64810f2871897653ea4efcd11ed7"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/banner-images/privacy-policy.jpg",
+    "file": "public/images/reference/subpages/banner-images/privacy-policy.jpg",
+    "sha256": "49fa8ea252ac2fedc22015c051135cb5d4fd711a802ec3c087821bb6c390a821"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/banner-images/erp-banner.jpg",
+    "file": "public/images/reference/subpages/banner-images/erp-banner.jpg",
+    "sha256": "6499064320c1fe073edbbf95a6bd626ddaac144739d6f98433935f11944424e8"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/work-life-balance.jpg",
+    "file": "public/images/reference/subpages/work-life-balance.jpg",
+    "sha256": "4d9ec25730eb5926a54face44771bb7ead1fb4eff715c6a27d193742dd13b1d3"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/digitalstrategy&transformation-1.jpg",
+    "file": "public/images/reference/subpages/digitalstrategy&transformation-1.jpg",
+    "sha256": "9215923785cb7e71b1547b4a7e5aea62ff0ae86ed26a8a7a3d294f43fe23374c"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/managed-application.jpg",
+    "file": "public/images/reference/subpages/managed-application.jpg",
+    "sha256": "375b771ef945b0c794630a0758ffd46586474ef3a1457157807c050754378484"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/cloud-computing.jpg",
+    "file": "public/images/reference/subpages/cloud-computing.jpg",
+    "sha256": "abfddf8c458d8654cb10a519a168124c9c1a6e688c9a87390e280db9f342d284"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/enterprise-services.jpg",
+    "file": "public/images/reference/subpages/enterprise-services.jpg",
+    "sha256": "5b0c38845c861496cb9192543eb5f6af9b295a080fa8cd8209a13393a30a8e98"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/sap-services.jpg",
+    "file": "public/images/reference/subpages/sap-services.jpg",
+    "sha256": "e4856d25c1ebb2473d096422248edd1fbb8ef5bdca2c9cb813febdd3578ea590"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/software-development.jpg",
+    "file": "public/images/reference/subpages/software-development.jpg",
+    "sha256": "78798f092be29bcffe2bf7beb26aed6f009d3b899e2a53768cb10f3e3cae8ec0"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/cyber-security.jpg",
+    "file": "public/images/reference/subpages/cyber-security.jpg",
+    "sha256": "7eccbcc0a314b325feccea4d5d5bc42f1881ff393c75c0707f4ffaa421695db2"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/big-data.jpg",
+    "file": "public/images/reference/subpages/big-data.jpg",
+    "sha256": "1cb773e910b757ab49f8883bcc6e43b4e0c253d0c38b7616cc681e46319fba4f"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hrs-values/our-mission.jpg",
+    "file": "public/images/reference/subpages/hrs-values/our-mission.jpg",
+    "sha256": "32ec1f14e19cd97192f50bf98aa4b6b6425a8941de5c3787590d642c692a1c82"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hrs-values/our-vision.jpg",
+    "file": "public/images/reference/subpages/hrs-values/our-vision.jpg",
+    "sha256": "22f70f8c879d5ec9bf72aac86dcfa2dd5f1f10b5b74a853d3fb0899e702c3d4e"
+  },
+  {
+    "source": "docs/checkpoint-2/assets/originals/images/hrs-values/our-goal.jpg",
+    "file": "public/images/reference/subpages/hrs-values/our-goal.jpg",
+    "sha256": "515af645b2d94f2bb2f5659863ffac08a3f4faebd515174f99fadcfad99ce06f"
+  }
+]

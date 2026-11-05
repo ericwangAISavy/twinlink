@@ -1,0 +1,100 @@
+/* All subpage presentation is opt-in; private routes and editorial pages retain their styles. */
+.trinity-foundation .sub-page { background:#fff; color:#4d4643; --background:#fff; --foreground:#4d4643; --card:#fff; --card-foreground:#4d4643; --border:#ddd; --muted-foreground:#625c59; }
+.trinity-foundation .sub-page a { color:#116da8; }
+.trinity-foundation .sub-page p { margin:0 0 16px; font-size:15px; line-height:1.5; }
+.trinity-foundation .sub-page .sub-section { padding:60px 0; }
+.trinity-foundation .sub-page .sub-heading { position:relative; margin:0 0 20px; padding-bottom:20px; color:#4d4643; text-transform:uppercase; text-align:center; font-size:25px; font-weight:400; line-height:20px; }
+.trinity-foundation .sub-page .sub-heading::after { position:absolute; content:""; width:50px; height:3px; background:#157cbf; bottom:0; left:calc(50% - 25px); }
+.trinity-foundation .sub-page .sub-photo-banner { position:relative; height:63vh; margin-top:-70px; overflow:hidden; }
+.trinity-foundation .sub-page .sub-wave-banner { position:relative; height:65vh; margin-top:-70px; background:#157cbf; color:#fff; overflow:hidden; }
+.trinity-foundation .sub-page .sub-wave-banner h1 { position:absolute; top:min(238px,45%); left:12px; right:12px; margin:0; transform:translateY(-50%); color:#fff; text-align:center; font-size:30px; line-height:1.2; font-weight:400; }
+.trinity-foundation .sub-page .sub-service-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; align-items:start; }
+.trinity-foundation .sub-page .sub-service-copy { grid-column:span 3; padding-bottom:48px; }
+.trinity-foundation .sub-page .sub-service-copy p { text-align:justify; }
+.trinity-foundation .sub-page .sub-service-image { width:100%; height:auto; margin:0 0 24px; }
+.trinity-foundation .sub-page .sub-service-sidebar h2 { color:#157cbf; font-size:25px; line-height:1.2; font-weight:400; text-transform:uppercase; text-align:center; margin:0 0 20px; }
+.trinity-foundation .sub-page .sub-service-sidebar ul { list-style:none; margin:0; padding:0; }
+.trinity-foundation .sub-page .sub-service-sidebar li a { display:block; padding:8px 16px; text-align:center; font-size:15px; color:#4d4643; }
+.trinity-foundation .sub-page .sub-service-sidebar a:hover { color:#157cbf; text-decoration:underline; }
+.trinity-foundation .sub-page .sub-enquiry { display:block; margin:24px 0; font-size:14px; text-align:center; }
+.trinity-foundation .sub-page .sub-two-column { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:center; }
+.trinity-foundation .sub-page .sub-two-column img { width:100%; height:auto; border-radius:10px; }
+.trinity-foundation .sub-page .sub-two-column p { text-align:justify; }
+.trinity-foundation .sub-page .sub-principles { background:#f6f9ff; }
+.trinity-foundation .sub-page .sub-principles > .foundation-container > .sub-heading { font-size:22px; }
+.trinity-foundation .sub-page .sub-principle-grid { display:grid; grid-template-columns:repeat(3,minmax(0,306px)); gap:24px; justify-content:center; }
+.trinity-foundation .sub-page .sub-principle-card { position:relative; padding-top:30px; margin-bottom:30px; }
+.trinity-foundation .sub-page .sub-principle-card img { width:100%; height:auto; border-radius:10px; transition:transform .3s; }
+.trinity-foundation .sub-page .sub-principle-card h3 { position:absolute; top:0; left:30px; right:0; padding:22px 15px; background:#fff; box-shadow:0 3px 7px #0000001a; border-radius:5px 5px 0 5px; text-align:center; font-size:16px; font-weight:400; margin:0; transition:background .3s,color .3s; }
+.trinity-foundation .sub-page .sub-principle-card:is(:hover,:focus-within) h3 { background:#0060aa; color:#fff; }
+.trinity-foundation .sub-page .sub-principle-card:is(:hover,:focus-within) img { transform:scale(1.02); }
+.trinity-foundation .sub-page .sub-values-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; }
+.trinity-foundation .sub-page .sub-values-grid h3 { font-size:20px; font-weight:400; color:#527d24; margin:0 0 16px; }
+.trinity-foundation .sub-page .sub-culture-banner { position:relative; height:63vh; overflow:hidden; margin-bottom:60px; }
+.trinity-foundation .sub-page .sub-privacy-title { padding:15px 0; text-align:center; background:#376ea8; color:#fff; }
+.trinity-foundation .sub-page .sub-privacy-title h2 { color:#fff; margin:0; padding:10px 0; font-size:24px; font-weight:400; text-transform:uppercase; }
+.trinity-foundation .sub-page .sub-privacy-body { padding:60px 12px; }
+.trinity-foundation .sub-page .sub-privacy-body h2 { color:#157cbf; font:400 20px/1.3 var(--font-reference-heading),sans-serif; }
+.trinity-foundation .sub-page .sub-privacy-body > section { margin-bottom:28px; }
+.trinity-foundation .sub-page .sub-contact-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:start; }
+.trinity-foundation .sub-page .sub-contact-card { padding:22px; box-shadow:0 0 30px #d6d7d799; margin-bottom:24px; }
+.trinity-foundation .sub-page .sub-contact-card h2 { color:#527d24; font-size:24px; font-weight:400; margin:0 0 16px; }
+.trinity-foundation .sub-page .sub-form-heading { background:#527d24; padding:16px 22px; margin:-22px -22px 22px; }
+.trinity-foundation .sub-page .sub-form-heading h2 { color:white; font-size:22px; margin:0; }
+/* Adapt the existing functional islands without changing their event/state/data handling. */
+.trinity-foundation .sub-page .sub-functional [class*="text-white"], .trinity-foundation .sub-page .sub-functional [class*="text-[#e8d5a3]"], .trinity-foundation .sub-page .sub-functional [class*="text-[#c4a574]"] { color:#4d4643; }
+.trinity-foundation .sub-page .sub-functional [class*="bg-[#"] { background-color:#f7f7f7; }
+.trinity-foundation .sub-page .sub-functional [class*="border-white"], .trinity-foundation .sub-page .sub-functional [class*="border-[#"] { border-color:#d6d6d6; }
+.trinity-foundation .sub-page .sub-functional :is(input,textarea,select)[class] { color:#4d4643; background:#fff; border:1px solid #ced4da; border-radius:4px; padding:6px 12px; min-height:38px; }
+.trinity-foundation .sub-page .sub-functional :is(input,textarea)::placeholder { color:#6c757d; }
+.trinity-foundation .sub-page .sub-functional :is(input,textarea,select):focus { outline:2px solid #157cbf; outline-offset:2px; }
+.trinity-foundation .sub-page .sub-functional button[type="submit"], .trinity-foundation .sub-page .sub-functional #preferences button { color:#fff; background:#13832a; border-radius:4px; padding:10px 24px; transition:background .4s; }
+.trinity-foundation .sub-page .sub-functional #preferences button:hover, .trinity-foundation .sub-page .sub-functional button[type="submit"]:hover { background:#106d23; }
+.trinity-foundation .sub-page .sub-functional [role="status"] { color:#4d4643; }
+.trinity-foundation .sub-page .sub-functional [role="status"] a { color:#116da8; }
+.trinity-foundation .sub-page .sub-functional .font-serif { font-family:var(--font-reference-heading),sans-serif; }
+.trinity-foundation .sub-page .sub-roles > div > section:first-child { display:none; }
+.trinity-foundation .sub-page .sub-roles .max-w-6xl { max-width:1320px; }
+.trinity-foundation .sub-page .sub-careers-intro { text-align:center; max-width:900px; margin:auto; padding:60px 12px 0; }
+.trinity-foundation .sub-page .sub-careers-intro a { display:inline-block; margin:0 10px 16px; }
+.trinity-foundation .sub-page .sub-functional [aria-pressed="true"] { background:#157cbf; color:#fff; }
+@media (max-width:992px) {
+ .trinity-foundation .sub-page .sub-wave-banner h1 { font-size:40px; }
+ .trinity-foundation .sub-page .sub-wave-banner .foundation-wave { bottom:-140px; }
+}
+@media (max-width:991px) {
+ .trinity-foundation .sub-page .sub-two-column, .trinity-foundation .sub-page .sub-contact-grid { grid-template-columns:1fr; }
+ .trinity-foundation .sub-page .sub-service-grid { grid-template-columns:1fr; }
+ .trinity-foundation .sub-page .sub-service-copy { grid-column:auto; padding-top:24px; }
+ .trinity-foundation .sub-page .sub-values-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:575px) {
+ .trinity-foundation .sub-page .sub-principle-grid, .trinity-foundation .sub-page .sub-values-grid { grid-template-columns:1fr; }
+ .trinity-foundation .sub-page .sub-principle-grid { gap:0; }
+}
+@media (max-width:480px) {
+ .trinity-foundation .sub-page .sub-photo-banner, .trinity-foundation .sub-page .sub-culture-banner { height:70vh; }
+ .trinity-foundation .sub-page .sub-wave-banner { height:50vh; }
+ .trinity-foundation .sub-page .sub-wave-banner h1 { top:245px; }
+}
+
+.trinity-foundation .sub-page.sub-privacy { background:#f7f7f7; }
+
+.trinity-foundation .sub-page .sub-roles input[placeholder] { padding-left:40px; }
+.trinity-foundation .sub-page .sub-functional [aria-pressed="true"], .trinity-foundation .sub-page .sub-functional [aria-current="page"] { background:#116da8; color:#fff; }
+.trinity-foundation .sub-page .sub-functional [aria-pressed="true"] * { color:#fff; }
+.trinity-foundation .sub-page .sub-functional [aria-pressed="true"] [class*="bg-[#"] { background:transparent; }
+@media (max-width:480px) and (max-height:600px) {
+ .trinity-foundation .sub-page .sub-wave-banner { min-height:350px; }
+ .trinity-foundation .sub-page .sub-wave-banner h1 { top:50%; }
+}
+
+.trinity-foundation .sub-page .sub-photo-caption { position:absolute; top:calc(100% - 168.4px); left:12px; right:12px; margin:0; padding-bottom:20px; font-size:32px; line-height:38.4px; font-weight:700; text-transform:uppercase; text-align:center; color:#4d4643; }
+.trinity-foundation .sub-page .sub-photo-caption::after { content:""; position:absolute; bottom:0; left:calc(50% - 25px); width:50px; height:3px; background:#157cbf; }
+
+.trinity-foundation .sub-page { overflow-x:clip; }
+.trinity-foundation .sub-page .sub-service-copy.reveal-copy:not(.is-inview) { transform:translate3d(100px,0,0); }
+.trinity-foundation .sub-page .sub-service-sidebar.reveal-copy:not(.is-inview) { transform:translate3d(-100px,0,0); }
+.trinity-foundation .sub-page .sub-service-sidebar li a { border:1px solid #00000020; margin-top:-1px; }
+.trinity-foundation .sub-page .sub-service-sidebar li:first-child a { border-radius:4px 4px 0 0; }
+.trinity-foundation .sub-page .sub-service-sidebar li:last-child a { border-radius:0 0 4px 4px; }

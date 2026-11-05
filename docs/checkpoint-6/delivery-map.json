@@ -1,0 +1,143 @@
+{
+  "baseline": "c0c19d5fb9d9fce0f4f59dcb4fde43e2af566968",
+  "pages": [
+    {
+      "id": "T02",
+      "referencePath": "/about",
+      "target": "/about",
+      "status": "implemented",
+      "preserved": "Static company content, values/culture anchors and FAQ state",
+      "desktopEvidence": "evidence/T02-desktop.png",
+      "mobileEvidence": "evidence/T02-mobile.png"
+    },
+    {
+      "id": "T03",
+      "referencePath": "/life-at-trinity",
+      "target": "/about#culture",
+      "status": "implemented",
+      "preserved": "Culture content and Careers CTA; no separate route needed",
+      "desktopEvidence": "evidence/T03-desktop.png",
+      "mobileEvidence": "evidence/T03-mobile.png"
+    },
+    {
+      "id": "T04",
+      "referencePath": "/carrer",
+      "target": "/careers",
+      "status": "implemented",
+      "preserved": "Job browsing remains; job-specific applications live at /careers/[id]. No general CV intake exists.",
+      "desktopEvidence": "evidence/T04-desktop.png",
+      "mobileEvidence": "evidence/T04-mobile.png"
+    },
+    {
+      "id": "T05",
+      "referencePath": "/privacy-policy",
+      "target": "/privacy",
+      "status": "implemented",
+      "preserved": "TwinLink-specific privacy notice and opt-out preference",
+      "desktopEvidence": "evidence/T05-desktop.png",
+      "mobileEvidence": "evidence/T05-mobile.png"
+    },
+    {
+      "id": "T06",
+      "referencePath": "/contact",
+      "target": "/contact",
+      "status": "implemented",
+      "preserved": "Company email and email-draft form; no server email transport or office maps",
+      "desktopEvidence": "evidence/T06-desktop.png",
+      "mobileEvidence": "evidence/T06-mobile.png"
+    },
+    {
+      "id": "T07",
+      "referencePath": "/digitalstrategy&transformation",
+      "target": "/services/digital-strategy-transformation",
+      "status": "implemented",
+      "preserved": "No detail page today; conceptual overlap with home Solutions only",
+      "desktopEvidence": "evidence/T07-desktop.png",
+      "mobileEvidence": "evidence/T07-mobile.png"
+    },
+    {
+      "id": "T08",
+      "referencePath": "/managed-application",
+      "target": "/services/managed-application",
+      "status": "implemented",
+      "preserved": "No detail page today; no new query/form required",
+      "desktopEvidence": "evidence/T08-desktop.png",
+      "mobileEvidence": "evidence/T08-mobile.png"
+    },
+    {
+      "id": "T09",
+      "referencePath": "/cloud-services-solutions-singapore",
+      "target": "/services/cloud-services",
+      "status": "implemented",
+      "preserved": "Home Cloud & Infrastructure is partial conceptual equivalent",
+      "desktopEvidence": "evidence/T09-desktop.png",
+      "mobileEvidence": "evidence/T09-mobile.png"
+    },
+    {
+      "id": "T10",
+      "referencePath": "/enterprise-services",
+      "target": "/services/enterprise-services",
+      "status": "implemented",
+      "preserved": "No standalone equivalent or established service content model",
+      "desktopEvidence": "evidence/T10-desktop.png",
+      "mobileEvidence": "evidence/T10-mobile.png"
+    },
+    {
+      "id": "T11",
+      "referencePath": "/sap-services",
+      "target": "/services/sap-services",
+      "status": "implemented",
+      "preserved": "No equivalent page or verified SAP capability in public source",
+      "desktopEvidence": "evidence/T11-desktop.png",
+      "mobileEvidence": "evidence/T11-mobile.png"
+    },
+    {
+      "id": "T12",
+      "referencePath": "/it-software-solutions",
+      "target": "/services/infrastructure-services",
+      "status": "implemented",
+      "preserved": "Home Cloud & Infrastructure is partial conceptual equivalent",
+      "desktopEvidence": "evidence/T12-desktop.png",
+      "mobileEvidence": "evidence/T12-mobile.png"
+    },
+    {
+      "id": "T13",
+      "referencePath": "/cyber-security",
+      "target": "/services/cybersecurity-risk",
+      "status": "implemented",
+      "preserved": "No standalone equivalent; editorial topics are not service offerings",
+      "desktopEvidence": "evidence/T13-desktop.png",
+      "mobileEvidence": "evidence/T13-mobile.png"
+    },
+    {
+      "id": "T14",
+      "referencePath": "/big-data-&-Analytics",
+      "target": "/services/big-data-analytics",
+      "status": "implemented",
+      "preserved": "Home AI & Automation is partial conceptual equivalent",
+      "desktopEvidence": "evidence/T14-desktop.png",
+      "mobileEvidence": "evidence/T14-mobile.png"
+    },
+    {
+      "id": "T15",
+      "referencePath": "/erp",
+      "target": "/services/erp",
+      "status": "implemented",
+      "preserved": "No equivalent page or verified ERP offering; secondary legacy reference page",
+      "desktopEvidence": "evidence/T15-desktop.png",
+      "mobileEvidence": "evidence/T15-mobile.png"
+    }
+  ],
+  "legacyAliases": "Source aliases only; see checkpoint 3",
+  "newServiceRoutes": [
+    "digital-strategy-transformation",
+    "managed-application",
+    "cloud-services",
+    "enterprise-services",
+    "sap-services",
+    "infrastructure-services",
+    "cybersecurity-risk",
+    "big-data-analytics",
+    "erp"
+  ]
+}

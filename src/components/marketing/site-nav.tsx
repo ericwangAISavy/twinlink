@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { SERVICE_LINKS } from "./service-links";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ReferenceIcon } from "./reference-icon";
@@ -13,12 +14,9 @@ const GROUPS: { label: string; items: Item[] }[] = [
     { label: "Careers", href: "/careers" },
     { label: "Privacy policy", href: "/privacy" },
   ] },
-  // Keep destinations on existing pages until the service-detail checkpoint.
   { label: "Tech services", items: [
+    ...SERVICE_LINKS.map(item => ({ label: item.label, href: `/services/${item.slug}` })),
     { label: "Our solutions", href: "/#solutions" },
-    { label: "Product Engineering", href: "/#solutions" },
-    { label: "Cloud & Infrastructure", href: "/#how-we-help" },
-    { label: "AI & Automation", href: "/#solutions" },
   ] },
   { label: "HR services", items: [
     { label: "Engineering Network", href: "/#people" },

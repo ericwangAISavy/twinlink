@@ -1,0 +1,56 @@
+{
+  "results": [
+    {
+      "width": 390,
+      "height": 480,
+      "bannerBottom": 350,
+      "titleTop": 127,
+      "titleBottom": 223,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 568,
+      "bannerBottom": 350,
+      "titleTop": 127,
+      "titleBottom": 223,
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "bannerBottom": 333.5,
+      "titleTop": 197,
+      "titleBottom": 293,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "bannerBottom": 585,
+      "titleTop": 214,
+      "titleBottom": 262,
+      "overflow": false
+    },
+    {
+      "width": 992,
+      "height": 900,
+      "bannerBottom": 585,
+      "titleTop": 214,
+      "titleBottom": 262,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "bannerBottom": 585,
+      "titleTop": 220,
+      "titleBottom": 256,
+      "overflow": false
+    },
+    {
+      "searchPadding": 40
+    }
+  ],
+  "failures": []
+}

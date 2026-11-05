@@ -1,0 +1,297 @@
+{
+  "resumedFrom": "56af68ebdfdbbf67f5bd17923d2d077594f882e4",
+  "sourceTreeSha256": "f319c9415dfea6aaba0b6bb34405fb1b9df941d842c46d17aa8845c5136b0d2c",
+  "productionBuildId": "cPhptk6oyvzUMMNvsf2cV",
+  "browserPasses": 5,
+  "statesPerPass": 28,
+  "earlyHeaderStates": 28,
+  "tests": {
+    "passed": 31,
+    "failed": 0,
+    "skipped": 0
+  },
+  "visualResult": "passed",
+  "checkpoint7Started": false,
+  "captures": [
+    {
+      "file": "docs/checkpoint-6/evidence/T02-desktop.png",
+      "sha256": "b2bbc9f96f6f8ebb8625fd381b5bddeb25a309573e394184e87608921f7d6e45"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T02-mobile.png",
+      "sha256": "d82f71dc038d4f74a825e2f310750a63bdf7d89cae184c8b445d150a7a45da33"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T03-desktop.png",
+      "sha256": "4108d3ebbdf500b6d6f00a6639a8bd5987b8cffecf31b66b3eabd2e72365349e"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T03-mobile.png",
+      "sha256": "2d1ffe81bc86e093ac74738328b6c8fca9a142b0130cf6b6e38a81bbfcb89f89"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T04-desktop.png",
+      "sha256": "37c18501beebdd9f146021b4095c20f26a31a30b23d2398b36a0ddefb96b3a97"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T04-mobile.png",
+      "sha256": "46a9921ad3ac6ae80f346c5fa2bd2eb4bcd4cb8e85f95455e5398ed47fc0a3bc"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T05-desktop.png",
+      "sha256": "6909030ce7bc43e03be44391d46a2355b61551f3ab45d53566ea57e2bccc82ba"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T05-mobile.png",
+      "sha256": "53eecd1125de7ef679bf410403b9d887b3f12a7b9a28942d3c7ec056754c9977"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T06-desktop.png",
+      "sha256": "7c449a44b180aebe995675ce3f49b5890e4ab1837986a3ef35a5c0dcc8dbe0cf"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T06-mobile.png",
+      "sha256": "d0a4a9c6695dcf792e731cf0715c2cf1a8e3abb596ac25aa99110785ec396c1a"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T07-desktop.png",
+      "sha256": "431b599e401fb0e9eced6666a7a96c4d19249512af4d70faaa31ba65d11a9a96"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T07-mobile.png",
+      "sha256": "30987c3fa23f3600a8bf7a7cc6ec31a53c5f41d472ac4dafbf3fe32fcc039af7"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T08-desktop.png",
+      "sha256": "8747fce9c5436e63e952489c305b03821d00ede701478b0878a4912d38ab8aca"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T08-mobile.png",
+      "sha256": "00a80b2577ff3096384b736bd33a682186bbf65780defadab114a1f950d40808"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T09-desktop.png",
+      "sha256": "f79a9b3e72c0664f0c817a31a42ccaff1c1ab1d1ee1f94ab2421f1fadba0f489"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T09-mobile.png",
+      "sha256": "61f4b0cbdd445bba208235883e6730fbe6e350de8b11ce138725353f2530ab2c"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T10-desktop.png",
+      "sha256": "74dbc3f4803d4eac465d968b5c0fe6b154343f333db1c9fac05f2e476cc02f31"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T10-mobile.png",
+      "sha256": "6933abba58a3f5d9f2a03d9d16fb0eba347a1c23d75ab2182caacade9c12683f"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T11-desktop.png",
+      "sha256": "27ea648549a5704ff7c87583523e322f8d4aad1119dcbbcfdda1dff620fa0708"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T11-mobile.png",
+      "sha256": "3cd5b82d43fb7323b2f5e3f64d4f084b9dd4a08f031a44ff62afcc22d7cf0452"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T12-desktop.png",
+      "sha256": "7ef37a1baf59bb86c721bc33a539f671db66297ef54f42a4457ed16de874f26c"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T12-mobile.png",
+      "sha256": "4c7a16b720681813ca3400296a166407e6bede35b7b914b65a1eed7dd5551936"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T13-desktop.png",
+      "sha256": "086c9f74c1a81854f908a4031cbaf4600be7964307aafc25c22ea21e721df847"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T13-mobile.png",
+      "sha256": "86e36794ac07f5ecdcf3f2bc6e4915d00c8dfa4336ccad697178f4bb3bc80517"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T14-desktop.png",
+      "sha256": "204f270d822c0a48ea3ee85a9cf4f9b52041fb0c60c5ea006cdd55a57bdf2cf4"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T14-mobile.png",
+      "sha256": "2163058d64bfeeac5a231f5a5db36bd5760a7ec335c38a0603e4b9412141348f"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T15-desktop.png",
+      "sha256": "2eebeed59036e9fa4ab2eb2b509483e3e0b5cd8085e3bc6cbafc507f4dcfb220"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/T15-mobile.png",
+      "sha256": "ec34ce3b012a9f3ab1987942bd4e95594556536431310928e2f29449d33d68bb"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T02-desktop.jpg",
+      "sha256": "d7be4d4ce3319b54c8f6ffb8f886539fd52daf672c24057b2f1e16f99e447725"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T02-mobile.jpg",
+      "sha256": "35de6a4b8da6266ea86c05ae1a1a1523f295c95442515b6ecb6af1190f0a8d7d"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T03-desktop.jpg",
+      "sha256": "10e156463e48ffc4bb1d4e118335214fd62dceb6f221ba3c3e1826c8ae7fea0b"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T03-mobile.jpg",
+      "sha256": "36499fe3ca1fe92e920bda590116e72c432cf89bce25a345fa0b82576ea10eb9"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T04-desktop.jpg",
+      "sha256": "b7636857200919f010dbfe4c15b4577d15b0251d0ecd8434edd54ba4bd598916"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T04-mobile.jpg",
+      "sha256": "ea751bbc008e70b9c1e85cb1355740faa865046974d52f8d93dcd7351e0d1dd8"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T05-desktop.jpg",
+      "sha256": "d25b8700a0c88969ca23b9975412885112eb6d0058d44f34c64c4a80f4abe272"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T05-mobile.jpg",
+      "sha256": "4350bd4a0b7b816c1b344f411b24d40f47c05ae13ab0041f75a9b047f2ee4eae"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T06-desktop.jpg",
+      "sha256": "de0709e740e936785507919206cbae6cf081ab8e63358e9a326635a6a9b06375"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T06-mobile.jpg",
+      "sha256": "152f6d44ba3494d6eee4990454473c138756d8b1f37e1f69ec4fe308e0512ca5"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T07-desktop.jpg",
+      "sha256": "975f55c89bec9c16da466ff034eb41efb5a0aac4d44f7284feb93308bfa1b223"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T07-mobile.jpg",
+      "sha256": "78a58e4f670271865a3262a9e2b8a08cbb288cd8f425a5ec12c507fbf0c93bbb"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T08-desktop.jpg",
+      "sha256": "bd1e2d128dac6a7dd402e8eac4f218847c5371da4e8505caadd916f390f3d2bd"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T08-mobile.jpg",
+      "sha256": "46e0f9bf379bcbed3a76101cfc92a4f33188bdea873292117d344f4a69284c87"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T09-desktop.jpg",
+      "sha256": "39b11e57628c5b5579b2207766b3cf4f3f46bda46c5ce60d8c4eb949a43d4853"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T09-mobile.jpg",
+      "sha256": "59e7469c817109b1ad43bab118c6e0b6e9a5e509b5dfdcd86d9ffc2293b10535"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T10-desktop.jpg",
+      "sha256": "ccc805de88f9420ded461239fea9c29e10b477b35045a7353fbb8842c5cb5f75"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T10-mobile.jpg",
+      "sha256": "9f467459162f5cce39dd79d98038164279455834a8e7356e95c13a6d84cd31b1"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T11-desktop.jpg",
+      "sha256": "9cb5632b3934763c0f5b43e6cd531623105ed4284d46dcdd71baee1ad8964223"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T11-mobile.jpg",
+      "sha256": "99730835c5b4a93990af63239b6d1d45a6a6ccac1e7f395d03daf2f661ef7823"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T12-desktop.jpg",
+      "sha256": "237ce3f3538b95274f60e414f3ec198fb0818a5d9625bf9b52628751c4ee53d8"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T12-mobile.jpg",
+      "sha256": "1f75b1f96f7fcfee70447af81a9d66bf7f81addac53ed82d0c37762c13edac85"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T13-desktop.jpg",
+      "sha256": "519a5719365cc6071d7fa3073f1331926fd818b5e1e745d916b0a8c1dcfc3fec"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T13-mobile.jpg",
+      "sha256": "df8dee5e10b6c6c295103f7ba195f432a3e13f2fb58c32863ab4cba1da0a1dd2"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T14-desktop.jpg",
+      "sha256": "0b0a1d64407e501ba0fbdcef1da7c18dd486718af5891a886fd47905e892746d"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T14-mobile.jpg",
+      "sha256": "a62f47032649cea782deee5fa52d6862436f6462107cc5c4a8ad961340a9bc08"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T15-desktop.jpg",
+      "sha256": "f418632bd62ebc5a157c1bcaa0403a7a9ef46dedb18594e64dee603503c2b602"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/compare-T15-mobile.jpg",
+      "sha256": "0cbdc5c30f709a86647fd52d47163ae0511feee81653e1154039e0f3784b3c56"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/focus-about.jpg",
+      "sha256": "0e9f260ceaea310316b8086a1cdcdb2bf0683b7aaa7ff9c4882c83cfab27fcbb"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/focus-careers-desktop.jpg",
+      "sha256": "afafc9bb2bcb41fa435ce26a75bf12efa53ab8adb81c3096c8430604ad871494"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/focus-careers-mobile.jpg",
+      "sha256": "32f09d9035427f4745d36b4d514bc64296ba678368e1e464dc6aac43683cf63c"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/focus-contact.jpg",
+      "sha256": "81b21ad68cbe4c5dd5781751aaeae01af5fe77e5facbbea468e4cfb07f4f18e8"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/focus-privacy.jpg",
+      "sha256": "a866add096a618b01e44a454ea2da56fd4828c5ac759f04efd8a48f89fdc6030"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/focus-service.jpg",
+      "sha256": "04470ba4ca571e75e4edaceb7b7b24f460980d7c0227f6d72984bb0cbddbaf1d"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/sheet-desktop-10.jpg",
+      "sha256": "ff59d622265d2ac675c8838aded0b7a4a4b1832864762ecd6f3ecbbb58598e23"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/sheet-desktop-14.jpg",
+      "sha256": "d13dbb275d87cca1cf6b06aa75ac7c604ea932939c7a6cf6252f0ff50110fab4"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/sheet-desktop-2.jpg",
+      "sha256": "77e25218d65e7659517e300d203866cb1a6d71643e5a4eb01632f47fba8dd4bd"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/sheet-desktop-6.jpg",
+      "sha256": "29ccb9638308d96b98bbdd4e1a2840f04c6dc10844f27af9215b655193027f6c"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/sheet-mobile-10.jpg",
+      "sha256": "236b9c84c56808f32ca706c880ef1a542d4acdec1b9b2f95d9eeda116f9501f3"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/sheet-mobile-14.jpg",
+      "sha256": "4233e4009dc9d5e3b19095de4251f5b3b18a1fa1b70bc30be963d4e2db0f66bb"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/sheet-mobile-2.jpg",
+      "sha256": "ed33fbc8411d3a3497dbc27a8370be7db3d0c1a15e01e6fc5c5a12d366acf4dd"
+    },
+    {
+      "file": "docs/checkpoint-6/evidence/sheet-mobile-6.jpg",
+      "sha256": "ee831300aa7d9df4d3156760e28a4de7de080404868ea5ee5a8a16a25d20e10e"
+    }
+  ]
+}

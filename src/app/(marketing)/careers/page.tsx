@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { PhotoBanner, SubPage, SubHeading } from "@/components/marketing/subpage-shell";
 import type { Metadata } from "next";
 import { OpenRolesBoard, type OpenRole } from "@/components/careers/open-roles-board";
 import { getPublishedJobs } from "@/server/queries/jobs";
@@ -20,5 +22,9 @@ export default async function CareersPage() {
     publishedAt: job.publishedAt,
   }));
 
-  return <OpenRolesBoard roles={roles} />;
+  return <SubPage className="sub-careers">
+    <PhotoBanner title="Careers at TwinLink" caption="Apply here" image="/images/reference/subpages/banner-images/careers.jpg" />
+    <div className="sub-careers-intro"><SubHeading>Open roles</SubHeading><p>Join TwinLink and help build the next generation of AI infrastructure. Browse open roles and apply for the opportunity that fits. Applications are made for a specific role; a candidate account is optional.</p><Link href="/about#values">View our values</Link><Link href="/about#culture">Life at TwinLink</Link></div>
+    <div className="sub-functional sub-roles"><OpenRolesBoard roles={roles} /></div>
+  </SubPage>;
 }
