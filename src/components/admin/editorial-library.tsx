@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, FilePlus, Search } from "lucide-react";
+import { FilePlus, Search } from "lucide-react";
 import { editorialLabels, type EditorialEntry } from "@/lib/editorial-schema";
 import { formatDate } from "@/lib/utils";
 export function EditorialLibrary({ entries }: { entries: EditorialEntry[] }) {
@@ -111,15 +111,6 @@ export function EditorialLibrary({ entries }: { entries: EditorialEntry[] }) {
                 >
                   Edit
                 </Link>
-                {entry.status === "published" && (
-                  <Link
-                    href={`/${entry.content.kind}/${entry.content.slug}`}
-                    aria-label={`View ${entry.content.title}`}
-                    className="text-muted-foreground hover:text-accent"
-                  >
-                    <ArrowUpRight size={17} />
-                  </Link>
-                )}
               </div>
             </article>
           ))}

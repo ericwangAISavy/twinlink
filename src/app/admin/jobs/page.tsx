@@ -29,7 +29,7 @@ export default async function AdminJobsPage({
     <>
       <AdminPageHeader
         title="Jobs"
-        description="Create and publish Twinlink roles. Published jobs appear on the public careers pages."
+        description="Create and publish Twinlink roles. Signed-in candidates can see published jobs."
         actions={
           <Button asChild variant="teal" className="rounded-full">
             <Link href="/admin/jobs/new">Create job</Link>
@@ -83,7 +83,7 @@ export default async function AdminJobsPage({
                   <Link className="text-sm text-accent hover:underline" href={`/admin/jobs/${job.id}`}>
                     Edit
                   </Link>
-                  <ConfirmAction label="Publish" message="Publish this job to the careers site?" action={adminSetJobStatus.bind(null, job.id, "PUBLISHED")} />
+                  <ConfirmAction label="Publish" message="Publish this job? Signed-in candidates will see it." action={adminSetJobStatus.bind(null, job.id, "PUBLISHED")} />
                   <ConfirmAction label="Pause" message="Pause this job posting?" action={adminSetJobStatus.bind(null, job.id, "PAUSED")} />
                   <ConfirmAction label="Close" message="Close this job to new applications?" action={adminSetJobStatus.bind(null, job.id, "CLOSED")} />
                   <ConfirmAction label="Archive" message="Archive this job?" action={adminSetJobStatus.bind(null, job.id, "ARCHIVED")} />

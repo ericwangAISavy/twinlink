@@ -125,9 +125,9 @@ export async function saveEditorialEntry(
     version: data.version,
     message:
       status.data === "published"
-        ? "Published changes are now live."
+        ? "Saved as published. The public site does not display this content."
         : status.data === "archived"
-          ? "Entry archived and removed from the public website."
+          ? "Entry archived."
           : "Draft saved. It is only visible to administrators.",
   };
 }

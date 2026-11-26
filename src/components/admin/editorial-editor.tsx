@@ -127,7 +127,7 @@ export function EditorialEditor({ entry }: { entry?: EditorialEntry }) {
       entry?.status === "published" &&
       status !== "published" &&
       !window.confirm(
-        "This will remove the entry from the public website. Continue?",
+        "This entry will no longer be marked as published. Continue?",
       )
     )
       return;
@@ -295,9 +295,6 @@ export function EditorialEditor({ entry }: { entry?: EditorialEntry }) {
                 className={inputStyle}
               />
             </Field>
-            <p className="-mt-3 break-all text-xs text-muted-foreground">
-              Public URL: /{content.kind}/{content.slug || "your-slug"}
-            </p>
             <Field label="Summary">
               <textarea
                 maxLength={1200}
@@ -895,7 +892,7 @@ export function EditorialEditor({ entry }: { entry?: EditorialEntry }) {
         <div className="flex flex-wrap items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
             {status === "published"
-              ? "Changes will be visible on the public website."
+              ? "The public site does not display this content."
               : status === "archived"
                 ? "This entry will be removed from public collections."
                 : "Only administrators can view this draft."}
