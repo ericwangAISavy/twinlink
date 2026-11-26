@@ -13,7 +13,7 @@ const LINKS = [
 export function Research() {
   return (
     <Section>
-      <SplitHeading title="Real-world research. Measured where it matters.">H Company research starts from one idea: AI should take action in the real world. It began with computer use, with models trained on enterprise environments, and extends to new areas as real use cases require.</SplitHeading>
+      <SplitHeading title="Real-world research. Measured where it matters.">Twinlink research starts from one idea: AI should take action in the real world. It began with computer use, with models trained on enterprise environments, and extends to new areas as real use cases require.</SplitHeading>
       <Fade delay={0.08}>
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
           <a href={href("/newsroom/holo4")} className="group flex flex-col overflow-hidden rounded-[12px] bg-grey-900 shadow-[0_18px_40px_rgb(4_4_5_/10%)]">

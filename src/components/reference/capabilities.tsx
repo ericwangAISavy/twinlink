@@ -56,7 +56,7 @@ function Stack() {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-col gap-1.5 rounded-[12px] border !border-iris-100 bg-iris-50 p-3">
-        <span className="px-1 font-mono text-[10px] text-iris-600">H Company · one stack</span>
+        <span className="px-1 font-mono text-[10px] text-iris-600">Twinlink · one stack</span>
         {["Agents", "Workflow orchestration", "Inference", "Holo models"].map((layer, index) => (
           <div key={layer} className="flex items-center justify-between rounded-[6px] border !border-iris-100 bg-white px-3 py-2" style={{ marginInline: index * 6 }}>
             <span className="text-[12px] font-medium">{layer}</span><span className="h-1.5 w-1.5 rounded-full bg-iris-400" />

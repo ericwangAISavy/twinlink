@@ -43,7 +43,7 @@ export function SiteFooter() {
         </div>
         <div className="h-px bg-grey-250" />
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <p className="t12 text-grey-500">© 2026 H Company. Founded in Paris, built around the world.</p>
+          <p className="t12 text-grey-500">© 2026 Twinlink. Founded in Paris, built around the world.</p>
           <nav aria-label="Legal navigation">
             <ul className="-my-1.5 flex flex-wrap items-center gap-x-5">
               {LEGAL.map(([label, to]) => <li key={label}><a href={href(to)} className="t12 inline-block py-1.5 text-grey-500 transition-colors hover:text-grey-750">{label}</a></li>)}

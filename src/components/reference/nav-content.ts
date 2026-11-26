@@ -44,6 +44,6 @@ export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
 
 export const ANNOUNCEMENT = {
   to: "/newsroom/h-company-aws-european-sovereign-cloud-press-release",
-  short: "H Company on the AWS European Sovereign Cloud",
-  long: "H Company launches its NVIDIA-powered agentic AI on the AWS European Sovereign Cloud",
+  short: "Twinlink on the AWS European Sovereign Cloud",
+  long: "Twinlink launches its NVIDIA-powered agentic AI on the AWS European Sovereign Cloud",
 };

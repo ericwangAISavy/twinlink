@@ -9,8 +9,8 @@ const LEAD = {
   image: "/hc/h-company-aws-european-sovereign-cloud-press-release-cover-h.jpg",
   alt: "Title card: Press release: AWS European Sovereign Cloud",
   date: "November 16, 2026",
-  title: "H Company launches its NVIDIA-powered agentic AI on the AWS European Sovereign Cloud",
-  summary: "H Company's AI agents enable European organizations to automate their operational workflows on sovereign infrastructure within the European Union",
+  title: "Twinlink launches its NVIDIA-powered agentic AI on the AWS European Sovereign Cloud",
+  summary: "Twinlink's AI agents enable European organizations to automate their operational workflows on sovereign infrastructure within the European Union",
 };
 
 const POSTS = [

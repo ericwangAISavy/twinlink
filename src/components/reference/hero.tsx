@@ -16,7 +16,7 @@ export function Hero() {
             <h1 className="w-full text-balance text-[clamp(1.75rem,calc((100vw-3rem)/14),60px)] font-bold leading-[1.1] tracking-tight">Operational intelligence for the enterprise</h1>
           </Fade>
           <Fade delay={0.1}>
-            <p className="t16 max-w-2xl text-grey-600">H Company is an AI research lab and agentic platform that works across any system without rebuilding your stack.</p>
+            <p className="t16 max-w-2xl text-grey-600">Twinlink is an AI research lab and agentic platform that works across any system without rebuilding your stack.</p>
           </Fade>
           <Fade delay={0.2}>
             <div className="flex flex-col gap-3 pt-2 sm:flex-row">
