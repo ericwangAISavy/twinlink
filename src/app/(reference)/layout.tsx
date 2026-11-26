@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   applicationName: "H",
   keywords: null,
   description: DESCRIPTION,
-  openGraph: { type: "website", siteName: "H", locale: "en_US", title: "Operational intelligence for the enterprise | H", description: DESCRIPTION, images: ["/hc/opengraph-image.jpg"] },
-  twitter: { card: "summary_large_image", title: "Operational intelligence for the enterprise | H", description: DESCRIPTION, images: ["/hc/opengraph-image.jpg"] },
+  openGraph: { type: "website", siteName: "H", locale: "en_US", title: "Operational intelligence for the enterprise | Twinlink", description: DESCRIPTION, images: ["/hc/opengraph-image.jpg"] },
+  twitter: { card: "summary_large_image", title: "Operational intelligence for the enterprise | Twinlink", description: DESCRIPTION, images: ["/hc/opengraph-image.jpg"] },
 };
 
 export default function ReferenceLayout({ children }: Readonly<{ children: React.ReactNode }>) {

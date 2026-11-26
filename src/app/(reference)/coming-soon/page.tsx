@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const metadata = { title: { absolute: "Coming soon | H" } };
+export const metadata = { title: { absolute: "Coming soon | Twinlink" } };
 
 export default function ComingSoonPage() {
   return (
