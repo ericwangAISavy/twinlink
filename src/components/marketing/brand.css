@@ -1,0 +1,242 @@
+/* Twinlink design system — loaded after the foundation/home/subpage sheets.
+   One palette (navy for everything interactive, gold only as a thin brand accent),
+   one button system, one page-hero pattern, one heading style.
+   Selectors are prefixed with .marketing-theme.trinity-foundation so they win
+   regardless of stylesheet order. */
+.marketing-theme.trinity-foundation {
+  --brand-navy: #0b2a5b;
+  --brand-navy-deep: #081a3a;
+  --brand-ink: #0f1b2d;
+  --brand-body: #334155;
+  --brand-muted: #5a6475;
+  --brand-gold: #c9971c;
+  --brand-gold-light: #f2c14e;
+  --brand-line: #e3e8f0;
+  --brand-surface: #f6f8fb;
+  color: var(--brand-body);
+}
+
+/* ---------- Typography ---------- */
+.marketing-theme.trinity-foundation .foundation-content :is(h1, h2) { font-weight: 700; letter-spacing: -.01em; }
+.marketing-theme.trinity-foundation .foundation-content h3 { font-weight: 600; }
+.marketing-theme.trinity-foundation :is(.home-reference .home-heading, .sub-page .sub-heading) { text-transform: none; text-align: left; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.2; font-weight: 700; color: var(--brand-ink); padding-bottom: 16px; margin-bottom: 28px; }
+.marketing-theme.trinity-foundation :is(.home-reference .home-heading, .sub-page .sub-heading)::after { left: 0; width: 48px; height: 3px; background: var(--brand-gold); }
+.marketing-theme.trinity-foundation :is(.home-reference, .sub-page) p { text-align: left !important; }
+.marketing-theme.trinity-foundation .foundation-content a:not(.foundation-button):hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Header & navigation ---------- */
+.marketing-theme.trinity-foundation .foundation-brand { display: flex; align-items: center; }
+.marketing-theme.trinity-foundation .foundation-nav-list > li > :is(a, button) { position: relative; font: 500 15px/1.5 var(--font-reference-body), sans-serif; text-transform: none; color: var(--brand-ink); text-decoration: none; }
+.marketing-theme.trinity-foundation .foundation-nav-list > li > :is(a, button):hover,
+.marketing-theme.trinity-foundation .foundation-nav-group.is-expanded > button { color: var(--brand-navy); text-decoration: none; }
+.marketing-theme.trinity-foundation .foundation-nav-list > li > a[aria-current="page"] { color: var(--brand-navy); text-decoration: none; }
+.marketing-theme.trinity-foundation .foundation-nav-list > li:not(.foundation-account) > a[aria-current="page"]::after { content: ""; position: absolute; left: 24px; right: 0; bottom: 4px; height: 2px; border-radius: 2px; background: var(--brand-gold); }
+.marketing-theme.trinity-foundation .foundation-nav .bi-chevron-down { font-size: 11px; transition: transform .2s; }
+.marketing-theme.trinity-foundation .foundation-nav-group.is-expanded .bi-chevron-down { transform: rotate(180deg); }
+.marketing-theme.trinity-foundation .foundation-submenu { min-width: 240px; padding: 8px; border: 1px solid var(--brand-line); border-top: 1px solid var(--brand-line); border-radius: 10px; box-shadow: 0 16px 40px rgb(15 27 45 / 12%); }
+.marketing-theme.trinity-foundation .foundation-submenu a { padding: 9px 12px; border-radius: 6px; font: 400 14px/1.45 var(--font-reference-body), sans-serif; color: var(--brand-ink); text-decoration: none; }
+.marketing-theme.trinity-foundation .foundation-submenu a:hover,
+.marketing-theme.trinity-foundation .foundation-submenu a[aria-current="page"] { color: var(--brand-navy); background: var(--brand-surface); }
+.marketing-theme.trinity-foundation .foundation-nav .foundation-nav-list > li.foundation-account > a:not(.foundation-button) { font-weight: 500; }
+@media (max-width: 991px) {
+  .marketing-theme.trinity-foundation .foundation-nav-list > li:not(.foundation-account) > a[aria-current="page"]::after { display: none; }
+  .marketing-theme.trinity-foundation .foundation-submenu { border: 0; box-shadow: none; background: var(--brand-surface); }
+}
+
+/* ---------- Buttons (one system) ---------- */
+.marketing-theme.trinity-foundation .foundation-button { border-radius: 6px; padding: 11px 22px; font: 600 15px/1.4 var(--font-reference-body), sans-serif; background: var(--brand-navy); color: #fff; text-decoration: none; transition: background-color .2s, box-shadow .2s; }
+.marketing-theme.trinity-foundation .foundation-button:hover { background: var(--brand-navy-deep); color: #fff; text-decoration: none; }
+.marketing-theme.trinity-foundation .foundation-nav .foundation-nav-list > li.foundation-account > a.foundation-button { padding: 8px 16px; font-size: 14px; color: #fff; }
+.marketing-theme.trinity-foundation .foundation-button.foundation-button-light { background: #fff; color: var(--brand-navy); }
+.marketing-theme.trinity-foundation .foundation-button.foundation-button-light:hover { background: #e9eef6; color: var(--brand-navy-deep); }
+.marketing-theme.trinity-foundation .foundation-button.foundation-button-ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgb(255 255 255 / 65%); }
+.marketing-theme.trinity-foundation .foundation-button.foundation-button-ghost:hover { background: rgb(255 255 255 / 10%); color: #fff; }
+.marketing-theme.trinity-foundation .sub-page .sub-functional button[type="submit"],
+.marketing-theme.trinity-foundation .sub-page .sub-functional #preferences button,
+.marketing-theme.trinity-foundation :is(.foundation-job-detail, .foundation-editorial-detail) button[type="submit"] { border-radius: 6px; font-weight: 600; }
+.marketing-theme.trinity-foundation :is(a, button, input, select, textarea):focus-visible { outline: 2px solid var(--brand-navy); outline-offset: 3px; }
+
+/* ---------- Page heroes (one pattern for every page) ---------- */
+.marketing-theme.trinity-foundation :is(.sub-page-hero, .foundation-resource-hero) { position: relative; overflow: hidden; margin-top: -70px; height: auto; min-height: 0; padding: 150px 0 72px; text-align: left; color: #fff; background: linear-gradient(120deg, var(--brand-navy-deep) 0%, var(--brand-navy) 100%); }
+.marketing-theme.trinity-foundation .sub-page-hero-inner,
+.marketing-theme.trinity-foundation .foundation-resource-hero > .foundation-container { position: relative; z-index: 2; }
+.marketing-theme.trinity-foundation :is(.sub-page-hero, .foundation-resource-hero) h1 { max-width: 860px; margin: 0; text-align: left; color: #fff; font: 700 clamp(34px, 4.4vw, 52px)/1.1 var(--font-reference-heading), sans-serif; letter-spacing: -.015em; }
+.marketing-theme.trinity-foundation :is(.sub-page-hero, .foundation-resource-hero) h1::after { content: ""; display: block; width: 56px; height: 3px; margin-top: 20px; background: var(--brand-gold-light); }
+.marketing-theme.trinity-foundation .sub-page-hero-photo { padding: 190px 0 80px; }
+.marketing-theme.trinity-foundation .sub-page-hero-photo::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgb(8 26 58 / 94%) 0%, rgb(8 26 58 / 75%) 45%, rgb(8 26 58 / 30%) 100%); }
+.marketing-theme.trinity-foundation .foundation-resource-hero .foundation-resource-eyebrow { margin: 0 0 14px; color: var(--brand-gold-light); font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.marketing-theme.trinity-foundation .foundation-resource-hero h1 { margin-bottom: 22px; }
+.marketing-theme.trinity-foundation .foundation-resource-hero .foundation-resource-description { max-width: 720px; margin: 0; text-align: left; color: rgb(255 255 255 / 85%); font-size: 18px; }
+.marketing-theme.trinity-foundation .foundation-resource-hero .foundation-wave { display: none; }
+@media (max-width: 767px) {
+  .marketing-theme.trinity-foundation :is(.sub-page-hero, .foundation-resource-hero) { padding: 120px 0 52px; }
+  .marketing-theme.trinity-foundation .sub-page-hero-photo { padding: 150px 0 56px; }
+}
+
+/* ---------- Cards: image on top, title below (homepage topics + About) ---------- */
+.marketing-theme.trinity-foundation .home-reference .home-topic-grid { gap: 24px; }
+.marketing-theme.trinity-foundation .home-reference .home-topic-card { padding-top: 0; margin-bottom: 0; }
+.marketing-theme.trinity-foundation :is(.home-reference .home-topic-link, .sub-page .sub-principle-card > a) { display: flex; flex-direction: column; height: 100%; overflow: hidden; border: 1px solid var(--brand-line); border-radius: 10px; background: #fff; color: var(--brand-ink); text-decoration: none; transition: box-shadow .2s, border-color .2s; }
+.marketing-theme.trinity-foundation :is(.home-reference .home-topic-link, .sub-page .sub-principle-card > a):is(:hover, :focus-visible) { border-color: #cdd6e4; box-shadow: 0 14px 34px rgb(15 27 45 / 10%); text-decoration: none; }
+.marketing-theme.trinity-foundation .home-reference .home-topic-photo { border-radius: 0; aspect-ratio: 4 / 3; }
+.marketing-theme.trinity-foundation .home-reference .home-topic-photo img { width: 100%; height: 100%; object-fit: cover; }
+.marketing-theme.trinity-foundation .home-reference .home-topic-link:is(:hover, :focus-visible) img { transform: scale(1.03); }
+.marketing-theme.trinity-foundation .home-reference .home-cog { display: none; }
+.marketing-theme.trinity-foundation .home-reference .home-topic-label { position: static; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 0; padding: 16px 18px; border: 0; border-radius: 0; background: #fff; box-shadow: none; color: var(--brand-ink); }
+.marketing-theme.trinity-foundation .home-reference .home-topic-label::after { content: "→"; color: var(--brand-navy); font-size: 18px; transition: transform .2s; }
+.marketing-theme.trinity-foundation .home-reference .home-topic-link:is(:hover, :focus-visible) .home-topic-label { background: #fff; color: var(--brand-ink); }
+.marketing-theme.trinity-foundation .home-reference .home-topic-link:is(:hover, :focus-visible) .home-topic-label::after { transform: translateX(3px); }
+.marketing-theme.trinity-foundation .home-reference .home-topic-label h3 { font-size: 16px; line-height: 1.3; font-weight: 600; color: var(--brand-ink); }
+.marketing-theme.trinity-foundation .sub-page .sub-principle-card { padding-top: 0; }
+.marketing-theme.trinity-foundation .sub-page .sub-principle-card img { border-radius: 0; aspect-ratio: 4 / 3; object-fit: cover; }
+.marketing-theme.trinity-foundation .sub-page .sub-principle-card h3 { position: static; padding: 16px 18px; border: 0; border-radius: 0; box-shadow: none; background: #fff; text-align: left; font-size: 16px; font-weight: 600; color: var(--brand-ink); }
+.marketing-theme.trinity-foundation .sub-page .sub-principle-card:is(:hover, :focus-within) h3 { background: #fff; color: var(--brand-ink); }
+.marketing-theme.trinity-foundation .sub-page .sub-principle-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); justify-content: stretch; }
+@media (max-width: 767px) { .marketing-theme.trinity-foundation .sub-page .sub-principle-grid { grid-template-columns: 1fr; gap: 20px; } }
+
+/* ---------- Other homepage blocks ---------- */
+.marketing-theme.trinity-foundation .home-reference .home-brand-hero { position: relative; margin-top: -70px; min-height: min(86vh, 760px); display: flex; align-items: center; overflow: hidden; background: var(--brand-navy-deep); color: #fff; }
+.marketing-theme.trinity-foundation .home-reference .home-brand-hero > img { object-fit: cover; object-position: 72% center; }
+.marketing-theme.trinity-foundation .home-reference .home-brand-hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgb(8 26 58 / 95%) 0%, rgb(8 26 58 / 82%) 40%, rgb(8 26 58 / 12%) 100%); }
+.marketing-theme.trinity-foundation .home-reference .home-brand-hero-inner { position: relative; z-index: 2; padding-top: 130px; padding-bottom: 90px; }
+.marketing-theme.trinity-foundation .home-reference .home-brand-hero-copy { max-width: 640px; }
+.marketing-theme.trinity-foundation .home-reference .home-eyebrow { margin: 0 0 20px; color: var(--brand-gold-light); font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.marketing-theme.trinity-foundation .home-reference .home-brand-hero h1 { margin: 0 0 22px; font: 700 clamp(38px, 5.2vw, 62px)/1.07 var(--font-reference-heading), sans-serif; letter-spacing: -.02em; color: #fff; }
+.marketing-theme.trinity-foundation .home-reference .home-brand-hero .home-hero-lede { margin: 0 0 34px; max-width: 560px; font-size: 19px; line-height: 1.55; color: rgb(255 255 255 / 86%); }
+.marketing-theme.trinity-foundation .home-reference .home-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.marketing-theme.trinity-foundation .home-reference .home-hero-actions a.foundation-button { padding: 13px 26px; font-size: 16px; }
+.marketing-theme.trinity-foundation .home-reference .home-hero-actions a.foundation-button-light { color: var(--brand-navy); }
+.marketing-theme.trinity-foundation .home-reference .home-hero-actions a.foundation-button-ghost { color: #fff; }
+.marketing-theme.trinity-foundation .home-reference .home-about-links a { font-weight: 600; }
+.marketing-theme.trinity-foundation .home-reference .home-values { padding: 60px 0; }
+.marketing-theme.trinity-foundation .home-reference .home-value { text-align: left; padding: 36px 32px; border: 1px solid var(--brand-line); border-radius: 10px; }
+.marketing-theme.trinity-foundation .home-reference .home-value:hover { background: #fff; box-shadow: 0 14px 34px rgb(15 27 45 / 10%); }
+.marketing-theme.trinity-foundation .home-reference .home-value-icon { width: 52px; height: 52px; margin: 0 0 18px; border-radius: 10px; background: var(--brand-surface); color: var(--brand-navy); }
+.marketing-theme.trinity-foundation .home-reference :is(.home-value, .home-career-card) h3 { text-transform: none; font-weight: 600; }
+.marketing-theme.trinity-foundation .home-reference :is(.home-value, .home-career-card) h3 a { color: var(--brand-ink); }
+.marketing-theme.trinity-foundation .home-reference .home-career-card { text-align: left; border: 1px solid var(--brand-line); border-radius: 10px; overflow: hidden; padding-bottom: 28px; }
+.marketing-theme.trinity-foundation .home-reference .home-career-card h3 { padding: 0 20px; }
+.marketing-theme.trinity-foundation .home-reference .home-career-image img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; border-radius: 0; }
+.marketing-theme.trinity-foundation .home-reference .home-statistics { background: #fff; border-block: 1px solid var(--brand-line); }
+.marketing-theme.trinity-foundation .home-reference .home-stat { text-align: left; }
+.marketing-theme.trinity-foundation .home-reference .home-stat .home-stat-value { color: var(--brand-navy); font-weight: 700; }
+.marketing-theme.trinity-foundation .home-reference .home-featured-kind { color: var(--brand-gold); font-weight: 600; letter-spacing: .08em; }
+.marketing-theme.trinity-foundation .home-reference .home-featured h3 { font-weight: 700; color: var(--brand-ink); }
+@media (max-width: 767px) {
+  .marketing-theme.trinity-foundation .home-reference .home-brand-hero::before { background: rgb(8 26 58 / 82%); }
+  .marketing-theme.trinity-foundation .home-reference .home-brand-hero-inner { padding-top: 120px; padding-bottom: 64px; }
+}
+
+/* ---------- Subpage content ---------- */
+.marketing-theme.trinity-foundation .sub-page .sub-two-column img { aspect-ratio: 16 / 10; object-fit: cover; }
+.marketing-theme.trinity-foundation .sub-page .sub-values-grid h3 { font-weight: 600; color: var(--brand-ink); }
+.marketing-theme.trinity-foundation .sub-page .sub-service-sidebar h2 { text-transform: none; text-align: left; font-size: 18px; font-weight: 700; color: var(--brand-ink); }
+.marketing-theme.trinity-foundation .sub-page .sub-service-sidebar ul { border: 1px solid var(--brand-line); border-radius: 10px; overflow: hidden; }
+.marketing-theme.trinity-foundation .sub-page .sub-service-sidebar li a { margin: 0; padding: 12px 16px; border: 0; border-bottom: 1px solid var(--brand-line); border-radius: 0 !important; text-align: left; color: var(--brand-ink); }
+.marketing-theme.trinity-foundation .sub-page .sub-service-sidebar li:last-child a { border-bottom: 0; }
+.marketing-theme.trinity-foundation .sub-page .sub-service-sidebar li a:hover { background: var(--brand-surface); color: var(--brand-navy); text-decoration: none; }
+.marketing-theme.trinity-foundation .sub-page a.sub-enquiry { display: inline-flex; margin: 20px 0; padding: 11px 22px; border-radius: 6px; background: var(--brand-navy); color: #fff; font-weight: 600; text-decoration: none; }
+.marketing-theme.trinity-foundation .sub-page a.sub-enquiry:hover { background: var(--brand-navy-deep); }
+.marketing-theme.trinity-foundation .sub-page .sub-contact-card { border: 1px solid var(--brand-line); border-radius: 10px; box-shadow: none; }
+.marketing-theme.trinity-foundation .sub-page .sub-contact-card h2 { color: var(--brand-ink); font-size: 20px; font-weight: 700; }
+.marketing-theme.trinity-foundation .sub-page .sub-contact-card .sub-form-heading { background: var(--brand-surface); border-bottom: 1px solid var(--brand-line); border-radius: 10px 10px 0 0; }
+.marketing-theme.trinity-foundation .sub-page .sub-contact-card .sub-form-heading h2 { margin: 0; color: var(--brand-ink); }
+.marketing-theme.trinity-foundation .sub-page.sub-privacy { background: #fff; }
+.marketing-theme.trinity-foundation .sub-page .sub-privacy-body h2 { color: var(--brand-ink); font-weight: 700; }
+.marketing-theme.trinity-foundation .sub-page .sub-careers-intro { text-align: left; max-width: 1320px; padding-inline: 12px; }
+.marketing-theme.trinity-foundation .sub-page .sub-careers-intro p { max-width: 760px; }
+.marketing-theme.trinity-foundation .sub-page .sub-careers-intro a { margin: 0 20px 16px 0; font-weight: 600; }
+.marketing-theme.trinity-foundation .sub-page.sub-careers .sub-functional input[placeholder][class] { padding-left: 40px; }
+.marketing-theme.trinity-foundation .sub-page .sub-functional :is(input, textarea, select)[class] { border-radius: 6px; }
+.marketing-theme.trinity-foundation :is(.foundation-job-detail, .foundation-editorial-detail) :is(h1, h2) { color: var(--brand-ink); font-weight: 700; }
+.marketing-theme.trinity-foundation .foundation-editorial-cta { border-radius: 10px; }
+
+/* ---------- Footer ---------- */
+.marketing-theme.trinity-foundation .foundation-footer { background: #050f22; }
+.marketing-theme.trinity-foundation .foundation-footer-top { background: var(--brand-navy-deep); border-top: 0; }
+.marketing-theme.trinity-foundation .foundation-footer h2 { color: #fff; font-size: 13px; letter-spacing: .08em; font-weight: 600; }
+.marketing-theme.trinity-foundation .foundation-footer-links .reference-icon { display: none; }
+.marketing-theme.trinity-foundation .foundation-footer-links li { padding: 6px 0; }
+.marketing-theme.trinity-foundation .foundation-footer-links a { color: rgb(255 255 255 / 72%); }
+.marketing-theme.trinity-foundation .foundation-footer-links a:hover { color: #fff; }
+.marketing-theme.trinity-foundation .foundation-footer-contact { background: none; }
+.marketing-theme.trinity-foundation .foundation-footer-brand { display: inline-block; margin-bottom: 16px; }
+.marketing-theme.trinity-foundation .foundation-footer-contact p { color: rgb(255 255 255 / 72%); font-family: var(--font-reference-body), sans-serif; font-size: 14px; line-height: 1.6; }
+.marketing-theme.trinity-foundation .foundation-footer-contact a { color: #fff; }
+.marketing-theme.trinity-foundation .foundation-copyright { color: rgb(255 255 255 / 60%); font-size: 13px; }
+.marketing-theme.trinity-foundation .foundation-copyright a { color: rgb(255 255 255 / 75%); }
+.marketing-theme.trinity-foundation .foundation-copyright a:hover { color: #fff; }
+.marketing-theme.trinity-foundation .foundation-back-top { border-radius: 6px; background: var(--brand-navy); }
+.marketing-theme.trinity-foundation .foundation-back-top:hover { background: var(--brand-navy-deep); }
+
+/* ---------- Sign in / register ---------- */
+.public-auth { --brand-navy: #0b2a5b; --brand-ink: #0f1b2d; --brand-line: #e3e8f0; color: #334155; }
+.public-auth .public-auth-header a:first-child { display: flex; align-items: center; }
+.public-auth .public-auth-header a:last-child { color: var(--brand-navy); font-weight: 600; }
+.public-auth .public-auth-intro > p:first-child { color: #c9971c; font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.public-auth .public-auth-intro h1 { color: var(--brand-ink); font-weight: 700; letter-spacing: -.015em; }
+.public-auth .public-auth-card { border: 1px solid var(--brand-line); border-top: 1px solid var(--brand-line); border-radius: 12px; box-shadow: 0 18px 44px rgb(15 27 45 / 8%); }
+.public-auth .public-auth-card h2 { color: var(--brand-ink); font-weight: 700; }
+.public-auth .public-auth-card button[type="submit"] { border-radius: 6px; font-weight: 600; }
+.public-auth .public-auth-card :is(input) { border-radius: 6px; }
+
+/* ---------- Skeleton loading screens ---------- */
+.marketing-theme.trinity-foundation .tl-skeleton { background: #fff; }
+.marketing-theme.trinity-foundation .tl-skel { display: block; border-radius: 6px; background: linear-gradient(90deg, #edf1f6 25%, #f7f9fc 45%, #edf1f6 65%); background-size: 300% 100%; animation: tl-shimmer 1.4s ease-in-out infinite; }
+.marketing-theme.trinity-foundation .tl-skel-dark { background: linear-gradient(90deg, rgb(255 255 255 / 10%) 25%, rgb(255 255 255 / 20%) 45%, rgb(255 255 255 / 10%) 65%); background-size: 300% 100%; }
+.marketing-theme.trinity-foundation .tl-skel-hero .sub-page-hero-inner { display: flex; flex-direction: column; gap: 18px; }
+.marketing-theme.trinity-foundation .tl-skel-hero.sub-page-hero-photo::before { background: linear-gradient(120deg, var(--brand-navy-deep), var(--brand-navy)); }
+.marketing-theme.trinity-foundation .tl-skel-rule { display: block; width: 56px; height: 3px; border-radius: 2px; background: var(--brand-gold-light); opacity: .9; }
+.marketing-theme.trinity-foundation .tl-skel-heading { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+.marketing-theme.trinity-foundation .tl-skel-heading .tl-skel-rule { width: 48px; background: var(--brand-gold); }
+.marketing-theme.trinity-foundation .tl-skel-section { padding-block: 60px; }
+.marketing-theme.trinity-foundation .tl-skel-lines { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+.marketing-theme.trinity-foundation .tl-skel-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.marketing-theme.trinity-foundation .tl-skel-card { overflow: hidden; border: 1px solid var(--brand-line); border-radius: 10px; }
+.marketing-theme.trinity-foundation .tl-skel-media { border-radius: 0; aspect-ratio: 16 / 10; width: 100%; }
+.marketing-theme.trinity-foundation .tl-skel-card-body { display: flex; flex-direction: column; gap: 12px; padding: 20px; }
+.marketing-theme.trinity-foundation .tl-skel-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; align-items: center; }
+.marketing-theme.trinity-foundation .tl-skel-photo { border-radius: 10px; }
+.marketing-theme.trinity-foundation .tl-skel-intro { max-width: 760px; }
+.marketing-theme.trinity-foundation .tl-skel-filters { display: flex; gap: 12px; margin: 8px 0 36px; }
+.marketing-theme.trinity-foundation .tl-skel-board { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; }
+.marketing-theme.trinity-foundation .tl-skel-chips { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 10px; }
+.marketing-theme.trinity-foundation .tl-skel-pill { border-radius: 999px; }
+.marketing-theme.trinity-foundation .tl-skel-rows { overflow: hidden; border: 1px solid var(--brand-line); border-radius: 10px; }
+.marketing-theme.trinity-foundation .tl-skel-row { display: grid; grid-template-columns: minmax(0, 2fr) repeat(3, auto); align-items: center; gap: 32px; padding: 22px 24px; border-bottom: 1px solid var(--brand-line); }
+.marketing-theme.trinity-foundation .tl-skel-row:last-child { border-bottom: 0; }
+.marketing-theme.trinity-foundation .tl-skel-row > div { display: flex; flex-direction: column; gap: 10px; }
+.marketing-theme.trinity-foundation .tl-skel-job { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+.marketing-theme.trinity-foundation .tl-skel-job > div:first-child { display: flex; flex-direction: column; gap: 14px; }
+.marketing-theme.trinity-foundation .tl-skel-gap { margin-top: 4px; }
+.marketing-theme.trinity-foundation .tl-skel-inline { display: flex; gap: 10px; }
+.marketing-theme.trinity-foundation .tl-skel-block { display: flex; flex-direction: column; gap: 16px; margin-top: 22px; }
+.marketing-theme.trinity-foundation .tl-skel-form { display: flex; flex-direction: column; gap: 18px; padding: 24px; border: 1px solid var(--brand-line); border-radius: 10px; }
+.marketing-theme.trinity-foundation .tl-skel-field { display: flex; flex-direction: column; gap: 8px; }
+@keyframes tl-shimmer { from { background-position: 100% 0; } to { background-position: 0 0; } }
+@media (max-width: 991px) {
+  .marketing-theme.trinity-foundation .tl-skel-cards { grid-template-columns: 1fr 1fr; }
+  .marketing-theme.trinity-foundation :is(.tl-skel-two, .tl-skel-job, .tl-skel-board) { grid-template-columns: 1fr; }
+  .marketing-theme.trinity-foundation .tl-skel-filters > :nth-child(n+3) { display: none; }
+  .marketing-theme.trinity-foundation .tl-skel-row { grid-template-columns: 1fr auto; }
+  .marketing-theme.trinity-foundation .tl-skel-row > :nth-child(n+3) { display: none; }
+}
+@media (max-width: 575px) { .marketing-theme.trinity-foundation .tl-skel-cards { grid-template-columns: 1fr; } .marketing-theme.trinity-foundation .tl-skel-cards > :nth-child(n+2) { display: none; } }
+@media (prefers-reduced-motion: reduce) { .marketing-theme.trinity-foundation .tl-skel { animation: none; } }
+
+/* ---------- Icon cards (no photography) ---------- */
+.marketing-theme.trinity-foundation .home-reference .home-topic-card[data-variant="icon"] .home-topic-link { padding: 26px 24px 24px; }
+.marketing-theme.trinity-foundation :is(.home-reference .home-topic-icon, .sub-page .sub-principle-icon) { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 18px; border-radius: 10px; background: var(--brand-surface); color: var(--brand-navy); box-shadow: inset 0 0 0 1px var(--brand-line); }
+.marketing-theme.trinity-foundation .home-reference .home-topic-card[data-variant="icon"] .home-topic-label { padding: 0; background: transparent; }
+.marketing-theme.trinity-foundation .home-reference .home-topic-card[data-variant="icon"] .home-topic-link:is(:hover, :focus-visible) .home-topic-label { background: transparent; }
+.marketing-theme.trinity-foundation .home-reference .home-topic-blurb { margin: 10px 0 0 !important; color: var(--brand-muted); font-size: 14px !important; line-height: 1.55 !important; }
+.marketing-theme.trinity-foundation .home-reference .home-topic-card[data-variant="icon"] .home-topic-link:is(:hover, :focus-visible) .home-topic-icon { background: var(--brand-navy); color: #fff; box-shadow: none; }
+.marketing-theme.trinity-foundation .sub-page .sub-principle-card > a { padding: 28px 26px; }
+.marketing-theme.trinity-foundation .sub-page .sub-principle-card > a h3 { padding: 0; margin: 0 0 10px; background: transparent; font-size: 18px; }
+.marketing-theme.trinity-foundation .sub-page .sub-principle-card > a p { margin: 0; color: var(--brand-muted); font-size: 15px; }
+.marketing-theme.trinity-foundation .sub-page .sub-principle-card:is(:hover, :focus-within) .sub-principle-icon { background: var(--brand-navy); color: #fff; box-shadow: none; }
+.marketing-theme.trinity-foundation .sub-page .sub-culture-panel { padding: 40px; border-radius: 12px; color: #fff; background: radial-gradient(60% 120% at 85% 0%, rgb(242 193 78 / 18%), transparent 60%), linear-gradient(120deg, var(--brand-navy-deep), var(--brand-navy)); }
+.marketing-theme.trinity-foundation .sub-page .sub-culture-eyebrow { margin: 0 0 20px; color: var(--brand-gold-light); font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.marketing-theme.trinity-foundation .sub-page .sub-culture-panel ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 16px; }
+.marketing-theme.trinity-foundation .sub-page .sub-culture-panel li { display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 500; }
+.marketing-theme.trinity-foundation .sub-page .sub-culture-panel li svg { flex-shrink: 0; color: var(--brand-gold-light); }

@@ -1,5 +1,5 @@
-import { PageSpinner } from "@/components/loading-spinner";
+import { PageSkeleton } from "@/components/marketing/page-skeleton";
 
 export default function JobLoading() {
-  return <PageSpinner className="min-h-[70vh]" />;
+  return <PageSkeleton variant="job" />;
 }

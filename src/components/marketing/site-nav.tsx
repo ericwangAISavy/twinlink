@@ -9,25 +9,25 @@ import { ReferenceIcon } from "./reference-icon";
 type Item = { label: string; href: string };
 const GROUPS: { label: string; items: Item[] }[] = [
   { label: "About us", items: [
-    { label: "About TwinLink", href: "/about" },
-    { label: "Life at TwinLink", href: "/about#culture" },
+    { label: "About Twinlink", href: "/about" },
+    { label: "Life at Twinlink", href: "/about#culture" },
     { label: "Careers", href: "/careers" },
-    { label: "Privacy policy", href: "/privacy" },
+    { label: "Privacy Policy", href: "/privacy" },
   ] },
-  { label: "Tech services", items: [
+  { label: "Services", items: [
     ...SERVICE_LINKS.map(item => ({ label: item.label, href: `/services/${item.slug}` })),
     { label: "Our solutions", href: "/#solutions" },
   ] },
-  { label: "HR services", items: [
-    { label: "Engineering Network", href: "/#people" },
-    { label: "Careers", href: "/careers" },
-    { label: "Talent enquiry", href: "/contact" },
+  { label: "Talent solutions", items: [
+    { label: "Hiring services", href: "/#people" },
+    { label: "Hire talent", href: "/contact" },
+    { label: "Find a job", href: "/careers" },
   ] },
   { label: "Resources", items: [
     { label: "Case studies", href: "/case-studies" },
     { label: "Blog", href: "/blog" },
     { label: "Events", href: "/events" },
-    { label: "Featured Insights", href: "/#insights" },
+    { label: "Latest insights", href: "/#insights" },
   ] },
 ];
 

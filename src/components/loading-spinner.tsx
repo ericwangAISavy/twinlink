@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
-import { TwinlinkMark } from "@/components/marketing/twinlink-mark";
+import { BrandLogo } from "@/components/marketing/brand-logo";
 import "./loading-spinner.css";
 
-/** Twin-arc spinner; button callers can continue to inherit their text color. */
+/** Ring spinner; button callers can continue to inherit their text color. */
 export function Spinner({ className }: { className?: string }) {
   return (
     <svg
@@ -11,40 +11,28 @@ export function Spinner({ className }: { className?: string }) {
       className={cn("twinlink-spinner size-4 shrink-0 animate-spin text-current", className)}
       aria-hidden
     >
-      <circle cx="12" cy="12" r="8.25" stroke="currentColor" strokeOpacity="0.18" strokeWidth="1.75" />
-      <path
-        d="M12 3.75a8.25 8.25 0 0 1 8.25 8.25"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12 20.25a8.25 8.25 0 0 1-8.25-8.25"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeOpacity="0.55"
-      />
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeOpacity="0.15" strokeWidth="2" />
+      <path d="M12 3a9 9 0 0 1 9 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
 
-export function PageSpinner({ className }: { className?: string }) {
+/**
+ * Centered loading state. `brand` shows the official Twinlink wordmark above the
+ * spinner (used for the first full-screen load); panels and cards omit it.
+ */
+export function PageSpinner({ className, brand = false }: { className?: string; brand?: boolean }) {
   return (
     <div
       role="status"
-      aria-label="Loading"
       aria-live="polite"
       aria-busy="true"
       className={cn("twinlink-page-loading grid min-h-[50vh] place-items-center", className)}
     >
       <div className="twinlink-loading-content">
-        <div className="twinlink-loading-brand" aria-hidden="true">
-          <TwinlinkMark className="size-8" />
-          <span>TWINLINK</span>
-        </div>
-        <Spinner className="size-8 text-[#157cbf]" />
-        <p>Loading</p>
+        {brand && <BrandLogo height={40} priority />}
+        <Spinner className="twinlink-loading-ring size-7" />
+        <span className="sr-only">Loading…</span>
       </div>
     </div>
   );

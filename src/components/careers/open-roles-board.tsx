@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
@@ -44,19 +43,18 @@ const DEPARTMENTS = [
 
 const WORK_TYPES = ["Full-time", "Part-time", "Contract"] as const;
 const LOCATION_GROUPS = [
-  "China",
-  "Hong Kong",
   "United States",
+  "Remote",
   "Canada",
   "United Kingdom",
   "Europe",
-  "Singapore",
-  "Japan",
-  "India",
   "Australia",
-  "Remote",
+  "Japan",
+  "Singapore",
+  "India",
+  "China",
+  "Hong Kong",
 ] as const;
-const CHINA_FOCUS = "China";
 const EXPERIENCE = ["Junior", "Mid-level", "Senior", "Staff", "Lead"] as const;
 const PAGE_SIZES = [6, 12, 24, 48];
 
@@ -337,7 +335,13 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
           !LOCATION_GROUPS.includes(item as (typeof LOCATION_GROUPS)[number]) &&
           item !== "Other",
       );
-    return [...LOCATION_GROUPS, ...new Set(extra)];
+    const present = new Set(roles.map(locationGroup));
+    return [
+      ...LOCATION_GROUPS.filter(
+        (item) => item === "United States" || present.has(item),
+      ),
+      ...new Set(extra),
+    ];
   }, [roles]);
 
   const teamOptions = useMemo(() => {
@@ -447,15 +451,6 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
     <div>
       <section className="relative overflow-hidden px-4 pb-8 pt-8 md:pt-10">
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[48%] lg:block">
-          <Image
-            src="/images/careers-earth.jpg"
-            alt=""
-            fill
-            priority
-            quality={80}
-            sizes="50vw"
-            className="object-cover object-[62%_28%]"
-          />
           <div className="absolute inset-0 bg-gradient-to-r from-[#11100e] via-[#11100e]/55 to-[#11100e]/10" />
         </div>
         <div className="relative mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[minmax(0,1fr)_280px]">
@@ -488,12 +483,6 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
           </div>
           <div className="relative lg:text-right">
             <div className="relative mb-4 h-28 overflow-hidden rounded-2xl lg:hidden">
-              <Image
-                src="/images/careers-earth.jpg"
-                alt=""
-                fill
-                className="object-cover object-[center_30%]"
-              />
             </div>
             <p className="font-serif text-6xl leading-none text-[#e8d5a3] md:text-7xl">
               {roles.length}
@@ -501,7 +490,7 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
             <div className="mt-2 flex items-end justify-between gap-4 lg:justify-end">
               <p className="text-[#e8d5a3]">open roles</p>
               <p className="max-w-[11rem] text-[10px] uppercase leading-relaxed tracking-[0.16em] text-white/45">
-                Global and flexible, with a focus on China
+                Roles across the U.S. and internationally
               </p>
             </div>
           </div>
@@ -544,7 +533,7 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
                 { value: "all", label: "Location" },
                 ...locationOptions.map((item) => ({
                   value: item,
-                  label: item === CHINA_FOCUS ? "China · hiring focus" : item,
+                  label: item,
                 })),
               ]}
             />
@@ -638,16 +627,12 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
                 ))}
               </FilterGroup>
               <FilterGroup title="Location">
-                <p className="px-3 pb-1 text-[11px] leading-snug text-[#e8d5a3]/80">
-                  China is a hiring focus. Roles can be based in any region.
-                </p>
                 {locationOptions.map((item) => (
                   <CheckRow
                     key={item}
                     label={item}
                     count={locationCounts.get(item) ?? 0}
                     checked={locations.includes(item)}
-                    accent={item === CHINA_FOCUS}
                     onChange={() => {
                       setLocations((current) => toggleValue(current, item));
                       setPage(1);
@@ -731,11 +716,6 @@ export function OpenRolesBoard({ roles }: { roles: OpenRole[] }) {
                               />
                               {role.location ?? "Location open"}
                             </span>
-                            {locationGroup(role) === CHINA_FOCUS ? (
-                              <span className="mt-1 inline-flex rounded-full bg-[#c4a574]/20 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-[#e8d5a3]">
-                                China focus
-                              </span>
-                            ) : null}
                             {workplace ? (
                               <span className="mt-1 block text-xs text-white/40">
                                 {workplace}

@@ -22,7 +22,7 @@ export default async function Page() {
         description={
           "Practical program guides for industrial AI, secure agents, technical communication, and AI investment. Explore the material and express interest in a future session."
         }
-        image={"/images/about-culture-office.jpg"}
+        image={"/images/brand/editorial-placeholder.svg"}
       />
       <ResourceLinks />
       <ResourceList

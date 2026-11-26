@@ -21,20 +21,32 @@ const serif = localFont({
   display: "swap",
 });
 
+const SITE_DESCRIPTION =
+  "Twinlink is a technology consulting and engineering talent firm. We help companies modernize cloud, data, AI, and security, and hire the engineers to run them.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin()),
+  applicationName: "Twinlink",
   title: {
-    default: "twinlink",
-    template: "%s · twinlink",
+    default: "Twinlink | Technology Consulting & Engineering Talent",
+    template: "%s | Twinlink",
   },
-  description:
-    "TwinLink is a professional technology consulting firm that connects strategy to delivery—architecture, product engineering, and operating models built to last.",
+  description: SITE_DESCRIPTION,
+  keywords: ["technology consulting", "engineering talent", "cloud infrastructure", "data and AI", "cybersecurity", "technical recruiting", "IT staffing"],
   openGraph: {
-    title: "twinlink",
-    description:
-      "Senior practitioners who design, build, and scale software that stands up in production.",
     type: "website",
+    siteName: "Twinlink",
+    locale: "en_US",
+    url: "/",
+    title: "Twinlink | Technology Consulting & Engineering Talent",
+    description: SITE_DESCRIPTION,
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Twinlink | Technology Consulting & Engineering Talent",
+    description: SITE_DESCRIPTION,
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

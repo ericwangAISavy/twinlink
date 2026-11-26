@@ -1,6 +1,6 @@
 import type { ApplicationStatus, JobStatus, Role } from "@/lib/types";
 
-export const APP_NAME = "TwinLink";
+export const APP_NAME = "Twinlink";
 
 export const ROLES = {
   CANDIDATE: "CANDIDATE",
@@ -95,10 +95,10 @@ export function isActiveApplicationStatus(status: ApplicationStatus) {
 
 export const DEFAULT_COMPANY = {
   id: "singleton",
-  name: "TwinLink",
+  name: "Twinlink",
   tagline: "Technology consulting that connects strategy to delivery.",
   intro:
-    "TwinLink partners with ambitious organizations to design, build, and scale software that stands up in production. We bring senior practitioners—not slide decks—into the work of architecture, product engineering, and operating model design.",
+    "Twinlink partners with ambitious organizations to design, build, and scale software that stands up in production. We bring senior practitioners—not slide decks—into the work of architecture, product engineering, and operating model design.",
   mission:
     "Help teams ship reliable software faster by pairing executive-level judgment with hands-on engineering.",
   vision:
@@ -152,7 +152,7 @@ export const DEFAULT_COMPANY = {
     },
   ],
   partnership:
-    "TwinLink is built for engineering organizations that want a consulting partner who can sit in architecture reviews and also open a pull request. We staff small, senior pods that work inside your repos, your standups, and your incident channels. Knowledge transfer is not an afterthought—it is the engagement model.",
+    "Twinlink is built for engineering organizations that want a consulting partner who can sit in architecture reviews and also open a pull request. We staff small, senior pods that work inside your repos, your standups, and your incident channels. Knowledge transfer is not an afterthought—it is the engagement model.",
   benefits: [
     {
       title: "Senior-only delivery",
@@ -172,7 +172,7 @@ export const DEFAULT_COMPANY = {
     },
   ],
   about:
-    "TwinLink is a professional technology consulting firm. We work with product companies, operators, and public-interest organizations that need software they can trust—architected carefully, delivered in the open, and handed over cleanly.",
+    "Twinlink is a professional technology consulting firm. We work with product companies, operators, and public-interest organizations that need software they can trust—architected carefully, delivered in the open, and handed over cleanly.",
   website: "https://twinlink.example",
   email: "hello@twinlink.example",
   phone: "+1 (555) 010-2000",

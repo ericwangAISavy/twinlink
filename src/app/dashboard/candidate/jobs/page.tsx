@@ -24,7 +24,7 @@ export default async function CandidateJobsPage({
     <>
       <PageHeader
         title="Browse roles"
-        description={query ? `Results for “${q?.trim()}”.` : "Published openings from TwinLink."}
+        description={query ? `Results for “${q?.trim()}”.` : "Published openings from Twinlink."}
       />
       {visible.length === 0 ? (
         <EmptyState

@@ -1,4 +1,4 @@
-import { PhotoBanner, SubPage } from "@/components/marketing/subpage-shell";
+import { SubPage, WaveBanner } from "@/components/marketing/subpage-shell";
 import type { Metadata } from "next";
 import { PrivacyPreference } from "@/components/marketing/privacy-preference";
 import { getCompanyProfile } from "@/server/queries/company";
@@ -7,8 +7,7 @@ export default async function PrivacyPage() {
   const company = await getCompanyProfile();
   return (
     <SubPage className="sub-privacy">
-      <PhotoBanner title="Privacy and visitor information" image="/images/reference/subpages/banner-images/privacy-policy.jpg" />
-      <div className="sub-privacy-title"><div className="foundation-container"><h2>Privacy Policy</h2></div></div>
+      <WaveBanner title="Privacy Policy" />
       <article className="foundation-container sub-privacy-body">
       <h2 className="sr-only">
         Privacy and visitor information

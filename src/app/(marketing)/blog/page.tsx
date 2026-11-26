@@ -22,7 +22,7 @@ export default async function Page() {
         description={
           "Practical guides to industrial AI, secure agents, knowledge search, and the business decisions behind dependable technology. Written for people building and operating real systems."
         }
-        image={"/images/how-we-help-architecture.jpg"}
+        image={"/images/brand/editorial-placeholder.svg"}
       />
       <ResourceLinks />
       <ResourceList

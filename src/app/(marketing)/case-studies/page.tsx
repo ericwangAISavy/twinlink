@@ -22,7 +22,7 @@ export default async function Page() {
         description={
           "Explore eight detailed engagement scenarios across autonomous systems, industrial AI, knowledge platforms, and business operations. Each case explains the design decisions and modeled outcomes."
         }
-        image={"/images/case-study-skyline.jpg"}
+        image={"/images/brand/editorial-placeholder.svg"}
       />
       <ResourceLinks />
       <ResourceList

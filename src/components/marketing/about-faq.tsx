@@ -9,7 +9,7 @@ const QUESTIONS = [
     answer: "Curious, reliable, and people who enjoy ownership and difficult problems.",
   },
   {
-    question: "What is it like to work at TwinLink?",
+    question: "What is it like to work at Twinlink?",
     answer: "Direct communication, high ownership, and real impact on the product.",
   },
   {

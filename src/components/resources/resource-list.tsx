@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Search } from "lucide-react";
-import { chinaDate, resourceHref, type Resource } from "@/lib/resources";
+import { usEventDate, resourceHref, type Resource } from "@/lib/resources";
 export function ResourceList({ items }: { items: Resource[] }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
@@ -91,7 +91,7 @@ export function ResourceList({ items }: { items: Resource[] }) {
                 </p>
                 {item.date && (
                   <p className="mt-4 text-sm text-[#e8d5a3]">
-                    {chinaDate(item.date)} CST (UTC+8)
+                    {usEventDate(item.date)}
                   </p>
                 )}
                 <div className="mt-6 flex items-center justify-between gap-3 border-t border-white/10 pt-4 text-xs text-white/60">

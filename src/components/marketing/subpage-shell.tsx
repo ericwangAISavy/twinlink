@@ -5,14 +5,15 @@ import "./subpages.css";
 export function SubPage({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`sub-page ${className}`}>{children}</div>;
 }
-export function PhotoBanner({ image, title, position = "center top", caption }: { image: string; title: string; position?: string; caption?: string }) {
-  return <section className="sub-photo-banner" aria-label={title}>
+/** Page hero with a photograph behind a navy fade. Same layout as WaveBanner so every page title matches. */
+export function PhotoBanner({ image, title, position = "center", caption }: { image: string; title: string; position?: string; caption?: string }) {
+  return <section className="sub-page-hero sub-page-hero-photo">
     <Image src={image} alt="" fill priority sizes="100vw" style={{ objectFit: "cover", objectPosition: position }} />
-    <h1 className="sr-only">{title}</h1>
-    {caption && <h2 className="sub-photo-caption">{caption}</h2>}
+    <div className="foundation-container sub-page-hero-inner"><h1>{caption || title}</h1></div>
   </section>;
 }
+/** Plain navy page hero. */
 export function WaveBanner({ title }: { title: string }) {
-  return <section className="sub-wave-banner"><div className="foundation-container"><h1>{title}</h1></div><div className="foundation-wave" aria-hidden="true" /></section>;
+  return <section className="sub-page-hero"><div className="foundation-container sub-page-hero-inner"><h1>{title}</h1></div></section>;
 }
 export function SubHeading({ children }: { children: ReactNode }) { return <h2 className="sub-heading">{children}</h2>; }

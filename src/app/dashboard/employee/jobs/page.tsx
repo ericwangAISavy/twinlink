@@ -15,7 +15,7 @@ export default async function EmployeeJobsPage() {
     <>
       <PageHeader
         title="Job postings"
-        description="Create, publish, and close TwinLink roles."
+        description="Create, publish, and close Twinlink roles."
         actions={
           <Button asChild>
             <Link href="/dashboard/employee/jobs/new">New role</Link>

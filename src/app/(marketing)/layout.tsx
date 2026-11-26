@@ -3,6 +3,8 @@ import { Fragment } from "react";
 import { BackToTop } from "@/components/marketing/back-to-top";
 import "@/components/marketing/foundation.css";
 import "@/components/marketing/public-surfaces.css";
+import "@/components/marketing/brand.css";
+import "@/components/marketing/brand-home.css";
 import { VisitorTracker } from "@/components/marketing/visitor-tracker";
 import { SiteFooter } from "@/components/marketing/site-footer";
 import { SiteHeader } from "@/components/marketing/site-header";

@@ -27,7 +27,7 @@ function newContent(): EditorialContent {
     title: "",
     summary: "",
     category: "Engineering",
-    image: "/images/about-vision-ai.jpg",
+    image: "/images/brand/editorial-placeholder.svg",
     imageAlt: "Engineering and technology illustration",
     label: "Engineering perspective",
     author: "Twinlink Editorial",
@@ -875,8 +875,8 @@ export function EditorialEditor({ entry }: { entry?: EditorialEntry }) {
                 supportingImages: [
                   ...(content.supportingImages || []),
                   {
-                    image: "/images/about-vision-ai.jpg",
-                    fallbackImage: "/images/about-vision-ai.jpg",
+                    image: "/images/brand/editorial-placeholder.svg",
+                    fallbackImage: "/images/brand/editorial-placeholder.svg",
                     imageAlt: "Technology illustration",
                   },
                 ],

@@ -26,9 +26,9 @@ export function isEditorialTableMissing(error: {
       /editorial_entries/i.test(error.message || ""))
   );
 }
-function contentResource(content: unknown): Resource {
+function contentResource(content: unknown, publishedAt?: string | null): Resource {
   const parsed = editorialPublicationSchema.parse(content);
-  return { ...parsed, readMinutes: readingMinutes(parsed) };
+  return { ...parsed, readMinutes: readingMinutes(parsed), ...(publishedAt ? { publishedAt } : {}) };
 }
 const loadPublished = unstable_cache(
   async (): Promise<Resource[]> => {
@@ -36,7 +36,7 @@ const loadPublished = unstable_cache(
     const client = createPublicSupabaseClient();
     const { data, error } = await client
       .from("editorial_entries")
-      .select("content")
+      .select("content, created_at")
       .eq("status", "published")
       .order("created_at", { ascending: false });
     if (error) {
@@ -46,7 +46,7 @@ const loadPublished = unstable_cache(
       );
     }
     // Once the table exists it is authoritative. Never resurrect archived or draft seed entries.
-    return (data || []).map((row) => contentResource(row.content));
+    return (data || []).map((row) => contentResource(row.content, row.created_at as string | null));
   },
   ["published-editorial-entries"],
   { revalidate: 60, tags: [EDITORIAL_TAG] },
