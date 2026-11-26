@@ -1,8 +1,14 @@
+import { CountUp } from "./count-up";
 import { Fade } from "./fade";
 import { Section, SectionTitle } from "./section";
 import { Button } from "./ui";
 
-const RESULTS = [1, 2, 3, 4].map(n => ({ id: n, value: "00", suffix: "%", label: "[Add client result]", source: "[Industry · Process]" }));
+const RESULTS = [
+  { value: 90, suffix: "%", label: "reduction in time-to-invoice", source: "Energy · Order to cash" },
+  { prefix: "50 to ", value: 70, suffix: "%", label: "reduction in time-to-compliance", source: "Banking · KYC onboarding" },
+  { value: 50, suffix: "%", label: "reduction in PO-to-invoice cycle time", source: "Energy · Procurement" },
+  { value: 80, suffix: "%+", label: "of invoices processed without manual intervention", source: "Energy · Procurement" },
+];
 
 export function Results() {
   return (
@@ -17,9 +23,9 @@ export function Results() {
       <Fade>
         <div className="hc-bloom grid gap-8 rounded-[12px] p-6 sm:grid-cols-2 sm:p-10 lg:grid-cols-4">
           {RESULTS.map(result => (
-            <div key={result.id} className="flex flex-col gap-2">
+            <div key={result.label} className="flex flex-col gap-2">
               <span className="font-mono text-[48px] font-medium leading-none tracking-tight text-iris-300">
-                {result.value}{result.suffix}
+                {result.prefix && <span className="text-[24px]">{result.prefix}</span>}<CountUp value={result.value} />{result.suffix}
               </span>
               <p className="t14 text-white">{result.label}</p>
               <p className="t12 text-white opacity-60">{result.source}</p>

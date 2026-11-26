@@ -1,11 +1,11 @@
 // Loads every public page of a running local build, checks for errors, horizontal
-// overflow and leftover reference branding, and saves screenshots.
+// overflow and broken media, and saves screenshots.
 import { mkdirSync } from "node:fs";
 import { chromium } from "playwright";
 
 const LOCAL = process.env.VISUAL_QA_URL || "http://localhost:3000";
 const OUT = ".visual-qa/implementation/pages";
-const PAGES = ["/", "/enterprise", "/agents-api", "/models-api", "/orin-tab", "/platform", "/pricing", "/coming-soon"];
+const PAGES = ["/", "/enterprise", "/agents-api", "/models-api", "/holotab", "/h-platform", "/pricing"];
 mkdirSync(OUT, { recursive: true });
 
 const browser = await chromium.launch({ channel: "chrome" });
@@ -23,12 +23,12 @@ for (const [width, height] of [[1440, 900], [1024, 768], [390, 844]]) {
     const info = await page.evaluate(() => ({
       overflow: document.documentElement.scrollWidth - innerWidth,
       height: document.documentElement.scrollHeight,
-      branding: (document.body.innerText.match(/H Company|H Platform|Holo|hcompany|SOC 2|ISO 27001/g) || []).length,
+      broken: [...document.querySelectorAll("img,video")].filter((m) => m.offsetParent && (m.tagName === "IMG" ? m.complete && !m.naturalWidth : m.error)).length,
     }));
     await page.screenshot({ path: `${OUT}/${path.slice(1) || "home"}-${width}.png`, fullPage: true });
-    const bad = response.status() !== 200 || info.overflow > 0 || info.branding > 0 || errors.length > 0;
+    const bad = response.status() !== 200 || info.overflow > 0 || info.broken > 0 || errors.length > 0;
     failed ||= bad;
-    console.log(`${bad ? "FAIL" : "PASS"} ${width} ${path} ${response.status()} height ${info.height} overflow ${info.overflow} branding ${info.branding} errors ${[...new Set(errors)].join(" | ").slice(0, 300)}`);
+    console.log(`${bad ? "FAIL" : "PASS"} ${width} ${path} ${response.status()} height ${info.height} overflow ${info.overflow} broken ${info.broken} errors ${[...new Set(errors)].join(" | ").slice(0, 300)}`);
     await context.close();
   }
 }

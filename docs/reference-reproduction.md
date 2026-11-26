@@ -1,112 +1,63 @@
-# hcompany.ai reproduction, branded Orin
+# hcompany.ai reproduction
 
-## Current state
+Local frontend reproduction of <https://hcompany.ai/> with its original content and media. On 2026-11-26 the
+project owner stated that they hold H Company's written permission for a full reproduction. The permission
+document is not in this repository. Confirm it covers publication before this branch is pushed, deployed or
+merged: **merging to `main` would replace the TwinLink homepage in production.** Pages are `noindex`.
 
-Routes: `/`, `/enterprise`, `/agents-api`, `/models-api`, `/orin-tab`, `/platform`, `/pricing`, `/coming-soon`.
-Every other link in the header, footer and pages leads to `/coming-soon`.
+## Pages
 
-- **Names** live in `src/components/reference/brand.ts`.
-- **Placeholders:** business claims, results, prices, specs, certifications, FAQ answers, news and media are
-  marked `[Add ...]`, `00%` or `$—`. Search for these before publishing. Headlines, section copy that
-  describes behaviour, demo mock-ups (sample records, console screens), plan names and "Free" / `$0` labels
-  were carried over and still need review: they may not be true of Orin.
-- **Permission:** the owner stated they hold H Company's written permission for a full reproduction. Confirm it
-  also covers reusing the design and copy under the Orin name before publishing. The product page markup
-  was converted directly from the reference site's rendered HTML, and theme styles from its stylesheet.
-- **Product pages** have not been pixel-compared. Not reproduced: videos and images (placeholder boxes),
-  the interactive demos and tab switchers on those pages, and their JavaScript-driven animations.
-- `npm run visual-qa` and the similarity table below apply to the homepage **before** the rebrand
-  (commit `7ab7769`). Run it against that commit to repeat them.
-- Checks: `npm test`, `node scripts/pages-qa.mjs` and `node scripts/interaction-qa.mjs` (the last two need
-  the build running; set `VISUAL_QA_URL=http://localhost:3000/` for the interaction script).
+`/`, `/enterprise`, `/agents-api`, `/models-api`, `/holotab`, `/h-platform`, `/pricing`.
+Every other link opens the live reference site (`src/components/reference/links.ts`). Existing TwinLink pages
+(`/about`, `/careers`, `/contact` and the rest), auth, dashboard and admin are unchanged.
 
----
+The homepage is hand-written components. The six product pages (`src/app/(reference)/<slug>/page.tsx`) were
+converted from the reference site's rendered HTML on 2026-11-26, using theme styles measured from its
+stylesheet. Edit text directly in those files.
 
-## Earlier record: homepage reproduction before the rebrand
-
-Local frontend reproduction of <https://hcompany.ai/>. On 2026-11-26 the project owner stated that they
-hold H Company's written permission for a full reproduction (name, logo, copy, images, graphics).
-The permission document is not in this repository. Confirm it covers any publication before this branch
-is pushed, deployed or merged: **merging to `main` would replace the TwinLink homepage in production.**
-
-## Status
-
-| Item | State |
-| --- | --- |
-| Homepage `/`, header, dropdowns, mobile menu, footer | Reproduced and compared |
-| All other reference pages | **Not built.** Links resolve to the live reference site (`src/components/reference/links.ts`) |
-| TwinLink auth, dashboard, admin and other public pages | Kept unchanged. Their "home" links now lead to the new `/` |
-| Previous TwinLink homepage and its six components | Removed (recoverable from commit `449d02d`) |
-
-Pages still to reproduce: `/enterprise`, `/agents-api`, `/models-api`, `/holotab`, `/h-platform`,
-`/pricing`, `/research`, `/research/models`, `/research/publications`, `/technical-blog`, `/use-cases`,
-`/solutions/systems/solidworks`, `/events`, `/newsroom` and its articles, `/press`, `/about`, `/team`,
-`/careers`, `/contact`, and the legal pages. `/about`, `/careers` and `/contact` exist locally as TwinLink
-pages and will need a routing decision. This list comes from homepage navigation; a full crawl is pending.
-
-## Inventory
-
-Section order: header (40px announcement + 72px bar), hero, "Built for a fragmented world",
-"One platform. Four ways in.", "Proven in production.", research, "What's new?", closing cards, footer.
-
-| Property | Measured value |
-| --- | --- |
-| Fonts | Plus Jakarta Sans 200–800, Fira Code 300–700 (both OFL) |
-| Container | 72rem, 24px side padding |
-| Section padding | 48px, 80px from 640px |
-| Section title | 36/40, 500, -0.025em |
-| Accent | `#5a04bc` buttons and labels, `#2c0264` hover |
-| Radii | 6px, 8px (buttons), 12px (cards) |
-| Breakpoints | 640, 768, 1024px |
-| Entrance | 16px rise and fade, 0.8s, `cubic-bezier(.22,1,.36,1)`, staggered |
-| Platform section | From 1024px: pinned for 400vh, scroll picks 1 of 4 tabs. Below: segmented tabs |
-| Header | Announcement slides away on scroll; white bar fades in |
+An earlier Twinlink/Orin renaming is kept in Git: commit `60956ff` (Orin, with placeholders) and a stash
+named "twinlink-orin naming work (set aside)".
 
 ## Measured similarity
 
-`npm run visual-qa`, 2026-11-26, Chrome, DPR 1, reduced motion, third-party consent and analytics blocked,
-first platform tab selected on both pages. pixelmatch threshold 0.1, anti-aliased pixels not counted.
-Full-page figures. White space counts as matching, so read them together with the text geometry column.
+Chrome, DPR 1, reduced motion, consent and analytics blocked. pixelmatch threshold 0.1, anti-aliased pixels
+not counted. Full-page figures, with canvas, video and iframes hidden on both sides in the second column
+of each pair. Page heights match and every compared text element is within 1px with the same size, weight and
+colour at these widths. White space counts as matching.
 
-| Width | Full page | Hero canvas hidden | Page height ref / local | Text elements within 1px, same type and colour |
+| Page | 1440 | 1440, media hidden | 390 | 390, media hidden |
 | --- | --- | --- | --- | --- |
-| 1920 | 99.825% | 99.998% | 5503 / 5503 | 182 / 182 |
-| 1440 | 99.877% | 99.997% | 5368 / 5368 | 182 / 182 |
-| 1280 | 99.901% | 99.996% | 5293 / 5293 | 182 / 182 |
-| 1024 | 99.908% | 99.996% | 5297 / 5297 | 182 / 182 |
-| 768 | 99.887% | 99.994% | 7244 / 7244 | 172 / 172 |
-| 390 | 99.936% | 99.984% | 7372 / 7372 | 170 / 170 |
+| Home | 99.877% | 99.997% | 99.936% | 99.984% |
+| Enterprise | 99.782% | 99.782% | 99.770% | 99.770% |
+| Agents API | 99.197% | 99.864% | 99.071% | 99.746% |
+| Models API | 99.910% | 99.910% | 99.883% | 99.883% |
+| HoloTab | 99.872% | 99.869% | 99.821% | 99.820% |
+| H Platform | 99.887% | 99.887% | 99.775% | 99.775% |
+| Pricing | 99.918% | 99.918% | 99.892% | 99.892% |
 
-The reference is live, so later runs change when its content changes. Screenshots, difference images and
-JSON reports are written to `.visual-qa/` (ignored by Git).
+The homepage was also compared at 1920, 1280, 1024 and 768 (99.825% to 99.908%). Product pages were compared
+at 1440 and 390 only. Screenshots and difference images are in `.visual-qa/` (ignored by Git).
 
 ## Known differences
 
-Not covered by the figures above, which are static captures:
-
-- **Hero dot field** is an original canvas implementation. Cloud shapes, density, drift and pointer
-  response differ from the reference.
-- **Motion was approximated by observation**, not measured frame by frame: platform panel transition,
-  browser-agent cursor loop (the reference's Browser/Desktop switching is not animated), HoloTab card
-  fan, benchmark bars, number count-up, dropdown entrance. The code-tab typing behaviour was not studied.
-- **Dropdowns and mobile menu** were built from measurements and checked by eye; no pixel diff was run.
-- **Hover states** were measured for the two hero buttons; others follow the reference class names.
-- Under reduced motion the reference leaves the last platform tab selected after scrolling past; the local
-  page keeps the visitor's selection.
-- Cookie consent banner and analytics are intentionally absent.
-- Only Latin and Latin-extended font subsets are bundled.
-- Browsers other than Chrome were not tested.
+- **Product page behaviour:** question lists and the dark-to-light header work. Other tab switchers, interactive
+  demos and script-driven animations on those pages show their initial state and do not respond.
+- **Homepage motion** was matched by observation. The hero dot field is an original implementation.
+- Dropdowns and hover states have no pixel comparison.
+- Cookie banner and analytics are absent. YouTube embeds load from YouTube, as on the reference.
+- One comparison run logged a single console error on Agents API; a repeat run logged none.
+- Only Chrome was tested.
 
 ## Run locally
 
 ```bash
 npm ci
-npm run dev                      # http://localhost:3000
-
 npm run build
-npx next start -p 3100
-npm run visual-qa                # or: npm run visual-qa -- 1440 390
-node scripts/interaction-qa.mjs
-```
+npx next start -p 3000
 
-Both QA scripts need an installed Google Chrome; the comparison also needs network access.
+# in a second terminal
+VISUAL_QA_URL=http://localhost:3000/ npm run visual-qa
+VISUAL_QA_PAGE=pricing VISUAL_QA_URL=http://localhost:3000/ npm run visual-qa -- 1440 390
+node scripts/pages-qa.mjs
+VISUAL_QA_URL=http://localhost:3000/ node scripts/interaction-qa.mjs
+```

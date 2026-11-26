@@ -1,18 +1,9 @@
-/** Reference paths that exist locally, mapped to their local route. */
-const LOCAL_PATHS: Record<string, string> = {
-  "/": "/",
-  "/enterprise": "/enterprise",
-  "/agents-api": "/agents-api",
-  "/models-api": "/models-api",
-  "/holotab": "/orin-tab",
-  "/h-platform": "/platform",
-  "/pricing": "/pricing",
-};
+export const REFERENCE_ORIGIN = "https://hcompany.ai";
 
-export const COMING_SOON = "/coming-soon";
+/** Pages that exist locally. Every other path resolves to the reference site. */
+const LOCAL_PATHS = new Set(["/", "/enterprise", "/agents-api", "/models-api", "/holotab", "/h-platform", "/pricing"]);
 
-/** Anything not built yet, including external services, goes to the coming-soon page. */
 export function href(path: string): string {
-  if (path.startsWith("#")) return path;
-  return LOCAL_PATHS[path.split(/[?#]/)[0]] ?? COMING_SOON;
+  if (!path.startsWith("/") || LOCAL_PATHS.has(path)) return path;
+  return REFERENCE_ORIGIN + path;
 }

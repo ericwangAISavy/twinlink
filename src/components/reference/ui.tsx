@@ -1,4 +1,3 @@
-import { BRAND } from "./brand";
 import { href } from "./links";
 
 const BUTTON = "inline-flex items-center justify-center gap-2 rounded-[8px] px-5 py-2.5 text-[14px] leading-5 font-medium transition-colors duration-200";
@@ -17,12 +16,12 @@ export function Arrow({ className = "" }: { className?: string }) {
 
 export function Logo() {
   return (
-    <span className="flex items-center gap-2">
-      <svg viewBox="0 0 28 28" aria-hidden="true" className="h-7 w-7">
-        <circle cx="14" cy="14" r="10" fill="none" stroke="currentColor" strokeWidth="6" />
-      </svg>
-      <span className="text-[20px] font-bold leading-7 tracking-tight">{BRAND.name}</span>
-    </span>
+    <svg viewBox="0 0 1035 600" fill="currentColor" aria-hidden="true" className="h-7 w-auto">
+      <circle cx="300" cy="300" r="300" />
+      <rect x="838" y="195" width="54" height="220" />
+      <rect x="1035" y="282" width="45" height="197" transform="rotate(90 1035 282)" />
+      <rect x="981" y="195" width="54" height="220" />
+    </svg>
   );
 }
 

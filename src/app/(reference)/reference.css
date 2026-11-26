@@ -181,9 +181,9 @@ body:has(.hc) { background: #fff; }
   --color-title-secondary: color-mix(in oklab, var(--color-grey-300) var(--hero-mix, 0%), var(--color-grey-600));
   --color-title-tertiary: color-mix(in oklab, var(--color-grey-400) var(--hero-mix, 0%), var(--color-grey-500));
   --color-title-default-alt: color-mix(in oklab, var(--color-grey-900) var(--hero-mix, 0%), var(--color-white));
-  --color-title-accent: color-mix(in oklab, var(--color-iris-300) var(--hero-mix, 0%), var(--color-iris-600));
-  --color-text-accent: color-mix(in oklab, var(--color-iris-300) var(--hero-mix, 0%), var(--color-iris-600));
-  --color-icon-accent: color-mix(in oklab, var(--color-iris-300) var(--hero-mix, 0%), var(--color-iris-600));
+  --color-title-accent: var(--color-iris-600);
+  --color-text-accent: var(--color-iris-600);
+  --color-icon-accent: var(--color-iris-600);
   --color-stroke-default: color-mix(in oklab, var(--color-grey-700) var(--hero-mix, 0%), var(--color-grey-250));
   --color-stroke-secondary: color-mix(in oklab, var(--color-grey-600) var(--hero-mix, 0%), var(--color-grey-300));
   --color-stroke-accent: color-mix(in oklab, var(--color-iris-900) var(--hero-mix, 0%), var(--color-iris-200));
@@ -230,7 +230,7 @@ body:has(.hc) { background: #fff; }
 .hc[data-wash] main { isolation: isolate; }
 .hc[data-wash] main section:not([data-keep-light]) { background-color: transparent; }
 .hc[data-dark] header > div:last-child > div:first-child { background: var(--color-grey-900); border-color: transparent !important; }
-.hc[data-dark] header > div:last-child > div > div a:not([class*="bg-iris"]), .hc[data-dark] header nav > a, .hc[data-dark] header nav > div > button, .hc[data-dark] header [aria-label$="menu"] { color: var(--color-grey-100); }
+.hc[data-dark] header > div:last-child > div > div a:not([class*="bg-iris"]), .hc[data-dark] header nav > a, .hc[data-dark] header nav > div > button, .hc[data-dark] header [aria-label$="menu"] { color: var(--color-white); }
 .hc .text-style-72-head-bold { font-family: "HC Jakarta", "HC Jakarta Fallback", sans-serif; font-size: 72px; font-weight: 700; line-height: 80px; }
 .hc .text-style-72-head-med { font-family: "HC Jakarta", "HC Jakarta Fallback", sans-serif; font-size: 72px; font-weight: 500; line-height: 80px; }
 .hc .text-style-60-head-bold { font-family: "HC Jakarta", "HC Jakarta Fallback", sans-serif; font-size: 60px; font-weight: 700; line-height: 68px; }
@@ -272,3 +272,6 @@ body:has(.hc) { background: #fff; }
 }
 .hc .brand-bloom-panel { isolation: isolate; position: relative; overflow: hidden; background: var(--color-grey-900); }
 .hc .brand-bloom-panel::before { content: ""; position: absolute; z-index: -1; width: 70%; aspect-ratio: 1; bottom: -45%; right: -18%; pointer-events: none; background: radial-gradient(circle, color-mix(in oklab, var(--color-iris-400) 38%, transparent) 0%, transparent 68%); }
+
+.hc[data-dark] header > div:first-child > a { background: var(--color-grey-900); color: var(--color-white); border-color: var(--color-grey-700) !important; }
+.hc { --color-text-disabled: var(--color-grey-400); --color-stroke-accent-alt: var(--color-iris-400); --color-bg-button-secondary-default: var(--color-grey-200); }

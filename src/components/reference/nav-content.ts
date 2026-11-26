@@ -1,5 +1,3 @@
-import { BRAND } from "./brand";
-
 export type NavLink = { label: string; to: string; external?: boolean };
 export type NavMenu = { label: string; groups: { title?: string; links: NavLink[] }[] };
 
@@ -13,9 +11,9 @@ const SECTORS = [
 ];
 
 const PRODUCTS: NavMenu = { label: "Products", groups: [
-  { title: "For enterprises", links: [{ label: "Enterprise", to: "/enterprise" }, { label: "Security & Trust", to: "/trust" }] },
-  { title: "For builders", links: [{ label: "Agents API", to: "/agents-api" }, { label: "Models API", to: "/models-api" }, { label: "Showcase", to: "/showcase" }] },
-  { title: "For everyone", links: [{ label: BRAND.tab, to: "/holotab" }] },
+  { title: "For enterprises", links: [{ label: "Enterprise", to: "/enterprise" }, { label: "Security & Trust", to: "https://trust.hcompany.ai/", external: true }] },
+  { title: "For builders", links: [{ label: "Agents API", to: "/agents-api" }, { label: "Models API", to: "/models-api" }, { label: "Showcase", to: "https://showcase.hcompany.ai/", external: true }] },
+  { title: "For everyone", links: [{ label: "HoloTab", to: "/holotab" }] },
 ] };
 
 const RESEARCH: NavLink[] = [{ label: "Models", to: "/research/models" }, { label: "Publications", to: "/research/publications" }, { label: "Technical blog", to: "/technical-blog" }];
@@ -36,7 +34,7 @@ export const MENUS: NavMenu[] = [
 export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
   { title: "Products", links: [
     ...PRODUCTS.groups.flatMap(group => group.links),
-    { label: BRAND.platform, to: "/h-platform" }, { label: "Pricing", to: "/pricing" }, { label: "Docs", to: "/docs" },
+    { label: "H Platform", to: "/h-platform" }, { label: "Pricing", to: "/pricing" }, { label: "Docs", to: "https://hub.hcompany.ai/", external: true },
   ] },
   { title: "Research", links: [{ label: "Overview", to: "/research" }, ...RESEARCH] },
   { title: "Solutions", links: [{ label: "All use cases", to: "/use-cases" }, { label: "SolidWorks", to: "/solutions/systems/solidworks" }] },
@@ -45,7 +43,7 @@ export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
 ];
 
 export const ANNOUNCEMENT = {
-  to: "/newsroom",
-  short: "[Add announcement]",
-  long: `[Add announcement about ${BRAND.name}]`,
+  to: "/newsroom/h-company-aws-european-sovereign-cloud-press-release",
+  short: "H Company on the AWS European Sovereign Cloud",
+  long: "H Company launches its NVIDIA-powered agentic AI on the AWS European Sovereign Cloud",
 };

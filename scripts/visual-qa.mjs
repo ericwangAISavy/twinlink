@@ -2,6 +2,7 @@
 //   npm run build && npx next start -p 3100
 //   npm run visual-qa            (all viewports)
 //   npm run visual-qa -- 1440    (selected widths)
+//   VISUAL_QA_PAGE=pricing npm run visual-qa    (a page other than the homepage)
 // Both pages are loaded with identical viewport, DPR 1 and reduced motion, with
 // third-party consent/analytics requests blocked. Needs an installed Chrome.
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -9,8 +10,10 @@ import { chromium } from "playwright";
 import pixelmatch from "pixelmatch";
 import { PNG } from "pngjs";
 
-const REFERENCE = "https://hcompany.ai/";
-const LOCAL = process.env.VISUAL_QA_URL || "http://localhost:3100/";
+const PAGE = process.env.VISUAL_QA_PAGE || "";
+const NAME = PAGE || "home";
+const REFERENCE = `https://hcompany.ai/${PAGE}`;
+const LOCAL = (process.env.VISUAL_QA_URL || "http://localhost:3100/") + PAGE;
 const OUT = ".visual-qa";
 const THRESHOLD = 0.1; // pixelmatch per-pixel colour tolerance; anti-aliased pixels are not counted
 const VIEWPORTS = [[1920, 1080], [1440, 900], [1280, 800], [1024, 768], [768, 1024], [390, 844]];
@@ -62,7 +65,7 @@ async function capture(browser, url, [width, height]) {
   });
   const full = PNG.sync.read(await page.screenshot({ fullPage: true, animations: "disabled" }));
   // Second pass with the nondeterministic hero canvas hidden on both sides.
-  await page.addStyleTag({ content: "canvas{visibility:hidden!important}" });
+  await page.addStyleTag({ content: "canvas,video,iframe{visibility:hidden!important}" });
   const still = PNG.sync.read(await page.screenshot({ fullPage: true, animations: "disabled" }));
   await context.close();
   return { info, full, still, errors };
@@ -97,17 +100,17 @@ for (const viewport of VIEWPORTS.filter(([w]) => !selected.length || selected.in
   const own = await capture(browser, LOCAL, viewport);
   const full = compare(ref.full, own.full);
   const still = compare(ref.still, own.still);
-  writeFileSync(`${OUT}/reference/compare/home-${width}.png`, PNG.sync.write(ref.full));
-  writeFileSync(`${OUT}/implementation/compare/home-${width}.png`, PNG.sync.write(own.full));
-  writeFileSync(`${OUT}/differences/compare/home-${width}.png`, PNG.sync.write(full.diff));
-  writeFileSync(`${OUT}/differences/compare/home-${width}-no-canvas.png`, PNG.sync.write(still.diff));
+  writeFileSync(`${OUT}/reference/compare/${NAME}-${width}.png`, PNG.sync.write(ref.full));
+  writeFileSync(`${OUT}/implementation/compare/${NAME}-${width}.png`, PNG.sync.write(own.full));
+  writeFileSync(`${OUT}/differences/compare/${NAME}-${width}.png`, PNG.sync.write(full.diff));
+  writeFileSync(`${OUT}/differences/compare/${NAME}-${width}-no-canvas.png`, PNG.sync.write(still.diff));
 
   const names = ["header", "hero", "capabilities", "platform", "results", "research", "news", "closing", "footer"];
   // Each section is aligned to its own top, so one height error does not cascade.
   const sections = ref.info.sections.length === own.info.sections.length ? ref.info.sections.map((r, i) => {
     const o = own.info.sections[i];
     const part = compare(crop(ref.still, r[1], r[3]), crop(own.still, o[1], o[3]));
-    return { name: names[i] ?? i, reference: r, local: o, match: part.match };
+    return { name: PAGE ? i : names[i] ?? i, reference: r, local: o, match: part.match };
   }) : `section count differs: ${ref.info.sections.length} vs ${own.info.sections.length}`;
 
   const geometry = [];
@@ -123,8 +126,8 @@ for (const viewport of VIEWPORTS.filter(([w]) => !selected.length || selected.in
     horizontalOverflow: own.info.overflow, consoleErrors: own.errors,
     textElements: { total: textCount, within1px: textCount - geometry.length }, sections, geometry,
   };
-  console.log(`${width}px  full ${full.match}%  without canvas ${still.match}%  height ${ref.info.height}/${own.info.height}  text ${textCount - geometry.length}/${textCount}  errors ${own.errors.length}`);
+  console.log(`${NAME} ${width}px  full ${full.match}%  without canvas ${still.match}%  height ${ref.info.height}/${own.info.height}  text ${textCount - geometry.length}/${textCount}  errors ${own.errors.length}`);
   if (Array.isArray(sections)) console.log("   " + sections.map((s) => `${s.name} ${s.match}% (h ${s.reference[3]}/${s.local[3]})`).join(" | "));
 }
 await browser.close();
-writeFileSync(`${OUT}/reports/compare${selected.length ? "-" + selected.join("-") : ""}.json`, JSON.stringify(report, null, 1));
+writeFileSync(`${OUT}/reports/compare${PAGE ? "-" + PAGE : ""}${selected.length ? "-" + selected.join("-") : ""}.json`, JSON.stringify(report, null, 1));
