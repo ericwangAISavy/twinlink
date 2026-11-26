@@ -82,7 +82,7 @@ export function Capabilities() {
       <SplitHeading title="Built for a fragmented world">The real world runs on desktop apps, browsers, mobile interfaces, documents, and systems that were never designed to work together.</SplitHeading>
       <ol className="-mx-6 flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-2 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0 lg:gap-5">
         {CARDS.map(({ title, body, Visual }, index) => (
-          <li key={title} className="w-[85%] shrink-0 snap-start md:w-auto">
+          <li key={title} className="h-full w-[85%] shrink-0 snap-start md:w-auto">
             <Fade delay={0.04 + index * 0.05} className="flex h-full flex-col gap-8 overflow-hidden rounded-[12px] border !border-grey-250 bg-grey-200 p-6 shadow-[0_10px_40px_rgb(4_4_5_/4%)] sm:p-8">
               <div className="flex flex-col gap-3">
                 <span className="font-mono text-[14px] text-grey-500">0{index + 1}</span>

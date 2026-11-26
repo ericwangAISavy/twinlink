@@ -25,7 +25,7 @@ function Heading() {
 function Copy({ tab }: { tab: (typeof TABS)[number] }) {
   return (
     <div>
-      <p className="t14 mb-3 font-medium text-iris-600">{tab.audience}</p>
+      <p className="t14 mb-3 text-iris-600">{tab.audience}</p>
       <h3 className="t36 mb-4 tracking-tight">{tab.title}</h3>
       <p className="t16 mb-6 max-w-md text-grey-600">{tab.body}</p>
       <div className="mb-6 flex flex-wrap gap-2">
@@ -78,8 +78,8 @@ export function Platform() {
                   return (
                     <li key={item.name}>
                       <button type="button" aria-pressed={on} onClick={() => select(index)} className={`flex w-full flex-col gap-1 rounded-[12px] border px-6 py-5 text-left transition-colors duration-300 ${on ? "!border-grey-250 bg-grey-200" : "!border-transparent hover:bg-grey-250"}`}>
-                        <span className={`t12 font-mono ${on ? "text-iris-600" : "text-grey-500"}`}>0{index + 1}</span>
-                        <span className={`t18 tracking-tight ${on ? "" : "text-grey-500"}`}>{item.name}</span>
+                        <span className={`t12 ${on ? "text-iris-600" : "text-grey-500"}`}>0{index + 1}</span>
+                        <span className="t18 tracking-tight">{item.name}</span>
                       </button>
                     </li>
                   );

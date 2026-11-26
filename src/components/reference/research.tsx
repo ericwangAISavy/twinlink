@@ -18,7 +18,7 @@ export function Research() {
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
           <a href={href("/newsroom/holo4")} className="group flex flex-col overflow-hidden rounded-[12px] bg-grey-900 shadow-[0_18px_40px_rgb(4_4_5_/10%)]">
             <div className="relative aspect-[2/1] overflow-hidden lg:aspect-[16/7]">
-              <Image src="/hc/holo4-cover-halftone.jpg" alt="" fill sizes="(min-width: 1024px) 640px, 100vw" className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none" />
+              <Image src="/hc/holo4-cover-halftone.jpg" alt="" fill sizes="(min-width: 1024px) 40rem, 100vw" className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none" />
             </div>
             <div className="grid gap-6 border-t !border-white/15 p-6 sm:grid-cols-[1fr_auto] sm:gap-y-4 sm:p-8">
               <h3 className="t18 max-w-64 text-balance tracking-tight text-white">Holo4: powering generalist computer-use agents</h3>

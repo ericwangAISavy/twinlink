@@ -42,7 +42,7 @@ export function SiteFooter() {
           </nav>
         </div>
         <div className="h-px bg-grey-250" />
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-4">
           <p className="t12 text-grey-500">© 2026 H Company. Founded in Paris, built around the world.</p>
           <nav aria-label="Legal navigation">
             <ul className="-my-1.5 flex flex-wrap items-center gap-x-5">

@@ -43,6 +43,8 @@ body:has(.hc) { background: #fff; }
 .hc-panel { animation: hc-panel .3s cubic-bezier(.22, 1, .36, 1) both; }
 @keyframes hc-fan { from { rotate: 0deg; } to { rotate: 9.6deg; } }
 .hc-fan { animation: hc-fan .9s cubic-bezier(.22, 1, .36, 1) .2s both; }
+@keyframes hc-fan-front { from { rotate: 0deg; } to { rotate: -8.7deg; } }
+.hc-fan-front { animation: hc-fan-front .9s cubic-bezier(.22, 1, .36, 1) .2s both; }
 @keyframes hc-cursor { 0%, 15% { translate: 0 0; } 55%, 100% { translate: 70px -48px; } }
 .hc-cursor { animation: hc-cursor 3s cubic-bezier(.4, 0, .2, 1) infinite; }
 @keyframes hc-click { 0%, 55% { opacity: 0; scale: .4; } 60% { opacity: .8; } 80%, 100% { opacity: 0; scale: 1.4; } }
@@ -53,6 +55,6 @@ body:has(.hc) { background: #fff; }
 .hc-fade:not([data-fade="pending"]) .hc-grow { animation: hc-grow 1.2s cubic-bezier(.22, 1, .36, 1) .3s both; transform-origin: left; }
 
 @media (prefers-reduced-motion: reduce) {
-  .hc-fade, .hc-panel, .hc-cursor, .hc-click, .hc-caret, .hc-fan, .hc-fade:not([data-fade="pending"]) .hc-grow { animation: none; }
+  .hc-fade, .hc-panel, .hc-cursor, .hc-click, .hc-caret, .hc-fan, .hc-fan-front, .hc-fade:not([data-fade="pending"]) .hc-grow { animation: none; }
   .hc-fade[data-fade="pending"] { opacity: 1; translate: 0; }
 }

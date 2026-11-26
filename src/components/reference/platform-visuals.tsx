@@ -125,7 +125,7 @@ export function HoloTabStack() {
   return (
     <div aria-hidden="true" className="relative mx-auto w-[320px] rotate-[15deg]">
       <div className="hc-fan absolute inset-0"><TabPanel dark /></div>
-      <div className="relative"><TabPanel dark={false} /></div>
+      <div className="hc-fan-front relative"><TabPanel dark={false} /></div>
     </div>
   );
 }

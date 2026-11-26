@@ -74,7 +74,7 @@ function MobileMenu() {
   const [open, setOpen] = useState<string | null>(null);
   const row = "flex h-10 items-center gap-2 px-3 text-[16px] text-grey-600";
   return (
-    <div className="absolute inset-x-0 top-full max-h-[calc(100dvh-112px)] overflow-y-auto bg-white px-6 pb-6 pt-2 shadow-[0_20px_30px_-12px_rgb(0_0_0/0.15)] lg:hidden">
+    <div className="absolute inset-x-0 top-full max-h-[calc(100dvh-112px)] overflow-y-auto bg-white px-6 pb-6 pt-[7px] shadow-[0_20px_30px_-12px_rgb(0_0_0/0.15)] lg:hidden">
       {MENUS.map(menu => {
         const expanded = open === menu.label;
         return (
@@ -105,7 +105,7 @@ function MobileMenu() {
         <a href={href("/pricing")} className={row}>Pricing</a>
         <a href="https://hub.hcompany.ai/" target="_blank" rel="noopener noreferrer" className={row}>Docs<ExternalIcon /></a>
       </div>
-      <Button to="/contact?from=header#fill-out-the-form" className="mt-4 w-full">Book a demo</Button>
+      <Button to="/contact?from=header#fill-out-the-form" className="mt-5 w-full">Book a demo</Button>
     </div>
   );
 }
