@@ -16,21 +16,21 @@ export function Hero() {
             <h1 className="w-full text-balance text-[clamp(1.75rem,calc((100vw-3rem)/14),60px)] font-bold leading-[1.1] tracking-tight">Operational intelligence for the enterprise</h1>
           </Fade>
           <Fade delay={0.1}>
-            <p className="t16 max-w-2xl text-grey-600">H Company is an AI research lab and agentic platform that works across any system without rebuilding your stack.</p>
+            <p className="t16 max-w-2xl text-grey-600">Twinlink builds Orin, an agent that works across any system without rebuilding your stack.</p>
           </Fade>
           <Fade delay={0.2}>
             <div className="flex flex-col gap-3 pt-2 sm:flex-row">
               <Button to="/contact?from=home-hero#fill-out-the-form">Book a demo</Button>
-              <Button to="https://platform.hcompany.ai/auth/signup" variant="secondary">Start building</Button>
+              <Button to="/signup" variant="secondary">Start building</Button>
             </div>
           </Fade>
         </div>
         <Fade delay={0.3} className="relative z-10 mx-auto w-full max-w-5xl">
           <ul className="flex flex-col items-center justify-center gap-2 pt-10 text-center sm:flex-row sm:gap-3">
-            <li className="flex items-center gap-3"><span className="t14 text-grey-500">Trusted by Europe&apos;s largest companies</span></li>
+            <li className="flex items-center gap-3"><span className="t14 text-grey-500">Built for enterprise teams</span></li>
             <li className="flex items-center gap-3">
               <span aria-hidden="true" className="hidden text-grey-500 sm:inline">·</span>
-              <span className="t14 text-grey-500">SOC 2 Type II, ISO 27001 and GDPR compliant</span>
+              <span className="t14 text-grey-500">Security and compliance reviews on request</span>
             </li>
           </ul>
         </Fade>

@@ -6,7 +6,7 @@ import { Arrow } from "./ui";
 const CARDS = [
   { audience: "For enterprise", title: "Enterprise", body: "We map one of your workflows with you, then deploy agents on your actual systems and deliver a measurable outcome.", cta: "Explore Enterprise", to: "/enterprise", dark: true },
   { audience: "For builders", title: "Agents API", body: "Operational agents that get the job done, in the browser and on the desktop. A free tier to begin with.", cta: "Start building", to: "/agents-api" },
-  { audience: "For everyone", title: "HoloTab", body: "The fastest way to feel what a computer-use agent can do: a free Chrome extension.", cta: "Try HoloTab", to: "/holotab" },
+  { audience: "For everyone", title: "OrinTab", body: "The fastest way to feel what a computer-use agent can do: a free Chrome extension.", cta: "Try OrinTab", to: "/holotab" },
 ];
 
 export function ClosingCards() {

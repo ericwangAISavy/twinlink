@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { WindowDots } from "./ui";
 
 const CARD = "overflow-hidden rounded-[12px] border !border-grey-250 bg-white shadow-[0_20px_50px_-18px_rgba(13,13,18,0.25)]";
@@ -38,8 +39,7 @@ export function BrowserAgent() {
           <div className="mb-4 text-[12px] font-semibold text-grey-500">Claim #4471: Expense report</div>
           <div className="inline-flex items-center gap-2 rounded-[8px] bg-grey-900 px-4 py-2.5 text-[12px] font-semibold text-white">Submit claim</div>
           <div aria-hidden="true" className="hc-click absolute left-[105px] top-[74px] h-9 w-9 rounded-full border-2 !border-iris-600" />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/hc/h-agent-cursor.png" alt="" className="hc-cursor absolute left-10 top-[130px] w-[43px] drop-shadow-[0_2px_6px_rgba(0,0,0,0.25)]" />
+          <Image src="/hc/agent-cursor.svg" alt="" width={43} height={37} unoptimized className="hc-cursor absolute left-10 top-[130px] w-[43px] drop-shadow-[0_2px_6px_rgba(0,0,0,0.25)]" />
         </div>
       </div>
     </div>
@@ -57,12 +57,12 @@ export function ModelCode() {
       <pre className="overflow-x-auto px-4 py-5 font-mono text-[11px] leading-[1.85] sm:px-6 sm:text-[13px]">
         <span className={kw}>from</span> openai <span className={kw}>import</span> OpenAI{"\n\n"}
         client = OpenAI({"\n"}
-        {"  "}base_url=<span className={str}>&quot;https://api.hcompany.ai/v1/&quot;</span>,{"\n"}
-        {"  "}api_key=os.environ[<span className={str}>&quot;HAI_API_KEY&quot;</span>]{"\n"}
+        {"  "}base_url=<span className={str}>&quot;https://api.twinlink.example/v1/&quot;</span>,{"\n"}
+        {"  "}api_key=os.environ[<span className={str}>&quot;ORIN_API_KEY&quot;</span>]{"\n"}
         ){"\n\n"}
         <span className="text-grey-500"># switch models with one line</span>{"\n"}
         response = client.chat.completions.create({"\n"}
-        {"  "}model=<span className={str}>&quot;holo4-35b-a3b&quot;</span>,{"\n"}
+        {"  "}model=<span className={str}>&quot;orin-35b-a3b&quot;</span>,{"\n"}
         {"  "}messages=[...]{"\n"}
         )<span aria-hidden="true" className="hc-caret ml-0.5 inline-block h-[15px] w-[7px] translate-y-[2px] bg-grey-750" />
       </pre>
@@ -113,7 +113,7 @@ function TabPanel({ dark }: { dark: boolean }) {
       <div className={`m-3 mt-2 rounded-[12px] border p-3 ${line} ${dark ? "bg-grey-775" : "bg-white"}`}>
         <div className="text-[14px] leading-[21px] text-grey-500">Describe a task or type / for routines</div>
         <div className={`mt-4 flex items-center gap-2.5 ${muted}`}>
-          <span className="truncate font-mono text-[10px]">Holo4</span>
+          <span className="truncate font-mono text-[10px]">Orin</span>
           <span className={`ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${dark ? "bg-grey-600 text-grey-200" : "bg-grey-200 text-grey-700"}`}><Icon name="send" /></span>
         </div>
       </div>
@@ -121,7 +121,7 @@ function TabPanel({ dark }: { dark: boolean }) {
   );
 }
 
-export function HoloTabStack() {
+export function OrinTabStack() {
   return (
     <div aria-hidden="true" className="relative mx-auto w-[320px] rotate-[15deg]">
       <div className="hc-fan absolute inset-0"><TabPanel dark /></div>

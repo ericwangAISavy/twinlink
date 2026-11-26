@@ -4,7 +4,7 @@ import { Faq } from "@/components/reference/faq";
 import { Fade } from "@/components/reference/fade";
 import { HeroWash } from "@/components/reference/hero-wash";
 
-export const metadata: Metadata = { title: { absolute: "Pricing | H" } };
+export const metadata: Metadata = { title: { absolute: "Pricing | Twinlink" } };
 
 export default function PricingPage() {
   return (
@@ -32,18 +32,18 @@ export default function PricingPage() {
 </Fade>
 <Fade >
 <p className={"text-style-16-body-reg text-[var(--color-text-default-alt)] opacity-75"}>
-{"Session plans for the Agents API, per-token rates for the Models API, and free ways to try HoloTab, HoloDesktop CLI, and open weights on Hugging Face."}
+{"Session plans for the Agents API, per-token rates for the Models API, and free ways to try OrinTab, Orin Desktop CLI, and open weights on Hugging Face."}
 </p>
 </Fade>
 </div>
 <Fade className={"mt-2"}>
 <div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap"}>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-primary)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-secondary)]"} data-hero-button={"primary"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-primary)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-secondary)]"} data-hero-button={"primary"} href={"/coming-soon"}>
 {"Sign up"}
-</a>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-white/70 bg-transparent text-[var(--color-text-default-alt)] hover:bg-[var(--color-bg-primary)]/10"} data-hero-button={"outline"} href={"https://hcompany.ai/contact?from=pricing-hero#fill-out-the-form"}>
+</Link>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-white/70 bg-transparent text-[var(--color-text-default-alt)] hover:bg-[var(--color-bg-primary)]/10"} data-hero-button={"outline"} href={"/contact"}>
 {"Talk to sales"}
-</a>
+</Link>
 </div>
 </Fade>
 </div>
@@ -102,11 +102,11 @@ export default function PricingPage() {
 <div className={"flex flex-col gap-4"}>
 <p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
 <span className={"text-style-14-head-med text-[var(--color-text-accent)]"}>
-{"H Platform included:"}
+{"Orin Platform included:"}
 </span>
 {" "}
 
-{"Holo models, agent execution engine, cloud and local environments, console with sessions and replay, vaults. Workflow orchestration on Enterprise."}
+{"Orin models, agent execution engine, cloud and local environments, console with sessions and replay, vaults. Workflow orchestration on Enterprise."}
 
 {" "}
 <Link className={"whitespace-nowrap text-[var(--color-text-accent)] hover:underline"} href={"/agents-api"}>
@@ -131,9 +131,9 @@ export default function PricingPage() {
 </span>
 </p>
 </div>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/coming-soon"}>
 {"Build for free"}
-</a>
+</Link>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -216,9 +216,9 @@ export default function PricingPage() {
 </span>
 </p>
 </div>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit"} href={"/coming-soon"}>
 {"Choose Builder"}
-</a>
+</Link>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -298,9 +298,9 @@ export default function PricingPage() {
 </span>
 </p>
 </div>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/coming-soon"}>
 {"Choose Startup"}
-</a>
+</Link>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -377,9 +377,9 @@ export default function PricingPage() {
 {"Custom pricing"}
 </p>
 </div>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"https://hcompany.ai/contact?from=pricing-agents#fill-out-the-form"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/contact"}>
 {"Talk to sales"}
-</a>
+</Link>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -454,7 +454,7 @@ export default function PricingPage() {
 </Fade>
 <Fade >
 <p className={"text-style-16-body-reg text-[var(--color-text-secondary)]   "}>
-{"Per-token rates. Free tier with rate-limited access to Holo3.1 35B-A3B, no credit card. Pay as you go on every model."}
+{"Per-token rates. Free tier with rate-limited access to Orin 3.1 35B-A3B, no credit card. Pay as you go on every model."}
 </p>
 </Fade>
 </div>
@@ -463,11 +463,11 @@ export default function PricingPage() {
 <div className={"flex flex-col gap-4"}>
 <p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
 <span className={"text-style-14-head-med text-[var(--color-text-accent)]"}>
-{"H Platform included:"}
+{"Orin Platform included:"}
 </span>
 {" "}
 
-{"Holo models and H-hosted inference, with zero data retention. Open weights let you self-host."}
+{"Orin models and Twinlink-hosted inference, with zero data retention. Open weights let you self-host."}
 
 {" "}
 <Link className={"whitespace-nowrap text-[var(--color-text-accent)] hover:underline"} href={"/models-api"}>
@@ -482,7 +482,7 @@ export default function PricingPage() {
 <div className={"flex flex-col gap-1.5"}>
 <div className={"flex flex-wrap items-start gap-2"}>
 <h3 className={"text-style-16-head-med text-[var(--color-title-default)] tracking-tight"}>
-{"Holo4 27B"}
+{"Orin 27B"}
 </h3>
 <span className={"shrink-0 rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] px-2 py-0.5 text-[length:var(--text-fs-1)] font-medium leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)]"}>
 {"Flagship · New"}
@@ -495,9 +495,9 @@ export default function PricingPage() {
 </span>
 </p>
 </div>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit"} href={"/coming-soon"}>
 {"Get API key"}
-</a>
+</Link>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -557,7 +557,7 @@ export default function PricingPage() {
 <div className={"flex flex-col gap-1.5"}>
 <div className={"flex flex-wrap items-start gap-2"}>
 <h3 className={"text-style-16-head-med text-[var(--color-title-default)] tracking-tight"}>
-{"Holo4 35B-A3B"}
+{"Orin 35B-A3B"}
 </h3>
 <span className={"shrink-0 rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] px-2 py-0.5 text-[length:var(--text-fs-1)] font-medium leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)]"}>
 {"Fast · New"}
@@ -570,9 +570,9 @@ export default function PricingPage() {
 </span>
 </p>
 </div>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/coming-soon"}>
 {"Get API key"}
-</a>
+</Link>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -632,7 +632,7 @@ export default function PricingPage() {
 <div className={"flex flex-col gap-1.5"}>
 <div className={"flex flex-wrap items-start gap-2"}>
 <h3 className={"text-style-16-head-med text-[var(--color-title-default)] tracking-tight"}>
-{"Holo3.1 35B-A3B"}
+{"Orin 3.1 35B-A3B"}
 </h3>
 </div>
 <p className={"text-style-16-head-med text-[var(--color-text-default)] font-mono"}>
@@ -642,9 +642,9 @@ export default function PricingPage() {
 </span>
 </p>
 </div>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/coming-soon"}>
 {"Get API key"}
-</a>
+</Link>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -704,7 +704,7 @@ export default function PricingPage() {
 <div className={"flex flex-col gap-1.5"}>
 <div className={"flex flex-wrap items-start gap-2"}>
 <h3 className={"text-style-16-head-med text-[var(--color-title-default)] tracking-tight"}>
-{"Holo3 122B-A10B"}
+{"Orin 3 122B-A10B"}
 </h3>
 </div>
 <p className={"text-style-16-head-med text-[var(--color-text-default)] font-mono"}>
@@ -714,9 +714,9 @@ export default function PricingPage() {
 </span>
 </p>
 </div>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/coming-soon"}>
 {"Get API key"}
-</a>
+</Link>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -794,11 +794,11 @@ export default function PricingPage() {
 <div className={"flex flex-col gap-4"}>
 <p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
 <span className={"text-style-14-head-med text-[var(--color-text-accent)]"}>
-{"H Platform included:"}
+{"Orin Platform included:"}
 </span>
 {" "}
 
-{"The full platform, from Holo models and the agent execution engine to workflow orchestration, governance and an embedded engineering team."}
+{"The full platform, from Orin models and the agent execution engine to workflow orchestration, governance and an embedded engineering team."}
 
 {" "}
 <Link className={"whitespace-nowrap text-[var(--color-text-accent)] hover:underline"} href={"/enterprise"}>
@@ -822,9 +822,9 @@ export default function PricingPage() {
 {"Custom rates, dedicated support, and agents that run on your systems. Talk to us about the right setup for your team."}
 </p>
 </div>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit"} href={"https://hcompany.ai/contact?from=enterprise-pricing#fill-out-the-form"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit"} href={"/contact"}>
 {"Talk to sales"}
-</a>
+</Link>
 </div>
 <ul className={"flex flex-col border-t border-[var(--color-stroke-default)] md:border-l md:border-t-0"}>
 <li className={"border-b border-[var(--color-stroke-default)] px-6 py-3.5 last:border-b-0"}>
@@ -889,7 +889,7 @@ export default function PricingPage() {
 <div className={"flex flex-col gap-5"}>
 <Fade >
 <h2 className={"text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl"}>
-{"Free ways to try H Company"}
+{"Free ways to try Twinlink"}
 </h2>
 </Fade>
 </div>
@@ -898,15 +898,15 @@ export default function PricingPage() {
 <div className={"flex flex-col gap-4"}>
 <p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
 <span className={"text-style-14-head-med text-[var(--color-text-accent)]"}>
-{"H Platform included:"}
+{"Orin Platform included:"}
 </span>
 {" "}
 
-{"Holo models and the agent execution engine, in your own browser or on your device."}
+{"Orin models and the agent execution engine, in your own browser or on your device."}
 
 {" "}
-<Link className={"whitespace-nowrap text-[var(--color-text-accent)] hover:underline"} href={"/holotab"}>
-{"About HoloTab"}
+<Link className={"whitespace-nowrap text-[var(--color-text-accent)] hover:underline"} href={"/orin-tab"}>
+{"About OrinTab"}
 
 {" →"}
 </Link>
@@ -917,7 +917,7 @@ export default function PricingPage() {
 <div className={"flex flex-col gap-1.5"}>
 <div className={"flex flex-wrap items-start gap-2"}>
 <h3 className={"text-style-16-head-med text-[var(--color-title-default)] tracking-tight"}>
-{"HoloTab"}
+{"OrinTab"}
 </h3>
 </div>
 <p className={"text-style-16-head-med text-[var(--color-text-default)] font-mono"}>
@@ -927,9 +927,9 @@ export default function PricingPage() {
 {"AI browser companion on the Chrome Web Store."}
 </p>
 </div>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://chromewebstore.google.com/detail/holotab/hlaoiikljjgcjdhkakedfngifaopbcop"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit"} href={"/coming-soon"}>
 {"Add to Chrome"}
-</a>
+</Link>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -959,7 +959,7 @@ export default function PricingPage() {
 <div className={"flex flex-col gap-1.5"}>
 <div className={"flex flex-wrap items-start gap-2"}>
 <h3 className={"text-style-16-head-med text-[var(--color-title-default)] tracking-tight"}>
-{"HoloDesktop CLI"}
+{"Orin Desktop CLI"}
 </h3>
 </div>
 <p className={"text-style-16-head-med text-[var(--color-text-default)] font-mono"}>
@@ -969,9 +969,9 @@ export default function PricingPage() {
 {"Run the agent on-device. Inference through the Models API, or self-hosted."}
 </p>
 </div>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://github.com/hcompai/holo-desktop-cli"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/coming-soon"}>
 {"View on GitHub"}
-</a>
+</Link>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -1008,12 +1008,12 @@ export default function PricingPage() {
 {"Free"}
 </p>
 <p className={"text-style-12-body-reg text-[var(--color-text-secondary)]"}>
-{"Download Holo model checkpoints on Hugging Face and run them yourself."}
+{"Download Orin model checkpoints on Hugging Face and run them yourself."}
 </p>
 </div>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://huggingface.co/Hcompany"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/coming-soon"}>
 {"View on Hugging Face"}
-</a>
+</Link>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -1062,7 +1062,7 @@ export default function PricingPage() {
 </div>
 <Fade >
 <div className={"max-w-3xl"}>
-<Faq items={[{"question":"Which plan should I pick?","answer":"Start free, then pick the plan that matches your concurrency and model needs. Enterprise terms on request."},{"question":"Why are session counts approximate?","answer":"Number of sessions can vary depending on task complexity and models used."},{"question":"How does inference billing work?","answer":"Inference is billed per model and per million input and output tokens. Rates vary by model and may change over time. Refer to our terms of use for current details."},{"question":"Do you offer a free tier?","answer":"After registering on H Platform, every user is assigned to the free tier, which provides rate-limited access to Holo3.1 35B-A3B. Holo4 models require a paid tier. If you need a higher rate limit, add credits to move to a paid tier."},{"question":"Do credits expire?","answer":"Per our terms of use, we reserve the right to expire unused credits one year after purchase."},{"question":"I can't see my credits. What should I do?","answer":"Payment can take a few minutes to process, please allow up to 15 minutes. If your credits still do not appear, confirm that you have been charged and have received a payment receipt or invoice. If you have not been charged, your card may have been rejected, try again with another one. If you can confirm you have been charged and still do not see credits, contact us at support@hcompany.ai with your purchase so we can investigate."},{"question":"What is the refund policy?","answer":"According to our terms of use, credits are not refundable by default. Depending on your profile and region, refund obligations may apply. Please check our terms of use to learn more."},{"question":"Is HoloTab free?","answer":"HoloTab is free and available on the Chrome Web Store, with no signup required."},{"question":"How can I contact support?","answer":"Reach out to us at support@hcompany.ai specifying the nature of your request."}]} />
+<Faq items={[{"question":"Which plan should I pick?","answer":"Start free, then pick the plan that matches your concurrency and model needs. Enterprise terms on request."},{"question":"Why are session counts approximate?","answer":"Number of sessions can vary depending on task complexity and models used."},{"question":"How does inference billing work?","answer":"Inference is billed per model and per million input and output tokens. Rates vary by model and may change over time. Refer to our terms of use for current details."},{"question":"Do you offer a free tier?","answer":"After registering on Orin Platform, every user is assigned to the free tier, which provides rate-limited access to Orin 3.1 35B-A3B. Orin models require a paid tier. If you need a higher rate limit, add credits to move to a paid tier."},{"question":"Do credits expire?","answer":"Per our terms of use, we reserve the right to expire unused credits one year after purchase."},{"question":"I can't see my credits. What should I do?","answer":"Payment can take a few minutes to process, please allow up to 15 minutes. If your credits still do not appear, confirm that you have been charged and have received a payment receipt or invoice. If you have not been charged, your card may have been rejected, try again with another one. If you can confirm you have been charged and still do not see credits, contact us at hello@twinlink.example with your purchase so we can investigate."},{"question":"What is the refund policy?","answer":"According to our terms of use, credits are not refundable by default. Depending on your profile and region, refund obligations may apply. Please check our terms of use to learn more."},{"question":"Is OrinTab free?","answer":"OrinTab is free and available on the Chrome Web Store, with no signup required."},{"question":"How can I contact support?","answer":"Reach out to us at hello@twinlink.example specifying the nature of your request."}]} />
 </div>
 </Fade>
 <Fade >
@@ -1070,14 +1070,14 @@ export default function PricingPage() {
 {"Still have questions?"}
 
 {" "}
-<a className={"font-medium text-[var(--color-text-accent)] hover:underline"} href={"https://hcompany.ai/contact?from=faq#fill-out-the-form"}>
+<Link className={"font-medium text-[var(--color-text-accent)] hover:underline"} href={"/contact"}>
 {"Talk to an engineer"}
 
 {" "}
 <span aria-hidden={"true"}>
 {"→"}
 </span>
-</a>
+</Link>
 </p>
 </Fade>
 </div>
@@ -1101,26 +1101,26 @@ export default function PricingPage() {
 </div>
 <Fade >
 <div className={"flex flex-col gap-3 sm:flex-row"}>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-grey-750)]"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-grey-750)]"} href={"/coming-soon"}>
 {"Sign up"}
-</a>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)]"} href={"https://hcompany.ai/contact?from=pricing-final#fill-out-the-form"}>
+</Link>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)]"} href={"/contact"}>
 {"Talk to sales"}
-</a>
+</Link>
 </div>
 </Fade>
 </div>
 </div>
 </section>
 <div className={"fixed bottom-4 right-4 z-40 transition-[opacity,translate] duration-300 motion-reduce:transition-none sm:bottom-6 sm:right-6 pointer-events-none translate-y-3 opacity-0"} aria-hidden={"true"}>
-<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-6 py-3 text-[length:var(--text-fs-3)] leading-[var(--text-fs-3--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] shadow-[0_10px_30px_rgb(4_4_5_/18%)]"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"} tabIndex={-1}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-6 py-3 text-[length:var(--text-fs-3)] leading-[var(--text-fs-3--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] shadow-[0_10px_30px_rgb(4_4_5_/18%)]"} href={"/coming-soon"} tabIndex={-1}>
 {"Sign up"}
 
 {" "}
 <span aria-hidden={"true"}>
 {"→"}
 </span>
-</a>
+</Link>
 </div>
     </>
   );

@@ -27,7 +27,7 @@ test('public navigation keeps anonymous entry points with implemented service de
   assert.match(html, /href="\/register"/);
   assert.doesNotMatch(html, /href="\/dashboard"/);
   assert.match(html, /href="\/services\/digital-strategy-transformation"/);
-  for (const path of ['/careers', '/contact', '/privacy', '/about#culture', '/case-studies', '/blog', '/events', '/#insights']) {
+  for (const path of ['/careers', '/contact', '/privacy', '/about#culture', '/case-studies', '/blog', '/events']) {
     assert.ok(html.includes(`href="${path}"`), `Missing destination ${path}`);
   }
 });

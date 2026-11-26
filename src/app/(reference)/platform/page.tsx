@@ -1,0 +1,2493 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { Fade } from "@/components/reference/fade";
+import { MediaSlot } from "@/components/reference/media-slot";
+import { Swap } from "@/components/reference/swap";
+import { HeroWash } from "@/components/reference/hero-wash";
+
+export const metadata: Metadata = { title: { absolute: "Orin Platform | Twinlink" } };
+
+export default function PlatformPage() {
+  return (
+    <>
+      <HeroWash />
+<section className={"product-hero-section pt-32 sm:pt-36 product-hero-section--compact "}>
+<div className={"pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[var(--color-grey-900)]"} aria-hidden={"true"} style={{"opacity": "var(--hero-mix, 100%)"} as React.CSSProperties}>
+<div className={"absolute -bottom-24 -left-24 h-[24rem] w-[24rem] rounded-[var(--radius-rounded)] bg-[var(--color-iris-600)] opacity-30 blur-[65px]"} />
+</div>
+<div className={"relative z-10 mx-auto w-full max-w-6xl px-6 "}>
+<div className={"flex flex-col gap-10 sm:gap-12"}>
+<div className={"flex flex-col gap-6"} data-hero-copy={"true"}>
+<Fade >
+<div className={"flex items-center justify-between gap-6"}>
+<h1 className={"text-style-24-head-med text-[var(--color-title-default-alt)] tracking-tight"}>
+{"Orin Platform"}
+</h1>
+</div>
+</Fade>
+<div className={"grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16"}>
+<Fade >
+<h2 className={"text-style-48-head-med text-[var(--color-title-default-alt)] tracking-tight"}>
+{"A single platform for every agent you run"}
+</h2>
+</Fade>
+<Fade >
+<p className={"text-style-16-body-reg text-[var(--color-text-default-alt)] opacity-75"}>
+{"The only enterprise platform where agents go beyond API connectors to run securely at scale in the background."}
+</p>
+</Fade>
+</div>
+<Fade className={"mt-2"}>
+<div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-primary)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-secondary)]"} data-hero-button={"primary"} href={"/coming-soon"}>
+{"Start building"}
+</Link>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-white/70 bg-transparent text-[var(--color-text-default-alt)] hover:bg-[var(--color-bg-primary)]/10"} data-hero-button={"outline"} href={"/contact"}>
+{"Contact sales"}
+</Link>
+</div>
+</Fade>
+</div>
+</div>
+</div>
+</section>
+<Swap initial={0} states={[
+<div key="0">
+<section className={"bg-[var(--color-bg-primary)] pb-6 pt-0 sm:pb-8 sm:-mt-4"}>
+<div className={"mx-auto w-full max-w-6xl px-6"}>
+<Fade >
+<div className={"w-full rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)] p-3 sm:p-4 "} data-keep-light={"true"}>
+<div className={"flex flex-col gap-3 sm:gap-4"}>
+<div className={"flex h-[520px] flex-col overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] sm:h-[600px]"}>
+<div className={"flex h-10 shrink-0 items-center gap-3 border-b border-[var(--color-stroke-default)] px-4"}>
+<span className={"flex gap-1.5"} aria-hidden={"true"}>
+<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#ff5f57]"} />
+<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#febc2e]"} />
+<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#28c840]"} />
+</span>
+<span className={"text-style-12-body-reg flex min-w-0 items-center gap-1.5 text-[var(--color-text-tertiary)]"}>
+<span className={"text-style-11-label-bold flex size-4 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)]"}>
+{"Twinlink"}
+</span>
+<span className={"hidden items-center gap-1 sm:flex"}>
+{"Twinlink"}
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3 6 5 5 5-5"} />
+</svg>
+</span>
+<span className={"hidden sm:inline"}>
+{"/"}
+</span>
+<span className={"hidden items-center gap-1 sm:flex"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
+</svg>
+{"Default"}
+</span>
+<span className={"flex min-w-0 items-center gap-1.5"}>
+<span className={"hidden sm:inline"}>
+{"/"}
+</span>
+<span className={"truncate"}>
+{"Agents"}
+</span>
+</span>
+<span className={"flex min-w-0 items-center gap-1.5"}>
+<span >
+{"/"}
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] truncate text-[var(--color-title-default)]"}>
+{"form-filling-agent"}
+</span>
+</span>
+</span>
+</div>
+<div className={"flex min-h-0 flex-1"}>
+<nav className={"hidden w-48 shrink-0 flex-col gap-0.5 overflow-y-auto border-r border-[var(--color-stroke-default)] p-3 [scrollbar-width:none] md:flex"} aria-label={"Console"}>
+<div className={"flex flex-col gap-0.5"}>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
+<rect x={"9.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
+<rect x={"2.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
+<rect x={"9.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
+</svg>
+</span>
+{"Home"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
+</svg>
+</span>
+{"Projects"}
+</span>
+</div>
+<div className={"flex flex-col gap-0.5"}>
+<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
+{"Build"}
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3 6 5 5 5-5"} />
+</svg>
+</span>
+<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left bg-[var(--color-bg-selected)] text-[var(--color-title-default)]"} type={"button"} aria-current={"page"}>
+<span className={"text-[var(--color-icon-accent)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"5.5"} cy={"5.5"} r={"2"} />
+<circle cx={"10.5"} cy={"5.5"} r={"2"} />
+<path d={"M2 13c0-2 1.5-3.5 3.5-3.5S9 11 9 13M7 13c0-2 1.5-3.5 3.5-3.5S14 11 14 13"} />
+</svg>
+</span>
+{"Agents"}
+</button>
+<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left text-[var(--color-text-secondary)] transition-colors duration-200 hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-default)]"} type={"button"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M2.5 3.5h11v8h-7l-3 2.5v-2.5h-1z"} />
+<path d={"M5.5 6.5h5M5.5 8.5h3"} />
+</svg>
+</span>
+{"Sessions"}
+<span className={"pointer-events-none absolute z-10 flex size-2.5 right-2.5 top-1/2 -translate-y-1/2"} aria-hidden={"true"}>
+<span className={"absolute inline-flex size-full animate-ping rounded-[var(--radius-rounded)] bg-[var(--color-stroke-accent-alt)] opacity-60 motion-reduce:hidden"} />
+<span className={"relative inline-flex size-2.5 rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] ring-2 ring-[var(--color-bg-card)]"} />
+</span>
+</button>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z"} />
+</svg>
+</span>
+{"Skills"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"8"} rx={"1"} />
+<path d={"M6 13.5h4M8 11v2.5"} />
+</svg>
+</span>
+{"Environments"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
+<path d={"M2 6h12"} />
+</svg>
+</span>
+{"Browser profiles"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"3"} y={"7"} width={"10"} height={"7"} rx={"1"} />
+<path d={"M5.5 7V5a2.5 2.5 0 0 1 5 0v2"} />
+</svg>
+</span>
+{"Vaults"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"8"} cy={"8"} r={"5.5"} />
+<path d={"M8 5v3l2 1.5"} />
+</svg>
+</span>
+{"Schedules"}
+</span>
+</div>
+<div className={"flex flex-col gap-0.5"}>
+<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
+{"Configure"}
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3 6 5 5 5-5"} />
+</svg>
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"8"} cy={"6"} r={"1.75"} />
+<circle cx={"3.75"} cy={"4.5"} r={"1.25"} />
+<circle cx={"12.25"} cy={"4.5"} r={"1.25"} />
+<path d={"M5 12.5c0-1.75 1.25-3 3-3s3 1.25 3 3M1.75 10c.25-1.25 1-2 2-2M14.25 10c-.25-1.25-1-2-2-2"} />
+</svg>
+</span>
+{"Organisation"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"10"} cy={"6"} r={"3.5"} />
+<path d={"M7.5 8.5 2.5 13.5M4 12l1.5 1.5M5.5 10.5 7 12"} />
+</svg>
+</span>
+{"API keys"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M6.5 5.5a2 2 0 1 1 3 1.75L8 10M5 9.5a2 2 0 1 0 2 3h4M11 13a2 2 0 1 0-1.25-3.5L8 6.5"} />
+</svg>
+</span>
+{"Webhooks"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3.5"} width={"12"} height={"9"} rx={"1"} />
+<path d={"M2 6.5h12M4.5 10h2"} />
+</svg>
+</span>
+{"Billing & subscription"}
+</span>
+</div>
+<div className={"mt-auto flex shrink-0 flex-col gap-2 pt-3 opacity-50"}>
+<div className={"flex flex-col gap-2 rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] p-2.5"}>
+<span className={"flex items-center justify-between"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Free plan"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
+{"0%"}
+</span>
+{" used"}
+</span>
+</span>
+<span className={"h-1 rounded-[var(--radius-rounded)] bg-[var(--color-bg-secondary)]"} />
+<span className={"flex items-center justify-between"}>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)] flex items-center gap-1"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M3 3v3h3"} />
+<path d={"M3.5 6A5 5 0 1 1 3 9"} />
+</svg>
+{"2 days"}
+</span>
+<span className={"text-style-12-head-med flex items-center gap-1 rounded-[var(--radius-small)] bg-[var(--color-bg-accent-alt)] px-2 py-1 text-[var(--color-text-default-alt)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M9.5 2.5c2.5 0 4 1.5 4 4L8.5 11.5l-4-4z"} />
+<path d={"M4.5 7.5 2.5 7l2-2.5h3M8.5 11.5l.5 2 2.5-2v-3M3 13c0-1 .5-2 1.5-2.25"} />
+</svg>
+{"Upgrade"}
+</span>
+</span>
+</div>
+<span className={"flex items-center justify-between px-1"}>
+<span className={"text-style-12-head-med flex size-6 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)]"}>
+{"A"}
+</span>
+<span className={"text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
+<path d={"M6 3v10"} />
+</svg>
+</span>
+</span>
+</div>
+</nav>
+<div className={"relative min-w-0 flex-1 overflow-y-auto"}>
+<div className={"h-full"} style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<div className={"flex flex-col gap-6 p-4 sm:p-6"}>
+<div className={"flex items-start justify-between gap-4"}>
+<div className={"flex min-w-0 flex-col gap-1"}>
+<h3 className={"text-style-16-head-bold text-[var(--color-title-default)] tracking-tight truncate"}>
+{"form-filling-agent"}
+</h3>
+<span className={"text-style-12-body-reg text-[var(--color-text-secondary)]"}>
+{"Quote request filling"}
+</span>
+</div>
+<div className={"flex shrink-0 gap-2"}>
+<span className={"text-style-12-head-med inline-flex h-8 items-center gap-1.5 rounded-[var(--radius-medium)] bg-[var(--color-bg-button-secondary-default)] px-3 text-[var(--color-text-default)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M10.5 2.5 13.5 5.5 6 13H3v-3z"} />
+<path d={"M9 4l3 3"} />
+</svg>
+{"Edit"}
+</span>
+<span className={"relative"}>
+<button className={"text-style-12-head-med inline-flex h-8 shrink-0 items-center gap-1.5 rounded-[var(--radius-medium)] px-3 transition-[background-color,opacity] duration-200 disabled:opacity-40 bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:opacity-90"} type={"button"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M5 3.5v9l7-4.5z"} fill={"currentColor"} />
+</svg>
+{"Start session"}
+</button>
+<span className={"pointer-events-none absolute z-10 flex size-2.5 -right-1 -top-1"} aria-hidden={"true"}>
+<span className={"absolute inline-flex size-full animate-ping rounded-[var(--radius-rounded)] bg-[var(--color-stroke-accent-alt)] opacity-60 motion-reduce:hidden"} />
+<span className={"relative inline-flex size-2.5 rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] ring-2 ring-[var(--color-bg-card)]"} />
+</span>
+</span>
+</div>
+</div>
+<div className={"grid gap-3 md:grid-cols-2"}>
+<div className={"flex flex-col divide-y divide-[var(--color-stroke-default)] rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] px-4"}>
+<div className={"pb-2 pt-3"}>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"Configuration"}
+</span>
+<div className={"flex items-center justify-between gap-3 py-1.5"}>
+<span className={"text-style-12-body-reg text-[var(--color-text-default)] flex items-center gap-2"}>
+<span className={"text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M8 1.75 13.5 5v6L8 14.25 2.5 11V5z"} />
+<path d={"M2.5 5 8 8.25 13.5 5M8 8.25v6"} />
+</svg>
+</span>
+{"Model"}
+</span>
+<span className={"flex flex-wrap justify-end gap-1"}>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)] italic"}>
+{"Platform default"}
+</span>
+</span>
+</div>
+<div className={"flex items-center justify-between gap-3 py-1.5"}>
+<span className={"text-style-12-body-reg text-[var(--color-text-default)] flex items-center gap-2"}>
+<span className={"text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"8"} rx={"1"} />
+<path d={"M6 13.5h4M8 11v2.5"} />
+</svg>
+</span>
+{"Environment"}
+</span>
+<span className={"flex flex-wrap justify-end gap-1"}>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors "}>
+{"orin/browser"}
+</span>
+</span>
+</div>
+</div>
+<div className={"pb-3 pt-3"}>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"Capabilities"}
+</span>
+<div className={"flex items-center justify-between gap-3 py-1.5"}>
+<span className={"text-style-12-body-reg text-[var(--color-text-default)] flex items-center gap-2"}>
+<span className={"text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z"} />
+</svg>
+</span>
+{"Skills"}
+</span>
+<span className={"flex flex-wrap justify-end gap-1"}>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors "}>
+{"orin/visual-browser"}
+</span>
+</span>
+</div>
+<div className={"flex items-center justify-between gap-3 py-1.5"}>
+<span className={"text-style-12-body-reg text-[var(--color-text-default)] flex items-center gap-2"}>
+<span className={"text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"4.5"} cy={"3.5"} r={"1.5"} />
+<circle cx={"4.5"} cy={"12.5"} r={"1.5"} />
+<circle cx={"11.5"} cy={"5.5"} r={"1.5"} />
+<path d={"M4.5 5v6M11.5 7c0 2.5-3 2.5-7 4"} />
+</svg>
+</span>
+{"Subagents"}
+</span>
+<span className={"flex flex-wrap justify-end gap-1"}>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors "}>
+{"orin/web-surfer-pro"}
+</span>
+</span>
+</div>
+</div>
+</div>
+<div className={"hidden flex-col gap-2 rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] px-4 pb-4 pt-3 md:flex"}>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"Instructions"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-default)]"}>
+{"You are an agent that fills out insurance/service quote request forms on behalf of a user, using their provided personal and coverage details to accurately complete each field. Navigate the form step-by-step, validate required fields before submitting, and flag any information that is missing or ambiguous instead of guessing."}
+</span>
+</div>
+</div>
+<div className={"flex flex-col gap-3"}>
+<div className={"flex items-center justify-between"}>
+<span className={"text-style-14-head-med text-[var(--color-text-default)]"}>
+{"Used in sessions"}
+</span>
+<div className={"flex rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] p-0.5"}>
+<button className={"text-style-12-head-med rounded-[var(--radius-rounded)] px-2.5 py-0.5 transition-colors duration-200 bg-[var(--color-bg-purple-alt)] text-[var(--color-text-accent)]"} type={"button"} aria-pressed={"true"}>
+{"My runs"}
+</button>
+<button className={"text-style-12-head-med rounded-[var(--radius-rounded)] px-2.5 py-0.5 transition-colors duration-200 text-[var(--color-text-secondary)] hover:text-[var(--color-text-default)]"} type={"button"} aria-pressed={"false"}>
+{"Org"}
+</button>
+</div>
+</div>
+<div className={"overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-stroke-default)]"}>
+<div className={"text-style-12-head-med grid gap-4 border-b border-[var(--color-stroke-default)] px-4 py-2.5 text-[var(--color-text-tertiary)] grid-cols-[minmax(0,1fr)_auto] sm:grid-cols-[minmax(0,1fr)_7rem_6rem]"}>
+<span >
+{"Name"}
+</span>
+<span >
+{"Status"}
+</span>
+<span className={"hidden sm:block"}>
+{"Last updated"}
+</span>
+</div>
+<button className={"grid w-full items-center gap-4 px-4 py-3 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)] grid-cols-[minmax(0,1fr)_auto] sm:grid-cols-[minmax(0,1fr)_7rem_6rem] relative "} type={"button"}>
+<span className={"pointer-events-none absolute z-10 flex size-2.5 right-4 top-1/2 -translate-y-1/2"} aria-hidden={"true"}>
+<span className={"absolute inline-flex size-full animate-ping rounded-[var(--radius-rounded)] bg-[var(--color-stroke-accent-alt)] opacity-60 motion-reduce:hidden"} />
+<span className={"relative inline-flex size-2.5 rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] ring-2 ring-[var(--color-bg-card)]"} />
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)] truncate"}>
+{"Request an event liability quote for the June wedding"}
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] truncate text-[var(--color-text-tertiary)]"}>
+{"form-filling-agent · 2fa860ad"}
+</span>
+</span>
+<span >
+<span className={"text-style-12-head-med inline-flex items-center gap-1 whitespace-nowrap rounded-[var(--radius-rounded)] border px-2 py-0.5 border-[var(--color-stroke-accent)] bg-[var(--color-bg-purple-alt)] text-[var(--color-text-accent)]"}>
+<span className={"size-1.5 animate-pulse rounded-[var(--radius-rounded)] bg-current motion-reduce:animate-none"} />
+{"Running"}
+</span>
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)] hidden sm:block"}>
+{"Just now"}
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div className={"flex flex-col items-center gap-2"}>
+<div className={"flex max-w-full overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)]"}>
+<div className={"relative flex min-w-0 gap-1 overflow-x-auto [scrollbar-width:none] motion-safe:scroll-smooth p-0.5  "} role={"tablist"} aria-label={"Console demo"}>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] bg-white text-[var(--color-grey-900)] shadow-[0_1px_3px_rgba(0,0,0,0.08)]"} type={"button"} role={"tab"} aria-selected={"true"} data-swap={0}>
+{"Agent overview"}
+</button>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={1}>
+{"Watch a session"}
+</button>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={2}>
+{"Create an agent"}
+</button>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={3}>
+{"Run it with subagents"}
+</button>
+</div>
+</div>
+<p className={"text-style-12-body-reg text-[var(--color-text-tertiary)] text-center"}>
+{"Click Start session, a session or the sidebar to explore."}
+</p>
+</div>
+</div>
+</div>
+</Fade>
+</div>
+</section>
+</div>,
+<div key="1">
+<section className={"bg-[var(--color-bg-primary)] pb-6 pt-0 sm:pb-8 sm:-mt-4"}>
+<div className={"mx-auto w-full max-w-6xl px-6"}>
+<Fade >
+<div className={"w-full rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)] p-3 sm:p-4 "} data-keep-light={"true"}>
+<div className={"flex flex-col gap-3 sm:gap-4"}>
+<div className={"flex h-[520px] flex-col overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] sm:h-[600px]"}>
+<div className={"flex h-10 shrink-0 items-center gap-3 border-b border-[var(--color-stroke-default)] px-4"}>
+<span className={"flex gap-1.5"} aria-hidden={"true"}>
+<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#ff5f57]"} />
+<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#febc2e]"} />
+<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#28c840]"} />
+</span>
+<span className={"text-style-12-body-reg flex min-w-0 items-center gap-1.5 text-[var(--color-text-tertiary)]"}>
+<span className={"text-style-11-label-bold flex size-4 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)]"}>
+{"Twinlink"}
+</span>
+<span className={"hidden items-center gap-1 sm:flex"}>
+{"Twinlink"}
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3 6 5 5 5-5"} />
+</svg>
+</span>
+<span className={"hidden sm:inline"}>
+{"/"}
+</span>
+<span className={"hidden items-center gap-1 sm:flex"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
+</svg>
+{"Default"}
+</span>
+<span className={"flex min-w-0 items-center gap-1.5"}>
+<span className={"hidden sm:inline"}>
+{"/"}
+</span>
+<span className={"truncate"}>
+{"Sessions"}
+</span>
+</span>
+<span className={"flex min-w-0 items-center gap-1.5"}>
+<span >
+{"/"}
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] truncate text-[var(--color-title-default)]"}>
+{"2fa860ad"}
+</span>
+</span>
+</span>
+</div>
+<div className={"flex min-h-0 flex-1"}>
+<nav className={"hidden w-48 shrink-0 flex-col gap-0.5 overflow-y-auto border-r border-[var(--color-stroke-default)] p-3 [scrollbar-width:none] md:flex"} aria-label={"Console"}>
+<div className={"flex flex-col gap-0.5"}>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
+<rect x={"9.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
+<rect x={"2.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
+<rect x={"9.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
+</svg>
+</span>
+{"Home"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
+</svg>
+</span>
+{"Projects"}
+</span>
+</div>
+<div className={"flex flex-col gap-0.5"}>
+<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
+{"Build"}
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3 6 5 5 5-5"} />
+</svg>
+</span>
+<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left text-[var(--color-text-secondary)] transition-colors duration-200 hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-default)]"} type={"button"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"5.5"} cy={"5.5"} r={"2"} />
+<circle cx={"10.5"} cy={"5.5"} r={"2"} />
+<path d={"M2 13c0-2 1.5-3.5 3.5-3.5S9 11 9 13M7 13c0-2 1.5-3.5 3.5-3.5S14 11 14 13"} />
+</svg>
+</span>
+{"Agents"}
+</button>
+<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left bg-[var(--color-bg-selected)] text-[var(--color-title-default)]"} type={"button"} aria-current={"page"}>
+<span className={"text-[var(--color-icon-accent)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M2.5 3.5h11v8h-7l-3 2.5v-2.5h-1z"} />
+<path d={"M5.5 6.5h5M5.5 8.5h3"} />
+</svg>
+</span>
+{"Sessions"}
+<span className={"pointer-events-none absolute z-10 flex size-2.5 right-2.5 top-1/2 -translate-y-1/2"} aria-hidden={"true"}>
+<span className={"absolute inline-flex size-full animate-ping rounded-[var(--radius-rounded)] bg-[var(--color-stroke-accent-alt)] opacity-60 motion-reduce:hidden"} />
+<span className={"relative inline-flex size-2.5 rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] ring-2 ring-[var(--color-bg-card)]"} />
+</span>
+</button>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z"} />
+</svg>
+</span>
+{"Skills"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"8"} rx={"1"} />
+<path d={"M6 13.5h4M8 11v2.5"} />
+</svg>
+</span>
+{"Environments"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
+<path d={"M2 6h12"} />
+</svg>
+</span>
+{"Browser profiles"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"3"} y={"7"} width={"10"} height={"7"} rx={"1"} />
+<path d={"M5.5 7V5a2.5 2.5 0 0 1 5 0v2"} />
+</svg>
+</span>
+{"Vaults"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"8"} cy={"8"} r={"5.5"} />
+<path d={"M8 5v3l2 1.5"} />
+</svg>
+</span>
+{"Schedules"}
+</span>
+</div>
+<div className={"flex flex-col gap-0.5"}>
+<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
+{"Configure"}
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3 6 5 5 5-5"} />
+</svg>
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"8"} cy={"6"} r={"1.75"} />
+<circle cx={"3.75"} cy={"4.5"} r={"1.25"} />
+<circle cx={"12.25"} cy={"4.5"} r={"1.25"} />
+<path d={"M5 12.5c0-1.75 1.25-3 3-3s3 1.25 3 3M1.75 10c.25-1.25 1-2 2-2M14.25 10c-.25-1.25-1-2-2-2"} />
+</svg>
+</span>
+{"Organisation"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"10"} cy={"6"} r={"3.5"} />
+<path d={"M7.5 8.5 2.5 13.5M4 12l1.5 1.5M5.5 10.5 7 12"} />
+</svg>
+</span>
+{"API keys"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M6.5 5.5a2 2 0 1 1 3 1.75L8 10M5 9.5a2 2 0 1 0 2 3h4M11 13a2 2 0 1 0-1.25-3.5L8 6.5"} />
+</svg>
+</span>
+{"Webhooks"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3.5"} width={"12"} height={"9"} rx={"1"} />
+<path d={"M2 6.5h12M4.5 10h2"} />
+</svg>
+</span>
+{"Billing & subscription"}
+</span>
+</div>
+<div className={"mt-auto flex shrink-0 flex-col gap-2 pt-3 opacity-50"}>
+<div className={"flex flex-col gap-2 rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] p-2.5"}>
+<span className={"flex items-center justify-between"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Free plan"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
+{"0%"}
+</span>
+{" used"}
+</span>
+</span>
+<span className={"h-1 rounded-[var(--radius-rounded)] bg-[var(--color-bg-secondary)]"} />
+<span className={"flex items-center justify-between"}>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)] flex items-center gap-1"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M3 3v3h3"} />
+<path d={"M3.5 6A5 5 0 1 1 3 9"} />
+</svg>
+{"2 days"}
+</span>
+<span className={"text-style-12-head-med flex items-center gap-1 rounded-[var(--radius-small)] bg-[var(--color-bg-accent-alt)] px-2 py-1 text-[var(--color-text-default-alt)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M9.5 2.5c2.5 0 4 1.5 4 4L8.5 11.5l-4-4z"} />
+<path d={"M4.5 7.5 2.5 7l2-2.5h3M8.5 11.5l.5 2 2.5-2v-3M3 13c0-1 .5-2 1.5-2.25"} />
+</svg>
+{"Upgrade"}
+</span>
+</span>
+</div>
+<span className={"flex items-center justify-between px-1"}>
+<span className={"text-style-12-head-med flex size-6 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)]"}>
+{"A"}
+</span>
+<span className={"text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
+<path d={"M6 3v10"} />
+</svg>
+</span>
+</span>
+</div>
+</nav>
+<div className={"relative min-w-0 flex-1 overflow-y-auto"}>
+<div className={"h-full"} style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<div className={"flex h-full min-h-0 flex-col"}>
+<div className={"flex shrink-0 flex-col gap-2 border-b border-[var(--color-stroke-default)] px-4 py-3 sm:flex-row sm:items-center sm:gap-3 sm:px-5"}>
+<div className={"flex min-w-0 flex-1 items-center gap-2"}>
+<button className={"text-style-12-body-reg flex shrink-0 items-center gap-1 rounded-[var(--radius-small)] text-[var(--color-text-tertiary)] hover:text-[var(--color-text-default)]"} type={"button"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M10 3 5 8l5 5"} />
+</svg>
+{"Sessions"}
+</button>
+<span className={"text-[var(--color-text-disabled)]"}>
+{"/"}
+</span>
+<span className={"text-style-14-head-med text-[var(--color-text-default)] truncate"}>
+{"Request an event liability quote for the June wedding"}
+</span>
+</div>
+<div className={"flex shrink-0 items-center gap-2"}>
+<button className={"group"} type={"button"}>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors group-hover:bg-[var(--color-bg-hover)]"}>
+{"form-filling-agent"}
+</span>
+</button>
+<span className={"text-style-12-head-med inline-flex items-center gap-1 whitespace-nowrap rounded-[var(--radius-rounded)] border px-2 py-0.5 border-[var(--color-stroke-success)] bg-[var(--color-bg-success-alt)] text-[var(--color-text-success)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3.5 8.5 3 3 6-7"} />
+</svg>
+{"Completed"}
+</span>
+</div>
+</div>
+<div className={"grid min-h-0 flex-1 grid-rows-[minmax(0,1fr)_minmax(0,1fr)] sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] sm:grid-rows-1"}>
+<ol className={"order-2 flex min-h-0 flex-col gap-0.5 overflow-y-auto border-t border-[var(--color-stroke-default)] p-2 [scrollbar-width:thin] sm:order-1 sm:border-r sm:border-t-0 sm:p-3"} aria-label={"Session trace"}>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"8"} cy={"5.5"} r={"2.5"} />
+<path d={"M3 13.5c0-2.5 2-4.5 5-4.5s5 2 5 4.5"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Request an event liability quote for the June wedding"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"Details attached: venue-booking.pdf"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"01"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"8"} cy={"8"} r={"5.5"} />
+<path d={"M2.5 8h11M8 2.5c1.5 1.5 2.25 3.5 2.25 5.5S9.5 12 8 13.5C6.5 12 5.75 10 5.75 8S6.5 4 8 2.5"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Open yourinsurer.com"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"02"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M3.5 2.5 12 7l-3.75 1.25L7 12z"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Click “Get a quote”"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"03"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"1.5"} y={"4"} width={"13"} height={"8"} rx={"1"} />
+<path d={"M4 6.5h.01M6.5 6.5h.01M9 6.5h.01M11.5 6.5h.01M5 9.5h6"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Fill “Full name”"}
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
+{"Claire Martin"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"04"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"1.5"} y={"4"} width={"13"} height={"8"} rx={"1"} />
+<path d={"M4 6.5h.01M6.5 6.5h.01M9 6.5h.01M11.5 6.5h.01M5 9.5h6"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Fill “Email”"}
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
+{"claire.martin@mail.com"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"05"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M3.5 2.5 12 7l-3.75 1.25L7 12z"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Select “Coverage”"}
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
+{"Event liability"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"06"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"1.5"} y={"4"} width={"13"} height={"8"} rx={"1"} />
+<path d={"M4 6.5h.01M6.5 6.5h.01M9 6.5h.01M11.5 6.5h.01M5 9.5h6"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Fill “Event date”"}
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
+{"14/06/2027"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"07"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-warning)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M3.5 14V2.5M3.5 3h8l-2 3 2 3h-8"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Guest count is missing"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"Not in the booking. Flagged instead of guessed."}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"08"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M3.5 2.5 12 7l-3.75 1.25L7 12z"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Click “Submit request”"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"09"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 bg-[var(--color-bg-selected)]"} type={"button"} aria-current={"step"}>
+<span className={"mt-0.5 text-[var(--color-icon-success)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3.5 8.5 3 3 6-7"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Quote request sent, reference Q-48213"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"Guest count still needed: the insurer will ask for it."}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"10"}
+</span>
+</button>
+</li>
+</ol>
+<div className={"order-1 flex min-h-0 flex-col gap-2 bg-[var(--color-bg-secondary)] p-2 sm:order-2 sm:gap-3 sm:p-4"}>
+<div className={"flex min-h-0 flex-1 flex-col overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)]"}>
+<div className={"flex h-8 shrink-0 items-center gap-2 border-b border-[var(--color-stroke-default)] px-3"}>
+<span className={"flex gap-1"} aria-hidden={"true"}>
+<span className={"size-2 rounded-[var(--radius-rounded)] bg-[var(--color-stroke-secondary)]"} />
+<span className={"size-2 rounded-[var(--radius-rounded)] bg-[var(--color-stroke-secondary)]"} />
+<span className={"size-2 rounded-[var(--radius-rounded)] bg-[var(--color-stroke-secondary)]"} />
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] min-w-0 flex-1 truncate rounded-[var(--radius-small)] bg-[var(--color-bg-secondary)] px-2 py-0.5 text-[var(--color-text-tertiary)]"}>
+{"yourinsurer.com/quote/sent"}
+</span>
+</div>
+<div className={"relative min-h-0 flex-1 overflow-hidden"}>
+<div className={"absolute inset-0"} style={{"opacity": "1"} as React.CSSProperties}>
+<div className={"flex h-full flex-col items-center justify-center gap-2 p-6 text-center"}>
+<span className={"flex size-9 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-success-alt)] text-[var(--color-icon-success)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3.5 8.5 3 3 6-7"} />
+</svg>
+</span>
+<span className={"text-style-14-head-med text-[var(--color-text-default)]"}>
+{"Request received"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"Reference "}
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
+{"Q-48213"}
+</span>
+</span>
+</div>
+</div>
+<div className={"pointer-events-none absolute left-0 top-0 z-10"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
+<Image className={"drop-shadow-[0_2px_6px_rgba(0,0,0,0.25)]"} src="/hc/agent-cursor.svg" alt="" width={43} height={37} unoptimized style={{"color": "transparent"} as React.CSSProperties} />
+</div>
+</div>
+</div>
+<div className={"flex shrink-0 items-center gap-3 px-1"}>
+<button className={"flex size-7 shrink-0 items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-bg-card)] text-[var(--color-icon-default)] shadow-elevation-1 hover:bg-[var(--color-bg-hover)]"} type={"button"} aria-label={"Replay from start"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M3 3v3h3"} />
+<path d={"M3.5 6A5 5 0 1 1 3 9"} />
+</svg>
+</button>
+<fieldset className={"m-0 flex min-w-0 flex-1 items-center gap-1 border-0 p-0"}>
+<legend className={"sr-only"}>
+{"Timeline"}
+</legend>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 1"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 2"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 3"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 4"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 5"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 6"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 7"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 8"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 9"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 10"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+</fieldset>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] shrink-0 text-[var(--color-text-tertiary)]"}>
+{"10/10"}
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div className={"flex flex-col items-center gap-2"}>
+<div className={"flex max-w-full overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)]"}>
+<div className={"relative flex min-w-0 gap-1 overflow-x-auto [scrollbar-width:none] motion-safe:scroll-smooth p-0.5  "} role={"tablist"} aria-label={"Console demo"}>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={0}>
+{"Agent overview"}
+</button>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] bg-white text-[var(--color-grey-900)] shadow-[0_1px_3px_rgba(0,0,0,0.08)]"} type={"button"} role={"tab"} aria-selected={"true"} data-swap={1}>
+{"Watch a session"}
+</button>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={2}>
+{"Create an agent"}
+</button>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={3}>
+{"Run it with subagents"}
+</button>
+</div>
+</div>
+<p className={"text-style-12-body-reg text-[var(--color-text-tertiary)] text-center"}>
+{"Click Start session, a session or the sidebar to explore."}
+</p>
+</div>
+</div>
+</div>
+</Fade>
+</div>
+</section>
+</div>,
+<div key="2">
+<section className={"bg-[var(--color-bg-primary)] pb-6 pt-0 sm:pb-8 sm:-mt-4"}>
+<div className={"mx-auto w-full max-w-6xl px-6"}>
+<Fade >
+<div className={"w-full rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)] p-3 sm:p-4 "} data-keep-light={"true"}>
+<div className={"flex flex-col gap-3 sm:gap-4"}>
+<div className={"flex h-[520px] flex-col overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] sm:h-[600px]"}>
+<div className={"flex h-10 shrink-0 items-center gap-3 border-b border-[var(--color-stroke-default)] px-4"}>
+<span className={"flex gap-1.5"} aria-hidden={"true"}>
+<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#ff5f57]"} />
+<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#febc2e]"} />
+<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#28c840]"} />
+</span>
+<span className={"text-style-12-body-reg flex min-w-0 items-center gap-1.5 text-[var(--color-text-tertiary)]"}>
+<span className={"text-style-11-label-bold flex size-4 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)]"}>
+{"Twinlink"}
+</span>
+<span className={"hidden items-center gap-1 sm:flex"}>
+{"Twinlink"}
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3 6 5 5 5-5"} />
+</svg>
+</span>
+<span className={"hidden sm:inline"}>
+{"/"}
+</span>
+<span className={"hidden items-center gap-1 sm:flex"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
+</svg>
+{"Default"}
+</span>
+<span className={"flex min-w-0 items-center gap-1.5"}>
+<span className={"hidden sm:inline"}>
+{"/"}
+</span>
+<span className={"truncate"}>
+{"Agents"}
+</span>
+</span>
+<span className={"flex min-w-0 items-center gap-1.5"}>
+<span >
+{"/"}
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] truncate text-[var(--color-title-default)]"}>
+{"New agent"}
+</span>
+</span>
+</span>
+</div>
+<div className={"flex min-h-0 flex-1"}>
+<nav className={"hidden w-48 shrink-0 flex-col gap-0.5 overflow-y-auto border-r border-[var(--color-stroke-default)] p-3 [scrollbar-width:none] md:flex"} aria-label={"Console"}>
+<div className={"flex flex-col gap-0.5"}>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
+<rect x={"9.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
+<rect x={"2.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
+<rect x={"9.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
+</svg>
+</span>
+{"Home"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
+</svg>
+</span>
+{"Projects"}
+</span>
+</div>
+<div className={"flex flex-col gap-0.5"}>
+<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
+{"Build"}
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3 6 5 5 5-5"} />
+</svg>
+</span>
+<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left bg-[var(--color-bg-selected)] text-[var(--color-title-default)]"} type={"button"} aria-current={"page"}>
+<span className={"text-[var(--color-icon-accent)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"5.5"} cy={"5.5"} r={"2"} />
+<circle cx={"10.5"} cy={"5.5"} r={"2"} />
+<path d={"M2 13c0-2 1.5-3.5 3.5-3.5S9 11 9 13M7 13c0-2 1.5-3.5 3.5-3.5S14 11 14 13"} />
+</svg>
+</span>
+{"Agents"}
+</button>
+<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left text-[var(--color-text-secondary)] transition-colors duration-200 hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-default)]"} type={"button"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M2.5 3.5h11v8h-7l-3 2.5v-2.5h-1z"} />
+<path d={"M5.5 6.5h5M5.5 8.5h3"} />
+</svg>
+</span>
+{"Sessions"}
+<span className={"pointer-events-none absolute z-10 flex size-2.5 right-2.5 top-1/2 -translate-y-1/2"} aria-hidden={"true"}>
+<span className={"absolute inline-flex size-full animate-ping rounded-[var(--radius-rounded)] bg-[var(--color-stroke-accent-alt)] opacity-60 motion-reduce:hidden"} />
+<span className={"relative inline-flex size-2.5 rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] ring-2 ring-[var(--color-bg-card)]"} />
+</span>
+</button>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z"} />
+</svg>
+</span>
+{"Skills"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"8"} rx={"1"} />
+<path d={"M6 13.5h4M8 11v2.5"} />
+</svg>
+</span>
+{"Environments"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
+<path d={"M2 6h12"} />
+</svg>
+</span>
+{"Browser profiles"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"3"} y={"7"} width={"10"} height={"7"} rx={"1"} />
+<path d={"M5.5 7V5a2.5 2.5 0 0 1 5 0v2"} />
+</svg>
+</span>
+{"Vaults"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"8"} cy={"8"} r={"5.5"} />
+<path d={"M8 5v3l2 1.5"} />
+</svg>
+</span>
+{"Schedules"}
+</span>
+</div>
+<div className={"flex flex-col gap-0.5"}>
+<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
+{"Configure"}
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3 6 5 5 5-5"} />
+</svg>
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"8"} cy={"6"} r={"1.75"} />
+<circle cx={"3.75"} cy={"4.5"} r={"1.25"} />
+<circle cx={"12.25"} cy={"4.5"} r={"1.25"} />
+<path d={"M5 12.5c0-1.75 1.25-3 3-3s3 1.25 3 3M1.75 10c.25-1.25 1-2 2-2M14.25 10c-.25-1.25-1-2-2-2"} />
+</svg>
+</span>
+{"Organisation"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"10"} cy={"6"} r={"3.5"} />
+<path d={"M7.5 8.5 2.5 13.5M4 12l1.5 1.5M5.5 10.5 7 12"} />
+</svg>
+</span>
+{"API keys"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M6.5 5.5a2 2 0 1 1 3 1.75L8 10M5 9.5a2 2 0 1 0 2 3h4M11 13a2 2 0 1 0-1.25-3.5L8 6.5"} />
+</svg>
+</span>
+{"Webhooks"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3.5"} width={"12"} height={"9"} rx={"1"} />
+<path d={"M2 6.5h12M4.5 10h2"} />
+</svg>
+</span>
+{"Billing & subscription"}
+</span>
+</div>
+<div className={"mt-auto flex shrink-0 flex-col gap-2 pt-3 opacity-50"}>
+<div className={"flex flex-col gap-2 rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] p-2.5"}>
+<span className={"flex items-center justify-between"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Free plan"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
+{"0%"}
+</span>
+{" used"}
+</span>
+</span>
+<span className={"h-1 rounded-[var(--radius-rounded)] bg-[var(--color-bg-secondary)]"} />
+<span className={"flex items-center justify-between"}>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)] flex items-center gap-1"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M3 3v3h3"} />
+<path d={"M3.5 6A5 5 0 1 1 3 9"} />
+</svg>
+{"2 days"}
+</span>
+<span className={"text-style-12-head-med flex items-center gap-1 rounded-[var(--radius-small)] bg-[var(--color-bg-accent-alt)] px-2 py-1 text-[var(--color-text-default-alt)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M9.5 2.5c2.5 0 4 1.5 4 4L8.5 11.5l-4-4z"} />
+<path d={"M4.5 7.5 2.5 7l2-2.5h3M8.5 11.5l.5 2 2.5-2v-3M3 13c0-1 .5-2 1.5-2.25"} />
+</svg>
+{"Upgrade"}
+</span>
+</span>
+</div>
+<span className={"flex items-center justify-between px-1"}>
+<span className={"text-style-12-head-med flex size-6 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)]"}>
+{"A"}
+</span>
+<span className={"text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
+<path d={"M6 3v10"} />
+</svg>
+</span>
+</span>
+</div>
+</nav>
+<div className={"relative min-w-0 flex-1 overflow-y-auto"}>
+<div className={"h-full"} style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<div className={"flex h-full min-h-0 flex-col"}>
+<div className={"flex shrink-0 flex-col gap-3 border-b border-[var(--color-stroke-default)] px-4 py-3 sm:px-5"}>
+<div className={"flex items-center gap-2"}>
+<button className={"text-style-12-body-reg flex items-center gap-1 rounded-[var(--radius-small)] text-[var(--color-text-tertiary)] hover:text-[var(--color-text-default)]"} type={"button"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M10 3 5 8l5 5"} />
+</svg>
+{"Agents"}
+</button>
+<span className={"text-[var(--color-text-disabled)]"}>
+{"/"}
+</span>
+<span className={"text-style-14-head-med text-[var(--color-text-default)]"}>
+{"New agent"}
+</span>
+</div>
+<ol className={"flex items-center gap-1 overflow-x-auto [scrollbar-width:none]"}>
+<li className={"flex shrink-0 items-center gap-1"}>
+<button className={"flex items-center gap-1.5 rounded-[var(--radius-medium)] py-0.5 pr-1 disabled:cursor-default"} type={"button"} aria-current={"step"}>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] flex size-5 items-center justify-center rounded-[var(--radius-rounded)] border transition-colors border-transparent bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)]"}>
+{"1"}
+</span>
+<span className={"text-style-12-head-med whitespace-nowrap text-[var(--color-title-default)]"}>
+{"Details"}
+</span>
+</button>
+<span className={"h-0.5 w-4 rounded-[var(--radius-rounded)] sm:w-6 bg-[var(--color-stroke-default)]"} aria-hidden={"true"} />
+</li>
+<li className={"flex shrink-0 items-center gap-1"}>
+<button className={"flex items-center gap-1.5 rounded-[var(--radius-medium)] py-0.5 pr-1 disabled:cursor-default"} type={"button"} disabled>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] flex size-5 items-center justify-center rounded-[var(--radius-rounded)] border transition-colors border-[var(--color-stroke-default)] text-[var(--color-text-tertiary)]"}>
+{"2"}
+</span>
+<span className={"text-style-12-head-med whitespace-nowrap text-[var(--color-text-tertiary)]"}>
+{"Config"}
+</span>
+</button>
+<span className={"h-0.5 w-4 rounded-[var(--radius-rounded)] sm:w-6 bg-[var(--color-stroke-default)]"} aria-hidden={"true"} />
+</li>
+<li className={"flex shrink-0 items-center gap-1"}>
+<button className={"flex items-center gap-1.5 rounded-[var(--radius-medium)] py-0.5 pr-1 disabled:cursor-default"} type={"button"} disabled>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] flex size-5 items-center justify-center rounded-[var(--radius-rounded)] border transition-colors border-[var(--color-stroke-default)] text-[var(--color-text-tertiary)]"}>
+{"3"}
+</span>
+<span className={"text-style-12-head-med whitespace-nowrap text-[var(--color-text-tertiary)]"}>
+{"Instructions"}
+</span>
+</button>
+<span className={"h-0.5 w-4 rounded-[var(--radius-rounded)] sm:w-6 bg-[var(--color-stroke-default)]"} aria-hidden={"true"} />
+</li>
+<li className={"flex shrink-0 items-center gap-1"}>
+<button className={"flex items-center gap-1.5 rounded-[var(--radius-medium)] py-0.5 pr-1 disabled:cursor-default"} type={"button"} disabled>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] flex size-5 items-center justify-center rounded-[var(--radius-rounded)] border transition-colors border-[var(--color-stroke-default)] text-[var(--color-text-tertiary)]"}>
+{"4"}
+</span>
+<span className={"text-style-12-head-med whitespace-nowrap text-[var(--color-text-tertiary)]"}>
+{"Skills"}
+</span>
+</button>
+<span className={"h-0.5 w-4 rounded-[var(--radius-rounded)] sm:w-6 bg-[var(--color-stroke-default)]"} aria-hidden={"true"} />
+</li>
+<li className={"flex shrink-0 items-center gap-1"}>
+<button className={"flex items-center gap-1.5 rounded-[var(--radius-medium)] py-0.5 pr-1 disabled:cursor-default"} type={"button"} disabled>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] flex size-5 items-center justify-center rounded-[var(--radius-rounded)] border transition-colors border-[var(--color-stroke-default)] text-[var(--color-text-tertiary)]"}>
+{"5"}
+</span>
+<span className={"text-style-12-head-med whitespace-nowrap text-[var(--color-text-tertiary)]"}>
+{"Subagents"}
+</span>
+</button>
+</li>
+</ol>
+</div>
+<div className={"grid min-h-0 flex-1 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]"}>
+<div className={"flex min-h-0 flex-col"}>
+<div className={"relative min-h-0 flex-1 overflow-y-auto p-4 sm:p-5"}>
+<div className={"flex flex-col gap-4"} style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<div className={"flex flex-col gap-1.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Name"}
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-2.5 text-[var(--color-text-default)] flex h-8 items-center"}>
+{"supplier-research-agent"}
+</span>
+</div>
+<div className={"flex flex-col gap-1.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Description"}
+</span>
+<span className={"text-style-12-body-reg rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-2.5 text-[var(--color-text-default)] min-h-14 py-2"}>
+{"Compares unit prices across supplier portals."}
+</span>
+</div>
+</div>
+</div>
+<div className={"flex shrink-0 justify-end gap-2 border-t border-[var(--color-stroke-default)] px-4 py-3 sm:px-5"}>
+<button className={"text-style-12-head-med inline-flex h-8 shrink-0 items-center gap-1.5 rounded-[var(--radius-medium)] px-3 transition-[background-color,opacity] duration-200 disabled:opacity-40 bg-[var(--color-bg-button-secondary-default)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-button-secondary-hover)]"} type={"button"} disabled>
+{"Back"}
+</button>
+<button className={"text-style-12-head-med inline-flex h-8 shrink-0 items-center gap-1.5 rounded-[var(--radius-medium)] px-3 transition-[background-color,opacity] duration-200 disabled:opacity-40 bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:opacity-90"} type={"button"}>
+{"Next"}
+</button>
+</div>
+</div>
+<div className={"hidden min-h-0 flex-col gap-2 overflow-y-auto border-l border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)] p-4 md:flex"}>
+<span className={"text-style-12-head-med text-[var(--color-text-tertiary)]"}>
+{"Spec preview"}
+</span>
+<pre className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] whitespace-pre-wrap break-words text-[var(--color-text-default)]"}>
+<span className={"block"} style={{"opacity": "1"} as React.CSSProperties}>
+<span className={"text-[var(--color-text-accent)]"}>
+{"name"}
+</span>
+{": supplier-research-agent"}
+</span>
+<span className={"block"} style={{"opacity": "1"} as React.CSSProperties}>
+<span className={"text-[var(--color-text-accent)]"}>
+{"description"}
+</span>
+{": Compares unit prices across supplier portals."}
+</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div className={"flex flex-col items-center gap-2"}>
+<div className={"flex max-w-full overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)]"}>
+<div className={"relative flex min-w-0 gap-1 overflow-x-auto [scrollbar-width:none] motion-safe:scroll-smooth p-0.5  "} role={"tablist"} aria-label={"Console demo"}>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={0}>
+{"Agent overview"}
+</button>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={1}>
+{"Watch a session"}
+</button>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] bg-white text-[var(--color-grey-900)] shadow-[0_1px_3px_rgba(0,0,0,0.08)]"} type={"button"} role={"tab"} aria-selected={"true"} data-swap={2}>
+{"Create an agent"}
+</button>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={3}>
+{"Run it with subagents"}
+</button>
+</div>
+</div>
+<p className={"text-style-12-body-reg text-[var(--color-text-tertiary)] text-center"}>
+{"Click Start session, a session or the sidebar to explore."}
+</p>
+</div>
+</div>
+</div>
+</Fade>
+</div>
+</section>
+</div>,
+<div key="3">
+<section className={"bg-[var(--color-bg-primary)] pb-6 pt-0 sm:pb-8 sm:-mt-4"}>
+<div className={"mx-auto w-full max-w-6xl px-6"}>
+<Fade >
+<div className={"w-full rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)] p-3 sm:p-4 "} data-keep-light={"true"}>
+<div className={"flex flex-col gap-3 sm:gap-4"}>
+<div className={"flex h-[520px] flex-col overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] sm:h-[600px]"}>
+<div className={"flex h-10 shrink-0 items-center gap-3 border-b border-[var(--color-stroke-default)] px-4"}>
+<span className={"flex gap-1.5"} aria-hidden={"true"}>
+<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#ff5f57]"} />
+<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#febc2e]"} />
+<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#28c840]"} />
+</span>
+<span className={"text-style-12-body-reg flex min-w-0 items-center gap-1.5 text-[var(--color-text-tertiary)]"}>
+<span className={"text-style-11-label-bold flex size-4 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)]"}>
+{"Twinlink"}
+</span>
+<span className={"hidden items-center gap-1 sm:flex"}>
+{"Twinlink"}
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3 6 5 5 5-5"} />
+</svg>
+</span>
+<span className={"hidden sm:inline"}>
+{"/"}
+</span>
+<span className={"hidden items-center gap-1 sm:flex"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
+</svg>
+{"Default"}
+</span>
+<span className={"flex min-w-0 items-center gap-1.5"}>
+<span className={"hidden sm:inline"}>
+{"/"}
+</span>
+<span className={"truncate"}>
+{"Sessions"}
+</span>
+</span>
+<span className={"flex min-w-0 items-center gap-1.5"}>
+<span >
+{"/"}
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] truncate text-[var(--color-title-default)]"}>
+{"8c3290f8"}
+</span>
+</span>
+</span>
+</div>
+<div className={"flex min-h-0 flex-1"}>
+<nav className={"hidden w-48 shrink-0 flex-col gap-0.5 overflow-y-auto border-r border-[var(--color-stroke-default)] p-3 [scrollbar-width:none] md:flex"} aria-label={"Console"}>
+<div className={"flex flex-col gap-0.5"}>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
+<rect x={"9.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
+<rect x={"2.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
+<rect x={"9.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
+</svg>
+</span>
+{"Home"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
+</svg>
+</span>
+{"Projects"}
+</span>
+</div>
+<div className={"flex flex-col gap-0.5"}>
+<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
+{"Build"}
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3 6 5 5 5-5"} />
+</svg>
+</span>
+<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left text-[var(--color-text-secondary)] transition-colors duration-200 hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-default)]"} type={"button"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"5.5"} cy={"5.5"} r={"2"} />
+<circle cx={"10.5"} cy={"5.5"} r={"2"} />
+<path d={"M2 13c0-2 1.5-3.5 3.5-3.5S9 11 9 13M7 13c0-2 1.5-3.5 3.5-3.5S14 11 14 13"} />
+</svg>
+</span>
+{"Agents"}
+</button>
+<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left bg-[var(--color-bg-selected)] text-[var(--color-title-default)]"} type={"button"} aria-current={"page"}>
+<span className={"text-[var(--color-icon-accent)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M2.5 3.5h11v8h-7l-3 2.5v-2.5h-1z"} />
+<path d={"M5.5 6.5h5M5.5 8.5h3"} />
+</svg>
+</span>
+{"Sessions"}
+<span className={"pointer-events-none absolute z-10 flex size-2.5 right-2.5 top-1/2 -translate-y-1/2"} aria-hidden={"true"}>
+<span className={"absolute inline-flex size-full animate-ping rounded-[var(--radius-rounded)] bg-[var(--color-stroke-accent-alt)] opacity-60 motion-reduce:hidden"} />
+<span className={"relative inline-flex size-2.5 rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] ring-2 ring-[var(--color-bg-card)]"} />
+</span>
+</button>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z"} />
+</svg>
+</span>
+{"Skills"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"8"} rx={"1"} />
+<path d={"M6 13.5h4M8 11v2.5"} />
+</svg>
+</span>
+{"Environments"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
+<path d={"M2 6h12"} />
+</svg>
+</span>
+{"Browser profiles"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"3"} y={"7"} width={"10"} height={"7"} rx={"1"} />
+<path d={"M5.5 7V5a2.5 2.5 0 0 1 5 0v2"} />
+</svg>
+</span>
+{"Vaults"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"8"} cy={"8"} r={"5.5"} />
+<path d={"M8 5v3l2 1.5"} />
+</svg>
+</span>
+{"Schedules"}
+</span>
+</div>
+<div className={"flex flex-col gap-0.5"}>
+<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
+{"Configure"}
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3 6 5 5 5-5"} />
+</svg>
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"8"} cy={"6"} r={"1.75"} />
+<circle cx={"3.75"} cy={"4.5"} r={"1.25"} />
+<circle cx={"12.25"} cy={"4.5"} r={"1.25"} />
+<path d={"M5 12.5c0-1.75 1.25-3 3-3s3 1.25 3 3M1.75 10c.25-1.25 1-2 2-2M14.25 10c-.25-1.25-1-2-2-2"} />
+</svg>
+</span>
+{"Organisation"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"10"} cy={"6"} r={"3.5"} />
+<path d={"M7.5 8.5 2.5 13.5M4 12l1.5 1.5M5.5 10.5 7 12"} />
+</svg>
+</span>
+{"API keys"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M6.5 5.5a2 2 0 1 1 3 1.75L8 10M5 9.5a2 2 0 1 0 2 3h4M11 13a2 2 0 1 0-1.25-3.5L8 6.5"} />
+</svg>
+</span>
+{"Webhooks"}
+</span>
+<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
+<span >
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3.5"} width={"12"} height={"9"} rx={"1"} />
+<path d={"M2 6.5h12M4.5 10h2"} />
+</svg>
+</span>
+{"Billing & subscription"}
+</span>
+</div>
+<div className={"mt-auto flex shrink-0 flex-col gap-2 pt-3 opacity-50"}>
+<div className={"flex flex-col gap-2 rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] p-2.5"}>
+<span className={"flex items-center justify-between"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Free plan"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
+{"0%"}
+</span>
+{" used"}
+</span>
+</span>
+<span className={"h-1 rounded-[var(--radius-rounded)] bg-[var(--color-bg-secondary)]"} />
+<span className={"flex items-center justify-between"}>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)] flex items-center gap-1"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M3 3v3h3"} />
+<path d={"M3.5 6A5 5 0 1 1 3 9"} />
+</svg>
+{"2 days"}
+</span>
+<span className={"text-style-12-head-med flex items-center gap-1 rounded-[var(--radius-small)] bg-[var(--color-bg-accent-alt)] px-2 py-1 text-[var(--color-text-default-alt)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M9.5 2.5c2.5 0 4 1.5 4 4L8.5 11.5l-4-4z"} />
+<path d={"M4.5 7.5 2.5 7l2-2.5h3M8.5 11.5l.5 2 2.5-2v-3M3 13c0-1 .5-2 1.5-2.25"} />
+</svg>
+{"Upgrade"}
+</span>
+</span>
+</div>
+<span className={"flex items-center justify-between px-1"}>
+<span className={"text-style-12-head-med flex size-6 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)]"}>
+{"A"}
+</span>
+<span className={"text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
+<path d={"M6 3v10"} />
+</svg>
+</span>
+</span>
+</div>
+</nav>
+<div className={"relative min-w-0 flex-1 overflow-y-auto"}>
+<div className={"h-full"} style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<div className={"flex h-full min-h-0 flex-col"}>
+<div className={"flex shrink-0 flex-col gap-2 border-b border-[var(--color-stroke-default)] px-4 py-3 sm:flex-row sm:items-center sm:gap-3 sm:px-5"}>
+<div className={"flex min-w-0 flex-1 items-center gap-2"}>
+<button className={"text-style-12-body-reg flex shrink-0 items-center gap-1 rounded-[var(--radius-small)] text-[var(--color-text-tertiary)] hover:text-[var(--color-text-default)]"} type={"button"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M10 3 5 8l5 5"} />
+</svg>
+{"Sessions"}
+</button>
+<span className={"text-[var(--color-text-disabled)]"}>
+{"/"}
+</span>
+<span className={"text-style-14-head-med text-[var(--color-text-default)] truncate"}>
+{"Compare part A-1042 across our three supplier portals"}
+</span>
+</div>
+<div className={"flex shrink-0 items-center gap-2"}>
+<button className={"group"} type={"button"}>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors group-hover:bg-[var(--color-bg-hover)]"}>
+{"supplier-research-agent"}
+</span>
+</button>
+<span className={"text-style-12-head-med inline-flex items-center gap-1 whitespace-nowrap rounded-[var(--radius-rounded)] border px-2 py-0.5 border-[var(--color-stroke-success)] bg-[var(--color-bg-success-alt)] text-[var(--color-text-success)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3.5 8.5 3 3 6-7"} />
+</svg>
+{"Completed"}
+</span>
+</div>
+</div>
+<div className={"grid min-h-0 flex-1 grid-rows-[minmax(0,1fr)_minmax(0,1fr)] sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] sm:grid-rows-1"}>
+<ol className={"order-2 flex min-h-0 flex-col gap-0.5 overflow-y-auto border-t border-[var(--color-stroke-default)] p-2 [scrollbar-width:thin] sm:order-1 sm:border-r sm:border-t-0 sm:p-3"} aria-label={"Session trace"}>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"8"} cy={"5.5"} r={"2.5"} />
+<path d={"M3 13.5c0-2.5 2-4.5 5-4.5s5 2 5 4.5"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Compare part A-1042 across our three supplier portals"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"Unit price, stock and delivery time"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"01"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<circle cx={"4.5"} cy={"3.5"} r={"1.5"} />
+<circle cx={"4.5"} cy={"12.5"} r={"1.5"} />
+<circle cx={"11.5"} cy={"5.5"} r={"1.5"} />
+<path d={"M4.5 5v6M11.5 7c0 2.5-3 2.5-7 4"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Spawn 3 orin/web-surfer-pro subagents"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"One per supplier portal"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"02"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<rect x={"1.5"} y={"4"} width={"13"} height={"8"} rx={"1"} />
+<path d={"M4 6.5h.01M6.5 6.5h.01M9 6.5h.01M11.5 6.5h.01M5 9.5h6"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Search “A-1042” on Northgate Parts"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"03"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M1.5 8S4 3.5 8 3.5 14.5 8 14.5 8 12 12.5 8 12.5 1.5 8 1.5 8z"} />
+<circle cx={"8"} cy={"8"} r={"2"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Read price and stock"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"€14.20 · 1,200 in stock · 2 days"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"04"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M1.5 8S4 3.5 8 3.5 14.5 8 14.5 8 12 12.5 8 12.5 1.5 8 1.5 8z"} />
+<circle cx={"8"} cy={"8"} r={"2"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Read price and stock on Vellum Supply"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"€13.85 · 300 in stock · 4 days"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"05"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
+<span className={"mt-0.5 text-[var(--color-icon-warning)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M3.5 14V2.5M3.5 3h8l-2 3 2 3h-8"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Part not listed on Brightline"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"Reported as missing instead of guessed."}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"06"}
+</span>
+</button>
+</li>
+<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 bg-[var(--color-bg-selected)]"} type={"button"} aria-current={"step"}>
+<span className={"mt-0.5 text-[var(--color-icon-success)]"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"m3.5 8.5 3 3 6-7"} />
+</svg>
+</span>
+<span className={"flex min-w-0 flex-col gap-0.5"}>
+<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
+{"Returned 3 rows as structured output"}
+</span>
+<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
+{"Cheapest in stock: Vellum Supply, €13.85"}
+</span>
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
+{"07"}
+</span>
+</button>
+</li>
+</ol>
+<div className={"order-1 flex min-h-0 flex-col gap-2 bg-[var(--color-bg-secondary)] p-2 sm:order-2 sm:gap-3 sm:p-4"}>
+<div className={"flex min-h-0 flex-1 flex-col overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)]"}>
+<div className={"flex h-8 shrink-0 items-center gap-2 border-b border-[var(--color-stroke-default)] px-3"}>
+<span className={"flex gap-1"} aria-hidden={"true"}>
+<span className={"size-2 rounded-[var(--radius-rounded)] bg-[var(--color-stroke-secondary)]"} />
+<span className={"size-2 rounded-[var(--radius-rounded)] bg-[var(--color-stroke-secondary)]"} />
+<span className={"size-2 rounded-[var(--radius-rounded)] bg-[var(--color-stroke-secondary)]"} />
+</span>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] min-w-0 flex-1 truncate rounded-[var(--radius-small)] bg-[var(--color-bg-secondary)] px-2 py-0.5 text-[var(--color-text-tertiary)]"}>
+{"Structured output"}
+</span>
+</div>
+<div className={"relative min-h-0 flex-1 overflow-hidden"}>
+<div className={"absolute inset-0"} style={{"opacity": "1"} as React.CSSProperties}>
+<div className={"flex h-full flex-col justify-center p-4 sm:p-6"}>
+<div className={"overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)]"}>
+<table className={"text-style-12-body-reg w-full text-left"}>
+<thead className={"text-style-12-head-med bg-[var(--color-bg-secondary)] text-[var(--color-text-tertiary)]"}>
+<tr >
+<th className={"px-3 py-2 font-[inherit]"}>
+{"Portal"}
+</th>
+<th className={"px-3 py-2 font-[inherit]"}>
+{"Price"}
+</th>
+<th className={"px-3 py-2 font-[inherit]"}>
+{"Stock"}
+</th>
+<th className={"hidden px-3 py-2 font-[inherit] sm:table-cell"}>
+{"Delivery"}
+</th>
+</tr>
+</thead>
+<tbody className={"text-[var(--color-text-default)]"}>
+<tr className={"border-t border-[var(--color-stroke-default)]"} style={{"opacity": "1"} as React.CSSProperties}>
+<td className={"px-3 py-2"}>
+{"Northgate Parts"}
+</td>
+<td className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] px-3 py-2"}>
+{"€14.20"}
+</td>
+<td className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] px-3 py-2"}>
+{"1,200"}
+</td>
+<td className={"hidden px-3 py-2 sm:table-cell"}>
+{"2 days"}
+</td>
+</tr>
+<tr className={"border-t border-[var(--color-stroke-default)]"} style={{"opacity": "1"} as React.CSSProperties}>
+<td className={"px-3 py-2"}>
+{"Vellum Supply"}
+</td>
+<td className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] px-3 py-2"}>
+{"€13.85"}
+</td>
+<td className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] px-3 py-2"}>
+{"300"}
+</td>
+<td className={"hidden px-3 py-2 sm:table-cell"}>
+{"4 days"}
+</td>
+</tr>
+<tr className={"border-t border-[var(--color-stroke-default)]"} style={{"opacity": "1"} as React.CSSProperties}>
+<td className={"px-3 py-2"}>
+{"Brightline"}
+</td>
+<td className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] px-3 py-2"}>
+{"n/a"}
+</td>
+<td className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] px-3 py-2"}>
+{"n/a"}
+</td>
+<td className={"hidden px-3 py-2 sm:table-cell"}>
+{"Not listed"}
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div className={"pointer-events-none absolute left-0 top-0 z-10"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
+<Image className={"drop-shadow-[0_2px_6px_rgba(0,0,0,0.25)]"} src="/hc/agent-cursor.svg" alt="" width={43} height={37} unoptimized style={{"color": "transparent"} as React.CSSProperties} />
+</div>
+</div>
+</div>
+<div className={"flex shrink-0 items-center gap-3 px-1"}>
+<button className={"flex size-7 shrink-0 items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-bg-card)] text-[var(--color-icon-default)] shadow-elevation-1 hover:bg-[var(--color-bg-hover)]"} type={"button"} aria-label={"Replay from start"}>
+<svg className={"shrink-0"} aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
+<path d={"M3 3v3h3"} />
+<path d={"M3.5 6A5 5 0 1 1 3 9"} />
+</svg>
+</button>
+<fieldset className={"m-0 flex min-w-0 flex-1 items-center gap-1 border-0 p-0"}>
+<legend className={"sr-only"}>
+{"Timeline"}
+</legend>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 1"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 2"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 3"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 4"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 5"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 6"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 7"}>
+<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
+</button>
+</fieldset>
+<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] shrink-0 text-[var(--color-text-tertiary)]"}>
+{"7/7"}
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div className={"flex flex-col items-center gap-2"}>
+<div className={"flex max-w-full overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)]"}>
+<div className={"relative flex min-w-0 gap-1 overflow-x-auto [scrollbar-width:none] motion-safe:scroll-smooth p-0.5  "} role={"tablist"} aria-label={"Console demo"}>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={0}>
+{"Agent overview"}
+</button>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={1}>
+{"Watch a session"}
+</button>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={2}>
+{"Create an agent"}
+</button>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] bg-white text-[var(--color-grey-900)] shadow-[0_1px_3px_rgba(0,0,0,0.08)]"} type={"button"} role={"tab"} aria-selected={"true"} data-swap={3}>
+{"Run it with subagents"}
+</button>
+</div>
+</div>
+<p className={"text-style-12-body-reg text-[var(--color-text-tertiary)] text-center"}>
+{"Click Start session, a session or the sidebar to explore."}
+</p>
+</div>
+</div>
+</div>
+</Fade>
+</div>
+</section>
+</div>
+]} />
+<section className={"bg-[var(--color-bg-primary)] pb-12 pt-6 sm:pb-20 sm:pt-8"}>
+<div className={"mx-auto w-full max-w-6xl px-6"}>
+<div className={"grid w-full gap-8 sm:grid-cols-2 lg:grid-cols-4"}>
+<Fade >
+<div className={"flex flex-col gap-2"}>
+<span className={"font-mono text-[length:var(--text-fs-2)] text-[var(--color-text-tertiary)]"}>
+{"01"}
+</span>
+<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight"}>
+{"Configure"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"Set an agent's model, environment, instructions, and skills once."}
+</p>
+</div>
+</Fade>
+<Fade >
+<div className={"flex flex-col gap-2"}>
+<span className={"font-mono text-[length:var(--text-fs-2)] text-[var(--color-text-tertiary)]"}>
+{"02"}
+</span>
+<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight"}>
+{"Connect"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"Give agents reusable skills and delegate to specialist subagents when a task needs it."}
+</p>
+</div>
+</Fade>
+<Fade >
+<div className={"flex flex-col gap-2"}>
+<span className={"font-mono text-[length:var(--text-fs-2)] text-[var(--color-text-tertiary)]"}>
+{"03"}
+</span>
+<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight"}>
+{"Run"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"Deploy across web, desktop, and enterprise systems, and watch every session live."}
+</p>
+</div>
+</Fade>
+<Fade >
+<div className={"flex flex-col gap-2"}>
+<span className={"font-mono text-[length:var(--text-fs-2)] text-[var(--color-text-tertiary)]"}>
+{"04"}
+</span>
+<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight"}>
+{"Replay"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"Step through any run, action by action."}
+</p>
+</div>
+</Fade>
+</div>
+</div>
+</section>
+<section className={"bg-[var(--color-bg-primary)] py-12 sm:py-20"}>
+<div className={"mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 sm:gap-12"}>
+<div className={"flex flex-col gap-6 "}>
+<div className={"flex flex-col gap-5"}>
+<Fade >
+<h2 className={"text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl"}>
+{"Proprietary agentic engine"}
+</h2>
+</Fade>
+</div>
+</div>
+<div className={"flex flex-col gap-6"}>
+<ul className={"grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5"}>
+<li className={"h-full"}>
+<Fade className={"flex h-full flex-col gap-3 rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-6 pb-6 pt-5"}>
+<span className={"font-mono text-[length:var(--text-fs-2)] text-[var(--color-text-tertiary)]"}>
+{"01"}
+</span>
+<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight"}>
+{"Agent execution engine"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"A proprietary engine built to run computer-use agents reliably in production."}
+</p>
+</Fade>
+</li>
+<li className={"h-full"}>
+<Fade className={"flex h-full flex-col gap-3 rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-6 pb-6 pt-5"}>
+<span className={"font-mono text-[length:var(--text-fs-2)] text-[var(--color-text-tertiary)]"}>
+{"02"}
+</span>
+<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight"}>
+{"Workflow orchestration"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"Manages state for complex, long-horizon tasks from start to finish."}
+</p>
+</Fade>
+</li>
+<li className={"h-full"}>
+<Fade className={"flex h-full flex-col gap-3 rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-6 pb-6 pt-5"}>
+<span className={"font-mono text-[length:var(--text-fs-2)] text-[var(--color-text-tertiary)]"}>
+{"03"}
+</span>
+<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight"}>
+{"Virtual and local environments"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"Infrastructure for the surfaces your agents need, hosted or on your machines."}
+</p>
+</Fade>
+</li>
+<li className={"h-full"}>
+<Fade className={"flex h-full flex-col gap-3 rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-6 pb-6 pt-5"}>
+<span className={"font-mono text-[length:var(--text-fs-2)] text-[var(--color-text-tertiary)]"}>
+{"04"}
+</span>
+<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight"}>
+{"Twinlink-hosted model inference"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"Inference on models we host and operate, tuned for agent workloads."}
+</p>
+</Fade>
+</li>
+</ul>
+<Fade >
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)]"} href={"/enterprise"}>
+{"Agents for enterprise"}
+</Link>
+</Fade>
+</div>
+</div>
+</section>
+<section className={"bg-[var(--color-bg-primary)] py-12 sm:py-20"}>
+<div className={"mx-auto w-full max-w-6xl px-6"}>
+<div className={"flex flex-col gap-6 "}>
+<div className={"flex flex-col gap-5"}>
+<Fade >
+<h2 className={"text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl"}>
+{"One platform for agents, models, and interfaces"}
+</h2>
+</Fade>
+</div>
+</div>
+</div>
+<div className={"mx-auto mt-12 grid w-full max-w-6xl gap-4 sm:grid-cols-2 px-6"}>
+<Fade >
+<div className={"rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 flex h-full flex-col gap-3 px-6 pb-6 pt-5"} data-keep-light={"true"}>
+<h3 className={"text-style-18-head-bold text-[var(--color-title-default)] tracking-tight"}>
+{"Agents API"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"Managed computer-use agents in cloud browsers. REST API, TypeScript and Python SDKs, MCP, and CLI."}
+</p>
+<div className={"mt-auto flex flex-wrap items-center gap-3 pt-3"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-grey-750)]"} href={"/agents-api"}>
+{"View Agents API"}
+</Link>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)]"} href={"/coming-soon"}>
+{"Agents API docs"}
+</Link>
+</div>
+</div>
+</Fade>
+<Fade >
+<div className={"rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 flex h-full flex-col gap-3 px-6 pb-6 pt-5"} data-keep-light={"true"}>
+<h3 className={"text-style-18-head-bold text-[var(--color-title-default)] tracking-tight"}>
+{"Models API"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"OpenAI-compatible access to Orin models for text, images, documents, and computer-use workloads."}
+</p>
+<div className={"mt-auto flex flex-wrap items-center gap-3 pt-3"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-grey-750)]"} href={"/models-api"}>
+{"View Models API"}
+</Link>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)]"} href={"/coming-soon"}>
+{"Models API docs"}
+</Link>
+</div>
+</div>
+</Fade>
+<Fade >
+<div className={"rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 flex h-full flex-col gap-3 px-6 pb-6 pt-5"} data-keep-light={"true"}>
+<h3 className={"text-style-18-head-bold text-[var(--color-title-default)] tracking-tight"}>
+{"SDKs and MCP"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"TypeScript, Python, MCP, and the CLI share one API key and connect to the tools you already use."}
+</p>
+<div className={"mt-auto flex flex-wrap items-center gap-3 pt-3"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-grey-750)]"} href={"/agents-api"}>
+{"View SDKs and MCP"}
+</Link>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)]"} href={"/coming-soon"}>
+{"SDK on GitHub"}
+</Link>
+</div>
+</div>
+</Fade>
+<Fade >
+<div className={"rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 flex h-full flex-col gap-3 px-6 pb-6 pt-5"} data-keep-light={"true"}>
+<h3 className={"text-style-18-head-bold text-[var(--color-title-default)] tracking-tight"}>
+{"Connectors"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"Connect agents to n8n, Claude, Cursor, and Hermes. You only need one API key to get started."}
+</p>
+<div className={"mt-auto flex flex-wrap items-center gap-3 pt-3"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-grey-750)]"} href={"/agents-api"}>
+{"View Connectors"}
+</Link>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)]"} href={"/coming-soon"}>
+{"Connectors docs"}
+</Link>
+</div>
+</div>
+</Fade>
+</div>
+</section>
+<section className={"bg-[var(--color-bg-primary)] py-12 sm:py-20"}>
+<div className={"mx-auto flex w-full max-w-6xl flex-col gap-10 px-6"}>
+<div className={"flex flex-col gap-6 "}>
+<div className={"flex flex-col gap-5"}>
+<Fade >
+<h2 className={"text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl"}>
+{"Security and compliance"}
+</h2>
+</Fade>
+</div>
+</div>
+<div className={"flex flex-col gap-6"}>
+<Fade >
+<ul className={"flex flex-wrap gap-3"}>
+<li className={"flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3"}>
+<svg className={"h-5 w-5 shrink-0 text-[var(--color-icon-tertiary)]"} viewBox={"0 0 20 20"} fill={"none"} aria-hidden={"true"}>
+<path d={"M10 2.2l1.1 1.8 2 .5.5 2 1.8 1.1-1.8 1.1-.5 2-2 .5L10 17.8l-1.1-1.8-2-.5-.5-2L4.6 11l1.8-1.1.5-2 2-.5L10 2.2z"} stroke={"currentColor"} strokeWidth={"1.3"} strokeLinejoin={"round"} />
+<circle cx={"10"} cy={"10"} r={"2.2"} stroke={"currentColor"} strokeWidth={"1.3"} />
+</svg>
+<p className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium"}>
+{"Security reviews"}
+</p>
+</li>
+<li className={"flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3"}>
+<svg className={"h-5 w-5 shrink-0 text-[var(--color-icon-tertiary)]"} viewBox={"0 0 20 20"} fill={"none"} aria-hidden={"true"}>
+<rect x={"2.5"} y={"5.5"} width={"15"} height={"9"} rx={"1.5"} stroke={"currentColor"} strokeWidth={"1.3"} />
+<path d={"M5.2 12.2V7.8h1.3c1.1 0 1.8.6 1.8 1.5 0 .9-.7 1.5-1.8 1.5H6.5v1.4H5.2zm1.3-2.6h.3c.4 0 .7-.2.7-.6s-.3-.6-.7-.6h-.3v1.2zM10.2 12.2V7.8h2.6v1.1h-1.3v.7h1.1v1h-1.1v1.6h-1.3zM14.1 12.2V7.8h1.3v4.4h-1.3z"} fill={"currentColor"} />
+</svg>
+<p className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium"}>
+{"Audit trails"}
+</p>
+</li>
+<li className={"flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3"}>
+<svg className={"h-5 w-5 shrink-0 text-[var(--color-icon-tertiary)]"} viewBox={"0 0 20 20"} fill={"none"} aria-hidden={"true"}>
+<path d={"M3.5 10h13M6 7.5l-2.5 2.5L6 12.5M14 7.5l2.5 2.5L14 12.5"} stroke={"currentColor"} strokeWidth={"1.3"} strokeLinecap={"round"} strokeLinejoin={"round"} />
+<rect x={"7.5"} y={"6.5"} width={"5"} height={"7"} rx={"1"} stroke={"currentColor"} strokeWidth={"1.3"} />
+</svg>
+<p className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium"}>
+{"Secured tunnels to customer's machines"}
+</p>
+</li>
+<li className={"flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3"}>
+<svg className={"h-5 w-5 shrink-0 text-[var(--color-icon-tertiary)]"} viewBox={"0 0 20 20"} fill={"none"} aria-hidden={"true"}>
+<path d={"M10 2.8l5.5 2.2v3.6c0 3.4-2.3 5.9-5.5 6.9-3.2-1-5.5-3.5-5.5-6.9V5L10 2.8z"} stroke={"currentColor"} strokeWidth={"1.3"} strokeLinejoin={"round"} />
+<path d={"M8.2 10.1l1.3 1.3 2.5-2.6"} stroke={"currentColor"} strokeWidth={"1.3"} strokeLinecap={"round"} strokeLinejoin={"round"} />
+</svg>
+<p className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium"}>
+{"Permissions set at customer's system level"}
+</p>
+</li>
+<li className={"flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3"}>
+<svg className={"h-5 w-5 shrink-0 text-[var(--color-icon-tertiary)]"} viewBox={"0 0 20 20"} fill={"none"} aria-hidden={"true"}>
+<circle cx={"8"} cy={"8"} r={"2.4"} stroke={"currentColor"} strokeWidth={"1.3"} />
+<path d={"M3.8 15.2c.6-2 2.1-3.2 4.2-3.2s3.6 1.2 4.2 3.2"} stroke={"currentColor"} strokeWidth={"1.3"} strokeLinecap={"round"} />
+<path d={"M12.5 6.2h3.8M14.4 4.3v3.8"} stroke={"currentColor"} strokeWidth={"1.3"} strokeLinecap={"round"} />
+</svg>
+<p className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium"}>
+{"Customer SSO integration"}
+</p>
+</li>
+<li className={"flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3"}>
+<svg className={"h-5 w-5 shrink-0 text-[var(--color-icon-tertiary)]"} viewBox={"0 0 20 20"} fill={"none"} aria-hidden={"true"}>
+<rect x={"3"} y={"3.5"} width={"6"} height={"6"} rx={"1.2"} stroke={"currentColor"} strokeWidth={"1.3"} />
+<rect x={"11"} y={"3.5"} width={"6"} height={"6"} rx={"1.2"} stroke={"currentColor"} strokeWidth={"1.3"} />
+<rect x={"3"} y={"11.5"} width={"6"} height={"6"} rx={"1.2"} stroke={"currentColor"} strokeWidth={"1.3"} />
+<rect x={"11"} y={"11.5"} width={"6"} height={"6"} rx={"1.2"} stroke={"currentColor"} strokeWidth={"1.3"} />
+</svg>
+<p className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium"}>
+{"Projects & RBAC"}
+</p>
+</li>
+</ul>
+</Fade>
+<Fade >
+<Link className={"inline-flex w-fit items-center gap-2 text-[length:var(--text-fs-2)] font-medium leading-[var(--text-fs-2--line-height)] text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-text-default)]"} href={"/coming-soon"}>
+{"Learn more"}
+<svg className={"h-4 w-4"} viewBox={"0 0 16 16"} fill={"none"} aria-hidden={"true"} xmlns={"http://www.w3.org/2000/svg"}>
+<path d={"M3 8h10M9 4l4 4-4 4"} stroke={"currentColor"} strokeWidth={"1.5"} strokeLinecap={"round"} strokeLinejoin={"round"} />
+</svg>
+</Link>
+</Fade>
+</div>
+</div>
+</section>
+<section className={"bg-[var(--color-bg-primary)] py-12 sm:py-20"}>
+<div className={"mx-auto flex w-full max-w-6xl flex-col gap-10 px-6"}>
+<div className={"flex flex-col gap-6 "}>
+<div className={"flex flex-col gap-5"}>
+<Fade >
+<h2 className={"text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl"}>
+{"Continue from here"}
+</h2>
+</Fade>
+</div>
+</div>
+<div className={"grid gap-4 sm:grid-cols-3"}>
+<Fade >
+<Link className={"group flex h-full flex-col gap-3 rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} href={"/case-studies"}>
+<h3 className={"text-style-18-head-bold text-[var(--color-title-default)] tracking-tight"}>
+{"Use cases"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"See the processes these APIs already run, such as procurement and back-office work."}
+</p>
+<span className={"text-style-14-body-reg text-[var(--color-text-accent)] pt-2 font-medium transition-transform duration-200 group-hover:translate-x-1"}>
+{"Go to Use cases"}
+</span>
+</Link>
+</Fade>
+<Fade >
+<Link className={"group flex h-full flex-col gap-3 rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} href={"/coming-soon"}>
+<h3 className={"text-style-18-head-bold text-[var(--color-title-default)] tracking-tight"}>
+{"Research"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"Orin architecture, benchmarks, and OSWorld results behind the platform."}
+</p>
+<span className={"text-style-14-body-reg text-[var(--color-text-accent)] pt-2 font-medium transition-transform duration-200 group-hover:translate-x-1"}>
+{"Go to Research"}
+</span>
+</Link>
+</Fade>
+<Fade >
+<Link className={"group flex h-full flex-col gap-3 rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} href={"/enterprise"}>
+<h3 className={"text-style-18-head-bold text-[var(--color-title-default)] tracking-tight"}>
+{"Enterprise"}
+</h3>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"Building for a client that needs a deployment team? Start from the enterprise offer."}
+</p>
+<span className={"text-style-14-body-reg text-[var(--color-text-accent)] pt-2 font-medium transition-transform duration-200 group-hover:translate-x-1"}>
+{"Go to Enterprise"}
+</span>
+</Link>
+</Fade>
+</div>
+</div>
+</section>
+<section className={"scroll-mt-20 bg-[var(--color-bg-primary)] py-12 sm:py-20"}>
+<div className={"mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 sm:gap-12"}>
+<div className={"flex flex-col gap-6"}>
+<div className={"flex flex-col gap-6 "}>
+<div className={"grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16"}>
+<Fade >
+<h2 className={"text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl"}>
+{"Operational agents that get the job done"}
+</h2>
+</Fade>
+<Fade >
+<p className={"text-style-16-body-reg text-[var(--color-text-secondary)]   "}>
+{"Configure, deploy, and monitor agents that run at production scale in the browser and on the desktop, with human-level accuracy."}
+</p>
+</Fade>
+</div>
+</div>
+<Fade >
+<div className={"flex flex-col gap-3 sm:flex-row"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)]"} href={"/contact"}>
+{"Talk to sales"}
+</Link>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-grey-750)] max-sm:order-first"} href={"/coming-soon"}>
+{"Create an agent"}
+</Link>
+</div>
+</Fade>
+</div>
+<Fade >
+<div className={"flex flex-col gap-10 sm:gap-12"}>
+<div className={"group relative aspect-video w-full overflow-hidden rounded-[var(--radius-large)] bg-[var(--color-grey-800)]"}>
+<MediaSlot className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} label={"Agents API preview"} />
+<MediaSlot className={"pointer-events-none absolute inset-0 h-full w-full bg-black object-cover transition-opacity duration-500 opacity-100"} label={""} />
+<div className={"pointer-events-none absolute inset-0 bg-gradient-to-b from-black/55 via-black/10 to-black/60 opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100"} aria-hidden={"true"} />
+<div className={"absolute inset-0 z-10 flex flex-col justify-between p-5 sm:p-7"}>
+<div className={"flex justify-end opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100"}>
+<button className={"flex h-8 w-8 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] text-white transition-colors hover:bg-white/10"} type={"button"} aria-label={"Unmute video"}>
+<svg width={"14"} height={"14"} viewBox={"0 0 14 14"} fill={"none"} aria-hidden={"true"}>
+<path d={"M3 5.5H5L8 3V11L5 8.5H3V5.5Z"} stroke={"currentColor"} strokeWidth={"1.3"} strokeLinejoin={"round"} />
+<path d={"M10 5L12.5 9.5M12.5 5L10 9.5"} stroke={"currentColor"} strokeWidth={"1.3"} strokeLinecap={"round"} />
+</svg>
+</button>
+</div>
+<div className={"flex flex-col gap-4"}>
+<div className={"flex transition-opacity group-focus-within:opacity-100 group-hover:opacity-100 opacity-0"}>
+<button className={"flex h-9 w-9 items-center justify-center rounded-[var(--radius-rounded)] bg-black/45 text-white backdrop-blur-sm transition-colors hover:bg-black/60"} type={"button"} aria-label={"Pause video"}>
+<svg width={"12"} height={"12"} viewBox={"0 0 12 12"} fill={"none"} aria-hidden={"true"}>
+<path d={"M3.5 2.5H5V9.5H3.5V2.5ZM7 2.5H8.5V9.5H7V2.5Z"} fill={"currentColor"} />
+</svg>
+</button>
+</div>
+<div className={"h-px w-full overflow-hidden bg-white/25 opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100"} aria-hidden={"true"}>
+<div className={"h-full bg-white"} style={{"width": "0"} as React.CSSProperties} />
+</div>
+</div>
+</div>
+</div>
+<div className={"flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"}>
+<div className={"flex items-center gap-5"}>
+<div className={"flex h-11 w-11 items-center justify-center rounded-[var(--radius-medium)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)]"} aria-hidden={"true"}>
+<svg className={"h-6 w-6"} viewBox={"0 0 24 24"} fill={"currentColor"} aria-hidden={"true"}>
+<path d={"M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.4a13.4 13.4 0 0 1 3.3 1.6 15.9 15.9 0 0 0-13 0A13.4 13.4 0 0 1 8.8 3.4L8.6 3a19.8 19.8 0 0 0-4.9 1.4C.6 9 0 13.5.3 17.9a19.9 19.9 0 0 0 6 3l1.3-2a12.7 12.7 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 11.8 0l.5.4a12.7 12.7 0 0 1-2 1l1.3 2a19.9 19.9 0 0 0 6-3c.4-5.1-.7-9.5-3.4-13.5ZM8.5 15.2c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"} />
+</svg>
+</div>
+<div className={"flex flex-col gap-0.5"}>
+<Link className={"text-[length:var(--text-fs-3)] font-medium leading-[var(--text-fs-3--line-height)] text-[var(--color-text-default)] underline-offset-4 hover:underline"} href={"/coming-soon"}>
+{"Orin developer Discord"}
+</Link>
+<p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
+{"Questions, bugs, feature requests: talk to the team and other builders."}
+</p>
+</div>
+</div>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/coming-soon"}>
+<svg className={"h-4 w-4"} viewBox={"0 0 24 24"} fill={"currentColor"} aria-hidden={"true"}>
+<path d={"M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.4a13.4 13.4 0 0 1 3.3 1.6 15.9 15.9 0 0 0-13 0A13.4 13.4 0 0 1 8.8 3.4L8.6 3a19.8 19.8 0 0 0-4.9 1.4C.6 9 0 13.5.3 17.9a19.9 19.9 0 0 0 6 3l1.3-2a12.7 12.7 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 11.8 0l.5.4a12.7 12.7 0 0 1-2 1l1.3 2a19.9 19.9 0 0 0 6-3c.4-5.1-.7-9.5-3.4-13.5ZM8.5 15.2c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"} />
+</svg>
+{"Join Discord"}
+</Link>
+</div>
+</div>
+</Fade>
+</div>
+</section>
+    </>
+  );
+}

@@ -16,10 +16,10 @@ const GROUPS: { label: string; items: Item[] }[] = [
   ] },
   { label: "Services", items: [
     ...SERVICE_LINKS.map(item => ({ label: item.label, href: `/services/${item.slug}` })),
-    { label: "Our solutions", href: "/#solutions" },
+    { label: "Our solutions", href: "/services/digital-strategy-transformation" },
   ] },
   { label: "Talent solutions", items: [
-    { label: "Hiring services", href: "/#people" },
+    { label: "Hiring services", href: "/careers" },
     { label: "Hire talent", href: "/contact" },
     { label: "Find a job", href: "/careers" },
   ] },
@@ -27,7 +27,7 @@ const GROUPS: { label: string; items: Item[] }[] = [
     { label: "Case studies", href: "/case-studies" },
     { label: "Blog", href: "/blog" },
     { label: "Events", href: "/events" },
-    { label: "Latest insights", href: "/#insights" },
+    { label: "Latest insights", href: "/blog" },
   ] },
 ];
 

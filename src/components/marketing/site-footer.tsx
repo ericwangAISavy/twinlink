@@ -13,7 +13,7 @@ const TECH = [
   ...SERVICE_LINKS.map(item => [item.label, `/services/${item.slug}`]),
 ];
 const PEOPLE = [
-  ["Talent solutions", "/#people"], ["Open roles", "/careers"], ["Hire talent", "/contact"],
+  ["Talent solutions", "/careers"], ["Open roles", "/careers"], ["Hire talent", "/contact"],
   ["Case studies", "/case-studies"], ["Blog", "/blog"], ["Events", "/events"],
 ];
 function FooterLinks({ items }: { items: string[][] }) {

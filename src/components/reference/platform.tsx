@@ -3,21 +3,21 @@
 import { useEffect, useRef, useState } from "react";
 import { Fade } from "./fade";
 import { href } from "./links";
-import { BrowserAgent, DeploymentPlan, HoloTabStack, ModelCode } from "./platform-visuals";
+import { BrowserAgent, DeploymentPlan, OrinTabStack, ModelCode } from "./platform-visuals";
 import { Arrow } from "./ui";
 
 const TABS = [
-  { name: "Enterprise", audience: "For enterprise", title: "FDEs on-site from day one.", body: "Our team learns your systems and builds custom agents directly on your existing infrastructure, without a rebuild or months of scoping.", tags: ["SOC 2 & ISO 27001", "Forward deployed engineers"], cta: "Learn more", to: "/enterprise", Visual: DeploymentPlan },
+  { name: "Enterprise", audience: "For enterprise", title: "FDEs on-site from day one.", body: "Our team learns your systems and builds custom agents directly on your existing infrastructure, without a rebuild or months of scoping.", tags: ["Security & compliance", "Forward deployed engineers"], cta: "Learn more", to: "/enterprise", Visual: DeploymentPlan },
   { name: "Agents API", audience: "For builders", title: "Agents that click, type, and get it done.", body: "One agent works in a cloud-hosted browser or on a desktop and needs no APIs. Go live on day one.", tags: ["API, SDK, MCP, CLI"], cta: "Start building", to: "/agents-api", Visual: BrowserAgent },
-  { name: "Models API", audience: "For researchers & builders", title: "Build on Holo4 directly.", body: "An OpenAI-compatible API for our multimodal models. Plug them into your own agent loop and your own orchestration.", tags: ["Text + image input", "Zero data retention"], cta: "Read the docs", to: "/models-api", Visual: ModelCode },
-  { name: "HoloTab", audience: "For everyone", title: "HoloTab does the work. You get the results.", body: "The fastest way to feel what a computer-use agent can do: a free Chrome extension.", tags: ["Free", "Routines & schedules"], cta: "Try HoloTab", to: "/holotab", Visual: HoloTabStack },
+  { name: "Models API", audience: "For researchers & builders", title: "Build on Orin directly.", body: "An OpenAI-compatible API for our multimodal models. Plug them into your own agent loop and your own orchestration.", tags: ["Text + image input", "Zero data retention"], cta: "Read the docs", to: "/models-api", Visual: ModelCode },
+  { name: "OrinTab", audience: "For everyone", title: "OrinTab does the work. You get the results.", body: "The fastest way to feel what a computer-use agent can do: a free Chrome extension.", tags: ["Free", "Routines & schedules"], cta: "Try OrinTab", to: "/holotab", Visual: OrinTabStack },
 ];
 
 function Heading() {
   return (
     <div className="flex flex-col gap-5">
       <Fade delay={0.05}><h2 className="t36 max-w-xl tracking-tight">One platform. Four ways in.</h2></Fade>
-      <Fade delay={0.08}><p className="t16 max-w-2xl text-grey-600">Enterprise deployment, Agents API, Models API or HoloTab. Pick your way in.</p></Fade>
+      <Fade delay={0.08}><p className="t16 max-w-2xl text-grey-600">Enterprise deployment, Agents API, Models API or OrinTab. Pick your way in.</p></Fade>
     </div>
   );
 }

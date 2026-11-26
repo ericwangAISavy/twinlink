@@ -48,10 +48,9 @@ function Dropdown({ menu }: { menu: NavMenu }) {
             <a href={href("/newsroom/holo4")} className="group flex w-56 flex-col gap-2 rounded-[6px] bg-grey-200 p-3">
               <span className="text-[14px] font-bold leading-[21px] text-grey-500">Featured</span>
               <span className="block aspect-video overflow-hidden rounded-[6px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/hc/holo4-cover-halftone.jpg" alt="" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                <span className="flex h-full w-full items-center justify-center bg-grey-900 text-[20px] font-medium text-white">Orin</span>
               </span>
-              <span className="text-[14px] font-medium leading-5">Introducing Holo4</span>
+              <span className="text-[14px] font-medium leading-5">Introducing Orin</span>
               <span className="text-[12px] font-medium leading-[18px] text-iris-600">Read on the blog →</span>
             </a>
           )}
@@ -59,10 +58,10 @@ function Dropdown({ menu }: { menu: NavMenu }) {
         {products && (
           <a href={href("/h-platform")} className="flex items-center justify-between gap-6 rounded-[6px] bg-grey-200 p-3">
             <span className="flex flex-col gap-0.5">
-              <span className="text-[14px] font-medium leading-[21px]">All four run on the H Platform</span>
+              <span className="text-[14px] font-medium leading-[21px]">All four run on the Orin Platform</span>
               <span className="text-[12px] leading-[18px] text-grey-500">Models · Agent execution · Environments · Orchestration · Console &amp; replay · Security</span>
             </span>
-            <span className="text-[14px] font-medium leading-[21px] text-iris-600">Explore the H Platform →</span>
+            <span className="text-[14px] font-medium leading-[21px] text-iris-600">Explore the Orin Platform →</span>
           </a>
         )}
       </div>
@@ -92,8 +91,8 @@ function MobileMenu() {
                 ))}
                 {menu.label === "Products" && (
                   <div className="mt-3 border-t !border-grey-250 pt-3">
-                    <a href={href("/h-platform")} className={row}>Explore the H Platform</a>
-                    <a href={href("/newsroom/holo4")} className={row}>Introducing Holo4</a>
+                    <a href={href("/h-platform")} className={row}>Explore the Orin Platform</a>
+                    <a href={href("/newsroom/holo4")} className={row}>Introducing Orin</a>
                   </div>
                 )}
               </div>
@@ -103,7 +102,7 @@ function MobileMenu() {
       })}
       <div className="pt-3">
         <a href={href("/pricing")} className={row}>Pricing</a>
-        <a href="https://hub.hcompany.ai/" target="_blank" rel="noopener noreferrer" className={row}>Docs<ExternalIcon /></a>
+        <a href={href("/docs")} className={row}>Docs</a>
       </div>
       <Button to="/contact?from=header#fill-out-the-form" className="mt-5 w-full">Book a demo</Button>
     </div>
@@ -143,7 +142,7 @@ export function SiteHeader() {
         <div aria-hidden="true" className={`pointer-events-none absolute inset-0 -z-10 border-b !border-grey-250 bg-white transition-opacity duration-300 ${scrolled || mobile ? "opacity-100" : "opacity-0"}`} />
         <div className="mx-auto flex h-18 w-full max-w-6xl items-center justify-between gap-4 px-6">
           <div className="flex h-full items-center gap-6">
-            <Link href="/" aria-label="H, back to homepage" className="flex h-full items-center"><Logo /></Link>
+            <Link href="/" aria-label="Twinlink, back to homepage" className="flex h-full items-center"><Logo /></Link>
             <nav aria-label="Main navigation" className="hidden h-full items-center gap-1 lg:flex">
               {MENUS.map(menu => {
                 const open = active === menu.label;
@@ -161,8 +160,8 @@ export function SiteHeader() {
             </nav>
           </div>
           <div className="flex h-full items-center gap-2">
-            <a href="https://hub.hcompany.ai/" target="_blank" rel="noopener noreferrer" className="hidden whitespace-nowrap p-2 text-[14px] font-medium leading-5 text-grey-600 hover:text-grey-750 sm:block">Docs</a>
-            <Button to="/contact?from=header#fill-out-the-form" className="whitespace-nowrap !px-4 !py-2">Book a demo</Button>
+            <a href={href("/docs")} className="hidden whitespace-nowrap p-2 text-[14px] font-medium leading-5 text-grey-600 hover:text-grey-750 sm:block">Docs</a>
+            <Button to="/contact?from=header#fill-out-the-form" className="whitespace-nowrap !px-4 !py-2 max-[379px]:hidden">Book a demo</Button>
             <button type="button" aria-label={mobile ? "Close menu" : "Open menu"} aria-expanded={mobile} onClick={() => setMobile(!mobile)} className={`-mr-1 flex h-11 w-11 items-center justify-center rounded-[6px] hover:bg-grey-200 lg:hidden ${mobile ? "bg-grey-250" : ""}`}>
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
                 <path d={mobile ? "M4 4l10 10M14 4L4 14" : "M2.5 5h13M2.5 9h13M2.5 13h13"} />
