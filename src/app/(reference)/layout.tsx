@@ -4,8 +4,8 @@ import { SiteHeader } from "@/components/reference/header";
 import "./reference.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "Twinlink — Operational intelligence for the enterprise" },
-  // Draft content that has not been verified for Twinlink: keep it out of search indexes.
+  title: { absolute: "H Company — Operational intelligence for the enterprise" },
+  // Local reproduction of hcompany.ai: keep it out of search indexes.
   robots: { index: false, follow: false },
 };
 

@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Faq } from "@/components/reference/faq";
 import { Fade } from "@/components/reference/fade";
-import { Swap } from "@/components/reference/swap";
 import { HeroWash } from "@/components/reference/hero-wash";
 
-export const metadata: Metadata = { title: { absolute: "Enterprise | Twinlink" } };
+export const metadata: Metadata = { title: { absolute: "Enterprise | H" } };
 
 export default function EnterprisePage() {
   return (
     <>
       <HeroWash />
-<Swap initial={0} states={[
-<div key="0">
 <section className={"product-hero-section pt-32 sm:pt-36  "}>
-<div className={"pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[var(--color-grey-900)]"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
+<div className={"pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[var(--color-grey-900)]"} aria-hidden={"true"} style={{"opacity": "var(--hero-mix, 100%)"} as React.CSSProperties}>
 <div className={"absolute -bottom-24 -left-24 h-[24rem] w-[24rem] rounded-[var(--radius-rounded)] bg-[var(--color-iris-600)] opacity-30 blur-[65px]"} />
 </div>
 <div className={"relative z-10 mx-auto w-full max-w-6xl px-6 "}>
@@ -42,12 +38,12 @@ export default function EnterprisePage() {
 </div>
 <Fade className={"mt-2"}>
 <div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap"}>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-primary)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-secondary)]"} data-hero-button={"primary"} href={"/contact"}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-primary)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-secondary)]"} data-hero-button={"primary"} href={"https://hcompany.ai/contact?from=enterprise-hero#fill-out-the-form"}>
 {"Book a demo"}
-</Link>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-white/70 bg-transparent text-[var(--color-text-default-alt)] hover:bg-[var(--color-bg-primary)]/10"} data-hero-button={"outline"} href={"/case-studies"}>
+</a>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-white/70 bg-transparent text-[var(--color-text-default-alt)] hover:bg-[var(--color-bg-primary)]/10"} data-hero-button={"outline"} href={"https://hcompany.ai/use-cases"}>
 {"See what's possible"}
-</Link>
+</a>
 </div>
 </Fade>
 </div>
@@ -56,12 +52,12 @@ export default function EnterprisePage() {
 <ul className={"flex flex-wrap gap-3"}>
 <li className={"rounded-[var(--radius-rounded)] border border-[var(--color-grey-500)]/40 px-5 py-3"}>
 <span className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-grey-500)]"}>
-{"Computer-use agents"}
+{"Leader in Computer Use Agents"}
 </span>
 </li>
 <li className={"rounded-[var(--radius-rounded)] border border-[var(--color-grey-500)]/40 px-5 py-3"}>
 <span className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-grey-500)]"}>
-{"Built for enterprise teams"}
+{"Trusted by Europe's largest companies"}
 </span>
 </li>
 </ul>
@@ -76,10 +72,10 @@ export default function EnterprisePage() {
 </span>
 <span className={"text-style-12-body-reg flex min-w-0 items-center gap-1.5 text-[var(--color-text-tertiary)]"}>
 <span className={"text-style-11-label-bold flex size-4 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)]"}>
-{"Twinlink"}
+{"H"}
 </span>
 <span className={"hidden items-center gap-1 sm:flex"}>
-{"Twinlink"}
+{"H"}
 <svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
 <path d={"m3 6 5 5 5-5"} />
 </svg>
@@ -366,7 +362,7 @@ export default function EnterprisePage() {
 </span>
 <span className={"flex flex-wrap justify-end gap-1"}>
 <span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors "}>
-{"orin/browser"}
+{"h/browser"}
 </span>
 </span>
 </div>
@@ -386,7 +382,7 @@ export default function EnterprisePage() {
 </span>
 <span className={"flex flex-wrap justify-end gap-1"}>
 <span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors "}>
-{"orin/visual-browser"}
+{"h/visual-browser"}
 </span>
 </span>
 </div>
@@ -404,7 +400,7 @@ export default function EnterprisePage() {
 </span>
 <span className={"flex flex-wrap justify-end gap-1"}>
 <span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors "}>
-{"orin/web-surfer-pro"}
+{"h/web-surfer-pro"}
 </span>
 </span>
 </div>
@@ -478,16 +474,16 @@ export default function EnterprisePage() {
 <div className={"flex flex-col items-center gap-2"}>
 <div className={"flex max-w-full overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)]"}>
 <div className={"relative flex min-w-0 gap-1 overflow-x-auto [scrollbar-width:none] motion-safe:scroll-smooth p-0.5  "} role={"tablist"} aria-label={"Console demo"}>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] bg-white text-[var(--color-grey-900)] shadow-[0_1px_3px_rgba(0,0,0,0.08)]"} type={"button"} role={"tab"} aria-selected={"true"} data-swap={0}>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] bg-white text-[var(--color-grey-900)] shadow-[0_1px_3px_rgba(0,0,0,0.08)]"} type={"button"} role={"tab"} aria-selected={"true"}>
 {"Agent overview"}
 </button>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={1}>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"}>
 {"Watch a session"}
 </button>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={2}>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"}>
 {"Create an agent"}
 </button>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={3}>
+<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"}>
 {"Run it with subagents"}
 </button>
 </div>
@@ -503,1712 +499,6 @@ export default function EnterprisePage() {
 </div>
 </div>
 </section>
-</div>,
-<div key="1">
-<section className={"product-hero-section pt-32 sm:pt-36  "}>
-<div className={"pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[var(--color-grey-900)]"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
-<div className={"absolute -bottom-24 -left-24 h-[24rem] w-[24rem] rounded-[var(--radius-rounded)] bg-[var(--color-iris-600)] opacity-30 blur-[65px]"} />
-</div>
-<div className={"relative z-10 mx-auto w-full max-w-6xl px-6 "}>
-<div className={"flex flex-col gap-10 sm:gap-12"}>
-<div className={"flex flex-col gap-6"} data-hero-copy={"true"}>
-<Fade >
-<div className={"flex items-center justify-between gap-6"}>
-<h1 className={"text-style-24-head-med text-[var(--color-title-default-alt)] tracking-tight"}>
-{"Enterprise"}
-</h1>
-</div>
-</Fade>
-<div className={"grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16"}>
-<Fade >
-<h2 className={"text-style-48-head-med text-[var(--color-title-default-alt)] tracking-tight"}>
-{"Expert agents deployed on your infrastructure in weeks"}
-</h2>
-</Fade>
-<Fade >
-<p className={"text-style-16-body-reg text-[var(--color-text-default-alt)] opacity-75"}>
-{"Our agents work on your software without connectors, APIs or any rebuild of your infrastructure. Any software, any device: automate any process in your business."}
-</p>
-</Fade>
-</div>
-<Fade className={"mt-2"}>
-<div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap"}>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-primary)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-secondary)]"} data-hero-button={"primary"} href={"/contact"}>
-{"Book a demo"}
-</Link>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-white/70 bg-transparent text-[var(--color-text-default-alt)] hover:bg-[var(--color-bg-primary)]/10"} data-hero-button={"outline"} href={"/case-studies"}>
-{"See what's possible"}
-</Link>
-</div>
-</Fade>
-</div>
-<Fade >
-<div className={"flex flex-col gap-10"}>
-<ul className={"flex flex-wrap gap-3"}>
-<li className={"rounded-[var(--radius-rounded)] border border-[var(--color-grey-500)]/40 px-5 py-3"}>
-<span className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-grey-500)]"}>
-{"Computer-use agents"}
-</span>
-</li>
-<li className={"rounded-[var(--radius-rounded)] border border-[var(--color-grey-500)]/40 px-5 py-3"}>
-<span className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-grey-500)]"}>
-{"Built for enterprise teams"}
-</span>
-</li>
-</ul>
-<div className={"w-full rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)] p-3 sm:p-4"} data-keep-light={"true"}>
-<div className={"flex flex-col gap-3 sm:gap-4"}>
-<div className={"flex h-[520px] flex-col overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] sm:h-[600px]"}>
-<div className={"flex h-10 shrink-0 items-center gap-3 border-b border-[var(--color-stroke-default)] px-4"}>
-<span className={"flex gap-1.5"} aria-hidden={"true"}>
-<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#ff5f57]"} />
-<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#febc2e]"} />
-<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#28c840]"} />
-</span>
-<span className={"text-style-12-body-reg flex min-w-0 items-center gap-1.5 text-[var(--color-text-tertiary)]"}>
-<span className={"text-style-11-label-bold flex size-4 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)]"}>
-{"Twinlink"}
-</span>
-<span className={"hidden items-center gap-1 sm:flex"}>
-{"Twinlink"}
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3 6 5 5 5-5"} />
-</svg>
-</span>
-<span className={"hidden sm:inline"}>
-{"/"}
-</span>
-<span className={"hidden items-center gap-1 sm:flex"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
-</svg>
-{"Default"}
-</span>
-<span className={"flex min-w-0 items-center gap-1.5"}>
-<span className={"hidden sm:inline"}>
-{"/"}
-</span>
-<span className={"truncate"}>
-{"Sessions"}
-</span>
-</span>
-<span className={"flex min-w-0 items-center gap-1.5"}>
-<span >
-{"/"}
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] truncate text-[var(--color-title-default)]"}>
-{"2fa860ad"}
-</span>
-</span>
-</span>
-</div>
-<div className={"flex min-h-0 flex-1"}>
-<nav className={"hidden w-48 shrink-0 flex-col gap-0.5 overflow-y-auto border-r border-[var(--color-stroke-default)] p-3 [scrollbar-width:none] md:flex"} aria-label={"Console"}>
-<div className={"flex flex-col gap-0.5"}>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
-<rect x={"9.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
-<rect x={"2.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
-<rect x={"9.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
-</svg>
-</span>
-{"Home"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
-</svg>
-</span>
-{"Projects"}
-</span>
-</div>
-<div className={"flex flex-col gap-0.5"}>
-<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
-{"Build"}
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3 6 5 5 5-5"} />
-</svg>
-</span>
-<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left text-[var(--color-text-secondary)] transition-colors duration-200 hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-default)]"} type={"button"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"5.5"} cy={"5.5"} r={"2"} />
-<circle cx={"10.5"} cy={"5.5"} r={"2"} />
-<path d={"M2 13c0-2 1.5-3.5 3.5-3.5S9 11 9 13M7 13c0-2 1.5-3.5 3.5-3.5S14 11 14 13"} />
-</svg>
-</span>
-{"Agents"}
-</button>
-<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left bg-[var(--color-bg-selected)] text-[var(--color-title-default)]"} type={"button"} aria-current={"page"}>
-<span className={"text-[var(--color-icon-accent)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M2.5 3.5h11v8h-7l-3 2.5v-2.5h-1z"} />
-<path d={"M5.5 6.5h5M5.5 8.5h3"} />
-</svg>
-</span>
-{"Sessions"}
-<span className={"pointer-events-none absolute z-10 flex size-2.5 right-2.5 top-1/2 -translate-y-1/2"} aria-hidden={"true"}>
-<span className={"absolute inline-flex size-full animate-ping rounded-[var(--radius-rounded)] bg-[var(--color-stroke-accent-alt)] opacity-60 motion-reduce:hidden"} />
-<span className={"relative inline-flex size-2.5 rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] ring-2 ring-[var(--color-bg-card)]"} />
-</span>
-</button>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z"} />
-</svg>
-</span>
-{"Skills"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2"} y={"3"} width={"12"} height={"8"} rx={"1"} />
-<path d={"M6 13.5h4M8 11v2.5"} />
-</svg>
-</span>
-{"Environments"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
-<path d={"M2 6h12"} />
-</svg>
-</span>
-{"Browser profiles"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"3"} y={"7"} width={"10"} height={"7"} rx={"1"} />
-<path d={"M5.5 7V5a2.5 2.5 0 0 1 5 0v2"} />
-</svg>
-</span>
-{"Vaults"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"8"} cy={"8"} r={"5.5"} />
-<path d={"M8 5v3l2 1.5"} />
-</svg>
-</span>
-{"Schedules"}
-</span>
-</div>
-<div className={"flex flex-col gap-0.5"}>
-<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
-{"Configure"}
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3 6 5 5 5-5"} />
-</svg>
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"8"} cy={"6"} r={"1.75"} />
-<circle cx={"3.75"} cy={"4.5"} r={"1.25"} />
-<circle cx={"12.25"} cy={"4.5"} r={"1.25"} />
-<path d={"M5 12.5c0-1.75 1.25-3 3-3s3 1.25 3 3M1.75 10c.25-1.25 1-2 2-2M14.25 10c-.25-1.25-1-2-2-2"} />
-</svg>
-</span>
-{"Organisation"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"10"} cy={"6"} r={"3.5"} />
-<path d={"M7.5 8.5 2.5 13.5M4 12l1.5 1.5M5.5 10.5 7 12"} />
-</svg>
-</span>
-{"API keys"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M6.5 5.5a2 2 0 1 1 3 1.75L8 10M5 9.5a2 2 0 1 0 2 3h4M11 13a2 2 0 1 0-1.25-3.5L8 6.5"} />
-</svg>
-</span>
-{"Webhooks"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2"} y={"3.5"} width={"12"} height={"9"} rx={"1"} />
-<path d={"M2 6.5h12M4.5 10h2"} />
-</svg>
-</span>
-{"Billing & subscription"}
-</span>
-</div>
-<div className={"mt-auto flex shrink-0 flex-col gap-2 pt-3 opacity-50"}>
-<div className={"flex flex-col gap-2 rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] p-2.5"}>
-<span className={"flex items-center justify-between"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Free plan"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
-{"0%"}
-</span>
-{" used"}
-</span>
-</span>
-<span className={"h-1 rounded-[var(--radius-rounded)] bg-[var(--color-bg-secondary)]"} />
-<span className={"flex items-center justify-between"}>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)] flex items-center gap-1"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M3 3v3h3"} />
-<path d={"M3.5 6A5 5 0 1 1 3 9"} />
-</svg>
-{"2 days"}
-</span>
-<span className={"text-style-12-head-med flex items-center gap-1 rounded-[var(--radius-small)] bg-[var(--color-bg-accent-alt)] px-2 py-1 text-[var(--color-text-default-alt)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M9.5 2.5c2.5 0 4 1.5 4 4L8.5 11.5l-4-4z"} />
-<path d={"M4.5 7.5 2.5 7l2-2.5h3M8.5 11.5l.5 2 2.5-2v-3M3 13c0-1 .5-2 1.5-2.25"} />
-</svg>
-{"Upgrade"}
-</span>
-</span>
-</div>
-<span className={"flex items-center justify-between px-1"}>
-<span className={"text-style-12-head-med flex size-6 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)]"}>
-{"A"}
-</span>
-<span className={"text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
-<path d={"M6 3v10"} />
-</svg>
-</span>
-</span>
-</div>
-</nav>
-<div className={"relative min-w-0 flex-1 overflow-y-auto"}>
-<div className={"h-full"} style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<div className={"flex h-full min-h-0 flex-col"}>
-<div className={"flex shrink-0 flex-col gap-2 border-b border-[var(--color-stroke-default)] px-4 py-3 sm:flex-row sm:items-center sm:gap-3 sm:px-5"}>
-<div className={"flex min-w-0 flex-1 items-center gap-2"}>
-<button className={"text-style-12-body-reg flex shrink-0 items-center gap-1 rounded-[var(--radius-small)] text-[var(--color-text-tertiary)] hover:text-[var(--color-text-default)]"} type={"button"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M10 3 5 8l5 5"} />
-</svg>
-{"Sessions"}
-</button>
-<span className={"text-[var(--color-text-disabled)]"}>
-{"/"}
-</span>
-<span className={"text-style-14-head-med text-[var(--color-text-default)] truncate"}>
-{"Request an event liability quote for the June wedding"}
-</span>
-</div>
-<div className={"flex shrink-0 items-center gap-2"}>
-<button className={"group"} type={"button"}>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors group-hover:bg-[var(--color-bg-hover)]"}>
-{"form-filling-agent"}
-</span>
-</button>
-<span className={"text-style-12-head-med inline-flex items-center gap-1 whitespace-nowrap rounded-[var(--radius-rounded)] border px-2 py-0.5 border-[var(--color-stroke-success)] bg-[var(--color-bg-success-alt)] text-[var(--color-text-success)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3.5 8.5 3 3 6-7"} />
-</svg>
-{"Completed"}
-</span>
-</div>
-</div>
-<div className={"grid min-h-0 flex-1 grid-rows-[minmax(0,1fr)_minmax(0,1fr)] sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] sm:grid-rows-1"}>
-<ol className={"order-2 flex min-h-0 flex-col gap-0.5 overflow-y-auto border-t border-[var(--color-stroke-default)] p-2 [scrollbar-width:thin] sm:order-1 sm:border-r sm:border-t-0 sm:p-3"} aria-label={"Session trace"}>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"8"} cy={"5.5"} r={"2.5"} />
-<path d={"M3 13.5c0-2.5 2-4.5 5-4.5s5 2 5 4.5"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Request an event liability quote for the June wedding"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-{"Details attached: venue-booking.pdf"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"01"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"8"} cy={"8"} r={"5.5"} />
-<path d={"M2.5 8h11M8 2.5c1.5 1.5 2.25 3.5 2.25 5.5S9.5 12 8 13.5C6.5 12 5.75 10 5.75 8S6.5 4 8 2.5"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Open yourinsurer.com"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"02"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M3.5 2.5 12 7l-3.75 1.25L7 12z"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Click “Get a quote”"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"03"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"1.5"} y={"4"} width={"13"} height={"8"} rx={"1"} />
-<path d={"M4 6.5h.01M6.5 6.5h.01M9 6.5h.01M11.5 6.5h.01M5 9.5h6"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Fill “Full name”"}
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
-{"Claire Martin"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"04"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"1.5"} y={"4"} width={"13"} height={"8"} rx={"1"} />
-<path d={"M4 6.5h.01M6.5 6.5h.01M9 6.5h.01M11.5 6.5h.01M5 9.5h6"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Fill “Email”"}
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
-{"claire.martin@mail.com"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"05"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M3.5 2.5 12 7l-3.75 1.25L7 12z"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Select “Coverage”"}
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
-{"Event liability"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"06"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"1.5"} y={"4"} width={"13"} height={"8"} rx={"1"} />
-<path d={"M4 6.5h.01M6.5 6.5h.01M9 6.5h.01M11.5 6.5h.01M5 9.5h6"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Fill “Event date”"}
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
-{"14/06/2027"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"07"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-warning)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M3.5 14V2.5M3.5 3h8l-2 3 2 3h-8"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Guest count is missing"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-{"Not in the booking. Flagged instead of guessed."}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"08"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M3.5 2.5 12 7l-3.75 1.25L7 12z"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Click “Submit request”"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"09"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 bg-[var(--color-bg-selected)]"} type={"button"} aria-current={"step"}>
-<span className={"mt-0.5 text-[var(--color-icon-success)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3.5 8.5 3 3 6-7"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Quote request sent, reference Q-48213"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-{"Guest count still needed: the insurer will ask for it."}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"10"}
-</span>
-</button>
-</li>
-</ol>
-<div className={"order-1 flex min-h-0 flex-col gap-2 bg-[var(--color-bg-secondary)] p-2 sm:order-2 sm:gap-3 sm:p-4"}>
-<div className={"flex min-h-0 flex-1 flex-col overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)]"}>
-<div className={"flex h-8 shrink-0 items-center gap-2 border-b border-[var(--color-stroke-default)] px-3"}>
-<span className={"flex gap-1"} aria-hidden={"true"}>
-<span className={"size-2 rounded-[var(--radius-rounded)] bg-[var(--color-stroke-secondary)]"} />
-<span className={"size-2 rounded-[var(--radius-rounded)] bg-[var(--color-stroke-secondary)]"} />
-<span className={"size-2 rounded-[var(--radius-rounded)] bg-[var(--color-stroke-secondary)]"} />
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] min-w-0 flex-1 truncate rounded-[var(--radius-small)] bg-[var(--color-bg-secondary)] px-2 py-0.5 text-[var(--color-text-tertiary)]"}>
-{"yourinsurer.com/quote/sent"}
-</span>
-</div>
-<div className={"relative min-h-0 flex-1 overflow-hidden"}>
-<div className={"absolute inset-0"} style={{"opacity": "1"} as React.CSSProperties}>
-<div className={"flex h-full flex-col items-center justify-center gap-2 p-6 text-center"}>
-<span className={"flex size-9 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-success-alt)] text-[var(--color-icon-success)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3.5 8.5 3 3 6-7"} />
-</svg>
-</span>
-<span className={"text-style-14-head-med text-[var(--color-text-default)]"}>
-{"Request received"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-{"Reference "}
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
-{"Q-48213"}
-</span>
-</span>
-</div>
-</div>
-<div className={"pointer-events-none absolute left-0 top-0 z-10"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
-<Image className={"drop-shadow-[0_2px_6px_rgba(0,0,0,0.25)]"} src="/hc/agent-cursor.svg" alt="" width={43} height={37} unoptimized style={{"color": "transparent"} as React.CSSProperties} />
-</div>
-</div>
-</div>
-<div className={"flex shrink-0 items-center gap-3 px-1"}>
-<button className={"flex size-7 shrink-0 items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-bg-card)] text-[var(--color-icon-default)] shadow-elevation-1 hover:bg-[var(--color-bg-hover)]"} type={"button"} aria-label={"Replay from start"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M3 3v3h3"} />
-<path d={"M3.5 6A5 5 0 1 1 3 9"} />
-</svg>
-</button>
-<fieldset className={"m-0 flex min-w-0 flex-1 items-center gap-1 border-0 p-0"}>
-<legend className={"sr-only"}>
-{"Timeline"}
-</legend>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 1"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 2"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 3"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 4"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 5"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 6"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 7"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 8"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 9"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 10"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-</fieldset>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] shrink-0 text-[var(--color-text-tertiary)]"}>
-{"10/10"}
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div className={"flex flex-col items-center gap-2"}>
-<div className={"flex max-w-full overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)]"}>
-<div className={"relative flex min-w-0 gap-1 overflow-x-auto [scrollbar-width:none] motion-safe:scroll-smooth p-0.5  "} role={"tablist"} aria-label={"Console demo"}>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={0}>
-{"Agent overview"}
-</button>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] bg-white text-[var(--color-grey-900)] shadow-[0_1px_3px_rgba(0,0,0,0.08)]"} type={"button"} role={"tab"} aria-selected={"true"} data-swap={1}>
-{"Watch a session"}
-</button>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={2}>
-{"Create an agent"}
-</button>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={3}>
-{"Run it with subagents"}
-</button>
-</div>
-</div>
-<p className={"text-style-12-body-reg text-[var(--color-text-tertiary)] text-center"}>
-{"Click Start session, a session or the sidebar to explore."}
-</p>
-</div>
-</div>
-</div>
-</div>
-</Fade>
-</div>
-</div>
-</section>
-</div>,
-<div key="2">
-<section className={"product-hero-section pt-32 sm:pt-36  "}>
-<div className={"pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[var(--color-grey-900)]"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
-<div className={"absolute -bottom-24 -left-24 h-[24rem] w-[24rem] rounded-[var(--radius-rounded)] bg-[var(--color-iris-600)] opacity-30 blur-[65px]"} />
-</div>
-<div className={"relative z-10 mx-auto w-full max-w-6xl px-6 "}>
-<div className={"flex flex-col gap-10 sm:gap-12"}>
-<div className={"flex flex-col gap-6"} data-hero-copy={"true"}>
-<Fade >
-<div className={"flex items-center justify-between gap-6"}>
-<h1 className={"text-style-24-head-med text-[var(--color-title-default-alt)] tracking-tight"}>
-{"Enterprise"}
-</h1>
-</div>
-</Fade>
-<div className={"grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16"}>
-<Fade >
-<h2 className={"text-style-48-head-med text-[var(--color-title-default-alt)] tracking-tight"}>
-{"Expert agents deployed on your infrastructure in weeks"}
-</h2>
-</Fade>
-<Fade >
-<p className={"text-style-16-body-reg text-[var(--color-text-default-alt)] opacity-75"}>
-{"Our agents work on your software without connectors, APIs or any rebuild of your infrastructure. Any software, any device: automate any process in your business."}
-</p>
-</Fade>
-</div>
-<Fade className={"mt-2"}>
-<div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap"}>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-primary)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-secondary)]"} data-hero-button={"primary"} href={"/contact"}>
-{"Book a demo"}
-</Link>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-white/70 bg-transparent text-[var(--color-text-default-alt)] hover:bg-[var(--color-bg-primary)]/10"} data-hero-button={"outline"} href={"/case-studies"}>
-{"See what's possible"}
-</Link>
-</div>
-</Fade>
-</div>
-<Fade >
-<div className={"flex flex-col gap-10"}>
-<ul className={"flex flex-wrap gap-3"}>
-<li className={"rounded-[var(--radius-rounded)] border border-[var(--color-grey-500)]/40 px-5 py-3"}>
-<span className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-grey-500)]"}>
-{"Computer-use agents"}
-</span>
-</li>
-<li className={"rounded-[var(--radius-rounded)] border border-[var(--color-grey-500)]/40 px-5 py-3"}>
-<span className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-grey-500)]"}>
-{"Built for enterprise teams"}
-</span>
-</li>
-</ul>
-<div className={"w-full rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)] p-3 sm:p-4"} data-keep-light={"true"}>
-<div className={"flex flex-col gap-3 sm:gap-4"}>
-<div className={"flex h-[520px] flex-col overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] sm:h-[600px]"}>
-<div className={"flex h-10 shrink-0 items-center gap-3 border-b border-[var(--color-stroke-default)] px-4"}>
-<span className={"flex gap-1.5"} aria-hidden={"true"}>
-<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#ff5f57]"} />
-<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#febc2e]"} />
-<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#28c840]"} />
-</span>
-<span className={"text-style-12-body-reg flex min-w-0 items-center gap-1.5 text-[var(--color-text-tertiary)]"}>
-<span className={"text-style-11-label-bold flex size-4 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)]"}>
-{"Twinlink"}
-</span>
-<span className={"hidden items-center gap-1 sm:flex"}>
-{"Twinlink"}
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3 6 5 5 5-5"} />
-</svg>
-</span>
-<span className={"hidden sm:inline"}>
-{"/"}
-</span>
-<span className={"hidden items-center gap-1 sm:flex"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
-</svg>
-{"Default"}
-</span>
-<span className={"flex min-w-0 items-center gap-1.5"}>
-<span className={"hidden sm:inline"}>
-{"/"}
-</span>
-<span className={"truncate"}>
-{"Agents"}
-</span>
-</span>
-<span className={"flex min-w-0 items-center gap-1.5"}>
-<span >
-{"/"}
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] truncate text-[var(--color-title-default)]"}>
-{"New agent"}
-</span>
-</span>
-</span>
-</div>
-<div className={"flex min-h-0 flex-1"}>
-<nav className={"hidden w-48 shrink-0 flex-col gap-0.5 overflow-y-auto border-r border-[var(--color-stroke-default)] p-3 [scrollbar-width:none] md:flex"} aria-label={"Console"}>
-<div className={"flex flex-col gap-0.5"}>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
-<rect x={"9.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
-<rect x={"2.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
-<rect x={"9.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
-</svg>
-</span>
-{"Home"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
-</svg>
-</span>
-{"Projects"}
-</span>
-</div>
-<div className={"flex flex-col gap-0.5"}>
-<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
-{"Build"}
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3 6 5 5 5-5"} />
-</svg>
-</span>
-<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left bg-[var(--color-bg-selected)] text-[var(--color-title-default)]"} type={"button"} aria-current={"page"}>
-<span className={"text-[var(--color-icon-accent)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"5.5"} cy={"5.5"} r={"2"} />
-<circle cx={"10.5"} cy={"5.5"} r={"2"} />
-<path d={"M2 13c0-2 1.5-3.5 3.5-3.5S9 11 9 13M7 13c0-2 1.5-3.5 3.5-3.5S14 11 14 13"} />
-</svg>
-</span>
-{"Agents"}
-</button>
-<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left text-[var(--color-text-secondary)] transition-colors duration-200 hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-default)]"} type={"button"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M2.5 3.5h11v8h-7l-3 2.5v-2.5h-1z"} />
-<path d={"M5.5 6.5h5M5.5 8.5h3"} />
-</svg>
-</span>
-{"Sessions"}
-<span className={"pointer-events-none absolute z-10 flex size-2.5 right-2.5 top-1/2 -translate-y-1/2"} aria-hidden={"true"}>
-<span className={"absolute inline-flex size-full animate-ping rounded-[var(--radius-rounded)] bg-[var(--color-stroke-accent-alt)] opacity-60 motion-reduce:hidden"} />
-<span className={"relative inline-flex size-2.5 rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] ring-2 ring-[var(--color-bg-card)]"} />
-</span>
-</button>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z"} />
-</svg>
-</span>
-{"Skills"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2"} y={"3"} width={"12"} height={"8"} rx={"1"} />
-<path d={"M6 13.5h4M8 11v2.5"} />
-</svg>
-</span>
-{"Environments"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
-<path d={"M2 6h12"} />
-</svg>
-</span>
-{"Browser profiles"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"3"} y={"7"} width={"10"} height={"7"} rx={"1"} />
-<path d={"M5.5 7V5a2.5 2.5 0 0 1 5 0v2"} />
-</svg>
-</span>
-{"Vaults"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"8"} cy={"8"} r={"5.5"} />
-<path d={"M8 5v3l2 1.5"} />
-</svg>
-</span>
-{"Schedules"}
-</span>
-</div>
-<div className={"flex flex-col gap-0.5"}>
-<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
-{"Configure"}
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3 6 5 5 5-5"} />
-</svg>
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"8"} cy={"6"} r={"1.75"} />
-<circle cx={"3.75"} cy={"4.5"} r={"1.25"} />
-<circle cx={"12.25"} cy={"4.5"} r={"1.25"} />
-<path d={"M5 12.5c0-1.75 1.25-3 3-3s3 1.25 3 3M1.75 10c.25-1.25 1-2 2-2M14.25 10c-.25-1.25-1-2-2-2"} />
-</svg>
-</span>
-{"Organisation"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"10"} cy={"6"} r={"3.5"} />
-<path d={"M7.5 8.5 2.5 13.5M4 12l1.5 1.5M5.5 10.5 7 12"} />
-</svg>
-</span>
-{"API keys"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M6.5 5.5a2 2 0 1 1 3 1.75L8 10M5 9.5a2 2 0 1 0 2 3h4M11 13a2 2 0 1 0-1.25-3.5L8 6.5"} />
-</svg>
-</span>
-{"Webhooks"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2"} y={"3.5"} width={"12"} height={"9"} rx={"1"} />
-<path d={"M2 6.5h12M4.5 10h2"} />
-</svg>
-</span>
-{"Billing & subscription"}
-</span>
-</div>
-<div className={"mt-auto flex shrink-0 flex-col gap-2 pt-3 opacity-50"}>
-<div className={"flex flex-col gap-2 rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] p-2.5"}>
-<span className={"flex items-center justify-between"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Free plan"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
-{"0%"}
-</span>
-{" used"}
-</span>
-</span>
-<span className={"h-1 rounded-[var(--radius-rounded)] bg-[var(--color-bg-secondary)]"} />
-<span className={"flex items-center justify-between"}>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)] flex items-center gap-1"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M3 3v3h3"} />
-<path d={"M3.5 6A5 5 0 1 1 3 9"} />
-</svg>
-{"2 days"}
-</span>
-<span className={"text-style-12-head-med flex items-center gap-1 rounded-[var(--radius-small)] bg-[var(--color-bg-accent-alt)] px-2 py-1 text-[var(--color-text-default-alt)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M9.5 2.5c2.5 0 4 1.5 4 4L8.5 11.5l-4-4z"} />
-<path d={"M4.5 7.5 2.5 7l2-2.5h3M8.5 11.5l.5 2 2.5-2v-3M3 13c0-1 .5-2 1.5-2.25"} />
-</svg>
-{"Upgrade"}
-</span>
-</span>
-</div>
-<span className={"flex items-center justify-between px-1"}>
-<span className={"text-style-12-head-med flex size-6 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)]"}>
-{"A"}
-</span>
-<span className={"text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
-<path d={"M6 3v10"} />
-</svg>
-</span>
-</span>
-</div>
-</nav>
-<div className={"relative min-w-0 flex-1 overflow-y-auto"}>
-<div className={"h-full"} style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<div className={"flex h-full min-h-0 flex-col"}>
-<div className={"flex shrink-0 flex-col gap-3 border-b border-[var(--color-stroke-default)] px-4 py-3 sm:px-5"}>
-<div className={"flex items-center gap-2"}>
-<button className={"text-style-12-body-reg flex items-center gap-1 rounded-[var(--radius-small)] text-[var(--color-text-tertiary)] hover:text-[var(--color-text-default)]"} type={"button"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M10 3 5 8l5 5"} />
-</svg>
-{"Agents"}
-</button>
-<span className={"text-[var(--color-text-disabled)]"}>
-{"/"}
-</span>
-<span className={"text-style-14-head-med text-[var(--color-text-default)]"}>
-{"New agent"}
-</span>
-</div>
-<ol className={"flex items-center gap-1 overflow-x-auto [scrollbar-width:none]"}>
-<li className={"flex shrink-0 items-center gap-1"}>
-<button className={"flex items-center gap-1.5 rounded-[var(--radius-medium)] py-0.5 pr-1 disabled:cursor-default"} type={"button"} aria-current={"step"}>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] flex size-5 items-center justify-center rounded-[var(--radius-rounded)] border transition-colors border-transparent bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)]"}>
-{"1"}
-</span>
-<span className={"text-style-12-head-med whitespace-nowrap text-[var(--color-title-default)]"}>
-{"Details"}
-</span>
-</button>
-<span className={"h-0.5 w-4 rounded-[var(--radius-rounded)] sm:w-6 bg-[var(--color-stroke-default)]"} aria-hidden={"true"} />
-</li>
-<li className={"flex shrink-0 items-center gap-1"}>
-<button className={"flex items-center gap-1.5 rounded-[var(--radius-medium)] py-0.5 pr-1 disabled:cursor-default"} type={"button"} disabled>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] flex size-5 items-center justify-center rounded-[var(--radius-rounded)] border transition-colors border-[var(--color-stroke-default)] text-[var(--color-text-tertiary)]"}>
-{"2"}
-</span>
-<span className={"text-style-12-head-med whitespace-nowrap text-[var(--color-text-tertiary)]"}>
-{"Config"}
-</span>
-</button>
-<span className={"h-0.5 w-4 rounded-[var(--radius-rounded)] sm:w-6 bg-[var(--color-stroke-default)]"} aria-hidden={"true"} />
-</li>
-<li className={"flex shrink-0 items-center gap-1"}>
-<button className={"flex items-center gap-1.5 rounded-[var(--radius-medium)] py-0.5 pr-1 disabled:cursor-default"} type={"button"} disabled>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] flex size-5 items-center justify-center rounded-[var(--radius-rounded)] border transition-colors border-[var(--color-stroke-default)] text-[var(--color-text-tertiary)]"}>
-{"3"}
-</span>
-<span className={"text-style-12-head-med whitespace-nowrap text-[var(--color-text-tertiary)]"}>
-{"Instructions"}
-</span>
-</button>
-<span className={"h-0.5 w-4 rounded-[var(--radius-rounded)] sm:w-6 bg-[var(--color-stroke-default)]"} aria-hidden={"true"} />
-</li>
-<li className={"flex shrink-0 items-center gap-1"}>
-<button className={"flex items-center gap-1.5 rounded-[var(--radius-medium)] py-0.5 pr-1 disabled:cursor-default"} type={"button"} disabled>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] flex size-5 items-center justify-center rounded-[var(--radius-rounded)] border transition-colors border-[var(--color-stroke-default)] text-[var(--color-text-tertiary)]"}>
-{"4"}
-</span>
-<span className={"text-style-12-head-med whitespace-nowrap text-[var(--color-text-tertiary)]"}>
-{"Skills"}
-</span>
-</button>
-<span className={"h-0.5 w-4 rounded-[var(--radius-rounded)] sm:w-6 bg-[var(--color-stroke-default)]"} aria-hidden={"true"} />
-</li>
-<li className={"flex shrink-0 items-center gap-1"}>
-<button className={"flex items-center gap-1.5 rounded-[var(--radius-medium)] py-0.5 pr-1 disabled:cursor-default"} type={"button"} disabled>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] flex size-5 items-center justify-center rounded-[var(--radius-rounded)] border transition-colors border-[var(--color-stroke-default)] text-[var(--color-text-tertiary)]"}>
-{"5"}
-</span>
-<span className={"text-style-12-head-med whitespace-nowrap text-[var(--color-text-tertiary)]"}>
-{"Subagents"}
-</span>
-</button>
-</li>
-</ol>
-</div>
-<div className={"grid min-h-0 flex-1 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]"}>
-<div className={"flex min-h-0 flex-col"}>
-<div className={"relative min-h-0 flex-1 overflow-y-auto p-4 sm:p-5"}>
-<div className={"flex flex-col gap-4"} style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<div className={"flex flex-col gap-1.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Name"}
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-2.5 text-[var(--color-text-default)] flex h-8 items-center"}>
-{"supplier-research-agent"}
-</span>
-</div>
-<div className={"flex flex-col gap-1.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Description"}
-</span>
-<span className={"text-style-12-body-reg rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-2.5 text-[var(--color-text-default)] min-h-14 py-2"}>
-{"Compares unit prices across supplier portals."}
-</span>
-</div>
-</div>
-</div>
-<div className={"flex shrink-0 justify-end gap-2 border-t border-[var(--color-stroke-default)] px-4 py-3 sm:px-5"}>
-<button className={"text-style-12-head-med inline-flex h-8 shrink-0 items-center gap-1.5 rounded-[var(--radius-medium)] px-3 transition-[background-color,opacity] duration-200 disabled:opacity-40 bg-[var(--color-bg-button-secondary-default)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-button-secondary-hover)]"} type={"button"} disabled>
-{"Back"}
-</button>
-<button className={"text-style-12-head-med inline-flex h-8 shrink-0 items-center gap-1.5 rounded-[var(--radius-medium)] px-3 transition-[background-color,opacity] duration-200 disabled:opacity-40 bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:opacity-90"} type={"button"}>
-{"Next"}
-</button>
-</div>
-</div>
-<div className={"hidden min-h-0 flex-col gap-2 overflow-y-auto border-l border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)] p-4 md:flex"}>
-<span className={"text-style-12-head-med text-[var(--color-text-tertiary)]"}>
-{"Spec preview"}
-</span>
-<pre className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] whitespace-pre-wrap break-words text-[var(--color-text-default)]"}>
-<span className={"block"} style={{"opacity": "1"} as React.CSSProperties}>
-<span className={"text-[var(--color-text-accent)]"}>
-{"name"}
-</span>
-{": supplier-research-agent"}
-</span>
-<span className={"block"} style={{"opacity": "1"} as React.CSSProperties}>
-<span className={"text-[var(--color-text-accent)]"}>
-{"description"}
-</span>
-{": Compares unit prices across supplier portals."}
-</span>
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div className={"flex flex-col items-center gap-2"}>
-<div className={"flex max-w-full overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)]"}>
-<div className={"relative flex min-w-0 gap-1 overflow-x-auto [scrollbar-width:none] motion-safe:scroll-smooth p-0.5  "} role={"tablist"} aria-label={"Console demo"}>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={0}>
-{"Agent overview"}
-</button>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={1}>
-{"Watch a session"}
-</button>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] bg-white text-[var(--color-grey-900)] shadow-[0_1px_3px_rgba(0,0,0,0.08)]"} type={"button"} role={"tab"} aria-selected={"true"} data-swap={2}>
-{"Create an agent"}
-</button>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={3}>
-{"Run it with subagents"}
-</button>
-</div>
-</div>
-<p className={"text-style-12-body-reg text-[var(--color-text-tertiary)] text-center"}>
-{"Click Start session, a session or the sidebar to explore."}
-</p>
-</div>
-</div>
-</div>
-</div>
-</Fade>
-</div>
-</div>
-</section>
-</div>,
-<div key="3">
-<section className={"product-hero-section pt-32 sm:pt-36  "}>
-<div className={"pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[var(--color-grey-900)]"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
-<div className={"absolute -bottom-24 -left-24 h-[24rem] w-[24rem] rounded-[var(--radius-rounded)] bg-[var(--color-iris-600)] opacity-30 blur-[65px]"} />
-</div>
-<div className={"relative z-10 mx-auto w-full max-w-6xl px-6 "}>
-<div className={"flex flex-col gap-10 sm:gap-12"}>
-<div className={"flex flex-col gap-6"} data-hero-copy={"true"}>
-<Fade >
-<div className={"flex items-center justify-between gap-6"}>
-<h1 className={"text-style-24-head-med text-[var(--color-title-default-alt)] tracking-tight"}>
-{"Enterprise"}
-</h1>
-</div>
-</Fade>
-<div className={"grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16"}>
-<Fade >
-<h2 className={"text-style-48-head-med text-[var(--color-title-default-alt)] tracking-tight"}>
-{"Expert agents deployed on your infrastructure in weeks"}
-</h2>
-</Fade>
-<Fade >
-<p className={"text-style-16-body-reg text-[var(--color-text-default-alt)] opacity-75"}>
-{"Our agents work on your software without connectors, APIs or any rebuild of your infrastructure. Any software, any device: automate any process in your business."}
-</p>
-</Fade>
-</div>
-<Fade className={"mt-2"}>
-<div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap"}>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-primary)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-secondary)]"} data-hero-button={"primary"} href={"/contact"}>
-{"Book a demo"}
-</Link>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-white/70 bg-transparent text-[var(--color-text-default-alt)] hover:bg-[var(--color-bg-primary)]/10"} data-hero-button={"outline"} href={"/case-studies"}>
-{"See what's possible"}
-</Link>
-</div>
-</Fade>
-</div>
-<Fade >
-<div className={"flex flex-col gap-10"}>
-<ul className={"flex flex-wrap gap-3"}>
-<li className={"rounded-[var(--radius-rounded)] border border-[var(--color-grey-500)]/40 px-5 py-3"}>
-<span className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-grey-500)]"}>
-{"Computer-use agents"}
-</span>
-</li>
-<li className={"rounded-[var(--radius-rounded)] border border-[var(--color-grey-500)]/40 px-5 py-3"}>
-<span className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-grey-500)]"}>
-{"Built for enterprise teams"}
-</span>
-</li>
-</ul>
-<div className={"w-full rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)] p-3 sm:p-4"} data-keep-light={"true"}>
-<div className={"flex flex-col gap-3 sm:gap-4"}>
-<div className={"flex h-[520px] flex-col overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] sm:h-[600px]"}>
-<div className={"flex h-10 shrink-0 items-center gap-3 border-b border-[var(--color-stroke-default)] px-4"}>
-<span className={"flex gap-1.5"} aria-hidden={"true"}>
-<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#ff5f57]"} />
-<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#febc2e]"} />
-<span className={"size-2.5 rounded-[var(--radius-rounded)] bg-[#28c840]"} />
-</span>
-<span className={"text-style-12-body-reg flex min-w-0 items-center gap-1.5 text-[var(--color-text-tertiary)]"}>
-<span className={"text-style-11-label-bold flex size-4 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)]"}>
-{"Twinlink"}
-</span>
-<span className={"hidden items-center gap-1 sm:flex"}>
-{"Twinlink"}
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3 6 5 5 5-5"} />
-</svg>
-</span>
-<span className={"hidden sm:inline"}>
-{"/"}
-</span>
-<span className={"hidden items-center gap-1 sm:flex"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
-</svg>
-{"Default"}
-</span>
-<span className={"flex min-w-0 items-center gap-1.5"}>
-<span className={"hidden sm:inline"}>
-{"/"}
-</span>
-<span className={"truncate"}>
-{"Sessions"}
-</span>
-</span>
-<span className={"flex min-w-0 items-center gap-1.5"}>
-<span >
-{"/"}
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] truncate text-[var(--color-title-default)]"}>
-{"8c3290f8"}
-</span>
-</span>
-</span>
-</div>
-<div className={"flex min-h-0 flex-1"}>
-<nav className={"hidden w-48 shrink-0 flex-col gap-0.5 overflow-y-auto border-r border-[var(--color-stroke-default)] p-3 [scrollbar-width:none] md:flex"} aria-label={"Console"}>
-<div className={"flex flex-col gap-0.5"}>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
-<rect x={"9.5"} y={"2.5"} width={"4"} height={"4"} rx={"0.5"} />
-<rect x={"2.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
-<rect x={"9.5"} y={"9.5"} width={"4"} height={"4"} rx={"0.5"} />
-</svg>
-</span>
-{"Home"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M2 4.5v8h12V5.5H8L6.5 3.5H2.5"} />
-</svg>
-</span>
-{"Projects"}
-</span>
-</div>
-<div className={"flex flex-col gap-0.5"}>
-<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
-{"Build"}
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3 6 5 5 5-5"} />
-</svg>
-</span>
-<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left text-[var(--color-text-secondary)] transition-colors duration-200 hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-default)]"} type={"button"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"5.5"} cy={"5.5"} r={"2"} />
-<circle cx={"10.5"} cy={"5.5"} r={"2"} />
-<path d={"M2 13c0-2 1.5-3.5 3.5-3.5S9 11 9 13M7 13c0-2 1.5-3.5 3.5-3.5S14 11 14 13"} />
-</svg>
-</span>
-{"Agents"}
-</button>
-<button className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left bg-[var(--color-bg-selected)] text-[var(--color-title-default)]"} type={"button"} aria-current={"page"}>
-<span className={"text-[var(--color-icon-accent)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M2.5 3.5h11v8h-7l-3 2.5v-2.5h-1z"} />
-<path d={"M5.5 6.5h5M5.5 8.5h3"} />
-</svg>
-</span>
-{"Sessions"}
-<span className={"pointer-events-none absolute z-10 flex size-2.5 right-2.5 top-1/2 -translate-y-1/2"} aria-hidden={"true"}>
-<span className={"absolute inline-flex size-full animate-ping rounded-[var(--radius-rounded)] bg-[var(--color-stroke-accent-alt)] opacity-60 motion-reduce:hidden"} />
-<span className={"relative inline-flex size-2.5 rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] ring-2 ring-[var(--color-bg-card)]"} />
-</span>
-</button>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z"} />
-</svg>
-</span>
-{"Skills"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2"} y={"3"} width={"12"} height={"8"} rx={"1"} />
-<path d={"M6 13.5h4M8 11v2.5"} />
-</svg>
-</span>
-{"Environments"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
-<path d={"M2 6h12"} />
-</svg>
-</span>
-{"Browser profiles"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"3"} y={"7"} width={"10"} height={"7"} rx={"1"} />
-<path d={"M5.5 7V5a2.5 2.5 0 0 1 5 0v2"} />
-</svg>
-</span>
-{"Vaults"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"8"} cy={"8"} r={"5.5"} />
-<path d={"M8 5v3l2 1.5"} />
-</svg>
-</span>
-{"Schedules"}
-</span>
-</div>
-<div className={"flex flex-col gap-0.5"}>
-<span className={"text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]"}>
-{"Configure"}
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3 6 5 5 5-5"} />
-</svg>
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"8"} cy={"6"} r={"1.75"} />
-<circle cx={"3.75"} cy={"4.5"} r={"1.25"} />
-<circle cx={"12.25"} cy={"4.5"} r={"1.25"} />
-<path d={"M5 12.5c0-1.75 1.25-3 3-3s3 1.25 3 3M1.75 10c.25-1.25 1-2 2-2M14.25 10c-.25-1.25-1-2-2-2"} />
-</svg>
-</span>
-{"Organisation"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"10"} cy={"6"} r={"3.5"} />
-<path d={"M7.5 8.5 2.5 13.5M4 12l1.5 1.5M5.5 10.5 7 12"} />
-</svg>
-</span>
-{"API keys"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M6.5 5.5a2 2 0 1 1 3 1.75L8 10M5 9.5a2 2 0 1 0 2 3h4M11 13a2 2 0 1 0-1.25-3.5L8 6.5"} />
-</svg>
-</span>
-{"Webhooks"}
-</span>
-<span className={"text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]"}>
-<span >
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2"} y={"3.5"} width={"12"} height={"9"} rx={"1"} />
-<path d={"M2 6.5h12M4.5 10h2"} />
-</svg>
-</span>
-{"Billing & subscription"}
-</span>
-</div>
-<div className={"mt-auto flex shrink-0 flex-col gap-2 pt-3 opacity-50"}>
-<div className={"flex flex-col gap-2 rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] p-2.5"}>
-<span className={"flex items-center justify-between"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Free plan"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]"}>
-{"0%"}
-</span>
-{" used"}
-</span>
-</span>
-<span className={"h-1 rounded-[var(--radius-rounded)] bg-[var(--color-bg-secondary)]"} />
-<span className={"flex items-center justify-between"}>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)] flex items-center gap-1"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M3 3v3h3"} />
-<path d={"M3.5 6A5 5 0 1 1 3 9"} />
-</svg>
-{"2 days"}
-</span>
-<span className={"text-style-12-head-med flex items-center gap-1 rounded-[var(--radius-small)] bg-[var(--color-bg-accent-alt)] px-2 py-1 text-[var(--color-text-default-alt)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M9.5 2.5c2.5 0 4 1.5 4 4L8.5 11.5l-4-4z"} />
-<path d={"M4.5 7.5 2.5 7l2-2.5h3M8.5 11.5l.5 2 2.5-2v-3M3 13c0-1 .5-2 1.5-2.25"} />
-</svg>
-{"Upgrade"}
-</span>
-</span>
-</div>
-<span className={"flex items-center justify-between px-1"}>
-<span className={"text-style-12-head-med flex size-6 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)]"}>
-{"A"}
-</span>
-<span className={"text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"2"} y={"3"} width={"12"} height={"10"} rx={"1"} />
-<path d={"M6 3v10"} />
-</svg>
-</span>
-</span>
-</div>
-</nav>
-<div className={"relative min-w-0 flex-1 overflow-y-auto"}>
-<div className={"h-full"} style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<div className={"flex h-full min-h-0 flex-col"}>
-<div className={"flex shrink-0 flex-col gap-2 border-b border-[var(--color-stroke-default)] px-4 py-3 sm:flex-row sm:items-center sm:gap-3 sm:px-5"}>
-<div className={"flex min-w-0 flex-1 items-center gap-2"}>
-<button className={"text-style-12-body-reg flex shrink-0 items-center gap-1 rounded-[var(--radius-small)] text-[var(--color-text-tertiary)] hover:text-[var(--color-text-default)]"} type={"button"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M10 3 5 8l5 5"} />
-</svg>
-{"Sessions"}
-</button>
-<span className={"text-[var(--color-text-disabled)]"}>
-{"/"}
-</span>
-<span className={"text-style-14-head-med text-[var(--color-text-default)] truncate"}>
-{"Compare part A-1042 across our three supplier portals"}
-</span>
-</div>
-<div className={"flex shrink-0 items-center gap-2"}>
-<button className={"group"} type={"button"}>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors group-hover:bg-[var(--color-bg-hover)]"}>
-{"supplier-research-agent"}
-</span>
-</button>
-<span className={"text-style-12-head-med inline-flex items-center gap-1 whitespace-nowrap rounded-[var(--radius-rounded)] border px-2 py-0.5 border-[var(--color-stroke-success)] bg-[var(--color-bg-success-alt)] text-[var(--color-text-success)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"12"} height={"12"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3.5 8.5 3 3 6-7"} />
-</svg>
-{"Completed"}
-</span>
-</div>
-</div>
-<div className={"grid min-h-0 flex-1 grid-rows-[minmax(0,1fr)_minmax(0,1fr)] sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] sm:grid-rows-1"}>
-<ol className={"order-2 flex min-h-0 flex-col gap-0.5 overflow-y-auto border-t border-[var(--color-stroke-default)] p-2 [scrollbar-width:thin] sm:order-1 sm:border-r sm:border-t-0 sm:p-3"} aria-label={"Session trace"}>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"8"} cy={"5.5"} r={"2.5"} />
-<path d={"M3 13.5c0-2.5 2-4.5 5-4.5s5 2 5 4.5"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Compare part A-1042 across our three supplier portals"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-{"Unit price, stock and delivery time"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"01"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<circle cx={"4.5"} cy={"3.5"} r={"1.5"} />
-<circle cx={"4.5"} cy={"12.5"} r={"1.5"} />
-<circle cx={"11.5"} cy={"5.5"} r={"1.5"} />
-<path d={"M4.5 5v6M11.5 7c0 2.5-3 2.5-7 4"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Spawn 3 orin/web-surfer-pro subagents"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-{"One per supplier portal"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"02"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<rect x={"1.5"} y={"4"} width={"13"} height={"8"} rx={"1"} />
-<path d={"M4 6.5h.01M6.5 6.5h.01M9 6.5h.01M11.5 6.5h.01M5 9.5h6"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Search “A-1042” on Northgate Parts"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"03"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M1.5 8S4 3.5 8 3.5 14.5 8 14.5 8 12 12.5 8 12.5 1.5 8 1.5 8z"} />
-<circle cx={"8"} cy={"8"} r={"2"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Read price and stock"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-{"€14.20 · 1,200 in stock · 2 days"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"04"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-secondary)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M1.5 8S4 3.5 8 3.5 14.5 8 14.5 8 12 12.5 8 12.5 1.5 8 1.5 8z"} />
-<circle cx={"8"} cy={"8"} r={"2"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Read price and stock on Vellum Supply"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-{"€13.85 · 300 in stock · 4 days"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"05"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)]"} type={"button"}>
-<span className={"mt-0.5 text-[var(--color-icon-warning)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M3.5 14V2.5M3.5 3h8l-2 3 2 3h-8"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Part not listed on Brightline"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-{"Reported as missing instead of guessed."}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"06"}
-</span>
-</button>
-</li>
-<li style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
-<button className={"flex w-full items-start gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-2 text-left transition-colors duration-200 bg-[var(--color-bg-selected)]"} type={"button"} aria-current={"step"}>
-<span className={"mt-0.5 text-[var(--color-icon-success)]"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"16"} height={"16"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"m3.5 8.5 3 3 6-7"} />
-</svg>
-</span>
-<span className={"flex min-w-0 flex-col gap-0.5"}>
-<span className={"text-style-12-head-med text-[var(--color-text-default)]"}>
-{"Returned 3 rows as structured output"}
-</span>
-<span className={"text-style-12-body-reg text-[var(--color-text-tertiary)]"}>
-{"Cheapest in stock: Vellum Supply, €13.85"}
-</span>
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] ml-auto mt-0.5 shrink-0 text-[var(--color-text-disabled)]"}>
-{"07"}
-</span>
-</button>
-</li>
-</ol>
-<div className={"order-1 flex min-h-0 flex-col gap-2 bg-[var(--color-bg-secondary)] p-2 sm:order-2 sm:gap-3 sm:p-4"}>
-<div className={"flex min-h-0 flex-1 flex-col overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)]"}>
-<div className={"flex h-8 shrink-0 items-center gap-2 border-b border-[var(--color-stroke-default)] px-3"}>
-<span className={"flex gap-1"} aria-hidden={"true"}>
-<span className={"size-2 rounded-[var(--radius-rounded)] bg-[var(--color-stroke-secondary)]"} />
-<span className={"size-2 rounded-[var(--radius-rounded)] bg-[var(--color-stroke-secondary)]"} />
-<span className={"size-2 rounded-[var(--radius-rounded)] bg-[var(--color-stroke-secondary)]"} />
-</span>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] min-w-0 flex-1 truncate rounded-[var(--radius-small)] bg-[var(--color-bg-secondary)] px-2 py-0.5 text-[var(--color-text-tertiary)]"}>
-{"Structured output"}
-</span>
-</div>
-<div className={"relative min-h-0 flex-1 overflow-hidden"}>
-<div className={"absolute inset-0"} style={{"opacity": "1"} as React.CSSProperties}>
-<div className={"flex h-full flex-col justify-center p-4 sm:p-6"}>
-<div className={"overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)]"}>
-<table className={"text-style-12-body-reg w-full text-left"}>
-<thead className={"text-style-12-head-med bg-[var(--color-bg-secondary)] text-[var(--color-text-tertiary)]"}>
-<tr >
-<th className={"px-3 py-2 font-[inherit]"}>
-{"Portal"}
-</th>
-<th className={"px-3 py-2 font-[inherit]"}>
-{"Price"}
-</th>
-<th className={"px-3 py-2 font-[inherit]"}>
-{"Stock"}
-</th>
-<th className={"hidden px-3 py-2 font-[inherit] sm:table-cell"}>
-{"Delivery"}
-</th>
-</tr>
-</thead>
-<tbody className={"text-[var(--color-text-default)]"}>
-<tr className={"border-t border-[var(--color-stroke-default)]"} style={{"opacity": "1"} as React.CSSProperties}>
-<td className={"px-3 py-2"}>
-{"Northgate Parts"}
-</td>
-<td className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] px-3 py-2"}>
-{"€14.20"}
-</td>
-<td className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] px-3 py-2"}>
-{"1,200"}
-</td>
-<td className={"hidden px-3 py-2 sm:table-cell"}>
-{"2 days"}
-</td>
-</tr>
-<tr className={"border-t border-[var(--color-stroke-default)]"} style={{"opacity": "1"} as React.CSSProperties}>
-<td className={"px-3 py-2"}>
-{"Vellum Supply"}
-</td>
-<td className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] px-3 py-2"}>
-{"€13.85"}
-</td>
-<td className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] px-3 py-2"}>
-{"300"}
-</td>
-<td className={"hidden px-3 py-2 sm:table-cell"}>
-{"4 days"}
-</td>
-</tr>
-<tr className={"border-t border-[var(--color-stroke-default)]"} style={{"opacity": "1"} as React.CSSProperties}>
-<td className={"px-3 py-2"}>
-{"Brightline"}
-</td>
-<td className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] px-3 py-2"}>
-{"n/a"}
-</td>
-<td className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] px-3 py-2"}>
-{"n/a"}
-</td>
-<td className={"hidden px-3 py-2 sm:table-cell"}>
-{"Not listed"}
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div className={"pointer-events-none absolute left-0 top-0 z-10"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
-<Image className={"drop-shadow-[0_2px_6px_rgba(0,0,0,0.25)]"} src="/hc/agent-cursor.svg" alt="" width={43} height={37} unoptimized style={{"color": "transparent"} as React.CSSProperties} />
-</div>
-</div>
-</div>
-<div className={"flex shrink-0 items-center gap-3 px-1"}>
-<button className={"flex size-7 shrink-0 items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-bg-card)] text-[var(--color-icon-default)] shadow-elevation-1 hover:bg-[var(--color-bg-hover)]"} type={"button"} aria-label={"Replay from start"}>
-<svg className={"shrink-0"} aria-hidden={"true"} width={"14"} height={"14"} viewBox={"0 0 16 16"} fill={"none"} stroke={"currentColor"} strokeWidth={"1.25"} strokeLinecap={"round"} strokeLinejoin={"round"}>
-<path d={"M3 3v3h3"} />
-<path d={"M3.5 6A5 5 0 1 1 3 9"} />
-</svg>
-</button>
-<fieldset className={"m-0 flex min-w-0 flex-1 items-center gap-1 border-0 p-0"}>
-<legend className={"sr-only"}>
-{"Timeline"}
-</legend>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 1"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 2"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 3"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 4"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 5"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 6"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-<button className={"group flex h-4 flex-1 items-center disabled:cursor-default"} type={"button"} aria-label={"Step 7"}>
-<span className={"h-1 w-full rounded-[var(--radius-rounded)] transition-colors duration-300 bg-[var(--color-bg-accent-alt)]"} />
-</button>
-</fieldset>
-<span className={"font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] shrink-0 text-[var(--color-text-tertiary)]"}>
-{"7/7"}
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div className={"flex flex-col items-center gap-2"}>
-<div className={"flex max-w-full overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)]"}>
-<div className={"relative flex min-w-0 gap-1 overflow-x-auto [scrollbar-width:none] motion-safe:scroll-smooth p-0.5  "} role={"tablist"} aria-label={"Console demo"}>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={0}>
-{"Agent overview"}
-</button>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={1}>
-{"Watch a session"}
-</button>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]"} type={"button"} role={"tab"} aria-selected={"false"} data-swap={2}>
-{"Create an agent"}
-</button>
-<button className={"whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] bg-white text-[var(--color-grey-900)] shadow-[0_1px_3px_rgba(0,0,0,0.08)]"} type={"button"} role={"tab"} aria-selected={"true"} data-swap={3}>
-{"Run it with subagents"}
-</button>
-</div>
-</div>
-<p className={"text-style-12-body-reg text-[var(--color-text-tertiary)] text-center"}>
-{"Click Start session, a session or the sidebar to explore."}
-</p>
-</div>
-</div>
-</div>
-</div>
-</Fade>
-</div>
-</div>
-</section>
-</div>
-]} />
-<Swap initial={0} states={[
-<div key="0">
 <section className={"bg-[var(--color-bg-primary)] py-16 sm:py-24"} id={"enterprise-operations"}>
 <div className={"mx-auto flex w-full max-w-6xl flex-col gap-10 px-6"}>
 <div className={"flex flex-col gap-6 "}>
@@ -2220,7 +510,7 @@ export default function EnterprisePage() {
 </Fade>
 <Fade >
 <p className={"text-style-16-body-reg text-[var(--color-text-secondary)]   "}>
-{"Orin Platform orchestrates workflows across all your software, including legacy systems, mainframes, and desktop apps, with no APIs or connectors needed. When a step requires it, agents switch to computer use and operate directly on the interface, the way a human would."}
+{"H Platform orchestrates workflows across all your software, including legacy systems, mainframes, and desktop apps, with no APIs or connectors needed. When a step requires it, agents switch to computer use and operate directly on the interface, the way a human would."}
 </p>
 </Fade>
 </div>
@@ -2291,7 +581,7 @@ export default function EnterprisePage() {
 <div className={"flex flex-col gap-2"} aria-hidden={"true"}>
 <div className={"flex flex-col gap-1.5 rounded-[var(--radius-large)] border border-[var(--color-iris-100)] bg-[var(--color-bg-purple-alt)] p-3"}>
 <span className={"px-1 font-mono text-[10px] text-[var(--color-text-accent)]"}>
-{"Twinlink · one stack"}
+{"H Company · one stack"}
 </span>
 <div className={"flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2"} style={{"marginInline": "0px"} as React.CSSProperties}>
 <span className={"text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]"}>
@@ -2313,7 +603,7 @@ export default function EnterprisePage() {
 </div>
 <div className={"flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2"} style={{"marginInline": "18px"} as React.CSSProperties}>
 <span className={"text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]"}>
-{"Orin models"}
+{"Holo models"}
 </span>
 <span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
 </div>
@@ -2409,18 +699,18 @@ export default function EnterprisePage() {
 </div>
 </div>
 <div className={"flex flex-col text-center md:text-left"}>
-<button className={"cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-title-default)]"} type={"button"} aria-pressed={"true"} data-swap={0}>
+<button className={"cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-title-default)]"} type={"button"} aria-pressed={"true"}>
 {"Native computer use, for enterprise environments."}
 </button>
-<button className={"cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-grey-300)] hover:text-[var(--color-grey-400)]"} type={"button"} aria-pressed={"false"} data-swap={1}>
-{"Twinlink manages the full stack. You keep control of yours."}
+<button className={"cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-grey-300)] hover:text-[var(--color-grey-400)]"} type={"button"} aria-pressed={"false"}>
+{"H Company manages the full stack. You keep control of yours."}
 </button>
-<button className={"cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-grey-300)] hover:text-[var(--color-grey-400)]"} type={"button"} aria-pressed={"false"} data-swap={2}>
+<button className={"cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-grey-300)] hover:text-[var(--color-grey-400)]"} type={"button"} aria-pressed={"false"}>
 {"Deployed with you, proven in production."}
 </button>
 <div className={"relative mt-5 flex min-h-28 flex-col gap-3 animate-[fadeIn_0.3s_ease] md:min-h-24"}>
 <p className={"text-style-16-body-reg text-[var(--color-text-secondary)] mx-auto max-w-md md:mx-0"}>
-{"Trained from day one on enterprise environments. Twinlink adapts to any system you run, legacy included, without ever requiring an API."}
+{"Trained from day one on enterprise environments. H Company adapts to any system you run, legacy included, without ever requiring an API."}
 </p>
 <p className={"text-style-14-body-reg text-[var(--color-text-accent)] mx-auto font-medium md:mx-0"}>
 {"UI reasoning · Multisystem"}
@@ -2431,450 +721,6 @@ export default function EnterprisePage() {
 </Fade>
 </div>
 </section>
-</div>,
-<div key="1">
-<section className={"bg-[var(--color-bg-primary)] py-16 sm:py-24"} id={"enterprise-operations"}>
-<div className={"mx-auto flex w-full max-w-6xl flex-col gap-10 px-6"}>
-<div className={"flex flex-col gap-6 "}>
-<div className={"grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16"}>
-<Fade >
-<h2 className={"text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl"}>
-{"The only agentic platform built by a lab specialized in computer use and enterprise environments"}
-</h2>
-</Fade>
-<Fade >
-<p className={"text-style-16-body-reg text-[var(--color-text-secondary)]   "}>
-{"Orin Platform orchestrates workflows across all your software, including legacy systems, mainframes, and desktop apps, with no APIs or connectors needed. When a step requires it, agents switch to computer use and operate directly on the interface, the way a human would."}
-</p>
-</Fade>
-</div>
-</div>
-<Fade >
-<div className={"grid w-full items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-16"}>
-<div className={"mx-auto flex w-full max-w-[460px] flex-col gap-4"}>
-<div className={"grid rounded-[var(--radius-large)] border border-[var(--color-grey-250)] bg-[var(--color-bg-secondary)] p-6 shadow-[0_10px_40px_rgb(4_4_5_/4%)] sm:p-8"}>
-<div className={"col-start-1 row-start-1 self-center transition-all duration-500 pointer-events-none translate-y-2 opacity-0"}>
-<div className={"overflow-hidden rounded-[var(--radius-large)] border shadow-[0_18px_40px_rgb(4_4_5_/10%)] border-white/15 bg-[var(--color-grey-900)]"} aria-hidden={"true"}>
-<div className={"flex items-center gap-2 border-b px-3 py-2 border-white/10 bg-white/5"}>
-<div className={"flex items-center gap-1.5"}>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FF5F57]/80"} />
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FEBC2E]/80"} />
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#28C840]/80"} />
-</div>
-<span className={"font-mono text-[10px] text-white/50"}>
-{"mainframe · session 3270"}
-</span>
-</div>
-<div className={"flex flex-col gap-1.5 p-4 font-mono text-[11px] text-[var(--color-green-400)]"}>
-<span className={"text-white/40"}>
-{"*** CUSTOMER ONBOARDING · SCREEN 04 ***"}
-</span>
-<div className={"flex gap-4 rounded-[var(--radius-small)] px-1.5 py-0.5 "}>
-<span className={"w-20 text-white/50"}>
-{"CUST-ID"}
-</span>
-<span >
-{"004 812 377"}
-</span>
-</div>
-<div className={"flex gap-4 rounded-[var(--radius-small)] px-1.5 py-0.5 "}>
-<span className={"w-20 text-white/50"}>
-{"ACCOUNT"}
-</span>
-<span >
-{"FR76 ···· 0412"}
-</span>
-</div>
-<div className={"flex gap-4 rounded-[var(--radius-small)] px-1.5 py-0.5 outline-2 outline-[var(--color-iris-400)] bg-[var(--color-iris-400)]/15"}>
-<span className={"w-20 text-white/50"}>
-{"STATUS"}
-</span>
-<span >
-{"PENDING KYC"}
-</span>
-</div>
-<div className={"flex gap-4 rounded-[var(--radius-small)] px-1.5 py-0.5 "}>
-<span className={"w-20 text-white/50"}>
-{"RISK"}
-</span>
-<span >
-{"—"}
-</span>
-</div>
-<span className={"mt-2 text-white/40"}>
-{"F3=EXIT F5=REFRESH F8=NEXT"}
-</span>
-</div>
-<div className={"flex items-center gap-2 border-t border-white/10 px-4 py-2.5 font-mono text-[10px] text-white/60"}>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-300)]"} />
-{"agent · read STATUS · no API, no connector"}
-</div>
-</div>
-</div>
-<div className={"col-start-1 row-start-1 self-center transition-all duration-500 translate-y-0 opacity-100"}>
-<div className={"flex flex-col gap-2"} aria-hidden={"true"}>
-<div className={"flex flex-col gap-1.5 rounded-[var(--radius-large)] border border-[var(--color-iris-100)] bg-[var(--color-bg-purple-alt)] p-3"}>
-<span className={"px-1 font-mono text-[10px] text-[var(--color-text-accent)]"}>
-{"Twinlink · one stack"}
-</span>
-<div className={"flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2"} style={{"marginInline": "0px"} as React.CSSProperties}>
-<span className={"text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]"}>
-{"Agents"}
-</span>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-</div>
-<div className={"flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2"} style={{"marginInline": "6px"} as React.CSSProperties}>
-<span className={"text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]"}>
-{"Workflow orchestration"}
-</span>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-</div>
-<div className={"flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2"} style={{"marginInline": "12px"} as React.CSSProperties}>
-<span className={"text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]"}>
-{"Inference"}
-</span>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-</div>
-<div className={"flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2"} style={{"marginInline": "18px"} as React.CSSProperties}>
-<span className={"text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]"}>
-{"Orin models"}
-</span>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-</div>
-</div>
-<div className={"rounded-[var(--radius-large)] border border-dashed border-[var(--color-grey-300)] px-4 py-3 text-center"}>
-<span className={"font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"your infrastructure · on-premise · sovereign cloud"}
-</span>
-</div>
-</div>
-</div>
-<div className={"col-start-1 row-start-1 self-center transition-all duration-500 pointer-events-none translate-y-2 opacity-0"}>
-<div className={"overflow-hidden rounded-[var(--radius-large)] border shadow-[0_18px_40px_rgb(4_4_5_/10%)] border-[var(--color-stroke-default)] bg-[var(--color-bg-card)]"} aria-hidden={"true"}>
-<div className={"flex items-center gap-2 border-b px-3 py-2 border-[var(--color-stroke-default)] bg-[var(--color-grey-100)]"}>
-<div className={"flex items-center gap-1.5"}>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FF5F57]/80"} />
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FEBC2E]/80"} />
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#28C840]/80"} />
-</div>
-<span className={"font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"engagement · acme-finance"}
-</span>
-</div>
-<div className={"flex flex-col gap-3 p-4"}>
-<div className={"flex items-center gap-2"}>
-<span className={"rounded-[var(--radius-rounded)] px-2.5 py-1 font-mono text-[10px] bg-[var(--color-iris-50)] text-[var(--color-text-accent)]"}>
-{"FDE"}
-</span>
-<span className={"rounded-[var(--radius-rounded)] px-2.5 py-1 font-mono text-[10px] bg-[var(--color-iris-50)] text-[var(--color-text-accent)]"}>
-{"FDE"}
-</span>
-<span className={"rounded-[var(--radius-rounded)] px-2.5 py-1 font-mono text-[10px] border border-[var(--color-stroke-default)] text-[var(--color-text-secondary)]"}>
-{"You"}
-</span>
-<span className={"ml-auto font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"embedded"}
-</span>
-</div>
-<div className={"grid grid-cols-4 gap-1.5"}>
-<div className={"flex flex-col gap-1.5"}>
-<span className={"h-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-<span className={"font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"W1"}
-</span>
-<span className={"text-[10px] font-medium text-[var(--color-text-secondary)]"}>
-{"Discovery"}
-</span>
-</div>
-<div className={"flex flex-col gap-1.5"}>
-<span className={"h-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-<span className={"font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"W2"}
-</span>
-<span className={"text-[10px] font-medium text-[var(--color-text-secondary)]"}>
-{"Prototype"}
-</span>
-</div>
-<div className={"flex flex-col gap-1.5"}>
-<span className={"h-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-<span className={"font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"W4"}
-</span>
-<span className={"text-[10px] font-medium text-[var(--color-text-secondary)]"}>
-{"Proposal"}
-</span>
-</div>
-<div className={"flex flex-col gap-1.5"}>
-<span className={"h-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-grey-250)]"} />
-<span className={"font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"W6"}
-</span>
-<span className={"text-[10px] font-medium text-[var(--color-text-secondary)]"}>
-{"Launch"}
-</span>
-</div>
-</div>
-<div className={"flex items-center justify-between rounded-[var(--radius-medium)] bg-[var(--color-bg-secondary)] px-3 py-2"}>
-<span className={"text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]"}>
-{"Order to cash agent"}
-</span>
-<span className={"rounded-[var(--radius-small)] bg-[var(--color-iris-50)] px-2 py-0.5 font-mono text-[10px] text-[var(--color-text-accent)]"}>
-{"in production"}
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div className={"flex items-center justify-center gap-1.5"} aria-label={"Enterprise capability progress"}>
-<span className={"h-1 overflow-hidden rounded-[var(--radius-rounded)] bg-[var(--color-grey-300)] transition-[width] duration-500 ease-in-out w-1.5"} />
-<span className={"h-1 overflow-hidden rounded-[var(--radius-rounded)] bg-[var(--color-grey-300)] transition-[width] duration-500 ease-in-out w-5"} />
-<span className={"h-1 overflow-hidden rounded-[var(--radius-rounded)] bg-[var(--color-grey-300)] transition-[width] duration-500 ease-in-out w-1.5"} />
-</div>
-</div>
-<div className={"flex flex-col text-center md:text-left"}>
-<button className={"cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-grey-300)] hover:text-[var(--color-grey-400)]"} type={"button"} aria-pressed={"false"} data-swap={0}>
-{"Native computer use, for enterprise environments."}
-</button>
-<button className={"cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-title-default)]"} type={"button"} aria-pressed={"true"} data-swap={1}>
-{"Twinlink manages the full stack. You keep control of yours."}
-</button>
-<button className={"cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-grey-300)] hover:text-[var(--color-grey-400)]"} type={"button"} aria-pressed={"false"} data-swap={2}>
-{"Deployed with you, proven in production."}
-</button>
-<div className={"relative mt-5 flex min-h-28 flex-col gap-3 animate-[fadeIn_0.3s_ease] md:min-h-24"}>
-<p className={"text-style-16-body-reg text-[var(--color-text-secondary)] mx-auto max-w-md md:mx-0"}>
-{"Twinlink runs the model, inference, and execution in a single stack, so it can adapt to the infrastructure you already have in place."}
-</p>
-</div>
-</div>
-</div>
-</Fade>
-</div>
-</section>
-</div>,
-<div key="2">
-<section className={"bg-[var(--color-bg-primary)] py-16 sm:py-24"} id={"enterprise-operations"}>
-<div className={"mx-auto flex w-full max-w-6xl flex-col gap-10 px-6"}>
-<div className={"flex flex-col gap-6 "}>
-<div className={"grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16"}>
-<Fade >
-<h2 className={"text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl"}>
-{"The only agentic platform built by a lab specialized in computer use and enterprise environments"}
-</h2>
-</Fade>
-<Fade >
-<p className={"text-style-16-body-reg text-[var(--color-text-secondary)]   "}>
-{"Orin Platform orchestrates workflows across all your software, including legacy systems, mainframes, and desktop apps, with no APIs or connectors needed. When a step requires it, agents switch to computer use and operate directly on the interface, the way a human would."}
-</p>
-</Fade>
-</div>
-</div>
-<Fade >
-<div className={"grid w-full items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-16"}>
-<div className={"mx-auto flex w-full max-w-[460px] flex-col gap-4"}>
-<div className={"grid rounded-[var(--radius-large)] border border-[var(--color-grey-250)] bg-[var(--color-bg-secondary)] p-6 shadow-[0_10px_40px_rgb(4_4_5_/4%)] sm:p-8"}>
-<div className={"col-start-1 row-start-1 self-center transition-all duration-500 pointer-events-none translate-y-2 opacity-0"}>
-<div className={"overflow-hidden rounded-[var(--radius-large)] border shadow-[0_18px_40px_rgb(4_4_5_/10%)] border-white/15 bg-[var(--color-grey-900)]"} aria-hidden={"true"}>
-<div className={"flex items-center gap-2 border-b px-3 py-2 border-white/10 bg-white/5"}>
-<div className={"flex items-center gap-1.5"}>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FF5F57]/80"} />
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FEBC2E]/80"} />
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#28C840]/80"} />
-</div>
-<span className={"font-mono text-[10px] text-white/50"}>
-{"mainframe · session 3270"}
-</span>
-</div>
-<div className={"flex flex-col gap-1.5 p-4 font-mono text-[11px] text-[var(--color-green-400)]"}>
-<span className={"text-white/40"}>
-{"*** CUSTOMER ONBOARDING · SCREEN 04 ***"}
-</span>
-<div className={"flex gap-4 rounded-[var(--radius-small)] px-1.5 py-0.5 "}>
-<span className={"w-20 text-white/50"}>
-{"CUST-ID"}
-</span>
-<span >
-{"004 812 377"}
-</span>
-</div>
-<div className={"flex gap-4 rounded-[var(--radius-small)] px-1.5 py-0.5 "}>
-<span className={"w-20 text-white/50"}>
-{"ACCOUNT"}
-</span>
-<span >
-{"FR76 ···· 0412"}
-</span>
-</div>
-<div className={"flex gap-4 rounded-[var(--radius-small)] px-1.5 py-0.5 outline-2 outline-[var(--color-iris-400)] bg-[var(--color-iris-400)]/15"}>
-<span className={"w-20 text-white/50"}>
-{"STATUS"}
-</span>
-<span >
-{"PENDING KYC"}
-</span>
-</div>
-<div className={"flex gap-4 rounded-[var(--radius-small)] px-1.5 py-0.5 "}>
-<span className={"w-20 text-white/50"}>
-{"RISK"}
-</span>
-<span >
-{"—"}
-</span>
-</div>
-<span className={"mt-2 text-white/40"}>
-{"F3=EXIT F5=REFRESH F8=NEXT"}
-</span>
-</div>
-<div className={"flex items-center gap-2 border-t border-white/10 px-4 py-2.5 font-mono text-[10px] text-white/60"}>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-300)]"} />
-{"agent · read STATUS · no API, no connector"}
-</div>
-</div>
-</div>
-<div className={"col-start-1 row-start-1 self-center transition-all duration-500 pointer-events-none translate-y-2 opacity-0"}>
-<div className={"flex flex-col gap-2"} aria-hidden={"true"}>
-<div className={"flex flex-col gap-1.5 rounded-[var(--radius-large)] border border-[var(--color-iris-100)] bg-[var(--color-bg-purple-alt)] p-3"}>
-<span className={"px-1 font-mono text-[10px] text-[var(--color-text-accent)]"}>
-{"Twinlink · one stack"}
-</span>
-<div className={"flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2"} style={{"marginInline": "0px"} as React.CSSProperties}>
-<span className={"text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]"}>
-{"Agents"}
-</span>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-</div>
-<div className={"flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2"} style={{"marginInline": "6px"} as React.CSSProperties}>
-<span className={"text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]"}>
-{"Workflow orchestration"}
-</span>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-</div>
-<div className={"flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2"} style={{"marginInline": "12px"} as React.CSSProperties}>
-<span className={"text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]"}>
-{"Inference"}
-</span>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-</div>
-<div className={"flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2"} style={{"marginInline": "18px"} as React.CSSProperties}>
-<span className={"text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]"}>
-{"Orin models"}
-</span>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-</div>
-</div>
-<div className={"rounded-[var(--radius-large)] border border-dashed border-[var(--color-grey-300)] px-4 py-3 text-center"}>
-<span className={"font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"your infrastructure · on-premise · sovereign cloud"}
-</span>
-</div>
-</div>
-</div>
-<div className={"col-start-1 row-start-1 self-center transition-all duration-500 translate-y-0 opacity-100"}>
-<div className={"overflow-hidden rounded-[var(--radius-large)] border shadow-[0_18px_40px_rgb(4_4_5_/10%)] border-[var(--color-stroke-default)] bg-[var(--color-bg-card)]"} aria-hidden={"true"}>
-<div className={"flex items-center gap-2 border-b px-3 py-2 border-[var(--color-stroke-default)] bg-[var(--color-grey-100)]"}>
-<div className={"flex items-center gap-1.5"}>
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FF5F57]/80"} />
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FEBC2E]/80"} />
-<span className={"h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#28C840]/80"} />
-</div>
-<span className={"font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"engagement · acme-finance"}
-</span>
-</div>
-<div className={"flex flex-col gap-3 p-4"}>
-<div className={"flex items-center gap-2"}>
-<span className={"rounded-[var(--radius-rounded)] px-2.5 py-1 font-mono text-[10px] bg-[var(--color-iris-50)] text-[var(--color-text-accent)]"}>
-{"FDE"}
-</span>
-<span className={"rounded-[var(--radius-rounded)] px-2.5 py-1 font-mono text-[10px] bg-[var(--color-iris-50)] text-[var(--color-text-accent)]"}>
-{"FDE"}
-</span>
-<span className={"rounded-[var(--radius-rounded)] px-2.5 py-1 font-mono text-[10px] border border-[var(--color-stroke-default)] text-[var(--color-text-secondary)]"}>
-{"You"}
-</span>
-<span className={"ml-auto font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"embedded"}
-</span>
-</div>
-<div className={"grid grid-cols-4 gap-1.5"}>
-<div className={"flex flex-col gap-1.5"}>
-<span className={"h-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-<span className={"font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"W1"}
-</span>
-<span className={"text-[10px] font-medium text-[var(--color-text-secondary)]"}>
-{"Discovery"}
-</span>
-</div>
-<div className={"flex flex-col gap-1.5"}>
-<span className={"h-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-<span className={"font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"W2"}
-</span>
-<span className={"text-[10px] font-medium text-[var(--color-text-secondary)]"}>
-{"Prototype"}
-</span>
-</div>
-<div className={"flex flex-col gap-1.5"}>
-<span className={"h-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]"} />
-<span className={"font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"W4"}
-</span>
-<span className={"text-[10px] font-medium text-[var(--color-text-secondary)]"}>
-{"Proposal"}
-</span>
-</div>
-<div className={"flex flex-col gap-1.5"}>
-<span className={"h-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-grey-250)]"} />
-<span className={"font-mono text-[10px] text-[var(--color-text-tertiary)]"}>
-{"W6"}
-</span>
-<span className={"text-[10px] font-medium text-[var(--color-text-secondary)]"}>
-{"Launch"}
-</span>
-</div>
-</div>
-<div className={"flex items-center justify-between rounded-[var(--radius-medium)] bg-[var(--color-bg-secondary)] px-3 py-2"}>
-<span className={"text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]"}>
-{"Order to cash agent"}
-</span>
-<span className={"rounded-[var(--radius-small)] bg-[var(--color-iris-50)] px-2 py-0.5 font-mono text-[10px] text-[var(--color-text-accent)]"}>
-{"in production"}
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div className={"flex items-center justify-center gap-1.5"} aria-label={"Enterprise capability progress"}>
-<span className={"h-1 overflow-hidden rounded-[var(--radius-rounded)] bg-[var(--color-grey-300)] transition-[width] duration-500 ease-in-out w-1.5"} />
-<span className={"h-1 overflow-hidden rounded-[var(--radius-rounded)] bg-[var(--color-grey-300)] transition-[width] duration-500 ease-in-out w-1.5"} />
-<span className={"h-1 overflow-hidden rounded-[var(--radius-rounded)] bg-[var(--color-grey-300)] transition-[width] duration-500 ease-in-out w-5"} />
-</div>
-</div>
-<div className={"flex flex-col text-center md:text-left"}>
-<button className={"cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-grey-300)] hover:text-[var(--color-grey-400)]"} type={"button"} aria-pressed={"false"} data-swap={0}>
-{"Native computer use, for enterprise environments."}
-</button>
-<button className={"cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-grey-300)] hover:text-[var(--color-grey-400)]"} type={"button"} aria-pressed={"false"} data-swap={1}>
-{"Twinlink manages the full stack. You keep control of yours."}
-</button>
-<button className={"cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-title-default)]"} type={"button"} aria-pressed={"true"} data-swap={2}>
-{"Deployed with you, proven in production."}
-</button>
-<div className={"relative mt-5 flex min-h-28 flex-col gap-3 animate-[fadeIn_0.3s_ease] md:min-h-24"}>
-<p className={"text-style-16-body-reg text-[var(--color-text-secondary)] mx-auto max-w-md md:mx-0"}>
-{"Engineers embed in your process and stay close to the work. They learn how your business runs day to day, so the technology understands it before it goes live."}
-</p>
-</div>
-</div>
-</div>
-</Fade>
-</div>
-</section>
-</div>
-]} />
 <section className={"scroll-mt-20 bg-[var(--color-bg-primary)] py-16 sm:py-24"} id={"use-cases"}>
 <div className={"mx-auto flex w-full max-w-6xl flex-col gap-10 px-6"}>
 <div className={"flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"}>
@@ -2882,18 +728,18 @@ export default function EnterprisePage() {
 <div className={"flex flex-col gap-5"}>
 <Fade >
 <h2 className={"text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl"}>
-{"Where Orin Platform is already running."}
+{"Where H Platform is already running."}
 </h2>
 </Fade>
 </div>
 </div>
 <div className={"flex flex-wrap gap-3"}>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit shrink-0"} href={"/case-studies"}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit shrink-0"} href={"https://hcompany.ai/use-cases"}>
 {"All use cases →"}
-</Link>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit shrink-0"} href={"/contact"}>
+</a>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit shrink-0"} href={"https://hcompany.ai/contact?from=enterprise-results#fill-out-the-form"}>
 {"Book a demo"}
-</Link>
+</a>
 </div>
 </div>
 <Fade >
@@ -2961,7 +807,7 @@ export default function EnterprisePage() {
 </Fade>
 <div className={"-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-6 px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:overflow-visible sm:px-0 sm:pb-0 sm:grid-cols-3"}>
 <Fade className={"w-[85%] shrink-0 snap-start sm:w-auto"}>
-<Link className={"group block h-full"} href={"/case-studies"}>
+<a className={"group block h-full"} href={"https://hcompany.ai/use-cases?sector=financial-services#explorer"}>
 <div className={"rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 flex h-full flex-col gap-3 group-hover:bg-[var(--color-bg-hover)]"} data-keep-light={"true"}>
 <p className={"text-style-14-body-reg text-[var(--color-text-accent)] font-medium"}>
 {"Banking · KYC Onboarding"}
@@ -2991,10 +837,10 @@ export default function EnterprisePage() {
 </span>
 </p>
 </div>
-</Link>
+</a>
 </Fade>
 <Fade className={"w-[85%] shrink-0 snap-start sm:w-auto"}>
-<Link className={"group block h-full"} href={"/case-studies"}>
+<a className={"group block h-full"} href={"https://hcompany.ai/use-cases?sector=hr-finance#explorer"}>
 <div className={"rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 flex h-full flex-col gap-3 group-hover:bg-[var(--color-bg-hover)]"} data-keep-light={"true"}>
 <p className={"text-style-14-body-reg text-[var(--color-text-accent)] font-medium"}>
 {"Energy · Order to Cash"}
@@ -3003,7 +849,7 @@ export default function EnterprisePage() {
 {"Your finance team invoices on time. The agent makes sure nothing blocks it."}
 </h3>
 <p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
-{"Data trapped across ERP screens, timesheets, emails, and contract documents, with no API to connect them. Twinlink agents operated directly on every interface, extracted what was needed, matched it, and prepared the invoice without a single integration."}
+{"Data trapped across ERP screens, timesheets, emails, and contract documents, with no API to connect them. H Company agents operated directly on every interface, extracted what was needed, matched it, and prepared the invoice without a single integration."}
 </p>
 <ul className={"mt-auto flex flex-col gap-1.5 border-t border-[var(--color-stroke-default)] pt-4"}>
 <li >
@@ -3024,10 +870,10 @@ export default function EnterprisePage() {
 </span>
 </p>
 </div>
-</Link>
+</a>
 </Fade>
 <Fade className={"w-[85%] shrink-0 snap-start sm:w-auto"}>
-<Link className={"group block h-full"} href={"/case-studies"}>
+<a className={"group block h-full"} href={"https://hcompany.ai/use-cases?sector=hr-finance#explorer"}>
 <div className={"rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 flex h-full flex-col gap-3 group-hover:bg-[var(--color-bg-hover)]"} data-keep-light={"true"}>
 <p className={"text-style-14-body-reg text-[var(--color-text-accent)] font-medium"}>
 {"Energy · Procurement"}
@@ -3036,7 +882,7 @@ export default function EnterprisePage() {
 {"Your suppliers get paid on time. The agent handles the reconciliation."}
 </h3>
 <p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
-{"MSAs, timesheets, purchase orders, and invoices, all in disconnected systems, none with an API. Twinlink agents read contracts and timesheets directly, perform 3-way matching across procurement and finance applications, and book PO receipts for human sign-off before payment is triggered. No manual reconciliation, no discrepancies."}
+{"MSAs, timesheets, purchase orders, and invoices, all in disconnected systems, none with an API. H Company agents read contracts and timesheets directly, perform 3-way matching across procurement and finance applications, and book PO receipts for human sign-off before payment is triggered. No manual reconciliation, no discrepancies."}
 </p>
 <ul className={"mt-auto flex flex-col gap-1.5 border-t border-[var(--color-stroke-default)] pt-4"}>
 <li >
@@ -3057,7 +903,7 @@ export default function EnterprisePage() {
 </span>
 </p>
 </div>
-</Link>
+</a>
 </Fade>
 </div>
 </div>
@@ -3087,10 +933,10 @@ export default function EnterprisePage() {
 {"Included"}
 </span>
 <h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight"}>
-{"Orin models & inference"}
+{"Holo models & inference"}
 </h3>
 <p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
-{"Twinlink-hosted, on-premise or sovereign cloud"}
+{"H-hosted, on-premise or sovereign cloud"}
 </p>
 </div>
 </div>
@@ -3173,8 +1019,8 @@ export default function EnterprisePage() {
 </div>
 </div>
 </div>
-<Link className={"group w-fit text-[length:var(--text-fs-2)] font-medium text-[var(--color-iris-300)] hover:underline"} href={"/platform"}>
-{"Explore the Orin Platform "}
+<Link className={"group w-fit text-[length:var(--text-fs-2)] font-medium text-[var(--color-iris-300)] hover:underline"} href={"/h-platform"}>
+{"Explore the H Platform "}
 <span className={"inline-block transition-transform group-hover:translate-x-1"}>
 {"→"}
 </span>
@@ -3348,7 +1194,7 @@ export default function EnterprisePage() {
 {"outbound only"}
 </span>
 <span className={"rounded-[var(--radius-medium)] bg-[var(--color-iris-50)] px-2.5 py-1.5 font-mono text-[10px] text-[var(--color-text-accent)]"}>
-{"Orin Platform"}
+{"H Platform"}
 </span>
 </div>
 <div className={"flex items-center justify-between gap-2 rounded-[var(--radius-medium)] bg-[var(--color-bg-secondary)] px-3 py-2"}>
@@ -3424,7 +1270,7 @@ export default function EnterprisePage() {
 <circle cx={"10"} cy={"10"} r={"2.2"} stroke={"currentColor"} strokeWidth={"1.3"} />
 </svg>
 <p className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium"}>
-{"Security reviews"}
+{"SOC 2 Type II"}
 </p>
 </li>
 <li className={"flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3"}>
@@ -3433,7 +1279,7 @@ export default function EnterprisePage() {
 <path d={"M5.2 12.2V7.8h1.3c1.1 0 1.8.6 1.8 1.5 0 .9-.7 1.5-1.8 1.5H6.5v1.4H5.2zm1.3-2.6h.3c.4 0 .7-.2.7-.6s-.3-.6-.7-.6h-.3v1.2zM10.2 12.2V7.8h2.6v1.1h-1.3v.7h1.1v1h-1.1v1.6h-1.3zM14.1 12.2V7.8h1.3v4.4h-1.3z"} fill={"currentColor"} />
 </svg>
 <p className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium"}>
-{"Audit trails"}
+{"ISO 27001"}
 </p>
 </li>
 <li className={"flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3"}>
@@ -3529,7 +1375,7 @@ export default function EnterprisePage() {
 {"Launch"}
 </h4>
 <p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
-{"Deployed into production, with Twinlink engineers embedded."}
+{"Deployed into production, with H Company engineers embedded."}
 </p>
 </div>
 </li>
@@ -3550,9 +1396,9 @@ export default function EnterprisePage() {
 </Fade>
 <Fade >
 <div className={"flex"}>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)]"} href={"/contact"}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)]"} href={"https://hcompany.ai/contact?from=enterprise-journey#fill-out-the-form"}>
 {"Book a demo"}
-</Link>
+</a>
 </div>
 </Fade>
 </div>
@@ -3571,7 +1417,7 @@ export default function EnterprisePage() {
 </Fade>
 <Fade >
 <p className={"text-style-16-body-reg text-[var(--color-text-default-alt)] opacity-75  "}>
-{"Twinlink owns the full stack: the model, the orchestration, and the agents. One team is accountable for the software and the result."}
+{"H Company owns the full stack: the model, the orchestration, and the agents. One team is accountable for the software and the result."}
 </p>
 </Fade>
 </div>
@@ -3583,7 +1429,7 @@ export default function EnterprisePage() {
 {"Data sovereignty"}
 </h3>
 <p className={"text-style-14-body-reg text-[var(--color-text-default-alt)] opacity-70"}>
-{"Your data never transits third-party models. Twinlink owns the entire inference chain. On-premise and sovereign cloud available."}
+{"Your data never transits third-party models. H Company owns the entire inference chain. On-premise and sovereign cloud available. Built in Europe, for European enterprises."}
 </p>
 </div>
 <div className={"flex flex-col gap-3 p-6"}>
@@ -3617,15 +1463,15 @@ export default function EnterprisePage() {
 {"The lab behind it"}
 </p>
 <h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight"}>
-{"Built on Orin, our agentic model series."}
+{"Built on Holo4, our agentic model series."}
 </h3>
 <p className={"text-style-16-body-reg text-[var(--color-text-secondary)]"}>
-{"Proven in enterprise production. Orin is trained on enterprise environments and real business interfaces, including systems no other model has ever seen."}
+{"Proven in enterprise production. Holo4 is trained on enterprise environments and real business interfaces, including systems no other model has ever seen."}
 </p>
 </div>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit shrink-0"} href={"/coming-soon"}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit shrink-0"} href={"https://hcompany.ai/research"}>
 {"Explore our research"}
-</Link>
+</a>
 </div>
 </Fade>
 </div>
@@ -3645,9 +1491,9 @@ export default function EnterprisePage() {
 <div className={"flex flex-col gap-4"}>
 <p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
 <span className={"text-style-14-head-med text-[var(--color-text-accent)]"}>
-{"Orin Platform included:"}
+{"H Platform included:"}
 </span>
-{" The full platform, from Orin models and the agent execution engine to workflow orchestration, governance and an embedded engineering team. "}
+{" The full platform, from Holo models and the agent execution engine to workflow orchestration, governance and an embedded engineering team. "}
 <Link className={"whitespace-nowrap text-[var(--color-text-accent)] hover:underline"} href={"/enterprise"}>
 {"Learn more →"}
 </Link>
@@ -3667,9 +1513,9 @@ export default function EnterprisePage() {
 {"Custom rates, dedicated support, and agents that run on your systems. Talk to us about the right setup for your team."}
 </p>
 </div>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit"} href={"/contact"}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit"} href={"https://hcompany.ai/contact?from=enterprise-pricing#fill-out-the-form"}>
 {"Talk to sales"}
-</Link>
+</a>
 </div>
 <ul className={"flex flex-col border-t border-[var(--color-stroke-default)] md:border-l md:border-t-0"}>
 <li className={"border-b border-[var(--color-stroke-default)] px-6 py-3.5 last:border-b-0"}>
@@ -3740,25 +1586,25 @@ export default function EnterprisePage() {
 </Fade>
 <Fade >
 <p className={"text-style-16-body-reg text-[var(--color-text-secondary)]   "}>
-{"What Twinlink Enterprise is, how it reaches your systems, how fast it deploys, and how your data stays protected."}
+{"What H Company Enterprise is, how it reaches your systems, how fast it deploys, and how your data stays protected."}
 </p>
 </Fade>
 </div>
 </div>
 <Fade >
 <div className={"max-w-3xl"}>
-<Faq items={[{"question":"What is Twinlink Enterprise?","answer":"Twinlink Enterprise is the Orin Platform deployed on your own systems by Twinlink's Forward Deployed Engineers. Expert computer-use agents automate processes across any software, including legacy systems, mainframes and desktop apps, without connectors, APIs or a rebuild of your infrastructure. Agents are deployed in weeks, and one Twinlink team is accountable for the model, the orchestration, the agents and the result."},{"question":"How do Twinlink agents automate legacy systems that have no API?","answer":"Twinlink agents use computer use: they read the screen and operate the interface the way a human operator would, clicking, typing and navigating applications. This is how they reach legacy systems, mainframes and internal tools that were never designed for automation. If an API exists, agents use standard integration patterns with no changes to your stack. In both cases they authenticate with standard Active Directory credentials and inherit exactly the read and write permissions you assign to that account. No admin rights."},{"question":"What results do enterprises get with Twinlink agents?","answer":"In production, Twinlink agents cut time-to-compliance by 50 to 70% on bank KYC onboarding, time-to-invoice by 90% on an energy company's order-to-cash process, and PO-to-invoice cycle time by 50% in procurement, where 80%+ of invoices are processed without manual intervention. None of these deployments required an integration."},{"question":"How long does an Twinlink enterprise deployment take?","answer":"Weeks. An Twinlink engagement follows five steps: discovery of the workflow and the systems it touches, a working prototype on your actual systems, a proposal with scope, timeline and success metrics agreed upfront, launch into production with Twinlink engineers embedded, then scale across processes, teams and geographies. You don't need an IT project or prior infrastructure, and Twinlink responds to demo requests within 24 hours."},{"question":"Can Twinlink run on-premise or in a European sovereign cloud?","answer":"Yes. Twinlink's default is multi-tenant, with dedicated encryption keys, dedicated API keys and strict logical isolation for each customer. For regulatory or data sovereignty requirements, Twinlink deploys on-premise or in a sovereign cloud. Twinlink owns the entire inference chain, so your data never transits third-party models."},{"question":"How does Twinlink protect enterprise data?","answer":"Ask Twinlink about its security and compliance program. Data is protected in four layers: encryption at rest and in transit, zero retention during inference, no training on your data, and tenant isolation with separate keys per customer. Screenshots are pre-processed and sensitive fields are redacted before any data leaves your perimeter, the connection is initiated only from your side, and every action is logged, timestamped and replayable for audit."},{"question":"What are Twinlink's Forward Deployed Engineers?","answer":"Forward Deployed Engineers (FDEs) are Twinlink engineers who embed in your process and stay close to the work, from discovery to scale. They learn how your business runs day to day, so the agents understand it before they go live. They are included in Twinlink Enterprise, which makes one team accountable for both the software and the outcome."},{"question":"How much does Twinlink Enterprise cost?","answer":"Twinlink Enterprise is priced on custom terms: custom rates, dedicated support, and agents that run on your systems. Because Twinlink owns its models and inference, costs stay predictable, with no surprise bills and no exposure to third-party pricing changes. The first step is mapping one of your workflows and delivering a measurable outcome before you commit."}]} />
+<Faq items={[{"question":"What is H Company Enterprise?","answer":"H Company Enterprise is the H Platform deployed on your own systems by H Company's Forward Deployed Engineers. Expert computer-use agents automate processes across any software, including legacy systems, mainframes and desktop apps, without connectors, APIs or a rebuild of your infrastructure. Agents are deployed in weeks, and one H Company team is accountable for the model, the orchestration, the agents and the result."},{"question":"How do H Company agents automate legacy systems that have no API?","answer":"H Company agents use computer use: they read the screen and operate the interface the way a human operator would, clicking, typing and navigating applications. This is how they reach legacy systems, mainframes and internal tools that were never designed for automation. If an API exists, agents use standard integration patterns with no changes to your stack. In both cases they authenticate with standard Active Directory credentials and inherit exactly the read and write permissions you assign to that account. No admin rights."},{"question":"What results do enterprises get with H Company agents?","answer":"In production, H Company agents cut time-to-compliance by 50 to 70% on bank KYC onboarding, time-to-invoice by 90% on an energy company's order-to-cash process, and PO-to-invoice cycle time by 50% in procurement, where 80%+ of invoices are processed without manual intervention. None of these deployments required an integration."},{"question":"How long does an H Company enterprise deployment take?","answer":"Weeks. An H Company engagement follows five steps: discovery of the workflow and the systems it touches, a working prototype on your actual systems, a proposal with scope, timeline and success metrics agreed upfront, launch into production with H Company engineers embedded, then scale across processes, teams and geographies. You don't need an IT project or prior infrastructure, and H Company responds to demo requests within 24 hours."},{"question":"Can H Company run on-premise or in a European sovereign cloud?","answer":"Yes. H Company's default is multi-tenant, with dedicated encryption keys, dedicated API keys and strict logical isolation for each customer. For regulatory or data sovereignty requirements, H Company deploys on-premise or in a sovereign cloud: since November 2026 its agentic platform is available on the AWS European Sovereign Cloud, where customer content and customer-created metadata stay within the EU. H Company owns the entire inference chain, so your data never transits third-party models."},{"question":"How does H Company protect enterprise data?","answer":"H Company is SOC 2 Type I and Type II and ISO 27001 certified. Data is protected in four layers: encryption at rest and in transit, zero retention during inference, no training on your data, and tenant isolation with separate keys per customer. Screenshots are pre-processed and sensitive fields are redacted before any data leaves your perimeter, the connection is initiated only from your side, and every action is logged, timestamped and replayable for audit."},{"question":"What are H Company's Forward Deployed Engineers?","answer":"Forward Deployed Engineers (FDEs) are H Company engineers who embed in your process and stay close to the work, from discovery to scale. They learn how your business runs day to day, so the agents understand it before they go live. They are included in H Company Enterprise, which makes one team accountable for both the software and the outcome."},{"question":"How much does H Company Enterprise cost?","answer":"H Company Enterprise is priced on custom terms: custom rates, dedicated support, and agents that run on your systems. Because H Company owns its models and inference, costs stay predictable, with no surprise bills and no exposure to third-party pricing changes. The first step is mapping one of your workflows and delivering a measurable outcome before you commit."}]} />
 </div>
 </Fade>
 <Fade >
 <p className={"text-style-16-body-reg text-[var(--color-text-secondary)] max-w-3xl"}>
 {"Still have questions? "}
-<Link className={"font-medium text-[var(--color-text-accent)] hover:underline"} href={"/contact"}>
+<a className={"font-medium text-[var(--color-text-accent)] hover:underline"} href={"https://hcompany.ai/contact?from=faq#fill-out-the-form"}>
 {"Talk to an engineer "}
 <span aria-hidden={"true"}>
 {"→"}
 </span>
-</Link>
+</a>
 </p>
 </Fade>
 </div>
@@ -3782,9 +1628,9 @@ export default function EnterprisePage() {
 </div>
 <Fade >
 <div className={"flex flex-col gap-3 sm:flex-row"}>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-grey-750)]"} href={"/contact"}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-grey-750)]"} href={"https://hcompany.ai/contact?from=enterprise-final#fill-out-the-form"}>
 {"Book a demo"}
-</Link>
+</a>
 <Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)]"} href={"/pricing"}>
 {"See pricing"}
 </Link>
@@ -3794,12 +1640,12 @@ export default function EnterprisePage() {
 </div>
 </section>
 <div className={"fixed bottom-4 right-4 z-40 transition-[opacity,translate] duration-300 motion-reduce:transition-none sm:bottom-6 sm:right-6 pointer-events-none translate-y-3 opacity-0"} aria-hidden={"true"}>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-6 py-3 text-[length:var(--text-fs-3)] leading-[var(--text-fs-3--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] shadow-[0_10px_30px_rgb(4_4_5_/18%)]"} href={"/contact"} tabIndex={-1}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-6 py-3 text-[length:var(--text-fs-3)] leading-[var(--text-fs-3--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] shadow-[0_10px_30px_rgb(4_4_5_/18%)]"} href={"https://hcompany.ai/contact?from=enterprise-floating#fill-out-the-form"} tabIndex={-1}>
 {"Book a demo "}
 <span aria-hidden={"true"}>
 {"→"}
 </span>
-</Link>
+</a>
 </div>
     </>
   );

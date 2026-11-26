@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Faq } from "@/components/reference/faq";
 import { Fade } from "@/components/reference/fade";
-import { MediaSlot } from "@/components/reference/media-slot";
-import { Swap } from "@/components/reference/swap";
 import { HeroWash } from "@/components/reference/hero-wash";
 
-export const metadata: Metadata = { title: { absolute: "Agents API | Twinlink" } };
+export const metadata: Metadata = { title: { absolute: "Agents API | H" } };
 
 export default function AgentsApiPage() {
   return (
@@ -40,21 +38,21 @@ export default function AgentsApiPage() {
 </div>
 <Fade className={"mt-2"}>
 <div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap"}>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-primary)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-secondary)]"} data-hero-button={"primary"} href={"/coming-soon"}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-primary)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-secondary)]"} data-hero-button={"primary"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"}>
 {"Create an agent"}
-</Link>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-white/70 bg-transparent text-[var(--color-text-default-alt)] hover:bg-[var(--color-bg-primary)]/10"} data-hero-button={"outline"} href={"/coming-soon"}>
+</a>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-white/70 bg-transparent text-[var(--color-text-default-alt)] hover:bg-[var(--color-bg-primary)]/10"} data-hero-button={"outline"} target={"_blank"} rel={"noopener noreferrer"} href={"https://hub.hcompany.ai/agents-api/introduction"}>
 {"Read the docs"}
-</Link>
+</a>
 </div>
 </Fade>
 </div>
 <Fade >
 <div className={"flex flex-col items-center gap-5"}>
 <div className={"relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-large)] bg-[var(--color-grey-800)] shadow-[0_18px_50px_rgb(4_4_5_/20%)] sm:aspect-video"}>
-<MediaSlot className={"pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-500 opacity-100"} label={""} />
-<MediaSlot className={"pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-500 opacity-0"} label={""} />
-<MediaSlot className={"pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-500 opacity-0"} label={""} />
+<video className={"pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-500 opacity-100"} src={"/hc/computer-use-agents-CU-Clip-1.mp4"} poster={"/hc/computer-use-agents-CU-Clip-1-poster.jpg"} muted playsInline preload={"auto"} aria-hidden={"false"} />
+<video className={"pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-500 opacity-0"} src={"/hc/computer-use-agents-CU-Clip-2.mp4"} poster={"/hc/computer-use-agents-CU-Clip-2-poster.jpg"} muted playsInline preload={"auto"} aria-hidden={"true"} />
+<video className={"pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-500 opacity-0"} src={"/hc/computer-use-agents-CU-Clip-3.mp4"} poster={"/hc/computer-use-agents-CU-Clip-3-poster.jpg"} muted playsInline preload={"auto"} aria-hidden={"true"} />
 <div className={"pointer-events-none absolute inset-0 bg-gradient-to-b from-black/55 via-black/10 to-black/60"} />
 <div className={"absolute inset-0 z-10 flex flex-col justify-end p-5 sm:p-7"} />
 </div>
@@ -297,152 +295,6 @@ export default function AgentsApiPage() {
 </ol>
 </div>
 </section>
-<Swap initial={0} states={[
-<div key="0">
-<section className={"bg-[var(--color-bg-primary)]"}>
-<div >
-<div className={"py-16 sm:py-24"}>
-<div className={"mx-auto flex w-full max-w-6xl flex-col gap-8 px-6"}>
-<div className={"flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"}>
-<div className={"flex flex-col gap-6 "}>
-<div className={"flex flex-col gap-5"}>
-<Fade >
-<h2 className={"text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl"}>
-{"Built with Agents API"}
-</h2>
-</Fade>
-</div>
-</div>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/coming-soon"}>
-<svg className={"h-4 w-4"} viewBox={"0 0 24 24"} fill={"none"} xmlns={"http://www.w3.org/2000/svg"}>
-<path d={"M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"} fill={"currentColor"} />
-</svg>
-{"View repo"}
-</Link>
-</div>
-<div className={"flex flex-col gap-6"}>
-<ul className={"grid gap-2 md:grid-cols-3"}>
-<li >
-<button className={"flex h-full w-full flex-col gap-1.5 rounded-[var(--radius-large)] border px-6 py-5 text-left transition-colors duration-300 border-[var(--color-grey-250)] bg-[var(--color-bg-secondary)]"} type={"button"} aria-pressed={"true"} data-swap={0}>
-<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight transition-colors duration-300 "}>
-{"QA testing"}
-</h3>
-<p className={"text-style-14-body-reg text-[var(--color-text-secondary)] transition-colors duration-300"}>
-{"Point an agent at a live URL and get a verdict, summary, and findings back."}
-</p>
-</button>
-</li>
-<li >
-<button className={"flex h-full w-full flex-col gap-1.5 rounded-[var(--radius-large)] border px-6 py-5 text-left transition-colors duration-300 border-transparent hover:bg-[var(--color-bg-hover)]"} type={"button"} aria-pressed={"false"} data-swap={1}>
-<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight transition-colors duration-300 text-[var(--color-text-tertiary)]"}>
-{"Web extraction"}
-</h3>
-<p className={"text-style-14-body-reg text-[var(--color-text-tertiary)] transition-colors duration-300"}>
-{"Turn any web page into typed data in the exact shape you asked for."}
-</p>
-</button>
-</li>
-<li >
-<button className={"flex h-full w-full flex-col gap-1.5 rounded-[var(--radius-large)] border px-6 py-5 text-left transition-colors duration-300 border-transparent hover:bg-[var(--color-bg-hover)]"} type={"button"} aria-pressed={"false"} data-swap={2}>
-<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight transition-colors duration-300 text-[var(--color-text-tertiary)]"}>
-{"Add to cart"}
-</h3>
-<p className={"text-style-14-body-reg text-[var(--color-text-tertiary)] transition-colors duration-300"}>
-{"Search, open a listing, and complete the purchase flow on any site."}
-</p>
-</button>
-</li>
-</ul>
-<div className={"relative aspect-video overflow-hidden bg-[var(--color-grey-800)] rounded-[var(--radius-large)]"}>
-<div className={"absolute inset-0"} aria-hidden={"false"} style={{"opacity": "1"} as React.CSSProperties}>
-<MediaSlot className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} label={"QA testing demo clip"} />
-</div>
-<div className={"absolute inset-0"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
-<MediaSlot className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} label={"Web extraction demo clip"} />
-</div>
-<div className={"absolute inset-0"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
-<MediaSlot className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} label={"Add to cart demo clip"} />
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>,
-<div key="1">
-<section className={"bg-[var(--color-bg-primary)]"}>
-<div >
-<div className={"py-16 sm:py-24"}>
-<div className={"mx-auto flex w-full max-w-6xl flex-col gap-8 px-6"}>
-<div className={"flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"}>
-<div className={"flex flex-col gap-6 "}>
-<div className={"flex flex-col gap-5"}>
-<Fade >
-<h2 className={"text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl"}>
-{"Built with Agents API"}
-</h2>
-</Fade>
-</div>
-</div>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/coming-soon"}>
-<svg className={"h-4 w-4"} viewBox={"0 0 24 24"} fill={"none"} xmlns={"http://www.w3.org/2000/svg"}>
-<path d={"M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"} fill={"currentColor"} />
-</svg>
-{"View repo"}
-</Link>
-</div>
-<div className={"flex flex-col gap-6"}>
-<ul className={"grid gap-2 md:grid-cols-3"}>
-<li >
-<button className={"flex h-full w-full flex-col gap-1.5 rounded-[var(--radius-large)] border px-6 py-5 text-left transition-colors duration-300 border-transparent hover:bg-[var(--color-bg-hover)]"} type={"button"} aria-pressed={"false"} data-swap={0}>
-<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight transition-colors duration-300 text-[var(--color-text-tertiary)]"}>
-{"QA testing"}
-</h3>
-<p className={"text-style-14-body-reg text-[var(--color-text-tertiary)] transition-colors duration-300"}>
-{"Point an agent at a live URL and get a verdict, summary, and findings back."}
-</p>
-</button>
-</li>
-<li >
-<button className={"flex h-full w-full flex-col gap-1.5 rounded-[var(--radius-large)] border px-6 py-5 text-left transition-colors duration-300 border-[var(--color-grey-250)] bg-[var(--color-bg-secondary)]"} type={"button"} aria-pressed={"true"} data-swap={1}>
-<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight transition-colors duration-300 "}>
-{"Web extraction"}
-</h3>
-<p className={"text-style-14-body-reg text-[var(--color-text-secondary)] transition-colors duration-300"}>
-{"Turn any web page into typed data in the exact shape you asked for."}
-</p>
-</button>
-</li>
-<li >
-<button className={"flex h-full w-full flex-col gap-1.5 rounded-[var(--radius-large)] border px-6 py-5 text-left transition-colors duration-300 border-transparent hover:bg-[var(--color-bg-hover)]"} type={"button"} aria-pressed={"false"} data-swap={2}>
-<h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight transition-colors duration-300 text-[var(--color-text-tertiary)]"}>
-{"Add to cart"}
-</h3>
-<p className={"text-style-14-body-reg text-[var(--color-text-tertiary)] transition-colors duration-300"}>
-{"Search, open a listing, and complete the purchase flow on any site."}
-</p>
-</button>
-</li>
-</ul>
-<div className={"relative aspect-video overflow-hidden bg-[var(--color-grey-800)] rounded-[var(--radius-large)]"}>
-<div className={"absolute inset-0"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
-<MediaSlot className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} label={"QA testing demo clip"} />
-</div>
-<div className={"absolute inset-0"} aria-hidden={"false"} style={{"opacity": "1"} as React.CSSProperties}>
-<MediaSlot className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} label={"Web extraction demo clip"} />
-</div>
-<div className={"absolute inset-0"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
-<MediaSlot className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} label={"Add to cart demo clip"} />
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>,
-<div key="2">
 <section className={"bg-[var(--color-bg-primary)]"}>
 <div style={{} as React.CSSProperties}>
 <div className={"py-16 sm:py-24"}>
@@ -457,17 +309,17 @@ export default function AgentsApiPage() {
 </Fade>
 </div>
 </div>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/coming-soon"}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://github.com/hcompai/agents-api-demos"}>
 <svg className={"h-4 w-4"} viewBox={"0 0 24 24"} fill={"none"} xmlns={"http://www.w3.org/2000/svg"}>
 <path d={"M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"} fill={"currentColor"} />
 </svg>
 {"View repo"}
-</Link>
+</a>
 </div>
 <div className={"flex flex-col gap-6"}>
 <ul className={"grid gap-2 md:grid-cols-3"}>
 <li >
-<button className={"flex h-full w-full flex-col gap-1.5 rounded-[var(--radius-large)] border px-6 py-5 text-left transition-colors duration-300 border-transparent hover:bg-[var(--color-bg-hover)]"} type={"button"} aria-pressed={"false"} data-swap={0}>
+<button className={"flex h-full w-full flex-col gap-1.5 rounded-[var(--radius-large)] border px-6 py-5 text-left transition-colors duration-300 border-transparent hover:bg-[var(--color-bg-hover)]"} type={"button"} aria-pressed={"false"}>
 <h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight transition-colors duration-300 text-[var(--color-text-tertiary)]"}>
 {"QA testing"}
 </h3>
@@ -477,7 +329,7 @@ export default function AgentsApiPage() {
 </button>
 </li>
 <li >
-<button className={"flex h-full w-full flex-col gap-1.5 rounded-[var(--radius-large)] border px-6 py-5 text-left transition-colors duration-300 border-transparent hover:bg-[var(--color-bg-hover)]"} type={"button"} aria-pressed={"false"} data-swap={1}>
+<button className={"flex h-full w-full flex-col gap-1.5 rounded-[var(--radius-large)] border px-6 py-5 text-left transition-colors duration-300 border-transparent hover:bg-[var(--color-bg-hover)]"} type={"button"} aria-pressed={"false"}>
 <h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight transition-colors duration-300 text-[var(--color-text-tertiary)]"}>
 {"Web extraction"}
 </h3>
@@ -487,7 +339,7 @@ export default function AgentsApiPage() {
 </button>
 </li>
 <li >
-<button className={"flex h-full w-full flex-col gap-1.5 rounded-[var(--radius-large)] border px-6 py-5 text-left transition-colors duration-300 border-[var(--color-grey-250)] bg-[var(--color-bg-secondary)]"} type={"button"} aria-pressed={"true"} data-swap={2}>
+<button className={"flex h-full w-full flex-col gap-1.5 rounded-[var(--radius-large)] border px-6 py-5 text-left transition-colors duration-300 border-[var(--color-grey-250)] bg-[var(--color-bg-secondary)]"} type={"button"} aria-pressed={"true"}>
 <h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight transition-colors duration-300 "}>
 {"Add to cart"}
 </h3>
@@ -499,13 +351,13 @@ export default function AgentsApiPage() {
 </ul>
 <div className={"relative aspect-video overflow-hidden bg-[var(--color-grey-800)] rounded-[var(--radius-large)]"}>
 <div className={"absolute inset-0"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
-<MediaSlot className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} label={"QA testing demo clip"} />
+<iframe className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} title={"QA testing demo clip"} src={"https://www.youtube-nocookie.com/embed/YqIMIf-Q1_o?autoplay=1&mute=1&loop=1&playlist=YqIMIf-Q1_o&controls=0&rel=0&playsinline=1&iv_load_policy=3"} referrerPolicy={"strict-origin-when-cross-origin"} allow={"autoplay; encrypted-media; picture-in-picture"} />
 </div>
 <div className={"absolute inset-0"} aria-hidden={"true"} style={{"opacity": "0"} as React.CSSProperties}>
-<MediaSlot className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} label={"Web extraction demo clip"} />
+<iframe className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} title={"Web extraction demo clip"} src={"https://www.youtube-nocookie.com/embed/gNjNmPYPvwk?autoplay=1&mute=1&loop=1&playlist=gNjNmPYPvwk&controls=0&rel=0&playsinline=1&iv_load_policy=3"} referrerPolicy={"strict-origin-when-cross-origin"} allow={"autoplay; encrypted-media; picture-in-picture"} />
 </div>
 <div className={"absolute inset-0"} aria-hidden={"false"} style={{"opacity": "1"} as React.CSSProperties}>
-<MediaSlot className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} label={"Add to cart demo clip"} />
+<iframe className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} title={"Add to cart demo clip"} src={"https://www.youtube-nocookie.com/embed/JFdSHV0p0dE?autoplay=1&mute=1&loop=1&playlist=JFdSHV0p0dE&controls=0&rel=0&playsinline=1&iv_load_policy=3"} referrerPolicy={"strict-origin-when-cross-origin"} allow={"autoplay; encrypted-media; picture-in-picture"} />
 </div>
 </div>
 </div>
@@ -513,8 +365,6 @@ export default function AgentsApiPage() {
 </div>
 </div>
 </section>
-</div>
-]} />
 <section className={"bg-[var(--color-bg-primary)] pb-20 pt-10 sm:pb-28 sm:pt-12"}>
 <div className={"mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 sm:gap-12"}>
 <div className={"flex flex-col gap-6 "}>
@@ -552,7 +402,7 @@ export default function AgentsApiPage() {
 <span className={"text-white/40"}>
 {"$ "}
 </span>
-{"orin env connect --all"}
+{"h env connect --all"}
 
 {"\n"}
 <span className={"text-[var(--color-green-400)]"}>
@@ -611,7 +461,7 @@ export default function AgentsApiPage() {
 <div className={"flex min-h-[200px]"}>
 <aside className={"w-[38%] border-r border-[var(--color-stroke-default)] bg-[var(--color-grey-100)] px-3 py-3"}>
 <p className={"mb-2 px-2 font-mono text-[10px] tracking-wide text-[var(--color-text-tertiary)]"}>
-{"ORIN PLATFORM"}
+{"H PLATFORM"}
 </p>
 <ul className={"flex flex-col gap-1"}>
 <li className={"rounded-[var(--radius-medium)] px-2 py-1.5 text-[length:var(--text-fs-1)] bg-[var(--color-bg-card)] font-medium text-[var(--color-text-default)] shadow-[0_1px_2px_rgb(4_4_5_/6%)]"}>
@@ -805,14 +655,14 @@ export default function AgentsApiPage() {
 <span className={"h-2 w-2 rounded-[var(--radius-rounded)] bg-[#FEBC2E]/80"} />
 <span className={"h-2 w-2 rounded-[var(--radius-rounded)] bg-[#28C840]/80"} />
 <span className={"ml-2 font-mono text-[11px] text-white/45"}>
-{"orin-cli"}
+{"h-cli"}
 </span>
 </div>
 <pre className={"overflow-x-auto px-3.5 py-3.5 font-mono text-[11px] leading-[1.7] sm:text-[12px]"}>
 <span className={"text-white/40"}>
 {"$ "}
 </span>
-{"orin auth login"}
+{"h auth login"}
 
 {"\n"}
 <span className={"text-[var(--color-green-400)]"}>
@@ -882,7 +732,7 @@ export default function AgentsApiPage() {
 <div className={"flex flex-col gap-1"}>
 <div className={"flex justify-between text-[10px] text-[var(--color-text-tertiary)]"}>
 <span >
-{"Orin purpose-built"}
+{"Holo purpose-built"}
 </span>
 <span >
 {"0.6×"}
@@ -900,7 +750,7 @@ export default function AgentsApiPage() {
 </Fade>
 </div>
 <Fade className={"flex justify-end"}>
-<Link className={"inline-flex w-fit items-center gap-2 text-[length:var(--text-fs-2)] font-medium leading-[var(--text-fs-2--line-height)] text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-text-default)]"} href={"/platform"}>
+<Link className={"inline-flex w-fit items-center gap-2 text-[length:var(--text-fs-2)] font-medium leading-[var(--text-fs-2--line-height)] text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-text-default)]"} href={"/h-platform"}>
 {"Learn more"}
 <svg className={"h-4 w-4"} viewBox={"0 0 16 16"} fill={"none"} aria-hidden={"true"} xmlns={"http://www.w3.org/2000/svg"}>
 <path d={"M3 8h10M9 4l4 4-4 4"} stroke={"currentColor"} strokeWidth={"1.5"} strokeLinecap={"round"} strokeLinejoin={"round"} />
@@ -918,12 +768,12 @@ export default function AgentsApiPage() {
 <div className={"grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16"}>
 <Fade >
 <h2 className={"text-style-36-head-med text-[var(--color-title-default-alt)] tracking-tight max-w-xl"}>
-{"What the Agents API gives you from the Orin Platform"}
+{"What the Agents API gives you from the H Platform"}
 </h2>
 </Fade>
 <Fade >
 <p className={"text-style-16-body-reg text-[var(--color-text-default-alt)] opacity-75  "}>
-{"Twinlink owns the model, inference, harness and RL stack, rather than wrapping a general-purpose model. You get the agent plumbing; you build the product."}
+{"H owns the model, inference, harness and RL stack, rather than wrapping a general-purpose model. You get the agent plumbing; you build the product."}
 </p>
 </Fade>
 </div>
@@ -935,7 +785,7 @@ export default function AgentsApiPage() {
 {"Included"}
 </span>
 <h3 className={"text-style-18-head-med text-[var(--color-title-default)] tracking-tight"}>
-{"Orin models & inference"}
+{"Holo models & inference"}
 </h3>
 <p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
 {"Small models tuned for agents: 40% lower cost per GUI run than a general LLM"}
@@ -1037,8 +887,8 @@ export default function AgentsApiPage() {
 </div>
 </div>
 </div>
-<Link className={"group w-fit text-[length:var(--text-fs-2)] font-medium text-[var(--color-iris-300)] hover:underline"} href={"/platform"}>
-{"Explore the Orin Platform"}
+<Link className={"group w-fit text-[length:var(--text-fs-2)] font-medium text-[var(--color-iris-300)] hover:underline"} href={"/h-platform"}>
+{"Explore the H Platform"}
 
 {" "}
 <span className={"inline-block transition-transform group-hover:translate-x-1"}>
@@ -1068,7 +918,7 @@ export default function AgentsApiPage() {
 <circle cx={"10"} cy={"10"} r={"2.2"} stroke={"currentColor"} strokeWidth={"1.3"} />
 </svg>
 <p className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium"}>
-{"Security reviews"}
+{"SOC 2 Type II"}
 </p>
 </li>
 <li className={"flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3"}>
@@ -1077,7 +927,7 @@ export default function AgentsApiPage() {
 <path d={"M5.2 12.2V7.8h1.3c1.1 0 1.8.6 1.8 1.5 0 .9-.7 1.5-1.8 1.5H6.5v1.4H5.2zm1.3-2.6h.3c.4 0 .7-.2.7-.6s-.3-.6-.7-.6h-.3v1.2zM10.2 12.2V7.8h2.6v1.1h-1.3v.7h1.1v1h-1.1v1.6h-1.3zM14.1 12.2V7.8h1.3v4.4h-1.3z"} fill={"currentColor"} />
 </svg>
 <p className={"text-style-14-body-reg text-[var(--color-text-default)] font-medium"}>
-{"Audit trails"}
+{"ISO 27001"}
 </p>
 </li>
 <li className={"flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3"}>
@@ -1117,11 +967,11 @@ export default function AgentsApiPage() {
 <div className={"flex flex-col gap-4"}>
 <p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
 <span className={"text-style-14-head-med text-[var(--color-text-accent)]"}>
-{"Orin Platform included:"}
+{"H Platform included:"}
 </span>
 {" "}
 
-{"Orin models, agent execution engine, cloud and local environments, console with sessions and replay, vaults. Workflow orchestration on Enterprise."}
+{"Holo models, agent execution engine, cloud and local environments, console with sessions and replay, vaults. Workflow orchestration on Enterprise."}
 
 {" "}
 <Link className={"whitespace-nowrap text-[var(--color-text-accent)] hover:underline"} href={"/agents-api"}>
@@ -1143,9 +993,9 @@ export default function AgentsApiPage() {
 {"Run your first agent in minutes. Free credits included every month."}
 </p>
 </div>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit"} href={"/coming-soon"}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"}>
 {"Sign up"}
-</Link>
+</a>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -1192,7 +1042,7 @@ export default function AgentsApiPage() {
 {"Move to production with higher concurrency and priority infrastructure."}
 </p>
 </div>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/pricing"}>
+<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/pricing#agents"}>
 {"View pricing"}
 </Link>
 </div>
@@ -1241,9 +1091,9 @@ export default function AgentsApiPage() {
 {"Deploy at scale with dedicated support and the highest limits available."}
 </p>
 </div>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/contact"}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"https://hcompany.ai/contact?from=agents-pricing#fill-out-the-form"}>
 {"Contact us"}
-</Link>
+</a>
 </div>
 <ul className={"md:contents"}>
 <li className={"border-t border-[var(--color-stroke-default)] px-6 py-3.5 "}>
@@ -1302,7 +1152,7 @@ export default function AgentsApiPage() {
 </div>
 <Fade >
 <div className={"max-w-3xl"}>
-<Faq items={[{"question":"What is the Twinlink Agents API?","answer":"The Agents API is Twinlink's API for operational computer-use agents. You configure, deploy, and monitor agents that run at production scale in the browser and on the desktop, with human-level accuracy. Twinlink handles agent orchestration, environments and the model, so you build agentic features into your product without the agent plumbing."},{"question":"What can Agents API agents do?","answer":"Agents API agents see the screen, locate UI elements, and move through interfaces the way a person would. They open pages, follow flows, and extract what you need from live web apps, and control desktop environments with clicks, typing, and full session replay. Showcase examples include QA testing a live URL, turning any web page into typed data, and completing a purchase flow on any site."},{"question":"How much does the Twinlink Agents API cost?","answer":"The Agents API starts free: up to 3 concurrent agents and about 60 sessions a month, with no credit card required. Builder costs $20 per month (up to 10 concurrent agents) and Startup $200 per month (up to 100 concurrent agents); the first $20 or $200 of usage is at model cost and top-ups are at model cost + 20%. Enterprise pricing is custom, with no concurrency cap."},{"question":"Which model powers Twinlink agents?","answer":"Agents API agents run on Orin, Twinlink's own computer-use model family, on a model, inference, harness and RL stack that Twinlink owns end to end. It is not a prompt wrapped around a generalist model: purpose-built Orin models cost 40% less per run than a general-purpose LLM that does the same GUI task."},{"question":"How do I connect the Agents API to my stack?","answer":"The Agents API is available as an MCP server, a REST API, a CLI, and an n8n node. It connects to Claude, Hermes, Cursor, or your own stack with one API key."},{"question":"Which environments do Agents API agents run in?","answer":"Agents run in Twinlink's cloud browser and cloud desktop, or in your own browser and on your own desktop. The same agent can be tested across browser and desktop without standing up separate infrastructure for each: one harness handles the visual actions on every surface."},{"question":"Can I see what an agent did?","answer":"Yes. The Orin Platform console keeps full logs and a session replay for every agent action, so you see exactly where and why a run failed and keep control over sensitive tasks."},{"question":"How does the Agents API protect my data?","answer":"Ask Twinlink about its security and compliance program, data residency and retention options. Credentials are kept in vaults and browser profiles, with 2FA support."},{"question":"Where can I get help with the Agents API?","answer":"Join the Orin developer Discord for questions, bugs, and feature requests, or write to hello@twinlink.example."}]} />
+<Faq items={[{"question":"What is the H Company Agents API?","answer":"The Agents API is H Company's API for operational computer-use agents. You configure, deploy, and monitor agents that run at production scale in the browser and on the desktop, with human-level accuracy. H Company handles agent orchestration, environments and the model, so you build agentic features into your product without the agent plumbing."},{"question":"What can Agents API agents do?","answer":"Agents API agents see the screen, locate UI elements, and move through interfaces the way a person would. They open pages, follow flows, and extract what you need from live web apps, and control desktop environments with clicks, typing, and full session replay. Showcase examples include QA testing a live URL, turning any web page into typed data, and completing a purchase flow on any site."},{"question":"How much does the H Company Agents API cost?","answer":"The Agents API starts free: up to 3 concurrent agents and about 60 sessions a month, with no credit card required. Builder costs $20 per month (up to 10 concurrent agents) and Startup $200 per month (up to 100 concurrent agents); the first $20 or $200 of usage is at model cost and top-ups are at model cost + 20%. Enterprise pricing is custom, with no concurrency cap."},{"question":"Which model powers H Company agents?","answer":"Agents API agents run on Holo4, H Company's own computer-use model family, on a model, inference, harness and RL stack that H Company owns end to end. It is not a prompt wrapped around a generalist model: purpose-built Holo models cost 40% less per run than a general-purpose LLM that does the same GUI task."},{"question":"How do I connect the Agents API to my stack?","answer":"The Agents API is available as an MCP server, a REST API, a CLI, and an n8n node. It connects to Claude, Hermes, Cursor, or your own stack with one API key."},{"question":"Which environments do Agents API agents run in?","answer":"Agents run in H Company's cloud browser and cloud desktop, or in your own browser and on your own desktop. The same agent can be tested across browser and desktop without standing up separate infrastructure for each: one harness handles the visual actions on every surface."},{"question":"Can I see what an agent did?","answer":"Yes. The H Platform console keeps full logs and a session replay for every agent action, so you see exactly where and why a run failed and keep control over sensitive tasks."},{"question":"How does the Agents API protect my data?","answer":"H Company is SOC 2 Type II and ISO 27001 certified, with regional data residency and a zero retention mode. Credentials are kept in vaults and browser profiles, with 2FA support."},{"question":"Where can I get help with the Agents API?","answer":"Join the H developer Discord for questions, bugs, and feature requests, or write to support@hcompany.ai."}]} />
 </div>
 </Fade>
 <Fade >
@@ -1310,14 +1160,14 @@ export default function AgentsApiPage() {
 {"Still have questions?"}
 
 {" "}
-<Link className={"font-medium text-[var(--color-text-accent)] hover:underline"} href={"/contact"}>
+<a className={"font-medium text-[var(--color-text-accent)] hover:underline"} href={"https://hcompany.ai/contact?from=faq#fill-out-the-form"}>
 {"Talk to an engineer"}
 
 {" "}
 <span aria-hidden={"true"}>
 {"→"}
 </span>
-</Link>
+</a>
 </p>
 </Fade>
 </div>
@@ -1341,20 +1191,20 @@ export default function AgentsApiPage() {
 </div>
 <Fade >
 <div className={"flex flex-col gap-3 sm:flex-row"}>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)]"} href={"/contact"}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)]"} href={"https://hcompany.ai/contact"}>
 {"Talk to sales"}
-</Link>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-grey-750)] max-sm:order-first"} href={"/coming-soon"}>
+</a>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-grey-750)] max-sm:order-first"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"}>
 {"Create an agent"}
-</Link>
+</a>
 </div>
 </Fade>
 </div>
 <Fade >
 <div className={"flex flex-col gap-10 sm:gap-12"}>
 <div className={"group relative aspect-video w-full overflow-hidden rounded-[var(--radius-large)] bg-[var(--color-grey-800)]"}>
-<MediaSlot className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} label={"Agents API preview"} />
-<MediaSlot className={"pointer-events-none absolute inset-0 h-full w-full bg-black object-cover transition-opacity duration-500 opacity-100"} label={""} />
+<iframe className={"pointer-events-none absolute left-1/2 top-1/2 aspect-[4/3] h-auto w-auto min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"} title={"Agents API preview"} src={"https://www.youtube-nocookie.com/embed/n3jsjIbESRY?autoplay=1&mute=1&controls=0&rel=0&playsinline=1&iv_load_policy=3&enablejsapi=1"} referrerPolicy={"strict-origin-when-cross-origin"} allow={"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"} />
+<img className={"pointer-events-none absolute inset-0 h-full w-full bg-black object-cover transition-opacity duration-500 opacity-100"} aria-hidden={"true"} alt={""} loading={"lazy"} width={"1280"} height={"720"} style={{"color": "transparent"} as React.CSSProperties} src={"https://i.ytimg.com/vi_webp/n3jsjIbESRY/maxresdefault.webp"} />
 <div className={"pointer-events-none absolute inset-0 bg-gradient-to-b from-black/55 via-black/10 to-black/60 opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100"} aria-hidden={"true"} />
 <div className={"absolute inset-0 z-10 flex flex-col justify-between p-5 sm:p-7"}>
 <div className={"flex justify-end opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100"}>
@@ -1387,34 +1237,34 @@ export default function AgentsApiPage() {
 </svg>
 </div>
 <div className={"flex flex-col gap-0.5"}>
-<Link className={"text-[length:var(--text-fs-3)] font-medium leading-[var(--text-fs-3--line-height)] text-[var(--color-text-default)] underline-offset-4 hover:underline"} href={"/coming-soon"}>
-{"Orin developer Discord"}
-</Link>
+<a className={"text-[length:var(--text-fs-3)] font-medium leading-[var(--text-fs-3--line-height)] text-[var(--color-text-default)] underline-offset-4 hover:underline"} href={"https://discord.gg/gAWcDZgx4s"} target={"_blank"} rel={"noopener noreferrer"}>
+{"H developer Discord"}
+</a>
 <p className={"text-style-14-body-reg text-[var(--color-text-secondary)]"}>
 {"Questions, bugs, feature requests: talk to the team and other builders."}
 </p>
 </div>
 </div>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} href={"/coming-soon"}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit"} target={"_blank"} rel={"noopener noreferrer"} href={"https://discord.gg/gAWcDZgx4s"}>
 <svg className={"h-4 w-4"} viewBox={"0 0 24 24"} fill={"currentColor"} aria-hidden={"true"}>
 <path d={"M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.4a13.4 13.4 0 0 1 3.3 1.6 15.9 15.9 0 0 0-13 0A13.4 13.4 0 0 1 8.8 3.4L8.6 3a19.8 19.8 0 0 0-4.9 1.4C.6 9 0 13.5.3 17.9a19.9 19.9 0 0 0 6 3l1.3-2a12.7 12.7 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 11.8 0l.5.4a12.7 12.7 0 0 1-2 1l1.3 2a19.9 19.9 0 0 0 6-3c.4-5.1-.7-9.5-3.4-13.5ZM8.5 15.2c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Zm7 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4Z"} />
 </svg>
 {"Join Discord"}
-</Link>
+</a>
 </div>
 </div>
 </Fade>
 </div>
 </section>
 <div className={"fixed bottom-4 right-4 z-40 transition-[opacity,translate] duration-300 motion-reduce:transition-none sm:bottom-6 sm:right-6 pointer-events-none translate-y-3 opacity-0"} aria-hidden={"true"}>
-<Link className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-6 py-3 text-[length:var(--text-fs-3)] leading-[var(--text-fs-3--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] shadow-[0_10px_30px_rgb(4_4_5_/18%)]"} href={"/coming-soon"} tabIndex={-1}>
+<a className={"inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-6 py-3 text-[length:var(--text-fs-3)] leading-[var(--text-fs-3--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] shadow-[0_10px_30px_rgb(4_4_5_/18%)]"} target={"_blank"} rel={"noopener noreferrer"} href={"https://platform.hcompany.ai/auth/signup"} tabIndex={-1}>
 {"Create an agent"}
 
 {" "}
 <span aria-hidden={"true"}>
 {"→"}
 </span>
-</Link>
+</a>
 </div>
     </>
   );

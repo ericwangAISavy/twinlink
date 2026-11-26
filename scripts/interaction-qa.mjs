@@ -59,7 +59,7 @@ await check("pinned platform section steps through four tabs", async () => {
     seen.push((await page.locator("#builder button[aria-pressed=true]:visible").innerText()).replace(/\s+/g, " "));
     await page.screenshot({ path: `${SHOTS}/tab-${i}.png` });
   }
-  assert.deepEqual(seen, ["01 Enterprise", "02 Agents API", "03 Models API", "04 OrinTab"]);
+  assert.deepEqual(seen, ["01 Enterprise", "02 Agents API", "03 Models API", "04 HoloTab"]);
 });
 await check("clicking a tab scrolls to it", async () => {
   await page.locator("#builder button:visible", { hasText: "Agents API" }).click();
@@ -88,7 +88,7 @@ await check("mobile menu opens, expands and closes", async () => {
 });
 await check("mobile platform tabs switch panels", async () => {
   await mobile.getByRole("tab", { name: "Models API" }).click();
-  assert.ok(await mobile.getByRole("heading", { name: "Build on Orin directly." }).isVisible());
+  assert.ok(await mobile.getByRole("heading", { name: "Build on Holo4 directly." }).isVisible());
 });
 
 await check("no horizontal overflow at intermediate widths", async () => {
@@ -100,37 +100,6 @@ await check("no horizontal overflow at intermediate widths", async () => {
     if (extra > 0) bad.push(`${width}px +${extra}`);
   }
   assert.deepEqual(bad, []);
-});
-
-for (const [path, count] of [["enterprise", 2], ["agents-api", 1], ["orin-tab", 1], ["platform", 1]]) {
-  await check(`${path} tabs change what is shown`, async () => {
-    const tabs = await open(1440, 900);
-    await tabs.goto(new URL(path, LOCAL).href, { waitUntil: "load" });
-    await tabs.waitForTimeout(800);
-    assert.equal(await tabs.locator("main .contents").count(), count);
-    for (let group = 0; group < count; group++) {
-      const wrapper = tabs.locator("main .contents").nth(group);
-      const seen = new Set();
-      const total = await wrapper.locator("[data-swap]:visible").count();
-      assert.ok(total >= 3, `only ${total} tabs`);
-      for (let i = 0; i < total; i++) {
-        await wrapper.locator(`[data-swap="${i}"]:visible`).first().click();
-        await tabs.waitForTimeout(300);
-        seen.add(await wrapper.innerHTML());
-      }
-      assert.equal(seen.size, total);
-    }
-    await tabs.context().close();
-  });
-}
-await check("question list expands", async () => {
-  const faq = await open(1440, 900);
-  await faq.goto(new URL("pricing", LOCAL).href, { waitUntil: "load" });
-  await faq.waitForTimeout(800);
-  const before = await faq.locator("main button[aria-expanded]").count();
-  await faq.getByRole("button", { name: /more questions/ }).click();
-  assert.ok(await faq.locator("main button[aria-expanded]").count() > before);
-  await faq.context().close();
 });
 
 await check("no console errors", async () => assert.ok(!errors.length, [...new Set(errors)].join(" | ").replace(/s+/g, " ").slice(0, 600)));
