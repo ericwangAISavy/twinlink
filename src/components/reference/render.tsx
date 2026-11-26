@@ -16,7 +16,7 @@ export function render(node: ContentNode, key: number): React.ReactNode {
   const [name, props, children] = node;
   if (name === "Swap") {
     const states = props.states as ContentNode[];
-    return <Swap key={key} initial={props.initial as number} states={states.map((state, index) => <Fragment key={index}>{render(state, 0)}</Fragment>)} />;
+    return <Swap key={key} initial={props.initial as number} toggle={props.toggle as boolean | undefined} states={states.map((state, index) => <Fragment key={index}>{render(state, 0)}</Fragment>)} />;
   }
   return createElement(COMPONENTS[name] ?? name, { ...props, key }, ...(children.length ? [children.map(render)] : []));
 }

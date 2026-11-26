@@ -23,6 +23,7 @@ function load(file) {
     if (name === 'next/link') return anchor;
     const base = name.startsWith('@/') ? 'src/' + name.slice(2) : name.startsWith('./') ? file.replace(/[^/]+$/, '') + name.slice(2) : null;
     if (!base) return require(name);
+    if (base.endsWith('.json')) return { __esModule: true, default: JSON.parse(readFileSync(new URL(base, root), 'utf8')) };
     return load(existsSync(new URL(base + '.tsx', root)) ? base + '.tsx' : base + '.ts');
   };
   new Function('require', 'module', 'exports', outputText)(resolve, mod, mod.exports);
@@ -78,4 +79,24 @@ test('every captured page renders with a heading, working local links and existi
 
 test('captured forms cannot submit anywhere', () => {
   for (const page of pages) assert.doesNotMatch(renderContent(page), /<form[^>]*\saction=/, page.path);
+});
+
+test('scorecard verdicts match the results observed on the reference', () => {
+  const { scoreQueue } = load('src/components/reference/tools.tsx');
+  const run = (answers) => scoreQueue([...answers].map(Number));
+  const cases = [
+    ['000000000000', 0, 'no'], ['111111111111', 14, 'close', 'Volume'], ['222222222222', 24, 'ready'], ['000000012222', 9, 'no'],
+    ['000000122222', 11, 'close', 'Volume'], ['022222222222', 22, 'close', 'Volume'], ['222022222222', 22, 'ready'],
+    ['222222222022', 22, 'close', 'Readiness'], ['222222222202', 22, 'ready'], ['220022111211', 15, 'close', 'Variety'],
+    ['222200111211', 15, 'close', 'Systems'], ['222211000222', 17, 'close', 'Judgment'], ['222222111100', 16, 'close', 'Readiness'],
+    ['022222222022', 20, 'close', 'Volume'], ['221111111211', 17, 'close', 'Judgment'], ['220000000210', 7, 'no'],
+  ];
+  for (const [answers, total, verdict, gap] of cases) {
+    const result = run(answers);
+    assert.equal(result.total, total, answers);
+    assert.equal(result.verdict, verdict, answers);
+    if (gap) assert.ok(result.gap.startsWith(gap), answers + ' ' + result.gap);
+  }
+  const partial = scoreQueue([2, 2, 2]);
+  assert.deepEqual([partial.total, partial.verdict, partial.remaining], [6, 'empty', 9]);
 });

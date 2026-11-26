@@ -2,8 +2,7 @@ import Link from "next/link";
 import { SectionHeader } from "@/components/dashboard/candidate/section-header";
 
 const LINKS = [
-  { href: "/careers", label: "Public careers page" },
-  { href: "/about", label: "About Twinlink" },
+  { href: "/dashboard/candidate/jobs", label: "Open roles" },
   { href: "/dashboard/candidate/resume", label: "Resume upload" },
 ] as const;
 

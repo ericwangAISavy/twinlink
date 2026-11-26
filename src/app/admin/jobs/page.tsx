@@ -80,15 +80,6 @@ export default async function AdminJobsPage({
               <td className="px-4 py-3 text-muted-foreground">{formatDate(job.updatedAt)}</td>
               <td className="px-4 py-3">
                 <div className="flex flex-wrap gap-2">
-                  {job.status === "PUBLISHED" ? (
-                    <Link className="text-sm text-accent hover:underline" href={`/careers/${job.slug}`}>
-                      View
-                    </Link>
-                  ) : (
-                    <Link className="text-sm text-accent hover:underline" href={`/admin/jobs/${job.id}`}>
-                      View
-                    </Link>
-                  )}
                   <Link className="text-sm text-accent hover:underline" href={`/admin/jobs/${job.id}`}>
                     Edit
                   </Link>

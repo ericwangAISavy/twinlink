@@ -13,7 +13,6 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
     <div className={`${openSans.variable} ${roboto.variable} public-auth`}>
       <header className="public-auth-header">
         <Link href="/" aria-label="Twinlink home"><BrandLogo height={34} priority /></Link>
-        <Link href="/careers">Browse careers</Link>
       </header>
       <main className="public-auth-grid">
         <section className="public-auth-intro" aria-label="Twinlink talent portal">

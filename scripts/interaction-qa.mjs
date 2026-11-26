@@ -102,6 +102,75 @@ await check("no horizontal overflow at intermediate widths", async () => {
   assert.deepEqual(bad, []);
 });
 
+async function visit(path, run) {
+  const view = await open(1440, 900);
+  await view.goto(new URL(path, LOCAL).href, { waitUntil: "load" });
+  await view.waitForTimeout(900);
+  await run(view);
+  await view.context().close();
+}
+const text = (view) => view.locator("main").innerText();
+for (const path of ["newsroom", "technical-blog", "insights", "research/publications", "use-cases", "events/ces-2027", "bot-estate-audit", "exception-queue-sprint", "team", "newsroom/h-x-42ai-hackathon-paris-winners"]) {
+  await check(`${path}: controls change the page`, () => visit(path, async (view) => {
+    const total = await view.locator("main [data-swap]").count();
+    assert.ok(total >= 2, `${total} controls`);
+    const before = await view.locator("main").innerHTML();
+    const changed = new Set();
+    for (let i = 1; i <= Math.min(total, 4); i++) {
+      const control = view.locator(`main [data-swap="${i}"]`).first();
+      if (!(await control.count()) || !(await control.isVisible())) continue;
+      await control.click();
+      await view.waitForTimeout(250);
+      const now = await view.locator("main").innerHTML();
+      if (now !== before) changed.add(i);
+    }
+    assert.ok(changed.size >= 1, "nothing changed");
+  }));
+}
+await check("calculator updates its estimate", () => visit("bot-run-cost-calculator", async (view) => {
+  assert.match(await text(view), /\$637,000/);
+  await view.fill("#calc-lic", "350000");
+  assert.match(await text(view), /\$737,000/);
+  assert.match(await text(view), /\$12,283/);
+}));
+await check("scorecard reaches a verdict", () => visit("exception-queue-scorecard", async (view) => {
+  const options = view.locator("main button[aria-pressed]");
+  for (let q = 0; q < 12; q++) await options.nth(q * 3 + 2).click();
+  assert.match(await text(view), /24 \/ 24/);
+  assert.match(await text(view), /Sprint-ready/);
+  await options.nth(0).click();
+  assert.match(await text(view), /22 \/ 24/);
+  assert.match(await text(view), /Volume is the gap/);
+}));
+await check("copy button copies the address", () => visit("contact", async (view) => {
+  await view.context().grantPermissions(["clipboard-read", "clipboard-write"]);
+  await view.getByRole("button", { name: "Copy" }).first().click();
+  assert.equal(await view.evaluate(() => navigator.clipboard.readText()), "contact@hcompany.ai");
+}));
+await check("story search filters cards", () => visit("newsroom", async (view) => {
+  const cards = view.locator("main a[href^='/newsroom/']:visible");
+  const before = await cards.count();
+  await view.locator("main input").first().fill("holotab");
+  await view.waitForTimeout(500);
+  const after = await cards.count();
+  assert.ok(after > 0 && after < before, `${before} -> ${after}`);
+}));
+await check("forms do not submit", () => visit("contact", async (view) => {
+  const posts = [];
+  view.on("request", (request) => { if (request.method() === "POST" && !/api\/visits/.test(request.url())) posts.push(request.url()); });
+  await view.locator("main form").first().evaluate((form) => form.requestSubmit?.() ?? form.submit());
+  await view.waitForTimeout(500);
+  assert.deepEqual(posts, []);
+}));
+await check("unknown addresses show the site's not-found page", async () => {
+  const view = await open(1440, 900);
+  const response = await view.goto(new URL("no-such-page", LOCAL).href);
+  assert.equal(response.status(), 404);
+  assert.match(await view.locator("body").innerText(), /Page not found/);
+  errors.length = 0;
+  await view.context().close();
+});
+
 await check("no console errors", async () => assert.ok(!errors.length, [...new Set(errors)].join(" | ").replace(/s+/g, " ").slice(0, 600)));
 await browser.close();
 console.log(results.join("\n"));

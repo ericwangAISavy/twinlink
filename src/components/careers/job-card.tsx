@@ -21,7 +21,7 @@ export function JobCard({
   href?: string;
 }) {
   return (
-    <Link href={href ?? `/careers/${slug}`} className="block h-full">
+    <Link href={href ?? `/dashboard/candidate/jobs/${slug}`} className="block h-full">
       <Card className="h-full transition-shadow hover:shadow-md">
         <CardHeader>
           <div className="flex flex-wrap gap-2">

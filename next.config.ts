@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   // Image fallback detection also runs inside Vercel serverless functions.
-  outputFileTracingIncludes: { "/*": ["./public/images/**/*"] },
+  outputFileTracingIncludes: { "/*": ["./public/images/**/*", "./src/content/reference/*.json"] },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30,

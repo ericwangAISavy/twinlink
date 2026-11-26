@@ -1,6 +1,6 @@
 @import "tailwindcss";
 /* Public page markup is stored as content files; scan them for utility classes. */
-@source "../content/reference";
+@source "../content";
 
 :root {
   --background: #f4efe6;

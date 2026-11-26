@@ -46,14 +46,21 @@ viewport sizes were not compared, except the homepage earlier in the work. The r
 
 ## Known differences
 
-- **Interaction:** calculators, scorecards, newsroom and use-case filters, article demos and most script-driven
-  animations show their initial state. Menus, question lists, the homepage tabs and the product page tabs work.
+- **Working:** menus, question lists, homepage and product tabs, the console demo, newsroom, research and use-case
+  filters, story search, event day buttons, team profiles, copy buttons, the cost calculator and the scorecard.
+- The scorecard's rules were inferred from sample answers on the reference. Filters keep one choice at a time,
+  so two filter groups cannot be combined.
+- **Static:** the Holo4 and Nemotron article charts and demos, console replay steps, the cookie-preferences
+  button and most script-driven animations.
 - **Canvas graphics** (contact globe, Holo4 and Nemotron article visuals) are still images; the full-screen
   particle overlay is omitted. The homepage dot field is an original approximation.
 - **Forms** send nothing. The SolidWorks page's embedded third-party form is a still image.
-- Contact, Holo4 and Nemotron pages carry separate phone markup, so their element ids repeat.
+- Contact, Holo4 and Nemotron pages carry separate phone markup, so they have repeated element ids and two `h1`.
 - YouTube and Vimeo embeds load from those services.
 - Cookie banner and analytics are absent. Only Chrome was tested. Signed-in areas were not exercised.
+- Admin publishing still saves articles and events, but no public page displays them any more.
+- The table above is from the full run before the control fixes. A later run of 14 changed pages scored
+  99.1% or better at both widths.
 
 ## Run and check
 
@@ -64,6 +71,7 @@ npx next start -p 3000
 
 # in a second terminal
 node scripts/pages-qa.mjs
+node scripts/audit-qa.mjs      # lists controls that do nothing
 VISUAL_QA_URL=http://localhost:3000/ node scripts/interaction-qa.mjs
 VISUAL_QA_URL=http://localhost:3000/ node scripts/visual-qa-all.mjs
 ```

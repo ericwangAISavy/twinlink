@@ -30,9 +30,6 @@ export default async function EmployeeLayout({ children }: { children: React.Rea
             <p className="text-sm text-muted-foreground">Signed in as</p>
             <p className="font-medium">{user.name ?? user.email}</p>
           </div>
-          <Link href="/careers" className="text-sm text-accent hover:underline">
-            Browse careers
-          </Link>
         </header>
         <div className="px-6 py-8">{children}</div>
       </div>
