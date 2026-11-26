@@ -1,4 +1,28 @@
-# hcompany.ai reproduction
+# hcompany.ai reproduction, branded Orin
+
+## Current state
+
+Routes: `/`, `/enterprise`, `/agents-api`, `/models-api`, `/orin-tab`, `/platform`, `/pricing`, `/coming-soon`.
+Every other link in the header, footer and pages leads to `/coming-soon`.
+
+- **Names** live in `src/components/reference/brand.ts`.
+- **Placeholders:** business claims, results, prices, specs, certifications, FAQ answers, news and media are
+  marked `[Add ...]`, `00%` or `$—`. Search for these before publishing. Headlines, section copy that
+  describes behaviour, demo mock-ups (sample records, console screens), plan names and "Free" / `$0` labels
+  were carried over and still need review: they may not be true of Orin.
+- **Permission:** the owner stated they hold H Company's written permission for a full reproduction. Confirm it
+  also covers reusing the design and copy under the Orin name before publishing. The product page markup
+  was converted directly from the reference site's rendered HTML, and theme styles from its stylesheet.
+- **Product pages** have not been pixel-compared. Not reproduced: videos and images (placeholder boxes),
+  the interactive demos and tab switchers on those pages, and their JavaScript-driven animations.
+- `npm run visual-qa` and the similarity table below apply to the homepage **before** the rebrand
+  (commit `7ab7769`). Run it against that commit to repeat them.
+- Checks: `npm test`, `node scripts/pages-qa.mjs` and `node scripts/interaction-qa.mjs` (the last two need
+  the build running; set `VISUAL_QA_URL=http://localhost:3000/` for the interaction script).
+
+---
+
+## Earlier record: homepage reproduction before the rebrand
 
 Local frontend reproduction of <https://hcompany.ai/>. On 2026-11-26 the project owner stated that they
 hold H Company's written permission for a full reproduction (name, logo, copy, images, graphics).

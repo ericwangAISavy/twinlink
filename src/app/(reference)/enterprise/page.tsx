@@ -1,0 +1,1652 @@
+import type { Metadata } from "next";
+import { BRAND } from "@/components/reference/brand";
+import { Fade } from "@/components/reference/fade";
+import { Faq } from "@/components/reference/faq";
+import { HeroWash } from "@/components/reference/hero-wash";
+
+export const metadata: Metadata = { title: { absolute: `${"Enterprise"} | ${BRAND.name}` } };
+
+export default function EnterprisePage() {
+  return (
+    <>
+      <HeroWash />
+<section className="product-hero-section pt-32 sm:pt-36  ">
+<div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[var(--color-grey-900)]" aria-hidden="true" style={{"opacity": "var(--hero-mix, 100%)"} as React.CSSProperties}>
+<div className="absolute -bottom-24 -left-24 h-[24rem] w-[24rem] rounded-[var(--radius-rounded)] bg-[var(--color-iris-600)] opacity-30 blur-[65px]" />
+</div>
+<div className="relative z-10 mx-auto w-full max-w-6xl px-6 ">
+<div className="flex flex-col gap-10 sm:gap-12">
+<div className="flex flex-col gap-6" data-hero-copy="true">
+<Fade >
+<div className="flex items-center justify-between gap-6">
+<h1 className="text-style-24-head-med text-[var(--color-title-default-alt)] tracking-tight">
+{"Enterprise"}
+</h1>
+</div>
+</Fade>
+<div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
+<Fade >
+<h2 className="text-style-48-head-med text-[var(--color-title-default-alt)] tracking-tight">
+{"Expert agents deployed on your infrastructure"}
+</h2>
+</Fade>
+<Fade >
+<p className="text-style-16-body-reg text-[var(--color-text-default-alt)] opacity-75">
+{"[Add product description]"}
+</p>
+</Fade>
+</div>
+<Fade className="mt-2">
+<div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+<a className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-primary)] text-[var(--color-text-default)] hover:bg-[var(--color-bg-secondary)]" data-hero-button="primary" href="/coming-soon">
+{"Book a demo"}
+</a>
+<a className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-white/70 bg-transparent text-[var(--color-text-default-alt)] hover:bg-[var(--color-bg-primary)]/10" data-hero-button="outline" href="/coming-soon">
+{"See what's possible"}
+</a>
+</div>
+</Fade>
+</div>
+<Fade >
+<div className="flex flex-col gap-10">
+<ul className="flex flex-wrap gap-3">
+<li className="rounded-[var(--radius-rounded)] border border-[var(--color-grey-500)]/40 px-5 py-3">
+<span className="text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-grey-500)]">
+{"[Add positioning claim]"}
+</span>
+</li>
+<li className="rounded-[var(--radius-rounded)] border border-[var(--color-grey-500)]/40 px-5 py-3">
+<span className="text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-grey-500)]">
+{"[Add customer claim]"}
+</span>
+</li>
+</ul>
+<div className="w-full rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)] p-3 sm:p-4" data-keep-light="true">
+<div className="flex flex-col gap-3 sm:gap-4">
+<div className="flex h-[520px] flex-col overflow-hidden rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] sm:h-[600px]">
+<div className="flex h-10 shrink-0 items-center gap-3 border-b border-[var(--color-stroke-default)] px-4">
+<span className="flex gap-1.5" aria-hidden="true">
+<span className="size-2.5 rounded-[var(--radius-rounded)] bg-[#ff5f57]" />
+<span className="size-2.5 rounded-[var(--radius-rounded)] bg-[#febc2e]" />
+<span className="size-2.5 rounded-[var(--radius-rounded)] bg-[#28c840]" />
+</span>
+<span className="text-style-12-body-reg flex min-w-0 items-center gap-1.5 text-[var(--color-text-tertiary)]">
+<span className="text-style-11-label-bold flex size-4 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)]">
+{BRAND.name}
+</span>
+<span className="hidden items-center gap-1 sm:flex">
+{BRAND.name}
+<svg className="shrink-0" aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="m3 6 5 5 5-5" />
+</svg>
+</span>
+<span className="hidden sm:inline">
+{"/"}
+</span>
+<span className="hidden items-center gap-1 sm:flex">
+<svg className="shrink-0" aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="M2 4.5v8h12V5.5H8L6.5 3.5H2.5" />
+</svg>
+{"Default"}
+</span>
+<span className="flex min-w-0 items-center gap-1.5">
+<span className="hidden sm:inline">
+{"/"}
+</span>
+<span className="truncate">
+{"Agents"}
+</span>
+</span>
+<span className="flex min-w-0 items-center gap-1.5">
+<span >
+{"/"}
+</span>
+<span className="font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] truncate text-[var(--color-title-default)]">
+{"form-filling-agent"}
+</span>
+</span>
+</span>
+</div>
+<div className="flex min-h-0 flex-1">
+<nav className="hidden w-48 shrink-0 flex-col gap-0.5 overflow-y-auto border-r border-[var(--color-stroke-default)] p-3 [scrollbar-width:none] md:flex" aria-label={`Console`}>
+<div className="flex flex-col gap-0.5">
+<span className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]">
+<span >
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<rect x="2.5" y="2.5" width="4" height="4" rx="0.5" />
+<rect x="9.5" y="2.5" width="4" height="4" rx="0.5" />
+<rect x="2.5" y="9.5" width="4" height="4" rx="0.5" />
+<rect x="9.5" y="9.5" width="4" height="4" rx="0.5" />
+</svg>
+</span>
+{"Home"}
+</span>
+<span className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]">
+<span >
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="M2 4.5v8h12V5.5H8L6.5 3.5H2.5" />
+</svg>
+</span>
+{"Projects"}
+</span>
+</div>
+<div className="flex flex-col gap-0.5">
+<span className="text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]">
+{"Build"}
+<svg className="shrink-0" aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="m3 6 5 5 5-5" />
+</svg>
+</span>
+<button className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left bg-[var(--color-bg-selected)] text-[var(--color-title-default)]" type="button" aria-current="page">
+<span className="text-[var(--color-icon-accent)]">
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<circle cx="5.5" cy="5.5" r="2" />
+<circle cx="10.5" cy="5.5" r="2" />
+<path d="M2 13c0-2 1.5-3.5 3.5-3.5S9 11 9 13M7 13c0-2 1.5-3.5 3.5-3.5S14 11 14 13" />
+</svg>
+</span>
+{"Agents"}
+</button>
+<button className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left text-[var(--color-text-secondary)] transition-colors duration-200 hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-default)]" type="button">
+<span >
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="M2.5 3.5h11v8h-7l-3 2.5v-2.5h-1z" />
+<path d="M5.5 6.5h5M5.5 8.5h3" />
+</svg>
+</span>
+{"Sessions"}
+<span className="pointer-events-none absolute z-10 flex size-2.5 right-2.5 top-1/2 -translate-y-1/2" aria-hidden="true">
+<span className="absolute inline-flex size-full animate-ping rounded-[var(--radius-rounded)] bg-[var(--color-stroke-accent-alt)] opacity-60 motion-reduce:hidden" />
+<span className="relative inline-flex size-2.5 rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] ring-2 ring-[var(--color-bg-card)]" />
+</span>
+</button>
+<span className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]">
+<span >
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z" />
+</svg>
+</span>
+{"Skills"}
+</span>
+<span className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]">
+<span >
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<rect x="2" y="3" width="12" height="8" rx="1" />
+<path d="M6 13.5h4M8 11v2.5" />
+</svg>
+</span>
+{"Environments"}
+</span>
+<span className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]">
+<span >
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<rect x="2" y="3" width="12" height="10" rx="1" />
+<path d="M2 6h12" />
+</svg>
+</span>
+{"Browser profiles"}
+</span>
+<span className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]">
+<span >
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<rect x="3" y="7" width="10" height="7" rx="1" />
+<path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" />
+</svg>
+</span>
+{"Vaults"}
+</span>
+<span className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]">
+<span >
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<circle cx="8" cy="8" r="5.5" />
+<path d="M8 5v3l2 1.5" />
+</svg>
+</span>
+{"Schedules"}
+</span>
+</div>
+<div className="flex flex-col gap-0.5">
+<span className="text-style-12-head-med flex shrink-0 items-center justify-between px-2.5 pb-1 pt-3 text-[var(--color-text-tertiary)]">
+{"Configure"}
+<svg className="shrink-0" aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="m3 6 5 5 5-5" />
+</svg>
+</span>
+<span className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]">
+<span >
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<circle cx="8" cy="6" r="1.75" />
+<circle cx="3.75" cy="4.5" r="1.25" />
+<circle cx="12.25" cy="4.5" r="1.25" />
+<path d="M5 12.5c0-1.75 1.25-3 3-3s3 1.25 3 3M1.75 10c.25-1.25 1-2 2-2M14.25 10c-.25-1.25-1-2-2-2" />
+</svg>
+</span>
+{"Organisation"}
+</span>
+<span className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]">
+<span >
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<circle cx="10" cy="6" r="3.5" />
+<path d="M7.5 8.5 2.5 13.5M4 12l1.5 1.5M5.5 10.5 7 12" />
+</svg>
+</span>
+{"API keys"}
+</span>
+<span className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]">
+<span >
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="M6.5 5.5a2 2 0 1 1 3 1.75L8 10M5 9.5a2 2 0 1 0 2 3h4M11 13a2 2 0 1 0-1.25-3.5L8 6.5" />
+</svg>
+</span>
+{"Webhooks"}
+</span>
+<span className="text-style-12-head-med relative flex w-full shrink-0 items-center gap-2.5 rounded-[var(--radius-medium)] px-2.5 py-1 text-left cursor-default text-[var(--color-text-disabled)]">
+<span >
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<rect x="2" y="3.5" width="12" height="9" rx="1" />
+<path d="M2 6.5h12M4.5 10h2" />
+</svg>
+</span>
+{"Billing & subscription"}
+</span>
+</div>
+<div className="mt-auto flex shrink-0 flex-col gap-2 pt-3 opacity-50">
+<div className="flex flex-col gap-2 rounded-[var(--radius-medium)] border border-[var(--color-stroke-default)] p-2.5">
+<span className="flex items-center justify-between">
+<span className="text-style-12-head-med text-[var(--color-text-default)]">
+{"Free plan"}
+</span>
+<span className="text-style-12-body-reg text-[var(--color-text-tertiary)]">
+<span className="font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-tertiary)]">
+{"00%"}
+</span>
+{" used"}
+</span>
+</span>
+<span className="h-1 rounded-[var(--radius-rounded)] bg-[var(--color-bg-secondary)]" />
+<span className="flex items-center justify-between">
+<span className="text-style-12-body-reg text-[var(--color-text-tertiary)] flex items-center gap-1">
+<svg className="shrink-0" aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="M3 3v3h3" />
+<path d="M3.5 6A5 5 0 1 1 3 9" />
+</svg>
+{"2 days"}
+</span>
+<span className="text-style-12-head-med flex items-center gap-1 rounded-[var(--radius-small)] bg-[var(--color-bg-accent-alt)] px-2 py-1 text-[var(--color-text-default-alt)]">
+<svg className="shrink-0" aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="M9.5 2.5c2.5 0 4 1.5 4 4L8.5 11.5l-4-4z" />
+<path d="M4.5 7.5 2.5 7l2-2.5h3M8.5 11.5l.5 2 2.5-2v-3M3 13c0-1 .5-2 1.5-2.25" />
+</svg>
+{"Upgrade"}
+</span>
+</span>
+</div>
+<span className="flex items-center justify-between px-1">
+<span className="text-style-12-head-med flex size-6 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)]">
+{"A"}
+</span>
+<span className="text-[var(--color-icon-secondary)]">
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<rect x="2" y="3" width="12" height="10" rx="1" />
+<path d="M6 3v10" />
+</svg>
+</span>
+</span>
+</div>
+</nav>
+<div className="relative min-w-0 flex-1 overflow-y-auto">
+<div className="h-full" style={{"opacity": "1", "transform": "none"} as React.CSSProperties}>
+<div className="flex flex-col gap-6 p-4 sm:p-6">
+<div className="flex items-start justify-between gap-4">
+<div className="flex min-w-0 flex-col gap-1">
+<h3 className="text-style-16-head-bold text-[var(--color-title-default)] tracking-tight truncate">
+{"form-filling-agent"}
+</h3>
+<span className="text-style-12-body-reg text-[var(--color-text-secondary)]">
+{"Quote request filling"}
+</span>
+</div>
+<div className="flex shrink-0 gap-2">
+<span className="text-style-12-head-med inline-flex h-8 items-center gap-1.5 rounded-[var(--radius-medium)] bg-[var(--color-bg-button-secondary-default)] px-3 text-[var(--color-text-default)]">
+<svg className="shrink-0" aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="M10.5 2.5 13.5 5.5 6 13H3v-3z" />
+<path d="M9 4l3 3" />
+</svg>
+{"Edit"}
+</span>
+<span className="relative">
+<button className="text-style-12-head-med inline-flex h-8 shrink-0 items-center gap-1.5 rounded-[var(--radius-medium)] px-3 transition-[background-color,opacity] duration-200 disabled:opacity-40 bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:opacity-90" type="button">
+<svg className="shrink-0" aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="M5 3.5v9l7-4.5z" fill="currentColor" />
+</svg>
+{"Start session"}
+</button>
+<span className="pointer-events-none absolute z-10 flex size-2.5 -right-1 -top-1" aria-hidden="true">
+<span className="absolute inline-flex size-full animate-ping rounded-[var(--radius-rounded)] bg-[var(--color-stroke-accent-alt)] opacity-60 motion-reduce:hidden" />
+<span className="relative inline-flex size-2.5 rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] ring-2 ring-[var(--color-bg-card)]" />
+</span>
+</span>
+</div>
+</div>
+<div className="grid gap-3 md:grid-cols-2">
+<div className="flex flex-col divide-y divide-[var(--color-stroke-default)] rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] px-4">
+<div className="pb-2 pt-3">
+<span className="text-style-12-body-reg text-[var(--color-text-tertiary)]">
+{"Configuration"}
+</span>
+<div className="flex items-center justify-between gap-3 py-1.5">
+<span className="text-style-12-body-reg text-[var(--color-text-default)] flex items-center gap-2">
+<span className="text-[var(--color-icon-secondary)]">
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="M8 1.75 13.5 5v6L8 14.25 2.5 11V5z" />
+<path d="M2.5 5 8 8.25 13.5 5M8 8.25v6" />
+</svg>
+</span>
+{"Model"}
+</span>
+<span className="flex flex-wrap justify-end gap-1">
+<span className="text-style-12-body-reg text-[var(--color-text-tertiary)] italic">
+{"Platform default"}
+</span>
+</span>
+</div>
+<div className="flex items-center justify-between gap-3 py-1.5">
+<span className="text-style-12-body-reg text-[var(--color-text-default)] flex items-center gap-2">
+<span className="text-[var(--color-icon-secondary)]">
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<rect x="2" y="3" width="12" height="8" rx="1" />
+<path d="M6 13.5h4M8 11v2.5" />
+</svg>
+</span>
+{"Environment"}
+</span>
+<span className="flex flex-wrap justify-end gap-1">
+<span className="font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors ">
+{BRAND.cli}{"/"}{"browser"}
+</span>
+</span>
+</div>
+</div>
+<div className="pb-3 pt-3">
+<span className="text-style-12-body-reg text-[var(--color-text-tertiary)]">
+{"Capabilities"}
+</span>
+<div className="flex items-center justify-between gap-3 py-1.5">
+<span className="text-style-12-body-reg text-[var(--color-text-default)] flex items-center gap-2">
+<span className="text-[var(--color-icon-secondary)]">
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<path d="M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z" />
+</svg>
+</span>
+{"Skills"}
+</span>
+<span className="flex flex-wrap justify-end gap-1">
+<span className="font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors ">
+{BRAND.cli}{"/"}{"visual-browser"}
+</span>
+</span>
+</div>
+<div className="flex items-center justify-between gap-3 py-1.5">
+<span className="text-style-12-body-reg text-[var(--color-text-default)] flex items-center gap-2">
+<span className="text-[var(--color-icon-secondary)]">
+<svg className="shrink-0" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+<circle cx="4.5" cy="3.5" r="1.5" />
+<circle cx="4.5" cy="12.5" r="1.5" />
+<circle cx="11.5" cy="5.5" r="1.5" />
+<path d="M4.5 5v6M11.5 7c0 2.5-3 2.5-7 4" />
+</svg>
+</span>
+{"Subagents"}
+</span>
+<span className="flex flex-wrap justify-end gap-1">
+<span className="font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] inline-flex items-center whitespace-nowrap rounded-[var(--radius-small)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] px-1.5 py-0.5 text-[var(--color-text-default)] transition-colors ">
+{BRAND.cli}{"/"}{"web-surfer-pro"}
+</span>
+</span>
+</div>
+</div>
+</div>
+<div className="hidden flex-col gap-2 rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] px-4 pb-4 pt-3 md:flex">
+<span className="text-style-12-body-reg text-[var(--color-text-tertiary)]">
+{"Instructions"}
+</span>
+<span className="text-style-12-body-reg text-[var(--color-text-default)]">
+{"You are an agent that fills out insurance/service quote request forms on behalf of a user, using their provided personal and coverage details to accurately complete each field. Navigate the form step-by-step, validate required fields before submitting, and flag any information that is missing or ambiguous instead of guessing."}
+</span>
+</div>
+</div>
+<div className="flex flex-col gap-3">
+<div className="flex items-center justify-between">
+<span className="text-style-14-head-med text-[var(--color-text-default)]">
+{"Used in sessions"}
+</span>
+<div className="flex rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] p-0.5">
+<button className="text-style-12-head-med rounded-[var(--radius-rounded)] px-2.5 py-0.5 transition-colors duration-200 bg-[var(--color-bg-purple-alt)] text-[var(--color-text-accent)]" type="button" aria-pressed="true">
+{"My runs"}
+</button>
+<button className="text-style-12-head-med rounded-[var(--radius-rounded)] px-2.5 py-0.5 transition-colors duration-200 text-[var(--color-text-secondary)] hover:text-[var(--color-text-default)]" type="button" aria-pressed="false">
+{"Org"}
+</button>
+</div>
+</div>
+<div className="overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-stroke-default)]">
+<div className="text-style-12-head-med grid gap-4 border-b border-[var(--color-stroke-default)] px-4 py-2.5 text-[var(--color-text-tertiary)] grid-cols-[minmax(0,1fr)_auto] sm:grid-cols-[minmax(0,1fr)_7rem_6rem]">
+<span >
+{"Name"}
+</span>
+<span >
+{"Status"}
+</span>
+<span className="hidden sm:block">
+{"Last updated"}
+</span>
+</div>
+<button className="grid w-full items-center gap-4 px-4 py-3 text-left transition-colors duration-200 hover:bg-[var(--color-bg-hover)] grid-cols-[minmax(0,1fr)_auto] sm:grid-cols-[minmax(0,1fr)_7rem_6rem] relative " type="button">
+<span className="pointer-events-none absolute z-10 flex size-2.5 right-4 top-1/2 -translate-y-1/2" aria-hidden="true">
+<span className="absolute inline-flex size-full animate-ping rounded-[var(--radius-rounded)] bg-[var(--color-stroke-accent-alt)] opacity-60 motion-reduce:hidden" />
+<span className="relative inline-flex size-2.5 rounded-[var(--radius-rounded)] bg-[var(--color-bg-accent-alt)] ring-2 ring-[var(--color-bg-card)]" />
+</span>
+<span className="flex min-w-0 flex-col gap-0.5">
+<span className="text-style-12-head-med text-[var(--color-text-default)] truncate">
+{"Request an event liability quote for the June wedding"}
+</span>
+<span className="font-mono text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] truncate text-[var(--color-text-tertiary)]">
+{"form-filling-agent · 2fa860ad"}
+</span>
+</span>
+<span >
+<span className="text-style-12-head-med inline-flex items-center gap-1 whitespace-nowrap rounded-[var(--radius-rounded)] border px-2 py-0.5 border-[var(--color-stroke-accent)] bg-[var(--color-bg-purple-alt)] text-[var(--color-text-accent)]">
+<span className="size-1.5 animate-pulse rounded-[var(--radius-rounded)] bg-current motion-reduce:animate-none" />
+{"Running"}
+</span>
+</span>
+<span className="text-style-12-body-reg text-[var(--color-text-tertiary)] hidden sm:block">
+{"Just now"}
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div className="flex flex-col items-center gap-2">
+<div className="flex max-w-full overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)]">
+<div className="relative flex min-w-0 gap-1 overflow-x-auto [scrollbar-width:none] motion-safe:scroll-smooth p-0.5  " role="tablist" aria-label={`Console demo`}>
+<button className="whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] bg-white text-[var(--color-grey-900)] shadow-[0_1px_3px_rgba(0,0,0,0.08)]" type="button" role="tab" aria-selected="true">
+{"Agent overview"}
+</button>
+<button className="whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]" type="button" role="tab" aria-selected="false">
+{"Watch a session"}
+</button>
+<button className="whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]" type="button" role="tab" aria-selected="false">
+{"Create an agent"}
+</button>
+<button className="whitespace-nowrap rounded-[var(--radius-button)] font-medium transition-colors duration-300 px-3 py-1 text-[length:var(--text-fs-1)] leading-[var(--text-fs-1--line-height)] text-[var(--color-text-secondary)] hover:bg-current/10 hover:text-[var(--color-text-default)]" type="button" role="tab" aria-selected="false">
+{"Run it with subagents"}
+</button>
+</div>
+</div>
+<p className="text-style-12-body-reg text-[var(--color-text-tertiary)] text-center">
+{"Click Start session, a session or the sidebar to explore."}
+</p>
+</div>
+</div>
+</div>
+</div>
+</Fade>
+</div>
+</div>
+</section>
+<section className="bg-[var(--color-bg-primary)] py-16 sm:py-24" id="enterprise-operations">
+<div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6">
+<div className="flex flex-col gap-6 ">
+<div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
+<Fade >
+<h2 className="text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl">
+{"The only agentic platform built by a lab specialized in computer use and enterprise environments"}
+</h2>
+</Fade>
+<Fade >
+<p className="text-style-16-body-reg text-[var(--color-text-secondary)]   ">
+{"[Add product description]"}
+</p>
+</Fade>
+</div>
+</div>
+<Fade >
+<div className="grid w-full items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-16">
+<div className="mx-auto flex w-full max-w-[460px] flex-col gap-4">
+<div className="grid rounded-[var(--radius-large)] border border-[var(--color-grey-250)] bg-[var(--color-bg-secondary)] p-6 shadow-[0_10px_40px_rgb(4_4_5_/4%)] sm:p-8">
+<div className="col-start-1 row-start-1 self-center transition-all duration-500 translate-y-0 opacity-100">
+<div className="overflow-hidden rounded-[var(--radius-large)] border shadow-[0_18px_40px_rgb(4_4_5_/10%)] border-white/15 bg-[var(--color-grey-900)]" aria-hidden="true">
+<div className="flex items-center gap-2 border-b px-3 py-2 border-white/10 bg-white/5">
+<div className="flex items-center gap-1.5">
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FF5F57]/80" />
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FEBC2E]/80" />
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#28C840]/80" />
+</div>
+<span className="font-mono text-[10px] text-white/50">
+{"mainframe · session 3270"}
+</span>
+</div>
+<div className="flex flex-col gap-1.5 p-4 font-mono text-[11px] text-[var(--color-green-400)]">
+<span className="text-white/40">
+{"*** CUSTOMER ONBOARDING · SCREEN 04 ***"}
+</span>
+<div className="flex gap-4 rounded-[var(--radius-small)] px-1.5 py-0.5 ">
+<span className="w-20 text-white/50">
+{"CUST-ID"}
+</span>
+<span >
+{"004 812 377"}
+</span>
+</div>
+<div className="flex gap-4 rounded-[var(--radius-small)] px-1.5 py-0.5 ">
+<span className="w-20 text-white/50">
+{"ACCOUNT"}
+</span>
+<span >
+{"FR76 ···· 0412"}
+</span>
+</div>
+<div className="flex gap-4 rounded-[var(--radius-small)] px-1.5 py-0.5 outline-2 outline-[var(--color-iris-400)] bg-[var(--color-iris-400)]/15">
+<span className="w-20 text-white/50">
+{"STATUS"}
+</span>
+<span >
+{"PENDING KYC"}
+</span>
+</div>
+<div className="flex gap-4 rounded-[var(--radius-small)] px-1.5 py-0.5 ">
+<span className="w-20 text-white/50">
+{"RISK"}
+</span>
+<span >
+{"—"}
+</span>
+</div>
+<span className="mt-2 text-white/40">
+{"F3=EXIT F5=REFRESH F8=NEXT"}
+</span>
+</div>
+<div className="flex items-center gap-2 border-t border-white/10 px-4 py-2.5 font-mono text-[10px] text-white/60">
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-300)]" />
+{"agent · read STATUS · no API, no connector"}
+</div>
+</div>
+</div>
+<div className="col-start-1 row-start-1 self-center transition-all duration-500 pointer-events-none translate-y-2 opacity-0">
+<div className="flex flex-col gap-2" aria-hidden="true">
+<div className="flex flex-col gap-1.5 rounded-[var(--radius-large)] border border-[var(--color-iris-100)] bg-[var(--color-bg-purple-alt)] p-3">
+<span className="px-1 font-mono text-[10px] text-[var(--color-text-accent)]">
+{BRAND.name}{" · one stack"}
+</span>
+<div className="flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2" style={{"marginInline": "0px"} as React.CSSProperties}>
+<span className="text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]">
+{"Agents"}
+</span>
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+</div>
+<div className="flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2" style={{"marginInline": "6px"} as React.CSSProperties}>
+<span className="text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]">
+{"Workflow orchestration"}
+</span>
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+</div>
+<div className="flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2" style={{"marginInline": "12px"} as React.CSSProperties}>
+<span className="text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]">
+{"Inference"}
+</span>
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+</div>
+<div className="flex items-center justify-between rounded-[var(--radius-medium)] border border-[var(--color-iris-100)] bg-[var(--color-bg-card)] px-3 py-2" style={{"marginInline": "18px"} as React.CSSProperties}>
+<span className="text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]">
+{BRAND.model}{" models"}
+</span>
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+</div>
+</div>
+<div className="rounded-[var(--radius-large)] border border-dashed border-[var(--color-grey-300)] px-4 py-3 text-center">
+<span className="font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"your infrastructure · on-premise · sovereign cloud"}
+</span>
+</div>
+</div>
+</div>
+<div className="col-start-1 row-start-1 self-center transition-all duration-500 pointer-events-none translate-y-2 opacity-0">
+<div className="overflow-hidden rounded-[var(--radius-large)] border shadow-[0_18px_40px_rgb(4_4_5_/10%)] border-[var(--color-stroke-default)] bg-[var(--color-bg-card)]" aria-hidden="true">
+<div className="flex items-center gap-2 border-b px-3 py-2 border-[var(--color-stroke-default)] bg-[var(--color-grey-100)]">
+<div className="flex items-center gap-1.5">
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FF5F57]/80" />
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FEBC2E]/80" />
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#28C840]/80" />
+</div>
+<span className="font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"engagement · acme-finance"}
+</span>
+</div>
+<div className="flex flex-col gap-3 p-4">
+<div className="flex items-center gap-2">
+<span className="rounded-[var(--radius-rounded)] px-2.5 py-1 font-mono text-[10px] bg-[var(--color-iris-50)] text-[var(--color-text-accent)]">
+{"FDE"}
+</span>
+<span className="rounded-[var(--radius-rounded)] px-2.5 py-1 font-mono text-[10px] bg-[var(--color-iris-50)] text-[var(--color-text-accent)]">
+{"FDE"}
+</span>
+<span className="rounded-[var(--radius-rounded)] px-2.5 py-1 font-mono text-[10px] border border-[var(--color-stroke-default)] text-[var(--color-text-secondary)]">
+{"You"}
+</span>
+<span className="ml-auto font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"embedded"}
+</span>
+</div>
+<div className="grid grid-cols-4 gap-1.5">
+<div className="flex flex-col gap-1.5">
+<span className="h-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+<span className="font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"W1"}
+</span>
+<span className="text-[10px] font-medium text-[var(--color-text-secondary)]">
+{"Discovery"}
+</span>
+</div>
+<div className="flex flex-col gap-1.5">
+<span className="h-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+<span className="font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"W2"}
+</span>
+<span className="text-[10px] font-medium text-[var(--color-text-secondary)]">
+{"Prototype"}
+</span>
+</div>
+<div className="flex flex-col gap-1.5">
+<span className="h-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+<span className="font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"W4"}
+</span>
+<span className="text-[10px] font-medium text-[var(--color-text-secondary)]">
+{"Proposal"}
+</span>
+</div>
+<div className="flex flex-col gap-1.5">
+<span className="h-1.5 rounded-[var(--radius-rounded)] bg-[var(--color-grey-250)]" />
+<span className="font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"W6"}
+</span>
+<span className="text-[10px] font-medium text-[var(--color-text-secondary)]">
+{"Launch"}
+</span>
+</div>
+</div>
+<div className="flex items-center justify-between rounded-[var(--radius-medium)] bg-[var(--color-bg-secondary)] px-3 py-2">
+<span className="text-[length:var(--text-fs-1)] font-medium text-[var(--color-text-default)]">
+{"Order to cash agent"}
+</span>
+<span className="rounded-[var(--radius-small)] bg-[var(--color-iris-50)] px-2 py-0.5 font-mono text-[10px] text-[var(--color-text-accent)]">
+{"in production"}
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div className="flex items-center justify-center gap-1.5" aria-label={`Enterprise capability progress`}>
+<span className="h-1 overflow-hidden rounded-[var(--radius-rounded)] bg-[var(--color-grey-300)] transition-[width] duration-500 ease-in-out w-5" />
+<span className="h-1 overflow-hidden rounded-[var(--radius-rounded)] bg-[var(--color-grey-300)] transition-[width] duration-500 ease-in-out w-1.5" />
+<span className="h-1 overflow-hidden rounded-[var(--radius-rounded)] bg-[var(--color-grey-300)] transition-[width] duration-500 ease-in-out w-1.5" />
+</div>
+</div>
+<div className="flex flex-col text-center md:text-left">
+<button className="cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-title-default)]" type="button" aria-pressed="true">
+{"Native computer use, for enterprise environments."}
+</button>
+<button className="cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-grey-300)] hover:text-[var(--color-grey-400)]" type="button" aria-pressed="false">
+{"[Add product description]"}
+</button>
+<button className="cursor-pointer py-1.5 text-center text-[length:var(--text-fs-6)] font-medium leading-[var(--text-fs-6--line-height)] tracking-tight transition-colors duration-300 md:text-left text-[var(--color-grey-300)] hover:text-[var(--color-grey-400)]" type="button" aria-pressed="false">
+{"Deployed with you, proven in production."}
+</button>
+<div className="relative mt-5 flex min-h-28 flex-col gap-3 animate-[fadeIn_0.3s_ease] md:min-h-24">
+<p className="text-style-16-body-reg text-[var(--color-text-secondary)] mx-auto max-w-md md:mx-0">
+{"[Add product description]"}
+</p>
+<p className="text-style-14-body-reg text-[var(--color-text-accent)] mx-auto font-medium md:mx-0">
+{"UI reasoning · Multisystem"}
+</p>
+</div>
+</div>
+</div>
+</Fade>
+</div>
+</section>
+<section className="scroll-mt-20 bg-[var(--color-bg-primary)] py-16 sm:py-24" id="use-cases">
+<div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6">
+<div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+<div className="flex flex-col gap-6 ">
+<div className="flex flex-col gap-5">
+<Fade >
+<h2 className="text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl">
+{"Where "}{BRAND.platform}{" is already running."}
+</h2>
+</Fade>
+</div>
+</div>
+<div className="flex flex-wrap gap-3">
+<a className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit shrink-0" href="/coming-soon">
+{"All use cases →"}
+</a>
+<a className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit shrink-0" href="/coming-soon">
+{"Book a demo"}
+</a>
+</div>
+</div>
+<Fade >
+<div className="brand-bloom-panel grid gap-8 rounded-[var(--radius-large)] p-6 sm:grid-cols-2 sm:p-10 lg:grid-cols-4" data-keep-light="true">
+<div className="flex flex-col gap-2">
+<span className="font-mono text-[length:var(--text-fs-9)] font-medium leading-none tracking-tight text-[var(--color-iris-300)]">
+<span >
+{"00"}
+</span>
+{"%"}
+</span>
+<p className="text-style-14-body-reg text-[var(--color-text-default-alt)]">
+{"[Add client result]"}
+</p>
+<p className="text-style-12-body-reg text-[var(--color-text-default-alt)] opacity-60">
+{"[Add industry]"}
+</p>
+</div>
+<div className="flex flex-col gap-2">
+<span className="font-mono text-[length:var(--text-fs-9)] font-medium leading-none tracking-tight text-[var(--color-iris-300)]">
+<span className="text-[length:var(--text-fs-6)]">
+{"50 to "}
+</span>
+<span >
+{"00"}
+</span>
+{"%"}
+</span>
+<p className="text-style-14-body-reg text-[var(--color-text-default-alt)]">
+{"[Add client result]"}
+</p>
+<p className="text-style-12-body-reg text-[var(--color-text-default-alt)] opacity-60">
+{"[Add industry]"}
+</p>
+</div>
+<div className="flex flex-col gap-2">
+<span className="font-mono text-[length:var(--text-fs-9)] font-medium leading-none tracking-tight text-[var(--color-iris-300)]">
+<span >
+{"00"}
+</span>
+{"%"}
+</span>
+<p className="text-style-14-body-reg text-[var(--color-text-default-alt)]">
+{"[Add client result]"}
+</p>
+<p className="text-style-12-body-reg text-[var(--color-text-default-alt)] opacity-60">
+{"[Add industry]"}
+</p>
+</div>
+<div className="flex flex-col gap-2">
+<span className="font-mono text-[length:var(--text-fs-9)] font-medium leading-none tracking-tight text-[var(--color-iris-300)]">
+<span >
+{"00"}
+</span>
+{"%+"}
+</span>
+<p className="text-style-14-body-reg text-[var(--color-text-default-alt)]">
+{"[Add client result]"}
+</p>
+<p className="text-style-12-body-reg text-[var(--color-text-default-alt)] opacity-60">
+{"[Add industry]"}
+</p>
+</div>
+</div>
+</Fade>
+<div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-6 px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:overflow-visible sm:px-0 sm:pb-0 sm:grid-cols-3">
+<Fade className="w-[85%] shrink-0 snap-start sm:w-auto">
+<a className="group block h-full" href="/coming-soon">
+<div className="rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 flex h-full flex-col gap-3 group-hover:bg-[var(--color-bg-hover)]" data-keep-light="true">
+<p className="text-style-14-body-reg text-[var(--color-text-accent)] font-medium">
+{"[Add industry]"}
+</p>
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"[Add client story]"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add client story]"}
+</p>
+<ul className="mt-auto flex flex-col gap-1.5 border-t border-[var(--color-stroke-default)] pt-4">
+<li >
+<span className="text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-text-default)]">
+{"[Add client result]"}
+</span>
+</li>
+<li >
+<span className="text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-text-default)]">
+{"[Add client result]"}
+</span>
+</li>
+</ul>
+<p className="text-style-14-body-reg text-[var(--color-text-accent)] font-medium">
+{"See the use cases "}
+<span className="inline-block transition-transform group-hover:translate-x-1">
+{"→"}
+</span>
+</p>
+</div>
+</a>
+</Fade>
+<Fade className="w-[85%] shrink-0 snap-start sm:w-auto">
+<a className="group block h-full" href="/coming-soon">
+<div className="rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 flex h-full flex-col gap-3 group-hover:bg-[var(--color-bg-hover)]" data-keep-light="true">
+<p className="text-style-14-body-reg text-[var(--color-text-accent)] font-medium">
+{"[Add industry]"}
+</p>
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"[Add client story]"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add client story]"}
+</p>
+<ul className="mt-auto flex flex-col gap-1.5 border-t border-[var(--color-stroke-default)] pt-4">
+<li >
+<span className="text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-text-default)]">
+{"[Add client result]"}
+</span>
+</li>
+<li >
+<span className="text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-text-default)]">
+{"[Add client result]"}
+</span>
+</li>
+</ul>
+<p className="text-style-14-body-reg text-[var(--color-text-accent)] font-medium">
+{"See the use cases "}
+<span className="inline-block transition-transform group-hover:translate-x-1">
+{"→"}
+</span>
+</p>
+</div>
+</a>
+</Fade>
+<Fade className="w-[85%] shrink-0 snap-start sm:w-auto">
+<a className="group block h-full" href="/coming-soon">
+<div className="rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] p-6 transition-colors duration-200 flex h-full flex-col gap-3 group-hover:bg-[var(--color-bg-hover)]" data-keep-light="true">
+<p className="text-style-14-body-reg text-[var(--color-text-accent)] font-medium">
+{"[Add industry]"}
+</p>
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"[Add client story]"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add client story]"}
+</p>
+<ul className="mt-auto flex flex-col gap-1.5 border-t border-[var(--color-stroke-default)] pt-4">
+<li >
+<span className="text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-text-default)]">
+{"[Add client result]"}
+</span>
+</li>
+<li >
+<span className="text-style-14-body-reg text-[var(--color-text-default)] font-medium text-[var(--color-text-default)]">
+{"[Add client result]"}
+</span>
+</li>
+</ul>
+<p className="text-style-14-body-reg text-[var(--color-text-accent)] font-medium">
+{"See the use cases "}
+<span className="inline-block transition-transform group-hover:translate-x-1">
+{"→"}
+</span>
+</p>
+</div>
+</a>
+</Fade>
+</div>
+</div>
+</section>
+<section className="scroll-mt-28 bg-[var(--color-bg-primary)] py-16 sm:py-24" id="platform">
+<div className="mx-auto w-full max-w-6xl px-6">
+<Fade >
+<div className="brand-bloom-panel flex flex-col gap-10 rounded-[var(--radius-large)] p-6 sm:p-10" data-keep-light="true">
+<div className="flex flex-col gap-6 ">
+<div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
+<Fade >
+<h2 className="text-style-36-head-med text-[var(--color-title-default-alt)] tracking-tight max-w-xl">
+{"The full platform, run by one accountable team."}
+</h2>
+</Fade>
+<Fade >
+<p className="text-style-16-body-reg text-[var(--color-text-default-alt)] opacity-75  ">
+{"[Add product description]"}
+</p>
+</Fade>
+</div>
+</div>
+<div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-6 px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:overflow-visible sm:px-0 sm:pb-0 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4">
+<div className="w-[85%] shrink-0 snap-start sm:w-auto">
+<div className="flex h-full flex-col gap-2 rounded-[var(--radius-medium)] p-4 bg-[var(--color-bg-card)]">
+<span className="text-style-12-head-med text-[var(--color-text-accent)]">
+{"Included"}
+</span>
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{BRAND.model}{" models & inference"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add feature claim]"}
+</p>
+</div>
+</div>
+<div className="w-[85%] shrink-0 snap-start sm:w-auto">
+<div className="flex h-full flex-col gap-2 rounded-[var(--radius-medium)] p-4 bg-[var(--color-bg-card)]">
+<span className="text-style-12-head-med text-[var(--color-text-accent)]">
+{"Included"}
+</span>
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Agent execution engine"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add feature claim]"}
+</p>
+</div>
+</div>
+<div className="w-[85%] shrink-0 snap-start sm:w-auto">
+<div className="flex h-full flex-col gap-2 rounded-[var(--radius-medium)] p-4 bg-[var(--color-bg-card)]">
+<span className="text-style-12-head-med text-[var(--color-text-accent)]">
+{"Included"}
+</span>
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Environments"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add feature claim]"}
+</p>
+</div>
+</div>
+<div className="w-[85%] shrink-0 snap-start sm:w-auto">
+<div className="flex h-full flex-col gap-2 rounded-[var(--radius-medium)] p-4 bg-[var(--color-bg-card)]">
+<span className="text-style-12-head-med text-[var(--color-text-accent)]">
+{"Included"}
+</span>
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Workflow orchestration"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add feature claim]"}
+</p>
+</div>
+</div>
+<div className="w-[85%] shrink-0 snap-start sm:w-auto">
+<div className="flex h-full flex-col gap-2 rounded-[var(--radius-medium)] p-4 bg-[var(--color-bg-card)]">
+<span className="text-style-12-head-med text-[var(--color-text-accent)]">
+{"Included"}
+</span>
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Console & replay"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add feature claim]"}
+</p>
+</div>
+</div>
+<div className="w-[85%] shrink-0 snap-start sm:w-auto">
+<div className="flex h-full flex-col gap-2 rounded-[var(--radius-medium)] p-4 bg-[var(--color-bg-card)]">
+<span className="text-style-12-head-med text-[var(--color-text-accent)]">
+{"Included"}
+</span>
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Security & governance"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add feature claim]"}
+</p>
+</div>
+</div>
+<div className="w-[85%] shrink-0 snap-start sm:w-auto">
+<div className="flex h-full flex-col gap-2 rounded-[var(--radius-medium)] p-4 bg-[var(--color-bg-card)]">
+<span className="text-style-12-head-med text-[var(--color-text-accent)]">
+{"Included"}
+</span>
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Forward Deployed Engineers"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add feature claim]"}
+</p>
+</div>
+</div>
+</div>
+<a className="group w-fit text-[length:var(--text-fs-2)] font-medium text-[var(--color-iris-300)] hover:underline" href="/platform">
+{"Explore the "}{BRAND.platform}{" "}
+<span className="inline-block transition-transform group-hover:translate-x-1">
+{"→"}
+</span>
+</a>
+</div>
+</Fade>
+</div>
+</section>
+<section className="bg-[var(--color-bg-primary)] py-16 sm:py-24">
+<div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6">
+<div className="flex flex-col gap-6 ">
+<div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
+<Fade >
+<h2 className="text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl">
+{"Every action controlled. Every decision traceable."}
+</h2>
+</Fade>
+<Fade >
+<p className="text-style-16-body-reg text-[var(--color-text-secondary)]   ">
+{"[Add product description]"}
+</p>
+</Fade>
+</div>
+</div>
+<ul className="grid w-full gap-4 lg:grid-cols-3 lg:gap-5">
+<li className="lg:col-span-2 lg:row-span-2">
+<Fade className="flex h-full flex-col gap-6 overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-grey-250)] bg-[var(--color-bg-secondary)] p-6 shadow-[0_10px_40px_rgb(4_4_5_/4%)] sm:p-8">
+<div className="flex flex-col gap-2">
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Full traceability"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add product description]"}
+</p>
+</div>
+<div className="mt-auto flex flex-1 flex-col justify-center">
+<div className="overflow-hidden rounded-[var(--radius-large)] border shadow-[0_18px_40px_rgb(4_4_5_/10%)] border-[var(--color-stroke-default)] bg-[var(--color-bg-card)]" aria-hidden="true">
+<div className="flex items-center gap-2 border-b px-3 py-2 border-[var(--color-stroke-default)] bg-[var(--color-grey-100)]">
+<div className="flex items-center gap-1.5">
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FF5F57]/80" />
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FEBC2E]/80" />
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#28C840]/80" />
+</div>
+<span className="font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"session.replay · order-to-cash · run 1 284"}
+</span>
+</div>
+<div className="grid gap-0 sm:grid-cols-[1.3fr_1fr]">
+<ol className="flex flex-col gap-1 p-3 font-mono text-[10.5px]">
+<li className="flex items-center gap-2 rounded-[var(--radius-small)] px-2 py-1 text-[var(--color-text-secondary)]">
+<span className="h-1.5 w-1.5 shrink-0 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+<span className="text-[var(--color-text-tertiary)]">
+{"09:40:51"}
+</span>
+<span className="truncate">
+{"open inbox · finance-ops"}
+</span>
+</li>
+<li className="flex items-center gap-2 rounded-[var(--radius-small)] px-2 py-1 text-[var(--color-text-secondary)]">
+<span className="h-1.5 w-1.5 shrink-0 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+<span className="text-[var(--color-text-tertiary)]">
+{"09:40:55"}
+</span>
+<span className="truncate">
+{"download contract MSA-2291.pdf"}
+</span>
+</li>
+<li className="flex items-center gap-2 rounded-[var(--radius-small)] px-2 py-1 text-[var(--color-text-secondary)]">
+<span className="h-1.5 w-1.5 shrink-0 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+<span className="text-[var(--color-text-tertiary)]">
+{"09:41:02"}
+</span>
+<span className="truncate">
+{"open SAP GUI · VA01"}
+</span>
+</li>
+<li className="flex items-center gap-2 rounded-[var(--radius-small)] px-2 py-1 text-[var(--color-text-secondary)]">
+<span className="h-1.5 w-1.5 shrink-0 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+<span className="text-[var(--color-text-tertiary)]">
+{"09:41:05"}
+</span>
+<span className="truncate">
+{"read PO 4500 0187 from email"}
+</span>
+</li>
+<li className="flex items-center gap-2 rounded-[var(--radius-small)] px-2 py-1 text-[var(--color-text-secondary)]">
+<span className="h-1.5 w-1.5 shrink-0 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+<span className="text-[var(--color-text-tertiary)]">
+{"09:41:09"}
+</span>
+<span className="truncate">
+{"match timesheet · 38.5 h"}
+</span>
+</li>
+<li className="flex items-center gap-2 rounded-[var(--radius-small)] px-2 py-1 bg-[var(--color-iris-50)] text-[var(--color-text-accent)]">
+<span className="h-1.5 w-1.5 shrink-0 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+<span className="text-[var(--color-text-tertiary)]">
+{"09:41:12"}
+</span>
+<span className="truncate">
+{"type net amount · 12 430,00"}
+</span>
+</li>
+<li className="flex items-center gap-2 rounded-[var(--radius-small)] px-2 py-1 text-[var(--color-text-secondary)]">
+<span className="h-1.5 w-1.5 shrink-0 rounded-[var(--radius-rounded)] border border-[var(--color-grey-400)]" />
+<span className="text-[var(--color-text-tertiary)]">
+{"09:41:15"}
+</span>
+<span className="truncate">
+{"await sign-off · finance"}
+</span>
+</li>
+<li className="flex items-center gap-2 rounded-[var(--radius-small)] px-2 py-1 text-[var(--color-text-secondary)]">
+<span className="h-1.5 w-1.5 shrink-0 rounded-[var(--radius-rounded)] border border-[var(--color-grey-400)]" />
+<span className="text-[var(--color-text-tertiary)]">
+{"—"}
+</span>
+<span className="truncate">
+{"export audit trail · PDF"}
+</span>
+</li>
+</ol>
+<div className="flex flex-col gap-2 border-t border-[var(--color-stroke-default)] bg-[var(--color-bg-secondary)] p-3 sm:border-l sm:border-t-0">
+<span className="font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"reasoning · step 4"}
+</span>
+<span className="text-[length:var(--text-fs-1)] leading-snug text-[var(--color-text-secondary)]">
+{"Amount matches PO line 2 and the approved timesheet. Within scope: entering it, then routing to finance for sign-off."}
+</span>
+<div className="mt-auto flex items-center gap-1.5">
+<span className="h-1 flex-1 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+<span className="h-1 flex-1 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+<span className="h-1 flex-1 rounded-[var(--radius-rounded)] bg-[var(--color-iris-400)]" />
+<span className="h-1 flex-1 rounded-[var(--radius-rounded)] bg-[var(--color-iris-200)]" />
+<span className="h-1 flex-1 rounded-[var(--radius-rounded)] bg-[var(--color-grey-250)]" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</Fade>
+</li>
+<li >
+<Fade className="flex h-full flex-col gap-6 overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-grey-250)] bg-[var(--color-bg-secondary)] p-6 shadow-[0_10px_40px_rgb(4_4_5_/4%)] sm:p-8">
+<div className="flex flex-col gap-2">
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Strict perimeter control"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add product description]"}
+</p>
+</div>
+<div className="mt-auto flex flex-1 flex-col justify-center">
+<div className="overflow-hidden rounded-[var(--radius-large)] border shadow-[0_18px_40px_rgb(4_4_5_/10%)] border-[var(--color-stroke-default)] bg-[var(--color-bg-card)]" aria-hidden="true">
+<div className="flex items-center gap-2 border-b px-3 py-2 border-[var(--color-stroke-default)] bg-[var(--color-grey-100)]">
+<div className="flex items-center gap-1.5">
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FF5F57]/80" />
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FEBC2E]/80" />
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#28C840]/80" />
+</div>
+<span className="font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"perimeter"}
+</span>
+</div>
+<div className="flex flex-col gap-3 p-4">
+<div className="flex flex-col items-start gap-1.5">
+<span className="rounded-[var(--radius-medium)] border border-dashed border-[var(--color-grey-400)] px-2.5 py-1.5 font-mono text-[10px] text-[var(--color-text-secondary)]">
+{"your network"}
+</span>
+<span className="ml-4 border-l border-dashed border-[var(--color-iris-400)] py-1 pl-3 font-mono text-[10px] text-[var(--color-text-accent)]">
+{"outbound only"}
+</span>
+<span className="rounded-[var(--radius-medium)] bg-[var(--color-iris-50)] px-2.5 py-1.5 font-mono text-[10px] text-[var(--color-text-accent)]">
+{BRAND.platform}
+</span>
+</div>
+<div className="flex items-center justify-between gap-2 rounded-[var(--radius-medium)] bg-[var(--color-bg-secondary)] px-3 py-2">
+<span className="font-mono text-[10px] text-[var(--color-text-secondary)]">
+{"out of scope"}
+</span>
+<span className="rounded-[var(--radius-small)] bg-[var(--color-grey-750)] px-2 py-0.5 font-mono text-[10px] text-white">
+{"escalated"}
+</span>
+</div>
+</div>
+</div>
+</div>
+</Fade>
+</li>
+<li >
+<Fade className="flex h-full flex-col gap-6 overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-grey-250)] bg-[var(--color-bg-secondary)] p-6 shadow-[0_10px_40px_rgb(4_4_5_/4%)] sm:p-8">
+<div className="flex flex-col gap-2">
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Data protection"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"[Add product description]"}
+</p>
+</div>
+<div className="mt-auto flex flex-1 flex-col justify-center">
+<div className="overflow-hidden rounded-[var(--radius-large)] border shadow-[0_18px_40px_rgb(4_4_5_/10%)] border-[var(--color-stroke-default)] bg-[var(--color-bg-card)]" aria-hidden="true">
+<div className="flex items-center gap-2 border-b px-3 py-2 border-[var(--color-stroke-default)] bg-[var(--color-grey-100)]">
+<div className="flex items-center gap-1.5">
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FF5F57]/80" />
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#FEBC2E]/80" />
+<span className="h-1.5 w-1.5 rounded-[var(--radius-rounded)] bg-[#28C840]/80" />
+</div>
+<span className="font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"screenshot · pre-processed"}
+</span>
+</div>
+<div className="flex flex-col gap-2 p-4">
+<div className="flex items-center gap-3">
+<span className="w-14 font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"Name"}
+</span>
+<span className="h-3.5 flex-1 rounded-[var(--radius-small)] bg-[var(--color-grey-750)]" />
+</div>
+<div className="flex items-center gap-3">
+<span className="w-14 font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"IBAN"}
+</span>
+<span className="h-3.5 flex-1 rounded-[var(--radius-small)] bg-[var(--color-grey-750)]" />
+</div>
+<div className="flex items-center gap-3">
+<span className="w-14 font-mono text-[10px] text-[var(--color-text-tertiary)]">
+{"Invoice"}
+</span>
+<span className="font-mono text-[10.5px] text-[var(--color-text-secondary)]">
+{"INV-2026-0412"}
+</span>
+</div>
+<span className="mt-1 font-mono text-[10px] text-[var(--color-text-accent)]">
+{"2 fields redacted inside your perimeter"}
+</span>
+</div>
+</div>
+</div>
+</Fade>
+</li>
+</ul>
+<Fade >
+<ul className="flex flex-wrap gap-3">
+<li className="flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3">
+<svg className="h-5 w-5 shrink-0 text-[var(--color-icon-tertiary)]" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+<path d="M10 2.2l1.1 1.8 2 .5.5 2 1.8 1.1-1.8 1.1-.5 2-2 .5L10 17.8l-1.1-1.8-2-.5-.5-2L4.6 11l1.8-1.1.5-2 2-.5L10 2.2z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+<circle cx="10" cy="10" r="2.2" stroke="currentColor" strokeWidth="1.3" />
+</svg>
+<p className="text-style-14-body-reg text-[var(--color-text-default)] font-medium">
+{"[Add compliance]"}
+</p>
+</li>
+<li className="flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3">
+<svg className="h-5 w-5 shrink-0 text-[var(--color-icon-tertiary)]" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+<rect x="2.5" y="5.5" width="15" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
+<path d="M5.2 12.2V7.8h1.3c1.1 0 1.8.6 1.8 1.5 0 .9-.7 1.5-1.8 1.5H6.5v1.4H5.2zm1.3-2.6h.3c.4 0 .7-.2.7-.6s-.3-.6-.7-.6h-.3v1.2zM10.2 12.2V7.8h2.6v1.1h-1.3v.7h1.1v1h-1.1v1.6h-1.3zM14.1 12.2V7.8h1.3v4.4h-1.3z" fill="currentColor" />
+</svg>
+<p className="text-style-14-body-reg text-[var(--color-text-default)] font-medium">
+{"[Add compliance]"}
+</p>
+</li>
+<li className="flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3">
+<svg className="h-5 w-5 shrink-0 text-[var(--color-icon-tertiary)]" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+<circle cx="10" cy="10" r="6.5" stroke="currentColor" strokeWidth="1.3" />
+<path d="M3.5 10h13M10 3.5c1.8 1.9 2.7 4 2.7 6.5s-.9 4.6-2.7 6.5c-1.8-1.9-2.7-4-2.7-6.5s.9-4.6 2.7-6.5z" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+</svg>
+<p className="text-style-14-body-reg text-[var(--color-text-default)] font-medium">
+{"[Add compliance]"}
+</p>
+</li>
+<li className="flex items-center gap-3 rounded-[var(--radius-rounded)] border border-[var(--color-stroke-default)] px-5 py-3">
+<svg className="h-5 w-5 shrink-0 text-[var(--color-icon-tertiary)]" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+<path d="M10 3.2L16.2 6.5v7L10 16.8 3.8 13.5v-7L10 3.2z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+<path d="M10 3.2V10m0 0l6.2-3.5M10 10l-6.2-3.5M10 10v6.8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+<p className="text-style-14-body-reg text-[var(--color-text-default)] font-medium">
+{"[Add compliance]"}
+</p>
+</li>
+</ul>
+</Fade>
+</div>
+</section>
+<section className="bg-[var(--color-bg-primary)] py-16 sm:py-24" id="enterprise-journey">
+<div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6">
+<div className="flex flex-col gap-6 ">
+<div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
+<Fade >
+<h2 className="text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl">
+{"From first conversation to production scale."}
+</h2>
+</Fade>
+<Fade >
+<p className="text-style-16-body-reg text-[var(--color-text-secondary)]   ">
+{"A structured path with a defined scope and timeline."}
+</p>
+</Fade>
+</div>
+</div>
+<Fade >
+<ol className="relative grid w-full gap-8 md:grid-cols-5 md:gap-6">
+<span className="absolute left-3 right-[calc((100%_-_6rem)/5_-_0.75rem)] top-3 hidden h-px bg-[var(--color-stroke-default)] md:block" aria-hidden="true" />
+<li className="relative flex gap-4 md:flex-col">
+<span className="absolute bottom-[-2rem] left-3 top-6 w-px bg-[var(--color-stroke-default)] md:hidden" aria-hidden="true" />
+<span className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-grey-900)] font-mono text-[length:var(--text-fs-1)] font-bold text-[var(--color-white)]" aria-hidden="true">
+{"1"}
+</span>
+<div className="flex flex-col gap-1.5 md:pt-5">
+<h4 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Discovery"}
+</h4>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"We map your workflow and the systems it touches."}
+</p>
+</div>
+</li>
+<li className="relative flex gap-4 md:flex-col">
+<span className="absolute bottom-[-2rem] left-3 top-6 w-px bg-[var(--color-stroke-default)] md:hidden" aria-hidden="true" />
+<span className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-grey-900)] font-mono text-[length:var(--text-fs-1)] font-bold text-[var(--color-white)]" aria-hidden="true">
+{"2"}
+</span>
+<div className="flex flex-col gap-1.5 md:pt-5">
+<h4 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Prototyping"}
+</h4>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"A working agent on your actual systems."}
+</p>
+</div>
+</li>
+<li className="relative flex gap-4 md:flex-col">
+<span className="absolute bottom-[-2rem] left-3 top-6 w-px bg-[var(--color-stroke-default)] md:hidden" aria-hidden="true" />
+<span className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-grey-900)] font-mono text-[length:var(--text-fs-1)] font-bold text-[var(--color-white)]" aria-hidden="true">
+{"3"}
+</span>
+<div className="flex flex-col gap-1.5 md:pt-5">
+<h4 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Proposal"}
+</h4>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"Scope, timeline, and success metrics agreed upfront."}
+</p>
+</div>
+</li>
+<li className="relative flex gap-4 md:flex-col">
+<span className="absolute bottom-[-2rem] left-3 top-6 w-px bg-[var(--color-stroke-default)] md:hidden" aria-hidden="true" />
+<span className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-grey-900)] font-mono text-[length:var(--text-fs-1)] font-bold text-[var(--color-white)]" aria-hidden="true">
+{"4"}
+</span>
+<div className="flex flex-col gap-1.5 md:pt-5">
+<h4 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Launch"}
+</h4>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"Deployed into production, with "}{BRAND.name}{" engineers embedded."}
+</p>
+</div>
+</li>
+<li className="relative flex gap-4 md:flex-col">
+<span className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-[var(--radius-rounded)] bg-[var(--color-grey-900)] font-mono text-[length:var(--text-fs-1)] font-bold text-[var(--color-white)]" aria-hidden="true">
+{"5"}
+</span>
+<div className="flex flex-col gap-1.5 md:pt-5">
+<h4 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Scale"}
+</h4>
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+{"Extended across processes, teams, and geographies."}
+</p>
+</div>
+</li>
+</ol>
+</Fade>
+<Fade >
+<div className="flex">
+<a className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)]" href="/coming-soon">
+{"Book a demo"}
+</a>
+</div>
+</Fade>
+</div>
+</section>
+<section className="bg-[var(--color-bg-primary)] py-16 sm:py-24">
+<div className="mx-auto w-full max-w-6xl px-6">
+<div className="relative w-full overflow-hidden rounded-[var(--radius-large)] bg-[var(--color-grey-900)] px-8 py-14 sm:px-14 sm:py-20" data-keep-light="true">
+<div className="pointer-events-none absolute inset-0" aria-hidden="true" style={{"backgroundImage": "radial-gradient(rgba(255, 255, 255, 0.16) 1.2px, transparent 1.2px)", "backgroundSize": "9px 9px", "maskImage": "radial-gradient(120% 130% at 12% 40%, transparent 30%, rgba(0, 0, 0, 0.75) 78%, black 100%)"} as React.CSSProperties} />
+<div className="relative z-10 flex flex-col gap-10">
+<div className="flex flex-col gap-6 ">
+<div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
+<Fade >
+<h2 className="text-style-36-head-med text-[var(--color-title-default-alt)] tracking-tight max-w-xl">
+{"One accountable partner. From the model to the outcome."}
+</h2>
+</Fade>
+<Fade >
+<p className="text-style-16-body-reg text-[var(--color-text-default-alt)] opacity-75  ">
+{"[Add product description]"}
+</p>
+</Fade>
+</div>
+</div>
+<Fade >
+<div className="grid overflow-hidden rounded-[var(--radius-large)] border border-white/10 bg-white/5 backdrop-blur-sm sm:grid-cols-3 sm:divide-x sm:divide-white/10">
+<div className="flex flex-col gap-3 p-6">
+<h3 className="text-style-18-head-med text-[var(--color-title-default-alt)] tracking-tight">
+{"Data sovereignty"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-default-alt)] opacity-70">
+{"[Add product description]"}
+</p>
+</div>
+<div className="flex flex-col gap-3 p-6">
+<h3 className="text-style-18-head-med text-[var(--color-title-default-alt)] tracking-tight">
+{"Predictable costs"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-default-alt)] opacity-70">
+{"[Add product description]"}
+</p>
+</div>
+<div className="flex flex-col gap-3 p-6">
+<h3 className="text-style-18-head-med text-[var(--color-title-default-alt)] tracking-tight">
+{"Deployment velocity"}
+</h3>
+<p className="text-style-14-body-reg text-[var(--color-text-default-alt)] opacity-70">
+{"[Add product description]"}
+</p>
+</div>
+</div>
+</Fade>
+</div>
+</div>
+</div>
+</section>
+<section className="bg-[var(--color-bg-primary)] py-16 sm:py-24">
+<div className="mx-auto w-full max-w-6xl px-6">
+<Fade >
+<div className="flex w-full flex-col gap-6 rounded-[var(--radius-large)] border border-[var(--color-grey-250)] bg-[var(--color-bg-secondary)] p-8 sm:flex-row sm:items-end sm:justify-between sm:p-10" data-keep-light="true">
+<div className="flex max-w-2xl flex-col gap-3">
+<p className="text-style-14-body-reg text-[var(--color-text-accent)] font-medium">
+{"The lab behind it"}
+</p>
+<h3 className="text-style-18-head-med text-[var(--color-title-default)] tracking-tight">
+{"Built on "}{BRAND.model}{", our agentic model series."}
+</h3>
+<p className="text-style-16-body-reg text-[var(--color-text-secondary)]">
+{"[Add product description]"}
+</p>
+</div>
+<a className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)] w-fit shrink-0" href="/coming-soon">
+{"Explore our research"}
+</a>
+</div>
+</Fade>
+</div>
+</section>
+<section className="scroll-mt-28 bg-[var(--color-bg-primary)] py-16 sm:py-24" id="pricing">
+<div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6">
+<div className="flex flex-col gap-6 ">
+<div className="flex flex-col gap-5">
+<Fade >
+<h2 className="text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl">
+{"Get started with Enterprise today"}
+</h2>
+</Fade>
+</div>
+</div>
+<Fade >
+<div className="flex flex-col gap-4">
+<p className="text-style-14-body-reg text-[var(--color-text-secondary)]">
+<span className="text-style-14-head-med text-[var(--color-text-accent)]">
+{BRAND.platform}{" included:"}
+</span>
+{"[Add product description]"}
+<a className="whitespace-nowrap text-[var(--color-text-accent)] hover:underline" href="/enterprise">
+{"Learn more →"}
+</a>
+</p>
+<div className="grid overflow-hidden rounded-[var(--radius-large)] border border-[var(--color-stroke-default)] bg-[var(--color-bg-card)] md:grid-cols-2" data-keep-light="true">
+<div className="flex flex-col gap-4 p-6">
+<div className="flex flex-col gap-1.5">
+<div className="flex flex-wrap items-start gap-2">
+<h3 className="text-style-16-head-med text-[var(--color-title-default)] tracking-tight">
+{"Enterprise"}
+</h3>
+</div>
+<p className="text-style-16-head-med text-[var(--color-text-default)] font-mono">
+{"Custom pricing"}
+</p>
+<p className="text-style-12-body-reg text-[var(--color-text-secondary)]">
+{"[Add product description]"}
+</p>
+</div>
+<a className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] w-fit" href="/coming-soon">
+{"Talk to sales"}
+</a>
+</div>
+<ul className="flex flex-col border-t border-[var(--color-stroke-default)] md:border-l md:border-t-0">
+<li className="border-b border-[var(--color-stroke-default)] px-6 py-3.5 last:border-b-0">
+<span className="flex items-start gap-2">
+<svg className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--color-icon-tertiary)]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+<p className="text-style-12-body-reg text-[var(--color-text-secondary)]">
+{"[Add plan detail]"}
+</p>
+</span>
+</li>
+<li className="border-b border-[var(--color-stroke-default)] px-6 py-3.5 last:border-b-0">
+<span className="flex items-start gap-2">
+<svg className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--color-icon-tertiary)]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+<p className="text-style-12-body-reg text-[var(--color-text-secondary)]">
+{"[Add plan detail]"}
+</p>
+</span>
+</li>
+<li className="border-b border-[var(--color-stroke-default)] px-6 py-3.5 last:border-b-0">
+<span className="flex items-start gap-2">
+<svg className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--color-icon-tertiary)]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+<p className="text-style-12-body-reg text-[var(--color-text-secondary)]">
+{"[Add plan detail]"}
+</p>
+</span>
+</li>
+<li className="border-b border-[var(--color-stroke-default)] px-6 py-3.5 last:border-b-0">
+<span className="flex items-start gap-2">
+<svg className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--color-icon-tertiary)]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+<p className="text-style-12-body-reg text-[var(--color-text-secondary)]">
+{"[Add feature claim]"}
+</p>
+</span>
+</li>
+<li className="border-b border-[var(--color-stroke-default)] px-6 py-3.5 last:border-b-0">
+<span className="flex items-start gap-2">
+<svg className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--color-icon-tertiary)]" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+<p className="text-style-12-body-reg text-[var(--color-text-secondary)]">
+{"[Add feature claim]"}
+</p>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</Fade>
+</div>
+</section>
+<section className="scroll-mt-28 bg-[var(--color-bg-primary)] py-16 sm:py-24" id="faq">
+
+<div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6">
+<div className="flex flex-col gap-6 ">
+<div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
+<Fade >
+<h2 className="text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl">
+{"Your questions, answered"}
+</h2>
+</Fade>
+<Fade >
+<p className="text-style-16-body-reg text-[var(--color-text-secondary)]   ">
+{"What "}{BRAND.name}{" Enterprise is, how it reaches your systems, how fast it deploys, and how your data stays protected."}
+</p>
+</Fade>
+</div>
+</div>
+<Fade >
+<div className="max-w-3xl">
+<Faq questions={[`What is ${BRAND.name} Enterprise?`, `How do ${BRAND.name} agents automate legacy systems that have no API?`, `What results do enterprises get with ${BRAND.name} agents?`, `How long does an ${BRAND.name} enterprise deployment take?`, `Can ${BRAND.name} run on-premise or in a European sovereign cloud?`, `How does ${BRAND.name} protect enterprise data?`, `What are ${BRAND.name}'s Forward Deployed Engineers?`, `How much does ${BRAND.name} Enterprise cost?`]} />
+</div>
+</Fade>
+<Fade >
+<p className="text-style-16-body-reg text-[var(--color-text-secondary)] max-w-3xl">
+{"Still have questions? "}
+<a className="font-medium text-[var(--color-text-accent)] hover:underline" href="/coming-soon">
+{"Talk to an engineer "}
+<span aria-hidden="true">
+{"→"}
+</span>
+</a>
+</p>
+</Fade>
+</div>
+</section>
+<section className="scroll-mt-20 bg-[var(--color-bg-primary)] py-12 sm:py-20">
+<div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 sm:gap-12">
+<div className="flex flex-col gap-6">
+<div className="flex flex-col gap-6 ">
+<div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-end lg:gap-16">
+<Fade >
+<h2 className="text-style-36-head-med text-[var(--color-title-default)] tracking-tight max-w-xl">
+{"Ready to see it in your environment?"}
+</h2>
+</Fade>
+<Fade >
+<p className="text-style-16-body-reg text-[var(--color-text-secondary)]   ">
+{"[Add product description]"}
+</p>
+</Fade>
+</div>
+</div>
+<Fade >
+<div className="flex flex-col gap-3 sm:flex-row">
+<a className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] bg-[var(--color-bg-accent)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-grey-750)]" href="/coming-soon">
+{"Book a demo"}
+</a>
+<a className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-5 py-2.5 text-[length:var(--text-fs-2)] leading-[var(--text-fs-2--line-height)] border border-[var(--color-stroke-default)] bg-transparent text-[var(--color-text-default)] hover:bg-[var(--color-bg-hover)]" href="/pricing">
+{"See pricing"}
+</a>
+</div>
+</Fade>
+</div>
+</div>
+</section>
+<div className="fixed bottom-4 right-4 z-40 transition-[opacity,translate] duration-300 motion-reduce:transition-none sm:bottom-6 sm:right-6 pointer-events-none translate-y-3 opacity-0" aria-hidden="true">
+<a className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] font-medium transition-colors duration-200 px-6 py-3 text-[length:var(--text-fs-3)] leading-[var(--text-fs-3--line-height)] bg-[var(--color-bg-accent-alt)] text-[var(--color-text-default-alt)] hover:bg-[var(--color-iris-700)] shadow-[0_10px_30px_rgb(4_4_5_/18%)]" href="/coming-soon" tabIndex={-1}>
+{"Book a demo "}
+<span aria-hidden="true">
+{"→"}
+</span>
+</a>
+</div>
+    </>
+  );
+}

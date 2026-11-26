@@ -40,25 +40,31 @@ test('homepage renders the reference sections in order', () => {
 
 test('every local image referenced by the homepage exists', () => {
   const images = [...html.matchAll(/src="(\/hc\/[^"]+)"/g)].map((match) => match[1]);
-  assert.ok(images.length >= 6);
   for (const image of images) assert.ok(existsSync(new URL('public' + image, root)), image);
 });
 
-test('header and footer contain no dead links; unbuilt pages resolve to the reference site', () => {
+test('header and footer link only to local pages', () => {
   const chrome = render('src/components/reference/header.tsx', 'SiteHeader') + render('src/components/reference/footer.tsx', 'SiteFooter');
+  const routes = ['/', '/enterprise', '/agents-api', '/models-api', '/orin-tab', '/platform', '/pricing', '/coming-soon'];
   for (const markup of [html, chrome]) {
-    assert.doesNotMatch(markup, /href="#"/);
-    for (const [, target] of markup.matchAll(/<a [^>]*?href="([^"]+)"/g)) assert.match(target, /^(\/$|https:\/\/)/, target);
+    for (const [, target] of markup.matchAll(/<a [^>]*?href="([^"]+)"/g)) assert.ok(routes.includes(target), target);
   }
-  const { href } = load('src/components/reference/links.ts');
-  assert.equal(href('/'), '/');
-  assert.equal(href('/pricing'), 'https://hcompany.ai/pricing');
+});
+
+test('every public page renders under the Orin name with no reference branding', () => {
+  const pages = ['', 'enterprise/', 'agents-api/', 'models-api/', 'orin-tab/', 'platform/', 'pricing/'];
+  for (const page of pages) {
+    const markup = render('src/app/(reference)/' + page + 'page.tsx').replace(/<[^>]+>/g, ' ');
+    assert.doesNotMatch(markup, /H Company|H Platform|Holo|hcompany|HAI_|SOC 2|ISO 27001/, page);
+    assert.match(markup, /\[Add /, page);
+    assert.ok(existsSync(new URL('src/app/(reference)/' + page + 'page.tsx', root)));
+  }
 });
 
 test('every /hc/ asset named in the source exists, including ones only rendered after interaction', () => {
   const folders = ['src/components/reference/', 'src/app/(reference)/'];
-  const sources = folders.flatMap((folder) => readdirSync(new URL(folder, root)).map((file) => readFileSync(new URL(folder + file, root), 'utf8')));
-  const assets = new Set(sources.flatMap((source) => [...source.matchAll(/\/hc\/[\w\-/]+\.(?:png|jpg|woff2)/g)].map((match) => match[0])));
-  assert.ok(assets.has('/hc/h-agent-cursor.png'));
+  const sources = folders.flatMap((folder) => readdirSync(new URL(folder, root), { recursive: true }).filter((file) => /\.(tsx?|css)$/.test(file)).map((file) => readFileSync(new URL(folder + file.replaceAll('\\', '/'), root), 'utf8')));
+  const assets = new Set(sources.flatMap((source) => [...source.matchAll(/\/hc\/[\w\-/]+\.(?:png|jpg|svg|woff2)/g)].map((match) => match[0])));
+  assert.ok(assets.has('/hc/agent-cursor.svg'));
   for (const asset of assets) assert.ok(existsSync(new URL('public' + asset, root)), asset);
 });

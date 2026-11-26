@@ -59,7 +59,7 @@ await check("pinned platform section steps through four tabs", async () => {
     seen.push((await page.locator("#builder button[aria-pressed=true]:visible").innerText()).replace(/\s+/g, " "));
     await page.screenshot({ path: `${SHOTS}/tab-${i}.png` });
   }
-  assert.deepEqual(seen, ["01 Enterprise", "02 Agents API", "03 Models API", "04 HoloTab"]);
+  assert.deepEqual(seen, ["01 Enterprise", "02 Agents API", "03 Models API", "04 OrinTab"]);
 });
 await check("clicking a tab scrolls to it", async () => {
   await page.locator("#builder button:visible", { hasText: "Agents API" }).click();
@@ -88,7 +88,7 @@ await check("mobile menu opens, expands and closes", async () => {
 });
 await check("mobile platform tabs switch panels", async () => {
   await mobile.getByRole("tab", { name: "Models API" }).click();
-  assert.ok(await mobile.getByRole("heading", { name: "Build on Holo4 directly." }).isVisible());
+  assert.ok(await mobile.getByRole("heading", { name: "Build on Orin directly." }).isVisible());
 });
 
 await check("no horizontal overflow at intermediate widths", async () => {

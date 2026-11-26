@@ -1,3 +1,4 @@
+import { BRAND } from "./brand";
 import { Fade } from "./fade";
 import { Section, SplitHeading } from "./section";
 import { WindowDots } from "./ui";
@@ -28,25 +29,25 @@ function Mainframe() {
 }
 
 function Benchmark() {
-  const scores = [["Holo4 27B", 85.2, "bg-iris-400"], ["Holo4 35B-A3B", 80.8, "bg-iris-200"]] as const;
+  const scores = [[BRAND.modelA, 85, "bg-iris-400"], [BRAND.modelB, 70, "bg-iris-200"]] as const;
   return (
     <div className={`${FRAME} !border-grey-250 bg-white`}>
       <div className="flex items-center gap-2 border-b !border-grey-250 bg-grey-100 px-3 py-2">
-        <WindowDots small /><span className="font-mono text-[10px] text-grey-500">benchmark · OSWorld</span>
+        <WindowDots small /><span className="font-mono text-[10px] text-grey-500">benchmark · [name]</span>
       </div>
       <div className="flex flex-col gap-3 p-4">
         {scores.map(([name, score, color]) => (
           <div key={name} className="flex flex-col gap-1.5">
             <div className="flex items-baseline justify-between">
               <span className="text-[12px] font-medium">{name}</span>
-              <span className="font-mono text-[11px] text-iris-600">{score}%</span>
+              <span className="font-mono text-[11px] text-iris-600">00%</span>
             </div>
             <span className="h-2 overflow-hidden rounded-full bg-grey-200">
               <span className={`hc-grow block h-full rounded-full ${color}`} style={{ width: `${score}%` }} />
             </span>
           </div>
         ))}
-        <span className="font-mono text-[10px] text-grey-500">trained on enterprise environments</span>
+        <span className="font-mono text-[10px] text-grey-500">[Add training claim]</span>
       </div>
     </div>
   );
@@ -56,24 +57,24 @@ function Stack() {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-col gap-1.5 rounded-[12px] border !border-iris-100 bg-iris-50 p-3">
-        <span className="px-1 font-mono text-[10px] text-iris-600">H Company · one stack</span>
-        {["Agents", "Workflow orchestration", "Inference", "Holo models"].map((layer, index) => (
+        <span className="px-1 font-mono text-[10px] text-iris-600">{BRAND.name} · one stack</span>
+        {["Agents", "Workflow orchestration", "Inference", `${BRAND.model} models`].map((layer, index) => (
           <div key={layer} className="flex items-center justify-between rounded-[6px] border !border-iris-100 bg-white px-3 py-2" style={{ marginInline: index * 6 }}>
             <span className="text-[12px] font-medium">{layer}</span><span className="h-1.5 w-1.5 rounded-full bg-iris-400" />
           </div>
         ))}
       </div>
       <div className="rounded-[12px] border border-dashed !border-grey-300 px-4 py-3 text-center">
-        <span className="font-mono text-[10px] text-grey-500">your infrastructure · on-premise · sovereign cloud</span>
+        <span className="font-mono text-[10px] text-grey-500">[Add deployment options]</span>
       </div>
     </div>
   );
 }
 
 const CARDS = [
-  { title: "Computer use pioneers", body: "Works on the software you already have, without integrations or rebuilds.", Visual: Mainframe },
-  { title: "Enterprise-first research", body: "Built to perform on the systems your business actually runs.", Visual: Benchmark },
-  { title: "End-to-end ownership", body: "Full control over cost, performance, and roadmap.", Visual: Stack },
+  { title: "Computer use pioneers", body: "[Add product description]", Visual: Mainframe },
+  { title: "Enterprise-first research", body: "[Add research description]", Visual: Benchmark },
+  { title: "End-to-end ownership", body: "[Add ownership claim]", Visual: Stack },
 ];
 
 export function Capabilities() {
