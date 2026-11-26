@@ -8,7 +8,7 @@ import "./reference-pages.css";
 const DESCRIPTION = "H Company is an AI research lab and agentic platform that works across any system without rebuilding your stack.";
 
 export const metadata: Metadata = {
-  title: { absolute: "H Company — Operational intelligence for the enterprise" },
+  title: { absolute: "Twinlink — Operational intelligence for the enterprise" },
   // Local reproduction of hcompany.ai: keep it out of search indexes.
   robots: { index: false, follow: false },
   // Replace the application-wide metadata so these pages describe themselves.
