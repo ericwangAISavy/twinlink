@@ -1,23 +1,56 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync,existsSync} from 'node:fs';
-import {createRequire} from 'node:module';
+import { readFileSync, existsSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import ts from 'typescript';
 import React from 'react';
-import {renderToStaticMarkup} from 'react-dom/server';
-const require=createRequire(import.meta.url);
-function load(file,deps){const mod={exports:{}};const {outputText}=ts.transpileModule(readFileSync(new URL('../'+file,import.meta.url),'utf8'),{compilerOptions:{jsx:ts.JsxEmit.ReactJSX,module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}});new Function('require','module','exports',outputText)(n=>n in deps?deps[n]:require(n),mod,mod.exports);return mod.exports;}
-const link={__esModule:true,default:({href,children,...rest})=>React.createElement('a',{href,...rest},children)};
-const image={__esModule:true,default:({src,alt,width,height,className})=>React.createElement('img',{src,alt,width,height,className})};
-const reveal={Reveal:({children,className,as:Tag='div'})=>React.createElement(Tag,{className},children)};
-const content=load('src/components/marketing/home-content.tsx',{'next/link':link,'next/image':image,'./reveal':reveal,'./service-links':load('src/components/marketing/service-links.ts',{})});
-const proof={ClientLogos:()=>null,HeroOutcome:()=>null,TeamSection:()=>null,Testimonials:()=>null};
-function page(publications,statistics,jobs=[],fail=false){const calls=[];const {default:Home}=load('src/app/(marketing)/page.tsx',{'@/server/queries/company':{getCompanyStatistics:async()=>{calls.push('stats');return statistics}},'@/server/queries/editorial':{getPublishedResources:async()=>{calls.push('editorial');if(fail)throw Error('Publication failure');return publications}},'@/server/queries/jobs':{getPublishedJobs:async()=>{calls.push('jobs');return jobs}},'next/link':link,'next/image':image,'@/components/marketing/reveal':reveal,'@/components/marketing/home-content':content,'@/components/marketing/proof-sections':proof,'@/components/marketing/count-up':{CountUp:({value})=>value},'@/components/marketing/home-roles':{HomeRoles:({roles})=>React.createElement('ul',{},roles.map(r=>React.createElement('li',{key:r.id},React.createElement('a',{href:'/careers/'+r.slug},r.title),r.department)))},'@/components/marketing/brand-illustration':{BrandIllustration:()=>null},'@/components/marketing/home.css':{}});return{Home,calls};}
-const realCase={kind:'case-studies',slug:'featured',title:'Live featured case',summary:'Current summary',featured:true,label:'Case study',category:'Cloud',metrics:[{value:'60%',label:'Faster deployments'}]};
-const fictional={kind:'case-studies',slug:'fiction',title:'Fictional case',summary:'Invented',featured:true,label:'Illustrative case study',category:'AI',notice:'This is a fictional engagement.'};
-const post={kind:'blog',slug:'post-1',title:'A real article',summary:'Summary',category:'Data',readMinutes:4,author:'Twinlink Engineering',publishedAt:'2026-11-15T15:00:00Z'};
-const role={id:'r1',slug:'platform-engineer',title:'Platform Engineer',department:'Engineering',location:'Austin, TX',employmentType:'Full-time'};
-test('homepage renders real proof, consolidated services, latest content, and working destinations',async()=>{const{Home,calls}=page([fictional,realCase,post],[{label:'Engineering Specialists',value:'475+'},{label:'Projects Delivered',value:'31+'}],[role]);const html=renderToStaticMarkup(await Home());assert.deepEqual(calls.sort(),['editorial','jobs','stats']);assert.match(html,/475\+ Engineering Specialists · 31\+ Projects Delivered/);assert.match(html,/From strategy to delivery/);assert.match(html,/Live featured case/);assert.match(html,/href="\/case-studies\/featured"/);assert.match(html,/60%/);assert.doesNotMatch(html,/Fictional case|Illustrative/i);assert.match(html,/A real article/);assert.match(html,/By Twinlink Engineering · Nov 15, 2026 · 4 min read/);assert.match(html,/Engineering/);assert.match(html,/href="\/blog\/post-1"/);assert.match(html,/href="\/careers\/platform-engineer"/);assert.equal((html.match(/class="home-topic-card"/g)||[]).length,10);assert.doesNotMatch(html,/href="#"/);for(const id of ['solutions','how-we-help','people','insights'])assert.ok(html.includes('id="'+id+'"'));for(const href of ['/about','/careers','/blog','/contact','/services/cloud-infrastructure','/#solutions'])assert.ok(html.includes('href="'+href+'"'),href);});
-test('only illustrative case studies and no content means those sections are omitted, never faked',async()=>{const{Home}=page([fictional],[]);const html=renderToStaticMarkup(await Home());assert.doesNotMatch(html,/Fictional case|Client results|Latest insights|Open roles/);assert.doesNotMatch(html,/will appear here/);});
-test('unfeatured real case remains fallback and query errors reach the existing boundary',async()=>{const{Home}=page([{...realCase,slug:'fallback',featured:false}],[]);assert.match(renderToStaticMarkup(await Home()),/href="\/case-studies\/fallback"/);await assert.rejects(page([],[],[],true).Home(),/Publication failure/);});
-test('service and talent grids are consolidated icon cards with outcomes and links',()=>{for(const topics of [content.TECH_TOPICS,content.HR_TOPICS]){assert.equal(topics.length,5);for(const t of topics){assert.ok(t.Icon&&t.blurb&&t.href&&t.cta,t.title);}}assert.ok(content.TECH_TOPICS.every(t=>t.href.startsWith('/services/')));assert.ok(!content.HR_TOPICS.some(t=>/payroll|^rpo$/i.test(t.title)));});
+import { renderToStaticMarkup } from 'react-dom/server';
+
+const require = createRequire(import.meta.url);
+const root = new URL('../', import.meta.url);
+const cache = new Map();
+
+/** Loads a reference component, transpiling its relative imports on the way. */
+function load(file) {
+  if (cache.has(file)) return cache.get(file);
+  const mod = { exports: {} };
+  cache.set(file, mod.exports);
+  const { outputText } = ts.transpileModule(readFileSync(new URL(file, root), 'utf8'), { compilerOptions: { jsx: ts.JsxEmit.ReactJSX, module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true } });
+  const resolve = (name) => {
+    if (name === 'next/image') return { __esModule: true, default: ({ src, alt }) => React.createElement('img', { src, alt }) };
+    const base = name.startsWith('@/') ? 'src/' + name.slice(2) : name.startsWith('./') ? file.replace(/[^/]+$/, '') + name.slice(2) : null;
+    if (!base) return require(name);
+    return load(existsSync(new URL(base + '.tsx', root)) ? base + '.tsx' : base + '.ts');
+  };
+  new Function('require', 'module', 'exports', outputText)(resolve, mod, mod.exports);
+  cache.set(file, mod.exports);
+  return mod.exports;
+}
+
+const render = (file, name = 'default') => renderToStaticMarkup(React.createElement(load(file)[name]));
+const html = render('src/app/(reference)/page.tsx');
+
+test('homepage renders the reference sections in order', () => {
+  const titles = [...html.matchAll(/<h[12][^>]*>(.*?)<\/h[12]>/g)].map((match) => match[1].replaceAll('&#x27;', "'"));
+  assert.deepEqual([...new Set(titles)], [
+    'Operational intelligence for the enterprise', 'Built for a fragmented world', 'One platform. Four ways in.',
+    'Proven in production.', 'Real-world research. Measured where it matters.', "What's new?", 'Start building, or see it in action.',
+  ]);
+});
+
+test('every local image referenced by the homepage exists', () => {
+  const images = [...html.matchAll(/src="(\/hc\/[^"]+)"/g)].map((match) => match[1]);
+  assert.ok(images.length >= 6);
+  for (const image of images) assert.ok(existsSync(new URL('public' + image, root)), image);
+});
+
+test('header and footer contain no dead links; unbuilt pages resolve to the reference site', () => {
+  const chrome = render('src/components/reference/header.tsx', 'SiteHeader') + render('src/components/reference/footer.tsx', 'SiteFooter');
+  for (const markup of [html, chrome]) {
+    assert.doesNotMatch(markup, /href="#"/);
+    for (const [, target] of markup.matchAll(/<a [^>]*?href="([^"]+)"/g)) assert.match(target, /^(\/$|https:\/\/)/, target);
+  }
+  const { href } = load('src/components/reference/links.ts');
+  assert.equal(href('/'), '/');
+  assert.equal(href('/pricing'), 'https://hcompany.ai/pricing');
+});

@@ -26,6 +26,29 @@
   --cream: #f4efe6;
 }
 
+/* Design tokens measured from the reference site (see src/app/(reference)). */
+@theme {
+  --color-grey-100: #f9f9fb;
+  --color-grey-200: #f2f2f5;
+  --color-grey-250: #ebebf1;
+  --color-grey-300: #d8d8e2;
+  --color-grey-400: #adadbc;
+  --color-grey-500: #7a7a8a;
+  --color-grey-600: #4a4a58;
+  --color-grey-700: #2e2e3a;
+  --color-grey-750: #1c1c26;
+  --color-grey-775: #111117;
+  --color-grey-800: #0d0d12;
+  --color-grey-900: #040405;
+  --color-iris-50: #f1ecf9;
+  --color-iris-100: #decef3;
+  --color-iris-200: #c2a0ee;
+  --color-iris-300: #9a5bec;
+  --color-iris-400: #7114eb;
+  --color-iris-600: #5a04bc;
+  --color-iris-700: #2c0264;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
