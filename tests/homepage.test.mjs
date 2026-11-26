@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import ts from 'typescript';
 import React from 'react';
@@ -53,4 +53,12 @@ test('header and footer contain no dead links; unbuilt pages resolve to the refe
   const { href } = load('src/components/reference/links.ts');
   assert.equal(href('/'), '/');
   assert.equal(href('/pricing'), 'https://hcompany.ai/pricing');
+});
+
+test('every /hc/ asset named in the source exists, including ones only rendered after interaction', () => {
+  const folders = ['src/components/reference/', 'src/app/(reference)/'];
+  const sources = folders.flatMap((folder) => readdirSync(new URL(folder, root)).map((file) => readFileSync(new URL(folder + file, root), 'utf8')));
+  const assets = new Set(sources.flatMap((source) => [...source.matchAll(/\/hc\/[\w\-/]+\.(?:png|jpg|woff2)/g)].map((match) => match[0])));
+  assert.ok(assets.has('/hc/h-agent-cursor.png'));
+  for (const asset of assets) assert.ok(existsSync(new URL('public' + asset, root)), asset);
 });
