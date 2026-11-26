@@ -275,3 +275,8 @@ body:has(.hc) { background: #fff; }
 
 .hc[data-dark] header > div:first-child > a { background: var(--color-grey-900); color: var(--color-white); border-color: var(--color-grey-700) !important; }
 .hc { --color-text-disabled: var(--color-grey-400); --color-stroke-accent-alt: var(--color-iris-400); --color-bg-button-secondary-default: var(--color-grey-200); }
+
+/* Decorations wider than the screen are cut off, as on the reference, without breaking sticky sections. */
+.hc main { overflow-x: clip; }
+.hc[data-dark] header > div:first-child { --color-grey-250: var(--color-grey-700); }
+.hc .brand-bloom-panel--top::before { top: -45%; bottom: auto; }

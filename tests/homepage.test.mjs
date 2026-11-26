@@ -32,7 +32,21 @@ function load(file) {
 
 const render = (file, name = 'default') => renderToStaticMarkup(React.createElement(load(file)[name]));
 const html = render('src/app/(reference)/page.tsx');
-const PRODUCT_PAGES = ['enterprise', 'agents-api', 'models-api', 'holotab', 'h-platform', 'pricing'];
+const chrome = render('src/components/reference/header.tsx', 'SiteHeader') + render('src/components/reference/footer.tsx', 'SiteFooter');
+
+const contentDir = new URL('src/content/reference/', root);
+const pages = readdirSync(contentDir).map((file) => JSON.parse(readFileSync(new URL(file, contentDir), 'utf8')));
+const routes = new Set(['/', '/coming-soon', ...pages.map((page) => page.path)]);
+const renderContent = (page) => renderToStaticMarkup(React.createElement(React.Fragment, null, ...page.tree.map(load('src/components/reference/render.tsx').render)));
+
+/** Fails for links into hcompany.ai or to local pages that do not exist, and for missing local assets. */
+function checkMarkup(markup, where) {
+  for (const [, target] of markup.matchAll(/<a [^>]*?href="([^"]*)"/g)) {
+    assert.doesNotMatch(target, /^https?:\/\/([\w-]+\.)*hcompany\.ai/, where + ' ' + target);
+    if (target.startsWith('/') && !target.startsWith('/hc/')) assert.ok(routes.has(target.split(/[?#]/)[0]), where + ' -> ' + target);
+  }
+  for (const [, source] of markup.matchAll(/(?:src|poster|href)="(\/hc\/[^"?#]+)/g)) assert.ok(existsSync(new URL('public' + source, root)), where + ' ' + source);
+}
 
 test('homepage renders the reference sections in order', () => {
   const titles = [...html.matchAll(/<h[12][^>]*>(.*?)<\/h[12]>/g)].map((match) => match[1].replaceAll('&#x27;', "'"));
@@ -42,40 +56,26 @@ test('homepage renders the reference sections in order', () => {
   ]);
 });
 
-test('every local image referenced by the homepage exists', () => {
-  const images = [...html.matchAll(/src="(\/hc\/[^"]+)"/g)].map((match) => match[1]);
-  assert.ok(images.length >= 6);
-  for (const source of images) assert.ok(existsSync(new URL('public' + source, root)), source);
-});
-
-test('header and footer contain no dead links; unbuilt pages resolve to the reference site', () => {
-  const chrome = render('src/components/reference/header.tsx', 'SiteHeader') + render('src/components/reference/footer.tsx', 'SiteFooter');
-  const local = ['/', ...PRODUCT_PAGES.map((page) => '/' + page)];
-  for (const markup of [html, chrome]) {
-    assert.doesNotMatch(markup, /href="#"/);
-    for (const [, target] of markup.matchAll(/<a [^>]*?href="([^"]+)"/g)) assert.ok(target.startsWith('https://') || local.includes(target), target);
-  }
+test('homepage, header and footer link only to pages in this site', () => {
+  checkMarkup(html, 'home');
+  checkMarkup(chrome, 'header and footer');
   const { href } = load('src/components/reference/links.ts');
-  assert.equal(href('/pricing'), '/pricing');
-  assert.equal(href('/careers'), 'https://hcompany.ai/careers');
+  assert.equal(href('/careers'), '/careers');
+  assert.equal(href('https://hcompany.ai/about?x=1'), '/about?x=1');
+  assert.equal(href('https://hub.hcompany.ai/'), '/coming-soon');
+  assert.equal(href('https://github.com/x'), 'https://github.com/x');
 });
 
-test('product pages render with their own heading and local media', () => {
-  for (const page of PRODUCT_PAGES) {
-    const markup = render('src/app/(reference)/' + page + '/page.tsx');
-    assert.match(markup, /<h1/, page);
-    assert.doesNotMatch(markup, /\[Add /, page);
-    for (const [, source] of markup.matchAll(/(?:src|poster)="(\/hc\/[^"]+)"/g)) assert.ok(existsSync(new URL('public' + source, root)), source);
+test('every captured page renders with a heading, working local links and existing assets', () => {
+  assert.ok(pages.length >= 70, String(pages.length));
+  for (const page of pages) {
+    assert.ok(page.title, page.path);
+    const markup = renderContent(page);
+    assert.match(markup, /<h[1-3][ >]/, page.path);
+    checkMarkup(markup, page.path);
   }
 });
 
-test('every /hc/ asset named in the source exists, including ones only rendered after interaction', () => {
-  const folders = ['src/components/reference/', 'src/app/(reference)/'];
-  const sources = folders.flatMap((folder) => readdirSync(new URL(folder, root), { recursive: true })
-    .map((file) => file.replaceAll('\\', '/'))
-    .filter((file) => /\.(tsx?|css)$/.test(file))
-    .map((file) => readFileSync(new URL(folder + file, root), 'utf8')));
-  const assets = new Set(sources.flatMap((source) => [...source.matchAll(/\/hc\/[\w\-/]+\.(?:png|jpg|mp4|woff2)/g)].map((match) => match[0])));
-  assert.ok(assets.has('/hc/h-agent-cursor.png'));
-  for (const asset of assets) assert.ok(existsSync(new URL('public' + asset, root)), asset);
+test('captured forms cannot submit anywhere', () => {
+  for (const page of pages) assert.doesNotMatch(renderContent(page), /<form[^>]*\saction=/, page.path);
 });

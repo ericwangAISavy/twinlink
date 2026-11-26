@@ -11,7 +11,7 @@ import pixelmatch from "pixelmatch";
 import { PNG } from "pngjs";
 
 const PAGE = process.env.VISUAL_QA_PAGE || "";
-const NAME = PAGE || "home";
+const NAME = (PAGE || "home").replaceAll("/", "__");
 const REFERENCE = `https://hcompany.ai/${PAGE}`;
 const LOCAL = (process.env.VISUAL_QA_URL || "http://localhost:3100/") + PAGE;
 const OUT = ".visual-qa";
@@ -130,4 +130,4 @@ for (const viewport of VIEWPORTS.filter(([w]) => !selected.length || selected.in
   if (Array.isArray(sections)) console.log("   " + sections.map((s) => `${s.name} ${s.match}% (h ${s.reference[3]}/${s.local[3]})`).join(" | "));
 }
 await browser.close();
-writeFileSync(`${OUT}/reports/compare${PAGE ? "-" + PAGE : ""}${selected.length ? "-" + selected.join("-") : ""}.json`, JSON.stringify(report, null, 1));
+writeFileSync(`${OUT}/reports/compare${PAGE ? "-" + NAME : ""}${selected.length ? "-" + selected.join("-") : ""}.json`, JSON.stringify(report, null, 1));

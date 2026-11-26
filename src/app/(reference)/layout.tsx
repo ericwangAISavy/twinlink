@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SiteFooter } from "@/components/reference/footer";
 import { SiteHeader } from "@/components/reference/header";
 import "./reference.css";
+import "./reference-pages.css";
 
 export const metadata: Metadata = {
   title: { absolute: "H Company — Operational intelligence for the enterprise" },

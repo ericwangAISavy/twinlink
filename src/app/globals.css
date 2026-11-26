@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* Public page markup is stored as content files; scan them for utility classes. */
+@source "../content/reference";
 
 :root {
   --background: #f4efe6;
@@ -28,6 +30,13 @@
 
 /* Design tokens measured from the reference site (see src/app/(reference)). */
 @theme {
+  --text-fs-1: 12px;
+  --text-fs-1--line-height: 16px;
+  --text-fs-2: 14px;
+  --text-fs-2--line-height: 20px;
+  --text-fs-3: 16px;
+  --text-fs-3--line-height: 24px;
+  --shadow-elevation-1: 0px 1px 3px 0px #00000014;
   --color-grey-100: #f9f9fb;
   --color-grey-200: #f2f2f5;
   --color-grey-250: #ebebf1;

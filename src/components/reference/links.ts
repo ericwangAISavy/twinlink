@@ -1,9 +1,10 @@
-export const REFERENCE_ORIGIN = "https://hcompany.ai";
-
-/** Pages that exist locally. Every other path resolves to the reference site. */
-const LOCAL_PATHS = new Set(["/", "/enterprise", "/agents-api", "/models-api", "/holotab", "/h-platform", "/pricing"]);
-
-export function href(path: string): string {
-  if (!path.startsWith("/") || LOCAL_PATHS.has(path)) return path;
-  return REFERENCE_ORIGIN + path;
+/**
+ * Every hcompany.ai page is reproduced locally. Its separate applications (docs, platform,
+ * trust centre, showcase) are not, so links to them stay inside this site as well.
+ */
+export function href(target: string): string {
+  if (!target.startsWith("http")) return target;
+  const url = new URL(target);
+  if (url.hostname === "hcompany.ai") return url.pathname + url.search + url.hash;
+  return url.hostname.endsWith(".hcompany.ai") ? "/coming-soon" : target;
 }

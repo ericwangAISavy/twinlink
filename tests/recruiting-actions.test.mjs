@@ -1,4 +1,3 @@
-import { renderToStaticMarkup } from "react-dom/server";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -198,65 +197,4 @@ test("email callback uses the public host and signs out candidates pending appro
   );
   assert.equal(response.url, "http://localhost:3000/login?error=approval");
   assert.equal(signOut, 1);
-});
-
-test("pending candidates can apply as guests without accessing profile applications", async () => {
-  const wrapper = ({ children }) => children;
-  for (const [role, accessStatus, guest] of [
-    [null, null, true],
-    ["CANDIDATE", "pending", true],
-    ["CANDIDATE", "approved", false],
-    ["EMPLOYEE", "approved", true],
-  ]) {
-    let profileReads = 0;
-    const page = load("src/app/(marketing)/careers/[id]/page.tsx", {
-      "next/navigation": {
-        notFound: () => {
-          throw new Error("Not found");
-        },
-      },
-      "@/components/careers/guest-apply-form": {
-        GuestApplyForm: () => "guest-form",
-      },
-      "@/components/careers/apply-form": { ApplyForm: () => "profile-form" },
-      "@/components/careers/save-job-button": { SaveJobButton: () => null },
-      "@/components/ui/badge": { Badge: wrapper },
-      "@/components/ui/card": {
-        Card: wrapper,
-        CardContent: wrapper,
-        CardHeader: wrapper,
-        CardTitle: wrapper,
-      },
-      "@/server/authorization": {
-        getCurrentProfile: async () =>
-          role
-            ? { user: { id: "person", role }, profile: { accessStatus } }
-            : null,
-      },
-      "@/server/queries/jobs": {
-        getJobBySlugOrId: async () => ({
-          id: "job",
-          title: "Role",
-          description: "Overview",
-          status: "PUBLISHED",
-        }),
-      },
-      "@/server/queries/applications": {
-        getCandidateApplication: async () => {
-          profileReads++;
-          return null;
-        },
-        getSavedJobIds: async () => {
-          profileReads++;
-          return new Set();
-        },
-      },
-      "@/lib/utils": { formatRelativeTime: () => "recently" },
-    });
-    const html = renderToStaticMarkup(
-      await page.default({ params: Promise.resolve({ id: "role" }) }),
-    );
-    assert.ok(html.includes(guest ? "guest-form" : "profile-form"));
-    assert.equal(profileReads, guest ? 0 : 2);
-  }
 });

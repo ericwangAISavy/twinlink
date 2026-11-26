@@ -8,7 +8,7 @@ import { Button, Logo } from "./ui";
 
 const NAV_ITEM = "rounded-[6px] px-3 py-2 text-[14px] leading-5 font-semibold transition-colors duration-[250ms] hover:text-grey-750";
 
-const external = (link: NavLink) => (link.external ? { target: "_blank", rel: "noopener noreferrer" } : {});
+const external = (link: NavLink) => (href(link.to).startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
 
 function Chevron({ open, size = 10 }: { open: boolean; size?: number }) {
   return (
@@ -103,7 +103,7 @@ function MobileMenu() {
       })}
       <div className="pt-3">
         <a href={href("/pricing")} className={row}>Pricing</a>
-        <a href="https://hub.hcompany.ai/" target="_blank" rel="noopener noreferrer" className={row}>Docs<ExternalIcon /></a>
+        <a href={href("/coming-soon")} className={row}>Docs<ExternalIcon /></a>
       </div>
       <Button to="/contact?from=header#fill-out-the-form" className="mt-5 w-full">Book a demo</Button>
     </div>
@@ -161,7 +161,7 @@ export function SiteHeader() {
             </nav>
           </div>
           <div className="flex h-full items-center gap-2">
-            <a href="https://hub.hcompany.ai/" target="_blank" rel="noopener noreferrer" className="hidden whitespace-nowrap p-2 text-[14px] font-medium leading-5 text-grey-600 hover:text-grey-750 sm:block">Docs</a>
+            <a href={href("/coming-soon")} className="hidden whitespace-nowrap p-2 text-[14px] font-medium leading-5 text-grey-600 hover:text-grey-750 sm:block">Docs</a>
             <Button to="/contact?from=header#fill-out-the-form" className="whitespace-nowrap !px-4 !py-2">Book a demo</Button>
             <button type="button" aria-label={mobile ? "Close menu" : "Open menu"} aria-expanded={mobile} onClick={() => setMobile(!mobile)} className={`-mr-1 flex h-11 w-11 items-center justify-center rounded-[6px] hover:bg-grey-200 lg:hidden ${mobile ? "bg-grey-250" : ""}`}>
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
