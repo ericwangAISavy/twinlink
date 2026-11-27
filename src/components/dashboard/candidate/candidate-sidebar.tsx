@@ -13,7 +13,7 @@ import {
   UserRound,
 } from "lucide-react";
 import { SignOutButton } from "@/components/dashboard/sign-out-button";
-import { TwinlinkMark } from "@/components/marketing/twinlink-mark";
+import { BrandLogo } from "@/components/marketing/brand-logo";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
@@ -50,8 +50,7 @@ export function CandidateSidebar({
         onClick={onNavigate}
         className="flex items-center gap-2 px-2 text-[#f4efe6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c4a574]"
       >
-        <TwinlinkMark className="size-6 text-[#c4a574]" />
-        <span className="font-serif text-2xl tracking-wide">Twinlink</span>
+        <BrandLogo height={32} onDark />
       </Link>
       <p className="mt-1 px-2 text-xs text-[#a89b88]">Candidate portal</p>
 

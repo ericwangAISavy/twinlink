@@ -29,6 +29,8 @@ export type Resource = {
   }[];
   date?: string;
   end?: string;
+  /** When the entry was published (from the database row), used for article bylines. */
+  publishedAt?: string;
   location?: string;
 };
 export const resources: Resource[] = [
@@ -42,7 +44,7 @@ export const resources: Resource[] = [
     image: "/images/editorial/autonomous-mobility.jpg",
     imageAlt:
       "Autonomous vehicle visualizing pedestrians and its planned route",
-    fallbackImage: "/images/how-we-help-globe.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "A better model was not the whole problem",
@@ -101,7 +103,7 @@ export const resources: Resource[] = [
         title: "What an engineering leader can take away",
         body: "Treat evaluation as a product with users, interfaces, and ownership. The work is valuable even when a pilot does not expand, because it makes uncertainty visible and shortens the path from an observation to a reproducible engineering task.",
         paragraphs: [
-          "For China-based teams working with global partners, this also requires clear data-location decisions and a shared vocabulary for scenario review. Route recordings, vehicle identifiers, and location traces should not be copied between environments casually. A well-structured evidence workflow makes collaboration possible without assuming that every team can access every dataset.",
+          "For distributed teams working with partners in other countries, this also requires clear data-location decisions and a shared vocabulary for scenario review. Route recordings, vehicle identifiers, and location traces should not be copied between environments casually. A well-structured evidence workflow makes collaboration possible without assuming that every team can access every dataset.",
         ],
       },
     ],
@@ -138,7 +140,7 @@ export const resources: Resource[] = [
     image: "/images/editorial/industrial-ai-operator.jpg",
     imageAlt:
       "Industrial operator reviewing AI-assisted production information",
-    fallbackImage: "/images/how-we-help-delivery.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "The production-line challenge",
@@ -226,7 +228,7 @@ export const resources: Resource[] = [
     image: "/images/editorial/semantic-search.jpg",
     imageAlt:
       "Diagram comparing traditional, semantic, and language-model search",
-    fallbackImage: "/images/how-we-help-architecture.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "The information existed, but the answer did not",
@@ -322,7 +324,7 @@ export const resources: Resource[] = [
       "A business-operations scenario that connects retrieval, permission checks, and human approval to support-ticket triage.",
     image: "/images/editorial/ai-operations-agent.jpg",
     imageAlt: "AI assistant operating in a technical environment",
-    fallbackImage: "/images/our-people-hologram.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "The queue was full of small, repeated decisions",
@@ -409,7 +411,7 @@ export const resources: Resource[] = [
       "A retail-operations example combining conventional forecasting, business rules, and a conversational explanation layer.",
     image: "/images/editorial/data-intelligence.jpg",
     imageAlt: "Connected data flows and analytics on a digital interface",
-    fallbackImage: "/images/about-vision-ai.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "Better predictions were not enough",
@@ -491,7 +493,7 @@ export const resources: Resource[] = [
     image: "/images/editorial/industrial-modernization.jpg",
     imageAlt:
       "Comparison of an AI-enabled factory and traditional industrial operations",
-    fallbackImage: "/images/how-we-help-delivery.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "An operating plant is not a blank canvas",
@@ -575,7 +577,7 @@ export const resources: Resource[] = [
     image: "/images/editorial/collaborative-robot.jpg",
     imageAlt:
       "Collaborative robot demonstration with integrated vision systems",
-    fallbackImage: "/images/our-people-hologram.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "The task looked repetitive, but the exceptions mattered",
@@ -662,16 +664,16 @@ export const resources: Resource[] = [
     kind: "case-studies",
     category: "Business operations",
     title:
-      "Connecting a China-based engineering team with global product decisions.",
+      "Connecting a distributed engineering team with product decisions made in another time zone.",
     summary:
       "A delivery example showing how decision records, accountable ownership, and clearer discovery can reduce avoidable rework across regions.",
     image: "/images/editorial/engineering-team.jpg",
     imageAlt: "Engineers discussing a software design in an office",
-    fallbackImage: "/images/about-culture-office.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "The delivery problem was mostly a decision problem",
-        body: "In this fictional scenario, the product team at Cedar Systems worked with engineers in China and business stakeholders in two overseas regions. Teams shared a backlog, but requirements often arrived as conclusions without the customer context behind them. Engineers discovered conflicting priorities after implementation had started.",
+        body: "In this fictional scenario, the product team at Cedar Systems worked with an engineering team in another country and business stakeholders in two other regions. Teams shared a backlog, but requirements often arrived as conclusions without the customer context behind them. Engineers discovered conflicting priorities after implementation had started.",
         paragraphs: [
           "The organization did not need another status meeting. It needed a consistent way to explain a decision, record an assumption, and identify who could resolve a trade-off. We treated that operating model as part of product engineering.",
         ],
@@ -752,7 +754,7 @@ export const resources: Resource[] = [
       "How to choose the right approach for forecasting, content, decision support, and automation—and why a hybrid design often works best.",
     image: "/images/editorial/generative-versus-traditional-ai.jpg",
     imageAlt: "Comparison of generative AI and traditional AI",
-    fallbackImage: "/images/about-vision-ai.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "Begin with the output you actually need",
@@ -842,7 +844,7 @@ export const resources: Resource[] = [
     image: "/images/editorial/just-in-time-trust.jpg",
     imageAlt:
       "Diagram of just-in-time trust and least-privilege access for agents",
-    fallbackImage: "/images/how-we-help-architecture.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "Tool access changes the risk of an assistant",
@@ -905,13 +907,13 @@ export const resources: Resource[] = [
     image: "/images/editorial/semantic-search.jpg",
     imageAlt:
       "Diagram comparing traditional, semantic, and language-model search",
-    fallbackImage: "/images/how-we-help-architecture.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "The real problem is often document identity",
         body: "A knowledge assistant can look impressive while retrieving the wrong version of a procedure. Before selecting a model, define which sources are authoritative, which are superseded, and which users may read them. Search quality begins with these decisions.",
         paragraphs: [
-          "For a China-based organization serving global teams, language and regional terminology add another layer. A product identifier may remain constant while a component name differs between teams. Preserve exact identifiers and build a deliberate mapping of accepted terms instead of expecting embeddings to solve every ambiguity.",
+          "For an organization serving teams in several countries, language and regional terminology add another layer. A product identifier may remain constant while a component name differs between teams. Preserve exact identifiers and build a deliberate mapping of accepted terms instead of expecting embeddings to solve every ambiguity.",
         ],
       },
       {
@@ -966,7 +968,7 @@ export const resources: Resource[] = [
     image: "/images/editorial/industrial-modernization.jpg",
     imageAlt:
       "Comparison of an AI-enabled factory and traditional industrial operations",
-    fallbackImage: "/images/how-we-help-delivery.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "The demonstration is a controlled environment",
@@ -1026,7 +1028,7 @@ export const resources: Resource[] = [
       "A business buyer’s guide to evaluating image-generation and productivity tools beyond the price on the subscription page.",
     image: "/images/editorial/ai-image-tools.jpg",
     imageAlt: "Comparison of free and paid AI image-generation tools",
-    fallbackImage: "/images/our-people-hologram.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "A subscription price is not a business case",
@@ -1095,7 +1097,7 @@ export const resources: Resource[] = [
       "A practical approach to reviewing business content for accuracy, originality, useful evidence, and a voice readers can trust.",
     image: "/images/editorial/ai-content-detection.jpg",
     imageAlt: "Illustration of an AI-content detector and a concerned writer",
-    fallbackImage: "/images/about-culture-office.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "Detection and quality are different questions",
@@ -1151,7 +1153,7 @@ export const resources: Resource[] = [
     supportingImages: [
       {
         image: "/images/editorial/collaborative-software-engineering.jpg",
-        fallbackImage: "/images/hero-team-office.jpg",
+        fallbackImage: "/images/brand/editorial-placeholder.svg",
         imageAlt: "Software engineers collaborating around digital displays",
       },
     ],
@@ -1163,7 +1165,7 @@ export const resources: Resource[] = [
     image: "/images/editorial/generative-ai-learning.jpg",
     imageAlt:
       "Editorial graphic about generative AI learning for data scientists",
-    fallbackImage: "/images/about-vision-ai.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "Generating output is only one part of engineering",
@@ -1188,7 +1190,7 @@ export const resources: Resource[] = [
       },
       {
         title: "Communication is a technical skill",
-        body: "A clear explanation tells another person what changed, what remains uncertain, and what action comes next. That is essential for distributed work and especially useful for teams connecting China-based engineering with global product stakeholders.",
+        body: "A clear explanation tells another person what changed, what remains uncertain, and what action comes next. That is essential for distributed work and especially useful for teams connecting engineering and product stakeholders across time zones.",
         paragraphs: [
           "Practice writing decision records and explaining trade-offs without relying on jargon. A teammate should be able to challenge a choice, reproduce an observation, or continue the work from the evidence you provide.",
         ],
@@ -1216,7 +1218,7 @@ export const resources: Resource[] = [
     supportingImages: [
       {
         image: "/images/editorial/enterprise-ai-network.jpg",
-        fallbackImage: "/images/about-vision-ai.jpg",
+        fallbackImage: "/images/brand/editorial-placeholder.svg",
         imageAlt: "AI network connecting industrial and business systems",
       },
     ],
@@ -1227,7 +1229,7 @@ export const resources: Resource[] = [
       "How business leaders can organize an AI portfolio around useful decisions, accountable owners, and measurable delivery instead of disconnected demonstrations.",
     image: "/images/editorial/ai-business-strategy.jpg",
     imageAlt: "Person approaching an illuminated AI gateway",
-    fallbackImage: "/images/how-we-help-architecture.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "A portfolio starts with business decisions",
@@ -1289,7 +1291,7 @@ export const resources: Resource[] = [
     image: "/images/editorial/industrial-ai-operator.jpg",
     imageAlt:
       "Industrial operator reviewing AI-assisted production information",
-    fallbackImage: "/images/how-we-help-delivery.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "What participants will work through",
@@ -1352,7 +1354,7 @@ export const resources: Resource[] = [
     image: "/images/editorial/just-in-time-trust.jpg",
     imageAlt:
       "Diagram of just-in-time trust and least-privilege access for agents",
-    fallbackImage: "/images/how-we-help-architecture.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "The question behind the program",
@@ -1414,13 +1416,13 @@ export const resources: Resource[] = [
       "A practical session on presenting engineering trade-offs, leading cross-border discussions, and writing decisions people can act on.",
     image: "/images/editorial/confident-speaking.jpg",
     imageAlt: "Four illustrated techniques for confident public speaking",
-    fallbackImage: "/images/our-people-handshake.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "Why communication belongs in an engineering program",
         body: "A technically correct proposal can still fail if stakeholders cannot see the problem, the alternatives, or the next decision. This proposed studio helps practitioners make those elements clear without turning an engineering discussion into a sales presentation.",
         paragraphs: [
-          "The program is useful for engineers moving into leadership, product partners working across regions, and teams connecting China-based delivery with overseas stakeholders. The exercises use fictional project briefs.",
+          "The program is useful for engineers moving into leadership, product partners working across regions, and teams connecting delivery with stakeholders in other regions. The exercises use fictional project briefs.",
         ],
       },
       {
@@ -1476,7 +1478,7 @@ export const resources: Resource[] = [
       "A working session for turning an ambitious AI idea into a measured workflow, a realistic cost model, and an accountable operating plan.",
     image: "/images/editorial/ai-business-strategy.jpg",
     imageAlt: "Person approaching an illuminated AI gateway",
-    fallbackImage: "/images/how-we-help-architecture.jpg",
+    fallbackImage: "/images/brand/editorial-placeholder.svg",
     sections: [
       {
         title: "A program for the decision before the project",
@@ -1532,6 +1534,18 @@ export const resources: Resource[] = [
 ];
 export function resourceHref(item: Resource) {
   return `/${item.kind}/${item.slug}`;
+}
+/** Public display: the same instant shown in U.S. Eastern time, e.g. "November 19, 2026 at 9:00 AM EST". */
+export function usEventDate(date: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZoneName: "short",
+  }).format(new Date(date));
 }
 export function chinaDate(date: string) {
   return new Intl.DateTimeFormat("en-GB", {

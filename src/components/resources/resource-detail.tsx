@@ -5,7 +5,7 @@ import {
   resolveEditorialImage,
 } from "@/lib/resource-images";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { chinaDate, resourceHref, type Resource } from "@/lib/resources";
+import { usEventDate, resourceHref, type Resource } from "@/lib/resources";
 import { getPublishedResources } from "@/server/queries/editorial";
 import { ResourceHero, ResourceLinks, ResourceCta } from "./resource-shell";
 import { EventCalendar } from "./event-actions";
@@ -215,10 +215,10 @@ export async function ResourceDetail({
               {item.date && item.end && (
                 <>
                   <p className="mt-5 text-lg text-white">
-                    {chinaDate(item.date)}
+                    {usEventDate(item.date)}
                   </p>
                   <p className="mt-2 text-sm text-white/65">
-                    China Standard Time (UTC+8)
+                    U.S. Eastern Time
                   </p>
                   <p className="mt-3 text-white/75">{item.location}</p>
                   <p className="mt-4 text-xs text-[#e8d5a3]">{item.label}</p>

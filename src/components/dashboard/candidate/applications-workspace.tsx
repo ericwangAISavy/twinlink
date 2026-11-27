@@ -204,7 +204,7 @@ function ApplicationDetail({ application }: { application: CandidateBoardApplica
         <div className="flex shrink-0 items-center gap-2">
           {application.job.slug ? (
             <Link
-              href={`/careers/${application.job.slug}`}
+              href={`/dashboard/candidate/jobs/${application.job.slug}`}
               className="inline-flex items-center gap-1.5 rounded-full border border-[#eadfcd] px-3 py-1.5 text-sm text-[#1c1916] hover:bg-[#faf7f1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c4a574]"
             >
               View job posting <ExternalLink className="size-3.5" aria-hidden />

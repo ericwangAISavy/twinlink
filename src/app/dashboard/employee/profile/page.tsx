@@ -14,7 +14,7 @@ export default async function EmployeeProfilePage() {
 
   return (
     <>
-      <PageHeader title="Your profile" description="Visible to TwinLink colleagues when they review staffing." />
+      <PageHeader title="Your profile" description="Visible to Twinlink colleagues when they review staffing." />
       <Card>
         <CardContent className="pt-6">
           <ActionForm action={updateEmployeeProfile} submitLabel="Save profile">

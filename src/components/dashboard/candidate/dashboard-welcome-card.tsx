@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -15,16 +14,7 @@ export function DashboardWelcomeCard({
 
   return (
     <section className="relative aspect-[1024/192] w-full min-h-[220px] overflow-hidden rounded-2xl shadow-[0_8px_30px_rgba(28,25,22,0.08)] sm:min-h-[248px]">
-      <Image
-        src="/images/candidate-welcome-office.jpg"
-        alt=""
-        fill
-        priority
-        quality={80}
-        sizes="(min-width: 1024px) 1400px, 100vw"
-        className="object-cover object-center"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#14110e]/72 via-[#14110e]/28 to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(60%_120%_at_85%_0%,rgba(242,193,78,0.22),transparent_60%),linear-gradient(120deg,#081a3a,#0b2a5b)]" aria-hidden="true" />
       <div className="relative z-10 flex min-h-[220px] flex-col justify-center px-6 py-8 sm:min-h-[248px] sm:px-8 sm:py-10">
         <p className="text-sm font-medium text-[#e8d5a3]">Candidate workspace</p>
         <h1 className="mt-2 font-serif text-3xl text-white sm:text-4xl">Welcome, {greetingName}</h1>

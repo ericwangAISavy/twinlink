@@ -1,9 +1,7 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AdminCloseJobForm } from "@/components/admin/admin-close-job-form";
 import { AdminJobForm } from "@/components/admin/admin-job-form";
 import { AdminPageHeader } from "@/components/admin/admin-page-header";
-import { Button } from "@/components/ui/button";
 import { getAdminJob } from "@/server/queries/admin";
 
 export default async function AdminJobDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -15,12 +13,7 @@ export default async function AdminJobDetailPage({ params }: { params: Promise<{
     <>
       <AdminPageHeader
         title={job.title}
-        description="Edit this role. Publishing updates the public careers listing."
-        actions={
-          <Button asChild variant="outline" className="rounded-full">
-            <Link href={`/careers/${job.slug}`}>View public page</Link>
-          </Button>
-        }
+        description="Edit this role."
       />
       <AdminJobForm job={job} />
       <div className="mt-6 max-w-xl rounded-2xl border border-[#eadfcd] bg-white p-6">

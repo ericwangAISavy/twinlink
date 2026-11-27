@@ -14,7 +14,7 @@ export function ContactForm({
     const form = new FormData(event.currentTarget);
     const body = `Name: ${form.get("name")}\nEmail: ${form.get("email")}\nOrganization: ${form.get("organization") || "Not provided"}\nTopic: ${form.get("topic")}\n\n${form.get("message")}`;
     setDraft(
-      `mailto:${email}?subject=${encodeURIComponent(subject || `Twinlink enquiry: ${form.get("topic")}`)}&body=${encodeURIComponent(body)}`,
+      `mailto:${email}?subject=${encodeURIComponent(subject || `Twinlink inquiry: ${form.get("topic")}`)}&body=${encodeURIComponent(body)}`,
     );
     setReady(true);
   }
@@ -64,7 +64,7 @@ export function ContactForm({
           <option>Project partnership</option>
           <option>Engineering careers</option>
           <option>Event interest</option>
-          <option>General enquiry</option>
+          <option>General inquiry</option>
         </select>
       </label>
       <label className="block text-sm text-white/80">

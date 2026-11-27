@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { DashboardNav } from "@/components/dashboard/nav";
 import { SignOutButton } from "@/components/dashboard/sign-out-button";
-import { TwinlinkMark } from "@/components/marketing/twinlink-mark";
+import { BrandLogo } from "@/components/marketing/brand-logo";
 import { requireRole } from "@/server/authorization";
 import { getUnreadNotificationCount } from "@/server/queries/messages";
 
@@ -13,8 +13,7 @@ export default async function EmployeeLayout({ children }: { children: React.Rea
     <div className="min-h-screen bg-background lg:grid lg:grid-cols-[260px_1fr]">
       <aside className="border-r border-[#c4a574]/25 bg-navy px-4 py-6 text-white">
         <Link href="/" className="flex items-center gap-2 text-[#e8d5a3]">
-          <TwinlinkMark className="size-7" />
-          <span className="font-serif text-2xl tracking-wide">Twinlink</span>
+          <BrandLogo height={32} onDark />
         </Link>
         <p className="mt-1 text-xs text-white/50">Employee</p>
         <div className="mt-8">
@@ -30,9 +29,6 @@ export default async function EmployeeLayout({ children }: { children: React.Rea
             <p className="text-sm text-muted-foreground">Signed in as</p>
             <p className="font-medium">{user.name ?? user.email}</p>
           </div>
-          <Link href="/careers" className="text-sm text-accent hover:underline">
-            Browse careers
-          </Link>
         </header>
         <div className="px-6 py-8">{children}</div>
       </div>

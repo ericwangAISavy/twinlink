@@ -31,7 +31,7 @@ export function ApplicationContactFields({
           required
           minLength={7}
           maxLength={40}
-          placeholder="+86 138 0000 0000"
+          placeholder="(555) 123-4567"
         />
       </Field>
       <Field htmlFor={`${prefix}-address`} label="Address">
@@ -43,7 +43,7 @@ export function ApplicationContactFields({
           minLength={5}
           maxLength={600}
           rows={2}
-          placeholder="Street address, city, region, postal code and country"
+          placeholder="Street address, city, state, ZIP code, and country"
         />
       </Field>
       <Field

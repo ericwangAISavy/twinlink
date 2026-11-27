@@ -142,7 +142,7 @@ export default async function AdminOverviewPage() {
                     <Link href="/admin/jobs/new">Create your first job</Link>
                   </Button>
                 }
-                description="Published roles will appear on the public careers pages."
+                description="Signed-in candidates will see published roles."
               />
             ) : (
               <AdminTable className="border-0 shadow-none" headers={["Job title", "Department", "Location", "Applications", "Status", "Updated"]}>
