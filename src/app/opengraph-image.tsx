@@ -8,14 +8,14 @@ export const contentType = "image/png";
 
 /** Branded share card for LinkedIn, Slack, X, etc. */
 export default async function OpengraphImage() {
-  const logo = await readFile(join(process.cwd(), "public/images/brand/twinlink-logo.png"));
+  const logo = await readFile(join(process.cwd(), "public/images/brand/twinlink-light.png"));
   const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
   return new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "72px 80px",
         background: "radial-gradient(60% 90% at 88% 8%, rgba(242,193,78,0.28), transparent 62%), linear-gradient(120deg, #06142e 0%, #081a3a 45%, #0b2a5b 100%)", color: "#fff" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={logoSrc} width={398} height={60} alt="" />
+        <img src={logoSrc} width={384} height={90} alt="" />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 64, fontWeight: 700, lineHeight: 1.08, letterSpacing: -1.5, maxWidth: 920 }}>From strategy to delivery, with engineers who ship.</div>
           <div style={{ marginTop: 26, fontSize: 28, color: "rgba(255,255,255,0.82)" }}>Technology consulting &amp; engineering talent</div>

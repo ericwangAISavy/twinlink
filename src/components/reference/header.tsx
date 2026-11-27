@@ -143,7 +143,7 @@ export function SiteHeader() {
         <div aria-hidden="true" className={`pointer-events-none absolute inset-0 -z-10 border-b !border-grey-250 bg-white transition-opacity duration-300 ${scrolled || mobile ? "opacity-100" : "opacity-0"}`} />
         <div className="mx-auto flex h-18 w-full max-w-6xl items-center justify-between gap-4 px-6">
           <div className="flex h-full items-center gap-6">
-            <Link href="/" aria-label="H, back to homepage" className="flex h-full items-center"><Logo /></Link>
+            <Link href="/" aria-label="Twinlink, back to homepage" className="flex h-full items-center"><Logo /></Link>
             <nav aria-label="Main navigation" className="hidden h-full items-center gap-1 lg:flex">
               {MENUS.map(menu => {
                 const open = active === menu.label;

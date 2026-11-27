@@ -17,7 +17,7 @@ export function SiteFooter() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 py-14">
         <div className="flex flex-col justify-between gap-12 lg:flex-row lg:gap-8">
           <div className="flex max-w-xs flex-col gap-5">
-            <Link href="/" aria-label="H, back to homepage" className="flex w-fit items-center transition-colors hover:text-iris-600"><Logo /></Link>
+            <Link href="/" aria-label="Twinlink, back to homepage" className="flex w-fit items-center transition-colors hover:text-iris-600"><Logo /></Link>
             <div className="flex items-center gap-4">
               {SOCIAL.map(item => (
                 <a key={item.label} href={item.to} target="_blank" rel="noopener noreferrer" aria-label={item.label} className="-m-3 p-3 text-grey-500 transition-colors hover:text-grey-750">

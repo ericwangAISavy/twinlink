@@ -227,6 +227,8 @@ body:has(.hc) { background: #fff; }
   --color-icon-default-alt: var(--color-title-default-alt);
 }
 .hc[data-wash] { --hero-mix: 100%; }
+.hc [data-logo="light"], .hc[data-dark] header [data-logo="color"] { display: none; }
+.hc[data-dark] header [data-logo="light"] { display: block; }
 .hc[data-wash] main { isolation: isolate; }
 .hc[data-wash] main section:not([data-keep-light]) { background-color: transparent; }
 .hc[data-dark] header > div:last-child > div:first-child { background: var(--color-grey-900); border-color: transparent !important; }

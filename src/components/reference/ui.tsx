@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { href } from "./links";
 
 const BUTTON = "inline-flex items-center justify-center gap-2 rounded-[8px] px-5 py-2.5 text-[14px] leading-5 font-medium transition-colors duration-200";
@@ -14,14 +15,13 @@ export function Arrow({ className = "" }: { className?: string }) {
   return <span aria-hidden="true" className={`transition-transform duration-200 group-hover:translate-x-1 ${className}`}>→</span>;
 }
 
+// Both tones are rendered; reference.css shows the light one on the dark header.
 export function Logo() {
   return (
-    <svg viewBox="0 0 1035 600" fill="currentColor" aria-hidden="true" className="h-7 w-auto">
-      <circle cx="300" cy="300" r="300" />
-      <rect x="838" y="195" width="54" height="220" />
-      <rect x="1035" y="282" width="45" height="197" transform="rotate(90 1035 282)" />
-      <rect x="981" y="195" width="54" height="220" />
-    </svg>
+    <>
+      <Image data-logo="color" src="/images/brand/twinlink.png" alt="" width={119} height={28} className="h-7 w-auto" />
+      <Image data-logo="light" src="/images/brand/twinlink-light.png" alt="" width={119} height={28} className="h-7 w-auto" />
+    </>
   );
 }
 

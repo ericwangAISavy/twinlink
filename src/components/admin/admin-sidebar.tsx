@@ -19,7 +19,7 @@ import {
   UserPlus,
   Users,
 } from "lucide-react";
-import { TwinlinkMark } from "@/components/marketing/twinlink-mark";
+import { BrandLogo } from "@/components/marketing/brand-logo";
 import { cn } from "@/lib/utils";
 
 const GROUPS = [
@@ -98,8 +98,7 @@ export function AdminSidebar({
         onClick={onNavigate}
         className="flex items-center gap-2 px-1 text-[#e8d5a3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c4a574]"
       >
-        <TwinlinkMark className="size-7" />
-        <span className="font-serif text-2xl tracking-wide">Twinlink</span>
+        <BrandLogo height={32} onDark />
       </Link>
       <p className="mt-1 px-1 text-[10px] font-semibold tracking-[0.18em] text-[#c4a574]/80 uppercase">
         Admin console

@@ -1,20 +1,15 @@
 import Image from "next/image";
 
-/**
- * Official Twinlink logo: gold emblem twin stripes with the metallic serif "Twinlink"
- * wordmark (from "Twinlink Gold Emblem Logo.png", cropped with its original transparency).
- * The same mark is used on light and navy backgrounds.
- */
-const LOGO = { src: "/images/brand/twinlink-logo.png", width: 1329, height: 200 } as const;
-
-export function BrandLogo({ height = 34, className, priority = false }: {
+/** Official Twinlink logo. Use `onDark` on navy or other dark backgrounds. */
+export function BrandLogo({ height = 34, className, priority = false, onDark = false }: {
   height?: number;
   className?: string;
   priority?: boolean;
+  onDark?: boolean;
 }) {
-  const width = Math.round((LOGO.width / LOGO.height) * height);
+  const width = Math.round((960 / 225) * height);
   return (
-    <Image src={LOGO.src} alt="Twinlink" width={width} height={height} priority={priority}
-      className={className} style={{ width, height, maxWidth: "none" }} />
+    <Image src={onDark ? "/images/brand/twinlink-light.png" : "/images/brand/twinlink.png"} alt="Twinlink" width={width} height={height}
+      priority={priority} className={className} style={{ width, height, maxWidth: "none" }} />
   );
 }
