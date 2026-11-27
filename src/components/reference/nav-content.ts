@@ -11,8 +11,8 @@ const SECTORS = [
 ];
 
 const PRODUCTS: NavMenu = { label: "Products", groups: [
-  { title: "For enterprises", links: [{ label: "Enterprise", to: "/enterprise" }, { label: "Security & Trust", to: "https://trust.hcompany.ai/", external: true }] },
-  { title: "For builders", links: [{ label: "Agents API", to: "/agents-api" }, { label: "Models API", to: "/models-api" }, { label: "Showcase", to: "https://showcase.hcompany.ai/", external: true }] },
+  { title: "For enterprises", links: [{ label: "Enterprise", to: "/enterprise" }] },
+  { title: "For builders", links: [{ label: "Agents API", to: "/agents-api" }, { label: "Models API", to: "/models-api" }] },
   { title: "For everyone", links: [{ label: "HoloTab", to: "/holotab" }] },
 ] };
 
@@ -34,7 +34,7 @@ export const MENUS: NavMenu[] = [
 export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
   { title: "Products", links: [
     ...PRODUCTS.groups.flatMap(group => group.links),
-    { label: "H Platform", to: "/h-platform" }, { label: "Pricing", to: "/pricing" }, { label: "Docs", to: "https://hub.hcompany.ai/", external: true },
+    { label: "Twinlink Platform", to: "/h-platform" }, { label: "Pricing", to: "/pricing" },
   ] },
   { title: "Research", links: [{ label: "Overview", to: "/research" }, ...RESEARCH] },
   { title: "Solutions", links: [{ label: "All use cases", to: "/use-cases" }, { label: "SolidWorks", to: "/solutions/systems/solidworks" }] },

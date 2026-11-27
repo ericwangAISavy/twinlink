@@ -59,10 +59,10 @@ function Dropdown({ menu }: { menu: NavMenu }) {
         {products && (
           <a href={href("/h-platform")} className="flex items-center justify-between gap-6 rounded-[6px] bg-grey-200 p-3">
             <span className="flex flex-col gap-0.5">
-              <span className="text-[14px] font-medium leading-[21px]">All four run on the H Platform</span>
+              <span className="text-[14px] font-medium leading-[21px]">All four run on the Twinlink Platform</span>
               <span className="text-[12px] leading-[18px] text-grey-500">Models · Agent execution · Environments · Orchestration · Console &amp; replay · Security</span>
             </span>
-            <span className="text-[14px] font-medium leading-[21px] text-iris-600">Explore the H Platform →</span>
+            <span className="text-[14px] font-medium leading-[21px] text-iris-600">Explore the Twinlink Platform →</span>
           </a>
         )}
       </div>
@@ -92,7 +92,7 @@ function MobileMenu() {
                 ))}
                 {menu.label === "Products" && (
                   <div className="mt-3 border-t !border-grey-250 pt-3">
-                    <a href={href("/h-platform")} className={row}>Explore the H Platform</a>
+                    <a href={href("/h-platform")} className={row}>Explore the Twinlink Platform</a>
                     <a href={href("/newsroom/holo4")} className={row}>Introducing Holo4</a>
                   </div>
                 )}
@@ -103,7 +103,6 @@ function MobileMenu() {
       })}
       <div className="pt-3">
         <a href={href("/pricing")} className={row}>Pricing</a>
-        <a href={href("/coming-soon")} className={row}>Docs<ExternalIcon /></a>
       </div>
       <Button to="/contact?from=header#fill-out-the-form" className="mt-5 w-full">Book a demo</Button>
     </div>
@@ -161,7 +160,6 @@ export function SiteHeader() {
             </nav>
           </div>
           <div className="flex h-full items-center gap-2">
-            <a href={href("/coming-soon")} className="hidden whitespace-nowrap p-2 text-[14px] font-medium leading-5 text-grey-600 hover:text-grey-750 sm:block">Docs</a>
             <Button to="/contact?from=header#fill-out-the-form" className="whitespace-nowrap !px-4 !py-2">Book a demo</Button>
             <button type="button" aria-label={mobile ? "Close menu" : "Open menu"} aria-expanded={mobile} onClick={() => setMobile(!mobile)} className={`-mr-1 flex h-11 w-11 items-center justify-center rounded-[6px] hover:bg-grey-200 lg:hidden ${mobile ? "bg-grey-250" : ""}`}>
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
