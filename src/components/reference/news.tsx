@@ -14,7 +14,7 @@ const LEAD = {
 };
 
 const POSTS = [
-  { slug: "h-x-42ai-hackathon-paris-winners", image: "cover", date: "November 25, 2026", title: "Meet the winners of the H x 42AI hackathon in Paris" },
+  { slug: "h-x-42ai-hackathon-paris-winners", image: "cover", date: "November 25, 2026", title: "Meet the winners of the Twinlink x 42AI hackathon in Paris" },
   { slug: "before-you-renew-automation-questions", image: "cover-h", date: "November 10, 2026", title: "Before you renew: 10 questions to ask about your automation estate" },
   { slug: "ciso-questions-computer-use-agents", image: "cover-h", date: "November 10, 2026", title: "Eight questions your CISO will ask about computer-use agents, and the answers" },
   { slug: "same-screen-two-approaches", image: "cover-h", date: "November 10, 2026", title: "Same screen, two approaches: watching a script and an agent hit the same change" },

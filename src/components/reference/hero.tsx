@@ -21,7 +21,6 @@ export function Hero() {
           <Fade delay={0.2}>
             <div className="flex flex-col gap-3 pt-2 sm:flex-row">
               <Button to="/contact?from=home-hero#fill-out-the-form">Book a demo</Button>
-              <Button to="https://platform.hcompany.ai/auth/signup" variant="secondary">Start building</Button>
             </div>
           </Fade>
         </div>

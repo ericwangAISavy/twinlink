@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: { absolute: page.title },
     description,
-    openGraph: { type: "website", siteName: "H", title: page.title, description, url: page.path, images: ["/hc/opengraph-image.jpg"] },
+    openGraph: { type: "website", siteName: "Twinlink", title: page.title, description, url: page.path, images: ["/hc/opengraph-image.jpg"] },
     twitter: { card: "summary_large_image", title: page.title, description, images: ["/hc/opengraph-image.jpg"] },
   };
 }
